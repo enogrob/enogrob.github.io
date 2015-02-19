@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>enogrob</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</description>
+    <title>enogrob Blog</title>
+    <description>Blogging about Software Development, Data Science, Cloud Computing, Philosophy, Ancient Knowledge among other things.</description>
     <link>http://enogrob.github.io/</link>
     <atom:link href="http://enogrob.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 18 Feb 2015 12:54:44 -0200</pubDate>
-    <lastBuildDate>Wed, 18 Feb 2015 12:54:44 -0200</lastBuildDate>
+    <pubDate>Thu, 19 Feb 2015 09:23:33 -0200</pubDate>
+    <lastBuildDate>Thu, 19 Feb 2015 09:23:33 -0200</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>Dash Documentation Browser</title>
+        <description>&lt;p&gt;&lt;img src=&quot;http://a1.mzstatic.com/us/r30/Purple1/v4/78/0d/e8/780de8d5-c51f-3893-bc4d-91411450480e/icon128.png&quot; alt=&quot;Dash logo&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;Dash is an API Documentation Browser and Code Snippet Manager. Dash stores snippets of code and instantly searches offline documentation sets for 150+ APIs. You can even generate your own docsets or request docsets to be included.&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.macupdate.com/images/screens/uploaded/JPG/40201_scr_uc1.jpg&quot; style=&quot;width:582px;height:260px;&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Main Features:&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Documentation Browser Features&lt;/li&gt;
+  &lt;li&gt;Snippet Manager Features&lt;/li&gt;
+  &lt;li&gt;Special Snippet Placeholders&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Homepage: &lt;a href=&quot;http://kapeli.com/dash&quot;&gt;Dash&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 18 Feb 2015 10:50:36 -0200</pubDate>
-        <link>http://enogrob.github.io/jekyll/update/2015/02/18/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://enogrob.github.io/jekyll/update/2015/02/18/welcome-to-jekyll.html</guid>
+        <pubDate>Thu, 19 Feb 2015 06:27:36 -0200</pubDate>
+        <link>http://enogrob.github.io/apps/2015/02/19/dash-documentation-browser.html</link>
+        <guid isPermaLink="true">http://enogrob.github.io/apps/2015/02/19/dash-documentation-browser.html</guid>
         
         
-        <category>jekyll</category>
-        
-        <category>update</category>
+        <category>apps</category>
         
       </item>
     
