@@ -5,17 +5,17 @@
     <description>Blogging about Software Development, Data Science, Cloud Computing, Philosophy, Ancient Knowledge among other things.</description>
     <link>http://enogrob.github.io/</link>
     <atom:link href="http://enogrob.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 19 Feb 2015 09:23:33 -0200</pubDate>
-    <lastBuildDate>Thu, 19 Feb 2015 09:23:33 -0200</lastBuildDate>
+    <pubDate>Thu, 19 Feb 2015 10:58:47 -0200</pubDate>
+    <lastBuildDate>Thu, 19 Feb 2015 10:58:47 -0200</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Dash Documentation Browser</title>
-        <description>&lt;p&gt;&lt;img src=&quot;http://a1.mzstatic.com/us/r30/Purple1/v4/78/0d/e8/780de8d5-c51f-3893-bc4d-91411450480e/icon128.png&quot; alt=&quot;Dash logo&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/dash.png&quot; alt=&quot;Dash Logo&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Dash is an API Documentation Browser and Code Snippet Manager. Dash stores snippets of code and instantly searches offline documentation sets for 150+ APIs. You can even generate your own docsets or request docsets to be included.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.macupdate.com/images/screens/uploaded/JPG/40201_scr_uc1.jpg&quot; style=&quot;width:582px;height:260px;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/dash_screenshot.png&quot; alt=&quot;Dash Screenshot&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Main Features:&lt;/p&gt;
 
