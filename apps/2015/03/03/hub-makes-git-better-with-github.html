@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>hub makes git better with github</title>
+  <title>Hub makes git better with github</title>
   <meta name="description" content="">
 
   <link rel="stylesheet" href="/css/main.css">
@@ -57,7 +57,7 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">hub makes git better with github</h1>
+    <h1 class="post-title">Hub makes git better with github</h1>
     <p class="post-meta">Mar 3, 2015</p>
   </header>
 
@@ -65,6 +65,23 @@
     <p><img src="/assets/hub.png" alt="Hub Logo" /></p>
 
 <p><code>hub</code> is a command-line wrapper for git that makes you better at GitHub. Whether you are beginner or an experienced contributor to open-source, hub makes it easier to create or fetch repositories, navigate project pages, fork repos and even submit pull requests, all from the command-line.</p>
+
+<p>An example using <code>hub</code> in order to create a repo:</p>
+
+<p><code>bash
+git init
+git add .
+git commit -m "First commit"
+git create "DS_Exploratory_Data_Analysis"
+</code></p>
+
+<p>As <code>git</code> has an alias of <code>hub</code> in the subcommand <code>create</code> the command <code>hub</code> is executed giving an impression that git was extend with new subcommands.</p>
+
+<p>Here it is another example, where it is even possible opening the GitHub homepage from the command line.</p>
+
+<p><code>
+git browse .
+</code></p>
 
 <p>Homepage: <a href="https://hub.github.com">Hub</a></p>
 

@@ -5,15 +5,32 @@
     <description>Blogging about Software Development, Data Science, Cloud Computing, Mythology and Philosophy among other things.</description>
     <link>http://enogrob.github.io/</link>
     <atom:link href="http://enogrob.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Mar 2015 20:56:12 -0300</pubDate>
-    <lastBuildDate>Mon, 09 Mar 2015 20:56:12 -0300</lastBuildDate>
+    <pubDate>Mon, 09 Mar 2015 21:21:07 -0300</pubDate>
+    <lastBuildDate>Mon, 09 Mar 2015 21:21:07 -0300</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>hub makes git better with github</title>
+        <title>Hub makes git better with github</title>
         <description>&lt;p&gt;&lt;img src=&quot;/assets/hub.png&quot; alt=&quot;Hub Logo&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;hub&lt;/code&gt; is a command-line wrapper for git that makes you better at GitHub. Whether you are beginner or an experienced contributor to open-source, hub makes it easier to create or fetch repositories, navigate project pages, fork repos and even submit pull requests, all from the command-line.&lt;/p&gt;
+
+&lt;p&gt;An example using &lt;code&gt;hub&lt;/code&gt; in order to create a repo:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;bash
+git init
+git add .
+git commit -m &quot;First commit&quot;
+git create &quot;DS_Exploratory_Data_Analysis&quot;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;As &lt;code&gt;git&lt;/code&gt; has an alias of &lt;code&gt;hub&lt;/code&gt; in the subcommand &lt;code&gt;create&lt;/code&gt; the command &lt;code&gt;hub&lt;/code&gt; is executed giving an impression that git was extend with new subcommands.&lt;/p&gt;
+
+&lt;p&gt;Here it is another example, where it is even possible opening the GitHub homepage from the command line.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+git browse .
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Homepage: &lt;a href=&quot;https://hub.github.com&quot;&gt;Hub&lt;/a&gt;&lt;/p&gt;
 
