@@ -62,27 +62,28 @@
   </header>
 
   <article class="post-content">
-    <p><img src="/assets/hub.png" alt="Hub Logo" /></p>
+    <p><img src="/assets/hub.png" alt="Hub Logo"></p>
 
 <p><code>hub</code> is a command-line wrapper for git that makes you better at GitHub. Whether you are beginner or an experienced contributor to open-source, hub makes it easier to create or fetch repositories, navigate project pages, fork repos and even submit pull requests, all from the command-line.</p>
 
 <p>An example using <code>hub</code> in order to create a repo:</p>
-
-<pre><code>git init
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git init
 git add .
-git commit -m "First commit"
-git create "DS_Exploratory_Data_Analysis"
-</code></pre>
-
+git commit -m <span class="s2">&quot;First commit&quot;</span>
+git create <span class="s2">&quot;myblog_jekyll&quot;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git remote -v
+origin  git@github.com:enogrob/myblog_jekyll.git <span class="o">(</span>fetch<span class="o">)</span>
+origin  git@github.com:enogrob/myblog_jekyll.git <span class="o">(</span>push<span class="o">)</span>
+<span class="nv">$ </span>
+</code></pre></div>
 <p>As <code>git</code> has an alias of <code>hub</code> in the subcommand <code>create</code> the command <code>hub</code> is executed giving an impression that git was extend with new subcommands.</p>
 
-<p>Here it is another example, where it is even possible opening the GitHub homepage from the command line.</p>
+<p>Here it is another example, where it is even possible opening the GitHub homepage from the command line.
+<code>bash
+    git browse .
+</code></p>
 
-<pre><code>git browse .
-</code></pre>
-
-<p>Homepage: <a href="https://hub.github.com">Hub</a></p>
-
+<p><img src="/assets/app2.png" alt="Home Logo"> <a href="https://hub.github.com">Hub</a></p>
 
   </article>
 

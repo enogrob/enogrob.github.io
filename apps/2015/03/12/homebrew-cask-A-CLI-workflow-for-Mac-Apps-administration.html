@@ -62,36 +62,31 @@
   </header>
 
   <article class="post-content">
-    <p><img src="/assets/cask.png" alt="Homebrew Cask Logo" /></p>
+    <p><img src="/assets/cask.png" alt="Homebrew Cask Logo"></p>
 
-<p><code>Homebrew Cask</code> provides a friendly homebrew-style CLI workflow for the administration of Mac applications distributed as binaries. It’s implemented as a homebrew external command called <code>cask</code>.</p>
+<p><code>Homebrew Cask</code> provides a friendly homebrew-style CLI workflow for the administration of Mac applications distributed as binaries. It&#39;s implemented as a homebrew external command called <code>cask</code>.</p>
 
 <p>An example installing <code>Virtualbox</code>, notice that, if the application was installed earlier, then <code>cask</code> will updated it.</p>
-
-<pre><code>$ brew update
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew update
 Updated Homebrew from 9bbd6637 to e8b792e6.
-==&gt; New Formulae
+<span class="o">==</span>&gt; New Formulae
 :
-
-$ brew cask list
-mono-mdk	virtualbox	xamarin-mdk	xamarin-studio
-
-$ brew cask install virtualbox
-==&gt; Downloading http://download.virtualbox.org/virtualbox/4.3.24/VirtualBox-4.3.24-98716-OSX.dmg
-######################################################################## 100.0%
-==&gt; Running installer for virtualbox; your password may be necessary.
-==&gt; Package installers may write to any location; options such as --appdir are ignored.
+</code></pre></div><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew cask list
+mono-mdk    virtualbox  xamarin-mdk xamarin-studio
+</code></pre></div><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew cask install <span class="nv">virtualbox</span>
+<span class="o">==</span>&gt; Downloading http://download.virtualbox.org/virtualbox/4.3.24/VirtualBox-4.3.24-98716-OSX.dmg
+<span class="c">######################################################################## 100.0%</span>
+<span class="o">==</span>&gt; Running installer <span class="k">for</span> virtualbox<span class="p">;</span> your password may be necessary.
+<span class="o">==</span>&gt; Package installers may write to any location<span class="p">;</span> options such as --appdir are ignored.
 Password:
-==&gt; installer: Package name is Oracle VM VirtualBox
-==&gt; installer: Upgrading at base path /
-==&gt; installer: The upgrade was successful.
-==&gt; Symlinking Binary 'VBoxHeadless' to '/usr/local/bin/VBoxHeadless'
-==&gt; Symlinking Binary 'VBoxManage' to '/usr/local/bin/VBoxManage'
-🍺  virtualbox staged at '/opt/homebrew-cask/Caskroom/virtualbox/4.3.24-98716' (4 files, 110M)
-</code></pre>
-
-<p>Homepage: <a href="http://caskroom.io">Homebrew cask</a></p>
-
+<span class="o">==</span>&gt; installer: Package name is Oracle VM <span class="nv">VirtualBox</span>
+<span class="o">==</span>&gt; installer: Upgrading at base path /
+<span class="o">==</span>&gt; installer: The upgrade was successful.
+<span class="o">==</span>&gt; Symlinking Binary <span class="s1">&#39;VBoxHeadless&#39;</span> to <span class="s1">&#39;/usr/local/bin/VBoxHeadless&#39;</span>
+<span class="o">==</span>&gt; Symlinking Binary <span class="s1">&#39;VBoxManage&#39;</span> to <span class="s1">&#39;/usr/local/bin/VBoxManage&#39;</span>
+🍺  virtualbox staged at <span class="s1">&#39;/opt/homebrew-cask/Caskroom/virtualbox/4.3.24-98716&#39;</span> <span class="o">(</span><span class="m">4</span> files, 110M<span class="o">)</span>
+</code></pre></div>
+<p><img src="/assets/app2.png" alt="Home Logo"> <a href="http://caskroom.io">Homebrew cask</a></p>
 
   </article>
 

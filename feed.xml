@@ -5,42 +5,37 @@
     <description>Blogging about Software Development, Data Science, Cloud Computing, Mythology and Philosophy among other things.</description>
     <link>http://enogrob.github.io/</link>
     <atom:link href="http://enogrob.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 12 Mar 2015 07:50:07 -0300</pubDate>
-    <lastBuildDate>Thu, 12 Mar 2015 07:50:07 -0300</lastBuildDate>
+    <pubDate>Thu, 12 Mar 2015 14:29:50 -0300</pubDate>
+    <lastBuildDate>Thu, 12 Mar 2015 14:29:50 -0300</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Homebrew Cask a CLI workflow for Mac Apps Administration</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/cask.png&quot; alt=&quot;Homebrew Cask Logo&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/cask.png&quot; alt=&quot;Homebrew Cask Logo&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;Homebrew Cask&lt;/code&gt; provides a friendly homebrew-style CLI workflow for the administration of Mac applications distributed as binaries. It’s implemented as a homebrew external command called &lt;code&gt;cask&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Homebrew Cask&lt;/code&gt; provides a friendly homebrew-style CLI workflow for the administration of Mac applications distributed as binaries. It&amp;#39;s implemented as a homebrew external command called &lt;code&gt;cask&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;An example installing &lt;code&gt;Virtualbox&lt;/code&gt;, notice that, if the application was installed earlier, then &lt;code&gt;cask&lt;/code&gt; will updated it.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ brew update
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew update
 Updated Homebrew from 9bbd6637 to e8b792e6.
-==&amp;gt; New Formulae
+&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; New Formulae
 :
-
-$ brew cask list
-mono-mdk	virtualbox	xamarin-mdk	xamarin-studio
-
-$ brew cask install virtualbox
-==&amp;gt; Downloading http://download.virtualbox.org/virtualbox/4.3.24/VirtualBox-4.3.24-98716-OSX.dmg
-######################################################################## 100.0%
-==&amp;gt; Running installer for virtualbox; your password may be necessary.
-==&amp;gt; Package installers may write to any location; options such as --appdir are ignored.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew cask list
+mono-mdk    virtualbox  xamarin-mdk xamarin-studio
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew cask install &lt;span class=&quot;nv&quot;&gt;virtualbox&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; Downloading http://download.virtualbox.org/virtualbox/4.3.24/VirtualBox-4.3.24-98716-OSX.dmg
+&lt;span class=&quot;c&quot;&gt;######################################################################## 100.0%&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; Running installer &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; virtualbox&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; your password may be necessary.
+&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; Package installers may write to any location&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; options such as --appdir are ignored.
 Password:
-==&amp;gt; installer: Package name is Oracle VM VirtualBox
-==&amp;gt; installer: Upgrading at base path /
-==&amp;gt; installer: The upgrade was successful.
-==&amp;gt; Symlinking Binary &#39;VBoxHeadless&#39; to &#39;/usr/local/bin/VBoxHeadless&#39;
-==&amp;gt; Symlinking Binary &#39;VBoxManage&#39; to &#39;/usr/local/bin/VBoxManage&#39;
-🍺  virtualbox staged at &#39;/opt/homebrew-cask/Caskroom/virtualbox/4.3.24-98716&#39; (4 files, 110M)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Homepage: &lt;a href=&quot;http://caskroom.io&quot;&gt;Homebrew cask&lt;/a&gt;&lt;/p&gt;
-
+&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; installer: Package name is Oracle VM &lt;span class=&quot;nv&quot;&gt;VirtualBox&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; installer: Upgrading at base path /
+&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; installer: The upgrade was successful.
+&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; Symlinking Binary &lt;span class=&quot;s1&quot;&gt;&amp;#39;VBoxHeadless&amp;#39;&lt;/span&gt; to &lt;span class=&quot;s1&quot;&gt;&amp;#39;/usr/local/bin/VBoxHeadless&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; Symlinking Binary &lt;span class=&quot;s1&quot;&gt;&amp;#39;VBoxManage&amp;#39;&lt;/span&gt; to &lt;span class=&quot;s1&quot;&gt;&amp;#39;/usr/local/bin/VBoxManage&amp;#39;&lt;/span&gt;
+🍺  virtualbox staged at &lt;span class=&quot;s1&quot;&gt;&amp;#39;/opt/homebrew-cask/Caskroom/virtualbox/4.3.24-98716&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; files, 110M&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/app2.png&quot; alt=&quot;Home Logo&quot;&gt; &lt;a href=&quot;http://caskroom.io&quot;&gt;Homebrew cask&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 12 Mar 2015 04:30:00 -0300</pubDate>
         <link>http://enogrob.github.io/apps/2015/03/12/homebrew-cask-A-CLI-workflow-for-Mac-Apps-administration.html</link>
@@ -53,27 +48,28 @@ Password:
     
       <item>
         <title>Hub makes git better with github</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/hub.png&quot; alt=&quot;Hub Logo&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/hub.png&quot; alt=&quot;Hub Logo&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;hub&lt;/code&gt; is a command-line wrapper for git that makes you better at GitHub. Whether you are beginner or an experienced contributor to open-source, hub makes it easier to create or fetch repositories, navigate project pages, fork repos and even submit pull requests, all from the command-line.&lt;/p&gt;
 
 &lt;p&gt;An example using &lt;code&gt;hub&lt;/code&gt; in order to create a repo:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git init
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git init
 git add .
-git commit -m &quot;First commit&quot;
-git create &quot;DS_Exploratory_Data_Analysis&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
+git commit -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;First commit&amp;quot;&lt;/span&gt;
+git create &lt;span class=&quot;s2&quot;&gt;&amp;quot;myblog_jekyll&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git remote -v
+origin  git@github.com:enogrob/myblog_jekyll.git &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;fetch&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+origin  git@github.com:enogrob/myblog_jekyll.git &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;push&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;As &lt;code&gt;git&lt;/code&gt; has an alias of &lt;code&gt;hub&lt;/code&gt; in the subcommand &lt;code&gt;create&lt;/code&gt; the command &lt;code&gt;hub&lt;/code&gt; is executed giving an impression that git was extend with new subcommands.&lt;/p&gt;
 
-&lt;p&gt;Here it is another example, where it is even possible opening the GitHub homepage from the command line.&lt;/p&gt;
+&lt;p&gt;Here it is another example, where it is even possible opening the GitHub homepage from the command line.
+&lt;code&gt;bash
+    git browse .
+&lt;/code&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;git browse .
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Homepage: &lt;a href=&quot;https://hub.github.com&quot;&gt;Hub&lt;/a&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&quot;/assets/app2.png&quot; alt=&quot;Home Logo&quot;&gt; &lt;a href=&quot;https://hub.github.com&quot;&gt;Hub&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 03 Mar 2015 17:47:00 -0300</pubDate>
         <link>http://enogrob.github.io/apps/2015/03/03/hub-makes-git-better-with-github.html</link>
@@ -86,22 +82,21 @@ git create &quot;DS_Exploratory_Data_Analysis&quot;
     
       <item>
         <title>Dash Documentation Browser</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/dash.png&quot; alt=&quot;Dash Logo&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/dash.png&quot; alt=&quot;Dash Logo&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Dash is an API Documentation Browser and Code Snippet Manager. Dash stores snippets of code and instantly searches offline documentation sets for 150+ APIs. You can even generate your own docsets or request docsets to be included.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/dash_screenshot.png&quot; alt=&quot;Dash Screenshot&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/dash_screenshot.png&quot; alt=&quot;Dash Screenshot&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Main Features:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Documentation Browser Features&lt;/li&gt;
-  &lt;li&gt;Snippet Manager Features&lt;/li&gt;
-  &lt;li&gt;Special Snippet Placeholders&lt;/li&gt;
+&lt;li&gt;Documentation Browser Features&lt;/li&gt;
+&lt;li&gt;Snippet Manager Features&lt;/li&gt;
+&lt;li&gt;Special Snippet Placeholders&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Homepage: &lt;a href=&quot;http://kapeli.com/dash&quot;&gt;Dash&lt;/a&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&quot;/assets/app2.png&quot; alt=&quot;Home Logo&quot;&gt; &lt;a href=&quot;http://kapeli.com/dash&quot;&gt;Dash&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 19 Feb 2015 06:27:36 -0200</pubDate>
         <link>http://enogrob.github.io/apps/2015/02/19/dash-documentation-browser.html</link>
