@@ -5,12 +5,36 @@
     <description>Blogging about Software Development, Data Science, Cloud Computing, Mythology and Philosophy among other things.</description>
     <link>http://enogrob.github.io/</link>
     <atom:link href="http://enogrob.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 12 Mar 2015 14:29:50 -0300</pubDate>
-    <lastBuildDate>Thu, 12 Mar 2015 14:29:50 -0300</lastBuildDate>
+    <pubDate>Sat, 14 Mar 2015 08:16:07 -0300</pubDate>
+    <lastBuildDate>Sat, 14 Mar 2015 08:16:07 -0300</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Homebrew Cask a CLI workflow for Mac Apps Administration</title>
+        <title>Kitematic::The easiest way to use Docker on your Mac</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/kitematic.png&quot; alt=&quot;Kitematic Logo&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Kitematic&lt;/code&gt; provides the easiest way to use Docker on your Mac.&lt;/p&gt;
+
+&lt;p&gt;It was announced recently the acquisition of Canadian startup &lt;a href=&quot;http://kitematic.com&quot;&gt;Kitematic&lt;/a&gt; and its eponymous, popular open source software tool. The &lt;a href=&quot;https://www.docker.com&quot;&gt;Docker&lt;/a&gt; experience is enhanced through Kitematic and its graphical user interface (GUI)-driven workflow that automatically installs Docker on a user’s Mac to build, ship and run Docker containers in just minutes. Kitematic integrates with &lt;a href=&quot;https://docs.docker.com/machine&quot;&gt;Docker Machine&lt;/a&gt; to provision a VM and install Docker Engine locally on your Mac.&lt;/p&gt;
+
+&lt;p&gt;Once installed, the Kitematic GUI launches and from the home screen you will be presented with curated images that you can run instantly.  You can search for any public images on Docker Hub from Kitematic just by typing in the search bar.  Easily create, run and manage your containers from the GUI and seamlessly switch back and forth between the Docker CLI and the GUI.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/kitematic_screenshot.jpg&quot; alt=&quot;Kitematic Screenshot&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/home1.png&quot; alt=&quot;Home Logo&quot;&gt; &lt;a href=&quot;https://kitematic.com&quot;&gt;Homepage&lt;/a&gt;
+&lt;img src=&quot;/assets/download.png&quot; alt=&quot;Download Logo&quot;&gt; &lt;a href=&quot;https://kitematic.com/download&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 14 Mar 2015 04:39:00 -0300</pubDate>
+        <link>http://enogrob.github.io/apps/2015/03/14/Kitematic-the-easiest-way-to-use-Docker-on-your-Mac.html</link>
+        <guid isPermaLink="true">http://enogrob.github.io/apps/2015/03/14/Kitematic-the-easiest-way-to-use-Docker-on-your-Mac.html</guid>
+        
+        
+        <category>apps</category>
+        
+      </item>
+    
+      <item>
+        <title>Homebrew Cask::a CLI workflow for Mac Apps Administration</title>
         <description>&lt;p&gt;&lt;img src=&quot;/assets/cask.png&quot; alt=&quot;Homebrew Cask Logo&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;Homebrew Cask&lt;/code&gt; provides a friendly homebrew-style CLI workflow for the administration of Mac applications distributed as binaries. It&amp;#39;s implemented as a homebrew external command called &lt;code&gt;cask&lt;/code&gt;.&lt;/p&gt;
@@ -35,11 +59,11 @@ Password:
 &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; Symlinking Binary &lt;span class=&quot;s1&quot;&gt;&amp;#39;VBoxManage&amp;#39;&lt;/span&gt; to &lt;span class=&quot;s1&quot;&gt;&amp;#39;/usr/local/bin/VBoxManage&amp;#39;&lt;/span&gt;
 🍺  virtualbox staged at &lt;span class=&quot;s1&quot;&gt;&amp;#39;/opt/homebrew-cask/Caskroom/virtualbox/4.3.24-98716&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; files, 110M&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/app2.png&quot; alt=&quot;Home Logo&quot;&gt; &lt;a href=&quot;http://caskroom.io&quot;&gt;Homebrew cask&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/home1.png&quot; alt=&quot;Home Logo&quot;&gt; &lt;a href=&quot;http://caskroom.io&quot;&gt;Homebrew cask&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 12 Mar 2015 04:30:00 -0300</pubDate>
-        <link>http://enogrob.github.io/apps/2015/03/12/homebrew-cask-A-CLI-workflow-for-Mac-Apps-administration.html</link>
-        <guid isPermaLink="true">http://enogrob.github.io/apps/2015/03/12/homebrew-cask-A-CLI-workflow-for-Mac-Apps-administration.html</guid>
+        <link>http://enogrob.github.io/apps/2015/03/12/homebrew-cask-A-CLI-workflow-for-Mac-Apps-administration%20copy.html</link>
+        <guid isPermaLink="true">http://enogrob.github.io/apps/2015/03/12/homebrew-cask-A-CLI-workflow-for-Mac-Apps-administration%20copy.html</guid>
         
         
         <category>apps</category>
@@ -47,7 +71,7 @@ Password:
       </item>
     
       <item>
-        <title>Hub makes git better with github</title>
+        <title>Hub::makes git better with github</title>
         <description>&lt;p&gt;&lt;img src=&quot;/assets/hub.png&quot; alt=&quot;Hub Logo&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;hub&lt;/code&gt; is a command-line wrapper for git that makes you better at GitHub. Whether you are beginner or an experienced contributor to open-source, hub makes it easier to create or fetch repositories, navigate project pages, fork repos and even submit pull requests, all from the command-line.&lt;/p&gt;
@@ -69,7 +93,7 @@ origin  git@github.com:enogrob/myblog_jekyll.git &lt;span class=&quot;o&quot;&gt
     git browse .
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/app2.png&quot; alt=&quot;Home Logo&quot;&gt; &lt;a href=&quot;https://hub.github.com&quot;&gt;Hub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/home1.png&quot; alt=&quot;Home Logo&quot;&gt; &lt;a href=&quot;https://hub.github.com&quot;&gt;Hub&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 03 Mar 2015 17:47:00 -0300</pubDate>
         <link>http://enogrob.github.io/apps/2015/03/03/hub-makes-git-better-with-github.html</link>
@@ -81,7 +105,7 @@ origin  git@github.com:enogrob/myblog_jekyll.git &lt;span class=&quot;o&quot;&gt
       </item>
     
       <item>
-        <title>Dash Documentation Browser</title>
+        <title>Dash::Documentation Browser</title>
         <description>&lt;p&gt;&lt;img src=&quot;/assets/dash.png&quot; alt=&quot;Dash Logo&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Dash is an API Documentation Browser and Code Snippet Manager. Dash stores snippets of code and instantly searches offline documentation sets for 150+ APIs. You can even generate your own docsets or request docsets to be included.&lt;/p&gt;
@@ -96,7 +120,7 @@ origin  git@github.com:enogrob/myblog_jekyll.git &lt;span class=&quot;o&quot;&gt
 &lt;li&gt;Special Snippet Placeholders&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/app2.png&quot; alt=&quot;Home Logo&quot;&gt; &lt;a href=&quot;http://kapeli.com/dash&quot;&gt;Dash&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/home1.png&quot; alt=&quot;Home Logo&quot;&gt; &lt;a href=&quot;http://kapeli.com/dash&quot;&gt;Dash&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 19 Feb 2015 06:27:36 -0200</pubDate>
         <link>http://enogrob.github.io/apps/2015/02/19/dash-documentation-browser.html</link>
