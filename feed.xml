@@ -5,8 +5,8 @@
     <description>Blogging about Software Development, Data Science, Cloud Computing, Mythology and Philosophy among other things.</description>
     <link>http://enogrob.github.io/</link>
     <atom:link href="http://enogrob.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 14 Mar 2015 08:16:07 -0300</pubDate>
-    <lastBuildDate>Sat, 14 Mar 2015 08:16:07 -0300</lastBuildDate>
+    <pubDate>Sat, 14 Mar 2015 08:39:10 -0300</pubDate>
+    <lastBuildDate>Sat, 14 Mar 2015 08:39:10 -0300</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -21,7 +21,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/kitematic_screenshot.jpg&quot; alt=&quot;Kitematic Screenshot&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/home1.png&quot; alt=&quot;Home Logo&quot;&gt; &lt;a href=&quot;https://kitematic.com&quot;&gt;Homepage&lt;/a&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/home1.png&quot; alt=&quot;Home Logo&quot;&gt; &lt;a href=&quot;https://kitematic.com&quot;&gt;Kitematic&lt;/a&gt;
 &lt;img src=&quot;/assets/download.png&quot; alt=&quot;Download Logo&quot;&gt; &lt;a href=&quot;https://kitematic.com/download&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 14 Mar 2015 04:39:00 -0300</pubDate>
@@ -88,10 +88,10 @@ origin  git@github.com:enogrob/myblog_jekyll.git &lt;span class=&quot;o&quot;&gt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;As &lt;code&gt;git&lt;/code&gt; has an alias of &lt;code&gt;hub&lt;/code&gt; in the subcommand &lt;code&gt;create&lt;/code&gt; the command &lt;code&gt;hub&lt;/code&gt; is executed giving an impression that git was extend with new subcommands.&lt;/p&gt;
 
-&lt;p&gt;Here it is another example, where it is even possible opening the GitHub homepage from the command line.
-&lt;code&gt;bash
-    git browse .
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Here it is another example, where it is even possible opening the GitHub homepage from the command line.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git browse .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/google-chrome-08.19.07.png&quot; alt=&quot;Google Chrome Screenshot&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/home1.png&quot; alt=&quot;Home Logo&quot;&gt; &lt;a href=&quot;https://hub.github.com&quot;&gt;Hub&lt;/a&gt;&lt;/p&gt;
 </description>
