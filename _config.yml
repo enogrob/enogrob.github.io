@@ -29,6 +29,9 @@ github_username:  enogrob
 
 # Build settings
 theme: minima
+header_pages:
+  - about.markdown
+  - projects.markdown
 plugins:
   - jekyll-feed
 
