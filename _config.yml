@@ -32,6 +32,7 @@ theme: minima
 header_pages:
   - about.markdown
   - projects.markdown
+show_excerpts: true
 plugins:
   - jekyll-feed
   - jekyll-target-blank
