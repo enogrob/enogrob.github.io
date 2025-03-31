@@ -29,6 +29,7 @@ github_username:  enogrob
 
 # Build settings
 theme: minima
+
 header_pages:
   - newsletter.md
   - projects.md
@@ -38,6 +39,16 @@ plugins:
   - jekyll-feed
   - jekyll-target-blank
   - jekyll-spaceship
+  - jekyll-og-image
+
+og_image:
+  output_dir: "assets/images/og"
+  image: "assets/images/enogrob.png"
+  domain: "enogrob.github.io"
+  border_bottom:
+    width: 20
+    fill:
+      - "#4285F4"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
