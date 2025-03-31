@@ -52,10 +52,8 @@ og_image:
     fill:
       - "#4285F4"
 
-title:
-redirect_from:
-  - /post/123456789/
-  - /post/123456789/my-amazing-post/
+github_edit_url: "https://github.com/enogrob/enogrob.github.io/tree/main/"
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
