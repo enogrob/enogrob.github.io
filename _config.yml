@@ -40,6 +40,7 @@ plugins:
   - jekyll-target-blank
   - jekyll-spaceship
   - jekyll-og-image
+  - jekyll-sitemap
 
 og_image:
   output_dir: "assets/images/og"
