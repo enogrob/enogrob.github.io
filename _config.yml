@@ -32,9 +32,9 @@ theme: minima
 
 header_pages:
   - newsletter.md
-  - projects.md
+  # - projects.md
   - about.md
-show_excerpts: true
+show_excerpts: false
 plugins:
   - jekyll-feed
   - jekyll-target-blank
