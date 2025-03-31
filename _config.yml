@@ -41,6 +41,7 @@ plugins:
   - jekyll-spaceship
   - jekyll-og-image
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 og_image:
   output_dir: "assets/images/og"
@@ -50,6 +51,11 @@ og_image:
     width: 20
     fill:
       - "#4285F4"
+
+title:
+redirect_from:
+  - /post/123456789/
+  - /post/123456789/my-amazing-post/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
