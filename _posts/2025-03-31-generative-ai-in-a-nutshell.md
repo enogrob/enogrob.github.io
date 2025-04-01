@@ -10,6 +10,8 @@ redirect_from:
 
 ![](/assets/images/ainutshell.png)
 
+## Generative AI in a Nutshell
+
 Just finished reading **Generative AI in a Nutshell** by *Henrik Kniberg* — and wow, what a ride!
 
 This isn’t your typical dry AI manual. It’s short, funny, full of quirky hand-drawn illustrations, and packed with *actually useful* insights. If you’ve seen Kniberg’s viral [18-minute video](https://www.youtube.com/watch?v=2IK3DFHRFfw) on the same topic, this book is the deeper, sketchier, and even more practical version.
