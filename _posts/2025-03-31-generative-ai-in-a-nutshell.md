@@ -10,7 +10,7 @@ redirect_from:
 
 ![](/assets/images/ainutshell.png)
 
-## Generative AI in a Nutshell
+# **Generative AI in a Nutshell**
 
 Just finished reading **Generative AI in a Nutshell** by *Henrik Kniberg* — and wow, what a ride!
 

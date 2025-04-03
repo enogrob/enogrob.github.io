@@ -146,4 +146,4 @@ Join the [Ruby AI Builders](https://discord.gg/kkrpc5vDH8) and start pioneering 
 
 **Let’s do what Rubyists do best: Rewrite what’s possible.**  
 
-*Post Inspired by Obie Fernandez’s article on the AI-powered future of Ruby and Rails.*
+*Post Inspired by Obie Fernandez’s article on the [AI-powered future of Ruby and Rails](https://medium.com/codex/the-future-of-ruby-and-rails-in-the-age-of-ai-8f1acea31bc2).*
