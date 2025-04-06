@@ -27,6 +27,7 @@ Once hailed as the darling of developers and startups, Ruby and its popular fram
 
 ### Diagram: Why Ruby Fell Behind
 
+<div style="max-width: 50%; margin: auto;">
 ```mermaid!
 graph TD
     subgraph "Ruby's Decline"
@@ -35,10 +36,11 @@ graph TD
         A3 --> A1
     end
 ```
+</div>
 
 ## Enter the Revolution: AI-Assisted Coding
 
-In a coding landscape shaped by AI tools, a “vibe coding” revolution is underway. Tools like **Cursor IDE** and the **Cline extension for VS Code** allow developers to:
+In a coding landscape shaped by AI tools, a “vibe coding” revolution is underway. Tools like **Cursor IDE**, the **Cline extension for VS Code**, and **GitHub Copilot** allow developers to:
 
 - Describe functionality in natural language (e.g., “I need a user service for managing users”).
 - Generate complete implementations, refactor code, or troubleshoot in plain English.
@@ -46,7 +48,7 @@ In a coding landscape shaped by AI tools, a “vibe coding” revolution is unde
 ### Benefits:
 - **Faster coding:** Developers can focus on architecture while AI engineers the mechanics.
 - **Token-based costs:** AI pricing models are tied to the number of tokens (text chunks) processed.
-
+- **Seamless Integration:** GitHub Copilot offers in-line code completions and context-aware suggestions directly in VS Code, reducing context switching and accelerating development.
 
 ## The Comeback: Ruby’s Hidden Advantage
 
@@ -56,12 +58,14 @@ Ruby’s elegant design, focused on developer happiness and readability, turns i
     Ruby’s concise syntax means AI can capture complex ideas with fewer tokens compared to verbose languages like TypeScript or Java.
 
     **Example**:
+<div style="max-width: 50%; margin: auto;">
     ```mermaid!
     graph TD
         subgraph Example Code Comparisons
             TScript[TypeScript Code: 50 tokens] --> Ruby[Ruby Code: 17 tokens]
         end
     ```
+</div>
 2. **Cost Efficiency:**
    - Generating complex code costs approximately **1/3rd the tokens** in Ruby compared to TypeScript.
    - For businesses utilizing AI tools heavily, this translates to massive savings.
@@ -139,6 +143,7 @@ As AI-assisted workflows spread, **token efficiency** becomes a critical factor.
 
 ### Diagram: AI Advantage with Ruby
 
+<div style="max-width: 60%; margin: auto;">
 ```mermaid!
 graph TB
     subgraph AI Workflow
@@ -149,6 +154,7 @@ graph TB
     Lang --> |Verbose| TypeScript --> Cost --> Speed[Slow]
     Lang --> |Concise| Ruby --> Cost --> Speed[Fast]
 ```
+</div>
 
 ## Reflecting Forward: Will AI Resurrect Ruby?
 
