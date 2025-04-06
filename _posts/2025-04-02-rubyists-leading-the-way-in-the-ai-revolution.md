@@ -8,7 +8,7 @@ redirect_from:
   - /hotwire/
 ---
 
-<img src="/assets/images/ai-rails.png" alt="Hotwire Logo">
+<img src="/assets/images/ai-rails.png" style="border-radius: 50%;" alt="Ruby's AI Awakening">
 
 # **Rubyists Leading the Way in the AI Revolution**
 
@@ -147,3 +147,8 @@ Join the [Ruby AI Builders](https://discord.gg/kkrpc5vDH8) and start pioneering 
 **Let’s do what Rubyists do best: Rewrite what’s possible.**  
 
 *Post Inspired by Obie Fernandez’s article on the [AI-powered future of Ruby and Rails](https://medium.com/codex/the-future-of-ruby-and-rails-in-the-age-of-ai-8f1acea31bc2).*
+
+### References
+
+- [Read the Ebook on Leanpub](https://leanpub.com/patterns-of-application-development-using-ai)
+- [Explore the Course on Leanpub](https://leanpub.com/c/patterns-of-application-development-using-ai)
