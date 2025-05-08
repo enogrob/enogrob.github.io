@@ -29,7 +29,7 @@ concurrency:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,10 +41,11 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Install libvips
-        # Outputs to the './_site' directory by default
         env:
           DEBIAN_FRONTEND: noninteractive
-        run: sudo apt-get install --fix-missing libvips
+        run: |
+          sudo apt-get update
+          sudo apt-get install --fix-missing -y libvips
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
