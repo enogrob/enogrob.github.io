@@ -8,7 +8,7 @@ redirect_from:
   - /tidewave/
 ---
 
-<img src="/assets/images/tidewave.png" style="border-radius: 50%;" alt="Ruby's AI Awakening">
+<img src="/assets/images/tidewave.png" alt="Meet the Tidewave AI Assistant">
 
 Imagine coding with an AI that doesn't just read your code but understands your entire application as it runs. That's the promise of Tidewave, the latest innovation from José Valim and the team at Dashbit.
 
