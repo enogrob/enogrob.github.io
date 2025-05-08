@@ -14,8 +14,8 @@ Imagine coding with an AI that doesn't just read your code but understands your 
 
 ```mermaid!
 graph TD
-    A[Web Application (Phoenix/Rails)] --> B[MCP Server]
-    B --> C[AI Assistant (Claude/Cursor/VS Code)]
+    A[Web Application Phoenix/Rails] --> B[MCP Server]
+    B --> C[AI Assistant Claude/Cursor/VS Code]
     B --> D[Database]
     B --> E[Logs/Traces]
     B --> F[Documentation]
