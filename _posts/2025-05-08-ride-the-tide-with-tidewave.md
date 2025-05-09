@@ -6,6 +6,9 @@ categories: ruby phoenix
 mermaid: true
 redirect_from: 
   - /tidewave/
+og_image:
+  canvas:
+    background_image: "/assets/images/tidewave.png"
 ---
 
 <img src="/assets/images/tidewave.png" alt="Meet the Tidewave AI Assistant">
