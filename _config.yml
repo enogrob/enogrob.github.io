@@ -43,7 +43,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
 
-og_image:
+og_image: 
   output_dir: "assets/images/og"
   image: "assets/images/enogrob.png"
   domain: "enogrob.github.io"
