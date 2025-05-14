@@ -11,7 +11,7 @@ og_image:
   default: "assets/images/codex.png"
 ---
 
-<img src="/assets/images/codex-cli.png" alt="Meet the Tidewave AI Assistant">
+<img src="/assets/images/codex-cli.png" alt="Codex CLI + Ruby">
 
 # **Codex CLI + Ruby: Automating Codebase Navigation via Command Line**
 
@@ -97,6 +97,8 @@ graph TD
 ```
 
 ## References
+
+<img src="/assets/images/covers/codex-cli.png" alt="Codex CLI + Ruby">
 
 * OpenAI Codex CLI – Getting Started: ([help.openai.com](https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started?utm_source=chatgpt.com))
 * OpenAI Codex CLI: Build Faster Code Right From Your Terminal: ([blott.studio](https://www.blott.studio/blog/post/openai-codex-cli-build-faster-code-right-from-your-terminal?utm_source=chatgpt.com))
