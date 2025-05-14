@@ -86,14 +86,34 @@ Here’s a conceptual map of Codex CLI operations when using parameters instead 
 
 ```mermaid!
 graph TD
-    A[Codex CLI] --> B[Direct Queries]
-    A --> C[Method Analysis]
-    A --> D[Automated Refactoring]
-    A --> E[Test Execution]
-    B --> F[Codebase Summary]
-    C --> G[Detailed Method Description]
-    D --> H[Refactored Code]
-    E --> I[Test Results]
+    subgraph Codex_CLI
+        A[Codex CLI]
+        B[Direct Queries]
+        C[Method Analysis]
+        D[Automated Refactoring]
+        E[Test Execution]
+    end
+
+    A -->|Ask Questions| B
+    A -->|Analyze Code| C
+    A -->|Refactor Code| D
+    A -->|Run Tests| E
+
+    subgraph Direct_Queries
+        B -->|Summarize| F[Codebase Summary]
+    end
+
+    subgraph Method_Analysis
+        C -->|Describe| G[Detailed Method Description]
+    end
+
+    subgraph Automated_Refactoring
+        D -->|Generate| H[Refactored Code]
+    end
+
+    subgraph Test_Execution
+        E -->|Report| I[Test Results]
+    end
 ```
 
 ## References
