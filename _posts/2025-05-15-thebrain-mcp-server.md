@@ -10,7 +10,7 @@ redirect_from:
 
 <img src="/assets/images/thebrain-mcp-server.png" alt="TheBrain MCP Server">
 
-# **The Vision: Making TheBrain Smarter**
+# **The Vision: Making TheBrain Smarter with a MCP Server**
 
 Imagine walking through your Brain—the digital map of your thoughts and ideas. You have pathways, connections, and concepts intertwined, but something’s missing. What if your Brain could actually think for itself? What if it could actively talk to AI, generating insights and managing knowledge for you?
 
@@ -74,7 +74,6 @@ It’s time to take TheBrain from a passive companion to an active thinker. Inte
 
 ### References
 
-* [Introducing the Model Context Protocol](https://www.thebrain.com/blog/introducing-thebrain-api)
 * [Model Context Protocol Overview](https://modelcontextprotocol.io/)
 * [Introducing TheBrain API](https://www.thebrain.com/blog/introducing-thebrain-api)
 * [TheBrain Product Page](https://www.thebrain.com/products/thebrain)
