@@ -18,6 +18,7 @@ That’s where the **MCP Server** comes in. By integrating a **Model Context Pro
 
 ### The Core Idea: Bridging Brains and AI
 
+
 Right now, TheBrain is like a brilliant library: well-organized, interconnected, but quiet. You have to manually pull knowledge from it. An MCP Server, on the other hand, turns it into an **interactive genius**. It could:
 
 * **Access Knowledge Dynamically**: LLMs could query your Brain and fetch data effortlessly.
@@ -72,6 +73,8 @@ graph LR
 ### Call to Action: The Next Step for TheBrain
 
 It’s time to take TheBrain from a passive companion to an active thinker. Integrating an MCP Server isn’t just a technical upgrade—it’s giving your Brain a voice. Let’s push for this innovation and make our digital minds more alive.
+
+<img src="/assets/images/integrate-into-plex.png" alt="TheBrain MCP Server;" style="display:block; margin-left:auto; margin-right:auto;">
 
 ### References
 
