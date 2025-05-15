@@ -28,6 +28,7 @@ Tidewave introduces "Runtime Intelligence," bridging the gap between static code
 Currently supporting Phoenix and Ruby on Rails, Tidewave is open source and integrates seamlessly with AI tools like Claude, Cursor, VS Code (Copilot), Windsurf, and Zed.
 
 ```mermaid!
+%%{init: {"theme": "default", "look": "handDrawn"}}%%
 graph TD
     A[Web Application Phoenix/Rails] --> B[MCP Server]
     B --> C[AI Assistant Claude/Cursor/VS Code]

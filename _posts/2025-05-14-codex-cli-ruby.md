@@ -85,6 +85,7 @@ Codex will run the tests and report the outcome, ensuring your changes didn’t 
 Here’s a conceptual map of Codex CLI operations when using parameters instead of the UI:
 
 ```mermaid!
+%%{init: {"theme": "default", "look": "handDrawn"}}%%
 graph TD
     subgraph Codex_CLI
         A[Codex CLI]

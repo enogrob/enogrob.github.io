@@ -58,6 +58,7 @@ Let’s connect some dots. Here’s how AI, prompts, and Ruby fit into this tran
 
 ```mermaid!
 graph TD  
+%%{init: {"theme": "default", "look": "handDrawn"}}%%
     A[AI Transformation] -->|Enhances| B[Software Development]  
     B -->|Speeds Up| C[Dev Cycles]  
     B -->|Reduces| D[Bugs]  

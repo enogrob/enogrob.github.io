@@ -29,6 +29,7 @@ Once hailed as the darling of developers and startups, Ruby and its popular fram
 
 <div style="max-width: 50%; margin: auto;">
 ```mermaid!
+%%{init: {"theme": "default", "look": "handDrawn"}}%%
 graph TD
     subgraph "Ruby's Decline"
         A1[HR Focuses on Trends] --> A2[Fewer Ruby Jobs]
@@ -60,6 +61,7 @@ Ruby’s elegant design, focused on developer happiness and readability, turns i
     **Example**:
 <div style="max-width: 50%; margin: auto;">
     ```mermaid!
+%%{init: {"theme": "default", "look": "handDrawn"}}%%
     graph TD
         subgraph Example Code Comparisons
             TScript[TypeScript Code: 50 tokens] --> Ruby[Ruby Code: 17 tokens]
@@ -145,6 +147,7 @@ As AI-assisted workflows spread, **token efficiency** becomes a critical factor.
 
 <div style="max-width: 60%; margin: auto;">
 ```mermaid!
+%%{init: {"theme": "default", "look": "handDrawn"}}%%
 graph TB
     subgraph AI Workflow
         Lang[Language Used]

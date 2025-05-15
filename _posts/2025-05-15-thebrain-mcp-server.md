@@ -34,32 +34,33 @@ Picture this: You’re brainstorming on how to automate your project pipeline. I
 To make sense of how MCP fits into TheBrain, imagine it as a central **hub** that takes in your questions, finds the answers from your Brain, and, if needed, pulls additional data from the outside world. Check out this concept map:
 
 ```mermaid!
+%%{init: {"theme": "default", "look": "handDrawn"}}%%
 graph LR
-    subgraph TheBrain Platform
-        A[User Interface]
-        B[MCP Client]
+    subgraph TheBrain
+        UI["User<br>Interface"]
+        Client["MCP<br>Client"]
     end
 
-    subgraph LLM Integration
-        F[Language Models]
+    subgraph "Language Models"
+        LLM[LLM]
     end
 
-    subgraph MCP Infrastructure
-        C[MCP Server]
+    subgraph MCP
+        Server[MCP Server]
     end
 
-    subgraph External Data Sources
-        D[APIs/Services]
-        E[Local Databases]
+    subgraph "External Sources"
+        APIs[APIs]
+        DBs[Databases]
     end
 
-    A --> B
-    B -- Sends Requests --> C
-    F -- Queries --> C
-    C -- Retrieves Data --> D
-    C -- Fetches from Local --> E
-    C -- Returns Processed Data --> B
-    B --> A
+    UI -- "User asks" --> Client
+    Client -- "Request" --> Server
+    LLM -- "Query" --> Server
+    Server -- "Fetch API" --> APIs
+    Server -- "Fetch DB" --> DBs
+    Server -- "Answer" --> Client
+    Client -- "Show" --> UI
 ```
 
 ### Why This Matters: Real-World Benefits
