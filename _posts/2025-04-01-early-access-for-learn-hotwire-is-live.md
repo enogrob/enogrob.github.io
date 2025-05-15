@@ -8,7 +8,7 @@ redirect_from:
   - /hotwire/
 ---
 
-<img src="/assets/images/hotwire.png" alt="Hotwire Logo">
+<img src="/assets/images/hotwire.png" alt="Hotwire Logo" style="width:100%;height:auto;">
 
 # **Hotwire devs, rejoice — Early Access for *Learn Hotwire* is now live!**
 

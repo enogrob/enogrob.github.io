@@ -8,7 +8,7 @@ redirect_from:
   - /thebrain-mcp-server/
 ---
 
-<img src="/assets/images/thebrain-mcp-server.png" alt="TheBrain MCP Server">
+<img src="/assets/images/thebrain-mcp-server.png" alt="TheBrain MCP Server" style="width:100%;height:auto;">
 
 # **The Vision: Making TheBrain Smarter with a MCP Server**
 

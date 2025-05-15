@@ -11,7 +11,7 @@ og_image:
   default: "assets/images/tidewave.png"
 ---
 
-<img src="/assets/images/tidewave.png" alt="Meet the Tidewave AI Assistant">
+<img src="/assets/images/tidewave.png" alt="Meet the Tidewave AI Assistant" style="width:100%;height:auto;">
 
 Imagine coding with an AI that doesn't just read your code but understands your entire application as it runs. That's the promise of Tidewave, the latest innovation from José Valim and the team at Dashbit.
 

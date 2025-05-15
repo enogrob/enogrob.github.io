@@ -11,7 +11,7 @@ og_image:
   default: "assets/images/codex.png"
 ---
 
-<img src="/assets/images/codex-cli.png" alt="Codex CLI + Ruby">
+<img src="/assets/images/codex-cli.png" alt="Codex CLI + Ruby" style="width:100%;height:auto;">
 
 # **Codex CLI + Ruby: Automating Codebase Navigation via Command Line**
 

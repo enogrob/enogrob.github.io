@@ -8,7 +8,7 @@ redirect_from:
   - /hotwire/
 ---
 
-<img src="/assets/images/ai-rails.png" style="border-radius: 50%;" alt="Ruby's AI Awakening">
+<img src="/assets/images/ai-rails.png" alt="Ruby's AI Awakening" style="width:100%;height:auto;">
 
 # **Rubyists Leading the Way in the AI Revolution**
 

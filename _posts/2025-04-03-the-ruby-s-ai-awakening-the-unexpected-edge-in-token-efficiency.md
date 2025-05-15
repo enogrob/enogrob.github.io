@@ -8,7 +8,7 @@ redirect_from:
   - /ai-ruby/
 ---
 
-<img src="/assets/images/ai-ruby.png" style="border-radius: 50%;" alt="Ruby's AI Awakening">
+<img src="/assets/images/ai-ruby.png" alt="Ruby's AI Awakening" style="width:100%;height:auto;">
 
 # **Ruby’s AI Awakening: The Unexpected Edge in Token Efficiency**
 

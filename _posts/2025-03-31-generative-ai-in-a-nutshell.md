@@ -8,7 +8,7 @@ redirect_from:
   - /ainutshell/
 ---
 
-![](/assets/images/ainutshell.png)
+<img src="/assets/images/ainutshell.png" alt="TheBrain MCP Server" style="width:100%;height:auto;">
 
 # **Generative AI in a Nutshell**
 
