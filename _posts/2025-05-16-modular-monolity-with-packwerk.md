@@ -47,31 +47,38 @@ When done right, modularization in Rails creates a resilient system where parts 
 
 #### Visualization: Modularization Process
 
-The following Mermaid diagram visualizes the modularization process in Rails applications:
+```mermaid!
+%%{init: {"theme": "default", "look": "handDrawn", "flowchart": {"curve": "linear"}}}%%
+graph LR
+subgraph Monolithic_App
+  A[Monolithic Rails App] --> B[Identify Components]
+end
+B -->|Organize into Packages| C[Core Packages]
+subgraph Modularization
+  C -->|Apply Functional Isolation| D[Independent Modules]
+end
+
+subgraph Stability
+  D -->|Enforce Boundaries| E[Packwerk Packages]
+  E -->|Manage Dependencies| F[Stable Modular App]
+end
+```
 
 ```mermaid!
-%%{init: {"theme": "default", "look": "handDrawn"}}%%
+%%{init: {"theme": "default", "look": "handDrawn", "flowchart": {"curve": "linear"}}}%%
 graph LR
-    subgraph Monolithic_App["Monolithic App"]
-      direction TB
-      A[Monolithic Rails App]
-      B[Core Packages]
-      A -->|Identify Components| B
-    end
+subgraph Monolithic_App
+  A[Monolithic Rails App] --> B[Identify Components]
+end
+B -->|Organize into Packages| C[Core Packages]
+subgraph Modularization
+  C -->|Apply Functional Isolation| D[Independent Modules]
+end
 
-    subgraph Modularization
-      direction TB
-      C[Independent Modules]
-      B -->|Apply Functional Isolation| C
-    end
-
-    subgraph Stability
-      direction TB
-      D[Packwerk Packages]
-      E[Stable Modular App]
-      C -->|Enforce Boundaries| D
-      D -->|Manage Dependencies| E
-    end
+subgraph Stability
+  D -->|Enforce Boundaries| E[Packwerk Packages]
+  E -->|Manage Dependencies| F[Stable Modular App]
+end
 ```
 
 #### Final Thoughts
