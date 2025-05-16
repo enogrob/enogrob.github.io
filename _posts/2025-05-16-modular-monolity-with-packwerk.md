@@ -48,25 +48,8 @@ When done right, modularization in Rails creates a resilient system where parts 
 #### Visualization: Modularization Process
 
 ```mermaid!
-%%{init: {"theme": "default", "look": "handDrawn", "flowchart": {"curve": "linear"}}}%%
 graph LR
-subgraph Monolithic_App
-  A[Monolithic Rails App] --> B[Identify Components]
-end
-B -->|Organize into Packages| C[Core Packages]
-subgraph Modularization
-  C -->|Apply Functional Isolation| D[Independent Modules]
-end
-
-subgraph Stability
-  D -->|Enforce Boundaries| E[Packwerk Packages]
-  E -->|Manage Dependencies| F[Stable Modular App]
-end
-```
-
-```mermaid!
-%%{init: {"theme": "default", "look": "handDrawn", "flowchart": {"curve": "linear"}}}%%
-graph LR
+%%{init: {"theme": "default", "look": "handDrawn"}}%%
 subgraph Monolithic_App
   A[Monolithic Rails App] --> B[Identify Components]
 end
