@@ -67,12 +67,16 @@ graph LR
 
 Just as building a giant Lego castle requires careful planning and structure, modularizing a Rails app means thinking about stability, flexibility, and future-proofing. Use tools like Packwerk to ensure your bricks stay in place—and enjoy your well-organized, robust castle!
 
+Most of these brain-friendly building tips come straight from the awesome book [“Gradual Modularization for Ruby and Rails.”](https://leanpub.com/package-based-rails-applications) If you love stories, sketches, and learning by doing (Lego style!), check it out—it’s the instruction manual to keep handy as you build.
 
-### **References**
+Keep stacking, keep playing—and celebrate every brick that fits!
 
 <img src="/assets/images/packwerk-ebook-cover.png" alt="Gradual Modularization for Ruby and Rails - Stephan Hagemann">
 
+### **References**
+
 * Hagemann, S. (2025). [Gradual Modularization for Ruby and Rails. Leanpub.](https://leanpub.com/package-based-rails-applications)
 * Packwerk. (2020). Retrieved from [https://github.com/Shopify/packwerk](https://github.com/Shopify/packwerk)
+* Evanczuk, Evan (2022). [Laying the Cultural and Technical Foundation for Big Rails](https://www.youtube.com/watch?v=J9S0qiGkAQY)
 
 
