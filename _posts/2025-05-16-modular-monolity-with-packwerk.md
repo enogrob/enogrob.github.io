@@ -49,19 +49,44 @@ When done right, modularization in Rails creates a resilient system where parts 
 
 ```mermaid!
 %%{init: {"theme": "default", "look": "handDrawn", "flowchart": {"nodeSpacing": 60, "rankSpacing": 120}}}%%
-graph LR
-  subgraph Monolithic_App
-    A[Monolithic Rails App] --> B[Identify Components]
-  end
-  B -->|Organize into Packages| C[Core Packages]
-  subgraph Modularization
-    C -->|Apply Functional Isolation| D[Independent Modules]
-  end
-  subgraph Stability
-    D -->|Enforce Boundaries| E[Packwerk Packages]
-    E -->|Manage Dependencies| F[Stable Modular App]
-  end
+flowchart LR
+    subgraph Initialization
+        A[Start Modularization] --> B[Identify Components and Dependencies]
+    end
+
+    subgraph Packaging
+        B --> C[Define and Enforce Packages]
+    end
+
+    subgraph Refactoring
+        C --> D[Monitor and Refactor]
+    end
+
+    subgraph Deployment
+        D --> E[Test and Deploy]
+    end
+
+    subgraph Continuous Improvement
+        E --> F[Analyze and Iterate]
+        F --> B
+    end
+
+    %% Iteration points
+    style Continuous Improvement fill:#f9f,stroke:#333,stroke-width:2px
+    style Deployment fill:#9ff,stroke:#333,stroke-width:2px
+    style Refactoring fill:#f99,stroke:#333,stroke-width:2px
+    style Packaging fill:#99f,stroke:#333,stroke-width:2px
+    style Initialization fill:#99f,stroke:#333,stroke-width:2px
 ```
+
+### Key Steps:
+
+1. **Initialization:** Start the modularization process and identify components and dependencies.
+2. **Packaging:** Define modular packages and enforce boundaries.
+3. **Refactoring:** Continuously monitor the modular structure and refactor as needed.
+4. **Deployment:** Test the modular application and proceed with deployment.
+5. **Continuous Improvement:** Analyze the modular setup and make iterative improvements, looping back to component identification.
+
 
 ### **Final Thoughts**
 
