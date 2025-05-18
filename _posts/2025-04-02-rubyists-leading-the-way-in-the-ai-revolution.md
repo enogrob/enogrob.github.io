@@ -143,11 +143,12 @@ Here’s where things get practical:
 The pace of AI innovation is dizzying, but Rubyists, as always, are perfectly positioned to embrace it. By focusing on **expressiveness**, **developer happiness**, and **outcomes**, Ruby has everything it needs to lead the way in the AI-first development future.
 
 **Ready to build this future together?**  
-Join the [Ruby AI Builders](https://discord.gg/kkrpc5vDH8) and start pioneering today.
 
-**Let’s do what Rubyists do best: Rewrite what’s possible.**  
+If you're a Ruby developer eager to integrate AI into your applications, Obie Fernandez's *Patterns of Application Development Using AI* is your go-to guide. This book offers practical patterns and real-world examples to help you seamlessly incorporate AI components into your projects. It's a valuable resource for developers looking to enhance their applications with AI-driven features.
 
-*Post Inspired by Obie Fernandez’s article on the [AI-powered future of Ruby and Rails](https://medium.com/codex/the-future-of-ruby-and-rails-in-the-age-of-ai-8f1acea31bc2).*
+<img src="/assets/images/ai-rails-ebook-cover.png" alt="Patterns of Application Development Using AI - Obie Fernandez">
+
+Join also the [Ruby AI Builders](https://discord.gg/kkrpc5vDH8) and start pioneering today.
 
 ### References
 
