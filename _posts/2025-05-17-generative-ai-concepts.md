@@ -8,7 +8,7 @@ redirect_from:
   - /gen-ai/
 ---
 
-<img src="/assets/images/ainutshell.png" alt="Generative AI in a Nutshell - Henrik Kniberg" style="width:100%;height:auto;">
+<img src="/assets/images/genai-concepts.png" alt="Generative AI in a Nutshell - Henrik Kniberg" style="width:100%;height:auto;">
 
 # **Generative AI Key Concepts, Limitations, and More!**
 #### **Why Should You Care About Generative AI?**
@@ -34,6 +34,8 @@ Imagine you’re at a concert, and everyone’s screaming. Yet, somehow, you zer
 #### **Attention in Action:**
 
 Think about how ChatGPT generates long responses without losing coherence. That’s attention doing its magic—focusing on what matters and keeping the output on track.
+
+> **Hot Take:** Check out [`Attention Is All You Need`](https://en.wikipedia.org/wiki/Attention_Is_All_You_Need) by Vaswani et al.—the brainy blueprint that sparked the Transformer revolution and made attention the AI superstar!
 
 
 ### **Reasoning - Thinking Before Blabbering**
@@ -72,11 +74,25 @@ A language model trained to chat suddenly becomes amazing at analyzing medical d
 
 Generative AI is like a genie—it’ll grant your wish, but you’d better be specific! Vague requests? You might just get nonsense. Crafting the right prompt is the difference between “Help me with my resume” and “Write a professional resume for a software developer with 5 years of experience.”
 
+
+#### **Prompt Engineering vs. Prompt Imagination**
+
+*   **Prompt Imagination:** The creative process of coming up with ways to use Generative AI. It’s about **what you can do** with the model. Example: Realizing you can use an AI model as a brainstorming partner.
+*   **Prompt Engineering:** The technical craft of writing effective prompts to get the desired output. It’s about **how you do it**. Example: Asking an AI to act as a brainstorming coach and generate a list of innovative ideas.
+    
+
+#### **Why Should You Care?**
+
+*   Combining imagination with engineering gives you the best results.
+*   You’ll discover new applications for AI while also learning how to get the most accurate or creative responses.
+*   It’s not just about knowing the tool—it’s about being creative with it.
+    
 #### **Pro Tips:**
 
-* Set the context: “Pretend you’re a marketing expert...”
-* Be clear: “Summarize in three bullet points.”
-* Use role-play: “You are an AI lawyer; draft a contract.”
+*   Set the context: “Pretend you’re a marketing expert...”
+*   Be clear: “Summarize in three bullet points.”
+*   Use role-play: “You are an AI lawyer; draft a contract.”
+*   Imagine possibilities: “How could AI help me automate my weekly reports?”
 
 
 ### **Multimodal Models - More Than Just Words**
@@ -173,7 +189,7 @@ Generative AI is a super-tool—but like any tool, you’ve got to know how to u
 
 Got a story of your AI being a genius—or a total goofball? Share it in the comments!
 
-> **Quick Heads-Up:** *Generative AI in a Nutshell* by Henrik Kniberg is sketch-packed and puzzle-driven—grab the [book](https://leanpub.com/ainutshell) and dive into the [course](https://leanpub.com/c/ainutshell)!
+> **Quick Heads-Up:** *[Generative AI in a Nutshell](https://leanpub.com/ainutshell)* by Henrik Kniberg is sketch-packed and puzzle-driven—grab the [book](https://leanpub.com/ainutshell) and dive into the [course](https://leanpub.com/c/ainutshell)!
 
 <img src="/assets/images/ainutshell-ebook-cover.png" alt="Generative AI in a Nutshell - Henrik Kniberg">
 
