@@ -144,7 +144,7 @@ The pace of AI innovation is dizzying, but Rubyists, as always, are perfectly po
 
 **Ready to build this future together?**  
 
-If you're a Ruby developer eager to integrate AI into your applications, Obie Fernandez's [Patterns of Application Development Using AI](https://leanpub.com/patterns-of-application-development-using-ai) is your go-to guide. This book and also the course offers practical patterns and real-world examples to help you seamlessly incorporate AI components into your projects. It's a valuable resource for developers looking to enhance their applications with AI-driven features.
+If you're a Ruby developer eager to integrate AI into your applications, Obie Fernandez's [Patterns of Application Development Using AI](https://leanpub.com/patterns-of-application-development-using-ai) is your go-to guide. This [book](https://leanpub.com/patterns-of-application-development-using-ai) and also the [course](https://leanpub.com/c/patterns-of-application-development-using-ai) offers practical patterns and real-world examples to help you seamlessly incorporate AI components into your projects. It's a valuable resource for developers looking to enhance their applications with AI-driven features.
 
 <img src="/assets/images/ai-rails-ebook-cover.png" alt="Patterns of Application Development Using AI - Obie Fernandez">
 
