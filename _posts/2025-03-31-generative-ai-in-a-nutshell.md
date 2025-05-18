@@ -53,6 +53,10 @@ Have a **Einstein in your basement?** Or maybe a super intern? This book is for 
 
 <img src="/assets/images/einstein.png" style="border-radius: 50%;" alt="Einstein in your basement">
 
+> **Quick Heads-Up:** *Generative AI in a Nutshell* by Henrik Kniberg is sketch-packed and puzzle-driven—grab the [book](https://leanpub.com/ainutshell) and dive into the [course](https://leanpub.com/c/ainutshell)!
+
+<img src="/assets/images/ainutshell-ebook-cover.png" alt="Generative AI in a Nutshell - Henrik Kniberg">
+
 ### References
 
 - [Read the Ebook on Leanpub](https://leanpub.com/ainutshell)
