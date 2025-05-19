@@ -27,11 +27,12 @@ Kniberg describes generative AI as a turbo-charged autocomplete that can code, w
 
 According to the book, most people react to AI in one of three ways:
 
-| Reaction     | Outcome         |
-|--------------|-----------------|
-| 😱 Panic     | Fear/freeze     |
-| 🙈 Denial   | Miss the wave   |
-| 🤔 Curiosity | Learn and grow ✅ |
+| Reaction     | Outcome       |
+|--------------|---------------|
+| 😱 Panic     | Fear/freeze   |
+| 🙈 Denial   | Miss the wave |
+| 🤔 Curiosity | Learn & grow ✅ |
+
 
 Kniberg’s advice? Stay curious. Test things. Learn by doing.
 
@@ -47,13 +48,48 @@ Kniberg encourages readers to *start small and play*. Whether it’s summarizing
 
 One of the most useful takeaways: how you *talk* to AI matters. A vague prompt leads to vague results. A specific, well-contextualized prompt gets you gold. (The book includes great before-and-after examples.)
 
+```mermaid!
+%%{init: {"theme": "default", "look": "handDrawn", "flowchart": {"nodeSpacing": 60, "rankSpacing": 120}}}%%
+flowchart LR
+  subgraph Core_Magic["Core Magic"]
+    A[Autocomplete Turbocharge]
+  end
+
+  subgraph Mindset["Mindset Matters"]
+    A -->|inspires| B{Mindset Choice}
+    B -->|🤔 Curiosity| C[Learn & Grow]
+    B -->|😱 Panic| D[Freeze Up]
+    B -->|🙈 Denial| E[Miss the Wave]
+  end
+
+  subgraph Experiment["Experimentation Loop"]
+    C --> F[Start Small & Play]
+    F --> G[Prototype & Iterate]
+    G --> H[Confidence Boost]
+    H --> I{Continue?}
+    I -->|Yes| F
+    I -->|No| J[Reflect & Pivot]
+  end
+
+  subgraph Prompting["Prompt Superpowers"]
+    G --> K{Prompt Quality}
+    K -->|Vague| L[Lame Output]
+    K -->|Specific| M[Golden Response]
+    M --> N[Real-World Wins]
+  end
+
+  C -.-> N
+  D -. block .-> L
+  E -. blocked .-> L
+```
+
 Whether you’re a leader trying to future-proof your team, or a developer wondering what’s next — this book is a quick, insightful read that leaves you more inspired than overwhelmed.
 
-Have a **Einstein in your basement?** Or maybe a super intern? This book is for you.:
+If you want to have a **Einstein in your basement?** Or maybe a super intern? This book is for you.:
 
 <img src="/assets/images/einstein.png" style="border-radius: 50%;" alt="Einstein in your basement">
 
-> **Quick Heads-Up:** *Generative AI in a Nutshell* by Henrik Kniberg is sketch-packed and puzzle-driven—grab the [book](https://leanpub.com/ainutshell) and dive into the [course](https://leanpub.com/c/ainutshell)!
+> **Quick Heads-Up:** *[Generative AI in a Nutshell](https://leanpub.com/ainutshell)* by Henrik Kniberg is sketch-packed and puzzle-driven—grab the [book](https://leanpub.com/ainutshell) and dive into the [course](https://leanpub.com/c/ainutshell)!
 
 <img src="/assets/images/ainutshell-ebook-cover.png" alt="Generative AI in a Nutshell - Henrik Kniberg">
 
