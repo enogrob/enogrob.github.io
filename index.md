@@ -6,4 +6,7 @@ layout: home
 title: Home
 ---
 
-<img src="/assets/images/home.png" style="border-radius: 50%;" alt="Blog Logo">
+<img src="/assets/images/home.png" alt="Blog Logo"
+     style="width: 100%;
+            -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+            mask-image: linear-gradient(to bottom, black, transparent);">
