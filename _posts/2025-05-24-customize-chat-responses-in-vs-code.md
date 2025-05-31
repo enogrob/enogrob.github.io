@@ -7,6 +7,8 @@ mermaid: true
 redirect_from: 
   - /vscode-prompts/
 ---
+<img src="/assets/images/vscode-prompts.png" alt="Customize chat responses in VS Code" style="width:100%;height:auto;">
+
 # **Customize chat responses in VS Code**
 Copilot can tailor its responses to your coding style and project needs using the right context. By setting up custom instructions, you define rules for tasks like code generation or reviews. Prompt files let you create reusable chat prompts in Markdown format. This article explains how to use both features in Visual Studio Code to customize Copilot's behavior.
 
@@ -17,12 +19,29 @@ Imagine you’re deep into a coding session in VS Code: you ask Copilot for a sn
 Here’s what we’ll cover:
 
 ```mermaid!
-%%{init: {"theme": "default", "look": "handDrawn", "flowchart": {"nodeSpacing": 60, "rankSpacing": 120}}}%%
 flowchart LR
-    A[Enable feature flags] --> B[Create instruction files]
-    B --> C[Author prompt files]
-    C --> D[Tweak settings]
-    D --> E[Enjoy customized replies]
+  subgraph Setup
+    A[Enable flags]
+    B[Configure prompts]
+  end
+
+  subgraph Authoring
+    C[Write instructions]
+    D[Write prompt files]
+  end
+
+  subgraph Configuration
+    E[Adjust settings]
+  end
+
+  subgraph Feedback
+    F[Test responses]
+    G[Commit & share]
+    H[Iterate]
+  end
+
+  A --> B --> C --> D --> E --> F --> G --> H
+  H -.-> C
 ```
 
 ## Enable Instructions & Prompt Files
