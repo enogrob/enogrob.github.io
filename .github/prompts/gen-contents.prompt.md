@@ -14,7 +14,7 @@ Dive into Bite-Sized Chunks
 
 Mix Media Liberally
 • Embed diagrams, code samples, and screenshots right alongside the text.
-• Wherever possible, give an alternate representation (e.g. mermaid chart + narrative).
+• Wherever possible, give an alternate representation (e.g. mermaid chart + narrative). In the Mermaid markup, remind to add "!" to enable rendering e.g. ```mermaid!```.
 
 Keep It Conversational
 • Use “you” and “we,” ask rhetorical questions, and sprinkle in light humor.
