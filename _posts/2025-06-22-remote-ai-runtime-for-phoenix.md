@@ -4,7 +4,10 @@ title:  "The Remote AI Runtime for Phoenix"
 date:   2025-06-22 08:00:00 -0300
 categories: phoenix ai runtime
 mermaid: true
+redirect_from: 
+  - /ai-runtime/
 ---
+<img src="/assets/images/ai-runtime.png" alt="The Remote AI Runtime for Phoenix" style="width:100%;height:auto;">
 
 # **The Remote AI Runtime for Phoenix**
 
