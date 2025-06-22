@@ -16,7 +16,7 @@ Have you ever tried to bolt on AI features to your Phoenix app, only to watch yo
 
 In this post, we’ll walk you through:
 
-```mermaid
+```mermaid!
 mindmap
   root((Phoenix.new AI Integration))
     Initialize[Initialize Phoenix.new]
