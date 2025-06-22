@@ -14,7 +14,7 @@ Dive into Bite-Sized Chunks
 
 Mix Media Liberally
 • Embed diagrams, code samples, and screenshots right alongside the text.
-• Wherever possible, give an alternate representation (e.g. mermaid chart + narrative). In the Mermaid markup, remind to add "!" to enable rendering e.g. ```mermaid!```.
+• Wherever possible, give an alternate representation (e.g. mermaid chart + narrative). In the Mermaid diagram, identify the key concepts, keep their names short, breaking down these concepts and their interrelations from the given text of the Post. Enhance it with named relations, also remind to add "!" to enable rendering e.g. ```mermaid!``` to its markup and make use of subgraphs when possible.
 
 Keep It Conversational
 • Use “you” and “we,” ask rhetorical questions, and sprinkle in light humor.
