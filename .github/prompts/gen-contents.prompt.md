@@ -1,7 +1,7 @@
 ---
 mode: 'agent'
 ---
-Generate the content for Today date Post specified in #folder:_posts fetching the references in files .webloc located in #folder:src and follow the blueprint below to give your readers that engaging, brain-friendly “Head First” learning experience:
+Generate the content for Today date Post specified in #folder:_posts fetching the references in files .webloc located in #folder:src and follow the blueprint, do not use emoticons, see below to give your readers that engaging, brain-friendly “Head First” learning experience:
 Hook with a Story
 • Lead with a brief, concrete scenario that illustrates the problem or context.
 
