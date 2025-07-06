@@ -5,7 +5,7 @@ date:   2025-06-29 08:00:00 -0300
 categories: rails ai claude development swarm
 mermaid: true
 redirect_from: 
-  - /claudeonrails-ai-powered-rails-development-swarm/
+  - /claudeonrails/
 ---
 
 <img src="/assets/images/claudeonrails.png" alt="ClaudeOnRails: AI-Powered Rails Development Swarm" style="width:100%;height:auto;">
