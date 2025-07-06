@@ -32,7 +32,7 @@ theme: minima
 
 header_pages:
   - newsletter.md
-  # - projects.md
+  - projects.md
   - about.md
 show_excerpts: false
 plugins:
