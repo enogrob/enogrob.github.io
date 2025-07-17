@@ -54,9 +54,17 @@ table th:nth-child(3), table td:nth-child(3) {
   <div style="margin-top: 10px;">
     <a href="/resources/roberto-nogueira_cv_dev_en.pdf" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; text-decoration: none; color: #fff; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 12px 20px; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; transform: translateY(0);">
       <span style="font-size: 20px; margin-right: 10px;">📄</span>
-      <span>Download CV</span>
+      <span>Download CV - EN</span>
     </a>
   </div>
+
+  <div style="margin-top: 10px;">
+    <a href="/resources/roberto-nogueira_cv_dev_pt.pdf" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; text-decoration: none; color: #fff; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 12px 20px; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; transform: translateY(0);">
+      <span style="font-size: 20px; margin-right: 10px;">📄</span>
+      <span>Download CV - PT</span>
+  </a>
+ </div>
+
 </div>
 
 <style>
