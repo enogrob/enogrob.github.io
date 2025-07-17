@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Pocket Flow LLM graph framework"
+title:  "PocketFlow: The 100-Line LLM Framework That Makes Agents Actually Understandable"
 date:   2025-07-17 01:00:00 -0300
 categories: llm-agents pocketflow framework graph-based
 mermaid: true
