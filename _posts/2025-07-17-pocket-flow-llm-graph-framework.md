@@ -213,6 +213,216 @@ shared = {
 **Quick Recap:** Shared store is just a dictionary where all nodes can read and write information.
 
 
+## Graph Patterns: The Secret Sauce Behind Every Agent
+
+### Wait, There Are Patterns?
+
+Absolutely! Just like design patterns in software, AI agents follow predictable graph patterns. Once you know these patterns, you can build **any** agent by mixing and matching them.
+
+**Think of it like LEGO blocks:** Each pattern solves a specific problem, and you combine them to build whatever you need!
+
+<details>
+<summary><strong>🔄 Pattern #1: The Simple Loop (Most Common)</strong></summary>
+
+**When to use:** When your agent needs to keep working until it finds the right answer.
+
+**Perfect for:** Research agents, problem-solving bots, iterative refinement
+
+```mermaid!
+graph 
+    subgraph "Simple Loop Pattern"
+        A["🤔 Think"] --> B{"🔀 Good Enough?"}
+        B -->|No| C["🔍 Search More"]
+        B -->|Yes| D["✅ Done"]
+        C --> A
+    end
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+```
+
+**Real example:** "Keep searching until you have enough info to answer the question."
+
+**Your Turn:** What would you use this pattern for? *Customer support? Content research? Data analysis?*
+
+</details>
+
+<details>
+<summary><strong>🌊 Pattern #2: The Pipeline (Step-by-Step)</strong></summary>
+
+**When to use:** When you have a clear sequence of steps that must happen in order.
+
+**Perfect for:** Content generation, data processing, multi-stage analysis
+
+```mermaid!
+graph 
+    subgraph "Pipeline Pattern"
+        A["📝 Input"] --> B["🔍 Research"]
+        B --> C["✏️ Draft"]
+        C --> D["🎨 Polish"]
+        D --> E["✅ Output"]
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#e1f5fe
+    style C fill:#f3e5f5
+    style D fill:#e8f5e8
+    style E fill:#fff3e0
+```
+
+**Real example:** "Write a blog post: research → outline → draft → edit → publish."
+
+**Your Turn:** Think of a process you do manually. How would you break it into pipeline steps?
+
+</details>
+
+<details>
+<summary><strong>🌲 Pattern #3: The Decision Tree (Choose Your Path)</strong></summary>
+
+**When to use:** When different inputs need completely different handling.
+
+**Perfect for:** Customer routing, content classification, conditional workflows
+
+```mermaid!
+graph 
+    subgraph "Decision Tree Pattern"
+        A["📨 Input"] --> B{"🤔 What Type?"}
+        B -->|Question| C["❓ Answer Bot"]
+        B -->|Complaint| D["🛠️ Support Bot"]
+        B -->|Order| E["📦 Order Bot"]
+        C --> F["✅ Response"]
+        D --> F
+        E --> F
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#e1f5fe
+    style D fill:#ffebee
+    style E fill:#e8f5e8
+    style F fill:#fff3e0
+```
+
+**Real example:** "Route customer messages to the right specialist bot."
+
+**Your Turn:** What decisions does your business make repeatedly? Could a bot handle them?
+
+</details>
+
+<details>
+<summary><strong>🔄 Pattern #4: The Feedback Loop (Self-Improving)</strong></summary>
+
+**When to use:** When your agent should learn from its mistakes and get better.
+
+**Perfect for:** Quality control, A/B testing, performance optimization
+
+```mermaid!
+graph 
+    subgraph "Feedback Loop Pattern"
+        A["🎯 Try Solution"] --> B["📊 Measure Results"]
+        B --> C{"📈 Good Enough?"}
+        C -->|No| D["🔧 Adjust Approach"]
+        C -->|Yes| E["✅ Success"]
+        D --> A
+    end
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#fff3e0
+    style D fill:#ffebee
+    style E fill:#e8f5e8
+```
+
+**Real example:** "Try different email subject lines, measure open rates, keep improving."
+
+**Your Turn:** What do you currently do manually that could self-optimize? Marketing? Pricing? Scheduling?
+
+</details>
+
+<details>
+<summary><strong>⚡ Pattern #5: The Parallel Split (Do Multiple Things)</strong></summary>
+
+**When to use:** When you need to do several independent tasks at the same time.
+
+**Perfect for:** Data gathering, multi-source research, parallel processing
+
+```mermaid!
+graph 
+    subgraph "Parallel Split Pattern"
+        A["🚀 Start"] --> B["🔀 Split Tasks"]
+        B --> C["🔍 Search News"]
+        B --> D["📊 Check Data"]
+        B --> E["💬 Ask Experts"]
+        C --> F["🔄 Combine Results"]
+        D --> F
+        E --> F
+        F --> G["✅ Final Answer"]
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#e1f5fe
+    style D fill:#e8f5e8
+    style E fill:#fff8e1
+    style F fill:#ffebee
+    style G fill:#fff3e0
+```
+
+**Real example:** "Research a company by simultaneously checking news, financials, and social media."
+
+**Your Turn:** What research do you do that involves checking multiple sources? Market research? Due diligence?
+
+</details>
+
+<details>
+<summary><strong>🎛️ Pattern #6: The State Machine (Remember Context)</strong></summary>
+
+**When to use:** When your agent needs to remember where it is in a complex process.
+
+**Perfect for:** Multi-step workflows, conversation bots, guided processes
+
+```mermaid!
+graph 
+    subgraph "State Machine Pattern"
+        A["👋 Greeting"] -->|user_responds| B["🤔 Understanding"]
+        B -->|need_info| C["❓ Asking"]
+        B -->|can_help| D["🛠️ Working"]
+        C -->|info_given| B
+        D -->|done| E["✅ Complete"]
+        E -->|new_request| A
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#e1f5fe
+    style D fill:#e8f5e8
+    style E fill:#fff3e0
+```
+
+**Real example:** "Guide users through a complex signup process, remembering what they've already completed."
+
+**Your Turn:** What multi-step processes do your users go through? Onboarding? Purchasing? Support tickets?
+
+</details>
+
+### Your Turn: Pattern Recognition
+
+**Do this!** Look at these real-world scenarios and identify the pattern:
+
+1. **Email Marketing Bot:** Send email → measure opens → adjust subject line → repeat
+   - *Pattern:* `__________`
+
+2. **Content Creation:** Research topic → write outline → draft → edit → publish  
+   - *Pattern:* `__________`
+
+3. **Customer Support:** Analyze message → route to specialist → get response → send to customer
+   - *Pattern:* `__________`
+
+**Quick Recap:** Master these 6 patterns, and you can build any agent by combining them like LEGO blocks!
+
+
 ## Let's Build a Super Simple Research Agent
 
 ### Before We Code: The Mental Model
