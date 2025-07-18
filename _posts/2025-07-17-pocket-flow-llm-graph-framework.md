@@ -737,6 +737,35 @@ graph
 
 **Pro Tip:** Most real applications combine multiple patterns! Start with one pattern, prove it works, then add complexity.
 
+<details>
+<summary><strong>🎯 Quiz Answers: Design Pattern Mastery</strong></summary>
+
+<p><strong>Business Needs to Design Pattern Answers:</strong></p>
+
+<p><strong>1. Process 50,000 customer service tickets for insights</strong><br>
+&nbsp;&nbsp;&nbsp;- <em>Pattern:</em> <strong>Map-Reduce System</strong> - Break large dataset into parallel chunks for processing, then aggregate insights</p>
+
+<p><strong>2. Answer questions about company policies using internal docs</strong><br>
+&nbsp;&nbsp;&nbsp;- <em>Pattern:</em> <strong>RAG System</strong> - Retrieval-Augmented Generation to search docs and generate accurate, cited answers</p>
+
+<p><strong>3. Create social media campaigns from product descriptions</strong><br>
+&nbsp;&nbsp;&nbsp;- <em>Pattern:</em> <strong>Multi-Agent Coordination</strong> - Research agent analyzes market, Writing agent creates copy, Design agent makes visuals</p>
+
+<p><strong>4. Monitor website performance and auto-optimize</strong><br>
+&nbsp;&nbsp;&nbsp;- <em>Pattern:</em> <strong>Autonomous Agent</strong> - Makes decisions about what metrics to check and optimizations to apply</p>
+
+<hr>
+
+<p><strong>How did you score?</strong> 🎯</p>
+<ul>
+<li><strong>4/4 correct</strong>: Pattern Master! You understand how to architect real-world agent solutions</li>
+<li><strong>3/4 correct</strong>: Pattern Pro! You're ready to build production agents</li>
+<li><strong>2/4 correct</strong>: Pattern Apprentice! Review the design patterns and try again</li>
+<li><strong>1/4 correct</strong>: Pattern Beginner! Focus on understanding when to use each pattern</li>
+</ul>
+
+</details>
+
 **Quick Recap:** These design patterns are battle-tested solutions to common business problems. Pick the right combination for your use case!
 
 ## Let's Build a Super Simple Research Agent
