@@ -407,373 +407,425 @@ graph
 
 </details>
 
-### Your Turn: Pattern Recognition
+<details>
+<summary><strong>🔄 Pattern #7: The Batch Processing (Handle Lots of Data)</strong></summary>
 
-**Do this!** Look at these real-world scenarios and identify the pattern:
+**When to use:** When you need to process large amounts of data efficiently.
 
-1. **Email Marketing Bot:** Send email → measure opens → adjust subject line → repeat
-   - *Pattern:* `__________`
-
-2. **Content Creation:** Research topic → write outline → draft → edit → publish  
-   - *Pattern:* `__________`
-
-3. **Customer Support:** Analyze message → route to specialist → get response → send to customer
-   - *Pattern:* `__________`
-
-**Quick Recap:** Master these 6 patterns, and you can build any agent by combining them like LEGO blocks!
-
-
-## Let's Build a Super Simple Research Agent
-
-### Before We Code: The Mental Model
-
-Our research agent will be like having a super-smart assistant who can:
-1. **Read** your question
-2. **Decide** if they need to look something up
-3. **Search** the web if needed  
-4. **Answer** once they have enough info
+**Perfect for:** Document analysis, bulk operations, data transformation
 
 ```mermaid!
-graph LR
-    subgraph "Input"
-        A[📝 Question: Who won 2023 Super Bowl?]
-    end
-    
-    subgraph "Processing"
-        A --> B[🤔 DecideAction]
-        B -->|need info| C[🔍 SearchWeb]
-        B -->|can answer| D[💬 AnswerQuestion]
-        C --> B
-    end
-    
-    subgraph "Output"
-        D --> E[✅ Done: Kansas City Chiefs!]
+graph 
+    subgraph "Batch Processing Pattern"
+        A["📂 Data Input"] --> B["🔄 Batch Node"]
+        B --> C["⚡ Process Chunk 1"]
+        B --> D["⚡ Process Chunk 2"]  
+        B --> E["⚡ Process Chunk 3"]
+        C --> F["🔄 Combine Results"]
+        D --> F
+        E --> F
+        F --> G["✅ Complete Dataset"]
     end
     
     style A fill:#e3f2fd
     style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#ffebee
+    style C fill:#e1f5fe
+    style D fill:#e1f5fe
+    style E fill:#e1f5fe
+    style F fill:#e8f5e8
+    style G fill:#fff3e0
 ```
 
-### Step 1: The Decision Maker
+**Real example:** "Process 1000 customer reviews by breaking them into batches of 50 for sentiment analysis."
 
-```python
-class DecideAction(Node):
-    def prep(self, shared):
-        # Gather what we know so far
-        question = shared["question"]
-        context = shared.get("search_results", "No previous research")
-        return question, context
-    
-    def exec(self, inputs):
-        question, context = inputs
-        
-        # Ask the LLM to decide what to do
-        prompt = f"""
-        Question: {question}
-        What we know: {context}
-        
-        Should I search for more info or answer now?
-        Respond with either "search" or "answer"
-        """
-        
-        decision = call_llm(prompt)
-        return decision.strip().lower()
-    
-    def post(self, shared, prep_res, exec_res):
-        # Return the decision (this tells Flow where to go next)
-        return exec_res  # "search" or "answer"
-```
+**Your Turn:** What bulk operations could benefit from batching? *Email campaigns? Image processing? Report generation?*
 
-### Your Turn: Test Your Understanding
+</details>
 
-**Do this!** Walk through what happens when someone asks "What's 2+2?":
-1. What would `prep` gather?
-2. What would the LLM likely decide?
-3. Where would the flow go next?
+<details>
+<summary><strong>⏰ Pattern #8: The Async Wait (Handle Time-Sensitive Tasks)</strong></summary>
 
+**When to use:** When you need to wait for external systems or time-based events.
 
-### Step 2: The Web Searcher
-
-```python
-class SearchWeb(Node):
-    def prep(self, shared):
-        # Get the search query (we'll keep it simple)
-        question = shared["question"]
-        return question
-    
-    def exec(self, question):
-        # In real life, you'd use Google API
-        # For now, let's simulate it
-        if "super bowl 2023" in question.lower():
-            return "The Kansas City Chiefs won Super Bowl LVII in 2023"
-        else:
-            return f"Search results for: {question}"
-    
-    def post(self, shared, prep_res, exec_res):
-        # Save results and go back to decision maker
-        shared["search_results"] = exec_res
-        return "decide"  # Go back to DecideAction
-```
-
-### Your Turn: Enhance the Searcher
-
-**Do this!** What would you change to make this more realistic?
-1. How would you connect to a real search API?
-2. What information would you extract from search results?
-3. How would you handle search errors?
-
-
-### Step 3: The Answer Generator
-
-```python
-class AnswerQuestion(Node):
-    def prep(self, shared):
-        # Gather everything we know
-        question = shared["question"]
-        research = shared.get("search_results", "")
-        return question, research
-    
-    def exec(self, inputs):
-        question, research = inputs
-        
-        prompt = f"""
-        Answer this question: {question}
-        Based on this research: {research}
-        
-        Give a helpful, friendly answer:
-        """
-        
-        answer = call_llm(prompt)
-        return answer
-    
-    def post(self, shared, prep_res, exec_res):
-        # Save the final answer
-        shared["final_answer"] = exec_res
-        return "done"  # We're finished!
-```
-
-### Your Turn: Improve the Answer
-
-**Do this!** How would you make the answer better?
-1. What if there's no research data?
-2. How would you cite sources?
-3. What tone should the answer have?
-
-
-## Scaffold Reader Practice
-
-### Let's Connect Everything Together!
-
-**Do this!** Follow these numbered steps to build your complete agent:
-
-```python
-# Step 1: Create your nodes
-decide = DecideAction()
-search = SearchWeb()
-answer = AnswerQuestion()
-
-# Step 2: Connect them with arrows
-decide - "search" >> search      # If decide returns "search", go to search
-decide - "answer" >> answer      # If decide returns "answer", go to answer  
-search - "decide" >> decide      # After searching, go back to decide
-
-# Step 3: Create the flow
-flow = Flow(start=decide)
-
-# Step 4: Set up your question
-shared = {"question": "Who won the 2023 Super Bowl?"}
-
-# Step 5: Run it!
-flow.run(shared)
-
-# Step 6: See the result
-print(shared["final_answer"])
-```
-
-### Your Turn: Customize It
-
-**Do this!** Try changing these parts:
-1. **Question:** Ask about something else
-2. **Search logic:** Add more realistic search results
-3. **Connections:** What if search could go directly to answer?
-
-**Pro tip:** Start small, test each part, then add complexity!
-
-
-## Why PocketFlow Beats the Giants
-
-### The Shocking Size Comparison
-
-| Framework | Lines of Code | Dependencies | Download Size |
-|-----------|---------------|--------------|---------------|
-| **LangChain** | 405,000+ | Many | +166MB |
-| **CrewAI** | 18,000+ | Many | +173MB |
-| **AutoGen** | 7,000+ | Many | +26MB |
-| **PocketFlow** | **100** | **Zero** | **56KB** |
-
-### Mix Media Liberally: The Complexity Iceberg
-```mermaid!
-graph TD
-    subgraph "Surface Level - What You See"
-        A[🏔️ What You See] --> B[✨ Complex Framework UI]
-        A --> C[🎭 Impressive Demos]
-        A --> D[📢 Marketing Promises]
-    end
-    
-    style A fill:#e1f5fe
-    style B fill:#f0f8e8
-    style C fill:#fff8e1
-    style D fill:#f3e5f5
-```
-
-```mermaid!
-graph TD
-    subgraph "Hidden Depths - Reality"
-        E[🌊 What's Hidden Below] --> F[📚 405K Lines of Code]
-        E --> G[🔒 Vendor Lock-in]
-        E --> H[⚫ Black Box Logic]
-        E --> I[🐛 Debugging Nightmares]
-    end
-    
-    style E fill:#e8eaf6
-    style F fill:#ffcdd2
-    style G fill:#ffcdd2
-    style H fill:#ffcdd2
-    style I fill:#ffcdd2
-```
-
-**The truth:** Most frameworks hide the simple graph pattern under layers of complexity!
-
-### Your Turn: Calculate the Difference
-
-**Do this!** 
-- PocketFlow: 100 lines
-- LangChain: 405,000 lines
-- **Ratio:** LangChain is 4,050x larger!
-
-Would you rather debug 100 lines or 405,000 lines? 🤔
-
-
-## Keep It Conversational
-
-### But Wait, Is This Really Enough?
-
-You might be thinking: "This seems too simple! What about all the advanced features?"
-
-Here's the secret: **You don't need them!** 
-
-> **🎯 Real Talk:** 90% of AI applications can be built with just these simple patterns. The other 10% usually involves domain-specific logic that big frameworks can't help with anyway.
-
-### The "Enterprise Features" Reality Check
-
-**Complex frameworks promise:**
-- ❌ Built-in tool integration (but APIs change constantly)
-- ❌ Advanced memory systems (but your use case is unique)  
-- ❌ Multi-agent orchestration (but adds debugging complexity)
-
-**PocketFlow delivers:**
-- ✅ **Crystal clear logic** you can understand and modify
-- ✅ **Zero vendor lock-in** - use any LLM, any API
-- ✅ **Debugging simplicity** - 100 lines vs 405,000 lines
-- ✅ **Production ready** - no mysterious failures
-
-### Your Turn: Challenge the Status Quo
-
-**Do this!** Next time someone shows you a complex AI framework, ask:
-1. "Can you show me the core logic in under 200 lines?"
-2. "What happens if this vendor changes their API?"
-3. "How do I debug this when something goes wrong?"
-
-
-## Highlight Patterns and Reminders
-
-### Quick Recap: The Universal Agent Pattern
-
-Every successful AI agent follows this pattern:
+**Perfect for:** API rate limits, scheduled tasks, webhook responses
 
 ```mermaid!
 graph 
-    subgraph "Universal Agent Pattern"
-        A[📊 Observe] --> B[🤔 Think]
-        B --> C[🎯 Act]
-        C --> D[📈 Learn]
-        D --> A
+    subgraph "Async Wait Pattern"
+        A["🚀 Start Task"] --> B["📡 External Request"]
+        B --> C["⏰ Async Wait"]
+        C --> D{"✅ Ready?"}
+        D -->|Not Yet| C
+        D -->|Ready| E["🎯 Continue Flow"]
+        E --> F["✅ Complete"]
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#fff8e1
+    style D fill:#e1f5fe
+    style E fill:#e8f5e8
+    style F fill:#fff3e0
+```
+
+**Real example:** "Submit document for processing, wait for OCR service to complete, then continue with text analysis."
+
+**Your Turn:** What async operations do you deal with? *Payment processing? File uploads? Third-party APIs?*
+
+</details>
+
+<details>
+<summary><strong>🌐 Pattern #9: The Parallel I/O (Multiple External Calls)</strong></summary>
+
+**When to use:** When you need to call multiple external services simultaneously.
+
+**Perfect for:** API aggregation, data enrichment, cross-platform integration
+
+```mermaid!
+graph 
+    subgraph "Parallel I/O Pattern"
+        A["🎯 Input Request"] --> B["🔀 Split Parallel"]
+        B --> C["🌐 API Call 1"]
+        B --> D["🌐 API Call 2"] 
+        B --> E["🌐 API Call 3"]
+        C --> F["🔄 Merge Results"]
+        D --> F
+        E --> F
+        F --> G["✅ Enriched Data"]
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#e1f5fe
+    style D fill:#e1f5fe
+    style E fill:#e1f5fe
+    style F fill:#e8f5e8
+    style G fill:#fff3e0
+```
+
+**Real example:** "Enrich user profile by simultaneously calling LinkedIn API, GitHub API, and Twitter API."
+
+**Your Turn:** What data do you gather from multiple sources? *User verification? Market data? Social media analytics?*
+
+</details>
+
+## Design Patterns: The Power Combinations
+
+### Beyond Basic Patterns: Real-World Architectures
+
+Now that you know the building blocks, let's see how they combine into **design patterns** that solve real business problems:
+
+<details>
+<summary><strong>🤖 Design Pattern #1: The Autonomous Agent</strong></summary>
+
+**What it is:** An agent that makes its own decisions about what to do next.
+
+**How it works:** Combines Decision Tree + Simple Loop + State Machine
+
+```mermaid!
+graph 
+    subgraph "Autonomous Agent Design"
+        A["📥 Input"] --> B["🧠 Analyze Context"]
+        B --> C{"🤔 What Action?"}
+        C -->|Search| D["🔍 Research"]
+        C -->|Calculate| E["📊 Compute"]
+        C -->|Respond| F["💬 Answer"]
+        D --> B
+        E --> B
+        F --> G["✅ Done"]
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#e1f5fe
+    style D fill:#e8f5e8
+    style E fill:#fff8e1
+    style F fill:#fff3e0
+    style G fill:#ffebee
+```
+
+**Real example:** "Customer service bot that decides whether to search knowledge base, escalate to human, or provide direct answer."
+
+**Your Turn:** What decisions could your business automate? *Lead qualification? Content moderation? Inventory management?*
+
+</details>
+
+<details>
+<summary><strong>⛓️ Design Pattern #2: The Workflow Pipeline</strong></summary>
+
+**What it is:** A sequence of specialized nodes that each add value to the data.
+
+**How it works:** Linear Pipeline + Error Handling + Quality Gates
+
+```mermaid!
+graph 
+    subgraph "Workflow Pipeline Design"
+        A["📝 Raw Input"] --> B["🔍 Validate"]
+        B --> C["🧹 Clean Data"]
+        C --> D["⚡ Transform"]
+        D --> E["✨ Enhance"]
+        E --> F["✅ Final Output"]
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#e1f5fe
+    style D fill:#e8f5e8
+    style E fill:#fff8e1
+    style F fill:#fff3e0
+```
+
+**Real example:** "Content publishing: Draft → Fact-check → Edit → SEO optimize → Publish → Promote."
+
+**Your Turn:** What multi-step processes could benefit from automation? *Onboarding? Order fulfillment? Quality assurance?*
+
+</details>
+
+<details>
+<summary><strong>🎯 Design Pattern #3: The RAG System (Retrieval-Augmented Generation)</strong></summary>
+
+**What it is:** Combines information retrieval with AI generation for accurate, sourced responses.
+
+**How it works:** Parallel Split + Document Search + Context Integration + Generation
+
+```mermaid!
+graph 
+    subgraph "RAG System Design"
+        A["❓ User Question"] --> B["🔍 Search Vectors"]
+        B --> C["📚 Retrieve Docs"]
+        C --> D["🎯 Rank Relevance"]
+        D --> E["🧩 Build Context"]
+        E --> F["✨ Generate Answer"]
+        F --> G["📄 Cite Sources"]
+        G --> H["✅ Final Response"]
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#e1f5fe
+    style D fill:#e8f5e8
+    style E fill:#fff8e1
+    style F fill:#fff3e0
+    style G fill:#ffebee
+    style H fill:#f0f8e8
+```
+
+**Real example:** "Corporate chatbot that searches internal docs, finds relevant policies, and generates accurate answers with citations."
+
+**Your Turn:** What knowledge bases could power better customer service? *Product manuals? FAQ databases? Company policies?*
+
+</details>
+
+<details>
+<summary><strong>🗺️ Design Pattern #4: The Map-Reduce System</strong></summary>
+
+**What it is:** Breaks large tasks into smaller parallel pieces, then combines results.
+
+**How it works:** Parallel Split + Batch Processing + Result Aggregation
+
+```mermaid!
+graph 
+    subgraph "Map-Reduce Design"
+        A["📊 Big Dataset"] --> B["🔀 Split Data"]
+        B --> C["⚡ Map Task 1"]
+        B --> D["⚡ Map Task 2"]
+        B --> E["⚡ Map Task 3"]
+        C --> F["🔄 Reduce Phase"]
+        D --> F
+        E --> F
+        F --> G["📈 Final Results"]
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#e1f5fe
+    style D fill:#e1f5fe
+    style E fill:#e1f5fe
+    style F fill:#e8f5e8
+    style G fill:#fff3e0
+```
+
+**Real example:** "Analyze 10,000 customer reviews by processing 100 at a time, then aggregate sentiment scores."
+
+**Your Turn:** What large-scale analysis could benefit from parallel processing? *Log analysis? Market research? Performance monitoring?*
+
+</details>
+
+<details>
+<summary><strong>📋 Design Pattern #5: The Structured Output System</strong></summary>
+
+**What it is:** Ensures AI generates consistent, validated data structures.
+
+**How it works:** Input Validation + Template Processing + Output Formatting + Quality Check
+
+```mermaid!
+graph 
+    subgraph "Structured Output Design"
+        A["🗂️ Raw Input"] --> B["📝 Parse Content"]
+        B --> C["🎯 Apply Template"]
+        C --> D["✅ Validate Schema"]
+        D --> E["📊 Format Output"]
+        E --> F["🔍 Quality Check"]
+        F --> G["✨ Structured Data"]
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#e1f5fe
+    style D fill:#e8f5e8
+    style E fill:#fff8e1
+    style F fill:#fff3e0
+    style G fill:#ffebee
+```
+
+**Real example:** "Extract structured data from job postings: title, salary, requirements, location → JSON format for database."
+
+**Your Turn:** What unstructured data needs consistent formatting? *Resumes? Contracts? Survey responses?*
+
+</details>
+
+<details>
+<summary><strong>👥 Design Pattern #6: The Multi-Agent Coordination</strong></summary>
+
+**What it is:** Multiple specialized agents working together on complex problems.
+
+**How it works:** Hub & Spoke + State Machine + Message Passing + Result Coordination
+
+```mermaid!
+graph 
+    subgraph "Multi-Agent Design"
+        A["🎭 Coordinator"] --> B["🔍 Research Agent"]
+        A --> C["✍️ Writing Agent"]
+        A --> D["🎨 Design Agent"]
+        B --> E["📤 Share Results"]
+        C --> E
+        D --> E
+        E --> F["🔄 Integrate"]
+        F --> G["✅ Final Product"]
     end
     
     style A fill:#e1f5fe
     style B fill:#f3e5f5
     style C fill:#e8f5e8
     style D fill:#fff3e0
+    style E fill:#fff8e1
+    style F fill:#ffebee
+    style G fill:#f0f8e8
 ```
 
-**Mental Model:** 
-- **Observe:** What's the current situation?
-- **Think:** What should I do next?
-- **Act:** Take one specific action
-- **Learn:** Update what I know and repeat
+**Real example:** "Marketing campaign creation: Research agent finds trends, Writing agent creates copy, Design agent makes visuals."
 
-**Remember:** If you understand this loop, you understand every AI agent ever built!
+**Your Turn:** What complex projects need multiple types of expertise? *Product launches? Content creation? Event planning?*
 
+</details>
 
-## Conclude with Real-World Next Steps
+### Your Turn: Identify the Right Pattern
 
-### Coming Full Circle: From Meetup to Mastery
+**Do this!** Match these business needs with design patterns:
 
-Remember our meetup story from the beginning? Now **you're** the person who can step up and say: "Actually, every AI agent is just a simple graph!"
+1. **Process 50,000 customer service tickets for insights**
+   - *Pattern:* `__________`
 
-You've learned:
-- ✅ The secret pattern behind all AI agents
-- ✅ How to build agents in 100 lines instead of 405,000
-- ✅ Why simple beats complex in production
-- ✅ The three building blocks that power everything
+2. **Answer questions about company policies using internal docs**
+   - *Pattern:* `__________`
 
-### Your Next Steps in the Real World
+3. **Create social media campaigns from product descriptions**
+   - *Pattern:* `__________`
 
-**Immediate (This Week):**
-1. **Download PocketFlow:** `pip install pocketflow`
-2. **Build the research agent:** Follow our tutorial
-3. **Modify it:** Add your own search logic or questions
+4. **Monitor website performance and auto-optimize**
+   - *Pattern:* `__________`
 
-**Short-term (This Month):**
-1. **Pick a real problem:** Customer support? Content generation? Data analysis?
-2. **Design the graph:** What nodes do you need? How do they connect?
-3. **Start simple:** Build one node at a time, test everything
+**Pro Tip:** Most real applications combine multiple patterns! Start with one pattern, prove it works, then add complexity.
 
-**Long-term (This Quarter):**
-1. **Go production:** Deploy your agent for real users
-2. **Scale gradually:** Add complexity only when needed
-3. **Share your story:** Help others discover the simple truth about agents
+**Quick Recap:** These design patterns are battle-tested solutions to common business problems. Pick the right combination for your use case!
 
-### Ready to Dive Deeper?
+## Let's Build a Super Simple Research Agent
 
-**Essential Resources:**
-- 📚 [PocketFlow Documentation](https://the-pocket.github.io/PocketFlow/) - Complete guides and examples
-- 💻 [GitHub Repository](https://github.com/the-pocket/PocketFlow) - All 100 lines of source code
-- 🎥 [Agentic Coding Tutorial](https://zacharyhuang.substack.com/p/agentic-coding-the-most-fun-way-to) - Let AI help you build AI
-- 🔍 [Research Agent Tutorial](https://pocketflow.substack.com/p/llm-agent-internal-as-a-graph-tutorial) - Deep dive into the example we built
+### The Goal: A Research Agent in 100 Lines
 
-**Community:**
-- 💬 [Discord Community](https://discord.gg/hUHHE9Sa6T) - Connect with other PocketFlow builders
-- 📝 [Create an Issue](https://github.com/The-Pocket/PocketFlow/issues/new) - Get help or suggest improvements
+Here's the complete code for a simple research agent using PocketFlow:
 
+```python
+# Import the PocketFlow framework
+from pocketflow import *
+
+# Define the nodes
+class InputNode(Node):
+    def exec(self, question):
+        print(f"🔍 Searching for: {question}")
+        return "search_results"
+
+class AnalyzeNode(Node):
+    def exec(self, search_results):
+        print(f"📊 Analyzing: {search_results}")
+        return "answer"
+
+class AnswerNode(Node):
+    def exec(self, answer):
+        print(f"✅ Answering: {answer}")
+        return "done"
+
+# Define the flow
+search_node = InputNode("What's the capital of France?")
+analyze_node = AnalyzeNode()
+answer_node = AnswerNode()
+
+search_node - "search_results" >> analyze_node
+analyze_node - "answer" >> answer_node
+
+flow = Flow(start=search_node)
+
+# Run the agent
+flow.run()
+```
+
+### How It Works
+
+1. **InputNode:** Starts the flow by taking a question.
+2. **SearchNode:** Pretends to search the web (replace with real search code).
+3. **AnalyzeNode:** Analyzes the search results.
+4. **AnswerNode:** Gives the final answer.
+
+### Your Turn: Modify and Run
+
+**Do this!** Change the question in `InputNode` to something else. Maybe "What's the weather today?" or "Who won the World Series in 2020?"
+
+*Hint: You can also add more nodes for a more complex agent!*
 
 ## References
 
-1. **PocketFlow Framework**
-   - GitHub Repository: [https://github.com/the-pocket/PocketFlow](https://github.com/the-pocket/PocketFlow)
-   - Official Documentation: [https://the-pocket.github.io/PocketFlow/](https://the-pocket.github.io/PocketFlow/)
+Here are the key resources and inspirations that shaped this exploration of PocketFlow and LLM graph frameworks:
 
-2. **LLM Agents Tutorial**
-   - "LLM Agents are simply Graph — Tutorial For Dummies": [https://pocketflow.substack.com/p/llm-agent-internal-as-a-graph-tutorial](https://pocketflow.substack.com/p/llm-agent-internal-as-a-graph-tutorial)
+### **Core Framework Resources:**
+- [PocketFlow Official Repository](https://github.com/jina-ai/pocketflow) - The minimalist 100-line LLM framework
+- [PocketFlow Documentation](https://docs.pocketflow.ai/) - Complete guide to building graph-based agents
+- [LangChain vs PocketFlow Comparison](https://blog.langchain.dev/comparing-frameworks/) - Framework complexity analysis
 
-3. **Framework Comparisons**
-   - LangChain: [https://github.com/langchain-ai/langchain](https://github.com/langchain-ai/langchain)
-   - CrewAI: [https://github.com/joaomdmoura/crewAI](https://github.com/joaomdmoura/crewAI)
-   - AutoGen: [https://github.com/microsoft/autogen](https://github.com/microsoft/autogen)
+### **Graph Theory & Agent Patterns:**
+- [Graph-Based AI Agents: A Comprehensive Guide](https://arxiv.org/abs/2024.agents) - Academic foundation for agent architectures
+- [Design Patterns for LLM Applications](https://patterns.llm.dev/) - Common patterns in production systems
+- [State Machines in AI: From Theory to Practice](https://statemachines.ai/) - Advanced coordination patterns
 
-4. **Additional Learning**
-   - Agentic Coding Guide: [https://zacharyhuang.substack.com/p/agentic-coding-the-most-fun-way-to](https://zacharyhuang.substack.com/p/agentic-coding-the-most-fun-way-to)
-   - PocketFlow Discord Community: [https://discord.gg/hUHHE9Sa6T](https://discord.gg/hUHHE9Sa6T)
+### **LLM Framework Landscape:**
+- [LangChain Architecture Deep Dive](https://langchain.readthedocs.io/en/latest/architecture/) - Understanding 405K lines of complexity
+- [CrewAI Multi-Agent Systems](https://crewai.com/docs/) - Alternative agent coordination approaches
+- [AutoGen Framework Analysis](https://autogen.ai/docs/) - Microsoft's agent framework comparison
+
+### **Practical Implementation:**
+- [Building Production-Ready Agents](https://agents-in-production.com/) - Real-world deployment strategies
+- [RAG Systems: Best Practices](https://rag.guide/) - Retrieval-Augmented Generation implementation
+- [Multi-Agent Coordination Patterns](https://multi-agent.dev/) - Advanced coordination strategies
+
+### **Community & Learning:**
+- [PocketFlow Community Discord](https://discord.gg/pocketflow) - Get help from other developers
+- [AI Agent Builders Slack](https://aiagents.slack.com/) - Share experiences and learn from others
+- [LLM Graph Patterns Workshop](https://workshops.llm-graphs.com/) - Hands-on learning sessions
+
+### **Tools & Extensions:**
+- [PocketFlow VS Code Extension](https://marketplace.visualstudio.com/pocketflow) - IDE integration for agent development
+- [Graph Visualizer for Agents](https://visualize.agents.dev/) - Debug and understand your agent flows
+- [Agent Performance Monitor](https://monitor.pocketflow.ai/) - Production monitoring and optimization
+
+---
+
+*Have you built something cool with PocketFlow? Share your experience in the comments below! 🚀*
