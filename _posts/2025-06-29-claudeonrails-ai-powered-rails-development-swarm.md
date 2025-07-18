@@ -123,9 +123,9 @@ Absolutely! Just like Rails follows MVC patterns, AI agent swarms follow predict
 <details>
 <summary><strong>🎯 Pattern #1: The Hub & Spoke (Central Coordinator)</strong></summary>
 
-**When to use:** When you need one agent to coordinate and delegate to specialists.
+<p><strong>When to use:</strong> When you need one agent to coordinate and delegate to specialists.</p>
 
-**Perfect for:** Feature development, project planning, complex integrations
+<p><strong>Perfect for:</strong> Feature development, project planning, complex integrations</p>
 
 ```mermaid!
 graph TD
@@ -147,18 +147,18 @@ graph TD
     style G fill:#fff8e1
 ```
 
-**Real example:** "Build user authentication" → Architect breaks it down and assigns: Models (User model), Controllers (auth routes), Views (login forms), Tests (auth specs).
+<p><strong>Real example:</strong> "Build user authentication" → Architect breaks it down and assigns: Models (User model), Controllers (auth routes), Views (login forms), Tests (auth specs).</p>
 
-**Your Turn:** What complex feature would benefit from central coordination? *E-commerce checkout? Multi-tenant architecture?*
+<p><strong>Your Turn:</strong> What complex feature would benefit from central coordination? <em>E-commerce checkout? Multi-tenant architecture?</em></p>
 
 </details>
 
 <details>
 <summary><strong>🔄 Pattern #2: The Pipeline Chain (Sequential Handoffs)</strong></summary>
 
-**When to use:** When development must follow a specific sequence with handoffs.
+<p><strong>When to use:</strong> When development must follow a specific sequence with handoffs.</p>
 
-**Perfect for:** CI/CD workflows, code review processes, staged deployments
+<p><strong>Perfect for:</strong> CI/CD workflows, code review processes, staged deployments</p>
 
 ```mermaid!
 graph 
@@ -178,18 +178,18 @@ graph
     style F fill:#fff8e1
 ```
 
-**Real example:** "API development pipeline" → Models create schema → Controllers implement endpoints → Tests verify behavior → DevOps deploys and monitors.
+<p><strong>Real example:</strong> "API development pipeline" → Models create schema → Controllers implement endpoints → Tests verify behavior → DevOps deploys and monitors.</p>
 
-**Your Turn:** What development workflows in your team follow strict sequences? *Feature branches? Release processes?*
+<p><strong>Your Turn:</strong> What development workflows in your team follow strict sequences? <em>Feature branches? Release processes?</em></p>
 
 </details>
 
 <details>
 <summary><strong>🌊 Pattern #3: The Parallel Swarm (Concurrent Specialists)</strong></summary>
 
-**When to use:** When multiple agents can work simultaneously on different aspects.
+<p><strong>When to use:</strong> When multiple agents can work simultaneously on different aspects.</p>
 
-**Perfect for:** Large feature development, performance optimization, technical debt cleanup
+<p><strong>Perfect for:</strong> Large feature development, performance optimization, technical debt cleanup</p>
 
 ```mermaid!
 graph 
@@ -213,18 +213,18 @@ graph
     style G fill:#fff8e1
 ```
 
-**Real example:** "Rebuild dashboard for performance" → Models optimize queries, Controllers cache responses, Views implement lazy loading - all simultaneously.
+<p><strong>Real example:</strong> "Rebuild dashboard for performance" → Models optimize queries, Controllers cache responses, Views implement lazy loading - all simultaneously.</p>
 
-**Your Turn:** What big projects could benefit from parallel development? *Mobile app + web app? Multi-language support?*
+<p><strong>Your Turn:</strong> What big projects could benefit from parallel development? <em>Mobile app + web app? Multi-language support?</em></p>
 
 </details>
 
 <details>
 <summary><strong>🔄 Pattern #4: The Feedback Loop (Iterative Improvement)</strong></summary>
 
-**When to use:** When agents should learn from each other and continuously improve code quality.
+<p><strong>When to use:</strong> When agents should learn from each other and continuously improve code quality.</p>
 
-**Perfect for:** Code refactoring, performance tuning, security hardening
+<p><strong>Perfect for:</strong> Code refactoring, performance tuning, security hardening</p>
 
 ```mermaid!
 graph 
@@ -246,18 +246,18 @@ graph
     style F fill:#fff8e1
 ```
 
-**Real example:** "Optimize slow endpoints" → Implement changes → Run performance tests → Check metrics → Refine approach → Repeat until targets are met.
+<p><strong>Real example:</strong> "Optimize slow endpoints" → Implement changes → Run performance tests → Check metrics → Refine approach → Repeat until targets are met.</p>
 
-**Your Turn:** What aspects of your codebase could benefit from continuous improvement cycles? *Test coverage? Load times? Security?*
+<p><strong>Your Turn:</strong> What aspects of your codebase could benefit from continuous improvement cycles? <em>Test coverage? Load times? Security?</em></p>
 
 </details>
 
 <details>
 <summary><strong>🌲 Pattern #5: The Decision Tree (Smart Routing)</strong></summary>
 
-**When to use:** When different types of requests need different agent combinations.
+<p><strong>When to use:</strong> When different types of requests need different agent combinations.</p>
 
-**Perfect for:** Multi-project environments, different application types, varying complexity levels
+<p><strong>Perfect for:</strong> Multi-project environments, different application types, varying complexity levels</p>
 
 ```mermaid!
 graph 
@@ -281,18 +281,18 @@ graph
     style H fill:#f0f8e8
 ```
 
-**Real example:** "Smart routing" → API requests go to Models+Controllers+Tests, UI requests add Views+Frontend, bugs go to specialized debugging agents.
+<p><strong>Real example:</strong> "Smart routing" → API requests go to Models+Controllers+Tests, UI requests add Views+Frontend, bugs go to specialized debugging agents.</p>
 
-**Your Turn:** How could smart routing help your development workflow? *Different clients? Various project types?*
+<p><strong>Your Turn:</strong> How could smart routing help your development workflow? <em>Different clients? Various project types?</em></p>
 
 </details>
 
 <details>
 <summary><strong>⚡ Pattern #6: The Emergency Response (Crisis Management)</strong></summary>
 
-**When to use:** When production issues require immediate, coordinated response.
+<p><strong>When to use:</strong> When production issues require immediate, coordinated response.</p>
 
-**Perfect for:** Hotfixes, security patches, performance emergencies, data recovery
+<p><strong>Perfect for:</strong> Hotfixes, security patches, performance emergencies, data recovery</p>
 
 ```mermaid!
 graph 
@@ -314,18 +314,18 @@ graph
     style G fill:#fff8e1
 ```
 
-**Real example:** "Production down!" → Triage identifies database issue → Diagnostics find slow query → Fix team optimizes → Tests verify → Deploy immediately → Monitor recovery.
+<p><strong>Real example:</strong> "Production down!" → Triage identifies database issue → Diagnostics find slow query → Fix team optimizes → Tests verify → Deploy immediately → Monitor recovery.</p>
 
-**Your Turn:** What production emergencies has your team faced? How could coordinated agents help? *Database locks? Memory leaks? Security breaches?*
+<p><strong>Your Turn:</strong> What production emergencies has your team faced? How could coordinated agents help? <em>Database locks? Memory leaks? Security breaches?</em></p>
 
 </details>
 
 <details>
 <summary><strong>🔄 Pattern #7: The Circuit Breaker (Fault Tolerance)</strong></summary>
 
-**When to use:** When you need to handle agent failures gracefully and maintain system stability.
+<p><strong>When to use:</strong> When you need to handle agent failures gracefully and maintain system stability.</p>
 
-**Perfect for:** Production systems, external API dependencies, error-prone operations
+<p><strong>Perfect for:</strong> Production systems, external API dependencies, error-prone operations</p>
 
 ```mermaid!
 graph 
@@ -349,18 +349,18 @@ graph
     style H fill:#ffebee
 ```
 
-**Real example:** "Deploy feature → Primary agent fails → Fallback agent provides basic functionality → Circuit opens to prevent cascade failures."
+<p><strong>Real example:</strong> "Deploy feature → Primary agent fails → Fallback agent provides basic functionality → Circuit opens to prevent cascade failures."</p>
 
-**Your Turn:** What parts of your system need graceful degradation? *Payment processing? Email delivery? External APIs?*
+<p><strong>Your Turn:</strong> What parts of your system need graceful degradation? <em>Payment processing? Email delivery? External APIs?</em></p>
 
 </details>
 
 <details>
 <summary><strong>🎭 Pattern #8: The Actor Model (Message-Driven Coordination)</strong></summary>
 
-**When to use:** When agents need to communicate asynchronously through message passing.
+<p><strong>When to use:</strong> When agents need to communicate asynchronously through message passing.</p>
 
-**Perfect for:** Complex workflows, event-driven architectures, distributed processing
+<p><strong>Perfect for:</strong> Complex workflows, event-driven architectures, distributed processing</p>
 
 ```mermaid!
 graph 
@@ -386,18 +386,18 @@ graph
     style H fill:#f0f8e8
 ```
 
-**Real example:** "User registration → Controller sends messages → Models creates user, Views renders welcome, Tests verifies flow → All respond asynchronously."
+<p><strong>Real example:</strong> "User registration → Controller sends messages → Models creates user, Views renders welcome, Tests verifies flow → All respond asynchronously."</p>
 
-**Your Turn:** What workflows could benefit from loose coupling? *Order processing? Content publishing? User onboarding?*
+<p><strong>Your Turn:</strong> What workflows could benefit from loose coupling? <em>Order processing? Content publishing? User onboarding?</em></p>
 
 </details>
 
 <details>
 <summary><strong>⚖️ Pattern #9: The Load Balancer (Dynamic Agent Scaling)</strong></summary>
 
-**When to use:** When you need to distribute work across multiple instances of the same agent type.
+<p><strong>When to use:</strong> When you need to distribute work across multiple instances of the same agent type.</p>
 
-**Perfect for:** High-traffic applications, resource-intensive tasks, peak load handling
+<p><strong>Perfect for:</strong> High-traffic applications, resource-intensive tasks, peak load handling</p>
 
 ```mermaid!
 graph 
@@ -421,18 +421,18 @@ graph
     style G fill:#fff3e0
 ```
 
-**Real example:** "Black Friday traffic surge → Load balancer spins up 5 Models agents → Distribute database operations → Aggregate results → Handle peak load smoothly."
+<p><strong>Real example:</strong> "Black Friday traffic surge → Load balancer spins up 5 Models agents → Distribute database operations → Aggregate results → Handle peak load smoothly."</p>
 
-**Your Turn:** When does your system experience load spikes? *Marketing campaigns? End-of-month reporting? Holiday traffic?*
+<p><strong>Your Turn:</strong> When does your system experience load spikes? <em>Marketing campaigns? End-of-month reporting? Holiday traffic?</em></p>
 
 </details>
 
 <details>
 <summary><strong>🕰️ Pattern #10: The Temporal Workflow (Time-Based Coordination)</strong></summary>
 
-**When to use:** When agents need to coordinate across time with delays, scheduling, and timeouts.
+<p><strong>When to use:</strong> When agents need to coordinate across time with delays, scheduling, and timeouts.</p>
 
-**Perfect for:** Background jobs, scheduled tasks, long-running processes
+<p><strong>Perfect for:</strong> Background jobs, scheduled tasks, long-running processes</p>
 
 ```mermaid!
 graph 
@@ -457,18 +457,18 @@ graph
     style H fill:#f3e5f5
 ```
 
-**Real example:** "Weekly reports → Schedule every Monday → Timer triggers → Models agent generates → Email agent sends → Retry if failure → Log completion."
+<p><strong>Real example:</strong> "Weekly reports → Schedule every Monday → Timer triggers → Models agent generates → Email agent sends → Retry if failure → Log completion."</p>
 
-**Your Turn:** What time-based processes need automation? *Backups? Reports? Maintenance tasks? Notifications?*
+<p><strong>Your Turn:</strong> What time-based processes need automation? <em>Backups? Reports? Maintenance tasks? Notifications?</em></p>
 
 </details>
 
 <details>
 <summary><strong>🎯 Pattern #11: The Saga Pattern (Distributed Transactions)</strong></summary>
 
-**When to use:** When you need to coordinate complex transactions across multiple agents with rollback capability.
+<p><strong>When to use:</strong> When you need to coordinate complex transactions across multiple agents with rollback capability.</p>
 
-**Perfect for:** E-commerce workflows, financial operations, multi-step business processes
+<p><strong>Perfect for:</strong> E-commerce workflows, financial operations, multi-step business processes</p>
 
 ```mermaid!
 graph 
@@ -496,18 +496,18 @@ graph
     style I fill:#ffebee
 ```
 
-**Real example:** "Purchase workflow → Charge payment → Reserve inventory → Send confirmation → If any step fails → Rollback previous steps → Maintain data consistency."
+<p><strong>Real example:</strong> "Purchase workflow → Charge payment → Reserve inventory → Send confirmation → If any step fails → Rollback previous steps → Maintain data consistency."</p>
 
-**Your Turn:** What business processes need all-or-nothing execution? *User registration? Subscription changes? Data migrations?*
+<p><strong>Your Turn:</strong> What business processes need all-or-nothing execution? <em>User registration? Subscription changes? Data migrations?</em></p>
 
 </details>
 
 <details>
 <summary><strong>🔍 Pattern #12: The Observer Swarm (Event-Driven Reactions)</strong></summary>
 
-**When to use:** When multiple agents need to react to the same events independently.
+<p><strong>When to use:</strong> When multiple agents need to react to the same events independently.</p>
 
-**Perfect for:** Monitoring, analytics, notifications, audit trails
+<p><strong>Perfect for:</strong> Monitoring, analytics, notifications, audit trails</p>
 
 ```mermaid!
 graph 
@@ -535,9 +535,9 @@ graph
     style J fill:#ffcdd2
 ```
 
-**Real example:** "User signup event → Analytics tracks conversion → Notification sends welcome email → Audit logs activity → Alert notifies team → All happen independently."
+<p><strong>Real example:</strong> "User signup event → Analytics tracks conversion → Notification sends welcome email → Audit logs activity → Alert notifies team → All happen independently."</p>
 
-**Your Turn:** What events in your system need multiple reactions? *Deployments? Errors? User actions? Performance issues?*
+<p><strong>Your Turn:</strong> What events in your system need multiple reactions? <em>Deployments? Errors? User actions? Performance issues?</em></p>
 
 </details>
 
