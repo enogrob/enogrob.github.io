@@ -224,9 +224,9 @@ Absolutely! Just like design patterns in software, AI agents follow predictable 
 <details>
 <summary><strong>🔄 Pattern #1: The Simple Loop (Most Common)</strong></summary>
 
-**When to use:** When your agent needs to keep working until it finds the right answer.
+<p><strong>When to use:</strong> When your agent needs to keep working until it finds the right answer.</p>
 
-**Perfect for:** Research agents, problem-solving bots, iterative refinement
+<p><strong>Perfect for:</strong> Research agents, problem-solving bots, iterative refinement</p>
 
 ```mermaid!
 graph 
@@ -243,18 +243,18 @@ graph
     style D fill:#fff3e0
 ```
 
-**Real example:** "Keep searching until you have enough info to answer the question."
+<p><strong>Real example:</strong> "Keep searching until you have enough info to answer the question."</p>
 
-**Your Turn:** What would you use this pattern for? *Customer support? Content research? Data analysis?*
+<p><strong>Your Turn:</strong> What would you use this pattern for? <em>Customer support? Content research? Data analysis?</em></p>
 
 </details>
 
 <details>
 <summary><strong>🌊 Pattern #2: The Pipeline (Step-by-Step)</strong></summary>
 
-**When to use:** When you have a clear sequence of steps that must happen in order.
+<p><strong>When to use:</strong> When you have a clear sequence of steps that must happen in order.</p>
 
-**Perfect for:** Content generation, data processing, multi-stage analysis
+<p><strong>Perfect for:</strong> Content generation, data processing, multi-stage analysis</p>
 
 ```mermaid!
 graph 
@@ -272,18 +272,18 @@ graph
     style E fill:#fff3e0
 ```
 
-**Real example:** "Write a blog post: research → outline → draft → edit → publish."
+<p><strong>Real example:</strong> "Write a blog post: research → outline → draft → edit → publish."</p>
 
-**Your Turn:** Think of a process you do manually. How would you break it into pipeline steps?
+<p><strong>Your Turn:</strong> Think of a process you do manually. How would you break it into pipeline steps?</p>
 
 </details>
 
 <details>
 <summary><strong>🌲 Pattern #3: The Decision Tree (Choose Your Path)</strong></summary>
 
-**When to use:** When different inputs need completely different handling.
+<p><strong>When to use:</strong> When different inputs need completely different handling.</p>
 
-**Perfect for:** Customer routing, content classification, conditional workflows
+<p><strong>Perfect for:</strong> Customer routing, content classification, conditional workflows</p>
 
 ```mermaid!
 graph 
@@ -305,18 +305,18 @@ graph
     style F fill:#fff3e0
 ```
 
-**Real example:** "Route customer messages to the right specialist bot."
+<p><strong>Real example:</strong> "Route customer messages to the right specialist bot."</p>
 
-**Your Turn:** What decisions does your business make repeatedly? Could a bot handle them?
+<p><strong>Your Turn:</strong> What decisions does your business make repeatedly? Could a bot handle them?</p>
 
 </details>
 
 <details>
 <summary><strong>🔄 Pattern #4: The Feedback Loop (Self-Improving)</strong></summary>
 
-**When to use:** When your agent should learn from its mistakes and get better.
+<p><strong>When to use:</strong> When your agent should learn from its mistakes and get better.</p>
 
-**Perfect for:** Quality control, A/B testing, performance optimization
+<p><strong>Perfect for:</strong> Quality control, A/B testing, performance optimization</p>
 
 ```mermaid!
 graph 
@@ -335,18 +335,18 @@ graph
     style E fill:#e8f5e8
 ```
 
-**Real example:** "Try different email subject lines, measure open rates, keep improving."
+<p><strong>Real example:</strong> "Try different email subject lines, measure open rates, keep improving."</p>
 
-**Your Turn:** What do you currently do manually that could self-optimize? Marketing? Pricing? Scheduling?
+<p><strong>Your Turn:</strong> What do you currently do manually that could self-optimize? Marketing? Pricing? Scheduling?</p>
 
 </details>
 
 <details>
 <summary><strong>⚡ Pattern #5: The Parallel Split (Do Multiple Things)</strong></summary>
 
-**When to use:** When you need to do several independent tasks at the same time.
+<p><strong>When to use:</strong> When you need to do several independent tasks at the same time.</p>
 
-**Perfect for:** Data gathering, multi-source research, parallel processing
+<p><strong>Perfect for:</strong> Data gathering, multi-source research, parallel processing</p>
 
 ```mermaid!
 graph 
@@ -370,18 +370,18 @@ graph
     style G fill:#fff3e0
 ```
 
-**Real example:** "Research a company by simultaneously checking news, financials, and social media."
+<p><strong>Real example:</strong> "Research a company by simultaneously checking news, financials, and social media."</p>
 
-**Your Turn:** What research do you do that involves checking multiple sources? Market research? Due diligence?
+<p><strong>Your Turn:</strong> What research do you do that involves checking multiple sources? Market research? Due diligence?</p>
 
 </details>
 
 <details>
 <summary><strong>🎛️ Pattern #6: The State Machine (Remember Context)</strong></summary>
 
-**When to use:** When your agent needs to remember where it is in a complex process.
+<p><strong>When to use:</strong> When your agent needs to remember where it is in a complex process.</p>
 
-**Perfect for:** Multi-step workflows, conversation bots, guided processes
+<p><strong>Perfect for:</strong> Multi-step workflows, conversation bots, guided processes</p>
 
 ```mermaid!
 graph 
@@ -401,18 +401,18 @@ graph
     style E fill:#fff3e0
 ```
 
-**Real example:** "Guide users through a complex signup process, remembering what they've already completed."
+<p><strong>Real example:</strong> "Guide users through a complex signup process, remembering what they've already completed."</p>
 
-**Your Turn:** What multi-step processes do your users go through? Onboarding? Purchasing? Support tickets?
+<p><strong>Your Turn:</strong> What multi-step processes do your users go through? Onboarding? Purchasing? Support tickets?</p>
 
 </details>
 
 <details>
 <summary><strong>🔄 Pattern #7: The Batch Processing (Handle Lots of Data)</strong></summary>
 
-**When to use:** When you need to process large amounts of data efficiently.
+<p><strong>When to use:</strong> When you need to process large amounts of data efficiently.</p>
 
-**Perfect for:** Document analysis, bulk operations, data transformation
+<p><strong>Perfect for:</strong> Document analysis, bulk operations, data transformation</p>
 
 ```mermaid!
 graph 
@@ -436,18 +436,18 @@ graph
     style G fill:#fff3e0
 ```
 
-**Real example:** "Process 1000 customer reviews by breaking them into batches of 50 for sentiment analysis."
+<p><strong>Real example:</strong> "Process 1000 customer reviews by breaking them into batches of 50 for sentiment analysis."</p>
 
-**Your Turn:** What bulk operations could benefit from batching? *Email campaigns? Image processing? Report generation?*
+<p><strong>Your Turn:</strong> What bulk operations could benefit from batching? <em>Email campaigns? Image processing? Report generation?</em></p>
 
 </details>
 
 <details>
 <summary><strong>⏰ Pattern #8: The Async Wait (Handle Time-Sensitive Tasks)</strong></summary>
 
-**When to use:** When you need to wait for external systems or time-based events.
+<p><strong>When to use:</strong> When you need to wait for external systems or time-based events.</p>
 
-**Perfect for:** API rate limits, scheduled tasks, webhook responses
+<p><strong>Perfect for:</strong> API rate limits, scheduled tasks, webhook responses</p>
 
 ```mermaid!
 graph 
@@ -468,18 +468,18 @@ graph
     style F fill:#fff3e0
 ```
 
-**Real example:** "Submit document for processing, wait for OCR service to complete, then continue with text analysis."
+<p><strong>Real example:</strong> "Submit document for processing, wait for OCR service to complete, then continue with text analysis."</p>
 
-**Your Turn:** What async operations do you deal with? *Payment processing? File uploads? Third-party APIs?*
+<p><strong>Your Turn:</strong> What async operations do you deal with? <em>Payment processing? File uploads? Third-party APIs?</em></p>
 
 </details>
 
 <details>
 <summary><strong>🌐 Pattern #9: The Parallel I/O (Multiple External Calls)</strong></summary>
 
-**When to use:** When you need to call multiple external services simultaneously.
+<p><strong>When to use:</strong> When you need to call multiple external services simultaneously.</p>
 
-**Perfect for:** API aggregation, data enrichment, cross-platform integration
+<p><strong>Perfect for:</strong> API aggregation, data enrichment, cross-platform integration</p>
 
 ```mermaid!
 graph 
@@ -503,9 +503,9 @@ graph
     style G fill:#fff3e0
 ```
 
-**Real example:** "Enrich user profile by simultaneously calling LinkedIn API, GitHub API, and Twitter API."
+<p><strong>Real example:</strong> "Enrich user profile by simultaneously calling LinkedIn API, GitHub API, and Twitter API."</p>
 
-**Your Turn:** What data do you gather from multiple sources? *User verification? Market data? Social media analytics?*
+<p><strong>Your Turn:</strong> What data do you gather from multiple sources? <em>User verification? Market data? Social media analytics?</em></p>
 
 </details>
 
@@ -518,9 +518,9 @@ Now that you know the building blocks, let's see how they combine into **design 
 <details>
 <summary><strong>🤖 Design Pattern #1: The Autonomous Agent</strong></summary>
 
-**What it is:** An agent that makes its own decisions about what to do next.
+<p><strong>What it is:</strong> An agent that makes its own decisions about what to do next.</p>
 
-**How it works:** Combines Decision Tree + Simple Loop + State Machine
+<p><strong>How it works:</strong> Combines Decision Tree + Simple Loop + State Machine</p>
 
 ```mermaid!
 graph 
@@ -544,18 +544,18 @@ graph
     style G fill:#ffebee
 ```
 
-**Real example:** "Customer service bot that decides whether to search knowledge base, escalate to human, or provide direct answer."
+<p><strong>Real example:</strong> "Customer service bot that decides whether to search knowledge base, escalate to human, or provide direct answer."</p>
 
-**Your Turn:** What decisions could your business automate? *Lead qualification? Content moderation? Inventory management?*
+<p><strong>Your Turn:</strong> What decisions could your business automate? <em>Lead qualification? Content moderation? Inventory management?</em></p>
 
 </details>
 
 <details>
 <summary><strong>⛓️ Design Pattern #2: The Workflow Pipeline</strong></summary>
 
-**What it is:** A sequence of specialized nodes that each add value to the data.
+<p><strong>What it is:</strong> A sequence of specialized nodes that each add value to the data.</p>
 
-**How it works:** Linear Pipeline + Error Handling + Quality Gates
+<p><strong>How it works:</strong> Linear Pipeline + Error Handling + Quality Gates</p>
 
 ```mermaid!
 graph 
@@ -575,18 +575,18 @@ graph
     style F fill:#fff3e0
 ```
 
-**Real example:** "Content publishing: Draft → Fact-check → Edit → SEO optimize → Publish → Promote."
+<p><strong>Real example:</strong> "Content publishing: Draft → Fact-check → Edit → SEO optimize → Publish → Promote."</p>
 
-**Your Turn:** What multi-step processes could benefit from automation? *Onboarding? Order fulfillment? Quality assurance?*
+<p><strong>Your Turn:</strong> What multi-step processes could benefit from automation? <em>Onboarding? Order fulfillment? Quality assurance?</em></p>
 
 </details>
 
 <details>
 <summary><strong>🎯 Design Pattern #3: The RAG System (Retrieval-Augmented Generation)</strong></summary>
 
-**What it is:** Combines information retrieval with AI generation for accurate, sourced responses.
+<p><strong>What it is:</strong> Combines information retrieval with AI generation for accurate, sourced responses.</p>
 
-**How it works:** Parallel Split + Document Search + Context Integration + Generation
+<p><strong>How it works:</strong> Parallel Split + Document Search + Context Integration + Generation</p>
 
 ```mermaid!
 graph 
@@ -610,18 +610,18 @@ graph
     style H fill:#f0f8e8
 ```
 
-**Real example:** "Corporate chatbot that searches internal docs, finds relevant policies, and generates accurate answers with citations."
+<p><strong>Real example:</strong> "Corporate chatbot that searches internal docs, finds relevant policies, and generates accurate answers with citations."</p>
 
-**Your Turn:** What knowledge bases could power better customer service? *Product manuals? FAQ databases? Company policies?*
+<p><strong>Your Turn:</strong> What knowledge bases could power better customer service? <em>Product manuals? FAQ databases? Company policies?</em></p>
 
 </details>
 
 <details>
 <summary><strong>🗺️ Design Pattern #4: The Map-Reduce System</strong></summary>
 
-**What it is:** Breaks large tasks into smaller parallel pieces, then combines results.
+<p><strong>What it is:</strong> Breaks large tasks into smaller parallel pieces, then combines results.</p>
 
-**How it works:** Parallel Split + Batch Processing + Result Aggregation
+<p><strong>How it works:</strong> Parallel Split + Batch Processing + Result Aggregation</p>
 
 ```mermaid!
 graph 
@@ -645,18 +645,18 @@ graph
     style G fill:#fff3e0
 ```
 
-**Real example:** "Analyze 10,000 customer reviews by processing 100 at a time, then aggregate sentiment scores."
+<p><strong>Real example:</strong> "Analyze 10,000 customer reviews by processing 100 at a time, then aggregate sentiment scores."</p>
 
-**Your Turn:** What large-scale analysis could benefit from parallel processing? *Log analysis? Market research? Performance monitoring?*
+<p><strong>Your Turn:</strong> What large-scale analysis could benefit from parallel processing? <em>Log analysis? Market research? Performance monitoring?</em></p>
 
 </details>
 
 <details>
 <summary><strong>📋 Design Pattern #5: The Structured Output System</strong></summary>
 
-**What it is:** Ensures AI generates consistent, validated data structures.
+<p><strong>What it is:</strong> Ensures AI generates consistent, validated data structures.</p>
 
-**How it works:** Input Validation + Template Processing + Output Formatting + Quality Check
+<p><strong>How it works:</strong> Input Validation + Template Processing + Output Formatting + Quality Check</p>
 
 ```mermaid!
 graph 
@@ -678,18 +678,18 @@ graph
     style G fill:#ffebee
 ```
 
-**Real example:** "Extract structured data from job postings: title, salary, requirements, location → JSON format for database."
+<p><strong>Real example:</strong> "Extract structured data from job postings: title, salary, requirements, location → JSON format for database."</p>
 
-**Your Turn:** What unstructured data needs consistent formatting? *Resumes? Contracts? Survey responses?*
+<p><strong>Your Turn:</strong> What unstructured data needs consistent formatting? <em>Resumes? Contracts? Survey responses?</em></p>
 
 </details>
 
 <details>
 <summary><strong>👥 Design Pattern #6: The Multi-Agent Coordination</strong></summary>
 
-**What it is:** Multiple specialized agents working together on complex problems.
+<p><strong>What it is:</strong> Multiple specialized agents working together on complex problems.</p>
 
-**How it works:** Hub & Spoke + State Machine + Message Passing + Result Coordination
+<p><strong>How it works:</strong> Hub & Spoke + State Machine + Message Passing + Result Coordination</p>
 
 ```mermaid!
 graph 
@@ -713,9 +713,9 @@ graph
     style G fill:#f0f8e8
 ```
 
-**Real example:** "Marketing campaign creation: Research agent finds trends, Writing agent creates copy, Design agent makes visuals."
+<p><strong>Real example:</strong> "Marketing campaign creation: Research agent finds trends, Writing agent creates copy, Design agent makes visuals."</p>
 
-**Your Turn:** What complex projects need multiple types of expertise? *Product launches? Content creation? Event planning?*
+<p><strong>Your Turn:</strong> What complex projects need multiple types of expertise? <em>Product launches? Content creation? Event planning?</em></p>
 
 </details>
 
@@ -724,16 +724,16 @@ graph
 **Do this!** Match these business needs with design patterns:
 
 1. **Process 50,000 customer service tickets for insights**
-   - *Pattern:* `__________`
+   - <em>Pattern:</em> `__________`
 
 2. **Answer questions about company policies using internal docs**
-   - *Pattern:* `__________`
+   - <em>Pattern:</em> `__________`
 
 3. **Create social media campaigns from product descriptions**
-   - *Pattern:* `__________`
+   - <em>Pattern:</em> `__________`
 
 4. **Monitor website performance and auto-optimize**
-   - *Pattern:* `__________`
+   - <em>Pattern:</em> `__________`
 
 **Pro Tip:** Most real applications combine multiple patterns! Start with one pattern, prove it works, then add complexity.
 
