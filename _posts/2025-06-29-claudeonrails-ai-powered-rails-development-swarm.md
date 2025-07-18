@@ -77,6 +77,38 @@ Each agent has a specific role and deep Rails knowledge:
 **Your Turn**
 - Which agent would handle adding Stripe payments? (Hint: Services + Controllers + Tests)
 
+### **💡 Pattern Spotlight: Hub & Spoke in Action**
+
+Notice something familiar about the ClaudeOnRails team structure? **It's the Hub & Spoke pattern in perfect action!**
+
+```mermaid!
+graph TD
+    subgraph "ClaudeOnRails Hub & Spoke"
+        A["🎭 Architect Agent<br/>(HUB)"] --> B["📊 Models Agent"]
+        A --> C["🎮 Controllers Agent"]
+        A --> D["🎨 Views Agent"]
+        A --> E["⚙️ Services Agent"]
+        A --> F["🧪 Tests Agent"]
+        A --> G["🚀 DevOps Agent"]
+    end
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#ffebee
+    style F fill:#f0f8e8
+    style G fill:#fff8e1
+```
+
+**Why Hub & Spoke works perfectly here:**
+- **Central Coordination**: Architect Agent orchestrates the entire development process
+- **Specialized Delegation**: Each specialist agent handles their specific domain
+- **Clear Communication**: Single point of coordination prevents chaos
+- **Scalable**: Easy to add new specialist agents without changing the coordination structure
+
+The genius? ClaudeOnRails can **dynamically switch patterns** based on the task - starting with Hub & Spoke for coordination, then moving to Parallel Swarm for execution, or Pipeline Chain for sequential workflows!
+
 > **Quick Recap**: Seven specialists working in harmony beats one generalist working alone.
 
 
@@ -288,6 +320,246 @@ graph
 
 </details>
 
+<details>
+<summary><strong>🔄 Pattern #7: The Circuit Breaker (Fault Tolerance)</strong></summary>
+
+**When to use:** When you need to handle agent failures gracefully and maintain system stability.
+
+**Perfect for:** Production systems, external API dependencies, error-prone operations
+
+```mermaid!
+graph 
+    subgraph "Circuit Breaker Pattern"
+        A["📥 Request"] --> B{"🔍 Health Check"}
+        B -->|Healthy| C["🎯 Primary Agent"]
+        B -->|Degraded| D["🛡️ Fallback Agent"]
+        B -->|Failed| E["⚠️ Circuit Open"]
+        C --> F["✅ Success"]
+        D --> G["⚡ Limited Response"]
+        E --> H["❌ Fail Fast"]
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#fff3e0
+    style C fill:#e8f5e8
+    style D fill:#fff8e1
+    style E fill:#ffcdd2
+    style F fill:#e8f5e8
+    style G fill:#fff8e1
+    style H fill:#ffebee
+```
+
+**Real example:** "Deploy feature → Primary agent fails → Fallback agent provides basic functionality → Circuit opens to prevent cascade failures."
+
+**Your Turn:** What parts of your system need graceful degradation? *Payment processing? Email delivery? External APIs?*
+
+</details>
+
+<details>
+<summary><strong>🎭 Pattern #8: The Actor Model (Message-Driven Coordination)</strong></summary>
+
+**When to use:** When agents need to communicate asynchronously through message passing.
+
+**Perfect for:** Complex workflows, event-driven architectures, distributed processing
+
+```mermaid!
+graph 
+    subgraph "Actor Model Pattern"
+        A["📬 Message Queue"] --> B["🎭 Controller Actor"]
+        B --> C["📨 Send Message"]
+        C --> D["📊 Models Actor"]
+        C --> E["🎨 Views Actor"]
+        C --> F["🧪 Tests Actor"]
+        D --> G["📬 Response Queue"]
+        E --> G
+        F --> G
+        G --> H["🔄 Orchestrator"]
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#e1f5fe
+    style C fill:#f3e5f5
+    style D fill:#e8f5e8
+    style E fill:#fff3e0
+    style F fill:#fff8e1
+    style G fill:#ffebee
+    style H fill:#f0f8e8
+```
+
+**Real example:** "User registration → Controller sends messages → Models creates user, Views renders welcome, Tests verifies flow → All respond asynchronously."
+
+**Your Turn:** What workflows could benefit from loose coupling? *Order processing? Content publishing? User onboarding?*
+
+</details>
+
+<details>
+<summary><strong>⚖️ Pattern #9: The Load Balancer (Dynamic Agent Scaling)</strong></summary>
+
+**When to use:** When you need to distribute work across multiple instances of the same agent type.
+
+**Perfect for:** High-traffic applications, resource-intensive tasks, peak load handling
+
+```mermaid!
+graph 
+    subgraph "Load Balancer Pattern"
+        A["🌊 High Load"] --> B["⚖️ Load Balancer"]
+        B --> C["🔧 Models Agent 1"]
+        B --> D["🔧 Models Agent 2"]
+        B --> E["🔧 Models Agent 3"]
+        C --> F["📊 Results Aggregator"]
+        D --> F
+        E --> F
+        F --> G["✅ Combined Output"]
+    end
+    
+    style A fill:#ffcdd2
+    style B fill:#e1f5fe
+    style C fill:#f3e5f5
+    style D fill:#f3e5f5
+    style E fill:#f3e5f5
+    style F fill:#e8f5e8
+    style G fill:#fff3e0
+```
+
+**Real example:** "Black Friday traffic surge → Load balancer spins up 5 Models agents → Distribute database operations → Aggregate results → Handle peak load smoothly."
+
+**Your Turn:** When does your system experience load spikes? *Marketing campaigns? End-of-month reporting? Holiday traffic?*
+
+</details>
+
+<details>
+<summary><strong>🕰️ Pattern #10: The Temporal Workflow (Time-Based Coordination)</strong></summary>
+
+**When to use:** When agents need to coordinate across time with delays, scheduling, and timeouts.
+
+**Perfect for:** Background jobs, scheduled tasks, long-running processes
+
+```mermaid!
+graph 
+    subgraph "Temporal Workflow Pattern"
+        A["⏰ Schedule Task"] --> B["📅 Timer Agent"]
+        B --> C["🔔 Trigger Event"]
+        C --> D["🎯 Execute Agent"]
+        D --> E{"✅ Success?"}
+        E -->|Yes| F["📝 Log Success"]
+        E -->|No| G["⏳ Retry Timer"]
+        G --> H["🔄 Retry Agent"]
+        H --> E
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#fff8e1
+    style C fill:#e1f5fe
+    style D fill:#f3e5f5
+    style E fill:#fff3e0
+    style F fill:#e8f5e8
+    style G fill:#ffebee
+    style H fill:#f3e5f5
+```
+
+**Real example:** "Weekly reports → Schedule every Monday → Timer triggers → Models agent generates → Email agent sends → Retry if failure → Log completion."
+
+**Your Turn:** What time-based processes need automation? *Backups? Reports? Maintenance tasks? Notifications?*
+
+</details>
+
+<details>
+<summary><strong>🎯 Pattern #11: The Saga Pattern (Distributed Transactions)</strong></summary>
+
+**When to use:** When you need to coordinate complex transactions across multiple agents with rollback capability.
+
+**Perfect for:** E-commerce workflows, financial operations, multi-step business processes
+
+```mermaid!
+graph 
+    subgraph "Saga Pattern"
+        A["🛒 Order Request"] --> B["🎭 Saga Coordinator"]
+        B --> C["💳 Payment Agent"]
+        C --> D["📦 Inventory Agent"]
+        D --> E["📧 Email Agent"]
+        E --> F["✅ Complete"]
+        F --> G["🎉 Success"]
+        C -->|Fail| H["❌ Compensate"]
+        D -->|Fail| H
+        E -->|Fail| H
+        H --> I["🔄 Rollback"]
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#e1f5fe
+    style C fill:#f3e5f5
+    style D fill:#e8f5e8
+    style E fill:#fff3e0
+    style F fill:#e8f5e8
+    style G fill:#e8f5e8
+    style H fill:#ffcdd2
+    style I fill:#ffebee
+```
+
+**Real example:** "Purchase workflow → Charge payment → Reserve inventory → Send confirmation → If any step fails → Rollback previous steps → Maintain data consistency."
+
+**Your Turn:** What business processes need all-or-nothing execution? *User registration? Subscription changes? Data migrations?*
+
+</details>
+
+<details>
+<summary><strong>🔍 Pattern #12: The Observer Swarm (Event-Driven Reactions)</strong></summary>
+
+**When to use:** When multiple agents need to react to the same events independently.
+
+**Perfect for:** Monitoring, analytics, notifications, audit trails
+
+```mermaid!
+graph 
+    subgraph "Observer Swarm Pattern"
+        A["📊 Event Source"] --> B["📡 Event Bus"]
+        B --> C["📈 Analytics Agent"]
+        B --> D["📧 Notification Agent"]
+        B --> E["🔍 Audit Agent"]
+        B --> F["⚠️ Alert Agent"]
+        C --> G["📊 Dashboard Update"]
+        D --> H["📧 User Notification"]
+        E --> I["📝 Audit Log"]
+        F --> J["🚨 Slack Alert"]
+    end
+    
+    style A fill:#e3f2fd
+    style B fill:#e1f5fe
+    style C fill:#f3e5f5
+    style D fill:#e8f5e8
+    style E fill:#fff3e0
+    style F fill:#ffcdd2
+    style G fill:#f3e5f5
+    style H fill:#e8f5e8
+    style I fill:#fff3e0
+    style J fill:#ffcdd2
+```
+
+**Real example:** "User signup event → Analytics tracks conversion → Notification sends welcome email → Audit logs activity → Alert notifies team → All happen independently."
+
+**Your Turn:** What events in your system need multiple reactions? *Deployments? Errors? User actions? Performance issues?*
+
+</details>
+
+### Advanced Pattern Recognition Quiz
+
+**Do this!** Match these complex Rails scenarios with the advanced patterns:
+
+1. **Payment processing that must handle credit card failures gracefully**
+   - *Pattern:* `__________`
+
+2. **Background job system for processing uploaded CSV files**
+   - *Pattern:* `__________`
+
+3. **User registration that must create account, send email, setup billing, and rollback if any step fails**
+   - *Pattern:* `__________`
+
+4. **System monitoring where errors trigger multiple independent responses (logging, alerting, metrics)**
+   - *Pattern:* `__________`
+
+5. **API that scales Models agents based on traffic load**
+   - *Pattern:* `__________`
+
 ### Your Turn: Pattern Recognition
 
 **Do this!** Match these real development scenarios with the right swarm pattern:
@@ -306,7 +578,55 @@ graph
 
 **Pro Tip:** Most complex projects combine multiple patterns! For example: Decision Tree for routing → Hub & Spoke for coordination → Parallel Swarm for execution.
 
-**Quick Recap:** Master these 6 coordination patterns, and you can architect any development workflow with specialized agent teams!
+<details>
+<summary><strong>🎯 Quiz Answers: Pattern Recognition Mastery</strong></summary>
+
+<p><strong>Advanced Pattern Recognition Quiz Answers:</strong></p>
+
+<p><strong>1. Payment processing that must handle credit card failures gracefully</strong><br>
+&nbsp;&nbsp;&nbsp;- <em>Pattern:</em> <strong>Circuit Breaker</strong> - Handles failures gracefully with fallback mechanisms</p>
+
+<p><strong>2. Background job system for processing uploaded CSV files</strong><br>
+&nbsp;&nbsp;&nbsp;- <em>Pattern:</em> <strong>Temporal Workflow</strong> - Time-based coordination with scheduling and retries</p>
+
+<p><strong>3. User registration that must create account, send email, setup billing, and rollback if any step fails</strong><br>
+&nbsp;&nbsp;&nbsp;- <em>Pattern:</em> <strong>Saga Pattern</strong> - Distributed transactions with rollback capability</p>
+
+<p><strong>4. System monitoring where errors trigger multiple independent responses (logging, alerting, metrics)</strong><br>
+&nbsp;&nbsp;&nbsp;- <em>Pattern:</em> <strong>Observer Swarm</strong> - Multiple agents react to the same events independently</p>
+
+<p><strong>5. API that scales Models agents based on traffic load</strong><br>
+&nbsp;&nbsp;&nbsp;- <em>Pattern:</em> <strong>Load Balancer</strong> - Dynamic agent scaling for high-traffic scenarios</p>
+
+<hr>
+
+<p><strong>Your Turn Pattern Recognition Answers:</strong></p>
+
+<p><strong>1. Building a new microservice from scratch</strong><br>
+&nbsp;&nbsp;&nbsp;- <em>Pattern:</em> <strong>Hub & Spoke</strong> - Central coordination with specialist delegation</p>
+
+<p><strong>2. Monthly security audit and updates across all apps</strong><br>
+&nbsp;&nbsp;&nbsp;- <em>Pattern:</em> <strong>Temporal Workflow</strong> - Scheduled, time-based coordination</p>
+
+<p><strong>3. Different teams requesting APIs vs full-stack features</strong><br>
+&nbsp;&nbsp;&nbsp;- <em>Pattern:</em> <strong>Decision Tree</strong> - Smart routing based on request type</p>
+
+<p><strong>4. Site performance is degrading, need continuous optimization</strong><br>
+&nbsp;&nbsp;&nbsp;- <em>Pattern:</em> <strong>Feedback Loop</strong> - Iterative improvement with continuous monitoring</p>
+
+<hr>
+
+<p><strong>How did you score?</strong> 🎯</p>
+<ul>
+<li><strong>8/8 correct</strong>: Pattern Master! You're ready to architect complex agent swarms</li>
+<li><strong>6-7 correct</strong>: Pattern Pro! You understand the core concepts</li>
+<li><strong>4-5 correct</strong>: Pattern Apprentice! Review the examples and try again</li>
+<li><strong>0-3 correct</strong>: Pattern Beginner! Focus on understanding when to use each pattern</li>
+</ul>
+
+</details>
+
+**Quick Recap:** Master these 12 coordination patterns, and you can architect any development workflow with specialized agent teams!
 
 ## 3. Installation & Setup
 Getting your AI development team up and running is surprisingly simple:
