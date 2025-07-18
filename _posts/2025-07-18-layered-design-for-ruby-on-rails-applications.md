@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Layered Design for Ruby on Rails Applications: Master the Extended Rails Way"
-date: 2025-07-18 08:00:00 -0300
+date: 2025-07-19 08:00:00 -0300
 categories: rails architecture layered-design ruby
 mermaid: true
 redirect_from: 
