@@ -75,6 +75,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - src/
+  - src-history/
 # Where things are
 jekyll-spaceship:
   # default enabled processors
