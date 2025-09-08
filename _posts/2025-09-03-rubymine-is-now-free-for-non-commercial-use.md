@@ -4,6 +4,9 @@ title:  "RubyMine is now free for non-commercial use"
 date:   2025-09-03 03:00:00 -0300
 categories: 
 mermaid: true
+redirect_from: 
+  - /rubymine/
+---
 ---
 
 
