@@ -6,7 +6,7 @@ permalink: /about/
 
 <img src="/assets/images/enogrob.png" style="border-radius: 50%;" alt="My Photo">
 
-Telecom/Software Engineer with 10+ years of experience in Development, Operations, and Integration, including 7+ years in Ruby on Rails and 3+ years as an Ericsson Certified Consultant. Skilled in Ruby, Elixir, JavaScript, React, and GraphQL, with expertise in event-driven architectures, Sidekiq, Redis, microservices, and DevOps (Docker, Kubernetes, AWS). Experienced in OSS/BSS Ericsson products, scalable systems, and CI/CD pipelines. Strong background in multi-cultural, international environments (+2 years abroad), mentoring, and driving innovation. Fluent in English, open to travel and shift work.
+AI-Native Software Engineer with a strong Telecom background and 7+ years of Ruby on Rails experience. Skilled in Ruby, React, JavaScript, Python, and Elixir, with expertise in Agentic Systems, Modular Monoliths, Microservices, scalable backend architectures, CI/CD, and automation. Ericsson Certified Consultant with extensive OSS/BSS and systems integration experience across international environments. Experienced in mentoring, technical leadership, and delivering reliable software solutions. Fluent in English.
 
 ### Connect with me
 
