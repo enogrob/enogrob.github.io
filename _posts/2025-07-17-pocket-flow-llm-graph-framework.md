@@ -8,9 +8,7 @@ redirect_from:
   - /pocket-flow-llm-graph-framework/
 ---
 
-<img src="/assets/images/pocketflow-cover.png" alt="Pocket Flow - 100-line LLM Framework" style="width:100%;height:auto;">
-
-# **PocketFlow: The 100-Line LLM Framework That Makes Agents Actually Understandable**
+<img src="/assets/images/posts/pocketflow-100-line-llm-framework/cover.webp" alt="Pocket Flow - 100-line LLM Framework" style="width:100%;height:auto;">
 
 ## Hook with a Story
 

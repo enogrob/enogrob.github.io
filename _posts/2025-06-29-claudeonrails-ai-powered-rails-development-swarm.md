@@ -8,9 +8,7 @@ redirect_from:
   - /claudeonrails/
 ---
 
-<img src="/assets/images/claudeonrails.png" alt="ClaudeOnRails: AI-Powered Rails Development Swarm" style="width:100%;height:auto;">
-
-# **ClaudeOnRails: AI-Powered Rails Development Swarm**
+<img src="/assets/images/posts/claudeonrails-development-swarm/cover.webp" alt="ClaudeOnRails: AI-Powered Rails Development Swarm" style="width:100%;height:auto;">
 
 ## Hook with a Story
 Picture this: You're building a Rails app at 2 AM, coffee-fueled and context-switching between models, controllers, views, and tests. You ask Claude for help with authentication, but now you're manually coordinating database migrations, controller logic, view templates, and test coverage across seven different chat sessions. What if instead of playing conductor to a one-person AI orchestra, you had an entire **specialized development team** that automatically knew who should handle what? Meet ClaudeOnRails—where AI agents work like your dream development team.

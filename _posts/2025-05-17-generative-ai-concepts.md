@@ -8,9 +8,8 @@ redirect_from:
   - /gen-ai/
 ---
 
-<img src="/assets/images/genai-concepts.png" alt="Generative AI in a Nutshell - Henrik Kniberg" style="width:100%;height:auto;">
+<img src=" /assets/images/posts/generative-ai-concepts/cover.webp" alt="Generative AI in a Nutshell - Henrik Kniberg" style="width:100%;height:auto;">
 
-# **Generative AI Key Concepts, Limitations, and More!**
 #### **Why Should You Care About Generative AI?**
 
 Imagine this: You’ve got Einstein, a master chef, a data scientist, and a stand-up comedian all hanging out in your basement, ready to help you with whatever you need. That’s Generative AI in a nutshell!

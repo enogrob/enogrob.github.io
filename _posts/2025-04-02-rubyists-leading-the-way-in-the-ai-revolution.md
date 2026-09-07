@@ -8,10 +8,7 @@ redirect_from:
   - /hotwire/
 ---
 
-<img src="/assets/images/ai-rails.png" alt="Ruby's AI Awakening" style="width:100%;height:auto;">
-
-# **Rubyists Leading the Way in the AI Revolution**
-
+<img src="/assets/images/posts/rubyists-ai-revolution/cover.webp" alt="Rubyists Leading the Way in the AI Revolution"  style="width:100%;height:auto;">
 
 Artificial Intelligence (AI) isn’t just knocking on the door of software development—it’s tearing the whole thing down to reimagine how we build, debug, and optimize applications. If you’re like me, you’ve probably wondered: “How will languages like Ruby and frameworks like Rails survive this massive shift?”  
 

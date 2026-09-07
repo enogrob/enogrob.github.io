@@ -11,9 +11,7 @@ og_image:
   default: "assets/images/codex.png"
 ---
 
-<img src="/assets/images/codex-cli.png" alt="Codex CLI + Ruby" style="width:100%;height:auto;">
-
-# **Codex CLI + Ruby: Automating Codebase Navigation via Command Line**
+<img src="/assets/images/posts/codex-cli-ruby/cover.webp" alt="Codex CLI + Ruby" style="width:100%;height:auto;">
 
 Picture this: you’ve inherited a sprawling Ruby codebase with no documentation. It feels like wandering through a dense forest without a compass. Enter **OpenAI's Codex CLI**, your AI companion that turns code spelunking into a guided tour.
 

@@ -8,9 +8,7 @@ redirect_from:
   - /hotwire/
 ---
 
-<img src="/assets/images/hotwire.png" alt="Hotwire Logo" style="width:100%;height:auto;">
-
-# **Hotwire devs, rejoice — Early Access for *Learn Hotwire* is now live!**
+<img src="/assets/images/posts/learn-hotwire-early-access/cover.webp" alt="Learn Hotwire Early Access"  style="width:100%;height:auto;">
 
 Chris Oliver and William Kennedy have been quietly building something big — and they just pulled the curtain back.
 

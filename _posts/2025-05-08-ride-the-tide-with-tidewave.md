@@ -11,12 +11,9 @@ og_image:
   default: "assets/images/tidewave.png"
 ---
 
-<img src="/assets/images/tidewave.png" alt="Meet the Tidewave AI Assistant" style="width:100%;height:auto;">
+<img src="/assets/images/posts/tidewave-runtime-intelligence/cover.webp" alt="Meet the Tidewave AI Assistant" style="width:100%;height:auto;">
 
 Imagine coding with an AI that doesn't just read your code but understands your entire application as it runs. That's the promise of Tidewave, the latest innovation from José Valim and the team at Dashbit.
-
-
-# **Ride the Tide with Tidewave: Runtime Intelligence for Rails and Phoenix**
 
 Tidewave introduces "Runtime Intelligence," bridging the gap between static code analysis and dynamic application behavior. By embedding a Model Context Protocol (MCP) server into your web application, Tidewave enables AI assistants to interact with your app's live state. This means AI tools can now:
 

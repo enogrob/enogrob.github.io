@@ -7,9 +7,7 @@ mermaid: true
 redirect_from: 
   - /ai-runtime/
 ---
-<img src="/assets/images/ai-runtime.png" alt="The Remote AI Runtime for Phoenix" style="width:100%;height:auto;">
-
-# **The Remote AI Runtime for Phoenix**
+<img src="/assets/images/posts/remote-ai-runtime-for-phoenix/cover.webp" alt="The Remote AI Runtime for Phoenix" style="width:100%;height:auto;">
 
 ## Hook with a Story
 Imagine you’re racing against the clock: juggling local servers, tangled configs, and endless `mix phx.server` restarts—only to spot a typo after hours of debugging. What if your IDE, your terminal, and your CI pipeline could all live in one browser tab, effortlessly orchestrated by an AI sidekick? Enter **Phoenix.new**, your new best friend for building Phoenix apps without installation headaches or context switching.

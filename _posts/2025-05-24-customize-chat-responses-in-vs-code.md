@@ -7,9 +7,8 @@ mermaid: true
 redirect_from: 
   - /vscode-prompts/
 ---
-<img src="/assets/images/vscode-prompts.png" alt="Customize chat responses in VS Code" style="width:100%;height:auto;">
+<img src="/assets/images/posts/customize-chat-responses-vscode/cover.webp" alt="Customize chat responses in VS Code" style="width:100%;height:auto;">
 
-# **Customize chat responses in VS Code**
 Copilot can tailor its responses to your coding style and project needs using the right context. By setting up custom instructions, you define rules for tasks like code generation or reviews. Prompt files let you create reusable chat prompts in Markdown format. This article explains how to use both features in Visual Studio Code to customize Copilot's behavior.
 
 ## Hook with a Story

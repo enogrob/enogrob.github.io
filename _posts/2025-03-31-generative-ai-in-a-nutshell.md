@@ -8,9 +8,7 @@ redirect_from:
   - /ainutshell/
 ---
 
-<img src="/assets/images/ainutshell.png" alt="TheBrain MCP Server" style="width:100%;height:auto;">
-
-# **Generative AI in a Nutshell**
+<img src="/assets/images/posts/generative-ai-in-a-nutshell/cover.webp" alt="Generative AI in a Nutshell"  style="width:100%;height:auto;">
 
 Just finished reading **Generative AI in a Nutshell** by *Henrik Kniberg* — and wow, what a ride!
 

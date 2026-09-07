@@ -8,9 +8,7 @@ redirect_from:
   - /ai-ruby/
 ---
 
-<img src="/assets/images/ai-ruby.png" alt="Ruby's AI Awakening" style="width:100%;height:auto;">
-
-# **Ruby’s AI Awakening: The Unexpected Edge in Token Efficiency**
+<img src="/assets/images/posts/ruby-ai-token-efficiency/cover.webp" alt="Ruby's AI Awakening" style="width:100%;height:auto;">
 
 Once hailed as the darling of developers and startups, Ruby and its popular framework Ruby on Rails faced a steady decline over the last decade. But just when Ruby seemed relegated to nostalgia for developers of the mid-2000s, a new player entered the scene that might launch Ruby back into relevance: Artificial Intelligence (AI).
 

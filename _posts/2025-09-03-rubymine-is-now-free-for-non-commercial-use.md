@@ -7,13 +7,8 @@ mermaid: true
 redirect_from: 
   - /rubymine/
 ---
----
 
-
-# 🚀 **RubyMine is Now Free for Non-Commercial Use!**
-
-<img src="/assets/images/rubymine.png" alt="RubyMine is now free for non-commercial use" style="width:100%;height:auto;">
-
+<img src="/assets/images/posts/rubymine-free-non-commercial/cover.webp" alt="RubyMine is now free for non-commercial use" style="width:100%;height:auto;">
 
 ## Hook with a Story
 

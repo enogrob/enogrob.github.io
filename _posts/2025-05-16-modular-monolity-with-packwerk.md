@@ -8,9 +8,7 @@ redirect_from:
   - /packwerk/
 ---
 
-<img src="/assets/images/packwerk.png" alt="Building a Modular Ruby on Rails Application - Stephan Hagemann" style="width:100%;height:auto;">
-
-# **Building a Modular Ruby on Rails Application: One Brick at a Time**
+<img src="/assets/images/posts/modular-rails-with-packwerk/cover.webp" alt="Building a Modular Ruby on Rails Application - Stephan Hagemann" style="width:100%;height:auto;">
 
 Imagine you're building a massive Lego castle. At first, it's just a few basic walls—easy to manage, right? But as you add towers, drawbridges, and intricate little windows, things start to get a bit... chaotic. You realize that if you don't plan and structure it carefully, your castle could collapse or take ages to fix if one piece breaks. Welcome to the world of modularizing Ruby on Rails applications!
 

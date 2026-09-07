@@ -8,9 +8,7 @@ redirect_from:
   - /thebrain-mcp-server/
 ---
 
-<img src="/assets/images/thebrain-mcp-server.png" alt="TheBrain MCP Server" style="width:100%;height:auto;">
-
-# **The Vision: Making TheBrain Smarter with a MCP Server**
+<img src="/assets/images/posts/thebrain-mcp-server/cover.webp" alt="TheBrain MCP Server" style="width:100%;height:auto;">
 
 Imagine walking through your Brain—the digital map of your thoughts and ideas. You have pathways, connections, and concepts intertwined, but something’s missing. What if your Brain could actually think for itself? What if it could actively talk to AI, generating insights and managing knowledge for you?
 
