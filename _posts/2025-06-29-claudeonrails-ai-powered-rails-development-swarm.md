@@ -3,6 +3,7 @@ layout: post
 title:  "ClaudeOnRails: AI-Powered Rails Development Swarm"
 date:   2025-06-29 08:00:00 -0300
 categories: rails ai claude development swarm
+image: /assets/images/posts/claudeonrails-development-swarm/cover.webp
 mermaid: true
 redirect_from: 
   - /claudeonrails/

@@ -3,6 +3,7 @@ layout: post
 title:  "Generative AI in a Nutshell"
 date:   2025-03-31 20:00:00 -0300
 categories: ai book
+image: /assets/images/posts/generative-ai-in-a-nutshell/cover.webp
 mermaid: true
 redirect_from: 
   - /ainutshell/

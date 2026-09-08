@@ -3,6 +3,7 @@ layout: post
 title:  "Generative AI concepts"
 date:   2025-05-17 08:00:00 -0300
 categories: generative-ai 
+image: /assets/images/posts/generative-ai-concepts/cover.webp
 mermaid: true
 redirect_from: 
   - /gen-ai/

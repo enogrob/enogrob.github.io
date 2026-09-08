@@ -3,6 +3,7 @@ layout: post
 title:  "Customize chat responses in VS Code"
 date:   2025-05-24 08:00:00 -0300
 categories: vscode prompt instruction 
+image: /assets/images/posts/customize-chat-responses-vscode/cover.webp
 mermaid: true
 redirect_from: 
   - /vscode-prompts/

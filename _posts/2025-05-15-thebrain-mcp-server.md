@@ -3,6 +3,7 @@ layout: post
 title:  "The Vision: making TheBrain Smarter with a MCP Server"
 date:   2025-05-15 01:40:00 -0300
 categories: thebrain mcp
+image: /assets/images/posts/thebrain-mcp-server/cover.webp
 mermaid: true
 redirect_from: 
   - /thebrain-mcp-server/

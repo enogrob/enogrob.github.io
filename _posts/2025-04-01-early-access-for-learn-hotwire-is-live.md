@@ -3,6 +3,7 @@ layout: post
 title:  "Early Access for Learn Hotwire is Live"
 date:   2025-04-01 01:00:00 -0300
 categories: ruby rails hotwire
+image: /assets/images/posts/learn-hotwire-early-access/cover.webp
 mermaid: true
 redirect_from: 
   - /hotwire/

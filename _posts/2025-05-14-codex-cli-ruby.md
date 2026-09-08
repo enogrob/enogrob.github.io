@@ -3,6 +3,7 @@ layout: post
 title:  "Codex CLI + Ruby: Automating Codebase Navigation via Command Line"
 date:   2025-05-14 10:00:00 -0300
 categories: ruby codex
+image: /assets/images/posts/codex-cli-ruby/cover.webp
 mermaid: true
 redirect_from: 
   - /codex-cli/

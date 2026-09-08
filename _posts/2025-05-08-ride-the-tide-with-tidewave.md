@@ -3,6 +3,7 @@ layout: post
 title:  "Ride the Tide with Tidewave: Runtime Intelligence for Rails and Phoenix"
 date:   2025-05-08 16:00:00 -0300
 categories: ruby phoenix
+image: /assets/images/posts/tidewave-runtime-intelligence/cover.webp
 mermaid: true
 redirect_from: 
   - /tidewave/

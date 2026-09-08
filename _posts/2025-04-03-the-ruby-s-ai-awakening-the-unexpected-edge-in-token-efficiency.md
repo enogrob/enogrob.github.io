@@ -3,6 +3,7 @@ layout: post
 title:  "Ruby’s AI Awakening: The Unexpected Edge in Token Efficiency"
 date:   2025-04-03 17:00:00 -0300
 categories: ruby ai
+image: /assets/images/posts/ruby-ai-token-efficiency/cover.webp
 mermaid: true
 redirect_from: 
   - /ai-ruby/

@@ -3,6 +3,7 @@ layout: post
 title:  "Rubyists Leading the Way in the AI Revolution"
 date:   2025-04-02 22:00:00 -0300
 categories: ruby rails ai
+image: /assets/images/posts/rubyists-ai-revolution/cover.webp
 mermaid: true
 redirect_from: 
   - /hotwire/

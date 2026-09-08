@@ -3,6 +3,7 @@ layout: post
 title:  "The Remote AI Runtime for Phoenix"
 date:   2025-06-22 08:00:00 -0300
 categories: phoenix ai runtime
+image: /assets/images/posts/remote-ai-runtime-for-phoenix/cover.webp
 mermaid: true
 redirect_from: 
   - /ai-runtime/

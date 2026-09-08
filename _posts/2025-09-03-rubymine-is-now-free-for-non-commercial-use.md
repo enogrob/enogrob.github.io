@@ -3,6 +3,7 @@ layout: post
 title:  "RubyMine is now free for non-commercial use"
 date:   2025-09-03 03:00:00 -0300
 categories: 
+image: /assets/images/posts/rubymine-free-non-commercial/cover.webp
 mermaid: true
 redirect_from: 
   - /rubymine/

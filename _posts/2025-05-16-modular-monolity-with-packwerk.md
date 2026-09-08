@@ -3,6 +3,7 @@ layout: post
 title:  "Building a Modular Ruby on Rails Application"
 date:   2025-05-16 08:00:00 -0300
 categories: ruby-on-rails packwerk modular-monolith
+image: /assets/images/posts/modular-rails-with-packwerk/cover.webp
 mermaid: true
 redirect_from: 
   - /packwerk/
