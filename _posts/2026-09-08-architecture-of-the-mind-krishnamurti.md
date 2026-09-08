@@ -1,19 +1,18 @@
 ---
 layout: post
-title: "Architecture of the Mind: Reading Krishnamurti Through Systems Thinking"
-date: 2026-09-08 00:00:00 -0300
+title: "Architecture of the Mind: A Visual Model Through Ruby and Systems Thinking"
+date: 2026-09-08 21:00:00 -0300
 categories: [philosophy, consciousness, visual-learning, ruby]
 tags: [j-krishnamurti, mind, thought, insight, oop, metaprogramming]
-image: /assets/images/posts/krishnamurti-mind-architecture/cover.webp
 mermaid: true
 description: "A visual and brain-friendly map of the brain, conditioning, memory, thought, the self, fear, desire, attention, insight, and intelligence—with a companion Ruby architecture metaphor."
 ---
 
-<img src="/assets/images/posts/krishnamurti-mind-architecture/cover.webp" alt="Illustrated architecture of the mind inspired by J. Krishnamurti" style="width:100%;height:auto;">
+<img src="/assets/images/posts/krishnamurti-mind-architecture/cover.webp" alt="Illustrated architecture of the mind through Ruby and systems thinking" style="width:100%;height:auto;">
 
 The mind is usually described through isolated words: *thought*, *memory*, *fear*, *desire*, *attention*, and *insight*. But these are not separate pieces sitting side by side. They form relationships, feedback loops, and patterns that reveal how conditioning shapes perception.
 
-This visual map approaches J. Krishnamurti's teachings through the eyes of a systems thinker. The architecture metaphor can help us see the relationships—but it must remain a metaphor. The description is never the described.
+This visual map approaches the mind through systems thinking, object-oriented design, and direct observation. One of its principal conceptual references is J. Krishnamurti's exploration of conditioning, thought, the observer, attention, and insight. The architecture metaphor can help us see relationships—but it must remain a metaphor. The description is never the described.
 
 > **Central question:** Can the brain meet *what-is* directly, without translating the present through the accumulated past?
 
@@ -24,7 +23,7 @@ The cover introduces the central movement in a simple visual form. The two detai
 <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-start;">
   <figure style="flex:1 1 320px;margin:0;">
     <a href="/assets/images/posts/krishnamurti-mind-architecture/mind-architecture-reference.webp">
-      <img src="/assets/images/posts/krishnamurti-mind-architecture/mind-architecture-thumb.webp" alt="Detailed illustrated architecture of the mind inspired by J. Krishnamurti" style="width:100%;height:auto;border-radius:8px;">
+      <img src="/assets/images/posts/krishnamurti-mind-architecture/mind-architecture-thumb.webp" alt="Detailed illustrated relational architecture of the mind" style="width:100%;height:auto;border-radius:8px;">
     </a>
     <figcaption style="text-align:center;"><em>Conceptual architecture — click to enlarge</em></figcaption>
   </figure>
@@ -40,86 +39,20 @@ The cover introduces the central movement in a simple visual form. The two detai
 
 ```mermaid!
 flowchart LR
-    W["🌿 What-is"] --> P["👁️ Perception"]
-
-    subgraph KNOWN["🧠 The known"]
-      K["📚 Memory and knowledge"] --> S["🪞 Self / observer"]
-      S --> C["⚡ Conflict"]
-    end
-
-    subgraph DIRECT["✨ Direct seeing"]
-      A["🔎 Choiceless awareness"] --> I["💡 Insight"]
-      I --> Q["🌌 Quiet brain"]
-      Q --> N["🌱 Intelligence in action"]
-    end
-
-    P --> K
-    P --> A
-
-    classDef fact fill:#e5f4e9,stroke:#77ad87,color:#24452d
-    classDef known fill:#dceeff,stroke:#6b9fd1,color:#18344d
-    classDef tension fill:#ffe5d9,stroke:#e28c68,color:#542b1f
-    classDef insight fill:#fff2bf,stroke:#d6ae45,color:#4b3b08
-    class W,P fact
-    class K known
-    class S,C tension
-    class A,I,Q,N insight
+    W["What-is"] --> P["Perception"]
+    P --> K["The known"]
+    K --> S["Self / observer"]
+    S --> C["Conflict"]
+    P --> A["Choiceless awareness"]
+    A --> I["Insight"]
+    I --> Q["Quiet brain"]
+    Q --> N["Intelligence in action"]
 ```
 
 Keep two movements in view:
 
 1. The known interprets the present and preserves its own continuity.
 2. Direct observation reveals that movement without selecting, condemning, or escaping from it.
-
-## The mind as an architecture metaphor
-
-The compact diagram below uses computer architecture as a visual analogy. Memory can be pictured as a database, knowledge as an index, and thought as an interpreter. These are metaphors for relationships in experience, not literal software components inside the brain.
-
-```mermaid!
-flowchart LR
-  INPUT["🌿 What-is"] --> PERCEPTION["👁️ Perception"]
-
-  subgraph BRAIN["🧠 Brain — physical host"]
-    direction TB
-    subgraph KNOWN["📦 Conditioned processing"]
-      CONDITIONING["🏛️ Culture • belief • past"] --> MEMORY[("🗄️ Memory database")]
-      MEMORY --> KNOWLEDGE["📚 Knowledge index"]
-      KNOWLEDGE --> THOUGHT["💭 Thought interpreter"]
-      THOUGHT --> IMAGE["🪞 Self-image"]
-      IMAGE --> OBSERVER["👤 Observer"]
-      OBSERVER --> CONFLICT["⚡ Conflict"]
-      CONFLICT -. reinforces .-> THOUGHT
-    end
-  end
-
-  subgraph DIRECT["✨ Direct perception"]
-    ATTENTION["🔎 Attention without a center"] --> INSIGHT["💡 Insight"]
-    INSIGHT --> QUIET["🌌 Quiet brain"]
-  end
-
-  PERCEPTION --> MEMORY
-  PERCEPTION --> ATTENTION
-  QUIET --> INTELLIGENCE["🌱 Intelligence in action"]
-  INTELLIGENCE --> OUTPUT["🤍 Order • love • compassion • action"]
-
-  GROUND["🌌 Mind / Ground<br/>not an object"]
-  GROUND -. outside the model .-> PERCEPTION
-
-  classDef fact fill:#e5f4e9,stroke:#77ad87,color:#24452d
-  classDef host fill:#eef3f8,stroke:#7894ad,color:#243746
-  classDef conditioning fill:#dceeff,stroke:#6b9fd1,color:#18344d
-  classDef thought fill:#e8def8,stroke:#9b7bc4,color:#332348
-  classDef conflict fill:#ffe5d9,stroke:#e28c68,color:#542b1f
-  classDef insight fill:#fff2bf,stroke:#d6ae45,color:#4b3b08
-  classDef ground fill:#f3e8d3,stroke:#b99462,color:#4b3820
-  class INPUT,PERCEPTION,OUTPUT fact
-  class BRAIN host
-  class CONDITIONING,MEMORY,KNOWLEDGE conditioning
-  class THOUGHT,IMAGE,OBSERVER thought
-  class CONFLICT conflict
-  class DIRECT,ATTENTION,INSIGHT,QUIET,INTELLIGENCE insight
-  class GROUND ground
-```
 
 ## 1. Begin with *what-is*
 
@@ -129,29 +62,11 @@ The first contact is simple:
 
 ```mermaid!
 flowchart LR
-    W["🌿 What-is"] -->|perceived as| B["🤝 Contact"]
-    B -->|felt as| C["🔥 Sensation"]
-    C --> D{"❓ What happens next?"}
-
-    subgraph INTERPRETATION["🧠 Interpretation"]
-      E["📚 Recognition and the known"]
-    end
-
-    subgraph OBSERVATION["✨ Observation"]
-      F["👁️ Direct perception"]
-    end
-
-    D -->|recognition and interpretation| E
-    D -->|observation without a center| F
-
-    classDef fact fill:#e5f4e9,stroke:#77ad87,color:#24452d
-    classDef sensation fill:#ffe5d9,stroke:#e28c68,color:#542b1f
-    classDef known fill:#dceeff,stroke:#6b9fd1,color:#18344d
-    classDef awareness fill:#fff2bf,stroke:#d6ae45,color:#4b3b08
-    class W,B fact
-    class C sensation
-    class D,E known
-    class F awareness
+    A["What-is"] -->|perceived as| B["Contact"]
+    B -->|felt as| C["Sensation"]
+    C --> D{"What happens next?"}
+    D -->|recognition and interpretation| E["The known"]
+    D -->|observation without a center| F["Direct perception"]
 ```
 
 The important distinction is not between having and avoiding thought. Practical thought is necessary for language, engineering, planning, and daily life. The question is whether psychological thought occupies the whole field of perception.
@@ -180,22 +95,10 @@ Experience, memory, knowledge, and thought reinforce one another:
 
 ```mermaid!
 flowchart LR
-    subgraph PAST["📦 Accumulated past"]
-      E["🧩 Experience"] -->|stored as| M["🗃️ Memory"]
-      M -->|organized as| K["📚 Knowledge"]
-    end
-
-    subgraph RESPONSE["🔁 Present response"]
-      T["💭 Thought"]
-    end
-
-    K -->|responds as| T
+    E["Experience"] -->|stored as| M["Memory"]
+    M -->|organized as| K["Knowledge"]
+    K -->|responds as| T["Thought"]
     T -->|creates further| E
-
-    classDef past fill:#dceeff,stroke:#6b9fd1,color:#18344d
-    classDef response fill:#ffe5d9,stroke:#e28c68,color:#542b1f
-    class E,M,K past
-    class T response
 ```
 
 This loop is not inherently wrong. Without it, there would be no language, technical skill, or recognition. Difficulty begins when the loop becomes the observer of every psychological fact. Then the known does not merely respond to reality—it pretends to be the one who sees reality.
@@ -208,23 +111,11 @@ The psychological self is not presented here as a permanent inner entity. It is 
 
 ```mermaid!
 flowchart TD
-    subgraph CONSTRUCTION["🧱 Construction by thought"]
-      T["⏳ Thought-time"] -->|constructs| S["🪞 Self-image"]
-    end
-
-    subgraph MOVEMENTS["🌀 Movements of the self"]
-      S --> I["🏷️ Identification"]
-      S --> C["🎯 Center"]
-      S --> D["↔️ Separation"]
-      S --> B["📈 Psychological becoming"]
-    end
-
-    classDef source fill:#dceeff,stroke:#6b9fd1,color:#18344d
-    classDef self fill:#e8def8,stroke:#9b7bc4,color:#332348
-    classDef movement fill:#ffe5d9,stroke:#e28c68,color:#542b1f
-    class T source
-    class S self
-    class I,C,D,B movement
+    T["Thought-time"] -->|constructs| S["Self-image"]
+    S --> I["Identification"]
+    S --> C["Center"]
+    S --> D["Separation"]
+    S --> B["Psychological becoming"]
 ```
 
 The self then appears to stand apart from its own reactions:
@@ -241,14 +132,9 @@ Chronological time is necessary. Psychological time is different: it is the proj
 
 ```mermaid!
 flowchart LR
-  P["⏮️ Past: what has been"] --> T["💭 Thought in the present"]
-  T --> F["⏭️ Future: what might be"]
+    P["Past: what has been"] --> T["Thought in the present"]
+    T --> F["Future: what might be"]
     F -.->|fear, hope, becoming| T
-
-  classDef time fill:#dceeff,stroke:#6b9fd1,color:#18344d
-  classDef thought fill:#e8def8,stroke:#9b7bc4,color:#332348
-  class P,F time
-  class T thought
 ```
 
 Thought carries yesterday into the present and projects a modified version into tomorrow. The result may be fear of repetition, pursuit of pleasure, comparison with an ideal, or the promise of eventual transformation.
@@ -267,30 +153,15 @@ Fear and desire are not isolated modules. They share the movement of thought, se
 
 ```mermaid!
 flowchart TD
-    subgraph SELF["🪞 Self-centered movement"]
-      S["👤 Self / observer"]
-      F["😨 Fear"]
-      D["✨ Desire"]
-      T["⏳ Psychological time"]
-      A["🔗 Attachment / authority"]
-      S -->|resists what-is| F
-      S -->|seeks continuity| D
-      S -->|projects an ideal| T
-      S -->|escapes emptiness| A
-    end
-
+    S["Self / observer"] -->|resists what-is| F["Fear"]
+    S -->|seeks continuity| D["Desire"]
+    S -->|projects an ideal| T["Psychological time"]
+    S -->|escapes emptiness| A["Attachment / authority"]
     F --> C["Conflict"]
     D --> C
     T --> C
     A --> C
-    C --> R["🌧️ Sorrow • violence • loneliness"]
-
-    classDef self fill:#e8def8,stroke:#9b7bc4,color:#332348
-    classDef movement fill:#ffe5d9,stroke:#e28c68,color:#542b1f
-    classDef conflict fill:#f8d7da,stroke:#c56b72,color:#5a2228
-    class S self
-    class F,D,T,A movement
-    class C,R conflict
+    C --> R["Sorrow • violence • loneliness"]
 ```
 
 ### Remember it visually
@@ -313,67 +184,16 @@ During a disagreement, distinguish three things:
 
 Do not try to correct the reaction yet. First see its complete movement.
 
-```mermaid!
-flowchart LR
-    subgraph IMAGES["🪞 Images in relationship"]
-      ME["👤 Image of me"]
-      YOU["👥 Image of you"]
-    end
-
-    subgraph CONDITIONING["🧠 Conditioned material"]
-      MEMORY["🗃️ Memory"]
-      EXPECTATION["🎯 Expectation"]
-      WOUND["💔 Wound"]
-      DEMAND["📣 Demand"]
-    end
-
-    FACT["🗣️ What was actually said"] --> RELATIONSHIP["🤝 Relationship"]
-    ME --> RELATIONSHIP
-    YOU --> RELATIONSHIP
-    MEMORY --> ME
-    MEMORY --> YOU
-    EXPECTATION --> RELATIONSHIP
-    WOUND --> REACTION["⚡ Reaction"]
-    DEMAND --> REACTION
-    RELATIONSHIP --> REACTION
-    REACTION --> OBSERVATION["🔎 Observation"]
-    OBSERVATION --> INSIGHT["💡 Conditioning becomes visible"]
-    INSIGHT -. reveals .-> MEMORY
-
-    classDef fact fill:#e5f4e9,stroke:#77ad87,color:#24452d
-    classDef image fill:#e8def8,stroke:#9b7bc4,color:#332348
-    classDef conditioning fill:#dceeff,stroke:#6b9fd1,color:#18344d
-    classDef reaction fill:#ffe5d9,stroke:#e28c68,color:#542b1f
-    classDef insight fill:#fff2bf,stroke:#d6ae45,color:#4b3b08
-    class FACT,RELATIONSHIP fact
-    class ME,YOU image
-    class MEMORY,EXPECTATION,WOUND,DEMAND conditioning
-    class REACTION reaction
-    class OBSERVATION,INSIGHT insight
-```
-
 ## 8. Choiceless awareness is not another controller
 
 Choiceless awareness is observation without selecting what should remain and what should disappear. It is not indifference, passivity, or concentration on a chosen object.
 
 ```mermaid!
 flowchart LR
-    subgraph SEEING["👁️ Seeing without choice"]
-      W["🌿 What-is"] --> O["🔎 Observation"]
-      O --> A["🫧 Attention without center"]
-    end
-
-    subgraph CLEARING["✨ Clarity"]
-      A --> I["💡 Insight"]
-      I --> E["🕊️ Ending of the false structure"]
-    end
-
-    classDef fact fill:#e5f4e9,stroke:#77ad87,color:#24452d
-    classDef attention fill:#dceeff,stroke:#6b9fd1,color:#18344d
-    classDef insight fill:#fff2bf,stroke:#d6ae45,color:#4b3b08
-    class W fact
-    class O,A attention
-    class I,E insight
+    W["What-is"] --> O["Observation"]
+    O --> A["Attention without center"]
+    A --> I["Insight"]
+    I --> E["Ending of the false structure"]
 ```
 
 If the self says, “I will practice awareness to eliminate fear,” the motive belongs to the old loop. Awareness has become a strategy of becoming. The diagram therefore does not model attention as a mode selected by the ego.
@@ -388,62 +208,19 @@ In the visual architecture, insight sends no request to `SelfImprovementService`
 
 The energy previously consumed by resistance and conflict is no longer trapped in that pattern. This is represented as silence and empty psychological space—not blankness, but a brain no longer occupied by incessant self-centered movement.
 
-```mermaid!
-flowchart LR
-    subgraph FALSE["🌀 False structure"]
-      FACT["🌿 Fact"] --> IMAGE["🪞 Image of what should be"]
-      IMAGE --> RESISTANCE["🧱 Resistance"]
-      RESISTANCE --> CONFLICT["⚡ Conflict"]
-      CONFLICT --> THOUGHT["💭 More psychological thought"]
-      THOUGHT -. reinforces .-> IMAGE
-    end
-
-    subgraph SEEING["✨ Insight"]
-      OBSERVATION["👁️ See the whole movement"] --> INSIGHT["💡 Insight"]
-      INSIGHT --> ENDING["🕊️ Ending, not suppression"]
-    end
-
-    CONFLICT --> OBSERVATION
-    ENDING --> SPACE["🫧 Space without psychological authority"]
-
-    classDef fact fill:#e5f4e9,stroke:#77ad87,color:#24452d
-    classDef structure fill:#dceeff,stroke:#6b9fd1,color:#18344d
-    classDef conflict fill:#ffe5d9,stroke:#e28c68,color:#542b1f
-    classDef insight fill:#fff2bf,stroke:#d6ae45,color:#4b3b08
-    class FACT fact
-    class IMAGE,THOUGHT structure
-    class RESISTANCE,CONFLICT conflict
-    class OBSERVATION,INSIGHT,ENDING,SPACE insight
-```
-
 ## 10. Silence, space, intelligence, and action
 
-The attached study distinguishes the physical brain from the broader meaning of Mind in Krishnamurti's vocabulary. The infographic therefore places **Mind / the Ground** outside the object hierarchy.
+One conceptual approach informing this model distinguishes the physical brain from the broader meaning of Mind found in Krishnamurti's vocabulary. The infographic therefore places **Mind / the Ground** outside the object hierarchy.
 
 It is not a component possessed by `Brain`, not a superclass from which a person inherits, and not an object created by thought. The architecture can only indicate a possibility: when the brain is quiet, intelligence may act through it.
 
 ```mermaid!
 flowchart LR
-    subgraph CLEARING["✨ Clearing"]
-      I["💡 Insight"] --> Q["🌌 Quiet brain"]
-      Q --> S["🫧 Silence and space"]
-    end
-
-    subgraph LIVING["🌱 Living intelligence"]
-      S --> N["🧭 Intelligence"]
-      N --> A["🤍 Order • love • compassion • action"]
-    end
-
-    A --> W["🌿 What-is"]
-
-    classDef insight fill:#fff2bf,stroke:#d6ae45,color:#4b3b08
-    classDef silence fill:#dceeff,stroke:#6b9fd1,color:#18344d
-    classDef intelligence fill:#dff5e8,stroke:#6eb58a,color:#1c4430
-    classDef fact fill:#e5f4e9,stroke:#77ad87,color:#24452d
-    class I insight
-    class Q,S silence
-    class N,A intelligence
-    class W fact
+    I["Insight"] --> Q["Quiet brain"]
+    Q --> S["Silence and space"]
+    S --> N["Intelligence"]
+    N --> A["Order • love • compassion • action"]
+    A --> W["What-is"]
 ```
 
 ## 11. The same architecture expressed through Ruby
@@ -505,72 +282,17 @@ objects_can_contain_the_living_truth = false
 <details>
 <summary><strong>Explore the complete Ruby mapping</strong></summary>
 
-<table>
-  <thead>
-    <tr>
-      <th>Krishnamurti concept</th>
-      <th>Ruby architecture metaphor</th>
-      <th>Why it helps</th>
-      <th>Where it breaks</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Brain</td>
-      <td>Aggregate / physical host</td>
-      <td>Provides an operating boundary</td>
-      <td>A living brain is not a software container</td>
-    </tr>
-    <tr>
-      <td>Conditioning</td>
-      <td>Module with inherited patterns</td>
-      <td>Shows cross-cutting learned behavior</td>
-      <td>Conditioning is embodied and collective, not merely code reuse</td>
-    </tr>
-    <tr>
-      <td>Memory</td>
-      <td>Repository</td>
-      <td>Stores traces of experience</td>
-      <td>Memory actively shapes perception</td>
-    </tr>
-    <tr>
-      <td>Thought</td>
-      <td>Recursive interpreter</td>
-      <td>Shows the known responding to input</td>
-      <td>Thought is not reducible to a deterministic function</td>
-    </tr>
-    <tr>
-      <td>Self</td>
-      <td>Constructed value/image object</td>
-      <td>Makes its dependence on memory visible</td>
-      <td>The self feels like the observer, not like a passive DTO</td>
-    </tr>
-    <tr>
-      <td>Fear and desire</td>
-      <td>Events derived from self-centered interpretation</td>
-      <td>Reveals shared upstream causes</td>
-      <td>Human feeling is not event-bus traffic</td>
-    </tr>
-    <tr>
-      <td>Relationship</td>
-      <td>Observability boundary</td>
-      <td>Exposes hidden state and assumptions</td>
-      <td>Another human being must never become a test double</td>
-    </tr>
-    <tr>
-      <td>Insight</td>
-      <td>Immediate termination of a false loop</td>
-      <td>Contrasts ending with gradual optimization</td>
-      <td>Insight cannot be invoked by a method call</td>
-    </tr>
-    <tr>
-      <td>Mind / Ground</td>
-      <td>Outside the object model</td>
-      <td>Prevents conceptual ownership by the brain</td>
-      <td>Even “outside” is still a spatial metaphor</td>
-    </tr>
-  </tbody>
-</table>
+| Krishnamurti concept | Ruby architecture metaphor | Why it helps | Where it breaks |
+|---|---|---|---|
+| Brain | Aggregate / physical host | Provides an operating boundary | A living brain is not a software container |
+| Conditioning | Module with inherited patterns | Shows cross-cutting learned behavior | Conditioning is embodied and collective, not merely code reuse |
+| Memory | Repository | Stores traces of experience | Memory actively shapes perception |
+| Thought | Recursive interpreter | Shows the known responding to input | Thought is not reducible to a deterministic function |
+| Self | Constructed value/image object | Makes its dependence on memory visible | The self feels like the observer, not like a passive DTO |
+| Fear and desire | Events derived from self-centered interpretation | Reveals shared upstream causes | Human feeling is not event-bus traffic |
+| Relationship | Observability boundary | Exposes hidden state and assumptions | Another human being must never become a test double |
+| Insight | Immediate termination of a false loop | Contrasts ending with gradual optimization | Insight cannot be invoked by a method call |
+| Mind / Ground | Outside the object model | Prevents conceptual ownership by the brain | Even “outside” is still a spatial metaphor |
 
 </details>
 
@@ -607,7 +329,9 @@ But the deepest point of the architecture is where architecture reaches its limi
 
 The map becomes valuable when it sends us back to the territory: relationship, perception, and the living fact of *what-is*.
 
-## References
+## Conceptual approach and references
+
+Krishnamurti's teachings are used here as an investigative approach to thought, conditioning, psychological time, the observer, and insight—not as a closed doctrine or as the ownership label for the architecture. Hillary Peter Rodrigues's analysis provides the relational structure that helped translate those concepts into the visual and Ruby-oriented models.
 
 - Hillary Peter Rodrigues, *“Insight” and “The Religious Mind” in the Teachings of Jiddu Krishnamurti*.
 - [Krishnamurti Foundation Trust — On Awareness](https://kfoundation.org/urgency-of-change-podcast-episode-73-krishnamurti-on-awareness/)
