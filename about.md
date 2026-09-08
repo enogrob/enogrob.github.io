@@ -6,7 +6,8 @@ permalink: /about/
 
 <img src="/assets/images/enogrob.png" style="border-radius: 50%;" alt="My Photo">
 
-AI-Native Software Engineer with a strong Telecom background and 7+ years of Ruby on Rails experience. Skilled in Ruby, React, JavaScript, Python, and Elixir, with expertise in Agentic Systems, Modular Monoliths, Microservices, scalable backend architectures, CI/CD, and automation. Ericsson Certified Consultant with extensive OSS/BSS and systems integration experience across international environments. Experienced in mentoring, technical leadership, and delivering reliable software solutions. Fluent in English.
+Al-Native Software Engineer with a strong Telecom background and more than 7 years of experience with Ruby on Rails. Proficient in Ruby, React, JavaScript, Python and Elixir, building solutions with agentic systems, modular
+monoliths, microservices, scalable backend architectures, CI/CD and automation. Deep experience in OSS/BSS and integration of systems in multinational environments. Domain expertise in billing, payroll, subscription workflows, and API integrations, along with mentoring, technical leadership, and delivering reliable software at scale.
 
 ### Connect with me
 

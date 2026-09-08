@@ -23,6 +23,45 @@ permalink: /projects/
   object-fit: contain;
 }
 
+.featured-project-image {
+  cursor: zoom-in;
+}
+
+.image-lightbox {
+  align-items: center;
+  background: rgb(0 0 0 / 80%);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 5vw;
+  position: fixed;
+  z-index: 1000;
+}
+
+.image-lightbox[hidden] {
+  display: none;
+}
+
+.image-lightbox-close {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+  padding: 0.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.image-lightbox img {
+  display: block;
+  max-height: 90vh;
+  max-width: 95vw;
+  object-fit: contain;
+}
+
 .more-projects {
   width: 100%;
 }
@@ -56,6 +95,47 @@ permalink: /projects/
   background-image: url("/assets/images/presentation.png");
 }
 </style>
+
+
+<img class="featured-project-image" src="/assets/images/roberto-nogueira-project-portfolio-personal-a3.png" alt="Project portfolio illustration. Click to expand." style="width:100%;height:auto;" tabindex="0" role="button" aria-controls="featured-project-lightbox" aria-label="Expand project portfolio illustration">
+
+<div id="featured-project-lightbox" class="image-lightbox" role="dialog" aria-modal="true" aria-label="Expanded project portfolio illustration" hidden>
+  <button class="image-lightbox-close" type="button" aria-label="Close expanded image">&times;</button>
+  <img src="/assets/images/roberto-nogueira-project-portfolio-personal-a3.png" alt="Project portfolio illustration">
+</div>
+
+<script>
+  const featuredImage = document.querySelector('.featured-project-image');
+  const imageLightbox = document.querySelector('#featured-project-lightbox');
+
+  const closeButton = imageLightbox.querySelector('.image-lightbox-close');
+
+  const openImageLightbox = () => {
+    imageLightbox.hidden = false;
+    closeButton.focus();
+  };
+
+  const closeImageLightbox = () => {
+    imageLightbox.hidden = true;
+    featuredImage.focus();
+  };
+
+  featuredImage.addEventListener('click', openImageLightbox);
+  featuredImage.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openImageLightbox();
+    }
+  });
+
+  closeButton.addEventListener('click', closeImageLightbox);
+  imageLightbox.addEventListener('click', (event) => {
+    if (event.target === imageLightbox) closeImageLightbox();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !imageLightbox.hidden) closeImageLightbox();
+  });
+</script>
 
 ## Featured Projects
 
