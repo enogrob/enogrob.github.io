@@ -121,12 +121,6 @@ permalink: /projects/
   };
 
   featuredImage.addEventListener('click', openImageLightbox);
-  featuredImage.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      openImageLightbox();
-    }
-  });
 
   closeButton.addEventListener('click', closeImageLightbox);
   imageLightbox.addEventListener('click', (event) => {
