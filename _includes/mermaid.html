@@ -1,4 +1,18 @@
 {% if page.mermaid %}
+  <style>
+    .mermaid {
+      width: min(100%, 760px);
+      margin: 1.25rem auto;
+      overflow-x: auto;
+    }
+
+    .mermaid svg {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+  </style>
   <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <script>
     mermaid.initialize({ startOnLoad: true });
