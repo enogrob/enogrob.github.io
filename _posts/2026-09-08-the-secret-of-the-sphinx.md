@@ -243,6 +243,14 @@ The three-pyramid assignment is a deliberate interpretive progression, not a his
 
 In the introduction to *The Holy Science* (1894), Sri Yukteswar presents a Great Year of 24,000 years: a 12,000-year descending arc followed by a 12,000-year ascending arc. Each half contains four Yugas—Kali (1,200 years), Dwapara (2,400), Treta (3,600), and Satya (4,800)—but in reversed order.
 
+### Illustrated map of the Great Year
+
+<a href="{{ '/assets/images/posts/secret-of-the-sphinx/great-year-cross-cultural-full.webp' | relative_url }}" target="_blank" rel="noopener">
+  <img src="{{ '/assets/images/posts/secret-of-the-sphinx/great-year-cross-cultural-thumbnail.webp' | relative_url }}" alt="Interpretive map connecting the Great Year, Yugas, ages of metals, astrological ages, civilizational memory, and the Traveler" style="width:100%;height:auto;" loading="lazy" decoding="async">
+</a>
+
+<small>Interpretive map, not a chronological equivalence among traditions. Click or tap to open the full-size cross-cultural cycle.</small>
+
 In this model, what contracts and expands is *dharma*, described as the mental or inward capacity to comprehend reality:
 
 | Yuga | Symbolic capacity |
@@ -283,14 +291,6 @@ The most precise central name is **the Traveler**:
 | The Hero | One possible phase of struggle and integration within the journey, not the universal identity |
 
 Historically, the Fool often stood outside the numbered trump sequence; later decks placed it at 0 and, more rarely, XXII. That ambiguity is exactly what makes the image useful here. The Fool is not confined to one position: **0 before the cycle, XXII after its completion**. The Traveler receives the legacy of a former world, reconnects the signs, and carries understanding into the next.
-
-### Illustrated map of the Great Year
-
-<a href="{{ '/assets/images/posts/secret-of-the-sphinx/great-year-cross-cultural-full.webp' | relative_url }}" target="_blank" rel="noopener">
-  <img src="{{ '/assets/images/posts/secret-of-the-sphinx/great-year-cross-cultural-thumbnail.webp' | relative_url }}" alt="Interpretive map connecting the Great Year, Yugas, ages of metals, astrological ages, civilizational memory, and the Traveler" style="width:100%;height:auto;" loading="lazy" decoding="async">
-</a>
-
-<small>Interpretive map, not a chronological equivalence among traditions. Click or tap to open the full-size cross-cultural cycle.</small>
 
 ## 10. Anubis and the return to the Fool
 
