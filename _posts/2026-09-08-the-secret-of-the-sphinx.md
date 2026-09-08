@@ -56,6 +56,14 @@ flowchart TD
   class N return
 ```
 
+## The complete visual map
+
+<a href="{{ '/assets/images/posts/secret-of-the-sphinx/cosmic-cycles-map-full-v3.webp' | relative_url }}" target="_blank" rel="noopener">
+  <img src="{{ '/assets/images/posts/secret-of-the-sphinx/cosmic-cycles-map-thumbnail-v3.webp' | relative_url }}" alt="Interpretive map connecting Sirius, Herodotus, the Great Pyramid shafts, the Sphinx, and three symbolic cycles" style="width:100%;height:auto;" loading="lazy" decoding="async">
+</a>
+
+<small>Interpretive map, not an archaeological reconstruction. Click or tap to open the full-size version.</small>
+
 ## 1. The jackal's trace
 
 To be lost is more than not knowing where you are. It is not knowing which sign deserves your trust.
@@ -287,14 +295,6 @@ Historically, the Fool often stood outside the numbered trump sequence; later de
 ## 10. Anubis and the return to the Fool
 
 Anubis is both **the beginning and the end of the passage**. In this interpretation, the guide receives the Traveler, conducts the spirit through the three orders of transformation, and returns it to **The Fool—0/XXII**: innocence restored after transformation. Tarot remains a later comparative symbol, not evidence of an ancient Egyptian Tarot doctrine.
-
-## The complete visual map
-
-<a href="{{ '/assets/images/posts/secret-of-the-sphinx/cosmic-cycles-map-full-v3.webp' | relative_url }}" target="_blank" rel="noopener">
-  <img src="{{ '/assets/images/posts/secret-of-the-sphinx/cosmic-cycles-map-thumbnail-v3.webp' | relative_url }}" alt="Interpretive map connecting Sirius, Herodotus, the Great Pyramid shafts, the Sphinx, and three symbolic cycles" style="width:100%;height:auto;" loading="lazy" decoding="async">
-</a>
-
-<small>Interpretive map, not an archaeological reconstruction. Click or tap to open the full-size version.</small>
 
 ## A short practice: follow the trace
 
