@@ -11,6 +11,8 @@ description: "A visual, brain-friendly tour of TheBrain 15: Cerebro AI, a unifie
 
 <img src="/assets/images/posts/thebrain-15/thebrain-15-launch-cover.webp" alt="TheBrain 15 Has Arrived: Agentic AI for a Connected Mind" style="width:100%;height:auto;">
 
+TheBrain is a knowledge-management application that organizes notes, files, people, projects, and ideas as connected *thoughts* rather than isolated documents.
+
 Information rarely arrives in a neat hierarchy. A note becomes a question. The question points to a document. The document belongs to a project, but it also connects to a person, a decision, and an unfinished idea.
 
 Traditional folders ask us to choose one location. Our thinking does not.
@@ -18,6 +20,19 @@ Traditional folders ask us to choose one location. Our thinking does not.
 TheBrain has always treated knowledge as a network of connected *thoughts*. Version 15 pushes that model further: the network can now be explored conversationally, changed through an AI agent, synchronized more selectively, and accessed through a unified interface across platforms.
 
 > **The big shift:** TheBrain is moving from a visual place where you organize knowledge to an active environment where you can ask, create, connect, and automate.
+
+### In this post
+
+- [Your visual roadmap](#your-visual-roadmap)
+- [From filing information to connecting meaning](#1-from-filing-information-to-connecting-meaning)
+- [Cerebro AI](#2-cerebro-ai-conversation-becomes-an-action-surface)
+- [AI scripting](#3-ai-scripting-reusable-intelligence-instead-of-repeated-prompts)
+- [One experience across platforms](#4-one-experience-across-platforms)
+- [Performance](#5-faster-thinking-needs-a-faster-interface)
+- [Light Sync](#6-light-sync-separate-connection-from-local-storage)
+- [Developer angle](#7-the-developer-angle-local-api-and-automation)
+- [Learning experiment](#8-a-five-minute-learning-experiment)
+- [Who should upgrade?](#who-should-upgrade)
 
 ## Your visual roadmap
 
@@ -46,6 +61,18 @@ Keep this journey in mind as we explore the release:
 4. What performance and Light Sync change
 5. Where developers can extend the system
 6. How to evaluate the upgrade safely
+
+### Reading the diagrams
+
+The diagrams use a consistent visual language. These are interpretive cues, not claims that knowledge or intelligence literally operates like software.
+
+| Visual cue | Meaning in this model |
+|---|---|
+| Purple | TheBrain, Cerebro, or the central platform |
+| Blue | Knowledge, context, views, or connected information |
+| Green | Actions, workflows, local availability, or automation |
+| Yellow | Outcomes, review, or insight |
+| Cloud icon | Remote storage or web context |
 
 ## 1. From filing information to connecting meaning
 
@@ -219,7 +246,7 @@ The knowledge stays the same; the view changes according to the task.
 
 ## 5. Faster thinking needs a faster interface
 
-TheBrain describes version 15 as a rebuilt foundation with performance improvements of up to five times in key areas. The product page emphasizes quicker startup, immediate navigation, smoother visual animations, and lower CPU, memory, and energy use.
+TheBrain describes version 15 as a rebuilt foundation with performance improvements of up to five times in selected areas. The product page emphasizes quicker startup, immediate navigation, smoother visual animations, and lower CPU, memory, and energy use. The practical result will depend on Brain size, device, and workflow.
 
 Why is performance pedagogically important?
 
@@ -275,6 +302,8 @@ flowchart LR
 
 The official compatibility guidance says version 15 can coexist with version 14, but a Brain opened in version 15 will not automatically reopen in version 14 when Light Sync is enabled. If moving between versions matters to you, review the compatibility notes and backups before changing an important Brain.
 
+> **Migration warning:** Treat enabling Light Sync as a compatibility decision, not only a storage decision. Back up an important Brain and confirm your version-14 rollback plan before opening it in version 15 with Light Sync enabled.
+
 ## 7. The developer angle: local API and automation
 
 The local API turns the knowledge environment into a component that scripts and agents can use. The release describes operations for creating and linking thoughts, running commands, and querying Brain data with real-time local results.
@@ -316,6 +345,15 @@ For software engineers, useful experiments might include:
 The key architectural question is not “Can it be automated?” but:
 
 > **Which actions should be read-only, reviewable, reversible, or explicitly approved?**
+
+Keep the local API and any connected agent least-privileged. Start with read-only queries, review proposed writes, protect private Brain content and credentials, and make destructive or bulk changes explicitly approved and reversible. The release describes capabilities; the exact permission and authentication model should be verified in the current API documentation before production use.
+
+| Capability | AI scripting | Local API |
+|---|---|---|
+| Primary user | Knowledge worker | Developer or automation builder |
+| Interface | Visual blocks or code-oriented editor | External scripts and tools |
+| Scope | Reusable AI instructions | Programmatic access to Brain data |
+| Main risk | Inconsistent or unwanted edits | Over-permissioned automation |
 
 ## 8. A five-minute learning experiment
 
@@ -397,6 +435,12 @@ flowchart TB
     style Sync fill:#effaf3,stroke:#91c9a5,color:#1c4430
     style Developer fill:#fcf1f8,stroke:#d49cbd,color:#4b2340
 ```
+
+  ## Who should upgrade?
+
+  Version 15 is most compelling if you want Cerebro, a more consistent cross-platform experience, Light Sync, or a foundation for local automation. Those capabilities directly support the connected-workspace model described in this post.
+
+  Evaluate it first on a copy or non-critical Brain if you depend on version-14 compatibility, maintain large legacy Brains, need predictable offline access, or plan to give scripts and agents write access. In those cases, test the migration path, attachment behavior, backups, and approval workflow before changing your primary Brain.
 
 ## Final takeaway
 
