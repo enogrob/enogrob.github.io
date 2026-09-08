@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Architecture of the Mind: A Visual Model Through Ruby and Systems Thinking"
-date: 2026-09-08 21:00:00 -0300
+date: 2026-09-08 01:00:00 -0300
 categories: [philosophy, consciousness, visual-learning, ruby]
 tags: [j-krishnamurti, mind, thought, insight, oop, metaprogramming]
 mermaid: true
