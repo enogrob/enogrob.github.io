@@ -97,7 +97,7 @@ permalink: /projects/
 </style>
 
 
-<img class="featured-project-image" src="/assets/images/roberto-nogueira-project-portfolio-personal-a3.png" alt="Project portfolio illustration. Click to expand." style="width:100%;height:auto;" tabindex="0" role="button" aria-controls="featured-project-lightbox" aria-label="Expand project portfolio illustration">
+<img class="featured-project-image" src="/assets/images/project-portfolio-cover.webp" alt="Project portfolio illustration. Click to expand." style="width:100%;height:auto;" tabindex="0" role="button" aria-controls="featured-project-lightbox" aria-label="Expand project portfolio illustration">
 
 <div id="featured-project-lightbox" class="image-lightbox" role="dialog" aria-modal="true" aria-label="Expanded project portfolio illustration" hidden>
   <button class="image-lightbox-close" type="button" aria-label="Close expanded image">&times;</button>
