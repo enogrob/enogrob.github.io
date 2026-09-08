@@ -2,9 +2,9 @@
 layout: post
 title: "Architecture of the Mind: Reading Krishnamurti Through Systems Thinking"
 date: 2026-09-08 00:00:00 -0300
-image: /assets/images/posts/krishnamurti-mind-architecture/cover.webp
 categories: [philosophy, consciousness, visual-learning, ruby]
 tags: [j-krishnamurti, mind, thought, insight, oop, metaprogramming]
+image: /assets/images/posts/krishnamurti-mind-architecture/cover.webp
 mermaid: true
 description: "A visual and brain-friendly map of the brain, conditioning, memory, thought, the self, fear, desire, attention, insight, and intelligence—with a companion Ruby architecture metaphor."
 ---
