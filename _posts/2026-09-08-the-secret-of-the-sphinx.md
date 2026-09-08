@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Secret of the Sphinx: Sirius, Giza, and the Cycles of Return"
+title: "The Secret of the Sphinx: Cosmic Cycles and a Legacy for Future Humanity"
 date: 2026-09-08 08:00:00 -0300
 categories: [knowledge-management, symbolism, visual-learning]
 tags: [sphinx, anubis, sirius, orion, osiris, tarot, cosmic-cycles]
