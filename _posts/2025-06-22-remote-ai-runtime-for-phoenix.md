@@ -40,22 +40,42 @@ Spin up a Phoenix workspace without installing Elixir or Node. Simply:
 You get VS Code in-browser, complete with extensions, theming, and an *Exterm* terminal. Everything you love about your local setup—linting, formatting, Git, debugging—runs remotely.
 
 ```mermaid!
-graph LR
-subgraph Phoenix.new Runtime
-  direction LR
-  IDE[Browser IDE] -- edits --> Code[Your Code]
-  Code --- LiveView[LiveView Renderer]
-  LiveView --> IDE
-  Agent[AI Agent] -->|writes & tests| Code
-  Agent --> Backend[Fly.io Backend]
-  IDE -->|Git ↔ HTTPS| Backend
-  subgraph Backend Systems
-    LiveServer[Live Server]
-    GitStore[Git Storage]
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart LR
+  subgraph Runtime["☁️ Phoenix.new Remote Runtime"]
+    direction LR
+
+    subgraph Workspace["💻 Browser Workspace"]
+      IDE["🧑‍💻 Browser IDE"]
+      Code["🧱 Your Code"]
+      IDE -->|edits| Code
+    end
+
+    subgraph Experience["⚡ Live Development"]
+      LiveView["🔄 LiveView Renderer"]
+      Agent["🤖 AI Agent"]
+    end
+
+    subgraph Backend["🌍 Fly.io Backend"]
+      LiveServer["🚀 Live Server"]
+      GitStore["🗃️ Git Storage"]
+    end
+
+    Code <-->|renders| LiveView
+    LiveView -->|previews| IDE
+    Agent -->|writes & tests| Code
+    Agent -->|deploys| Backend
+    IDE -->|Git over HTTPS| Backend
+    Backend --> LiveServer
+    Backend --> GitStore
   end
-  Backend --> LiveServer
-  Backend --> GitStore
-end
+
+  classDef workspace fill:#e3f2fd,stroke:#5b9bd5,color:#16324f,stroke-width:1px
+  classDef experience fill:#fff1d6,stroke:#d39b45,color:#5b3d0b,stroke-width:1px
+  classDef backend fill:#e4f5ec,stroke:#68a77d,color:#204b2d,stroke-width:1px
+  class IDE,Code workspace
+  class LiveView,Agent experience
+  class LiveServer,GitStore backend
 ```
 
 **Your Turn**

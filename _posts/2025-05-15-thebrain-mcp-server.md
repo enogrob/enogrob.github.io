@@ -34,33 +34,42 @@ Picture this: You’re brainstorming on how to automate your project pipeline. I
 To make sense of how MCP fits into TheBrain, imagine it as a central **hub** that takes in your questions, finds the answers from your Brain, and, if needed, pulls additional data from the outside world. Check out this concept map:
 
 ```mermaid!
-%%{init: {"theme": "default", "look": "handDrawn"}}%%
-graph LR
-    subgraph TheBrain
-        UI["User<br>Interface"]
-        Client["MCP<br>Client"]
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart LR
+    subgraph TheBrain["🧠 TheBrain Workspace"]
+        UI["🧑‍💻 User Interface"]
+        Client["🔌 MCP Client"]
     end
 
-    subgraph "Language Models"
-        LLM[LLM]
+    subgraph Models["✨ Language Models"]
+        LLM["🤖 LLM"]
     end
 
-    subgraph MCP
-        Server[MCP Server]
+    subgraph MCP["🌉 MCP Bridge"]
+        Server["🔗 MCP Server"]
     end
 
-    subgraph "External Sources"
-        APIs[APIs]
-        DBs[Databases]
+    subgraph Sources["🌍 External Sources"]
+        APIs["☁️ APIs"]
+        DBs["🗄️ Databases"]
     end
 
-    UI -- "User asks" --> Client
-    Client -- "Request" --> Server
-    LLM -- "Query" --> Server
-    Server -- "Fetch API" --> APIs
-    Server -- "Fetch DB" --> DBs
-    Server -- "Answer" --> Client
-    Client -- "Show" --> UI
+    UI -->|asks| Client
+    Client -->|requests| Server
+    LLM -->|queries| Server
+    Server -->|fetches API data| APIs
+    Server -->|fetches database data| DBs
+    Server -->|returns answer| Client
+    Client -->|shows insight| UI
+
+    classDef workspace fill:#e3f2fd,stroke:#5b9bd5,color:#16324f,stroke-width:1px
+    classDef model fill:#fff1d6,stroke:#d39b45,color:#5b3d0b,stroke-width:1px
+    classDef bridge fill:#e4f5ec,stroke:#68a77d,color:#204b2d,stroke-width:1px
+    classDef source fill:#fbe5e7,stroke:#cf7d86,color:#5b252b,stroke-width:1px
+    class UI,Client workspace
+    class LLM model
+    class Server bridge
+    class APIs,DBs source
 ```
 
 ### Why This Matters: Real-World Benefits

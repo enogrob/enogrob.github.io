@@ -28,13 +28,16 @@ Once hailed as the darling of developers and startups, Ruby and its popular fram
 
 <div style="max-width: 50%; margin: auto;">
 ```mermaid!
-%%{init: {"theme": "default", "look": "handDrawn"}}%%
-graph TD
-    subgraph "Ruby's Decline"
-        A1[HR Focuses on Trends] --> A2[Fewer Ruby Jobs]
-        A2 --> A3[Developers Stop Learning Ruby]
-        A3 --> A1
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart LR
+  subgraph Decline["📉 Ruby's Decline Loop"]
+    A1["📊 HR Focuses on Trends"] -->|leads to| A2["📭 Fewer Ruby Jobs"]
+    A2 -->|discourages| A3["🧑‍💻 Developers Stop Learning Ruby"]
+    A3 -->|reinforces| A1
     end
+
+  classDef decline fill:#fbe5e7,stroke:#cf7d86,color:#5b252b,stroke-width:1px
+  class A1,A2,A3 decline
 ```
 </div>
 
@@ -60,11 +63,16 @@ Ruby’s elegant design, focused on developer happiness and readability, turns i
     **Example**:
 <div style="max-width: 50%; margin: auto;">
     ```mermaid!
-%%{init: {"theme": "default", "look": "handDrawn"}}%%
-    graph TD
-        subgraph Example Code Comparisons
-            TScript[TypeScript Code: 50 tokens] --> Ruby[Ruby Code: 17 tokens]
+  %%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+    flowchart LR
+      subgraph Comparison["⚖️ Code Size Comparison"]
+        TScript["🔷 TypeScript\n50 tokens"] -->|more verbose| Ruby["💎 Ruby\n17 tokens"]
         end
+
+      classDef verbose fill:#e3f2fd,stroke:#5b9bd5,color:#16324f,stroke-width:1px
+      classDef concise fill:#e4f5ec,stroke:#68a77d,color:#204b2d,stroke-width:1px
+      class TScript verbose
+      class Ruby concise
     ```
 </div>
 2. **Cost Efficiency:**
@@ -146,15 +154,36 @@ As AI-assisted workflows spread, **token efficiency** becomes a critical factor.
 
 <div style="max-width: 60%; margin: auto;">
 ```mermaid!
-%%{init: {"theme": "default", "look": "handDrawn"}}%%
-graph TB
-    subgraph AI Workflow
-        Lang[Language Used]
-        Cost[Token Cost]
-        Speed[Code Generation Speed]
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart LR
+  subgraph Inputs["🗣️ Language Choice"]
+    Lang["💬 Language Used"]
     end
-    Lang --> |Verbose| TypeScript --> Cost --> Speed[Slow]
-    Lang --> |Concise| Ruby --> Cost --> Speed[Fast]
+
+  subgraph Economics["🪙 AI Economics"]
+    Cost["🧮 Token Cost"]
+  end
+
+  subgraph Outcomes["🚀 Coding Outcomes"]
+    Slow["🐢 Code Generation: Slow"]
+    Fast["⚡ Code Generation: Fast"]
+  end
+
+  Lang -->|verbose| TypeScript["🔷 TypeScript"]
+  TypeScript -->|higher| Cost
+  Cost -->|slower| Slow
+  Lang -->|concise| Ruby["💎 Ruby"]
+  Ruby -->|lower| Cost
+  Cost -->|faster| Fast
+
+  classDef input fill:#e3f2fd,stroke:#5b9bd5,color:#16324f,stroke-width:1px
+  classDef cost fill:#fff1d6,stroke:#d39b45,color:#5b3d0b,stroke-width:1px
+  classDef slow fill:#fbe5e7,stroke:#cf7d86,color:#5b252b,stroke-width:1px
+  classDef fast fill:#e4f5ec,stroke:#68a77d,color:#204b2d,stroke-width:1px
+  class Lang,TypeScript input
+  class Cost cost
+  class Slow slow
+  class Ruby,Fast fast
 ```
 </div>
 

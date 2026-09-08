@@ -138,37 +138,52 @@ Generative AI isn’t here to replace you—it’s here to **help you be awesome
 ### **Visualizing Generative AI Concepts and Limitations**
 
 ```mermaid!
-%%{init: {"theme": "default", "look": "handDrawn", "flowchart": {"nodeSpacing": 60, "rankSpacing": 120}}}%%
-graph TD
-    subgraph Key_Concepts [Generative AI: Key Concepts]
-        Attention["Attention Mechanism"]
-        Reasoning["Reasoning"]
-        Emergence["Emergent Capabilities"]
-        PromptEng["Prompt Engineering"]
-        Multimodal["Multimodal Models"]
-        Collaboration["Human-AI Collaboration"]
-        FineTuning["Fine-Tuning & Transfer Learning"]
-        Tools["Tool Use in AI"]
-        Ethics["Ethical Considerations"]
-        Scalability["Scalability & Cost"]
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
+    subgraph Foundations[🧠 How AI Thinks]
+        Attention["🎯 Attention Mechanism"]
+        Reasoning["🧩 Reasoning"]
+        Emergence["✨ Emergent Capabilities"]
+        Multimodal["👁️ Multimodal Models"]
     end
 
-    subgraph Limitations [Generative AI: Limitations]
-        Cutoff["Cutoff Date"]
-        Memory["Lack of Memory"]
-        Hallucination["Hallucinations"]
-        Calculation["Calculation Errors"]
-        Bias["Bias and Ethical Issues"]
+    subgraph Practice[🛠️ How We Shape It]
+        PromptEng["✍️ Prompt Engineering"]
+        Tools["🔌 Tool Use in AI"]
+        FineTuning["🧪 Fine-Tuning & Transfer Learning"]
+        Collaboration["🤝 Human-AI Collaboration"]
     end
 
-    Attention -- "Enhances" --> Reasoning
-    Reasoning -- "Enables" --> Emergence
-    Emergence -- "Incorporates" --> Multimodal
-    PromptEng -- "Guides" --> Attention
-    PromptEng -- "Directs" --> Multimodal
-    Tools -- "Extends" --> Multimodal
-    Ethics -- "Ensures" --> Bias
-    Scalability -- "Optimizes" --> Tools
+    subgraph Stewardship[🧭 How We Govern It]
+        Ethics["⚖️ Ethical Considerations"]
+        Scalability["📈 Scalability & Cost"]
+    end
+
+    subgraph Limitations[⚠️ Where AI Can Go Wrong]
+        Cutoff["🗓️ Cutoff Date"]
+        Memory["🧠 Lack of Memory"]
+        Hallucination["🌫️ Hallucinations"]
+        Calculation["🔢 Calculation Errors"]
+        Bias["⚖️ Bias and Ethical Issues"]
+    end
+
+    PromptEng -->|guides| Attention
+    Attention -->|enhances| Reasoning
+    Reasoning -->|enables| Emergence
+    Emergence -->|incorporates| Multimodal
+    Tools -->|extends| Multimodal
+    Scalability -->|optimizes| Tools
+    Ethics -->|helps mitigate| Bias
+    Collaboration -->|keeps humans in the loop| Multimodal
+
+    classDef foundation fill:#e3f2fd,stroke:#5b9bd5,color:#16324f,stroke-width:1px
+    classDef practice fill:#e4f5ec,stroke:#68a77d,color:#204b2d,stroke-width:1px
+    classDef stewardship fill:#fff1d6,stroke:#d39b45,color:#5b3d0b,stroke-width:1px
+    classDef limitation fill:#fbe5e7,stroke:#cf7d86,color:#5b252b,stroke-width:1px
+    class Attention,Reasoning,Emergence,Multimodal foundation
+    class PromptEng,Tools,FineTuning,Collaboration practice
+    class Ethics,Scalability stewardship
+    class Cutoff,Memory,Hallucination,Calculation,Bias limitation
 ```
 
 

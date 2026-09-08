@@ -47,35 +47,39 @@ When done right, modularization in Rails creates a resilient system where parts 
 ### **Visualization: Modularization Process**
 
 ```mermaid!
-%%{init: {"theme": "default", "look": "handDrawn", "flowchart": {"nodeSpacing": 60, "rankSpacing": 120}}}%%
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
 flowchart LR
-    subgraph Initialization
-        A[Start Modularization] --> B[Identify Components and Dependencies]
+    subgraph Initialization["🧭 Initialization"]
+        A["🚀 Start Modularization"] --> B["🔎 Identify Components & Dependencies"]
     end
 
-    subgraph Packaging
-        B --> C[Define and Enforce Packages]
+    subgraph Packaging["📦 Packaging"]
+        B --> C["🧱 Define & Enforce Packages"]
     end
 
-    subgraph Refactoring
-        C --> D[Monitor and Refactor]
+    subgraph Refactoring["🔧 Refactoring"]
+        C --> D["🛠️ Monitor & Refactor"]
     end
 
-    subgraph Deployment
-        D --> E[Test and Deploy]
+    subgraph Deployment["✅ Deployment"]
+        D --> E["🧪 Test & Deploy"]
     end
 
-    subgraph Continuous Improvement
-        E --> F[Analyze and Iterate]
+    subgraph Improvement["🔁 Continuous Improvement"]
+        E --> F["📈 Analyze & Iterate"]
         F --> B
     end
 
-    %% Iteration points
-    style Continuous Improvement fill:#f9f,stroke:#333,stroke-width:2px
-    style Deployment fill:#9ff,stroke:#333,stroke-width:2px
-    style Refactoring fill:#f99,stroke:#333,stroke-width:2px
-    style Packaging fill:#99f,stroke:#333,stroke-width:2px
-    style Initialization fill:#99f,stroke:#333,stroke-width:2px
+    classDef initialization fill:#e3f2fd,stroke:#5b9bd5,color:#16324f,stroke-width:1px
+    classDef packaging fill:#fff1d6,stroke:#d39b45,color:#5b3d0b,stroke-width:1px
+    classDef refactoring fill:#fbe5e7,stroke:#cf7d86,color:#5b252b,stroke-width:1px
+    classDef deployment fill:#e4f5ec,stroke:#68a77d,color:#204b2d,stroke-width:1px
+    classDef improvement fill:#eee8fa,stroke:#8b78b8,color:#332348,stroke-width:1px
+    class A,B initialization
+    class C packaging
+    class D refactoring
+    class E deployment
+    class F improvement
 ```
 
 ### Key Steps:

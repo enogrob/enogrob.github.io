@@ -48,38 +48,47 @@ Kniberg encourages readers to *start small and play*. Whether it’s summarizing
 One of the most useful takeaways: how you *talk* to AI matters. A vague prompt leads to vague results. A specific, well-contextualized prompt gets you gold. (The book includes great before-and-after examples.)
 
 ```mermaid!
-%%{init: {"theme": "default", "look": "handDrawn", "flowchart": {"nodeSpacing": 60, "rankSpacing": 120}}}%%
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
 flowchart LR
-  subgraph Core_Magic["Core Magic"]
-    A[Autocomplete Turbocharge]
+  subgraph Core_Magic["⚡ AI's Core Magic"]
+    A["🪄 Autocomplete Turbocharge"]
   end
 
-  subgraph Mindset["Mindset Matters"]
-    A -->|inspires| B{Mindset Choice}
-    B -->|🤔 Curiosity| C[Learn & Grow]
-    B -->|😱 Panic| D[Freeze Up]
-    B -->|🙈 Denial| E[Miss the Wave]
+  subgraph Mindset["🧭 Mindset Matters"]
+    A -->|inspires| B{"🧠 Mindset Choice"}
+    B -->|🤔 curiosity| C["🌱 Learn & Grow"]
+    B -->|😱 panic| D["🧊 Freeze Up"]
+    B -->|🙈 denial| E["🌊 Miss the Wave"]
   end
 
-  subgraph Experiment["Experimentation Loop"]
-    C --> F[Start Small & Play]
-    F --> G[Prototype & Iterate]
-    G --> H[Confidence Boost]
-    H --> I{Continue?}
-    I -->|Yes| F
-    I -->|No| J[Reflect & Pivot]
+  subgraph Experiment["🛠️ Experimentation Loop"]
+    C --> F["🔬 Start Small & Play"]
+    F --> G["🔁 Prototype & Iterate"]
+    G --> H["💪 Confidence Boost"]
+    H --> I{"Continue?"}
+    I -->|yes| F
+    I -->|no| J["🪞 Reflect & Pivot"]
   end
 
-  subgraph Prompting["Prompt Superpowers"]
-    G --> K{Prompt Quality}
-    K -->|Vague| L[Lame Output]
-    K -->|Specific| M[Golden Response]
-    M --> N[Real-World Wins]
+  subgraph Prompting["✍️ Prompt Superpowers"]
+    G --> K{"🎯 Prompt Quality"}
+    K -->|vague| L["🫥 Lame Output"]
+    K -->|specific| M["✨ Golden Response"]
+    M --> N["🏆 Real-World Wins"]
   end
 
-  C -.-> N
-  D -. block .-> L
-  E -. blocked .-> L
+  C -.->|applies to| N
+  D -.->|can lead to| L
+  E -.->|can lead to| L
+
+  classDef core fill:#fff1d6,stroke:#d39b45,color:#5b3d0b,stroke-width:1px
+  classDef mindset fill:#e3f2fd,stroke:#5b9bd5,color:#16324f,stroke-width:1px
+  classDef experiment fill:#e4f5ec,stroke:#68a77d,color:#204b2d,stroke-width:1px
+  classDef outcome fill:#fbe5e7,stroke:#cf7d86,color:#5b252b,stroke-width:1px
+  class A core
+  class B,C mindset
+  class F,G,H,I,J experiment
+  class D,E,K,L,M,N outcome
 ```
 
 Whether you’re a leader trying to future-proof your team, or a developer wondering what’s next — this book is a quick, insightful read that leaves you more inspired than overwhelmed.

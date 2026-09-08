@@ -55,32 +55,49 @@ The result? A dynamic Rails application where AI takes care of actual implementa
 Let’s connect some dots. Here’s how AI, prompts, and Ruby fit into this transformative shift:
 
 ```mermaid!
-graph TD  
-%%{init: {"theme": "default", "look": "handDrawn"}}%%
-    A[AI Transformation] -->|Enhances| B[Software Development]  
-    B -->|Speeds Up| C[Dev Cycles]  
-    B -->|Reduces| D[Bugs]  
-    B -->|Simplifies| E[Maintenance]  
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
+   subgraph Impact["🌅 AI's Impact on Development"]
+      A["✨ AI Transformation"] -->|enhances| B["💻 Software Development"]
+      B -->|speeds up| C["⚡ Dev Cycles"]
+      B -->|reduces| D["🐞 Bugs"]
+      B -->|simplifies| E["🧹 Maintenance"]
+   end
 
-    A -->|Leads To| F[Prompt-Driven Development]  
-    F -->|Replaces| G[Traditional Coding]  
-    G -->|Focuses On| H[Declarative Prompts]  
+   subgraph PDD["✍️ Prompt-Driven Development"]
+      F["🗣️ Prompt-Driven Development"] -->|replaces| G["⌨️ Traditional Coding"]
+      G -->|focuses on| H["📜 Declarative Prompts"]
+      F -->|utilizes| I["🧩 AI Components"]
+      I -->|handles| J["🔄 Dynamic Runtime"]
+      I -->|integrates| K["💬 Natural Language"]
+   end
 
-    F -->|Utilizes| I[AI Components]  
-    I -->|Handles| J[Dynamic Runtime]  
-    I -->|Integrates| K[Natural Language]  
+   subgraph Ruby["💎 Ruby's Enabling Qualities"]
+      L["🌟 Ruby Qualities"] -->|supports| M["🪶 Expressiveness"]
+      L -->|enables| N["😊 Developer Happiness"]
+   end
 
-    F -->|Requires| L[Ruby Qualities]  
-    L -->|Supports| M[Expressiveness]  
-    L -->|Enables| N[Developer Happiness]  
+   subgraph Guardrails["🧭 People, Practice & Progress"]
+      O["🔍 Debugging / Verification"] -->|needs| Q["📚 New Best Practices"]
+      P["👩‍💻 Rubyists"] -->|create| R["🧱 AI-Powered Abstractions"]
+      R -->|includes| S["🧰 Blueprints, DSLs, Tools"]
+      R -->|drives| T["🚀 Innovative Development"]
+   end
 
-    A -->|Challenges| O[Debugging/Verification]  
-    O -->|Needs| Q[New Best Practices]  
+   A -->|leads to| F
+   F -->|requires| L
+   A -->|challenges| O
+   A -->|powered by| P
+   P -->|pioneers| F
 
-    A --> |by| P[Rubyists] -->|Pioneer| F  
-    P -->|Create| R[AI-Powered Abstractions]  
-    R -->|Includes| S[Blueprints, DSLs, Tools]  
-    R -->|Drives| T[Innovative Development]   
+   classDef impact fill:#e3f2fd,stroke:#5b9bd5,color:#16324f,stroke-width:1px
+   classDef pdd fill:#fff1d6,stroke:#d39b45,color:#5b3d0b,stroke-width:1px
+   classDef ruby fill:#fbe5e7,stroke:#cf7d86,color:#5b252b,stroke-width:1px
+   classDef practice fill:#e4f5ec,stroke:#68a77d,color:#204b2d,stroke-width:1px
+   class A,B,C,D,E impact
+   class F,G,H,I,J,K pdd
+   class L,M,N ruby
+   class O,P,Q,R,S,T practice
 ```
 
 ## How Did We Get Here?  

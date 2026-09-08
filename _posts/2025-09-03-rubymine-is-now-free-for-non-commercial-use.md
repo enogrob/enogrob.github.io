@@ -21,13 +21,28 @@ Imagine you’re a student, hobbyist, or open-source contributor, staring at the
 Let’s break down what this means and how you can take advantage:
 
 ```mermaid!
-graph LR
-    %%! pastel colors, emoticons
-    A[💡 The Big News] --> B[🔍 Who Qualifies?]
-    B --> C[🛠️ Key Features]
-    C --> D[🚦 How to Get It]
-    D --> E[🌱 Community Impact]
-    E --> F[📚 References]
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart LR
+    subgraph Roadmap["🗺️ RubyMine Free-Use Roadmap"]
+        A["💡 The Big News"] --> B["🔍 Who Qualifies?"]
+        B --> C["🛠️ Key Features"]
+        C --> D["🚦 How to Get It"]
+        D --> E["🌱 Community Impact"]
+        E --> F["📚 References"]
+    end
+
+    classDef news fill:#e3f2fd,stroke:#5b9bd5,color:#16324f,stroke-width:1px
+    classDef eligibility fill:#fff1d6,stroke:#d39b45,color:#5b3d0b,stroke-width:1px
+    classDef features fill:#e4f5ec,stroke:#68a77d,color:#204b2d,stroke-width:1px
+    classDef access fill:#eee8fa,stroke:#8b78b8,color:#332348,stroke-width:1px
+    classDef impact fill:#fbe5e7,stroke:#cf7d86,color:#5b252b,stroke-width:1px
+    classDef references fill:#f7f0e5,stroke:#b08c62,color:#4a3828,stroke-width:1px
+    class A news
+    class B eligibility
+    class C features
+    class D access
+    class E impact
+    class F references
 ```
 
 
@@ -56,16 +71,30 @@ List your current Ruby projects. Which ones fit the “non-commercial” definit
 RubyMine offers intelligent code completion, debugging, version control, and deep Rails support. The free tier includes all core features—even AI-assisted coding and integration with frameworks like Sinatra and Hanami.
 
 ```mermaid!
-graph 
-    %%! pastel colors, emoticons
-    subgraph Features
-        A1[🤖 AI Coding Assistant]
-        A2[🧩 Framework Integration]
-        A3[🔬 Debugging Tools]
-        A4[📝 Code Completion]
-        A5[🔗 Version Control]
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart LR
+    subgraph Features["🧰 RubyMine Core Features"]
+        subgraph Assistance["✨ Intelligent Assistance"]
+            A1["🤖 AI Coding Assistant"]
+            A3["🔬 Debugging Tools"]
+            A4["📝 Code Completion"]
+        end
+
+        subgraph Ecosystem["🔗 Ruby Ecosystem"]
+            A2["🧩 Framework Integration"]
+            A5["🔗 Version Control"]
+        end
     end
-    A1 --> A2 --> A3 --> A4 --> A5
+
+    A1 -->|connects to| A2
+    A2 -->|supports| A3
+    A3 -->|complements| A4
+    A4 -->|works with| A5
+
+    classDef intelligence fill:#fff1d6,stroke:#d39b45,color:#5b3d0b,stroke-width:1px
+    classDef ecosystem fill:#e3f2fd,stroke:#5b9bd5,color:#16324f,stroke-width:1px
+    class A1,A3,A4 intelligence
+    class A2,A5 ecosystem
 ```
 
 > **Quick Recap:** You get the full RubyMine experience—just not enterprise support.

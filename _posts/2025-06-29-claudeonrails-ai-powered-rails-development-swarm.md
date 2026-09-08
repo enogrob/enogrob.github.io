@@ -28,8 +28,9 @@ Here's what we'll explore:
 Instead of one AI trying to juggle everything, ClaudeOnRails deploys **specialist agents** that collaborate like a real development team. Each agent masters their domain and coordinates with others automatically.
 
 ```mermaid!
-graph TB
-    subgraph "ClaudeOnRails Development Swarm"
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TB
+    subgraph Swarm["🐝 ClaudeOnRails Development Swarm"]
         A["🎭 Architect Agent<br/>Project Coordination"] --> B["📊 Models Agent<br/>ActiveRecord & DB"]
         A --> C["🎮 Controllers Agent<br/>Routing & Logic"]
         A --> D["🎨 Views Agent<br/>Templates & UI"]
@@ -81,8 +82,9 @@ Each agent has a specific role and deep Rails knowledge:
 Notice something familiar about the ClaudeOnRails team structure? **It's the Hub & Spoke pattern in perfect action!**
 
 ```mermaid!
-graph TD
-    subgraph "ClaudeOnRails Hub & Spoke"
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
+    subgraph HubSpoke["🎯 ClaudeOnRails Hub & Spoke"]
         A["🎭 Architect Agent<br/>(HUB)"] --> B["📊 Models Agent"]
         A --> C["🎮 Controllers Agent"]
         A --> D["🎨 Views Agent"]
@@ -127,8 +129,9 @@ Absolutely! Just like Rails follows MVC patterns, AI agent swarms follow predict
 <p><strong>Perfect for:</strong> Feature development, project planning, complex integrations</p>
 
 ```mermaid!
-graph TD
-    subgraph "Hub & Spoke Pattern"
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
+    subgraph HubPattern["🎯 Hub & Spoke Pattern"]
         A["🎭 Architect Agent"] --> B["📊 Models Agent"]
         A --> C["🎮 Controllers Agent"]
         A --> D["🎨 Views Agent"]
@@ -160,8 +163,9 @@ graph TD
 <p><strong>Perfect for:</strong> CI/CD workflows, code review processes, staged deployments</p>
 
 ```mermaid!
-graph 
-    subgraph "Pipeline Chain Pattern"
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart LR
+    subgraph Pipeline["🔗 Pipeline Chain Pattern"]
         A["📝 Requirements"] --> B["🏗️ Models Agent"]
         B --> C["🎮 Controllers Agent"]
         C --> D["🎨 Views Agent"]
@@ -191,8 +195,9 @@ graph
 <p><strong>Perfect for:</strong> Large feature development, performance optimization, technical debt cleanup</p>
 
 ```mermaid!
-graph 
-    subgraph "Parallel Swarm Pattern"
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
+    subgraph Parallel["🌊 Parallel Swarm Pattern"]
         A["🚀 Feature Request"] --> B["🎭 Coordinator"]
         B --> C["📊 Models Team"]
         B --> D["🎮 Controllers Team"]
@@ -226,8 +231,9 @@ graph
 <p><strong>Perfect for:</strong> Code refactoring, performance tuning, security hardening</p>
 
 ```mermaid!
-graph 
-    subgraph "Feedback Loop Pattern"
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
+    subgraph Feedback["🔄 Feedback Loop Pattern"]
         A["🔧 Implement"] --> B["🧪 Test Results"]
         B --> C{"📊 Quality Check"}
         C -->|Pass| D["✅ Deploy"]
@@ -259,8 +265,9 @@ graph
 <p><strong>Perfect for:</strong> Multi-project environments, different application types, varying complexity levels</p>
 
 ```mermaid!
-graph 
-    subgraph "Decision Tree Pattern"
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
+    subgraph Decision["🌲 Decision Tree Pattern"]
         A["📥 Request"] --> B{"🤔 Request Type?"}
         B -->|API Only| C["🔧 Backend Swarm"]
         B -->|Full Stack| D["🌐 Full Team"]
@@ -294,8 +301,9 @@ graph
 <p><strong>Perfect for:</strong> Hotfixes, security patches, performance emergencies, data recovery</p>
 
 ```mermaid!
-graph 
-    subgraph "Emergency Response Pattern"
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart LR
+    subgraph Emergency["🚨 Emergency Response Pattern"]
         A["🚨 Alert"] --> B["🎯 Triage Agent"]
         B --> C["🔍 Diagnostic Team"]
         C --> D["🛠️ Fix Team"]
@@ -327,8 +335,9 @@ graph
 <p><strong>Perfect for:</strong> Production systems, external API dependencies, error-prone operations</p>
 
 ```mermaid!
-graph 
-    subgraph "Circuit Breaker Pattern"
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
+    subgraph Circuit["🛡️ Circuit Breaker Pattern"]
         A["📥 Request"] --> B{"🔍 Health Check"}
         B -->|Healthy| C["🎯 Primary Agent"]
         B -->|Degraded| D["🛡️ Fallback Agent"]
@@ -362,8 +371,9 @@ graph
 <p><strong>Perfect for:</strong> Complex workflows, event-driven architectures, distributed processing</p>
 
 ```mermaid!
-graph 
-    subgraph "Actor Model Pattern"
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
+    subgraph Actor["🎭 Actor Model Pattern"]
         A["📬 Message Queue"] --> B["🎭 Controller Actor"]
         B --> C["📨 Send Message"]
         C --> D["📊 Models Actor"]
@@ -399,8 +409,9 @@ graph
 <p><strong>Perfect for:</strong> High-traffic applications, resource-intensive tasks, peak load handling</p>
 
 ```mermaid!
-graph 
-    subgraph "Load Balancer Pattern"
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
+    subgraph LoadBalancer["⚖️ Load Balancer Pattern"]
         A["🌊 High Load"] --> B["⚖️ Load Balancer"]
         B --> C["🔧 Models Agent 1"]
         B --> D["🔧 Models Agent 2"]
@@ -434,8 +445,9 @@ graph
 <p><strong>Perfect for:</strong> Background jobs, scheduled tasks, long-running processes</p>
 
 ```mermaid!
-graph 
-    subgraph "Temporal Workflow Pattern"
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
+    subgraph Temporal["🕰️ Temporal Workflow Pattern"]
         A["⏰ Schedule Task"] --> B["📅 Timer Agent"]
         B --> C["🔔 Trigger Event"]
         C --> D["🎯 Execute Agent"]

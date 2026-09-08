@@ -84,36 +84,41 @@ Codex will run the tests and report the outcome, ensuring your changes didn’t 
 Here’s a conceptual map of Codex CLI operations when using parameters instead of the UI:
 
 ```mermaid!
-%%{init: {"theme": "default", "look": "handDrawn"}}%%
-graph TD
-    subgraph Codex_CLI
-        A[Codex CLI]
-        B[Direct Queries]
-        C[Method Analysis]
-        D[Automated Refactoring]
-        E[Test Execution]
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
+    subgraph Interface["⌨️ Codex CLI Interface"]
+        A["🤖 Codex CLI"]
     end
 
-    A -->|Ask Questions| B
-    A -->|Analyze Code| C
-    A -->|Refactor Code| D
-    A -->|Run Tests| E
-
-    subgraph Direct_Queries
-        B -->|Summarize| F[Codebase Summary]
+    subgraph Operations["🛠️ Codebase Operations"]
+        B["💬 Direct Queries"]
+        C["🔎 Method Analysis"]
+        D["🧹 Automated Refactoring"]
+        E["🧪 Test Execution"]
     end
 
-    subgraph Method_Analysis
-        C -->|Describe| G[Detailed Method Description]
+    subgraph Results["📦 Useful Results"]
+        F["🗺️ Codebase Summary"]
+        G["📋 Detailed Method Description"]
+        H["✨ Refactored Code"]
+        I["✅ Test Results"]
     end
 
-    subgraph Automated_Refactoring
-        D -->|Generate| H[Refactored Code]
-    end
+    A -->|ask questions| B
+    A -->|analyze code| C
+    A -->|refactor code| D
+    A -->|run tests| E
+    B -->|summarize| F
+    C -->|describe| G
+    D -->|generate| H
+    E -->|report| I
 
-    subgraph Test_Execution
-        E -->|Report| I[Test Results]
-    end
+    classDef interface fill:#e3f2fd,stroke:#5b9bd5,color:#16324f,stroke-width:1px
+    classDef operation fill:#fff1d6,stroke:#d39b45,color:#5b3d0b,stroke-width:1px
+    classDef result fill:#e4f5ec,stroke:#68a77d,color:#204b2d,stroke-width:1px
+    class A interface
+    class B,C,D,E operation
+    class F,G,H,I result
 ```
 
 ## References

@@ -26,30 +26,47 @@ Tidewave introduces "Runtime Intelligence," bridging the gap between static code
 Currently supporting Phoenix and Ruby on Rails, Tidewave is open source and integrates seamlessly with AI tools like Claude, Cursor, VS Code (Copilot), Windsurf, and Zed.
 
 ```mermaid!
-%%{init: {"theme": "default", "look": "handDrawn"}}%%
-graph TD
-    A[Web Application Phoenix/Rails] --> B[MCP Server]
-    B --> C[AI Assistant Claude/Cursor/VS Code]
-    B --> D[Database]
-    B --> E[Logs/Traces]
-    B --> F[Documentation]
-    B --> G[Dependencies]
-    
-    %% AI Assistant interactions
-    C -->|Query Runtime State| B
-    C -->|Code Evaluation| B
-    C -->|Suggest Code Fixes| B
-    
-    %% MCP Server interactions
-    A -->|Live Data| B
-    D -->|Database Query| B
-    E -->|Log Analysis| B
-    F -->|Doc Retrieval| B
-    G -->|Dependency Info| B
-    
-    %% Feedback from AI Assistant
-    C -->|Code Change Suggestions| A
-    C -->|Error Fix Proposals| A
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
+  subgraph Platform["🌐 Live Application"]
+    A["🧱 Web Application\nPhoenix / Rails"]
+  end
+
+  subgraph Bridge["🌉 Runtime Bridge"]
+    B["🔌 MCP Server"]
+  end
+
+  subgraph Intelligence["🧠 AI Collaboration"]
+    C["✨ AI Assistant\nClaude / Cursor / VS Code"]
+  end
+
+  subgraph Context["📚 Runtime Context"]
+    D["🗄️ Database"]
+    E["📈 Logs / Traces"]
+    F["📖 Documentation"]
+    G["🧩 Dependencies"]
+  end
+
+  A -->|live data| B
+  B -->|runtime context| C
+  D -->|database query| B
+  E -->|log analysis| B
+  F -->|document retrieval| B
+  G -->|dependency info| B
+  C -->|query runtime state| B
+  C -->|evaluate code| B
+  C -->|suggest code fixes| B
+  C -->|code change suggestions| A
+  C -->|error fix proposals| A
+
+  classDef platform fill:#e3f2fd,stroke:#5b9bd5,color:#16324f,stroke-width:1px
+  classDef bridge fill:#fff1d6,stroke:#d39b45,color:#5b3d0b,stroke-width:1px
+  classDef intelligence fill:#e4f5ec,stroke:#68a77d,color:#204b2d,stroke-width:1px
+  classDef context fill:#fbe5e7,stroke:#cf7d86,color:#5b252b,stroke-width:1px
+  class A platform
+  class B bridge
+  class C intelligence
+  class D,E,F,G context
 ```
 
 

@@ -19,29 +19,45 @@ Imagine you’re deep into a coding session in VS Code: you ask Copilot for a sn
 Here’s what we’ll cover:
 
 ```mermaid!
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
 flowchart LR
-  subgraph Setup
-    A[Enable flags]
-    B[Configure prompts]
+  subgraph Setup["🚦 Setup"]
+    A["⚙️ Enable flags"]
+    B["🧰 Configure prompts"]
   end
 
-  subgraph Authoring
-    C[Write instructions]
-    D[Write prompt files]
+  subgraph Authoring["✍️ Authoring"]
+    C["📏 Write instructions"]
+    D["💬 Write prompt files"]
   end
 
-  subgraph Configuration
-    E[Adjust settings]
+  subgraph Configuration["🎛️ Configuration"]
+    E["🔧 Adjust settings"]
   end
 
-  subgraph Feedback
-    F[Test responses]
-    G[Commit & share]
-    H[Iterate]
+  subgraph Feedback["🔁 Feedback Loop"]
+    F["🧪 Test responses"]
+    G["🤝 Commit & share"]
+    H["✨ Iterate"]
   end
 
-  A --> B --> C --> D --> E --> F --> G --> H
-  H -.-> C
+  A -->|enable| B
+  B -->|prepare| C
+  C -->|extend| D
+  D -->|tune| E
+  E -->|validate| F
+  F -->|share| G
+  G -->|learn| H
+  H -.->|refine| C
+
+  classDef setup fill:#e3f2fd,stroke:#5b9bd5,color:#16324f,stroke-width:1px
+  classDef authoring fill:#fff1d6,stroke:#d39b45,color:#5b3d0b,stroke-width:1px
+  classDef configuration fill:#eee8fa,stroke:#8b78b8,color:#332348,stroke-width:1px
+  classDef feedback fill:#e4f5ec,stroke:#68a77d,color:#204b2d,stroke-width:1px
+  class A,B setup
+  class C,D authoring
+  class E configuration
+  class F,G,H feedback
 ```
 
 ## Enable Instructions & Prompt Files

@@ -25,7 +25,8 @@ That person would be talking about **PocketFlow** - the minimalist LLM framework
 Here's our journey to mastering PocketFlow and understanding how LLM agents really work:
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart LR
     subgraph "Learning Journey"
         A[🎯 The Big Secret] --> B[🧩 Core Building Blocks]
         B --> C[🔍 Simple Research Agent]
@@ -57,7 +58,8 @@ graph
 Yes! Here's the mind-blowing truth that complex frameworks try to hide:
 
 ```mermaid!
-graph LR
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart LR
     subgraph "Agent Decision Loop"
         A[🤔 Think] --> B{🔀 Decide}
         B -->|Search| C[🔍 Search Web]
@@ -165,7 +167,8 @@ flow = Flow(start=search_node)
 3. **SearchNode** → (always) → **StartNode**
 
 ```mermaid!
-graph LR
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart LR
     subgraph "Flow Control"
         A[🚀 StartNode] --> B{🤔 Decision}
     end
@@ -228,7 +231,8 @@ Absolutely! Just like design patterns in software, AI agents follow predictable 
 <p><strong>Perfect for:</strong> Research agents, problem-solving bots, iterative refinement</p>
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart LR
     subgraph "Simple Loop Pattern"
         A["🤔 Think"] --> B{"🔀 Good Enough?"}
         B -->|No| C["🔍 Search More"]
@@ -256,7 +260,8 @@ graph
 <p><strong>Perfect for:</strong> Content generation, data processing, multi-stage analysis</p>
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
     subgraph "Pipeline Pattern"
         A["📝 Input"] --> B["🔍 Research"]
         B --> C["✏️ Draft"]
@@ -285,7 +290,8 @@ graph
 <p><strong>Perfect for:</strong> Customer routing, content classification, conditional workflows</p>
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
     subgraph "Decision Tree Pattern"
         A["📨 Input"] --> B{"🤔 What Type?"}
         B -->|Question| C["❓ Answer Bot"]
@@ -318,7 +324,8 @@ graph
 <p><strong>Perfect for:</strong> Quality control, A/B testing, performance optimization</p>
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
     subgraph "Feedback Loop Pattern"
         A["🎯 Try Solution"] --> B["📊 Measure Results"]
         B --> C{"📈 Good Enough?"}
@@ -348,7 +355,8 @@ graph
 <p><strong>Perfect for:</strong> Data gathering, multi-source research, parallel processing</p>
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
     subgraph "Parallel Split Pattern"
         A["🚀 Start"] --> B["🔀 Split Tasks"]
         B --> C["🔍 Search News"]
@@ -383,7 +391,8 @@ graph
 <p><strong>Perfect for:</strong> Multi-step workflows, conversation bots, guided processes</p>
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
     subgraph "State Machine Pattern"
         A["👋 Greeting"] -->|user_responds| B["🤔 Understanding"]
         B -->|need_info| C["❓ Asking"]
@@ -414,7 +423,8 @@ graph
 <p><strong>Perfect for:</strong> Document analysis, bulk operations, data transformation</p>
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
     subgraph "Batch Processing Pattern"
         A["📂 Data Input"] --> B["🔄 Batch Node"]
         B --> C["⚡ Process Chunk 1"]
@@ -449,7 +459,8 @@ graph
 <p><strong>Perfect for:</strong> API rate limits, scheduled tasks, webhook responses</p>
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
     subgraph "Async Wait Pattern"
         A["🚀 Start Task"] --> B["📡 External Request"]
         B --> C["⏰ Async Wait"]
@@ -481,7 +492,8 @@ graph
 <p><strong>Perfect for:</strong> API aggregation, data enrichment, cross-platform integration</p>
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
     subgraph "Parallel I/O Pattern"
         A["🎯 Input Request"] --> B["🔀 Split Parallel"]
         B --> C["🌐 API Call 1"]
@@ -522,7 +534,8 @@ Now that you know the building blocks, let's see how they combine into **design 
 <p><strong>How it works:</strong> Combines Decision Tree + Simple Loop + State Machine</p>
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
     subgraph "Autonomous Agent Design"
         A["📥 Input"] --> B["🧠 Analyze Context"]
         B --> C{"🤔 What Action?"}
@@ -557,7 +570,8 @@ graph
 <p><strong>How it works:</strong> Linear Pipeline + Error Handling + Quality Gates</p>
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
     subgraph "Workflow Pipeline Design"
         A["📝 Raw Input"] --> B["🔍 Validate"]
         B --> C["🧹 Clean Data"]
@@ -588,7 +602,8 @@ graph
 <p><strong>How it works:</strong> Parallel Split + Document Search + Context Integration + Generation</p>
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
     subgraph "RAG System Design"
         A["❓ User Question"] --> B["🔍 Search Vectors"]
         B --> C["📚 Retrieve Docs"]
@@ -623,7 +638,8 @@ graph
 <p><strong>How it works:</strong> Parallel Split + Batch Processing + Result Aggregation</p>
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
     subgraph "Map-Reduce Design"
         A["📊 Big Dataset"] --> B["🔀 Split Data"]
         B --> C["⚡ Map Task 1"]
@@ -658,7 +674,8 @@ graph
 <p><strong>How it works:</strong> Input Validation + Template Processing + Output Formatting + Quality Check</p>
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
     subgraph "Structured Output Design"
         A["🗂️ Raw Input"] --> B["📝 Parse Content"]
         B --> C["🎯 Apply Template"]
@@ -691,7 +708,8 @@ graph
 <p><strong>How it works:</strong> Hub & Spoke + State Machine + Message Passing + Result Coordination</p>
 
 ```mermaid!
-graph 
+%%{init: {"theme": "base", "look": "handDrawn", "themeVariables": {"fontFamily": "ui-sans-serif, system-ui, sans-serif", "lineColor": "#7c8798", "primaryTextColor": "#263238"}, "flowchart": {"nodeSpacing": 55, "rankSpacing": 90}}}%%
+flowchart TD
     subgraph "Multi-Agent Design"
         A["🎭 Coordinator"] --> B["🔍 Research Agent"]
         A --> C["✍️ Writing Agent"]
