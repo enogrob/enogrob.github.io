@@ -130,7 +130,7 @@ Within the composition proposed here, Sirius gives the seasonal cycle its celest
 
 Imagine a traveler lost in the desert. The landscape no longer provides a clear direction. Yet the tracks of a jackal may reveal a route invisible to the traveler, because the animal knows how to move through that territory.
 
-This gives Anubis a powerful symbolic role. In funerary papyri such as the [Papyrus of Hunefer](https://smarthistory.org), Anubis appears at the beginning of a decisive passage. That iconography establishes his association with thresholds, but it should not be transferred literally to the landscape proposed here.
+This gives Anubis a powerful symbolic role. In funerary papyri such as the [Papyrus of Hunefer](https://smarthistory.org/hunefers-judgement-in-the-presence-of-osiris), Anubis appears at the beginning of a decisive passage. That iconography establishes his association with thresholds, but it should not be transferred literally to the landscape proposed here.
 
 In this interpretation, Anubis is not a separate figure walking beside the traveler. Anubis is the Sphinx itself: the stationary threshold that marks both entrance and return. The traveler reaches the Sphinx alone. From there, the path through the three pyramids—and the three cycles they preserve—begins.
 
