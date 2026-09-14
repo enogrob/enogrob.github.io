@@ -128,7 +128,7 @@ Orion offers another celestial figure. In Egyptian religious imagination, Orion 
 
 Within the composition proposed here, Sirius gives the seasonal cycle its celestial figure: **Sopdet**, the Egyptian personification of Sirius. Thoth adds the principle of awakened perception, language and knowledge. Together they form the symbolic pair **Thoth–Sopdet** for the middle pyramid: the annual return of the star becomes a moment of awakening and recognition.
 
-If Sirius is the sun of the celestial dog, guiding the traveler above, Anubis provides its earthly counterpart below. Sirius marks the direction in the sky; Anubis marks the threshold on the ground. One guides by light and return, the other by instinct, protection and passage.
+Sirius is not literally beside the Sun every day. Its symbolic closeness arises at the moment of its heliacal rising, when the star of the celestial dog reappears shortly before sunrise. In this sense, it becomes the Sun's dog not as a constant companion in the sky, but as a guardian of the threshold where darkness gives way to light. Sirius guides the traveler above; Anubis provides its earthly counterpart below. One marks the returning light in the sky, while the other marks the threshold on the ground through instinct, protection and passage.
 
 ## When the Traveler Loses the Way
 
