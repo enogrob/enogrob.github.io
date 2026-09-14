@@ -178,6 +178,10 @@ The traveler therefore crosses one order at several scales: the Sphinx–Anubis 
 
 Read this way, the Fool is not merely beginning a linear sequence. The Sphinx–Anubis and the Fool do not require a path of their own because their function is to permit passage between all three paths. The Fool can therefore stand at **0** at the entrance and, in the symbolic 0/22 reading, at **22** when the cycle closes and begins again. The threshold is both entrance and exit: it leads into transformation, awakening and experience, then receives the traveler again when the Great Cycle turns.
 
+<a href="/assets/images/posts/the-secret-of-the-sphinx/three-paths-of-the-traveler.webp" target="_blank" rel="noopener">
+  <img src="/assets/images/posts/the-secret-of-the-sphinx/three-paths-of-the-traveler.webp" alt="The three symbolic paths of the traveler from zero to twenty-two: Experience through Horus and Menkaure, Awakening through Thoth-Sopdet and Khafre, and Transformation through Osiris-Orion and Khufu, with Sphinx-Anubis as entrance and return" style="width:100%;height:auto;">
+</a>
+
 ## The Great Year
 
 Modern astronomy describes axial precession: the slow change in the direction of Earth's rotational axis, completing a cycle in approximately 26,000 years. Ancient and spiritual traditions developed their own, distinct models of long ages.
