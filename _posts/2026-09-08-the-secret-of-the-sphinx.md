@@ -98,6 +98,8 @@ This gives Anubis a powerful symbolic role. In funerary papyri such as the Papyr
 
 In this interpretation, Anubis is not a separate figure walking beside the traveler. Anubis is the Sphinx itself: the stationary threshold that marks both entrance and return. The traveler reaches the Sphinx alone. From there, the path through the three pyramids—and the three cycles they preserve—begins.
 
+Robert and Olivia Temple develop a related modern thesis in [*The Sphinx Mystery: The Forgotten Origins of the Sanctuary of Anubis*](https://www.amazon.com.br/dp/1594772711): that the Sphinx was originally carved as a monumental Anubis and stood within a water-filled enclosure associated with the "Jackal Lake" of the Pyramid Texts. This is a relevant reference for the Anubis-Sphinx interpretation developed here, but it should be treated as the Temples' hypothesis rather than as settled archaeological consensus.
+
 After a catastrophe, humanity would face the same problem as the lost traveler. The old paths would have disappeared. The survivors would need signs capable of restoring orientation.
 
 ## The Sky Becomes a Compass
@@ -166,6 +168,7 @@ Perhaps this was the legacy intended for the people of the future—not a collec
 - [NASA — Nutation and Precession](https://earth.gsfc.nasa.gov/geo/multimedia/nutation-and-precession)
 - [Papyrus of Hunefer — Anubis guiding the deceased](https://smarthistory.org/hunefers-judgement-in-the-presence-of-osiris/)
 - [Herodotus, *Histories*, Book II.127](https://lexundria.com/hdt/2.127/mcly)
+- [Robert and Olivia Temple, *The Sphinx Mystery: The Forgotten Origins of the Sanctuary of Anubis*](https://www.amazon.com.br/dp/1594772711) — a modern hypothesis about the Sphinx's original identity as Anubis and its relationship to the Giza monuments.
 - [Walter Cruttenden — *Lost Star of Myth and Time*](https://books.google.com/books/about/Lost_Star_of_Myth_and_Time.html?id=ed3PAAAACAAJ)
 
 *The astronomical, historical and symbolic layers in this article are deliberately distinguished. The proposed Anubis-headed Sphinx and its celestial correspondence form an interpretive framework rather than an established archaeological conclusion.*
