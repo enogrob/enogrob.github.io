@@ -2,7 +2,7 @@
 layout: post
 title: "Secret of the Sphinx"
 subtitle: "Cosmic Cycles and a Legacy for Future Humanity"
-date: 2027-09-08 00:00:00 -0300
+date: 2026-09-08 00:00:00 -0300
 categories: [knowledge-management, symbolism, visual-learning]
 tags: [ancient-egypt, sphinx, sirius, orion, great-year, cosmic-cycles]
 lang: en
