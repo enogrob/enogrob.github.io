@@ -14,6 +14,20 @@ description: "An evidence-based workflow for using AI to document a Rails reposi
 
 An unfamiliar Rails repository rarely lacks structure. What it lacks is a map connecting conventions, domain behavior, callbacks, jobs, configuration, integrations, and operational failure paths. This guide presents an evidence-based workflow for using AI agents to build that map progressively—from a repository overview to a focused feature or bug investigation—using Basecamp's Fizzy repository as an openly inspectable case study.
 
+## Contents
+
+- [Why Rails Repositories Become Hard to Understand](#why-rails-repositories-become-hard-to-understand)
+- [Documentation as a Living Map](#documentation-as-a-living-map)
+- [What AI Can Discover from a Rails Repository](#what-ai-can-discover-from-a-rails-repository)
+- [The Repository Overview Pass](#the-repository-overview-pass)
+- [Building the Architecture and Dependency Map](#building-the-architecture-and-dependency-map)
+- [Zooming into a Feature or Business Flow](#zooming-into-a-feature-or-business-flow)
+- [Using AI to Investigate a Bug](#using-ai-to-investigate-a-bug)
+- [Evidence, Confidence, and Human Review](#evidence-confidence-and-human-review)
+- [A Reusable Rails Documentation Workflow](#a-reusable-rails-documentation-workflow)
+- [The Documentation Package and Next Steps](#the-documentation-package-and-next-steps)
+- [References and Further Exploration](#references-and-further-exploration)
+
 ## Why Rails Repositories Become Hard to Understand
 
 Rails makes an application easy to enter locally. Routes point to controllers, controllers coordinate requests, models represent persistent domain state, and conventions remove a great deal of ceremony. That local predictability is one of Rails' greatest strengths. It is not, however, the same as understanding the system.
