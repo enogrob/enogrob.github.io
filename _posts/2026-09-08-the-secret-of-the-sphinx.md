@@ -74,6 +74,8 @@ We experience some cycles directly and others only through accumulated memory.
 
 The first two cycles are obvious. The third raises a more difficult question: could civilizations also pass through long seasons of emergence, flourishing, decline and renewal?
 
+These cycles are not identified by Sirius in the same literal way. The Daily Cycle is marked by the alternation of sunrise and sunset. The Annual Cycle has a strong celestial marker in the heliacal rising of Sirius, whose first visible appearance before sunrise was associated in ancient Egypt with seasonal return, the Nile and the renewal of the year. The Great Year has no single stellar event that announces its beginning: it is inferred from the slow movement of Earth's axis and becomes, in this article, both an astronomical model and a symbolic image of civilizational time.
+
 Within the symbolic reading explored here, the three pyramids give these cycles a durable form:
 
 - **Menkaure**, the smallest, represents **day and night**, with **Horus** as its symbolic figure—the cycle closest to human experience.
@@ -125,6 +127,8 @@ This is why Sirius works so well within the story of orientation. It is bright, 
 Orion offers another celestial figure. In Egyptian religious imagination, Orion was associated with Osiris. Seen together, Orion and Canis Major create the suggestive image of a great figure followed by a celestial dog.
 
 Within the composition proposed here, Sirius gives the seasonal cycle its celestial figure: **Sopdet**, the Egyptian personification of Sirius. Thoth adds the principle of awakened perception, language and knowledge. Together they form the symbolic pair **Thoth–Sopdet** for the middle pyramid: the annual return of the star becomes a moment of awakening and recognition.
+
+If Sirius is the sun of the celestial dog, guiding the traveler above, Anubis provides its earthly counterpart below. Sirius marks the direction in the sky; Anubis marks the threshold on the ground. One guides by light and return, the other by instinct, protection and passage.
 
 ## When the Traveler Loses the Way
 
