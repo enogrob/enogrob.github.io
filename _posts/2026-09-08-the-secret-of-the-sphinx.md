@@ -82,6 +82,8 @@ Within the symbolic reading explored here, the three pyramids give these cycles 
 
 This is a proposed symbolic correspondence, not an established function assigned to the pyramids by archaeology. Its internal logic comes from scale: as the monuments grow, so does the duration of the cycle they preserve. The figures form a second dimension of the mapping: Horus marks daily experience and renewal, Thoth–Sopdet marks awakening and seasonal return, and Osiris–Orion marks the long cycle of transformation, memory and rebirth.
 
+For a related audiovisual exploration of pyramid chronology and symbolism, see [The Pyramid Code: A New Chronology](https://www.youtube.com/watch?v=LZbCj7yoE6Y&list=PLT-IoST8gQqnGTJ7qqUev04AjXzpAXQjD&index=5). It is included as complementary material for the interpretive layer of this article, not as evidence of an accepted archaeological chronology.
+
 ## The Three Cycles as Stages of Consciousness
 
 The same three-cycle structure can also be read inwardly. In this interpretation, the pyramids do not only preserve different measures of time; they describe the widening field of human awareness. This is a symbolic layer of the article, not a claim that ancient Egyptian sources defined these cycles as a psychology of consciousness.
@@ -128,7 +130,7 @@ Within the composition proposed here, Sirius gives the seasonal cycle its celest
 
 Imagine a traveler lost in the desert. The landscape no longer provides a clear direction. Yet the tracks of a jackal may reveal a route invisible to the traveler, because the animal knows how to move through that territory.
 
-This gives Anubis a powerful symbolic role. In funerary papyri such as the Papyrus of Hunefer, Anubis appears at the beginning of a decisive passage. That iconography establishes his association with thresholds, but it should not be transferred literally to the landscape proposed here.
+This gives Anubis a powerful symbolic role. In funerary papyri such as the [Papyrus of Hunefer](https://smarthistory.org), Anubis appears at the beginning of a decisive passage. That iconography establishes his association with thresholds, but it should not be transferred literally to the landscape proposed here.
 
 In this interpretation, Anubis is not a separate figure walking beside the traveler. Anubis is the Sphinx itself: the stationary threshold that marks both entrance and return. The traveler reaches the Sphinx alone. From there, the path through the three pyramids—and the three cycles they preserve—begins.
 
