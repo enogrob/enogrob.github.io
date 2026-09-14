@@ -219,6 +219,7 @@ Perhaps this was the legacy intended for the people of the future—not a collec
 - [Robert and Olivia Temple, *The Sphinx Mystery: The Forgotten Origins of the Sanctuary of Anubis*](https://www.amazon.com.br/dp/1594772711) — a modern hypothesis about the Sphinx's original identity as Anubis and its relationship to the Giza monuments.
 - [Encyclopaedia Britannica — Osiris](https://www.britannica.com/topic/Osiris-Egyptian-god) — background on the Osirian mythic cycle and its Egyptian context.
 - [The Great Year — video reference](https://www.youtube.com/watch?v=I3ZDcj0kF_0) — a visual reference for the Great Year and its symbolic interpretation.
+- [The Pyramid Code Documentary](https://www.youtube.com/watch?v=GS-S8g2aqMk&list=PLT-IoST8gQqnGTJ7qqUev04AjXzpAXQjD) — an audiovisual reference for the pyramids, ancient Egypt and their symbolic interpretation; included as complementary material, not as archaeological or astronomical proof.
 - [Walter Cruttenden — *Lost Star of Myth and Time*](https://books.google.com/books/about/Lost_Star_of_Myth_and_Time.html?id=ed3PAAAACAAJ)
 
 *The astronomical, historical and symbolic layers in this article are deliberately distinguished. The proposed Anubis-headed Sphinx and its celestial correspondence form an interpretive framework rather than an established archaeological conclusion.*
