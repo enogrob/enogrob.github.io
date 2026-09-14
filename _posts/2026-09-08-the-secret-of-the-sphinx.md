@@ -82,7 +82,7 @@ Within the symbolic reading explored here, the three pyramids give these cycles 
 
 This is a proposed symbolic correspondence, not an established function assigned to the pyramids by archaeology. Its internal logic comes from scale: as the monuments grow, so does the duration of the cycle they preserve. The figures form a second dimension of the mapping: Horus marks daily experience and renewal, Thoth–Sopdet marks awakening and seasonal return, and Osiris–Orion marks the long cycle of transformation, memory and rebirth.
 
-For a related audiovisual exploration of pyramid chronology and symbolism, see [The Pyramid Code: A New Chronology](https://www.youtube.com/watch?v=LZbCj7yoE6Y&list=PLT-IoST8gQqnGTJ7qqUev04AjXzpAXQjD&index=5). It is included as complementary material for the interpretive layer of this article, not as evidence of an accepted archaeological chronology.
+For a related audiovisual exploration of pyramid chronology and symbolism, see [*The Pyramid Code: A New Chronology*](https://www.youtube.com/watch?v=LZbCj7yoE6Y&list=PLT-IoST8gQqnGTJ7qqUev04AjXzpAXQjD&index=5). It is included as complementary material for the interpretive layer of this article, not as evidence of an accepted archaeological chronology.
 
 ## The Three Cycles as Stages of Consciousness
 
@@ -130,7 +130,7 @@ Within the composition proposed here, Sirius gives the seasonal cycle its celest
 
 Imagine a traveler lost in the desert. The landscape no longer provides a clear direction. Yet the tracks of a jackal may reveal a route invisible to the traveler, because the animal knows how to move through that territory.
 
-This gives Anubis a powerful symbolic role. In funerary papyri such as the [Papyrus of Hunefer](https://smarthistory.org/hunefers-judgement-in-the-presence-of-osiris), Anubis appears at the beginning of a decisive passage. That iconography establishes his association with thresholds, but it should not be transferred literally to the landscape proposed here.
+This gives Anubis a powerful symbolic role. In funerary papyri such as the [*Papyrus of Hunefer*](https://smarthistory.org/hunefers-judgement-in-the-presence-of-osiris), Anubis appears at the beginning of a decisive passage. That iconography establishes his association with thresholds, but it should not be transferred literally to the landscape proposed here.
 
 In this interpretation, Anubis is not a separate figure walking beside the traveler. Anubis is the Sphinx itself: the stationary threshold that marks both entrance and return. The traveler reaches the Sphinx alone. From there, the path through the three pyramids—and the three cycles they preserve—begins.
 
@@ -182,7 +182,7 @@ The Hindu Yugas, the classical ages of gold, silver, bronze and iron, and the as
 
 Sri Yukteswar presented a spiritual model of a 24,000-year ascending and descending cycle. Within the traditional Yuga language, Kali Yuga represents the darkest phase—a period associated with material limitation, fragmentation and diminished awareness.
 
-Walter Cruttenden revisits these questions in [Lost Star of Myth and Time](https://www.amazon.com.br/Lost-Star-Myth-Walter-Cruttenden/dp/0976763117). His work examines the [Great Year](https://www.youtube.com/watch?v=I3ZDcj0kF_0), recurring ages and a proposed astronomical explanation involving a companion-star hypothesis. That explanation is not accepted astronomical consensus, but the book remains a useful modern reference for the interpretive tradition explored here. The linked video is included as a visual reference for this symbolic layer, not as evidence for the astronomical measurement of axial precession.
+Walter Cruttenden revisits these questions in [*Lost Star of Myth and Time*](https://www.amazon.com.br/Lost-Star-Myth-Walter-Cruttenden/dp/0976763117). His work examines [*The Great Year*](https://www.youtube.com/watch?v=I3ZDcj0kF_0), recurring ages and a proposed astronomical explanation involving a companion-star hypothesis. That explanation is not accepted astronomical consensus, but the book remains a useful modern reference for the interpretive tradition explored here. The linked video is included as a visual reference for this symbolic layer, not as evidence for the astronomical measurement of axial precession.
 
 <a href="/assets/images/posts/the-secret-of-the-sphinx/the-great-year.webp" target="_blank" rel="noopener">
   <img src="/assets/images/posts/the-secret-of-the-sphinx/the-great-year.webp" alt="The Great Year compared across astronomy, Yugas, classical metal ages and astrological ages" style="width:100%;height:auto;">
