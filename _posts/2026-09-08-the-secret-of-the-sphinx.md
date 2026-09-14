@@ -29,7 +29,7 @@ This article explores one question: could the Sphinx, the pyramids and the surro
 It follows four layers:
 
 1. **Natural cycles** — day and night, the seasons and the Great Year.
-2. **Celestial signs** — Sirius, Orion and the Egyptian associations of Osiris and Anubis.
+2. **Celestial signs** — Sirius, Orion and the Egyptian associations of Horus, Thoth, Sopdet, Osiris and Anubis.
 3. **Monumental correspondences** — the pyramids and Sphinx as a proposed reflection of those cycles.
 4. **A message for the future** — the traveler as an image of humanity recovering its bearings.
 
@@ -40,6 +40,7 @@ The astronomical facts and historical sources provide anchors for the discussion
 - [At a Glance](#at-a-glance)
 - [As Above, So Below](#as-above-so-below)
 - [The Three Cycles](#the-three-cycles)
+- [The Three Cycles as Stages of Consciousness](#the-three-cycles-as-stages-of-consciousness)
 - [Sirius: A Sign of Return](#sirius-a-sign-of-return)
 - [When the Traveler Loses the Way](#when-the-traveler-loses-the-way)
 - [The Sky Becomes a Compass](#the-sky-becomes-a-compass)
@@ -74,11 +75,41 @@ The first two cycles are obvious. The third raises a more difficult question: co
 
 Within the symbolic reading explored here, the three pyramids give these cycles a durable form:
 
-- **Menkaure**, the smallest, represents **day and night**—the cycle closest to human experience.
-- **Khafre**, the intermediate pyramid, represents **the seasons**—the cycle that organizes life across the year.
-- **Khufu**, the largest, represents **the Great Year**—a cycle so vast that only civilizations, traditions and monuments could carry its memory.
+- **Menkaure**, the smallest, represents **day and night**, with **Horus** as its symbolic figure—the cycle closest to human experience.
+- **Khafre**, the intermediate pyramid, represents **the seasons**, with **Thoth–Sopdet** as its symbolic figures—the cycle that organizes life across the year and returns with Sirius.
+- **Khufu**, the largest, represents **the Great Year**, with **Osiris–Orion** as its symbolic figure—a cycle so vast that only civilizations, traditions and monuments could carry its memory.
 
-This is a proposed symbolic correspondence, not an established function assigned to the pyramids by archaeology. Its internal logic comes from scale: as the monuments grow, so does the duration of the cycle they preserve.
+This is a proposed symbolic correspondence, not an established function assigned to the pyramids by archaeology. Its internal logic comes from scale: as the monuments grow, so does the duration of the cycle they preserve. The figures form a second dimension of the mapping: Horus marks daily experience and renewal, Thoth–Sopdet marks awakening and seasonal return, and Osiris–Orion marks the long cycle of transformation, memory and rebirth.
+
+## The Three Cycles as Stages of Consciousness
+
+The same three-cycle structure can also be read inwardly. In this interpretation, the pyramids do not only preserve different measures of time; they describe the widening field of human awareness. This is a symbolic layer of the article, not a claim that ancient Egyptian sources defined these cycles as a psychology of consciousness.
+
+### The First Cycle: The Initiate
+
+The Daily Cycle begins with experience at the human scale. The central archetype is **the Initiate**: a consciousness beginning to recognize conflict, desire, separation and identity.
+
+Its question is:
+
+> Who am I?
+
+This is the cycle of immediate experience, where the individual first encounters the boundaries of the self and begins to distinguish inner life from the surrounding world.
+
+### The Second Cycle: Life and Transformation
+
+The Annual Cycle widens awareness beyond the isolated ego. Its themes are death, renewal, nature, wisdom and integration. The mind begins to perceive impermanence and continuous transformation through the rhythm of the seasons, the Nile and the return of Sirius.
+
+This is the cycle of dying and becoming again. Nature becomes a teacher: what disappears may return in another form, and renewal is not a rejection of death but part of its pattern.
+
+### The Third Cycle: Collective Consciousness
+
+The Great Cycle extends the field of awareness from the individual to humanity as a whole. Its themes are unity, transcendence, collective consciousness and integration.
+
+Here, the individual begins to understand humanity as a single living process moving through eras and civilizations. The question is no longer only “Who am I?” but also:
+
+> What are we becoming together?
+
+The Great Year therefore represents more than an immense astronomical interval. Within this symbolic reading, it is the cycle in which consciousness recognizes that it is not separate from the whole and begins to imagine a future beyond the limits of one life, one culture or one civilization.
 
 ## Sirius: A Sign of Return
 
@@ -89,6 +120,8 @@ The star did not create the cycle. It made the cycle visible.
 This is why Sirius works so well within the story of orientation. It is bright, recognizable and connected with return. In later Greco-Roman tradition, its place in Canis Major gave it the familiar name **the Dog Star**.
 
 Orion offers another celestial figure. In Egyptian religious imagination, Orion was associated with Osiris. Seen together, Orion and Canis Major create the suggestive image of a great figure followed by a celestial dog.
+
+Within the composition proposed here, Sirius gives the seasonal cycle its celestial figure: **Sopdet**, the Egyptian personification of Sirius. Thoth adds the principle of awakened perception, language and knowledge. Together they form the symbolic pair **Thoth–Sopdet** for the middle pyramid: the annual return of the star becomes a moment of awakening and recognition.
 
 ## When the Traveler Loses the Way
 
@@ -106,7 +139,7 @@ After a catastrophe, humanity would face the same problem as the lost traveler. 
 
 What if the celestial pattern—and the knowledge of its cycles—had been given a monumental reflection on Earth?
 
-Above, Orion can be imagined as Osiris, accompanied by Canis Major and its brilliant star Sirius. Below, the three pyramids evoke Osiris while also preserving the three scales of recurring time: day and night, the seasons and the Great Year. The Sphinx—reimagined here with the head of Anubis—becomes the threshold through which the traveler enters and leaves this path of cycles.
+Above, Orion can be imagined as Osiris, accompanied by Canis Major and its brilliant star Sirius. Below, the three pyramids form a terrestrial correspondence: Menkaure/Horus for day and night, Khafre/Thoth–Sopdet for the seasons, and Khufu/Osiris–Orion for the Great Year. The Sphinx—reimagined here with the head of Anubis—becomes the threshold through which the traveler enters and leaves this path of cycles.
 
 This is not an established archaeological reconstruction. The surviving Sphinx has a human head and a lion's body, and the identification proposed here remains symbolic.
 
@@ -124,19 +157,19 @@ The small dog accompanying the traveler can be read as instinct, warning and gui
 
 The traveler represents humanity. The Sphinx–Anubis represents the entrance and exit of the path. When a civilization loses its direction, it must recover a degree of innocence, freedom and openness before a new journey can begin.
 
-Within the symbolic framework proposed here, the twenty-two-card journey can also be read through the three members of the Osirian family: **Osiris, Isis and Horus**. Ancient Egyptian religion presents them as a family triad—father, mother and child—whose story joins death, devotion, restoration and succession. This is not evidence that ancient Egypt possessed a Tarot system divided into three official paths. It is a later interpretive overlay that gives the Fool's journey a distinctly Egyptian rhythm.
+Within the symbolic framework proposed here, the twenty-two-card journey of the Major Arcana can also be read through three Egyptian symbolic paths: **Osiris, Thoth–Sopdet and Horus**. This is not evidence that ancient Egypt possessed a Tarot system divided into three official paths. It is a later interpretive overlay that gives the Fool's journey a distinctly Egyptian rhythm.
 
-The three paths can be understood as three movements within one cycle:
+The three paths can be understood here as three interpretive arcs within one cycle:
 
-- **The path of Osiris** is the descent into loss, death and the hidden world. It preserves the memory of what has been broken and asks what must be recovered.
-- **The path of Isis** is the search, reassembly and recovery of hidden knowledge. It is the patient work of gathering what has been scattered and restoring meaning through wisdom, love and ritual.
-- **The path of Horus** is return, rightful vision and renewed order. It represents the child who inherits the unfinished work, confronts disorder and carries the recovered knowledge into the future.
+- **The path of Osiris** is transformation through descent, loss, death and the hidden world. It preserves the memory of what has been broken and asks what must be recovered.
+- **The path of Thoth–Sopdet** is awakening through knowledge, observation and seasonal return. It joins the intelligence that interprets signs with the star that makes the annual cycle visible.
+- **The path of Horus** is experience, return, rightful vision and renewed order. It represents the living figure who confronts disorder and carries the recovered knowledge into the future.
 
-The three pyramids can become the monumental counterpart of these three movements. In the symbolic reading developed here, **Khufu** can carry the depth and ancestral memory of Osiris; **Khafre** can stand for the mediating and restorative work of Isis; and **Menkaure** can express the renewal and future-facing vision of Horus. This is not a claim that the pyramids were historically dedicated to those three members of the family in that arrangement. It is a way of reading the Giza plateau as a landscape in which death, restoration and rebirth are held together.
+The three pyramids become the monumental counterpart of these arcs. The recovered composition reads **Khufu** as the **Path of Transformation**, represented by **Osiris–Orion** and the Great Cycle; **Khafre** as the **Path of Awakening**, represented by **Thoth–Sopdet** and the Annual Cycle; and **Menkaure** as the **Path of Experience**, represented by **Horus** and the Daily Cycle. This is not a claim that the pyramids were historically dedicated to those figures in this arrangement. It is a symbolic reading of the Giza plateau as a landscape in which transformation, awakening and experience correspond to the Great Year, the seasons and day and night.
 
-This proposed correspondence does not replace the earlier scale of cycles. It overlays a second pattern on the first: the pyramids move from the smallest monument to the largest when read as day and night, seasons and the Great Year, but they can also be read from the largest ancestral memory toward the smaller, more immediate image of renewal. The traveler therefore crosses both orders at once—through the scales of time and through the divine family whose story gives those scales a human meaning.
+The traveler therefore crosses one order at several scales: the Sphinx–Anubis is the threshold, the three pyramids are the terrestrial paths, and Orion, Sirius and their divine figures form the celestial pattern above them.
 
-Read this way, the Fool is not merely beginning a linear sequence. At **0**, or at **22** when the cycle closes and begins again, the traveler stands at the threshold between these three movements. Osiris gives the journey its depth, Isis gives it continuity, and Horus gives it direction. The triad therefore complements the article's three cosmic scales: the personal cycle of day and night, the communal cycle of the seasons and the civilizational cycle of the Great Year.
+Read this way, the Fool is not merely beginning a linear sequence. The Sphinx–Anubis and the Fool do not require a path of their own because their function is to permit passage between all three paths. The Fool can therefore stand at **0** at the entrance and, in the symbolic 0/22 reading, at **22** when the cycle closes and begins again. The threshold is both entrance and exit: it leads into transformation, awakening and experience, then receives the traveler again when the Great Cycle turns.
 
 ## The Great Year
 
