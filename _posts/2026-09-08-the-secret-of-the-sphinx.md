@@ -180,7 +180,7 @@ The Hindu Yugas, the classical ages of gold, silver, bronze and iron, and the as
 
 Sri Yukteswar presented a spiritual model of a 24,000-year ascending and descending cycle. Within the traditional Yuga language, Kali Yuga represents the darkest phase—a period associated with material limitation, fragmentation and diminished awareness.
 
-Walter Cruttenden revisits these questions in *Lost Star of Myth and Time*. His work examines the Great Year, recurring ages and a proposed astronomical explanation involving a companion-star hypothesis. That explanation is not accepted astronomical consensus, but the book remains a useful modern reference for the interpretive tradition explored here.
+Walter Cruttenden revisits these questions in *Lost Star of Myth and Time*. His work examines the [Great Year](https://www.youtube.com/watch?v=I3ZDcj0kF_0), recurring ages and a proposed astronomical explanation involving a companion-star hypothesis. That explanation is not accepted astronomical consensus, but the book remains a useful modern reference for the interpretive tradition explored here. The linked video is included as a visual reference for this symbolic layer, not as evidence for the astronomical measurement of axial precession.
 
 <a href="/assets/images/posts/the-secret-of-the-sphinx/the-great-year.webp" target="_blank" rel="noopener">
   <img src="/assets/images/posts/the-secret-of-the-sphinx/the-great-year.webp" alt="The Great Year compared across astronomy, Yugas, classical metal ages and astrological ages" style="width:100%;height:auto;">
@@ -218,6 +218,7 @@ Perhaps this was the legacy intended for the people of the future—not a collec
 - [Herodotus, *Histories*, Book II.127](https://lexundria.com/hdt/2.127/mcly)
 - [Robert and Olivia Temple, *The Sphinx Mystery: The Forgotten Origins of the Sanctuary of Anubis*](https://www.amazon.com.br/dp/1594772711) — a modern hypothesis about the Sphinx's original identity as Anubis and its relationship to the Giza monuments.
 - [Encyclopaedia Britannica — Osiris](https://www.britannica.com/topic/Osiris-Egyptian-god) — background on the Osirian mythic cycle and its Egyptian context.
+- [The Great Year — video reference](https://www.youtube.com/watch?v=I3ZDcj0kF_0) — a visual reference for the Great Year and its symbolic interpretation.
 - [Walter Cruttenden — *Lost Star of Myth and Time*](https://books.google.com/books/about/Lost_Star_of_Myth_and_Time.html?id=ed3PAAAACAAJ)
 
 *The astronomical, historical and symbolic layers in this article are deliberately distinguished. The proposed Anubis-headed Sphinx and its celestial correspondence form an interpretive framework rather than an established archaeological conclusion.*
