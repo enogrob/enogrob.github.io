@@ -14,12 +14,38 @@ description: "An evidence-based workflow for using AI to document a Rails reposi
 
 An unfamiliar Rails repository rarely lacks structure. What it lacks is a map connecting conventions, domain behavior, callbacks, jobs, configuration, integrations, and operational failure paths. This guide presents an evidence-based workflow for using AI agents to build that map progressively—from a repository overview to a focused feature or bug investigation—using Basecamp's Fizzy repository as an openly inspectable case study.
 
+## At a Glance
+
+This workflow solves a common problem: an unfamiliar Rails repository may be locally readable while its system-level behavior remains difficult to explain. AI can help reconstruct that behavior, but only when its conclusions are tied to code, configuration, tests, documentation, and runtime evidence.
+
+The workflow is:
+
+1. Pin the repository and define the investigation scope.
+2. Run a blind overview using code, configuration, schema, tests, and deployment files.
+3. Compare the result with human-authored documentation.
+4. Trace one feature or failure path through authorization, state changes, callbacks, transactions, jobs, tenancy, integrations, and tests.
+5. Challenge the proposed explanation with counterevidence and missing branches.
+6. Review, label, and publish only the conclusions that can be supported.
+
+The Fizzy repository is the case study used to demonstrate this process. The general method comes first; Fizzy-specific examples begin in the repository overview pass and become more detailed in the card-closure-to-webhook investigation.
+
+The final artifact is not a generated README. It is a small, reviewable documentation package containing:
+
+- a repository overview and stack profile;
+- architecture, dependency, and integration maps;
+- an unknowns and risks register;
+- one or more feature or bug dossiers;
+- evidence references for every material claim;
+- observed, inferred, and unknown labels;
+- a pinned commit, reviewer, approval date, and refresh triggers.
+
 ## Contents
 
+- [At a Glance](#at-a-glance)
 - [Why Rails Repositories Become Hard to Understand](#why-rails-repositories-become-hard-to-understand)
 - [Documentation as a Living Map](#documentation-as-a-living-map)
 - [What AI Can Discover from a Rails Repository](#what-ai-can-discover-from-a-rails-repository)
-- [The Repository Overview Pass](#the-repository-overview-pass)
+- [Case Study: The Fizzy Repository Overview Pass](#case-study-the-fizzy-repository-overview-pass)
 - [Building the Architecture and Dependency Map](#building-the-architecture-and-dependency-map)
 - [Zooming into a Feature or Business Flow](#zooming-into-a-feature-or-business-flow)
 - [Using AI to Investigate a Bug](#using-ai-to-investigate-a-bug)
@@ -156,7 +182,7 @@ No single source proves the whole runtime. A gem declaration proves availability
 
 This discipline is more useful than a longer stack list. It tells the next investigator where certainty ends.
 
-## The Repository Overview Pass
+## Case Study: The Fizzy Repository Overview Pass
 
 The first pass should be intentionally blind to explanatory documentation. Admit code, configuration, schema, tests, and deployment files; temporarily exclude the README, `AGENTS.md`, and `docs/`. This is not because human documentation is less valuable. It creates a baseline that can later be compared against maintainer intent.
 
