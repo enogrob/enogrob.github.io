@@ -22,6 +22,32 @@ The Great Sphinx may be one of them.
 
 This does not mean that every symbolic connection surrounding it is established history. What follows is a visual interpretation: an attempt to understand the Sphinx as a compass linking natural cycles, celestial observation and humanity's recurring need to find its way again.
 
+## At a Glance
+
+This article explores one question: could the Sphinx, the pyramids and the surrounding celestial symbols be read as a mnemonic compass for humanity after a civilizational rupture?
+
+It follows four layers:
+
+1. **Natural cycles** — day and night, the seasons and the Great Year.
+2. **Celestial signs** — Sirius, Orion and the Egyptian associations of Osiris and Anubis.
+3. **Monumental correspondences** — the pyramids and Sphinx as a proposed reflection of those cycles.
+4. **A message for the future** — the traveler as an image of humanity recovering its bearings.
+
+The astronomical facts and historical sources provide anchors for the discussion. The connections between them, including the proposed Anubis-headed Sphinx and the Sphinx-to-pyramids journey, are interpretive rather than established archaeological conclusions. The intended result is not a proof of a hidden system, but a clearly bounded symbolic reading that readers can examine, question and carry forward.
+
+## Contents
+
+- [At a Glance](#at-a-glance)
+- [As Above, So Below](#as-above-so-below)
+- [The Three Cycles](#the-three-cycles)
+- [Sirius: A Sign of Return](#sirius-a-sign-of-return)
+- [When the Traveler Loses the Way](#when-the-traveler-loses-the-way)
+- [The Sky Becomes a Compass](#the-sky-becomes-a-compass)
+- [The Traveler, Zero and Twenty-Two](#the-traveler-zero-and-twenty-two)
+- [The Great Year](#the-great-year)
+- [A Legacy for Future Humanity](#a-legacy-for-future-humanity)
+- [References and Further Reading](#references-and-further-reading)
+
 ## As Above, So Below
 
 The familiar expression *as above, so below* conveys a simple idea: life on Earth can be understood by observing patterns in the sky.
