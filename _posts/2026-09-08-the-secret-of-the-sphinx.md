@@ -124,6 +124,20 @@ The small dog accompanying the traveler can be read as instinct, warning and gui
 
 The traveler represents humanity. The Sphinx–Anubis represents the entrance and exit of the path. When a civilization loses its direction, it must recover a degree of innocence, freedom and openness before a new journey can begin.
 
+Within the symbolic framework proposed here, the twenty-two-card journey can also be read through the three members of the Osirian family: **Osiris, Isis and Horus**. Ancient Egyptian religion presents them as a family triad—father, mother and child—whose story joins death, devotion, restoration and succession. This is not evidence that ancient Egypt possessed a Tarot system divided into three official paths. It is a later interpretive overlay that gives the Fool's journey a distinctly Egyptian rhythm.
+
+The three paths can be understood as three movements within one cycle:
+
+- **The path of Osiris** is the descent into loss, death and the hidden world. It preserves the memory of what has been broken and asks what must be recovered.
+- **The path of Isis** is the search, reassembly and recovery of hidden knowledge. It is the patient work of gathering what has been scattered and restoring meaning through wisdom, love and ritual.
+- **The path of Horus** is return, rightful vision and renewed order. It represents the child who inherits the unfinished work, confronts disorder and carries the recovered knowledge into the future.
+
+The three pyramids can become the monumental counterpart of these three movements. In the symbolic reading developed here, **Khufu** can carry the depth and ancestral memory of Osiris; **Khafre** can stand for the mediating and restorative work of Isis; and **Menkaure** can express the renewal and future-facing vision of Horus. This is not a claim that the pyramids were historically dedicated to those three members of the family in that arrangement. It is a way of reading the Giza plateau as a landscape in which death, restoration and rebirth are held together.
+
+This proposed correspondence does not replace the earlier scale of cycles. It overlays a second pattern on the first: the pyramids move from the smallest monument to the largest when read as day and night, seasons and the Great Year, but they can also be read from the largest ancestral memory toward the smaller, more immediate image of renewal. The traveler therefore crosses both orders at once—through the scales of time and through the divine family whose story gives those scales a human meaning.
+
+Read this way, the Fool is not merely beginning a linear sequence. At **0**, or at **22** when the cycle closes and begins again, the traveler stands at the threshold between these three movements. Osiris gives the journey its depth, Isis gives it continuity, and Horus gives it direction. The triad therefore complements the article's three cosmic scales: the personal cycle of day and night, the communal cycle of the seasons and the civilizational cycle of the Great Year.
+
 ## The Great Year
 
 Modern astronomy describes axial precession: the slow change in the direction of Earth's rotational axis, completing a cycle in approximately 26,000 years. Ancient and spiritual traditions developed their own, distinct models of long ages.
@@ -169,6 +183,7 @@ Perhaps this was the legacy intended for the people of the future—not a collec
 - [Papyrus of Hunefer — Anubis guiding the deceased](https://smarthistory.org/hunefers-judgement-in-the-presence-of-osiris/)
 - [Herodotus, *Histories*, Book II.127](https://lexundria.com/hdt/2.127/mcly)
 - [Robert and Olivia Temple, *The Sphinx Mystery: The Forgotten Origins of the Sanctuary of Anubis*](https://www.amazon.com.br/dp/1594772711) — a modern hypothesis about the Sphinx's original identity as Anubis and its relationship to the Giza monuments.
+- [Encyclopaedia Britannica — Osiris](https://www.britannica.com/topic/Osiris-Egyptian-god) — background on the Osirian mythic cycle and its Egyptian context.
 - [Walter Cruttenden — *Lost Star of Myth and Time*](https://books.google.com/books/about/Lost_Star_of_Myth_and_Time.html?id=ed3PAAAACAAJ)
 
 *The astronomical, historical and symbolic layers in this article are deliberately distinguished. The proposed Anubis-headed Sphinx and its celestial correspondence form an interpretive framework rather than an established archaeological conclusion.*
