@@ -21,7 +21,7 @@ Some monuments appear to preserve a memory larger than the civilization that bui
 
 The Great Sphinx may be one of them.
 
-What follows is an attempt to understand the Sphinx as a compass linking natural cycles, celestial observation and humanity's recurring need to find its way again.[^interpretation]
+What follows is an attempt to understand the Sphinx as a compass linking natural cycles, celestial observation and humanity's recurring need to find its way again.
 
 ## At a Glance
 
@@ -130,7 +130,7 @@ Within the symbolic reading explored here, the three pyramids give these cycles 
 
 Its internal logic comes from scale: as the monuments grow, so does the duration of the cycle they preserve. The figures form a second dimension of the mapping: Horus marks daily experience and renewal, Thoth–Sopdet marks awakening and seasonal return, and Osiris–Orion marks the long cycle of transformation, memory and rebirth.
 
-For a related audiovisual exploration of pyramid chronology and symbolism, see [*The Pyramid Code: A New Chronology*](https://www.youtube.com/watch?v=LZbCj7yoE6Y&list=PLT-IoST8gQqnGTJ7qqUev04AjXzpAXQjD&index=5).
+For a related audiovisual exploration of pyramid chronology and symbolism, see [*"The Pyramid Code: A New Chronology"*](https://www.youtube.com/watch?v=LZbCj7yoE6Y&list=PLT-IoST8gQqnGTJ7qqUev04AjXzpAXQjD&index=5).
 
 ## The Three Cycles as Stages of Consciousness
 
@@ -180,11 +180,11 @@ Sirius is not literally beside the Sun every day. Its symbolic closeness arises 
 
 Imagine a traveler lost in the desert. The landscape no longer provides a clear direction. Yet the tracks of a jackal may reveal a route invisible to the traveler, because the animal knows how to move through that territory.
 
-This gives Anubis a powerful role. In funerary papyri such as the [*Papyrus of Hunefer*](https://smarthistory.org/hunefers-judgement-in-the-presence-of-osiris), Anubis appears at the beginning of a decisive passage.
+This gives Anubis a powerful role. In funerary papyri such as the [*"Papyrus of Hunefer"*](https://smarthistory.org/hunefers-judgement-in-the-presence-of-osiris), Anubis appears at the beginning of a decisive passage.
 
 In this interpretation, Anubis is not a separate figure walking beside the traveler. Anubis is the Sphinx itself: the stationary threshold that marks both entrance and return. The traveler reaches the Sphinx alone. From there, the path through the three pyramids—and the three cycles they preserve—begins.
 
-Robert and Olivia Temple develop a related modern thesis in [*The Sphinx Mystery: The Forgotten Origins of the Sanctuary of Anubis*](https://www.amazon.com.br/dp/1594772711): that the Sphinx was originally carved as a monumental Anubis and stood within a water-filled enclosure associated with the "Jackal Lake" of the Pyramid Texts.
+Robert and Olivia Temple develop a related modern thesis in [*"The Sphinx Mystery: The Forgotten Origins of the Sanctuary of Anubis"*](https://www.amazon.com.br/dp/1594772711): that the Sphinx was originally carved as a monumental Anubis and stood within a water-filled enclosure associated with the "Jackal Lake" of the Pyramid Texts.
 
 After a catastrophe, humanity would face the same problem as the lost traveler. The old paths would have disappeared. The survivors would need signs capable of restoring orientation.
 
@@ -236,7 +236,7 @@ The Hindu Yugas, the classical ages of gold, silver, bronze and iron, and the as
 
 Sri Yukteswar presented a spiritual model of a 24,000-year ascending and descending cycle. Within the traditional Yuga language, Kali Yuga represents the darkest phase—a period associated with material limitation, fragmentation and diminished awareness.
 
-Walter Cruttenden revisits these questions in [*Lost Star of Myth and Time*](https://www.amazon.com.br/Lost-Star-Myth-Walter-Cruttenden/dp/0976763117). His work examines [*The Great Year*](https://www.youtube.com/watch?v=I3ZDcj0kF_0), recurring ages and a proposed astronomical explanation involving a companion-star hypothesis. The book remains a useful modern reference for the tradition explored here.
+Walter Cruttenden revisits these questions in [*"Lost Star of Myth and Time"*](https://www.amazon.com.br/Lost-Star-Myth-Walter-Cruttenden/dp/0976763117). His work examines [*The Great Year*](https://www.youtube.com/watch?v=I3ZDcj0kF_0), recurring ages and a proposed astronomical explanation involving a companion-star hypothesis. The book remains a useful modern reference for the tradition explored here.
 
 <a href="/assets/images/posts/the-secret-of-the-sphinx/the-great-year.webp" target="_blank" rel="noopener">
   <img src="/assets/images/posts/the-secret-of-the-sphinx/the-great-year.webp" alt="The Great Year compared across astronomy, Yugas, classical metal ages and astrological ages" style="width:100%;height:auto;">
