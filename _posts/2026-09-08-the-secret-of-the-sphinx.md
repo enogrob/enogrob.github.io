@@ -266,9 +266,9 @@ When the world loses its way, the monument points upward: **observe the cycles**
 
 Perhaps this was the legacy intended for the people of the future—not a collection of answers, but a compass through time.
 
-<!-- <a href="/assets/images/posts/the-secret-of-the-sphinx/a-compass-through-time.webp" target="_blank" rel="noopener">
-  <img src="/assets/images/posts/the-secret-of-the-sphinx/a-compass-through-time.webp" alt="A compass through time" style="width:100%;height:auto;">
-</a> -->
+<a href="/assets/images/posts/the-secret-of-the-sphinx/what-survives-when-civilizations-fade.webp" target="_blank" rel="noopener">
+  <img src="/assets/images/posts/the-secret-of-the-sphinx/what-survives-when-civilizations-fade.webp" alt="What Survives When Civilizations Fade" style="width:100%;height:auto;">
+</a>
 
 ## References and Further Reading
 
