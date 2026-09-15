@@ -188,6 +188,10 @@ Robert and Olivia Temple develop a related modern thesis in [*"The Sphinx Myster
 
 After a catastrophe, humanity would face the same problem as the lost traveler. The old paths would have disappeared. The survivors would need signs capable of restoring orientation.
 
+<a href="/assets/images/posts/the-secret-of-the-sphinx/when-the-traveler-loses-the-way.webp" target="_blank" rel="noopener">
+  <img src="/assets/images/posts/the-secret-of-the-sphinx/when-the-traveler-loses-the-way.webp" alt="The Sphinx in the Lost Land" class style="width:100%;height:auto;">
+</a>
+
 ## The Sky Becomes a Compass
 
 What if the celestial pattern—and the knowledge of its cycles—had been given a monumental reflection on Earth?
