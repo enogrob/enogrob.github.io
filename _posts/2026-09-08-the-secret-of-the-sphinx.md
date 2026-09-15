@@ -7,7 +7,7 @@ categories: [knowledge-management, symbolism, visual-learning]
 tags: [ancient-egypt, sphinx, sirius, orion, great-year, cosmic-cycles]
 image: /assets/images/posts/the-secret-of-the-sphinx/cover.webp
 lang: en
-mermaid: false
+mermaid: true
 show_body_title: false
 cover_first: true
 brand_identity: enogrob-blog
@@ -21,7 +21,7 @@ Some monuments appear to preserve a memory larger than the civilization that bui
 
 The Great Sphinx may be one of them.
 
-This does not mean that every symbolic connection surrounding it is established history. What follows is a visual interpretation: an attempt to understand the Sphinx as a compass linking natural cycles, celestial observation and humanity's recurring need to find its way again.
+What follows is an attempt to understand the Sphinx as a compass linking natural cycles, celestial observation and humanity's recurring need to find its way again.[^interpretation]
 
 ## At a Glance
 
@@ -34,7 +34,53 @@ It follows four layers:
 3. **Monumental correspondences** — the pyramids and Sphinx as a proposed reflection of those cycles.
 4. **A message for the future** — the traveler as an image of humanity recovering its bearings.
 
-The astronomical facts and historical sources provide anchors for the discussion. The connections between them, including the proposed Anubis-headed Sphinx and the Sphinx-to-pyramids journey, are interpretive rather than established archaeological conclusions. The intended result is not a proof of a hidden system, but a clearly bounded symbolic reading that readers can examine, question and carry forward.
+The astronomical facts and historical sources provide anchors for the discussion. The intended result is a reading that readers can examine, question and carry forward.
+
+### The Interpretive Compass
+
+The diagram below summarizes the symbolic relationships explored in the article: cycles become celestial signs, celestial signs become monumental correspondences, and the traveler moves through them as stages of orientation.
+
+```mermaid!
+%%{init: {'theme':'base','flowchart':{'useMaxWidth':true,'htmlLabels':true,'nodeSpacing':42,'rankSpacing':58,'curve':'basis'},'themeVariables':{'background':'#FFF9F0','primaryTextColor':'#3B332E','lineColor':'#8E8A86','fontFamily':'Trebuchet MS, Verdana, sans-serif','fontSize':'16px','clusterBkg':'#FFF4E6','clusterBorder':'#C5A98B'}}}%%
+flowchart LR
+  classDef sky fill:#DCEEFF,stroke:#78A9D6,color:#24445F,stroke-width:1px
+  classDef monument fill:#FFE4CC,stroke:#D69A68,color:#5D3821,stroke-width:1px
+  classDef journey fill:#DDF3E4,stroke:#79B28A,color:#244B2F,stroke-width:1px
+  classDef threshold fill:#E9E0F7,stroke:#9B83C2,color:#44345E,stroke-width:1px
+  classDef future fill:#FFF0B8,stroke:#D1AA4A,color:#5B4814,stroke-width:1px
+
+  subgraph S["🌌 Celestial cycles"]
+    D["🌞 Daily Cycle<br/>day and night"]:::sky
+    A["🌟 Annual Cycle<br/>seasons and Sirius"]:::sky
+    G["🌌 Great Year<br/>axial precession"]:::sky
+  end
+
+  subgraph M["🏛️ Monumental correspondences"]
+    MK["🔺 Menkaure<br/>Horus"]:::monument
+    KF["🔺 Khafre<br/>Thoth–Sopdet"]:::monument
+    KH["🔺 Khufu<br/>Osiris–Orion"]:::monument
+  end
+
+  subgraph J["🧭 The traveler's journey"]
+    E["👁️ Experience<br/>Who am I?"]:::journey
+    W["💡 Awakening<br/>knowledge and return"]:::journey
+    T["♻️ Transformation<br/>memory across ages"]:::journey
+  end
+
+  X["🦁 Sphinx–Anubis<br/>threshold and return"]:::threshold
+  F["🧑 Future humanity<br/>recovering its bearings"]:::future
+
+  D -->|"☀️ marks"| MK
+  A -->|"🌅 returns through"| KF
+  G -->|"🌀 remembers"| KH
+  MK -->|"🪶 opens"| E
+  KF -->|"🔭 awakens"| W
+  KH -->|"🕰️ transforms"| T
+  X -->|"🚪 gives passage to"| MK
+  X -->|"🚪 gives passage to"| KF
+  X -->|"🚪 gives passage to"| KH
+  F -->|"🧭 seeks"| X
+```
 
 ## Contents
 
@@ -82,13 +128,13 @@ Within the symbolic reading explored here, the three pyramids give these cycles 
 - **Khafre**, the intermediate pyramid, represents **the seasons**, with **Thoth–Sopdet** as its symbolic figures—the cycle that organizes life across the year and returns with Sirius.
 - **Khufu**, the largest, represents **the Great Year**, with **Osiris–Orion** as its symbolic figure—a cycle so vast that only civilizations, traditions and monuments could carry its memory.
 
-This is a proposed symbolic correspondence, not an established function assigned to the pyramids by archaeology. Its internal logic comes from scale: as the monuments grow, so does the duration of the cycle they preserve. The figures form a second dimension of the mapping: Horus marks daily experience and renewal, Thoth–Sopdet marks awakening and seasonal return, and Osiris–Orion marks the long cycle of transformation, memory and rebirth.
+Its internal logic comes from scale: as the monuments grow, so does the duration of the cycle they preserve. The figures form a second dimension of the mapping: Horus marks daily experience and renewal, Thoth–Sopdet marks awakening and seasonal return, and Osiris–Orion marks the long cycle of transformation, memory and rebirth.
 
-For a related audiovisual exploration of pyramid chronology and symbolism, see [*The Pyramid Code: A New Chronology*](https://www.youtube.com/watch?v=LZbCj7yoE6Y&list=PLT-IoST8gQqnGTJ7qqUev04AjXzpAXQjD&index=5). It is included as complementary material for the interpretive layer of this article, not as evidence of an accepted archaeological chronology.
+For a related audiovisual exploration of pyramid chronology and symbolism, see [*The Pyramid Code: A New Chronology*](https://www.youtube.com/watch?v=LZbCj7yoE6Y&list=PLT-IoST8gQqnGTJ7qqUev04AjXzpAXQjD&index=5).
 
 ## The Three Cycles as Stages of Consciousness
 
-The same three-cycle structure can also be read inwardly. In this interpretation, the pyramids do not only preserve different measures of time; they describe the widening field of human awareness. This is a symbolic layer of the article, not a claim that ancient Egyptian sources defined these cycles as a psychology of consciousness.
+The same three-cycle structure can also be read inwardly. The pyramids do not only preserve different measures of time; they describe the widening field of human awareness.
 
 ### The First Cycle: The Initiate
 
@@ -134,11 +180,11 @@ Sirius is not literally beside the Sun every day. Its symbolic closeness arises 
 
 Imagine a traveler lost in the desert. The landscape no longer provides a clear direction. Yet the tracks of a jackal may reveal a route invisible to the traveler, because the animal knows how to move through that territory.
 
-This gives Anubis a powerful symbolic role. In funerary papyri such as the [*Papyrus of Hunefer*](https://smarthistory.org/hunefers-judgement-in-the-presence-of-osiris), Anubis appears at the beginning of a decisive passage. That iconography establishes his association with thresholds, but it should not be transferred literally to the landscape proposed here.
+This gives Anubis a powerful role. In funerary papyri such as the [*Papyrus of Hunefer*](https://smarthistory.org/hunefers-judgement-in-the-presence-of-osiris), Anubis appears at the beginning of a decisive passage.
 
 In this interpretation, Anubis is not a separate figure walking beside the traveler. Anubis is the Sphinx itself: the stationary threshold that marks both entrance and return. The traveler reaches the Sphinx alone. From there, the path through the three pyramids—and the three cycles they preserve—begins.
 
-Robert and Olivia Temple develop a related modern thesis in [*The Sphinx Mystery: The Forgotten Origins of the Sanctuary of Anubis*](https://www.amazon.com.br/dp/1594772711): that the Sphinx was originally carved as a monumental Anubis and stood within a water-filled enclosure associated with the "Jackal Lake" of the Pyramid Texts. This is a relevant reference for the Anubis-Sphinx interpretation developed here, but it should be treated as the Temples' hypothesis rather than as settled archaeological consensus.
+Robert and Olivia Temple develop a related modern thesis in [*The Sphinx Mystery: The Forgotten Origins of the Sanctuary of Anubis*](https://www.amazon.com.br/dp/1594772711): that the Sphinx was originally carved as a monumental Anubis and stood within a water-filled enclosure associated with the "Jackal Lake" of the Pyramid Texts.
 
 After a catastrophe, humanity would face the same problem as the lost traveler. The old paths would have disappeared. The survivors would need signs capable of restoring orientation.
 
@@ -148,9 +194,9 @@ What if the celestial pattern—and the knowledge of its cycles—had been given
 
 Above, Orion can be imagined as Osiris, accompanied by Canis Major and its brilliant star Sirius. Below, the three pyramids form a terrestrial correspondence: Menkaure/Horus for day and night, Khafre/Thoth–Sopdet for the seasons, and Khufu/Osiris–Orion for the Great Year. The Sphinx—reimagined here with the head of Anubis—becomes the threshold through which the traveler enters and leaves this path of cycles.
 
-This is not an established archaeological reconstruction. The surviving Sphinx has a human head and a lion's body, and the identification proposed here remains symbolic.
+The surviving Sphinx has a human head and a lion's body.
 
-Herodotus nevertheless preserves an important clue. In Book II of the *Histories*, he describes the monumental causeway, underground chambers cut into the plateau and a Nile-fed channel associated with the Great Pyramid's subterranean chamber. He does not state that a tunnel connected the Sphinx to the three pyramids. Within this article, his account therefore serves as evidence that passages and subterranean works belonged to the remembered landscape—not as proof of the complete Sphinx-to-pyramids route proposed here.
+Herodotus nevertheless preserves an important clue. In Book II of the *Histories*, he describes the monumental causeway, underground chambers cut into the plateau and a Nile-fed channel associated with the Great Pyramid's subterranean chamber. Within this article, his account adds passages and subterranean works to the remembered landscape.
 
 Its value lies in the question it asks:
 
@@ -160,11 +206,11 @@ Its value lies in the question it asks:
 
 The Tarot Fool provides a later visual parallel. Traditionally numbered **0**, and sometimes placed conceptually after **21** as the traveler who begins again, the Fool stands both before the journey and beyond its completion.
 
-The small dog accompanying the traveler can be read as instinct, warning and guidance. It should not be treated as evidence of an Egyptian origin for Tarot. Here it serves as an analogy.
+The small dog accompanying the traveler can be read as instinct, warning and guidance. Here it serves as an analogy.
 
 The traveler represents humanity. The Sphinx–Anubis represents the entrance and exit of the path. When a civilization loses its direction, it must recover a degree of innocence, freedom and openness before a new journey can begin.
 
-Within the symbolic framework proposed here, the twenty-two-card journey of the Major Arcana can also be read through three Egyptian symbolic paths: **Osiris, Thoth–Sopdet and Horus**. This is not evidence that ancient Egypt possessed a Tarot system divided into three official paths. It is a later interpretive overlay that gives the Fool's journey a distinctly Egyptian rhythm.
+The twenty-two-card journey of the Major Arcana can also be read through three Egyptian symbolic paths: **Osiris, Thoth–Sopdet and Horus**. It gives the Fool's journey a distinctly Egyptian rhythm.
 
 The three paths can be understood here as three interpretive arcs within one cycle:
 
@@ -172,7 +218,7 @@ The three paths can be understood here as three interpretive arcs within one cyc
 - **The path of Thoth–Sopdet** is awakening through knowledge, observation and seasonal return. It joins the intelligence that interprets signs with the star that makes the annual cycle visible.
 - **The path of Horus** is experience, return, rightful vision and renewed order. It represents the living figure who confronts disorder and carries the recovered knowledge into the future.
 
-The three pyramids become the monumental counterpart of these arcs. The recovered composition reads **Khufu** as the **Path of Transformation**, represented by **Osiris–Orion** and the Great Cycle; **Khafre** as the **Path of Awakening**, represented by **Thoth–Sopdet** and the Annual Cycle; and **Menkaure** as the **Path of Experience**, represented by **Horus** and the Daily Cycle. This is not a claim that the pyramids were historically dedicated to those figures in this arrangement. It is a symbolic reading of the Giza plateau as a landscape in which transformation, awakening and experience correspond to the Great Year, the seasons and day and night.
+The three pyramids become the monumental counterpart of these arcs. The recovered composition reads **Khufu** as the **Path of Transformation**, represented by **Osiris–Orion** and the Great Cycle; **Khafre** as the **Path of Awakening**, represented by **Thoth–Sopdet** and the Annual Cycle; and **Menkaure** as the **Path of Experience**, represented by **Horus** and the Daily Cycle. The Giza plateau becomes a landscape in which transformation, awakening and experience correspond to the Great Year, the seasons and day and night.
 
 The traveler therefore crosses one order at several scales: the Sphinx–Anubis is the threshold, the three pyramids are the terrestrial paths, and Orion, Sirius and their divine figures form the celestial pattern above them.
 
@@ -190,7 +236,7 @@ The Hindu Yugas, the classical ages of gold, silver, bronze and iron, and the as
 
 Sri Yukteswar presented a spiritual model of a 24,000-year ascending and descending cycle. Within the traditional Yuga language, Kali Yuga represents the darkest phase—a period associated with material limitation, fragmentation and diminished awareness.
 
-Walter Cruttenden revisits these questions in [*Lost Star of Myth and Time*](https://www.amazon.com.br/Lost-Star-Myth-Walter-Cruttenden/dp/0976763117). His work examines [*The Great Year*](https://www.youtube.com/watch?v=I3ZDcj0kF_0), recurring ages and a proposed astronomical explanation involving a companion-star hypothesis. That explanation is not accepted astronomical consensus, but the book remains a useful modern reference for the interpretive tradition explored here. The linked video is included as a visual reference for this symbolic layer, not as evidence for the astronomical measurement of axial precession.
+Walter Cruttenden revisits these questions in [*Lost Star of Myth and Time*](https://www.amazon.com.br/Lost-Star-Myth-Walter-Cruttenden/dp/0976763117). His work examines [*The Great Year*](https://www.youtube.com/watch?v=I3ZDcj0kF_0), recurring ages and a proposed astronomical explanation involving a companion-star hypothesis. The book remains a useful modern reference for the tradition explored here.
 
 <a href="/assets/images/posts/the-secret-of-the-sphinx/the-great-year.webp" target="_blank" rel="noopener">
   <img src="/assets/images/posts/the-secret-of-the-sphinx/the-great-year.webp" alt="The Great Year compared across astronomy, Yugas, classical metal ages and astrological ages" style="width:100%;height:auto;">
@@ -220,6 +266,10 @@ When the world loses its way, the monument points upward: **observe the cycles**
 
 Perhaps this was the legacy intended for the people of the future—not a collection of answers, but a compass through time.
 
+<!-- <a href="/assets/images/posts/the-secret-of-the-sphinx/a-compass-through-time.webp" target="_blank" rel="noopener">
+  <img src="/assets/images/posts/the-secret-of-the-sphinx/a-compass-through-time.webp" alt="A compass through time" style="width:100%;height:auto;">
+</a> -->
+
 ## References and Further Reading
 
 - [NASA — Milankovitch Cycles and axial precession](https://science.nasa.gov/science-research/earth-science/milankovitch-orbital-cycles-and-their-role-in-earths-climate/)
@@ -229,7 +279,7 @@ Perhaps this was the legacy intended for the people of the future—not a collec
 - [Robert and Olivia Temple, *The Sphinx Mystery: The Forgotten Origins of the Sanctuary of Anubis*](https://www.amazon.com.br/dp/1594772711) — a modern hypothesis about the Sphinx's original identity as Anubis and its relationship to the Giza monuments.
 - [Encyclopaedia Britannica — Osiris](https://www.britannica.com/topic/Osiris-Egyptian-god) — background on the Osirian mythic cycle and its Egyptian context.
 - [The Great Year — video reference](https://www.youtube.com/watch?v=I3ZDcj0kF_0) — a visual reference for the Great Year and its symbolic interpretation.
-- [The Pyramid Code Documentary](https://www.youtube.com/watch?v=GS-S8g2aqMk&list=PLT-IoST8gQqnGTJ7qqUev04AjXzpAXQjD) — an audiovisual reference for the pyramids, ancient Egypt and their symbolic interpretation; included as complementary material, not as archaeological or astronomical proof.
+- [The Pyramid Code Documentary](https://www.youtube.com/watch?v=GS-S8g2aqMk&list=PLT-IoST8gQqnGTJ7qqUev04AjXzpAXQjD) — an audiovisual reference for the pyramids, ancient Egypt and their symbolic interpretation.
 - [Walter Cruttenden — *Lost Star of Myth and Time*](https://www.amazon.com.br/Lost-Star-Myth-Walter-Cruttenden/dp/0976763117)
 
-*The astronomical, historical and symbolic layers in this article are deliberately distinguished. The proposed Anubis-headed Sphinx and its celestial correspondence form an interpretive framework rather than an established archaeological conclusion.*
+[^interpretation]: The astronomical, historical and symbolic layers in this article are deliberately distinguished. The proposed Anubis-headed Sphinx, its celestial correspondence, the pyramid-to-cycle mapping and the Sphinx-to-pyramids journey form an interpretive framework built from astronomical facts, historical sources and later symbolic associations; they should not be read as established archaeological conclusions or as evidence that ancient Egypt possessed the Tarot system described here.
