@@ -25,6 +25,19 @@ That question is becoming concrete. Shopify’s Ruby and Rails Infrastructure te
 
 This article is a map of that transition: where Rails is today, what Ractors change, what the Writebook experiment actually showed, where the hard engineering work remains, and how to inspect your own application through the lens of Ractor-safety.
 
+## Contents
+
+- [Rails already has concurrency — but not this kind of parallelism](#1-rails-already-has-concurrency--but-not-this-kind-of-parallelism)
+- [The real subject is state ownership](#2-the-real-subject-is-state-ownership)
+- [A real Rails experiment: Writebook](#3-a-real-rails-experiment-writebook)
+- [The triangle: parallelism, memory, isolation](#4-the-triangle-parallelism-memory-isolation)
+- [Rails itself is changing](#5-rails-itself-is-changing)
+- [Why AI fits this problem unusually well](#6-why-ai-fits-this-problem-unusually-well)
+- [Is your Rails application Ractor-ready?](#7-is-your-rails-application-ractor-ready)
+- [What could change if the model works?](#8-what-could-change-if-the-model-works)
+- [Conclusion: from concurrency to ownership](#conclusion-from-concurrency-to-ownership)
+- [Sources](#sources)
+
 ![Rails parallelism current to future](/assets/images/posts/rails-in-the-ractor-age/01-current-to-future.webp)
 
 ## 1. Rails already has concurrency — but not this kind of parallelism
