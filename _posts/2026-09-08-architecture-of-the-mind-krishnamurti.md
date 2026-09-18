@@ -41,13 +41,13 @@ The cover introduces the central movement in a simple visual form. The two detai
 <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-start;">
   <figure style="flex:1 1 320px;margin:0;">
     <a href="/assets/images/posts/krishnamurti-mind-architecture/mind-architecture-reference.webp">
-      <img src="/assets/images/posts/krishnamurti-mind-architecture/mind-architecture-thumb.webp" alt="Detailed illustrated relational architecture of the mind" style="width:100%;height:auto;border-radius:8px;">
+      <img src="/assets/images/posts/krishnamurti-mind-architecture/mind-architecture-thumb.webp" alt="Detailed illustrated relational architecture of the mind" data-zoom-scale="2.4" style="width:100%;height:auto;border-radius:8px;">
     </a>
     <figcaption style="text-align:center;"><em>Conceptual architecture — click to enlarge</em></figcaption>
   </figure>
   <figure style="flex:1 1 320px;margin:0;">
     <a href="/assets/images/posts/krishnamurti-mind-architecture/ruby-architecture.webp">
-      <img src="/assets/images/posts/krishnamurti-mind-architecture/ruby-architecture-thumb.webp" alt="Detailed Ruby OOP and metaprogramming architecture of the mind" style="width:100%;height:auto;border-radius:8px;">
+      <img src="/assets/images/posts/krishnamurti-mind-architecture/ruby-architecture-thumb.webp" alt="Detailed Ruby OOP and metaprogramming architecture of the mind" data-zoom-scale="2.4" style="width:100%;height:auto;border-radius:8px;">
     </a>
     <figcaption style="text-align:center;"><em>Ruby architecture — click to enlarge</em></figcaption>
   </figure>
