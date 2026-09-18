@@ -5,7 +5,6 @@ date: 2026-09-17 20:30:00 -0300
 categories: [Ruby, Rails, Architecture]
 tags: [ruby, rails, ractors, concurrency, parallelism, performance, ai-assisted-development]
 image: /assets/images/posts/rails-in-the-reactor-age/cover.webp
-mermaid: true
 description: "A practical visual guide to Ractors, Rails Ractor-safety, the Writebook experiment, and what state ownership could mean for the future of Rails architecture."
 image: /assets/images/posts/rails-in-the-ractor-age/cover.webp
 mermaid: true
@@ -55,85 +54,6 @@ The cost is memory.
 
 ![Threads, workers and Ractors](/assets/images/posts/rails-in-the-ractor-age/04-execution-models.webp)
 
-### Mermaid source: execution models
-
-```mermaid!
-flowchart LR
-  classDef thread fill:#E8F1FF,stroke:#4E8DFF,color:#16324F,stroke-width:1.5px;
-  classDef lock fill:#FFE6E6,stroke:#E35D6A,color:#5A1F24,stroke-width:2px;
-  classDef vm fill:#EDE7FF,stroke:#8A6DFF,color:#2D2157,stroke-width:1.5px;
-  classDef mem fill:#E8F8EC,stroke:#52B36D,color:#184B2B,stroke-width:1.5px;
-  classDef ractor fill:#EAFBF7,stroke:#24B39A,color:#12463D,stroke-width:1.8px;
-  classDef note fill:#FFF6E8,stroke:#F0B44C,color:#5C4518,stroke-width:1.5px;
-
-  subgraph T["1. 🧵 Threads + GVL"]
-    direction TB
-    Tnote["💡 Many threads, one at a time"]:::note
-    subgraph MRI["🧠 Ruby Process (MRI)"]
-      direction TB
-      T1["🧵 Thread 1"]:::thread
-      T2["🧵 Thread 2"]:::thread
-      T3["🧵 Thread 3"]:::thread
-      T4["🧵 Thread 4"]:::thread
-      GVL["🔒 Global VM Lock"]:::lock
-      VM1["🧠 Ruby VM"]:::vm
-      T1 --> GVL
-      T2 --> GVL
-      T3 --> GVL
-      T4 --> GVL
-      GVL --> VM1
-    end
-  end
-
-  subgraph P["2. 🏭 Forked workers"]
-    direction LR
-    Pnote["💡 Multiple processes, true parallelism"]:::note
-    subgraph P1["📦 Process 1"]
-      direction TB
-      P1T1["🧵 Thread 1"]:::thread
-      P1T2["🧵 Thread 2"]:::thread
-      P1GVL["🔒 GVL"]:::lock
-      P1VM["🧠 Ruby VM"]:::vm
-      P1MEM["💾 Memory"]:::mem
-      P1T1 --> P1GVL
-      P1T2 --> P1GVL
-      P1GVL --> P1VM --> P1MEM
-    end
-    subgraph P2["📦 Process 2"]
-      direction TB
-      P2T1["🧵 Thread 1"]:::thread
-      P2T2["🧵 Thread 2"]:::thread
-      P2GVL["🔒 GVL"]:::lock
-      P2VM["🧠 Ruby VM"]:::vm
-      P2MEM["💾 Memory"]:::mem
-      P2T1 --> P2GVL
-      P2T2 --> P2GVL
-      P2GVL --> P2VM --> P2MEM
-    end
-  end
-
-  subgraph R["3. 💎 Ractors"]
-    direction TB
-    Rnote["💡 True parallelism inside one process"]:::note
-    subgraph SRP["🧠 Single Ruby Process"]
-      direction LR
-      subgraph RAgrp["💎 Ractor A"]
-        direction TB
-        RAheap["🧺 Isolated heap"]:::ractor
-        RAsched["⏱️ Own scheduler"]:::ractor
-      end
-      Msg["✉️ Message passing"]:::note
-      subgraph RBgrp["💎 Ractor B"]
-        direction TB
-        RBheap["🧺 Isolated heap"]:::ractor
-        RBsched["⏱️ Own scheduler"]:::ractor
-      end
-      RAgrp --> Msg --> RBgrp
-    end
-  end
-```
-
-
 Rails servers reduce some duplication with copy-on-write: preload the application, fork workers, and let the operating system share unchanged pages. But as workers allocate objects, populate caches, and run garbage collection, their memory diverges.
 
 Ractors offer a different model: **parallel Ruby execution inside a single process**.
@@ -147,52 +67,6 @@ Ractors isolate mutable state. Objects crossing the boundary must either be shar
 For an ordinary Ruby script, this is already a meaningful constraint. For Rails, it is an architectural challenge because framework and application code have historically made extensive use of configuration objects, registries, caches, class-level state, memoization, connection management, and other structures that assume a shared process-wide world.
 
 ![Ractor isolation boundary](/assets/images/posts/rails-in-the-ractor-age/05-isolation-boundary.webp)
-
-### Mermaid source: Ractor isolation boundary
-
-```mermaid!
-flowchart LR
-  classDef local fill:#EAFBF7,stroke:#24B39A,color:#12463D,stroke-width:1.8px;
-  classDef boundary fill:#E8F1FF,stroke:#4E8DFF,color:#16324F,stroke-width:1.8px;
-  classDef hotspot fill:#FFE6E6,stroke:#E35D6A,color:#5A1F24,stroke-width:1.8px;
-  classDef note fill:#FFF6E8,stroke:#F0B44C,color:#5C4518,stroke-width:1.5px;
-
-  subgraph A["💎 Ractor A"]
-    direction TB
-    A1["🧩 Local mutable state"]:::local
-    A2["🧮 Variables"]:::local
-    A3["⚙️ Objects"]:::local
-    A4["🗂️ Caches"]:::local
-  end
-
-  subgraph B["🚪 Boundary"]
-    direction TB
-    B1["📤 Shareable objects"]:::boundary
-    B2["📦 Transferred objects"]:::boundary
-    B3["💬 Explicit communication"]:::note
-  end
-
-  subgraph C["💎 Ractor B"]
-    direction TB
-    C1["🧩 Local mutable state"]:::local
-    C2["🧮 Variables"]:::local
-    C3["⚙️ Objects"]:::local
-    C4["🗂️ Caches"]:::local
-  end
-
-  A -->|"share or transfer"| B
-  B -->|"send explicitly"| C
-
-  subgraph H["🔥 Architectural hotspots"]
-    direction LR
-    G1["🗂️ Caches"]:::hotspot
-    G2["⚙️ Configuration"]:::hotspot
-    G3["📚 Registries"]:::hotspot
-    G4["🔌 Connection handling"]:::hotspot
-    G5["📈 Instrumentation"]:::hotspot
-  end
-```
-
 
 That is why the move toward Ractor-ready Rails is much more interesting than a new concurrency API. It forces us to answer questions that are healthy even before we adopt Ractors:
 
@@ -251,34 +125,6 @@ In the September 5, 2026 *This Week in Rails* update, changes included making co
 
 ![Rails Ractor hotspots](/assets/images/posts/rails-in-the-ractor-age/06-rails-hotspots.webp)
 
-### Mermaid source: Rails hotspots for Ractor-safety
-
-```mermaid!
-flowchart TB
-  classDef core fill:#E8F1FF,stroke:#4E8DFF,color:#16324F,stroke-width:2px;
-  classDef app fill:#EAFBF7,stroke:#24B39A,color:#12463D,stroke-width:1.8px;
-  classDef db fill:#FFF1E8,stroke:#F29B4B,color:#633A11,stroke-width:1.8px;
-  classDef obs fill:#F4EEFF,stroke:#9A75FF,color:#34225E,stroke-width:1.8px;
-
-  Core["💎 Rails request inside a Ractor"]:::core
-
-  subgraph State["🧭 Framework state being refactored"]
-    direction TB
-    Cfg["🧰 Controller config<br/>per-request configuration"]:::app
-    View["🖼️ Action View settings<br/>isolated view state and helpers"]:::app
-    TZ["🕒 Time zones<br/>per-request time zone"]:::app
-    Events["📣 Event reporters<br/>isolated instrumentation and subscribers"]:::obs
-    DB["🗄️ Active Record / DB<br/>per-Ractor connections and query cache"]:::db
-  end
-
-  Core --> Cfg
-  Core --> View
-  Core --> TZ
-  Core --> Events
-  Core --> DB
-```
-
-
 The first milestone described by the Rails at Scale team is intentionally modest but important: generate a new Rails application, scaffold a resource, and serve its requests inside a Ractor.
 
 That small scenario touches routing, request/response handling, views, translations, database access, assets, and Active Support. Making that path work creates a foundation; it does not mean that every Rails subsystem is Ractor-ready.
@@ -303,36 +149,6 @@ A compatibility failure can often be reproduced through a tight harness:
 6. keep the useful prototype or discard it.
 
 ![AI agent loop](/assets/images/posts/rails-in-the-ractor-age/07-ai-agent-loop.webp)
-
-### Mermaid source: AI-assisted Ractor-safety loop
-
-```mermaid!
-flowchart LR
-  classDef step fill:#E8F1FF,stroke:#4E8DFF,color:#16324F,stroke-width:1.8px;
-  classDef issue fill:#FFE6E6,stroke:#E35D6A,color:#5A1F24,stroke-width:1.8px;
-  classDef human fill:#FFF6E8,stroke:#F0B44C,color:#5C4518,stroke-width:1.8px;
-  classDef improve fill:#EAFBF7,stroke:#24B39A,color:#12463D,stroke-width:1.8px;
-
-  subgraph Loop["🔁 Fast feedback loop"]
-    direction LR
-    A["🧪 1. Generate focused case"]:::step
-    B["🧰 2. Run tests / harness"]:::step
-    C["🚨 3. Diagnose Ractor failure"]:::issue
-    D["🛠️ 4. Refine prototype"]:::improve
-    A --> B --> C --> D
-    D -->|"learn & repeat"| A
-  end
-
-  subgraph Human["🧠 Human guidance"]
-    direction TB
-    H["🏗️ Architecture<br/>📏 Invariants<br/>🎯 Hotspot design<br/>🤝 Decide what should be shared"]:::human
-  end
-
-  H -. guides .-> B
-  H -. guides .-> C
-  H -. guides .-> D
-```
-
 
 That loop lets an agent explore many mechanical fixes quickly. But the architecture still needs humans.
 
@@ -401,8 +217,6 @@ It is simpler:
 If the Ractor age arrives for Rails, that mental model will prepare you for it.
 
 And even if your application never uses a Ractor, it is likely to make the architecture easier to understand.
-
----
 
 ## Sources
 
