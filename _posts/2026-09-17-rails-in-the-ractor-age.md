@@ -4,6 +4,8 @@ title: "Rails in the Ractor Age: What Ractors Could Actually Change for Your App
 date: 2026-09-17 20:30:00 -0300
 categories: [Ruby, Rails, Architecture]
 tags: [ruby, rails, ractors, concurrency, parallelism, performance, ai-assisted-development]
+image: /assets/images/posts/rails-in-the-reactor-age/cover.webp
+mermaid: true
 description: "A practical visual guide to Ractors, Rails Ractor-safety, the Writebook experiment, and what state ownership could mean for the future of Rails architecture."
 image: /assets/images/posts/rails-in-the-ractor-age/cover.webp
 mermaid: true
@@ -42,7 +44,7 @@ The cost is memory.
 
 ### Mermaid source: execution models
 
-```mermaid
+```mermaid!
 flowchart LR
   classDef thread fill:#E8F1FF,stroke:#4E8DFF,color:#16324F,stroke-width:1.5px;
   classDef lock fill:#FFE6E6,stroke:#E35D6A,color:#5A1F24,stroke-width:2px;
@@ -135,7 +137,7 @@ For an ordinary Ruby script, this is already a meaningful constraint. For Rails,
 
 ### Mermaid source: Ractor isolation boundary
 
-```mermaid
+```mermaid!
 flowchart LR
   classDef local fill:#EAFBF7,stroke:#24B39A,color:#12463D,stroke-width:1.8px;
   classDef boundary fill:#E8F1FF,stroke:#4E8DFF,color:#16324F,stroke-width:1.8px;
@@ -238,7 +240,7 @@ In the September 5, 2026 *This Week in Rails* update, changes included making co
 
 ### Mermaid source: Rails hotspots for Ractor-safety
 
-```mermaid
+```mermaid!
 flowchart TB
   classDef core fill:#E8F1FF,stroke:#4E8DFF,color:#16324F,stroke-width:2px;
   classDef app fill:#EAFBF7,stroke:#24B39A,color:#12463D,stroke-width:1.8px;
@@ -291,7 +293,7 @@ A compatibility failure can often be reproduced through a tight harness:
 
 ### Mermaid source: AI-assisted Ractor-safety loop
 
-```mermaid
+```mermaid!
 flowchart LR
   classDef step fill:#E8F1FF,stroke:#4E8DFF,color:#16324F,stroke-width:1.8px;
   classDef issue fill:#FFE6E6,stroke:#E35D6A,color:#5A1F24,stroke-width:1.8px;
