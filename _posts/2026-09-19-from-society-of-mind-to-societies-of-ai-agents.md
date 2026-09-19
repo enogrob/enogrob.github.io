@@ -138,7 +138,7 @@ Anthropic has described a similar pattern in its Research system. A lead agent d
 
 The architecture is recognizable:
 
-```mermaid
+```mermaid!
 flowchart TB
     U["👤 Human Goal"] --> O["🧭 Orchestrator"]
 
@@ -235,7 +235,7 @@ In this sense, multi-agent architecture is not only about parallel execution.
 
 It is also about **information boundaries**.
 
-```mermaid
+```mermaid!
 flowchart LR
     G["🎯 Goal"] --> P["🧭 Plan"]
     P --> S1["Agent A<br/>clean context"]
@@ -411,8 +411,6 @@ The question for the agentic era may not simply be:
 It may increasingly be:
 
 > **How intelligent is the architecture around it?**
-
----
 
 ## Visual storyboard
 
