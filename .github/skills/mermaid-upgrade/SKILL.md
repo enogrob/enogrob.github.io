@@ -24,13 +24,14 @@ Preserve the intellectual and technical meaning of the original diagram.
 6. Apply the canonical light/dark resilient theme.
 7. Introduce semantic `classDef` styles.
 8. Assign colors according to conceptual roles rather than visual variety.
-9. Add `subgraph` only when natural boundaries or stages already exist in the meaning of the diagram.
-10. Shorten labels only when the meaning remains unchanged.
-11. Reduce unnecessary visual noise and edge crossings where practical.
-12. Keep one Mermaid source for both light and dark page modes.
-13. Do not introduce external CSS dependencies.
-14. Re-audit the modified diagram against the shared contract.
-15. Report exactly what changed.
+9. Add `subgraph` when natural boundaries or stages exist, and prefer richer grouping whenever it improves scanability without bloating the diagram.
+10. Prefer semantic emoji/icons that clarify roles and stages; use them aggressively when they improve recognition and meaning.
+11. Shorten labels only when the meaning remains unchanged.
+12. Reduce unnecessary visual noise and edge crossings where practical.
+13. Keep one Mermaid source for both light and dark page modes.
+14. Do not introduce external CSS dependencies.
+15. Re-audit the modified diagram against the shared contract.
+16. Report exactly what changed.
 
 ## Do not
 
@@ -40,6 +41,7 @@ Preserve the intellectual and technical meaning of the original diagram.
 - Do not create separate light-mode and dark-mode Mermaid versions.
 - Do not replace meaningful terminology with generic labels.
 - Do not add decorative emoji merely to satisfy an aesthetic goal.
+- Do not over-group or over-emoji a diagram to the point that it reduces readability.
 - Do not modify prose outside the minimum integration changes required for Mermaid unless explicitly requested.
 
 ## Completion report

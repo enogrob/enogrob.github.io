@@ -60,7 +60,9 @@ Guidelines:
 - Prefer approximately 3–6 semantic colors when distinct roles justify them.
 - Keep the same semantic role visually consistent inside the same diagram.
 - Use `subgraph` when content naturally forms stages, boundaries, systems, or conceptual groups.
-- Functional icons may be used when they improve recognition.
+- Prefer more useful `subgraph` boundaries rather than fewer, as long as they reduce cognitive load and clarify conceptual layers.
+- Functional icons may be used when they improve recognition; prefer semantic emoji/icons for roles such as orchestrator, specialist, tool, memory, evaluation, synthesis, and stage boundaries.
+- Maximize semantic iconography and subgraph grouping whenever each addition meaningfully improves scanability or comprehension.
 - Do not add decorative icons merely for visual noise.
 - Preserve the original meaning when modernizing a diagram.
 

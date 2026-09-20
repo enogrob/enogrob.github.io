@@ -46,6 +46,9 @@ Verify that:
 - the same role uses the same style
 - unrelated roles are visually distinguishable
 - styling is not random or merely decorative
+- useful semantic icons/emoji are present where they improve recognition
+- `subgraph` boundaries are used generously when they reduce cognitive load and clarify layers, stages, or systems
+- iconography remains functional, not ornamental
 
 ### 4. Jekyll integration
 
