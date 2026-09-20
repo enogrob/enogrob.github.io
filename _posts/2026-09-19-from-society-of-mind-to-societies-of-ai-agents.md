@@ -32,36 +32,44 @@ How should the mechanisms required for intelligence be organized?
 ### The shift in one diagram
 
 ```mermaid!
+%%{init: {'theme':'base','flowchart':{'useMaxWidth':true,'htmlLabels':true,'nodeSpacing':48,'rankSpacing':58,'curve':'basis'},'themeVariables':{'background':'#FFF8EF','primaryTextColor':'#3E342C','lineColor':'#6F7377','fontFamily':'Trebuchet MS, Verdana, sans-serif','fontSize':'17px','clusterBkg':'#FBF4E7','clusterBorder':'#B8A17D'}}}%%
 flowchart LR
-    G["Complex problem"] --> O["Orchestrator"]
-    O --> A1["Specialist agent"]
-    O --> A2["Specialist agent"]
-    O --> A3["Specialist agent"]
+    G["🧩 Complex problem"] --> O["🧭 Orchestrator"]
 
-    A1 --> M["Shared memory"]
-    A2 --> M
-    A3 --> M
+    subgraph S1["🧠 Specialist layer"]
+      O --> A1["🔎 Research agent"]
+      O --> A2["💻 Coding agent"]
+      O --> A3["✅ Evaluation agent"]
+    end
 
-    A1 --> T1["Tools"]
-    A2 --> T2["Tools"]
-    A3 --> T3["Tools"]
+    subgraph S2["🗃️ Shared system resources"]
+      A1 --> M["📚 Shared memory"]
+      A2 --> M
+      A3 --> M
+    end
 
-    M --> S["Synthesis"]
+    subgraph S3["🛠️ Tool access"]
+      A1 --> T1["🔧 Tools"]
+      A2 --> T2["🔧 Tools"]
+      A3 --> T3["🔧 Tools"]
+    end
+
+    M --> S["🧩 Synthesis"]
     T1 --> S
     T2 --> S
     T3 --> S
-    S --> R["Result"]
+    S --> R["✨ Result"]
 
-    classDef core fill:#dce8f7,stroke:#506d91,color:#1d2733;
-    classDef agent fill:#dff1e5,stroke:#4f8060,color:#1e3024;
-    classDef tool fill:#f4dfeb,stroke:#93647e,color:#34242e;
-    classDef mem fill:#eee7fa,stroke:#78679b,color:#2c2639;
-    classDef result fill:#f7e8c6,stroke:#866a3b,color:#292929;
+    classDef orchestrator fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
+    classDef specialist fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
+    classDef tool fill:#F5D7DC,stroke:#BD858E,color:#3E342C,stroke-width:2px;
+    classDef memory fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
+    classDef result fill:#F8DFC4,stroke:#C9986D,color:#3E342C,stroke-width:2px;
 
-    class G,O core;
-    class A1,A2,A3 agent;
+    class G,O orchestrator;
+    class A1,A2,A3 specialist;
     class T1,T2,T3 tool;
-    class M mem;
+    class M memory;
     class S,R result;
 ```
 
@@ -177,35 +185,38 @@ Anthropic has described a similar pattern in its Research system. A lead agent d
 The architecture is recognizable:
 
 ```mermaid!
+%%{init: {'theme':'base','flowchart':{'useMaxWidth':true,'htmlLabels':true,'nodeSpacing':48,'rankSpacing':58,'curve':'basis'},'themeVariables':{'background':'#FFF8EF','primaryTextColor':'#3E342C','lineColor':'#6F7377','fontFamily':'Trebuchet MS, Verdana, sans-serif','fontSize':'17px','clusterBkg':'#FBF4E7','clusterBorder':'#B8A17D'}}}%%
 flowchart TB
     U["👤 Human Goal"] --> O["🧭 Orchestrator"]
 
-    subgraph SOC["Society of Specialized Agents"]
+    subgraph SOC["🏙️ Society of Specialized Agents"]
       O --> R["🔎 Research Agent"]
       O --> C["💻 Coding Agent"]
       O --> A["🧠 Analysis Agent"]
       O --> E["✅ Evaluation Agent"]
     end
 
-    R --> T1["🌐 Search Tools"]
-    C --> T2["🛠️ Repository + Runtime"]
-    A --> M["📚 Shared / External Memory"]
-    E --> T3["🧪 Tests + Evals"]
+    subgraph TSK["🧰 Tooling and runtime"]
+      R --> T1["🌐 Search Tools"]
+      C --> T2["🛠️ Repository + Runtime"]
+      A --> M["📚 Shared / External Memory"]
+      E --> T3["🧪 Tests + Evals"]
+    end
 
     R --> O
     C --> O
     A --> O
     E --> O
 
-    classDef human fill:#f7e8c6,stroke:#866a3b,color:#292929;
-    classDef coord fill:#dce8f7,stroke:#506d91,color:#1d2733;
-    classDef agent fill:#dff1e5,stroke:#4f8060,color:#1e3024;
-    classDef tool fill:#f4dfeb,stroke:#93647e,color:#34242e;
-    classDef memory fill:#eee7fa,stroke:#78679b,color:#2c2639;
+    classDef human fill:#FFF1BF,stroke:#C5A84A,color:#3E342C,stroke-width:2px;
+    classDef orchestrator fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
+    classDef specialist fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
+    classDef tool fill:#F5D7DC,stroke:#BD858E,color:#3E342C,stroke-width:2px;
+    classDef memory fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
 
     class U human;
-    class O coord;
-    class R,C,A,E agent;
+    class O orchestrator;
+    class R,C,A,E specialist;
     class T1,T2,T3 tool;
     class M memory;
 ```
@@ -221,40 +232,46 @@ But it rhymes with the older architectural intuition.
 The coordination problem can be seen in one compact loop:
 
 ```mermaid!
+%%{init: {'theme':'base','flowchart':{'useMaxWidth':true,'htmlLabels':true,'nodeSpacing':48,'rankSpacing':58,'curve':'basis'},'themeVariables':{'background':'#FFF8EF','primaryTextColor':'#3E342C','lineColor':'#6F7377','fontFamily':'Trebuchet MS, Verdana, sans-serif','fontSize':'17px','clusterBkg':'#FBF4E7','clusterBorder':'#B8A17D'}}}%%
 flowchart LR
-    G["Goal"] --> O["Orchestrator"]
-    O --> D["Delegate subtask"]
-    D --> A1["Research agent"]
-    D --> A2["Coding agent"]
-    D --> A3["Evaluation agent"]
+    G["🎯 Goal"] --> O["🧭 Orchestrator"]
+    O --> D["📌 Delegate subtask"]
 
-    A1 --> C1["Context + tools"]
-    A2 --> C2["Context + tools"]
-    A3 --> C3["Context + tools"]
+    subgraph E1["⚙️ Parallel specialist work"]
+      D --> A1["🔎 Research agent"]
+      D --> A2["💻 Coding agent"]
+      D --> A3["✅ Evaluation agent"]
+    end
 
-    C1 --> R1["Artifact"]
-    C2 --> R2["Artifact"]
-    C3 --> R3["Artifact"]
+    subgraph E2["🧰 Context and tools"]
+      A1 --> C1["🧵 Context + tools"]
+      A2 --> C2["🧵 Context + tools"]
+      A3 --> C3["🧵 Context + tools"]
+    end
 
-    R1 --> S["Synthesis"]
+    C1 --> R1["📄 Artifact"]
+    C2 --> R2["📄 Artifact"]
+    C3 --> R3["📄 Artifact"]
+
+    R1 --> S["🧩 Synthesis"]
     R2 --> S
     R3 --> S
     S --> O
 
-    O --> Q{"Need more work?"}
+    O --> Q{"❓ Need more work?"}
     Q -->|Yes| D
-    Q -->|No| F["Final answer"]
+    Q -->|No| F["✨ Final answer"]
 
-    classDef core fill:#dce8f7,stroke:#506d91,color:#1d2733;
-    classDef agent fill:#dff1e5,stroke:#4f8060,color:#1e3024;
-    classDef tool fill:#f4dfeb,stroke:#93647e,color:#34242e;
-    classDef out fill:#f7e8c6,stroke:#866a3b,color:#292929;
-    classDef final fill:#eee7fa,stroke:#78679b,color:#2c2639;
+    classDef orchestrator fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
+    classDef specialist fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
+    classDef tool fill:#F5D7DC,stroke:#BD858E,color:#3E342C,stroke-width:2px;
+    classDef output fill:#F8DFC4,stroke:#C9986D,color:#3E342C,stroke-width:2px;
+    classDef final fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
 
-    class G,O,D,Q core;
-    class A1,A2,A3 agent;
+    class G,O,D,Q orchestrator;
+    class A1,A2,A3 specialist;
     class C1,C2,C3 tool;
-    class R1,R2,R3,S out;
+    class R1,R2,R3,S output;
     class F final;
 ```
 
@@ -314,11 +331,15 @@ In this sense, multi-agent architecture is not only about parallel execution.
 It is also about **information boundaries**.
 
 ```mermaid!
+%%{init: {'theme':'base','flowchart':{'useMaxWidth':true,'htmlLabels':true,'nodeSpacing':48,'rankSpacing':58,'curve':'basis'},'themeVariables':{'background':'#FFF8EF','primaryTextColor':'#3E342C','lineColor':'#6F7377','fontFamily':'Trebuchet MS, Verdana, sans-serif','fontSize':'17px','clusterBkg':'#FBF4E7','clusterBorder':'#B8A17D'}}}%%
 flowchart LR
     G["🎯 Goal"] --> P["🧭 Plan"]
-    P --> S1["Agent A<br/>clean context"]
-    P --> S2["Agent B<br/>clean context"]
-    P --> S3["Agent C<br/>clean context"]
+
+    subgraph W1["🧠 Specialist execution"]
+      P --> S1["🧑‍💻 Agent A<br/>clean context"]
+      P --> S2["🧑‍💻 Agent B<br/>clean context"]
+      P --> S3["🧑‍💻 Agent C<br/>clean context"]
+    end
 
     S1 --> A1["📄 Artifact"]
     S2 --> A2["📄 Artifact"]
@@ -329,13 +350,13 @@ flowchart LR
     A3 --> SYN
     SYN --> R["✨ Result"]
 
-    classDef plan fill:#dce8f7,stroke:#506d91,color:#1d2733;
-    classDef agent fill:#dff1e5,stroke:#4f8060,color:#1e3024;
-    classDef artifact fill:#f7e8c6,stroke:#866a3b,color:#292929;
-    classDef result fill:#eee7fa,stroke:#78679b,color:#2c2639;
+    classDef plan fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
+    classDef specialist fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
+    classDef artifact fill:#F8DFC4,stroke:#C9986D,color:#3E342C,stroke-width:2px;
+    classDef result fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
 
     class G,P plan;
-    class S1,S2,S3 agent;
+    class S1,S2,S3 specialist;
     class A1,A2,A3 artifact;
     class SYN,R result;
 ```
