@@ -9,13 +9,15 @@ image: /assets/images/posts/society-of-mind-ai-agents/cover.webp
 mermaid: true
 ---
 
-![From Society of Mind to Societiesof AI Agents](/assets/images/posts/society-of-mind-ai-agents/cover.webp)
+![From Society of Mind to Societies of AI Agents](/assets/images/posts/society-of-mind-ai-agents/cover.webp)
 
-In September 2026, OpenAI introduced an Agents API built around a harness that manages context, uses tools, and coordinates subagents. Complex tasks can be divided into independent pieces, delegated to subagents with their own contexts, and brought back together by a coordinating agent.
+In September 2026, OpenAI introduced an Agents API built around a harness that manages context, uses tools, and coordinates subagents. Complex tasks can be split apart, delegated to specialized workers, and brought back together by a coordinating agent.
+
+This is more than a product announcement. It is a clue about where the real work of AI is moving.
 
 Read that description again, but forget the product names for a moment.
 
-A system receives a difficult problem. It decomposes the problem. Different components apply different methods. Some work independently. Their results return to a coordinating process. Memory preserves what matters. Tools connect reasoning to an external environment. The difficult part is no longer simply computation.
+A difficult problem arrives. The system decomposes it. Different components apply different methods. Some work independently. Their results return to a coordinating process. Memory preserves what matters. Tools connect reasoning to the outside world. The hard part is no longer simply computation.
 
 It is **organization**.
 
@@ -26,6 +28,44 @@ Not how to build a chatbot. Not how to scale a transformer. Not how to prompt an
 How should the mechanisms required for intelligence be organized?
 
 > **The interesting connection between Minsky and agentic AI is not prediction. It is architecture.**
+
+### The shift in one diagram
+
+```mermaid!
+flowchart LR
+    G["Complex problem"] --> O["Orchestrator"]
+    O --> A1["Specialist agent"]
+    O --> A2["Specialist agent"]
+    O --> A3["Specialist agent"]
+
+    A1 --> M["Shared memory"]
+    A2 --> M
+    A3 --> M
+
+    A1 --> T1["Tools"]
+    A2 --> T2["Tools"]
+    A3 --> T3["Tools"]
+
+    M --> S["Synthesis"]
+    T1 --> S
+    T2 --> S
+    T3 --> S
+    S --> R["Result"]
+
+    classDef core fill:#dce8f7,stroke:#506d91,color:#1d2733;
+    classDef agent fill:#dff1e5,stroke:#4f8060,color:#1e3024;
+    classDef tool fill:#f4dfeb,stroke:#93647e,color:#34242e;
+    classDef mem fill:#eee7fa,stroke:#78679b,color:#2c2639;
+    classDef result fill:#f7e8c6,stroke:#866a3b,color:#292929;
+
+    class G,O core;
+    class A1,A2,A3 agent;
+    class T1,T2,T3 tool;
+    class M mem;
+    class S,R result;
+```
+
+The deeper shift is not simply “more agents.” It is the move from one general mechanism to a coordinated system of specialized roles, shared memory, and explicit boundaries.
 
 ## Contents
 
@@ -90,7 +130,7 @@ Minsky later developed a much broader theory around this intuition in *The Socie
 
 The provocative idea was that what we call a mind need not be explained by locating one central intelligent entity inside it. Complex intelligence could instead arise from interactions among many simpler processes or "agents," each handling limited kinds of work.
 
-This is where a historical comparison requires care.
+This is where the comparison requires care.
 
 A Minsky agent is **not** the same thing as an LLM agent.
 
@@ -98,7 +138,7 @@ The term belongs to a different theoretical framework. Society of Mind is a theo
 
 Treating the two as identical would erase the most interesting part of the comparison.
 
-What survives the translation is the architectural intuition:
+What survives the translation is not a literal claim about identical mechanisms. It is a design principle:
 
 > **Complex behavior can emerge from organized specialization rather than from a single mechanism doing everything.**
 
@@ -114,13 +154,11 @@ A research agent and a coding agent may share the same underlying model while be
 
 This produces an important inversion.
 
-In classical software, specialized behavior often came primarily from specialized code.
-
-In an agentic system, specialization can emerge from the combination of:
+In classical software, specialized behavior usually came from specialized code. In an agentic system, specialization can emerge from a different combination:
 
 **model + role + context + tools + memory + constraints + environment.**
 
-The intelligence of the overall application therefore cannot be understood only by inspecting the model.
+The intelligence of the overall application cannot be understood by inspecting the model alone.
 
 We have to inspect the **harness**.
 
@@ -180,7 +218,47 @@ But it rhymes with the older architectural intuition.
 
 ## 6. The Real Problem Moves to Coordination
 
-Once we create multiple agents, the central problem changes.
+The coordination problem can be seen in one compact loop:
+
+```mermaid!
+flowchart LR
+    G["Goal"] --> O["Orchestrator"]
+    O --> D["Delegate subtask"]
+    D --> A1["Research agent"]
+    D --> A2["Coding agent"]
+    D --> A3["Evaluation agent"]
+
+    A1 --> C1["Context + tools"]
+    A2 --> C2["Context + tools"]
+    A3 --> C3["Context + tools"]
+
+    C1 --> R1["Artifact"]
+    C2 --> R2["Artifact"]
+    C3 --> R3["Artifact"]
+
+    R1 --> S["Synthesis"]
+    R2 --> S
+    R3 --> S
+    S --> O
+
+    O --> Q{"Need more work?"}
+    Q -->|Yes| D
+    Q -->|No| F["Final answer"]
+
+    classDef core fill:#dce8f7,stroke:#506d91,color:#1d2733;
+    classDef agent fill:#dff1e5,stroke:#4f8060,color:#1e3024;
+    classDef tool fill:#f4dfeb,stroke:#93647e,color:#34242e;
+    classDef out fill:#f7e8c6,stroke:#866a3b,color:#292929;
+    classDef final fill:#eee7fa,stroke:#78679b,color:#2c2639;
+
+    class G,O,D,Q core;
+    class A1,A2,A3 agent;
+    class C1,C2,C3 tool;
+    class R1,R2,R3,S out;
+    class F final;
+```
+
+Once multiple agents exist, the central problem changes.
 
 A single agent asks:
 
@@ -202,7 +280,7 @@ A multi-agent system must also ask:
 
 **When should the system stop?**
 
-These questions sound remarkably close to the problem-solving administration Minsky discussed in 1961: among many possible subproblems, only a few can receive attention at a particular moment. The system needs estimates of difficulty, relevance, and appropriate methods.
+These questions sound strikingly similar to the problem-solving administration Minsky described in 1961: among many possible subproblems, only a few can receive attention at a given moment. The system needs estimates of difficulty, relevance, and the right method for the job.
 
 Modern systems express the problem differently, but the architectural pressure is familiar.
 
@@ -210,7 +288,7 @@ Anthropic's production experience makes the trade-off concrete. Its Research arc
 
 Parallelism creates capability.
 
-Parallelism also creates coordination cost.
+It also creates coordination cost.
 
 
 ## 7. Context Is Becoming an Architectural Resource
@@ -408,26 +486,14 @@ The question for the agentic era may not simply be:
 
 > **How intelligent is the model?**
 
-It may increasingly be:
+It may increasingly become:
 
 > **How intelligent is the architecture around it?**
 
-## Visual storyboard
-
-The canonical visual language for this post is **Zoatworks Technical Insight + illustrated editorial infographic**, using **The City of Mind** as the recurring metaphor.
-
-1. `cover.webp` — panoramic City of Mind; 1961 on one side, 2026 agent infrastructure on the other, connected without implying direct technological lineage.
-2. `01-from-1961-to-2026.webp` — illustrated conceptual timeline: five mechanisms → Society of Mind → foundation models → agentic systems.
-3. `02-one-model-vs-society.webp` — one enormous general model contrasted with a coordinated technical city of specialized roles.
-4. `03-city-of-mind.webp` — hero systems infographic: Orchestrator Tower, Memory Library, Tool Workshops, Research Observatory, Coding District, Evaluation Tower and human oversight.
-5. `04-where-analogy-breaks.webp` — split-page illustrated comparison distinguishing Minsky's cognitive theory from engineered LLM-agent systems.
-
-The illustrations should use short labels only. Precise technical explanations remain in the article and Mermaid diagrams.
-
 ## Primary references
 
-- Marvin Minsky, *Steps Toward Artificial Intelligence*, Proceedings of the IRE, 1961. [Source supplied with this article.]
-- Marvin Minsky, *The Society of Mind*, 1986.
-- OpenAI, “Introducing the Agents API,” September 10, 2026.
-- Anthropic, “How we built our multi-agent research system,” June 13, 2025.
-- Anthropic, “Patterns and problems in emerging multiagent systems,” August 13, 2026.
+- Marvin Minsky, *Steps Toward Artificial Intelligence*, Proceedings of the IRE, 1961. [PDF](https://dspace.mit.edu/bitstream/handle/1721.1/59490/AI-TR-18.pdf?sequence=1)
+- Marvin Minsky, *The Society of Mind*, 1986. [MIT Press](https://mitpress.mit.edu/9780262630715/the-society-of-mind/)
+- OpenAI, “Introducing the Agents API,” September 10, 2026. [OpenAI blog](https://openai.com/index/introducing-the-agents-api/)
+- Anthropic, “How we built our multi-agent research system,” June 13, 2025. [Anthropic engineering post](https://www.anthropic.com/engineering/multi-agent-research-system)
+- Anthropic, “Patterns and problems in emerging multiagent systems,” August 13, 2026. [Anthropic research](https://www.anthropic.com/research)
