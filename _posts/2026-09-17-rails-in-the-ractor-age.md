@@ -221,10 +221,10 @@ And even if your application never uses a Ractor, it is likely to make the archi
 ## Sources
 
 - Edouard Chin, **“Bringing Rails into the Ractor-age”**, Rails at Scale, August 11, 2026:  
-  https://railsatscale.com/2026-08-11-ractors-on-rails/
+  [Read the article](https://railsatscale.com/2026-08-11-ractors-on-rails/)
 - Rails World 2026, **“Ractors, Rails, and Robots: Automating the Path to Ractor-safety”**, Andrew Novoselac:  
-  https://rubyonrails.org/world/2026/sessions/ractors-rails-robots
+  [View the session](https://rubyonrails.org/world/2026/sessions/ractors-rails-robots)
 - **“Towards Ractor-ready Rails, ordered cache fetches, and more!”**, This Week in Rails, September 5, 2026:  
-  https://world.hey.com/this.week.in.rails/towards-ractor-ready-rails-ordered-cache-fetches-and-more-bea9ebcb
+  [Read the update](https://world.hey.com/this.week.in.rails/towards-ractor-ready-rails-ordered-cache-fetches-and-more-bea9ebcb)
 - Ruby Ractor documentation:  
-  https://docs.ruby-lang.org/en/master/Ractor.html
+  [Read the documentation](https://docs.ruby-lang.org/en/master/Ractor.html)
