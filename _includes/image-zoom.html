@@ -1,6 +1,6 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".post img").forEach((img) => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
       img.classList.add("zoomable-image");
       img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
       img.addEventListener("click", (event) => {

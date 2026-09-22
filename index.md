@@ -6,8 +6,10 @@ layout: home
 # title: Home
 ---
 
-<img src="/assets/images/home/from-systems-to-understanding.webp"
+<img class="home-featured-image" src="/assets/images/home/from-systems-to-understanding.webp"
      alt="From Systems to Understanding — Roberto Nogueira"
      style="width:100%;height:auto;">
+
+{% include image-zoom.html %}
 
 
