@@ -182,17 +182,6 @@ Traditional monitoring asks whether the service is healthy. Agent observability 
 
 Rails exposes a rich instrumentation model through [Active Support Instrumentation](https://guides.rubyonrails.org/active_support_instrumentation.html). Agent-specific events can extend it while traces connect one objective across model, job, tool, and human boundaries.
 
-<style>
-.mermaid-diagram img,
-.mermaid-diagram svg {
-  display: block;
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  margin: 1.5rem auto;
-}
-</style>
-
 ## A Concrete Example: An Auditable Rails Maintenance Run
 
 Consider a pull request that changes authentication code and several dependencies. A maintenance run can combine deterministic tools with agent coordination.
@@ -201,7 +190,7 @@ Consider a pull request that changes authentication code and several dependencie
 
 ```mermaid!
 %%{init: {'theme':'base','flowchart':{'useMaxWidth':true,'htmlLabels':true,'nodeSpacing':48,'rankSpacing':58,'curve':'basis'},'themeVariables':{'background':'#FFF8EF','primaryTextColor':'#3E342C','lineColor':'#6F7377','fontFamily':'Trebuchet MS, Verdana, sans-serif','fontSize':'13px','clusterBkg':'#FBF4E7','clusterBorder':'#B8A17D'}}}%%
-flowchart TD
+ flowchart TD
   PR["📥 Pull request"] --> E
   subgraph EVIDENCE["🔍 Deterministic Evidence"]
     E["🧪 Run audit tools"]
@@ -275,7 +264,7 @@ The monolith does not require agents to become synchronous Ruby objects inside o
 <div class="mermaid-diagram" markdown="1">
 
 ```mermaid!
-%%{init: {'theme':'base','flowchart':{'useMaxWidth':true,'htmlLabels':true,'nodeSpacing':48,'rankSpacing':58,'curve':'basis'},'themeVariables':{'background':'#FFF8EF','primaryTextColor':'#3E342C','lineColor':'#6F7377','fontFamily':'Trebuchet MS, Verdana, sans-serif','fontSize':'13px','clusterBkg':'#FBF4E7','clusterBorder':'#B8A17D'}}}%%
+%%{init: {'theme':'base','flowchart':{'useMaxWidth':true,'htmlLabels':true,'nodeSpacing':180,'rankSpacing':58,'curve':'basis'},'themeVariables':{'background':'#FFF8EF','primaryTextColor':'#3E342C','lineColor':'#6F7377','fontFamily':'Trebuchet MS, Verdana, sans-serif','fontSize':'13px','clusterBkg':'#FBF4E7','clusterBorder':'#B8A17D'}}}%%
 flowchart TD
   U["🎯 Human objective"] --> O
   subgraph PLAN["🧭 Planning"]
@@ -419,7 +408,7 @@ The most important artifact is not the agent roster. It is the state machine:
 <div class="mermaid-diagram" markdown="1">
 
 ```mermaid!
-%%{init: {'theme':'base','flowchart':{'useMaxWidth':true,'htmlLabels':true,'nodeSpacing':48,'rankSpacing':58,'curve':'basis'},'themeVariables':{'background':'#FFF8EF','primaryTextColor':'#3E342C','lineColor':'#6F7377','fontFamily':'Trebuchet MS, Verdana, sans-serif','fontSize':'13px','clusterBkg':'#FBF4E7','clusterBorder':'#B8A17D'}}}%%
+%%{init: {'theme':'base','flowchart':{'useMaxWidth':true,'htmlLabels':true,'nodeSpacing':48,'rankSpacing':58,'curve':'basis'},'themeVariables':{'background':'#FFF8EF','primaryTextColor':'#3E342C','lineColor':'#6F7377','fontFamily':'Trebuchet MS, Verdana, sans-serif','fontSize':'10px','clusterBkg':'#FBF4E7','clusterBorder':'#B8A17D'}}}%%
 stateDiagram-v2
   state "🎯 Proposed" as Proposed
   state "✅ Ready" as Ready
