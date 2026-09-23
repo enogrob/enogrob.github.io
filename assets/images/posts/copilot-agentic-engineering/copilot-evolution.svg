@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">The evolution of GitHub Copilot</title>
+  <desc id="desc">A white-background editorial infographic showing Copilot evolving from completion to conversation, plan and edit, CLI, reusable skills, SDK, and HydraFusion.</desc>
+  <defs>
+    <linearGradient id="flow" x1="0" x2="1"><stop stop-color="#36A852"/><stop offset=".5" stop-color="#5EC5B0"/><stop offset="1" stop-color="#8A6BC8"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#3E342C" flood-opacity=".14"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="#FFF"/>
+  <g opacity=".9"><circle cx="1270" cy="-40" r="300" fill="#DCEFD6"/><path d="M1030 0 Q1280 120 1540 0 M1060 70 Q1280 210 1570 60 M1110 150 Q1300 260 1550 140" fill="none" stroke="#86A878" stroke-width="3" opacity=".55"/></g>
+  <text x="90" y="100" fill="#172554" font-family="Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="2">THE EVOLUTION OF</text>
+  <text x="90" y="170" fill="#16803C" font-family="Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="1">GITHUB COPILOT</text>
+  <text x="94" y="220" fill="#3E342C" font-family="Arial, sans-serif" font-size="25">From local suggestion to multi-model orchestration</text>
+  <path d="M140 530 C330 350 420 660 620 480 S930 330 1110 500 S1320 650 1490 420" fill="none" stroke="url(#flow)" stroke-width="22" stroke-linecap="round" opacity=".78"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle" filter="url(#shadow)">
+    <g transform="translate(150 420)"><circle r="76" fill="#D9EAF7" stroke="#7AA6C2" stroke-width="5"/><text y="-8" fill="#172554" font-size="30">⌨</text><text y="125" fill="#3E342C" font-size="25" font-weight="700">Completion</text><text y="158" fill="#6F7377" font-size="19">predict</text></g>
+    <g transform="translate(375 560)"><circle r="76" fill="#E8DDF5" stroke="#A68BC4" stroke-width="5"/><text y="-8" fill="#6C4AA0" font-size="30">◌</text><text y="125" fill="#3E342C" font-size="25" font-weight="700">Conversation</text><text y="158" fill="#6F7377" font-size="19">context</text></g>
+    <g transform="translate(610 420)"><circle r="76" fill="#F8DFC4" stroke="#C9986D" stroke-width="5"/><text y="-8" fill="#A85C24" font-size="30">↗</text><text y="125" fill="#3E342C" font-size="25" font-weight="700">Plan + edit</text><text y="158" fill="#6F7377" font-size="19">act</text></g>
+    <g transform="translate(845 560)"><circle r="76" fill="#F6D6DD" stroke="#C98798" stroke-width="5"/><text y="-8" fill="#9A4056" font-size="30">▣</text><text y="125" fill="#3E342C" font-size="25" font-weight="700">Copilot CLI</text><text y="158" fill="#6F7377" font-size="19">operate</text></g>
+    <g transform="translate(1080 420)"><circle r="76" fill="#FFF1BF" stroke="#C8A84E" stroke-width="5"/><text y="-8" fill="#8E7010" font-size="30">✦</text><text y="125" fill="#3E342C" font-size="25" font-weight="700">Skills + agents</text><text y="158" fill="#6F7377" font-size="19">specialize</text></g>
+    <g transform="translate(1315 560)"><circle r="76" fill="#DCEFD6" stroke="#86A878" stroke-width="5"/><text y="-8" fill="#287A43" font-size="30">◇</text><text y="125" fill="#3E342C" font-size="25" font-weight="700">SDK + HydraFusion</text><text y="158" fill="#6F7377" font-size="19">orchestrate</text></g>
+  </g>
+  <text x="90" y="820" fill="#3E342C" font-family="Arial, sans-serif" font-size="25" font-weight="700">Each step adds authority, context, and a new verification responsibility.</text>
+</svg>

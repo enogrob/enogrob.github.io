@@ -2,7 +2,7 @@
 layout: post
 title: "The Agentic Monolith: Why Rails May Be the Operating System for AI Agent Societies"
 subtitle: "The next scaling problem is not model intelligence—it is coordinated action"
-date: 2026-09-22
+date: 2026-09-23
 categories: [artificial-intelligence, architecture, agentic-ai, ruby, rails]
 tags: [AI agents, multi-agent systems, Ruby on Rails, modular monolith, Active Job, Solid Queue, orchestration, observability]
 description: "A practical architecture for coordinating AI agents with Rails: shared state, durable jobs, explicit tools, policy boundaries, observability, evaluation, and controlled adaptation."

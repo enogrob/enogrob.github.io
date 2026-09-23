@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 950" role="img" aria-labelledby="title desc">
+  <title id="title">Inside HydraFusion</title>
+  <desc id="desc">A workflow infographic routes a coding task into single-model, cascade, or draft-critique-revise paths before external verification.</desc>
+  <defs><linearGradient id="ribbon" x1="0" x2="1"><stop stop-color="#36A852"/><stop offset=".5" stop-color="#6EBFE3"/><stop offset="1" stop-color="#9A77D6"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#3E342C" flood-opacity=".14"/></filter></defs>
+  <rect width="1600" height="950" fill="#FFF"/>
+  <circle cx="1370" cy="-20" r="290" fill="#DCEFD6" opacity=".75"/><path d="M1120 10 Q1370 150 1590 0 M1150 85 Q1370 220 1590 80" fill="none" stroke="#86A878" stroke-width="3" opacity=".6"/>
+  <text x="90" y="92" fill="#172554" font-family="Arial, sans-serif" font-size="58" font-weight="900">INSIDE</text><text x="90" y="162" fill="#16803C" font-family="Arial, sans-serif" font-size="82" font-weight="900">HYDRAFUSION</text>
+  <text x="94" y="212" fill="#3E342C" font-family="Arial, sans-serif" font-size="25">The router selects a reasoning workflow, not only a model.</text>
+  <g filter="url(#shadow)" font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="100" y="390" width="220" height="100" rx="28" fill="#D9EAF7" stroke="#7AA6C2" stroke-width="5"/><text x="210" y="432" fill="#172554" font-size="28" font-weight="700">Coding task</text><text x="210" y="468" fill="#6F7377" font-size="21">objective</text>
+    <rect x="440" y="330" width="280" height="220" rx="45" fill="#E8DDF5" stroke="#A68BC4" stroke-width="6"/><text x="580" y="414" fill="#3E342C" font-size="33" font-weight="800">HydraFusion</text><text x="580" y="452" fill="#6F7377" font-size="22">workflow router</text><path d="M510 485 q35 -70 70 0 q35 -70 70 0 q35 -70 70 0" fill="none" stroke="#8A6BC8" stroke-width="8"/>
+    <rect x="890" y="275" width="240" height="100" rx="28" fill="#F8DFC4" stroke="#C9986D" stroke-width="5"/><text x="1010" y="317" fill="#3E342C" font-size="27" font-weight="700">Single</text><text x="1010" y="351" fill="#6F7377" font-size="20">one model</text>
+    <rect x="890" y="420" width="240" height="100" rx="28" fill="#FFF1BF" stroke="#C8A84E" stroke-width="5"/><text x="1010" y="462" fill="#3E342C" font-size="27" font-weight="700">Cascade</text><text x="1010" y="496" fill="#6F7377" font-size="20">escalate</text>
+    <rect x="890" y="565" width="240" height="100" rx="28" fill="#F6D6DD" stroke="#C98798" stroke-width="5"/><text x="1010" y="607" fill="#3E342C" font-size="27" font-weight="700">Critique</text><text x="1010" y="641" fill="#6F7377" font-size="20">draft · review · revise</text>
+    <rect x="1280" y="390" width="230" height="100" rx="28" fill="#DCEFD6" stroke="#86A878" stroke-width="5"/><text x="1395" y="432" fill="#287A43" font-size="28" font-weight="700">Verify</text><text x="1395" y="468" fill="#6F7377" font-size="21">tests + evidence</text>
+  </g>
+  <path d="M320 440 C380 440 390 440 440 440 M720 440 C800 440 810 325 890 325 M720 440 C800 440 810 470 890 470 M720 440 C800 440 810 615 890 615 M1130 325 C1210 325 1200 440 1280 440 M1130 470 C1210 470 1200 440 1280 440 M1130 615 C1210 615 1200 440 1280 440" fill="none" stroke="url(#ribbon)" stroke-width="14" stroke-linecap="round" opacity=".78"/>
+  <text x="90" y="830" fill="#3E342C" font-family="Arial, sans-serif" font-size="26" font-weight="700">A candidate result is still only a candidate until independent evidence accepts it.</text>
+</svg>

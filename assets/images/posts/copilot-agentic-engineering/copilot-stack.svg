@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">The GitHub Copilot agentic stack</title>
+  <desc id="desc">Layered infographic from developer objective through Copilot surfaces, shared agent runtime, tools, skills, MCP, models, and verification.</desc>
+  <defs><filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#3E342C" flood-opacity=".14"/></filter></defs>
+  <rect width="1600" height="1000" fill="#FFF"/>
+  <circle cx="1370" cy="50" r="270" fill="#DCEFD6" opacity=".7"/><path d="M1140 0 Q1370 130 1590 20 M1160 75 Q1370 220 1590 90 M1200 170 Q1390 280 1580 170" fill="none" stroke="#86A878" stroke-width="3" opacity=".6"/>
+  <text x="90" y="90" fill="#172554" font-family="Arial, sans-serif" font-size="56" font-weight="900">THE COPILOT</text><text x="90" y="160" fill="#16803C" font-family="Arial, sans-serif" font-size="78" font-weight="900">AGENTIC STACK</text>
+  <text x="94" y="210" fill="#3E342C" font-family="Arial, sans-serif" font-size="25">Surfaces change. The runtime coordinates.</text>
+  <g filter="url(#shadow)" font-family="Arial, sans-serif">
+    <rect x="150" y="270" width="1300" height="90" rx="28" fill="#D9EAF7" stroke="#7AA6C2" stroke-width="5"/><text x="800" y="326" text-anchor="middle" fill="#172554" font-size="31" font-weight="700">Developer objective · What outcome matters?</text>
+    <rect x="250" y="390" width="1100" height="100" rx="28" fill="#E8DDF5" stroke="#A68BC4" stroke-width="5"/><text x="800" y="432" text-anchor="middle" fill="#3E342C" font-size="25" font-weight="700">IDE · CLI · GitHub · Application via SDK</text><text x="800" y="466" text-anchor="middle" fill="#6F7377" font-size="21">The surfaces where work begins</text>
+    <rect x="350" y="520" width="900" height="120" rx="28" fill="#F8DFC4" stroke="#C9986D" stroke-width="5"/><text x="800" y="572" text-anchor="middle" fill="#3E342C" font-size="30" font-weight="700">Shared agent runtime</text><text x="800" y="610" text-anchor="middle" fill="#6F7377" font-size="21">plan · session · tools · file edits · delegation</text>
+    <rect x="460" y="670" width="680" height="90" rx="28" fill="#FFF1BF" stroke="#C8A84E" stroke-width="5"/><text x="800" y="725" text-anchor="middle" fill="#3E342C" font-size="27" font-weight="700">Agents · skills · hooks · MCP</text>
+    <rect x="560" y="790" width="480" height="80" rx="28" fill="#F6D6DD" stroke="#C98798" stroke-width="5"/><text x="800" y="840" text-anchor="middle" fill="#3E342C" font-size="26" font-weight="700">Models + HydraFusion</text>
+    <rect x="330" y="910" width="940" height="58" rx="24" fill="#DCEFD6" stroke="#86A878" stroke-width="5"/><text x="800" y="949" text-anchor="middle" fill="#287A43" font-size="24" font-weight="700">Tests · evidence · human approval</text>
+  </g>
+  <g stroke="#6F7377" stroke-width="5" fill="none"><path d="M800 360v30 M800 490v30 M800 640v30 M800 760v30 M800 870v40"/></g>
+</svg>
