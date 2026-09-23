@@ -96,14 +96,16 @@ Agentic engineering is therefore not “prompting with more confidence.” It is
 
 ## One Runtime, Many Surfaces
 
-Copilot now appears across the editor, GitHub, the terminal, cloud agents, a desktop application, and embedded applications. The surfaces differ, but GitHub describes the Copilot SDK as programmatic access to the same production-tested agent runtime that powers Copilot CLI and cloud agents.
+Copilot now appears across IDEs such as VS Code and RubyMine, the GitHub Copilot desktop app, Copilot CLI, GitHub.com, cloud agents, and embedded applications. The surfaces differ, but GitHub describes the Copilot SDK as programmatic access to the same production-tested agent runtime that powers Copilot CLI and cloud agents.
 
 That runtime can plan, invoke tools, edit files, stream responses, and maintain multi-turn sessions. The SDK makes those capabilities available to applications instead of requiring every team to assemble an orchestration layer from scratch.
 
 <figure>
-  <img src="/assets/images/posts/copilot-agentic-engineering/copilot-stack-v8.webp" alt="Cyan interface surfaces converge into an emerald shared runtime that redistributes work through amber capabilities, magenta agents, violet models, and independent verification." style="width:100%;height:auto;">
-  <figcaption>The Copilot stack separates surfaces from the shared runtime, external capabilities, and independent verification.</figcaption>
+  <img src="/assets/images/posts/copilot-agentic-engineering/copilot-stack-v9.webp" alt="A deeply digitized developer works across VS Code and RubyMine, the Copilot desktop app, Copilot CLI, and GitHub.com while MCP, Skills, SDK, and Hooks extend the shared runtime and HydraFusion orchestrates multiple model streams into a verified strategy." style="width:100%;height:auto;">
+  <figcaption>One agentic runtime spans IDE, desktop, terminal, and cloud; MCP, Skills, SDK, and Hooks extend it, while HydraFusion occupies a distinct multi-model orchestration layer.</figcaption>
 </figure>
+
+The distinction is architectural. IDE, desktop, terminal, and GitHub.com are interaction surfaces. MCP, Skills, SDK, and Hooks connect, package, embed, or constrain capabilities. HydraFusion sits elsewhere in the stack: it experiments with selecting and composing model workflows inside the runtime rather than merely adding another tool.
 
 This unification is powerful, but it changes the platform boundary. When applications embed the runtime, they inherit questions that were previously hidden inside an editor feature: session ownership, tool permissions, memory, failure recovery, spend limits, observability, and user consent.
 
@@ -337,6 +339,10 @@ And once the workflow becomes programmable, it must be engineered.
 - GitHub. [Project HydraFusion: Frontier Quality via Multi-Model Orchestration](https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/).
 - GitHub. [Copilot SDK Is Now Generally Available](https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/).
 - GitHub. [Build an Agent into Any App with the GitHub Copilot SDK](https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/).
+- GitHub. [GitHub Copilot App Generally Available](https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available/).
+- GitHub Docs. [Where to Use GitHub Copilot](https://docs.github.com/en/copilot/get-started/where-to-use-github-copilot).
+- GitHub Docs. [Using GitHub Copilot in JetBrains IDEs](https://docs.github.com/en/copilot/concepts/agents/copilot-in-jetbrains).
+- GitHub Docs. [About Model Context Protocol (MCP)](https://docs.github.com/en/copilot/concepts/context/mcp).
 - GitHub Docs. [Using GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview).
 - GitHub Docs. [Overview of Customizing GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/overview).
 - GitHub Docs. [Adding Agent Skills for GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills).
