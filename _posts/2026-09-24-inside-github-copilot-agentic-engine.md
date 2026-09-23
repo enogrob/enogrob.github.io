@@ -2,7 +2,7 @@
 layout: post
 title: "Inside GitHub Copilot's Agentic Engine: CLI, SDK, and HydraFusion"
 subtitle: "How GitHub is evolving Copilot from code completion into a multi-model orchestration platform"
-date: 2026-09-24
+date: 2026-09-23
 categories: [artificial-intelligence, software-engineering, agentic-ai, github-copilot]
 tags: [GitHub Copilot, Copilot CLI, Copilot SDK, HydraFusion, agentic engineering, custom agents, agent skills, MCP, software architecture]
 description: "GitHub Copilot is evolving from autocomplete into an agent runtime. Explore its CLI, SDK, agents, skills, MCP integrations, HydraFusion, governance boundaries, and a falsifiable Rails experiment."
