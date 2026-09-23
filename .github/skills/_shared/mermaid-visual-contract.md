@@ -10,10 +10,10 @@ Posts containing Mermaid diagrams must include `mermaid: true` in front matter a
 
 ## Canonical initialization
 
-Use the current resilient Mermaid configuration:
+Use the current resilient Mermaid configuration. The project intentionally uses a compact `13px` font because the diagrams include emoji and relatively long labels:
 
 ```text
-%%{init: {'theme':'base','flowchart':{'useMaxWidth':true,'htmlLabels':true,'nodeSpacing':48,'rankSpacing':58,'curve':'basis'},'themeVariables':{'background':'#FFF8EF','primaryTextColor':'#3E342C','lineColor':'#6F7377','fontFamily':'Trebuchet MS, Verdana, sans-serif','fontSize':'17px','clusterBkg':'#FBF4E7','clusterBorder':'#B8A17D'}}}%%
+%%{init: {'theme':'base','flowchart':{'useMaxWidth':true,'htmlLabels':true,'nodeSpacing':48,'rankSpacing':58,'curve':'basis'},'themeVariables':{'background':'#FFF8EF','primaryTextColor':'#3E342C','lineColor':'#6F7377','fontFamily':'Trebuchet MS, Verdana, sans-serif','fontSize':'13px','clusterBkg':'#FBF4E7','clusterBorder':'#B8A17D'}}}%%
 ```
 
 Required visual tokens:
@@ -21,7 +21,7 @@ Required visual tokens:
 - `useMaxWidth: true`
 - `nodeSpacing: 48`
 - `rankSpacing: 58`
-- `fontSize: 17px`
+- `fontSize: 13px`
 - `background: #FFF8EF`
 - `primaryTextColor: #3E342C`
 - `lineColor: #6F7377`
@@ -39,6 +39,17 @@ Mermaid diagrams must remain independently readable regardless of the surroundin
 - Keep cluster backgrounds and borders explicit rather than transparent.
 - Use the same Mermaid source in both light and dark page modes.
 - Do not create separate light and dark Mermaid sources.
+
+## Rendered sizing
+
+Jekyll Spaceship converts Mermaid fences into `<img class="mermaid">` elements using Mermaid.ink. The shared include at `_includes/mermaid.html` must therefore size the image itself, not only a nested SVG:
+
+- `display: block`
+- `width: min(100%, 600px)`
+- `height: auto`
+- centered with responsive behavior
+
+Do not rely on `.mermaid svg` alone for rendered sizing.
 
 ## Semantic styling
 

@@ -17,13 +17,14 @@ Read first: `../_shared/mermaid-visual-contract.md`.
 3. Detect legacy plain `mermaid` fences.
 4. Verify use of `mermaid!`.
 5. Verify canonical Mermaid initialization.
-6. Verify `useMaxWidth: true`, `nodeSpacing: 48`, `rankSpacing: 58`, `fontSize: 17px`, `background: #FFF8EF`, `primaryTextColor: #3E342C`, `lineColor: #6F7377`, `clusterBkg: #FBF4E7`, and `clusterBorder: #B8A17D`.
+6. Verify `useMaxWidth: true`, `nodeSpacing: 48`, `rankSpacing: 58`, `fontSize: 13px`, `background: #FFF8EF`, `primaryTextColor: #3E342C`, `lineColor: #6F7377`, `clusterBkg: #FBF4E7`, and `clusterBorder: #B8A17D`.
 7. Inspect semantic `classDef` usage.
 8. Check whether colors correspond to conceptual roles.
 9. Check whether `subgraph` would improve natural grouping.
 10. Review density, labels, edge crossings, and scanability.
 11. Evaluate light/dark resilience without relying on external CSS.
 12. Flag any migration that could change the diagram meaning.
+13. When the post uses Jekyll Spaceship, verify the generated Mermaid output is an `<img class="mermaid">` and that `_includes/mermaid.html` applies `width: min(100%, 600px)`, `display: block`, and `height: auto`.
 
 ## Classification
 

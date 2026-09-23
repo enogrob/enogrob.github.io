@@ -30,8 +30,9 @@ Preserve the intellectual and technical meaning of the original diagram.
 12. Reduce unnecessary visual noise and edge crossings where practical.
 13. Keep one Mermaid source for both light and dark page modes.
 14. Do not introduce external CSS dependencies.
-15. Re-audit the modified diagram against the shared contract.
-16. Report exactly what changed.
+15. Ensure `_includes/mermaid.html` sizes the generated `<img class="mermaid">` output responsively with a `600px` maximum width.
+16. Re-audit the modified diagram and rendered sizing against the shared contract.
+17. Report exactly what changed.
 
 ## Do not
 

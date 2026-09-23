@@ -31,6 +31,7 @@ The proposal is narrower than “Rails is the best agent framework.” It is an 
 - [The Coordination Scaling Law](#the-coordination-scaling-law)
 - [Rails as an Agent Operating System](#rails-as-an-agent-operating-system)
 - [Anatomy of the Agentic Monolith](#anatomy-of-the-agentic-monolith)
+- [A Concrete Example: An Auditable Rails Maintenance Run](#a-concrete-example-an-auditable-rails-maintenance-run)
 - [One Workflow, Many Specialized Agents](#one-workflow-many-specialized-agents)
 - [Concurrency Without Architectural Fragmentation](#concurrency-without-architectural-fragmentation)
 - [How the System Learns](#how-the-system-learns)
@@ -79,9 +80,9 @@ This does not make multi-agent systems a dead end. It means collective intellige
 
 If every one of n agents can communicate directly with every other agent, the number of possible pairwise relationships is:
 
-\[
+$$
 E = \frac{n(n-1)}{2}
-\]
+$$
 
 Five agents create ten possible relationships. Ten create forty-five. Twenty create 190. Real systems do not exercise every relationship equally, but the formula exposes the pressure: unbounded peer-to-peer collaboration grows faster than the agent count.
 
@@ -181,43 +182,133 @@ Traditional monitoring asks whether the service is healthy. Agent observability 
 
 Rails exposes a rich instrumentation model through [Active Support Instrumentation](https://guides.rubyonrails.org/active_support_instrumentation.html). Agent-specific events can extend it while traces connect one objective across model, job, tool, and human boundaries.
 
-## One Workflow, Many Specialized Agents
+<style>
+.mermaid-diagram img,
+.mermaid-diagram svg {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 1.5rem auto;
+}
+</style>
 
-The monolith does not require agents to become synchronous Ruby objects inside one request. It gives them a common institutional surface.
+## A Concrete Example: An Auditable Rails Maintenance Run
+
+Consider a pull request that changes authentication code and several dependencies. A maintenance run can combine deterministic tools with agent coordination.
+
+<div class="mermaid-diagram" markdown="1">
 
 ```mermaid!
 %%{init: {'theme':'base','flowchart':{'useMaxWidth':true,'htmlLabels':true,'nodeSpacing':48,'rankSpacing':58,'curve':'basis'},'themeVariables':{'background':'#FFF8EF','primaryTextColor':'#3E342C','lineColor':'#6F7377','fontFamily':'Trebuchet MS, Verdana, sans-serif','fontSize':'13px','clusterBkg':'#FBF4E7','clusterBorder':'#B8A17D'}}}%%
 flowchart TD
-  subgraph intake["🎯 Objective and planning"]
-    U["🎯 Human objective"] --> O["🗂️ Objective record"]
-    O --> P["🧭 Planner agent"]
-    P --> T["🧩 Approved task graph"]
+  PR["📥 Pull request"] --> E
+  subgraph EVIDENCE["🔍 Deterministic Evidence"]
+    E["🧪 Run audit tools"]
+    E --> C["📊 SimpleCov"]
+    E --> S["🛡️ Brakeman"]
+    E --> D["📦 bundler-audit"]
+    E --> Q["🧩 RubyCritic"]
+    C --> A["📄 Persist raw reports"]
+    S --> A
+    D --> A
+    Q --> A
   end
-  subgraph specialists["🤝 Specialist work"]
-    T --> R["🔎 Research agent"]
+  subgraph REASONING["🧭 Agent Coordination"]
+    A --> P["🎯 Prioritize risks"]
+    P --> R["🛠️ Propose remediation"]
+  end
+  subgraph GOVERNANCE["🔎 Governance & Verification"]
+    R --> G{"🛡️ Policy gate"}
+    G -->|approval required| H["👤 Human approval"]
+    G -->|authorized| X["🔧 Apply change"]
+    H -->|approved| X
+    H -->|rejected| R
+    X --> V["🧪 Rerun audit tools"]
+    V --> F{"✅ Findings resolved?"}
+    F -->|no| P
+    F -->|yes| O["✅ Auditable result"]
+  end
+  classDef blue fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
+  classDef purple fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
+  classDef orange fill:#F8DFC4,stroke:#C9986D,color:#3E342C,stroke-width:2px;
+  classDef yellow fill:#FFF1BF,stroke:#C8A84E,color:#3E342C,stroke-width:2px;
+  classDef rose fill:#F6D6DD,stroke:#C98798,color:#3E342C,stroke-width:2px;
+  classDef green fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
+  class PR blue;
+  class E,C,S,D,Q,V,X orange;
+  class A yellow;
+  class P,R purple;
+  class G,H,F rose;
+  class O green;
+```
+
+</div>
+
+*Deterministic tools produce evidence; agents interpret it; Rails preserves state, governs changes, and closes the verification loop.*
+
+The tools remain the source of evidence. SimpleCov measures coverage, Brakeman checks Rails security risks, bundler-audit checks vulnerable dependencies, and RubyCritic identifies complexity and maintainability problems. The agents interpret and coordinate those results; Rails persists the run, schedules jobs, records artifacts, and governs transitions.
+
+This distinction matters because a skill and an application solve different problems:
+
+| Need | Skill | Agentic monolith |
+| --- | --- | --- |
+| One-off audit | Excellent | Excessive |
+| Tool execution | Excellent | Excellent |
+| History across runs | Limited | Natural |
+| Multiple projects | Manual coordination | Natural |
+| Retries and durable jobs | Limited | Strong |
+| Dashboards and reports | Basic | Natural |
+| Permissions and approvals | Limited | Strong |
+| CI/CD integration | Possible | Strong |
+
+A skill is the right starting point for a one-off audit. A Rails application becomes justified when audits are recurring, shared across projects, persisted over time, integrated with CI, and subject to approval policies.
+
+The recent [FastRuby technical debt audit workflow](https://www.fastruby.io/blog/tech-debt-audit-with-claude-code.html) is a useful implementation of that first stage. Its reusable Claude Code skill runs a broader set of Rails analysis tools and produces a consolidated HTML report. The architectural next step explored here is to make that workflow durable, observable, and governed by the application.
+
+**The skill executes and interprets a bounded audit. Rails remembers across runs, schedules durable work, governs changes, and verifies outcomes.**
+
+## One Workflow, Many Specialized Agents
+
+The monolith does not require agents to become synchronous Ruby objects inside one request. It gives them a common institutional surface.
+
+<div class="mermaid-diagram" markdown="1">
+
+```mermaid!
+%%{init: {'theme':'base','flowchart':{'useMaxWidth':true,'htmlLabels':true,'nodeSpacing':48,'rankSpacing':58,'curve':'basis'},'themeVariables':{'background':'#FFF8EF','primaryTextColor':'#3E342C','lineColor':'#6F7377','fontFamily':'Trebuchet MS, Verdana, sans-serif','fontSize':'13px','clusterBkg':'#FBF4E7','clusterBorder':'#B8A17D'}}}%%
+flowchart TD
+  U["🎯 Human objective"] --> O
+  subgraph PLAN["🧭 Planning"]
+    O["📥 Objective record"] --> P["🧭 Planner agent"]
+    P --> T["✅ Approved task graph"]
+  end
+  subgraph WORK["🛠️ Specialized Work"]
+    T --> R["🔍 Research agent"]
     T --> B["🛠️ Builder agent"]
     R --> A["📦 Shared artifacts"]
     B --> A
   end
-  subgraph governance["⚖️ Verification and delivery"]
-    A --> V["✅ Verifier agent"]
-    V --> G{"⚖️ Policy + quality gate"}
-    G -->|accept| D["📣 Human-visible result"]
+  subgraph VERIFY["🔎 Verification & Delivery"]
+    A --> V["🧪 Verifier agent"]
+    V --> G{"🛡️ Policy + quality gate"}
+    G -->|revise| T
+    G -->|accept| D["✅ Human-visible result"]
   end
-  G -->|revise| T
-  classDef input fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
-  classDef orchestration fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
-  classDef specialist fill:#F8DFC4,stroke:#C9986D,color:#3E342C,stroke-width:2px;
-  classDef artifact fill:#FFF1BF,stroke:#C5A84A,color:#3E342C,stroke-width:2px;
-  classDef governance fill:#F5D7DC,stroke:#BD858E,color:#3E342C,stroke-width:2px;
-  classDef outcome fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
-  class U,O input;
-  class P,T orchestration;
-  class R,B,V specialist;
-  class A artifact;
-  class G governance;
-  class D outcome;
+  classDef blue fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
+  classDef purple fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
+  classDef orange fill:#F8DFC4,stroke:#C9986D,color:#3E342C,stroke-width:2px;
+  classDef yellow fill:#FFF1BF,stroke:#C8A84E,color:#3E342C,stroke-width:2px;
+  classDef rose fill:#F6D6DD,stroke:#C98798,color:#3E342C,stroke-width:2px;
+  classDef green fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
+  class U,O blue;
+  class P,T purple;
+  class R,B,V orange;
+  class A yellow;
+  class G rose;
+  class D green;
 ```
+
+</div>
 
 Agents communicate primarily by changing governed state and producing artifacts. Natural-language messages still matter, but they are no longer the only source of truth.
 
@@ -325,16 +416,18 @@ The first version does not need an elaborate autonomous society:
 
 The most important artifact is not the agent roster. It is the state machine:
 
+<div class="mermaid-diagram" markdown="1">
+
 ```mermaid!
 %%{init: {'theme':'base','flowchart':{'useMaxWidth':true,'htmlLabels':true,'nodeSpacing':48,'rankSpacing':58,'curve':'basis'},'themeVariables':{'background':'#FFF8EF','primaryTextColor':'#3E342C','lineColor':'#6F7377','fontFamily':'Trebuchet MS, Verdana, sans-serif','fontSize':'13px','clusterBkg':'#FBF4E7','clusterBorder':'#B8A17D'}}}%%
 stateDiagram-v2
-  state "📥 Proposed" as Proposed
-  state "🟢 Ready" as Ready
+  state "🎯 Proposed" as Proposed
+  state "✅ Ready" as Ready
   state "⚙️ Running" as Running
-  state "⏸️ Blocked" as Blocked
-  state "🛑 Failed" as Failed
+  state "⛔ Blocked" as Blocked
+  state "❌ Failed" as Failed
   state "🔍 Verifying" as Verifying
-  state "🎉 Succeeded" as Succeeded
+  state "✅ Succeeded" as Succeeded
   [*] --> Proposed
   Proposed --> Ready: approved
   Ready --> Running: worker claims
@@ -346,17 +439,19 @@ stateDiagram-v2
   Verifying --> Ready: revision requested
   Verifying --> Succeeded: gate passed
   Succeeded --> [*]
-  classDef intake fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
-  classDef execution fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
-  classDef blocked fill:#F5D7DC,stroke:#BD858E,color:#3E342C,stroke-width:2px;
-  classDef verification fill:#FFF1BF,stroke:#C5A84A,color:#3E342C,stroke-width:2px;
-  classDef complete fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
-  class Proposed,Ready intake;
-  class Running execution;
-  class Blocked,Failed blocked;
-  class Verifying verification;
-  class Succeeded complete;
+  classDef blue fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
+  classDef purple fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
+  classDef orange fill:#F8DFC4,stroke:#C9986D,color:#3E342C,stroke-width:2px;
+  classDef rose fill:#F6D6DD,stroke:#C98798,color:#3E342C,stroke-width:2px;
+  classDef green fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
+  class Proposed blue;
+  class Ready,Verifying purple;
+  class Running orange;
+  class Blocked,Failed rose;
+  class Succeeded green;
 ```
+
+</div>
 
 Once transitions are explicit, agents can be creative inside a structure that remains testable.
 
@@ -384,3 +479,4 @@ Rails may already be carrying the blueprint.
 - Tran et al. [Multi-Agent Collaboration Mechanisms](https://arxiv.org/abs/2501.06322).
 - Cemri et al. [Why Do Multi-Agent LLM Systems Fail?](https://arxiv.org/abs/2503.13657).
 - Sander et al. [Scaling LLM-Driven Multi-Agent Systems](https://arxiv.org/abs/2607.27942).
+- FastRuby.io. [Automate Tech Debt Audits with Claude Code](https://www.fastruby.io/blog/tech-debt-audit-with-claude-code.html).

@@ -25,6 +25,7 @@ Verify:
 - no dependency on page background
 - no dependency on page-level light/dark CSS
 - pastel node fills remain distinguishable from the internal background
+- rendered image sizing remains compact and responsive
 
 ### 2. Structural readability
 
@@ -58,6 +59,7 @@ Verify:
 - `mermaid!` fence
 - canonical initialization
 - no legacy Mermaid integration remains
+- generated `<img class="mermaid">` output uses a `600px` maximum width, `display: block`, and `height: auto`
 
 ### 5. Content preservation
 
@@ -78,6 +80,8 @@ If an existing Mermaid renderer or project preview workflow is available in the 
 Do not install new dependencies or alter project configuration merely to run a preview unless explicitly requested.
 
 If rendering is unavailable, perform a source-level visual review and clearly state that the review was static.
+
+When Jekyll Spaceship is present, inspect the generated HTML as well: Mermaid diagrams are rendered as images, so nested SVG rules do not control their size.
 
 ## Output
 
