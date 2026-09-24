@@ -2,7 +2,7 @@
 layout: post
 title: "When Ruby Made the Industry Rethink Programming"
 subtitle: "Symbian, IronRuby, 3rdRail, and the lasting ideas behind the 2000s Ruby wave"
-date: 2026-09-24
+date: 2026-09-23
 categories: [ruby, rails, software-history]
 tags: [ruby, rails, metaprogramming, ironruby, symbian, developer-experience]
 description: "A historical look at Ruby's 2000s excitement: why its language design mattered, what the Symbian, IronRuby, and 3rdRail experiments meant, and which Rails ideas endured."
@@ -107,9 +107,16 @@ Looking back at my own 2006 text, I would also revise some of its technical shor
 
 Ruby's early advocates asked how software would change if a language made programmers happier. Today, with assistants and agents writing more code, that question extends to the humans who must read, verify, and maintain what is produced. Rails [now frames its conventions](https://rubyonrails.org/ai) as useful structure for coding agents as well as people. That is a present day claim from the Rails project, rather than proof that AI development has already vindicated every early Ruby promise.
 
+This raises a sharper question about the future of programming languages. If Ruby once moved us further from the machine and closer to expressing intent, AI may add another layer: describe a change in natural language, inspect the generated code, run it, and decide whether it deserves to live in the system.
+
+> **Today's Ruby might become tomorrow's assembly.**  
+> **And AI, tomorrow's Ruby.**
+
+This is a provocation about shifting levels of abstraction, not a prediction that Ruby will disappear or that natural language can replace precise programs. I still want to write code by hand when it helps me think. The essential skill is to understand the behavior, test the assumptions, and take responsibility for the result, whichever tool produced the first draft.
+
 What makes the old excitement worth remembering is that Ruby asked developers to question the cost of building software. The Symbian port, 3rdRail IDE, and IronRuby implementation mark the reach of the moment; their fading does not erase it. What remained was a new benchmark for productive web development, a lasting proof that integrated Rails applications could grow into large technology businesses, a continuing Ruby implementation on the JVM, and a vocabulary for expressive software that still invites comparison across language communities.
 
-**Reflection:** Which part of your current development workflow still feels like the configuration burden Rails challenged twenty years ago? What would you simplify without hiding the behavior your team needs to inspect?
+**Reflection:** Which part of your current development workflow still feels like the configuration burden Rails challenged twenty years ago? Where does writing code by hand help you think, and where could AI help without hiding the behavior your team needs to inspect?
 
 ## References
 
