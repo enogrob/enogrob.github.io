@@ -27,6 +27,7 @@ The excitement spilled beyond Rails. People attempted to bring Ruby to Symbian p
 - [A language travels: phones, IDEs, and .NET](#a-language-travels-phones-ides-and-net)
 - [The enterprise question](#the-enterprise-question)
 - [What actually endured](#what-actually-endured)
+- [From Ruby's happiness to AI delegation](#from-rubys-happiness-to-ai-delegation)
 - [The question for today](#the-question-for-today)
 - [References](#references)
 
@@ -116,12 +117,22 @@ Looking back at my own 2006 text, I would also revise some of its technical shor
 
 Ruby's early advocates asked how software would change if a language made programmers happier. Today, with assistants and agents writing more code, that question extends to the humans who must read, verify, and maintain what is produced. Rails [now frames its conventions](https://rubyonrails.org/ai) as useful structure for coding agents as well as people. That is a present day claim from the Rails project, rather than proof that AI development has already vindicated every early Ruby promise.
 
+### From Ruby's happiness to AI delegation
+
+Ruby's original promise was to bring programming closer to human intention. Its syntax, object model, blocks, and metaprogramming reduced the distance between an idea and its implementation.
+
+At [Rails World 2026](https://www.youtube.com/watch?v=vDjW_dRyKXY), David Heinemeier Hansson proposed a more radical next step: “pencils down.” In this view, manually writing code becomes the exception. Developers describe intent in English, delegate implementation to AI agents, inspect the result, and move at a radically faster pace. The Rails Foundation presents the keynote in similar terms: the age of AI agents, “pencils down” on handwritten code, and Rails conventions as an advantage in this new environment.
+
 This raises a sharper question about the future of programming languages. If Ruby once moved us further from the machine and closer to expressing intent, AI may add another layer: describe a change in natural language, inspect the generated code, run it, and decide whether it deserves to live in the system.
 
 > **Today's Ruby might become tomorrow's assembly.**  
 > **And AI, tomorrow's Ruby.**
 
-This is a provocation about shifting levels of abstraction, not a prediction that Ruby will disappear or that natural language can replace precise programs. I still want to write code by hand when it helps me think. The essential skill is to understand the behavior, test the assumptions, and take responsibility for the result, whichever tool produced the first draft.
+This is a provocation about shifting levels of abstraction, not a prediction that Ruby will disappear or that natural language can replace precise programs. It also does not mean that the programmer becomes merely a manager of agents. Architecture, domain understanding, security, testing, observability, and judgment remain essential. I still want to write code by hand when it helps me think. The essential skill is to understand the behavior, test the assumptions, and take responsibility for the result, whichever tool produced the first draft.
+
+There is a deep tension here. Ruby's revolution was built around the joy of writing beautiful code. DHH's current proposal suggests that handwritten code may become a specialized craft rather than the center of software production. Both ideas can be true: code can remain valuable as a medium for thought, even as AI increasingly becomes the first author of implementation.
+
+The historical continuity is not that Ruby or Rails will simply be replaced. It is that both challenged the accepted boundary between human intention and machine execution. Ruby moved developers away from lower-level ceremony. Rails moved them away from repetitive application wiring. AI agents may now move them away from manually producing much of the code itself.
 
 What makes the old excitement worth remembering is that Ruby asked developers to question the cost of building software. The Symbian port, 3rdRail IDE, and IronRuby implementation mark the reach of the moment; their fading does not erase it. What remained was a new benchmark for productive web development, a lasting proof that integrated Rails applications could grow into large technology businesses, a continuing Ruby implementation on the JVM, and a vocabulary for expressive software that still invites comparison across language communities.
 
@@ -148,3 +159,4 @@ What makes the old excitement worth remembering is that Ruby asked developers to
 - [Plataformatec: Elixir and concurrency](https://blog.plataformatec.com.br/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/) — creator's Rails background and motivation.
 - [Matz at RubyConf 2006](https://www.flickr.com/photos/luludico/287350118) — historical portrait reference for the illustration; no photograph reproduced.
 - [Rails and AI](https://rubyonrails.org/ai) — present day project position.
+- [Rails World 2026 Opening Keynote — DHH](https://www.youtube.com/watch?v=vDjW_dRyKXY) — the “pencils down” proposal and AI-agent perspective.
