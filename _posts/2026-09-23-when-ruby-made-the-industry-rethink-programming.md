@@ -77,7 +77,16 @@ These stories should be read as evidence of attention and experimentation. A pre
 
 The next test was whether Ruby's speed of expression could coexist with integration, operations, and organizational scale. JRuby offered one route into Java infrastructure: a [JRuby maintainer's account](https://blog.jruby.org/2011/09/bringing-jruby-to-the-cloud) recalls the team's move to Sun Microsystems and the run up to JRuby 1.0 at JavaOne 2007. The same retrospective names Oracle and ThoughtWorks as early production users, while acknowledging that JRuby 1.0 was slow and not yet fully compatible. In the Rails community, a [2007 discussion on legacy databases](https://discuss.rubyonrails.org/t/enterprise-and-legacy-database-support/13171) shows how concrete the enterprise questions had become.
 
-Adoption also moved from predictions to running products. Shopify says its core Rails monolith has been under continuous development [since at least 2006](https://shopify.engineering/shopify-monolith). [GitHub says](https://github.blog/engineering/building-github-with-ruby-and-rails/) GitHub.com has been a Rails monolith from the beginning. These are later accounts of long lived production systems, not a claim that every enterprise chose Rails. The difference between early possibility and sustained operation is where the most useful history lies.
+<div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:1.25rem;margin:1.75rem 0;">
+  <figure style="flex:0 0 150px;max-width:150px;margin:0;">
+    <img src="/assets/images/posts/when-ruby-made-the-industry-rethink-programming/linux-journal-july-2006.webp" alt="July 2006 Linux Journal cover: Ruby Everywhere, Including Rails; David Heinemeier Hansson; Ruby, the Enterprise Guide" width="393" height="508" loading="lazy" style="display:block;width:100%;height:auto;">
+    <figcaption style="font-size:0.78em;line-height:1.35;margin-top:0.4rem;"><a href="https://www.linuxjournal.com/article/900147"><em>Linux Journal</em>, issue 147 (July 2006)</a>. Cover © <em>Linux Journal</em>.</figcaption>
+  </figure>
+  <div style="flex:1 1 240px;min-width:0;">
+    <p style="margin-top:0;">The cover puts Rails creator David Heinemeier Hansson beside the promise of “Ruby, the Enterprise Guide.” It captures a moment when Ruby's appeal was moving beyond developer conversations into mainstream technical publishing.</p>
+    <p>Adoption also moved from predictions to running products. Shopify says its core Rails monolith has been under continuous development <a href="https://shopify.engineering/shopify-monolith">since at least 2006</a>. <a href="https://github.blog/engineering/building-github-with-ruby-and-rails/">GitHub says</a> GitHub.com has been a Rails monolith from the beginning. These are later accounts of long lived production systems, not a claim that every enterprise chose Rails. The difference between early possibility and sustained operation is where the most useful history lies.</p>
+  </div>
+</div>
 
 ## What actually endured
 
@@ -130,6 +139,7 @@ What makes the old excitement worth remembering is that Ruby asked developers to
 - [JRuby maintainer on Sun and JRuby 1.0](https://blog.jruby.org/2011/09/bringing-jruby-to-the-cloud) — Java ecosystem connection.
 - [JRuby project and 10.1 release](https://www.jruby.org/2026/04/21/jruby-10-1-0-0.html) — evidence that JRuby continued into 2026.
 - [Rails discussion: legacy database support (2007)](https://discuss.rubyonrails.org/t/enterprise-and-legacy-database-support/13171) — enterprise integration concerns.
+- [Linux Journal, issue 147 (July 2006)](https://www.linuxjournal.com/article/900147) — Ruby special issue and historical cover with David Heinemeier Hansson.
 - [Shopify: State of the Monolith](https://shopify.engineering/shopify-monolith) — later evidence of sustained use.
 - [GitHub: Building GitHub with Ruby and Rails](https://github.blog/engineering/building-github-with-ruby-and-rails/) — the long lived Rails monolith.
 - [Rails Doctrine](https://rubyonrails.org/doctrine) — conventions, happiness, and integrated systems.
