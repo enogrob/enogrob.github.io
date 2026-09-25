@@ -43,7 +43,7 @@ The question is about one change, but its impact can cross more than one file. P
 From the companion repository root, run:
 
 ```bash
-python3 scripts/build_caseflow_inventory.py
+ruby scripts/build_caseflow_inventory.rb
 ```
 
 This generates `docs/architecture/generated-inventory.md`: a table of **file:line** declarations extracted from five named CaseFlow files. It is reproducible and intentionally narrow. It does not execute Rails, discover every indirect dependency or assert that tests passed. It gives Copilot and the reader a set of anchors to investigate.
