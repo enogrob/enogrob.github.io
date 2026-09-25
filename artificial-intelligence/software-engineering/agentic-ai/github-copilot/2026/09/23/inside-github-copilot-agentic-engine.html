@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Inside GitHub Copilot’s Agentic Engine: CLI, SDK, and HydraFusion | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="Inside GitHub Copilot’s Agentic Engine: CLI, SDK, and HydraFusion">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="GitHub Copilot is evolving from autocomplete into an agent runtime. Explore its CLI, SDK, agents, skills, MCP integrations, HydraFusion, governance boundaries, and a falsifiable Rails experiment.">
+<meta property="og:description" content="GitHub Copilot is evolving from autocomplete into an agent runtime. Explore its CLI, SDK, agents, skills, MCP integrations, HydraFusion, governance boundaries, and a falsifiable Rails experiment.">
+<link rel="canonical" href="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/23/inside-github-copilot-agentic-engine.html">
+<meta property="og:url" content="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/23/inside-github-copilot-agentic-engine.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/copilot-agentic-engineering/cover-v8.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-09-23T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/copilot-agentic-engineering/cover-v8.webp">
+<meta property="twitter:title" content="Inside GitHub Copilot’s Agentic Engine: CLI, SDK, and HydraFusion">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-23T00:00:00+00:00","datePublished":"2026-09-23T00:00:00+00:00","description":"GitHub Copilot is evolving from autocomplete into an agent runtime. Explore its CLI, SDK, agents, skills, MCP integrations, HydraFusion, governance boundaries, and a falsifiable Rails experiment.","headline":"Inside GitHub Copilot’s Agentic Engine: CLI, SDK, and HydraFusion","image":"https://enogrob.github.io/assets/images/posts/copilot-agentic-engineering/cover-v8.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/23/inside-github-copilot-agentic-engine.html"},"url":"https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/23/inside-github-copilot-agentic-engine.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2026-09-23-inside-github-copilot-agentic-engine.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/23/inside-github-copilot-agentic-engine.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/23/inside-github-copilot-agentic-engine.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/copilot-agentic-engineering/cover-v8.webp" alt="A developer dissolves into a digital network while Copilot flows from code suggestions and CLI through the shared runtime, an organic multi-model Holoflux, and independent verification." style="width:100%;height:auto;"></p>
+
+<blockquote>
+  <p>The most consequential change in AI-assisted development may not be that machines write more code. It may be that developers increasingly design, supervise, and verify the systems that write it.</p>
+</blockquote>
+
+<p>GitHub Copilot began in the public imagination as autocomplete: a probabilistic collaborator waiting at the cursor, predicting the next useful fragment. That mental model is now incomplete.</p>
+
+<p>Copilot can operate from a terminal, maintain a multi-turn session, plan work, invoke tools, edit files, delegate to specialized agents, load reusable skills, connect to external systems through the Model Context Protocol, and expose its runtime through an SDK. In research preview, Project HydraFusion goes one level deeper: it can select not only a model, but a multi-model execution pattern for the task.</p>
+
+<p>This is a shift from <strong>code generation</strong> to <strong>work orchestration</strong>.</p>
+
+<p>At the first GitHub Copilot Day, GitHub COO Kyle Daigle framed the transition as a move away from manually producing every line and toward agentic orchestration. The claim is larger than a product announcement. It suggests a change in the unit of software engineering: from the line, function, or prompt to the governed workflow.</p>
+
+<p>But orchestration is not automatically engineering. An agent can act without producing trustworthy work. A runtime can coordinate tools without preserving evidence. A router can reduce cost while making decisions harder to explain. The architectural question is therefore not whether Copilot can perform more actions. It is whether those actions can become <strong>observable, bounded, reproducible, and independently verified</strong>.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#the-end-of-copilot-as-autocomplete">The End of Copilot as Autocomplete</a></li>
+  <li><a href="#the-developer-becomes-the-orchestrator">The Developer Becomes the Orchestrator</a></li>
+  <li><a href="#one-runtime-many-surfaces">One Runtime, Many Surfaces</a></li>
+  <li><a href="#the-new-copilot-stack">The New Copilot Stack</a></li>
+  <li><a href="#prompts-instructions-agents-skills-and-mcp">Prompts, Instructions, Agents, Skills, and MCP</a></li>
+  <li><a href="#from-model-selection-to-workflow-selection">From Model Selection to Workflow Selection</a></li>
+  <li><a href="#what-hydrafusion-changes">What HydraFusion Changes</a></li>
+  <li><a href="#a-concrete-rails-experiment">A Concrete Rails Experiment</a></li>
+  <li><a href="#who-governs-the-agents">Who Governs the Agents?</a></li>
+  <li><a href="#the-risk-of-invisible-orchestration">The Risk of Invisible Orchestration</a></li>
+  <li><a href="#what-agentic-engineering-actually-changes">What Agentic Engineering Actually Changes</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+<h2 id="the-end-of-copilot-as-autocomplete">The End of Copilot as Autocomplete</h2>
+
+<p>Autocomplete is local. It reacts to the text around the cursor, proposes a continuation, and leaves the developer in direct control of the edit. Agentic work is different. It begins with an objective and may cross files, tools, processes, repositories, services, and time.</p>
+
+<p>The progression is not simply “more powerful completion.” Each stage introduces a new architectural responsibility.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stage</th>
+      <th>Unit of interaction</th>
+      <th>New responsibility</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Completion</td>
+      <td>Next tokens</td>
+      <td>Accept or reject a suggestion</td>
+    </tr>
+    <tr>
+      <td>Chat</td>
+      <td>Conversation</td>
+      <td>Supply useful context</td>
+    </tr>
+    <tr>
+      <td>Edit or agent mode</td>
+      <td>Multi-file change</td>
+      <td>Review a proposed implementation</td>
+    </tr>
+    <tr>
+      <td>CLI</td>
+      <td>Repository workflow</td>
+      <td>Control tools, permissions, and sessions</td>
+    </tr>
+    <tr>
+      <td>Custom agents and skills</td>
+      <td>Reusable specialization</td>
+      <td>Define roles and procedures</td>
+    </tr>
+    <tr>
+      <td>MCP</td>
+      <td>External systems</td>
+      <td>Bound authority across integrations</td>
+    </tr>
+    <tr>
+      <td>SDK</td>
+      <td>Embedded agent runtime</td>
+      <td>Own lifecycle, policy, and product behavior</td>
+    </tr>
+    <tr>
+      <td>HydraFusion</td>
+      <td>Multi-model workflow</td>
+      <td>Evaluate routing, cost, and quality</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The visible interface may still be a prompt. Behind it, however, the system increasingly resembles a runtime.</p>
+
+<figure>
+  <img src="/assets/images/posts/copilot-agentic-engineering/copilot-evolution-v8.webp" alt="A progressively digitized developer advances through five color-coded stages as Copilot evolves from completion through conversation, planning, action, and orchestration." style="width:100%;height:auto;">
+  <figcaption>Copilot's surface evolves from local suggestions toward reusable, embeddable, multi-model workflows.</figcaption>
+</figure>
+
+<style>
+.mermaid-diagram img,
+.mermaid-diagram svg {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin: 1.1rem auto;
+}
+</style>
+
+<p>The transition matters because the cost of a bad suggestion is small; the cost of a badly governed action may not be. Once an assistant can run commands, edit multiple files, call APIs, or open a pull request, quality depends on more than model intelligence. It depends on the harness around the model.</p>
+
+<h2 id="the-developer-becomes-the-orchestrator">The Developer Becomes the Orchestrator</h2>
+
+<p>“The developer becomes the orchestrator” can sound like the developer is leaving implementation behind. That would be a mistake. Orchestration is not passive delegation. It is the design of a system in which probabilistic actors can do useful work without becoming the sole authority on whether that work is correct.</p>
+
+<p>The developer’s attention moves upward:</p>
+
+<ul>
+  <li>from syntax to intent;</li>
+  <li>from isolated edits to task decomposition;</li>
+  <li>from choosing every action to defining allowed actions;</li>
+  <li>from inspecting only the patch to inspecting evidence and lineage;</li>
+  <li>from manually performing every check to designing checks that cannot be skipped;</li>
+  <li>from selecting one model to evaluating the workflow that selects models.</li>
+</ul>
+
+<p>This resembles the historical movement from machine code to higher-level languages, and from manually managed servers to declarative infrastructure. Abstraction removes some direct labor, but it creates a new obligation: understanding what the abstraction does when reality diverges from the happy path.</p>
+
+<p>Agentic engineering is therefore not “prompting with more confidence.” It is building a control system around uncertain execution.</p>
+
+<h2 id="one-runtime-many-surfaces">One Runtime, Many Surfaces</h2>
+
+<p>Copilot now appears across IDEs such as VS Code and RubyMine, the GitHub Copilot desktop app, Copilot CLI, GitHub.com, cloud agents, and embedded applications. The surfaces differ, but GitHub describes the Copilot SDK as programmatic access to the same production-tested agent runtime that powers Copilot CLI and cloud agents.</p>
+
+<p>That runtime can plan, invoke tools, edit files, stream responses, and maintain multi-turn sessions. The SDK makes those capabilities available to applications instead of requiring every team to assemble an orchestration layer from scratch.</p>
+
+<figure>
+  <img src="/assets/images/posts/copilot-agentic-engineering/copilot-stack-v9.webp" alt="A deeply digitized developer works across VS Code and RubyMine, the Copilot desktop app, Copilot CLI, and GitHub.com while MCP, Skills, SDK, and Hooks extend the shared runtime and HydraFusion orchestrates multiple model streams into a verified strategy." style="width:100%;height:auto;">
+  <figcaption>One agentic runtime spans IDE, desktop, terminal, and cloud; MCP, Skills, SDK, and Hooks extend it, while HydraFusion occupies a distinct multi-model orchestration layer.</figcaption>
+</figure>
+
+<p>The distinction is architectural. IDE, desktop, terminal, and GitHub.com are interaction surfaces. MCP, Skills, SDK, and Hooks connect, package, embed, or constrain capabilities. HydraFusion sits elsewhere in the stack: it experiments with selecting and composing model workflows inside the runtime rather than merely adding another tool.</p>
+
+<p>This unification is powerful, but it changes the platform boundary. When applications embed the runtime, they inherit questions that were previously hidden inside an editor feature: session ownership, tool permissions, memory, failure recovery, spend limits, observability, and user consent.</p>
+
+<h2 id="the-new-copilot-stack">The New Copilot Stack</h2>
+
+<p>The emerging stack is easier to understand if each layer answers a different question.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Layer</th>
+      <th>Question</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Objective</td>
+      <td>What outcome does the developer want?</td>
+    </tr>
+    <tr>
+      <td>Instructions</td>
+      <td>What rules should consistently shape behavior?</td>
+    </tr>
+    <tr>
+      <td>Plan</td>
+      <td>What sequence of work is proposed?</td>
+    </tr>
+    <tr>
+      <td>Agent</td>
+      <td>Which specialized role should reason about the task?</td>
+    </tr>
+    <tr>
+      <td>Skill</td>
+      <td>Which reusable procedure and resources apply?</td>
+    </tr>
+    <tr>
+      <td>Tool</td>
+      <td>What bounded capability may be invoked?</td>
+    </tr>
+    <tr>
+      <td>MCP server</td>
+      <td>Which external system supplies context or actions?</td>
+    </tr>
+    <tr>
+      <td>Hook</td>
+      <td>What deterministic behavior runs at lifecycle boundaries?</td>
+    </tr>
+    <tr>
+      <td>Model workflow</td>
+      <td>Which model or combination of models performs the reasoning?</td>
+    </tr>
+    <tr>
+      <td>Verification</td>
+      <td>What independent evidence determines acceptance?</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Confusing these layers produces brittle systems. A long prompt becomes a substitute for policy. A custom agent accumulates every procedure. An MCP server is treated as trusted simply because it is connected. A model’s self-review is mistaken for independent verification.</p>
+
+<p>The stack becomes reliable only when its boundaries remain explicit.</p>
+
+<h2 id="prompts-instructions-agents-skills-and-mcp">Prompts, Instructions, Agents, Skills, and MCP</h2>
+
+<p>Copilot’s customization mechanisms overlap, but they are not interchangeable.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mechanism</th>
+      <th>Best use</th>
+      <th>Avoid using it as</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Prompt</td>
+      <td>One immediate objective</td>
+      <td>Permanent project policy</td>
+    </tr>
+    <tr>
+      <td>Custom instructions</td>
+      <td>Stable repository conventions</td>
+      <td>A long executable workflow</td>
+    </tr>
+    <tr>
+      <td>Custom agent</td>
+      <td>A bounded specialist with its own role and tools</td>
+      <td>A universal supervisor</td>
+    </tr>
+    <tr>
+      <td>Agent skill</td>
+      <td>A reusable task procedure with instructions, scripts, and resources</td>
+      <td>An identity or permission system</td>
+    </tr>
+    <tr>
+      <td>MCP server</td>
+      <td>Structured access to external context and actions</td>
+      <td>An automatically trusted data source</td>
+    </tr>
+    <tr>
+      <td>Hook</td>
+      <td>Deterministic behavior at lifecycle events</td>
+      <td>Open-ended reasoning</td>
+    </tr>
+    <tr>
+      <td>CI workflow</td>
+      <td>Independent, repeatable validation</td>
+      <td>A model-generated confidence statement</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>GitHub documents custom agents in Copilot CLI as subagents with their own context windows. This matters: specialization can prevent the main agent’s context from accumulating every domain detail. Skills solve a different problem. They package instructions, scripts, and resources that Copilot can load when relevant. MCP servers extend the system outward by providing tools and context from other systems. Hooks insert deterministic commands at defined moments in execution.</p>
+
+<p>The architectural principle is simple:</p>
+
+<blockquote>
+  <p>Put stable rules in instructions, specialized judgment in agents, reusable procedures in skills, external capabilities behind MCP, deterministic lifecycle behavior in hooks, and acceptance criteria in independent verification.</p>
+</blockquote>
+
+<h2 id="from-model-selection-to-workflow-selection">From Model Selection to Workflow Selection</h2>
+
+<p>The first generation of multi-model products asked: <strong>Which model should answer this prompt?</strong></p>
+
+<p>Auto model selection improves that decision by considering task complexity, system health, availability, quality, latency, and cost. But it still tends to frame execution as a single-model choice.</p>
+
+<p>HydraFusion introduces a more consequential question:</p>
+
+<blockquote>
+  <p>Which reasoning workflow should execute this task?</p>
+</blockquote>
+
+<p>A simple request may use one efficient model. A harder request may begin with an inexpensive draft and escalate when a quality signal is weak. Another may use one model to draft, another to critique, and a final pass to revise. The unit of optimization becomes the workflow rather than the individual response.</p>
+
+<figure>
+  <img src="/assets/images/posts/copilot-agentic-engineering/hydrafusion-workflows-v8.webp" alt="A particle-formed hand adjusts a networked routing lens that refracts a task into richly colored single-model, cascade, and critique-and-revise workflows before independent verification." style="width:100%;height:auto;">
+  <figcaption>HydraFusion changes the optimization target from choosing one model to choosing an execution workflow.</figcaption>
+</figure>
+
+<p>The final verification gate is intentionally outside the model workflow. A critique can improve a draft, but agreement among models is not proof that the code compiles, the tests pass, the vulnerability is closed, or the requirement is satisfied.</p>
+
+<h2 id="what-hydrafusion-changes">What HydraFusion Changes</h2>
+
+<p>HydraFusion is currently a research preview, so it should be treated as an experiment rather than a stable architectural guarantee. Even so, it reveals where coding assistants are heading.</p>
+
+<p>First, <strong>model identity becomes less visible</strong>. The developer may select a fused capability while the runtime chooses the participating models and execution pattern.</p>
+
+<p>Second, <strong>cost becomes a runtime property</strong>. Spend is influenced by routing, critique passes, escalation, retries, caching, and context—not only by the advertised price of one model.</p>
+
+<p>Third, <strong>quality claims move to the harness</strong>. If the system says a cheaper workflow matches a frontier baseline, the interesting artifact is no longer a single response. It is the evaluation design: benchmarks, routing criteria, failure distribution, latency, and cost accounting.</p>
+
+<p>Fourth, <strong>observability becomes essential</strong>. Teams need to know which workflow ran, what evidence triggered escalation, how many model calls occurred, which tools changed state, and what verification accepted the result.</p>
+
+<p>HydraFusion therefore strengthens the thesis of agentic engineering while also exposing its central risk: sophisticated orchestration can become invisible precisely when it becomes most consequential.</p>
+
+<h2 id="a-concrete-rails-experiment">A Concrete Rails Experiment</h2>
+
+<p>Claims about agentic engineering should survive contact with a controlled task. Consider a Rails application with an outdated authentication dependency and a pull request that changes session handling.</p>
+
+<p>Run the same maintenance objective in three configurations:</p>
+
+<ol>
+  <li>
+<strong>Single Copilot session</strong> — one agent, one selected model, repository tools.</li>
+  <li>
+<strong>Specialized workflow</strong> — planner, Rails maintainer, security reviewer, reusable upgrade skill, documentation through MCP, and deterministic gates.</li>
+  <li>
+<strong>HydraFusion workflow</strong> — the same tools and gates, but with runtime multi-model orchestration enabled.</li>
+</ol>
+
+<p>The task is not “make the code better.” It is bounded:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>upgrade the authentication dependency
+preserve existing login and logout behavior
+remove known advisories
+avoid reducing test coverage
+produce an auditable before-and-after report
+</code></pre></div></div>
+
+<div class="mermaid-diagram">
+
+  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzozNiwncmFua1NwYWNpbmcnOjQ0LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggRVZJREVOQ0VbXCLwn5SNIEV2aWRlbmNlXCJdXG5CW1wi8J-TiiBCYXNlbGluZSBldmlkZW5jZVwiXVxuZW5kXG5zdWJncmFwaCBDSEFOR0VbXCLwn5ug77iPIENoYW5nZVwiXVxuUFtcIvCfp60gUGxhblwiXSAtLT4gQ1tcIvCflKcgRGVwZW5kZW5jeSBjaGFuZ2VcIl1cbmVuZFxuc3ViZ3JhcGggVkVSSUZZW1wi4pyFIFZlcmlmaWNhdGlvbiAmIGdvdmVybmFuY2VcIl1cblZbXCLwn6eqIFRlc3RzICsgc2Nhbm5lcnNcIl0gLS0-IER7XCLwn5uh77iPIFBvbGljeSBnYXRlXCJ9XG5EIC0tPnxhcHByb3ZhbCByZXF1aXJlZHwgSFtcIvCfkaQgSHVtYW4gYXBwcm92YWxcIl1cbkQgLS0-fGF1dGhvcml6ZWR8IEFbXCLinIUgQWNjZXB0IHdpdGggZXZpZGVuY2VcIl1cbmVuZFxuQiAtLT4gUFxuQyAtLT4gVlxuRCAtLT58cmV2aXNlfCBQXG5IIC0tPnxhcHByb3ZlZHwgQVxuSCAtLT58cmVqZWN0ZWR8IFBcbmNsYXNzRGVmIGJsdWUgZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjJweDtcbmNsYXNzRGVmIHB1cnBsZSBmaWxsOiNFOERERjUsc3Ryb2tlOiNBNjhCQzQsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgb3JhbmdlIGZpbGw6I0Y4REZDNCxzdHJva2U6I0M5OTg2RCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiByb3NlIGZpbGw6I0Y2RDZERCxzdHJva2U6I0M5ODc5OCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBncmVlbiBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3MgQiBibHVlO1xuY2xhc3MgUCBwdXJwbGU7XG5jbGFzcyBDLFYgb3JhbmdlO1xuY2xhc3MgRCxIIHJvc2U7XG5jbGFzcyBBIGdyZWVuOyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"></p>
+
+</div>
+
+<p>The workflow should collect evidence before any edit:</p>
+
+<ul>
+  <li>current dependency versions;</li>
+  <li>relevant security advisories;</li>
+  <li>passing and failing tests;</li>
+  <li>SimpleCov coverage;</li>
+  <li>Brakeman findings;</li>
+  <li>bundler-audit results;</li>
+  <li>files and configuration affected by authentication.</li>
+</ul>
+
+<p>After the proposed change, the same checks run again. The model may explain the result, but the tools remain the source of evidence.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Measure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Correctness</td>
+      <td>Authentication tests and acceptance criteria</td>
+    </tr>
+    <tr>
+      <td>Security</td>
+      <td>Brakeman and bundler-audit deltas</td>
+    </tr>
+    <tr>
+      <td>Regression risk</td>
+      <td>Full test suite and changed behavior</td>
+    </tr>
+    <tr>
+      <td>Coverage</td>
+      <td>SimpleCov before and after</td>
+    </tr>
+    <tr>
+      <td>Human effort</td>
+      <td>Interventions and review time</td>
+    </tr>
+    <tr>
+      <td>Recovery</td>
+      <td>Completion after an injected tool failure</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>Session credits or model usage</td>
+    </tr>
+    <tr>
+      <td>Traceability</td>
+      <td>Reconstructable plan, actions, evidence, and approvals</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The experiment is falsifiable. The specialized or fused workflow should not be declared better because it appears more sophisticated. It must improve measurable outcomes enough to justify added complexity, cost, and opacity.</p>
+
+<h2 id="who-governs-the-agents">Who Governs the Agents?</h2>
+
+<p>Copilot CLI can ask for permission before potentially destructive tools run. SDK applications can add lifecycle hooks, scoped tools, custom agents, and spending limits. These are necessary controls, but they do not replace application-level governance.</p>
+
+<p>Useful governance boundaries include:</p>
+
+<ul>
+  <li>
+<strong>least authority</strong> — an agent receives only the tools required for its role;</li>
+  <li>
+<strong>explicit mutation</strong> — reading, proposing, modifying, and publishing are distinct capabilities;</li>
+  <li>
+<strong>human checkpoints</strong> — sensitive changes require approval at the moment authority expands;</li>
+  <li>
+<strong>durable evidence</strong> — raw reports and tool outputs are retained, not only summarized;</li>
+  <li>
+<strong>independent verification</strong> — tests and scanners run outside the model’s confidence loop;</li>
+  <li>
+<strong>bounded spend</strong> — sessions have explicit cost limits and stop conditions;</li>
+  <li>
+<strong>recovery semantics</strong> — retries are idempotent and partial changes are visible;</li>
+  <li>
+<strong>lineage</strong> — the system records instructions, agent, skill, tools, models, and configuration used.</li>
+</ul>
+
+<p>The core distinction is the same one that separates autonomy from sovereignty:</p>
+
+<blockquote>
+  <p>Agents may decide how to pursue an authorized objective. They should not unilaterally decide what authority they possess or what evidence counts as success.</p>
+</blockquote>
+
+<h2 id="the-risk-of-invisible-orchestration">The Risk of Invisible Orchestration</h2>
+
+<p>Agentic systems compress visible work. A developer may see one request and one final patch even though the runtime planned multiple steps, invoked tools, delegated to agents, routed across models, retried failures, and rewrote its answer after critique.</p>
+
+<p>Compression is convenient, but it can conceal the causal chain.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Invisible decision</th>
+      <th>Engineering question</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Context selection</td>
+      <td>Which files or instructions were omitted?</td>
+    </tr>
+    <tr>
+      <td>Agent delegation</td>
+      <td>Why was this specialist chosen?</td>
+    </tr>
+    <tr>
+      <td>Tool permission</td>
+      <td>What authority was granted, and for how long?</td>
+    </tr>
+    <tr>
+      <td>Model routing</td>
+      <td>Which quality, cost, or availability signal drove the choice?</td>
+    </tr>
+    <tr>
+      <td>Critique</td>
+      <td>Was the reviewer independent or sharing the same failure mode?</td>
+    </tr>
+    <tr>
+      <td>Retry</td>
+      <td>Did the second attempt change the plan or merely repeat it?</td>
+    </tr>
+    <tr>
+      <td>Acceptance</td>
+      <td>Which external evidence closed the task?</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The goal is not to expose every token. Raw model reasoning is neither necessary nor sufficient for accountability. What matters is operational lineage: inputs, plans, tool calls, mutations, artifacts, evaluations, approvals, cost, and outcome.</p>
+
+<p>Without that lineage, orchestration becomes theater. The system may look autonomous while leaving humans unable to explain why a change happened.</p>
+
+<h2 id="what-agentic-engineering-actually-changes">What Agentic Engineering Actually Changes</h2>
+
+<p>Agentic engineering changes the shape of leverage, not the need for engineering judgment.</p>
+
+<p>Developers can spend less time on mechanical navigation and more time defining outcomes. Specialized agents can keep domain procedures out of one overloaded context. Skills can make good practices reusable. MCP can connect the workflow to authoritative systems. Hooks can enforce deterministic behavior. Multi-model orchestration can allocate intelligence more efficiently.</p>
+
+<p>But the durable artifacts of software engineering remain familiar:</p>
+
+<ul>
+  <li>explicit requirements;</li>
+  <li>constrained authority;</li>
+  <li>versioned code and configuration;</li>
+  <li>executable tests;</li>
+  <li>observable behavior;</li>
+  <li>reviewable changes;</li>
+  <li>rollback paths;</li>
+  <li>accountable human decisions.</li>
+</ul>
+
+<p>The revolutionary part is not that these disciplines disappear. It is that they move from surrounding human execution to surrounding mixed human-agent execution.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>GitHub Copilot is no longer well described as an AI pair programmer living beside the cursor. The CLI turns it into a repository-level operator. Custom agents and skills make specialization reusable. MCP extends its reach. Hooks introduce deterministic lifecycle behavior. The SDK makes the runtime embeddable. HydraFusion experiments with selecting entire multi-model workflows.</p>
+
+<p>Together, these capabilities point toward a new layer in the software stack: the <strong>agent runtime</strong>.</p>
+
+<p>The developer’s job does not become merely “tell the agents what to do.” It becomes more architectural: define objectives, shape context, allocate authority, encode procedures, design verification, observe execution, and decide what evidence is sufficient.</p>
+
+<p>The line of code is no longer the only unit of work. The workflow is becoming programmable.</p>
+
+<p>And once the workflow becomes programmable, it must be engineered.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>GitHub. <a href="https://www.youtube.com/watch?v=wtMaYmkhANQ" target="_blank" rel="noopener noreferrer">Welcome to GitHub Copilot Day: The Future of Agentic Engineering</a>.</li>
+  <li>GitHub. <a href="https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/" target="_blank" rel="noopener noreferrer">Project HydraFusion: Frontier Quality via Multi-Model Orchestration</a>.</li>
+  <li>GitHub. <a href="https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/" target="_blank" rel="noopener noreferrer">Copilot SDK Is Now Generally Available</a>.</li>
+  <li>GitHub. <a href="https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/" target="_blank" rel="noopener noreferrer">Build an Agent into Any App with the GitHub Copilot SDK</a>.</li>
+  <li>GitHub. <a href="https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available/" target="_blank" rel="noopener noreferrer">GitHub Copilot App Generally Available</a>.</li>
+  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/get-started/where-to-use-github-copilot" target="_blank" rel="noopener noreferrer">Where to Use GitHub Copilot</a>.</li>
+  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/concepts/agents/copilot-in-jetbrains" target="_blank" rel="noopener noreferrer">Using GitHub Copilot in JetBrains IDEs</a>.</li>
+  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/concepts/context/mcp" target="_blank" rel="noopener noreferrer">About Model Context Protocol (MCP)</a>.</li>
+  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview" target="_blank" rel="noopener noreferrer">Using GitHub Copilot CLI</a>.</li>
+  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/overview" target="_blank" rel="noopener noreferrer">Overview of Customizing GitHub Copilot CLI</a>.</li>
+  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills" target="_blank" rel="noopener noreferrer">Adding Agent Skills for GitHub Copilot CLI</a>.</li>
+  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers" target="_blank" rel="noopener noreferrer">Adding MCP Servers for GitHub Copilot CLI</a>.</li>
+  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools" target="_blank" rel="noopener noreferrer">Allowing and Denying Tool Use</a>.</li>
+  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/concepts/models/auto-model-selection" target="_blank" rel="noopener noreferrer">About Copilot Auto Model Selection</a>.</li>
+  <li>Microsoft for Developers. <a href="https://developer.microsoft.com/blog/get-started-with-github-copilot-cli-a-free-hands-on-course/" target="_blank" rel="noopener noreferrer">Get Started with GitHub Copilot CLI: A Free, Hands-on Course</a>.</li>
+  <li>James Montemagno. <a href="https://jamesmontemagno.github.io/first-steps-with-github-copilot/" target="_blank" rel="noopener noreferrer">First Steps with GitHub Copilot</a>.</li>
+</ul>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Codex CLI + Ruby: Automating Codebase Navigation via Command Line | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="Codex CLI + Ruby: Automating Codebase Navigation via Command Line">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Software/Telecommunications Engineer">
+<meta property="og:description" content="Software/Telecommunications Engineer">
+<link rel="canonical" href="https://enogrob.github.io/ruby/codex/2025/05/14/codex-cli-ruby.html">
+<meta property="og:url" content="https://enogrob.github.io/ruby/codex/2025/05/14/codex-cli-ruby.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/codex-cli-ruby/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-05-14T13:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/codex-cli-ruby/cover.webp">
+<meta property="twitter:title" content="Codex CLI + Ruby: Automating Codebase Navigation via Command Line">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-05-14T13:00:00+00:00","datePublished":"2025-05-14T13:00:00+00:00","description":"Software/Telecommunications Engineer","headline":"Codex CLI + Ruby: Automating Codebase Navigation via Command Line","image":"https://enogrob.github.io/assets/images/posts/codex-cli-ruby/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/ruby/codex/2025/05/14/codex-cli-ruby.html"},"url":"https://enogrob.github.io/ruby/codex/2025/05/14/codex-cli-ruby.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2025-05-14-codex-cli-ruby.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/ruby/codex/2025/05/14/codex-cli-ruby.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/ruby/codex/2025/05/14/codex-cli-ruby.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/codex-cli-ruby/cover.webp" alt="Codex CLI + Ruby" style="width:100%;height:auto;"></p>
+
+<p>Picture this: you’ve inherited a sprawling Ruby codebase with no documentation. It feels like wandering through a dense forest without a compass. Enter <strong>OpenAI’s Codex CLI</strong>, your AI companion that turns code spelunking into a guided tour.</p>
+
+<p>But here’s the twist: instead of using the interactive UI, we’ll streamline our workflow using <strong>CLI parameters</strong>. Think of it as skipping the tour guide and going straight for the map.</p>
+
+<h2 id="setting-up-codex-cli">Setting Up Codex CLI</h2>
+
+<p>First, install Codex CLI and set your API key:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> @openai/codex
+<span class="nb">export </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">"your-api-key-here"</span>
+</code></pre></div></div>
+
+<p>Navigate to your Ruby project:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>path/to/your/ruby_project
+</code></pre></div></div>
+
+<p>Initialize Git if needed:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+</code></pre></div></div>
+
+<h2 id="exploring-the-codebase-from-the-command-line">Exploring the Codebase from the Command Line</h2>
+
+<p>Instead of launching Codex in interactive mode, we’ll use the <code class="language-plaintext highlighter-rouge">--query</code> parameter for direct questions:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>codex <span class="nt">--query</span> <span class="s2">"Explain the purpose of this codebase."</span>
+</code></pre></div></div>
+
+<p>Codex will respond with a high-level summary, giving you an overview without needing to navigate the UI.</p>
+
+<h2 id="analyzing-specific-methods-or-classes">Analyzing Specific Methods or Classes</h2>
+
+<p>If you want to dive into a particular method, pass your question as a parameter:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>codex <span class="nt">--query</span> <span class="s2">"What does the 'process_order' method in 'order.rb' do?"</span>
+</code></pre></div></div>
+
+<p>Codex will parse the file and provide a clear, concise explanation.</p>
+
+<h2 id="automating-refactoring">Automating Refactoring</h2>
+
+<p>Need to improve code without manual editing? Use the <code class="language-plaintext highlighter-rouge">--query</code> parameter with a specific command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>codex <span class="nt">--query</span> <span class="s2">"Refactor 'calculate_total' method in 'cart.rb' to use 'inject' instead of a loop."</span>
+</code></pre></div></div>
+
+<p>Codex will suggest improvements and display the modified code directly in your terminal.</p>
+
+<h2 id="running-tests">Running Tests</h2>
+
+<p>To validate changes, use the CLI to execute tests:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>codex <span class="nt">--query</span> <span class="s2">"Run the test suite to verify all tests pass."</span>
+</code></pre></div></div>
+
+<p>Codex will run the tests and report the outcome, ensuring your changes didn’t break the code.</p>
+
+<h2 id="visual-summary">Visual Summary</h2>
+
+<p>Here’s a conceptual map of Codex CLI operations when using parameters instead of the UI:</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggSW50ZXJmYWNlW1wi4oyo77iPIENvZGV4IENMSSBJbnRlcmZhY2VcIl1cbkFbXCLwn6SWIENvZGV4IENMSVwiXVxuZW5kXG4lJS1cbnN1YmdyYXBoIE9wZXJhdGlvbnNbXCLwn5ug77iPIENvZGViYXNlIE9wZXJhdGlvbnNcIl1cbkJbXCLwn5KsIERpcmVjdCBRdWVyaWVzXCJdXG5DW1wi8J-UjiBNZXRob2QgQW5hbHlzaXNcIl1cbkRbXCLwn6e5IEF1dG9tYXRlZCBSZWZhY3RvcmluZ1wiXVxuRVtcIvCfp6ogVGVzdCBFeGVjdXRpb25cIl1cbmVuZFxuJSUtXG5zdWJncmFwaCBSZXN1bHRzW1wi8J-TpiBVc2VmdWwgUmVzdWx0c1wiXVxuRltcIvCfl7rvuI8gQ29kZWJhc2UgU3VtbWFyeVwiXVxuR1tcIvCfk4sgRGV0YWlsZWQgTWV0aG9kIERlc2NyaXB0aW9uXCJdXG5IW1wi4pyoIFJlZmFjdG9yZWQgQ29kZVwiXVxuSVtcIuKchSBUZXN0IFJlc3VsdHNcIl1cbmVuZFxuJSUtXG5BIC0tPnxhc2sgcXVlc3Rpb25zfCBCXG5BIC0tPnxhbmFseXplIGNvZGV8IENcbkEgLS0-fHJlZmFjdG9yIGNvZGV8IERcbkEgLS0-fHJ1biB0ZXN0c3wgRVxuQiAtLT58c3VtbWFyaXplfCBGXG5DIC0tPnxkZXNjcmliZXwgR1xuRCAtLT58Z2VuZXJhdGV8IEhcbkUgLS0-fHJlcG9ydHwgSVxuJSUtXG5jbGFzc0RlZiBpbnRlcmZhY2UgZmlsbDojZTNmMmZkLHN0cm9rZTojNWI5YmQ1LGNvbG9yOiMxNjMyNGYsc3Ryb2tlLXdpZHRoOjFweFxuY2xhc3NEZWYgb3BlcmF0aW9uIGZpbGw6I2ZmZjFkNixzdHJva2U6I2QzOWI0NSxjb2xvcjojNWIzZDBiLHN0cm9rZS13aWR0aDoxcHhcbmNsYXNzRGVmIHJlc3VsdCBmaWxsOiNlNGY1ZWMsc3Ryb2tlOiM2OGE3N2QsY29sb3I6IzIwNGIyZCxzdHJva2Utd2lkdGg6MXB4XG5jbGFzcyBBIGludGVyZmFjZVxuY2xhc3MgQixDLEQsRSBvcGVyYXRpb25cbmNsYXNzIEYsRyxILEkgcmVzdWx0IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0"></p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>OpenAI Codex CLI – Getting Started: (<a href="https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">help.openai.com</a>)</li>
+  <li>OpenAI Codex CLI: Build Faster Code Right From Your Terminal: (<a href="https://www.blott.studio/blog/post/openai-codex-cli-build-faster-code-right-from-your-terminal?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">blott.studio</a>)</li>
+  <li>OpenAI Codex CLI Tutorial - DataCamp: (<a href="https://www.datacamp.com/tutorial/open-ai-codex-cli-tutorial?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">datacamp.com</a>)</li>
+</ul>
+
+<p>By using command-line parameters, you unlock a faster, more automated way to explore, refactor, and test your Ruby codebase with Codex CLI.</p>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

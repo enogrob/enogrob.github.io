@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>The First 30 Minutes in an Unfamiliar Rails Repository | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="The First 30 Minutes in an Unfamiliar Rails Repository">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Build an evidence-backed Rails architecture atlas with Copilot: capabilities, request flow, change impact, and the smallest safe next step.">
+<meta property="og:description" content="Build an evidence-backed Rails architecture atlas with Copilot: capabilities, request flow, change impact, and the smallest safe next step.">
+<link rel="canonical" href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html">
+<meta property="og:url" content="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/first-30-minutes-rails-repository/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-09-25T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/first-30-minutes-rails-repository/cover.webp">
+<meta property="twitter:title" content="The First 30 Minutes in an Unfamiliar Rails Repository">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-25T00:00:00+00:00","datePublished":"2026-09-25T00:00:00+00:00","description":"Build an evidence-backed Rails architecture atlas with Copilot: capabilities, request flow, change impact, and the smallest safe next step.","headline":"The First 30 Minutes in an Unfamiliar Rails Repository","image":"https://enogrob.github.io/assets/images/posts/first-30-minutes-rails-repository/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html"},"url":"https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2026-09-25-the-first-30-minutes-in-an-unfamiliar-rails-repository.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/first-30-minutes-rails-repository/cover.webp" alt="A digitized Copilot-inspired guide in side profile studies a conceptual CaseFlow Rails site; Ruby source, an unverified test and an amber question flow around the browser." style="width:100%;height:auto;"></p>
+
+<p><em>Cover illustration: the CaseFlow browser is a conceptual application view. The companion lab supplies an integrated Rails API source app, not a working web interface.</em></p>
+
+<p><em>GitHub Copilot for Rails Engineers · Part 01</em></p>
+
+<p><em>The first half-hour in a new repository should produce a navigable architecture atlas, named unknowns and one useful next action.</em></p>
+
+<p>A client asks: “Can we add status transitions to this Rails API this week?” You have never seen the codebase. GitHub Copilot can help you explore it, but an answer that <em>sounds</em> like Rails is not evidence that this particular application behaves that way. Our goal is a <strong>small, navigable architecture atlas</strong>: what the API exposes, how a request flows, what a status change might affect, and which claims still need a run. Copilot should discover and connect evidence; we should be able to challenge the resulting map.</p>
+
+<p>We will use <strong>CaseFlow</strong>, a synthetic integrated Rails API source app. It is deliberately small enough to inspect and incomplete enough to expose an important habit: distinguish what source says, what a test asserts, and what a running system actually did. The <a href="/assets/downloads/first-30-minutes-rails-repository-support.zip">companion materials</a> contain the integrated app, the finished atlas under <code class="language-plaintext highlighter-rouge">docs/architecture/</code>, a deterministic declaration inventory, the Copilot prompt, Mermaid source and a workbook with answers. The atlas is a reviewed source map, not an observed production trace.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#predict">0–5 minutes: predict before you inspect</a></li>
+  <li><a href="#trace">5–12 minutes: generate an inventory and trace one path</a></li>
+  <li><a href="#ask">12–20 minutes: ask Copilot for an architecture atlas</a></li>
+  <li><a href="#observe">20–27 minutes: audit the atlas and run one check</a></li>
+  <li><a href="#client">27–30 minutes: give the client one bounded answer</a></li>
+  <li><a href="#lab">Your 20–30 minute lab</a></li>
+  <li><a href="#references">References and supporting materials</a></li>
+</ul>
+
+<h2 id="05-minutes-predict-before-you-inspect-predict">0–5 minutes: predict before you inspect {:#predict}</h2>
+
+<p>Write down your current hypothesis for <code class="language-plaintext highlighter-rouge">POST /api/requests</code>: what input is accepted, what gets saved and what comes back. Label every sentence <strong>prediction</strong>. This prevents your first impression or an AI suggestion from quietly turning into a fact.</p>
+
+<p>The question is about one change, but its impact can cross more than one file. Predict whether an update endpoint, authorization check or background job already exists. Later, compare these predictions with a capability map and evidence register. GitHub’s <a href="https://docs.github.com/en/copilot/tutorials/explore-a-codebase" target="_blank" rel="noopener noreferrer">codebase exploration guide</a> shows how repository and file context can narrow a question. Its <a href="https://docs.github.com/en/copilot/tutorials/review-ai-generated-code" target="_blank" rel="noopener noreferrer">review guidance</a> is equally relevant: inspect the answer against actual files. Here, the hypothesis is an investigation aid, not a delivery promise.</p>
+
+<h2 id="512-minutes-generate-an-inventory-and-trace-one-path-trace">5–12 minutes: generate an inventory and trace one path {:#trace}</h2>
+
+<p>From the companion repository root, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby scripts/build_caseflow_inventory.rb
+</code></pre></div></div>
+
+<p>This generates <code class="language-plaintext highlighter-rouge">docs/architecture/generated-inventory.md</code>: a CaseFlow application guide with <strong>file:line</strong> declarations, Gemfile dependencies, the SQLite adapter, an architecture diagram, local setup and API examples. The extraction is reproducible and intentionally narrow. The diagram and runbook explain source-backed relationships; they do not execute Rails, discover every indirect dependency or assert that tests passed.</p>
+
+<p>Start with <code class="language-plaintext highlighter-rouge">caseflow/config/routes.rb</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">namespace</span> <span class="ss">:api</span> <span class="k">do</span>
+  <span class="n">resources</span> <span class="ss">:requests</span><span class="p">,</span> <span class="ss">only: </span><span class="sx">%i[index show create]</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>This declares a create route under <code class="language-plaintext highlighter-rouge">/api</code>. Rails routes dispatch incoming HTTP methods and paths to controller actions, as described in the <a href="https://guides.rubyonrails.org/routing.html" target="_blank" rel="noopener noreferrer">Rails routing guide</a>. The <code class="language-plaintext highlighter-rouge">only:</code> list matters: it does <strong>not</strong> declare an update route. Then inspect <code class="language-plaintext highlighter-rouge">app/controllers/api/requests_controller.rb</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create</span>
+  <span class="n">request</span> <span class="o">=</span> <span class="no">ServiceRequest</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">request_params</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">save</span>
+    <span class="n">render</span> <span class="ss">json: </span><span class="n">serialize</span><span class="p">(</span><span class="n">request</span><span class="p">),</span> <span class="ss">status: :created</span>
+  <span class="k">else</span>
+    <span class="n">render</span> <span class="ss">json: </span><span class="p">{</span> <span class="ss">errors: </span><span class="n">request</span><span class="p">.</span><span class="nf">errors</span><span class="p">.</span><span class="nf">full_messages</span> <span class="p">},</span> <span class="ss">status: :unprocessable_entity</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">request_params</span>
+  <span class="n">params</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:request</span><span class="p">).</span><span class="nf">permit</span><span class="p">(</span><span class="ss">:title</span><span class="p">,</span> <span class="ss">:description</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The controller allows <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">description</code> from the request payload; <code class="language-plaintext highlighter-rouge">status</code> is not permitted there. Its private <code class="language-plaintext highlighter-rouge">serialize</code> method selects <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">description</code>, <code class="language-plaintext highlighter-rouge">status</code>, <code class="language-plaintext highlighter-rouge">created_at</code> and <code class="language-plaintext highlighter-rouge">updated_at</code>. There is no separate serializer file in this CaseFlow app. A reader who guesses “the serializer” from habit would be looking in the wrong place.</p>
+
+<p>Next, the model constrains title presence, title length and status membership:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">STATUSES</span> <span class="o">=</span> <span class="sx">%w[open in_progress resolved]</span><span class="p">.</span><span class="nf">freeze</span>
+
+<span class="n">validates</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">presence: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">length: </span><span class="p">{</span> <span class="ss">maximum: </span><span class="mi">160</span> <span class="p">}</span>
+<span class="n">validates</span> <span class="ss">:status</span><span class="p">,</span> <span class="ss">inclusion: </span><span class="p">{</span> <span class="ss">in: </span><span class="no">STATUSES</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>The migration declares a <code class="language-plaintext highlighter-rouge">service_requests</code> table with <code class="language-plaintext highlighter-rouge">status</code> defaulting to <code class="language-plaintext highlighter-rouge">open</code>. A migration describes a schema change applied during setup; it is <strong>not</strong> another method called for each POST. In a correctly migrated database, the default is a reasonable expectation for a new record created without an explicit status, but we still have to run the application before claiming to have observed it. See the <a href="https://guides.rubyonrails.org/active_record_migrations.html" target="_blank" rel="noopener noreferrer">Rails migration guide</a> for the schema role of migrations.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0OCwncmFua1NwYWNpbmcnOjU4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTdweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggcmVxdWVzdFtcIvCfjJAgUmVxdWVzdCBwYXRoXCJdXG5BW1wi8J-OryBQT1NUIC9hcGkvcmVxdWVzdHNcIl0gLS0-IEJbXCLwn6etIFJvdXRlOiBjcmVhdGVcIl1cbkIgLS0-IENbXCLimpnvuI8gQ29udHJvbGxlcjogcGVybWl0IGZpZWxkc1wiXVxuQyAtLT4gRFtcIvCfp7EgTW9kZWw6IHZhbGlkYXRlIGFuZCBzYXZlXCJdXG5lbmRcbnN1YmdyYXBoIG91dGNvbWVzW1wi8J-UjSBFeHBlY3RlZCBicmFuY2hlczsgcnVuIHBlbmRpbmdcIl1cbkQgLS0-fFwic2F2ZSBzdWNjZWVkc1wifCBFW1wi4pyFIDIwMSArIHNlbGVjdGVkIEpTT05cIl1cbkQgLS0-fFwic2F2ZSBmYWlsc1wifCBGW1wi4pqg77iPIDQyMiArIGVycm9yc1wiXVxuZW5kXG5HW1wi8J-TpiBNaWdyYXRpb246IHNjaGVtYSArIG9wZW4gZGVmYXVsdFwiXSAtLi0-IERcbmNsYXNzRGVmIHBhc3RlbEJsdWUgZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjJweDtcbmNsYXNzRGVmIHBhc3RlbE9yYW5nZSBmaWxsOiNGOERGQzQsc3Ryb2tlOiNDOTk4NkQsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgcGFzdGVsUHVycGxlIGZpbGw6I0U4RERGNSxzdHJva2U6I0E2OEJDNCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBwYXN0ZWxHcmVlbiBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgcGFzdGVsUm9zZSBmaWxsOiNGNUQ5REMsc3Ryb2tlOiNCQzgxOTEsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgcGFzdGVsU2FuZCBmaWxsOiNGQkY0RTcsc3Ryb2tlOiNCOEExN0QsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3MgQSxCIHBhc3RlbEJsdWU7XG5jbGFzcyBDIHBhc3RlbE9yYW5nZTtcbmNsYXNzIEQgcGFzdGVsUHVycGxlO1xuY2xhc3MgRSBwYXN0ZWxHcmVlbjtcbmNsYXNzIEYgcGFzdGVsUm9zZTtcbmNsYXNzIEcgcGFzdGVsU2FuZDsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ"></p>
+
+<p><em>The dotted link marks schema context, not an extra runtime step. The status labels describe the supplied controller branches; they are not a report of executed responses.</em></p>
+
+<h2 id="1220-minutes-ask-copilot-for-an-architecture-atlas-ask">12–20 minutes: ask Copilot for an architecture atlas {:#ask}</h2>
+
+<p>Open <strong><code class="language-plaintext highlighter-rouge">caseflow/</code> as the VS Code workspace</strong> and give Copilot a change question: “Can a client resolve a request through this API?” Workspace search or its semantic index can find likely source; the generated inventory gives you explicit declarations to cross-check. Ask for four connected artifacts, rather than a prose summary:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Investigate this Rails workspace in read-only mode. The client asks whether
+open → resolved is available. Produce: (1) a capability table with entry
+points and source files; (2) a Mermaid flowchart TD for POST /api/requests,
+with the migration as a dotted schema dependency; (3) a change-impact table
+for API, data, tests, authorization and other effects; (4) an evidence
+register classifying source, spec assertion, observation or unknown.
+Suggest three checks that could falsify important assumptions. Cite exact
+files and symbols. Do not invent an update action, a job or a passing test.
+</code></pre></div></div>
+
+<p>Compare the result with the reviewed <code class="language-plaintext highlighter-rouge">docs/architecture/README.md</code>, its generated inventory and <code class="language-plaintext highlighter-rouge">docs/diagrams/request-path.mmd</code> in the companion package. Check each path yourself. A citation is useful only if it points to a file that exists and supports that exact claim. Record a missing citation or a mistaken inference; correcting Copilot’s map is part of the exercise. In a client repository, keep sensitive data out of the prompt and follow the organization’s approved tooling rules.</p>
+
+<h3 id="what-the-atlas-should-reveal">What the atlas should reveal</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Atlas view</th>
+      <th>Source-backed finding</th>
+      <th>Important limit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Capabilities</td>
+      <td>
+<code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">show</code>, <code class="language-plaintext highlighter-rouge">create</code> are declared</td>
+      <td>No <code class="language-plaintext highlighter-rouge">update</code> route in the supplied app</td>
+    </tr>
+    <tr>
+      <td>Request path</td>
+      <td>Create permits <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">description</code>; controller branches to <code class="language-plaintext highlighter-rouge">201</code> or <code class="language-plaintext highlighter-rouge">422</code>
+</td>
+      <td>Branches are source expectations, not observed responses</td>
+    </tr>
+    <tr>
+      <td>Change impact</td>
+      <td>Model allows stored <code class="language-plaintext highlighter-rouge">resolved</code>
+</td>
+      <td>There is no transition contract or authorization policy here</td>
+    </tr>
+    <tr>
+      <td>Evidence register</td>
+      <td>Two request specs describe create behavior</td>
+      <td>Their presence does not prove they passed</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This is more useful than “I found a controller.” It links a client question to the API surface, persisted state, verification and missing decisions. The <a href="/assets/downloads/first-30-minutes-rails-repository-support.zip">reviewed atlas</a> is included in the companion package under <code class="language-plaintext highlighter-rouge">docs/architecture/</code>.</p>
+
+<h2 id="2027-minutes-audit-the-atlas-and-run-one-check-observe">20–27 minutes: audit the atlas and run one check {:#observe}</h2>
+
+<p>Audit every diagram edge and table row against the cited file. A search result, a plausible Rails convention and an agent-generated link are leads; each still needs verification. The included request spec has two cases: a valid title expecting a <code class="language-plaintext highlighter-rouge">201</code> response, an <code class="language-plaintext highlighter-rouge">open</code> status and one stored record; and a missing title expecting <code class="language-plaintext highlighter-rouge">422</code> with no record. Those are <strong>assertions in source</strong>, not reported pass results. The companion includes an integrated Rails API source app, but has no resolved lockfile or installed dependencies here; we have not executed its specs in the authoring environment.</p>
+
+<figure>
+  <img src="/assets/images/posts/first-30-minutes-rails-repository/evidence-boundary.webp" alt="A conceptual Ruby request spec in an editor is surrounded by source and assertion flows; an amber unverified gate precedes an empty observation pane." style="width:100%;height:auto;">
+  <figcaption>Source and a test assertion can suggest behavior. Only an actual run can supply observation; CaseFlow has not crossed that boundary yet.</figcaption>
+</figure>
+
+<p>On a Mac with compatible Ruby and Bundler installed, follow <code class="language-plaintext highlighter-rouge">caseflow/README.md</code> in the <a href="/assets/downloads/first-30-minutes-rails-repository-support.zip">companion materials</a>. Use the integrated <code class="language-plaintext highlighter-rouge">caseflow/</code> app, install dependencies, and record the actual output of:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install
+</span>bin/rails db:prepare
+bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
+</code></pre></div></div>
+
+<p>If setup fails, keep the first useful error. A blocker is evidence. Do not replace it with a hypothetical green test run. If it succeeds, send a synthetic HTTP request and capture the actual response before promoting the expected behavior to observed behavior.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Statement</th>
+      <th>Evidence now</th>
+      <th>Classification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Route includes <code class="language-plaintext highlighter-rouge">create</code> but no <code class="language-plaintext highlighter-rouge">update</code>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">config/routes.rb</code></td>
+      <td>Source fact</td>
+    </tr>
+    <tr>
+      <td>Controller permits <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">description</code>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">RequestsController#request_params</code></td>
+      <td>Source fact</td>
+    </tr>
+    <tr>
+      <td>Migration declares default <code class="language-plaintext highlighter-rouge">open</code>
+</td>
+      <td>Migration source</td>
+      <td>Schema fact; runtime effect pending</td>
+    </tr>
+    <tr>
+      <td>Valid request returns <code class="language-plaintext highlighter-rouge">201</code> in this environment</td>
+      <td>Spec assertion only</td>
+      <td>Unverified until execution</td>
+    </tr>
+    <tr>
+      <td>Client can transition to <code class="language-plaintext highlighter-rouge">resolved</code>
+</td>
+      <td>No route/action or test supplied</td>
+      <td>Unsupported</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="2730-minutes-give-the-client-one-bounded-answer-client">27–30 minutes: give the client one bounded answer {:#client}</h2>
+
+<p>The useful answer is a shareable atlas, not “Copilot says the endpoint works.” Alongside the map, tell the client: “The source defines creation with title and description, title and status validations, and a schema default of <code class="language-plaintext highlighter-rouge">open</code>. The supplied specs cover valid creation and missing title, but I have not run them in this environment. I do not see an update route. The next safe step is to boot the integrated app, record the focused spec result, then scope a status-transition contract and tests.”</p>
+
+<p>The atlas supports a short engagement: a visible inventory, a diagram of the current path, a change-impact table, a named uncertainty and a testable next issue. It also gives a stakeholder a clear boundary between discovery and implementation.</p>
+
+<h3 id="your-2030-minute-lab-lab">Your 20–30 minute lab {:#lab}</h3>
+
+<ol>
+  <li>Make three predictions in a local <code class="language-plaintext highlighter-rouge">ENVIRONMENT.md</code> using the template (<code class="language-plaintext highlighter-rouge">caseflow/ENVIRONMENT.template.md</code>).</li>
+  <li>Generate the inventory; ask Copilot for four atlas views. Compare them with <code class="language-plaintext highlighter-rouge">docs/architecture/README.md</code> and the five files in <code class="language-plaintext highlighter-rouge">docs/labs/01-codebase-diagnosis.md</code>. Mark every unsupported edge.</li>
+  <li>Attempt the focused spec; record the versions, command, actual outcome or first blocker.</li>
+  <li>Explain why a model that lists <code class="language-plaintext highlighter-rouge">resolved</code> does <strong>not</strong> prove a client can perform a status transition. Deliver the corrected capability table, request diagram, change-impact table and one bounded issue.</li>
+</ol>
+
+<p><strong>Retrieval question:</strong> What evidence would let you change “the source suggests <code class="language-plaintext highlighter-rouge">201</code>” to “I observed <code class="language-plaintext highlighter-rouge">201</code>,” and why does a passing spec not prove the entire API is production ready?</p>
+
+<p><strong>Next in the series:</strong> we will refine the context we give Copilot—repository guidance, instructions and tool boundaries—and test how the atlas changes. The reviewed atlas, generator, Mermaid source and workbook are in the companion package.</p>
+
+<h2 id="references-and-supporting-materials-references">References and supporting materials {:#references}</h2>
+
+<ul>
+  <li>
+<a href="/assets/downloads/first-30-minutes-rails-repository-support.zip">Download the CaseFlow companion package</a>: the complete post in Markdown, integrated Rails API app, study workbook with exercises and answers, field lab, atlas, reproducible inventory, Copilot prompt, Mermaid source and validation status. The integrated app still requires installing dependencies and its request specs remain unexecuted in this authoring environment.</li>
+  <li>
+<a href="https://code.visualstudio.com/docs/agents/overview" target="_blank" rel="noopener noreferrer">VS Code Docs: Working with agents in an unfamiliar codebase</a>.</li>
+  <li>
+<a href="https://code.visualstudio.com/docs/agents/reference/workspace-context" target="_blank" rel="noopener noreferrer">VS Code Docs: How Copilot understands your workspace</a>.</li>
+  <li>
+<a href="https://docs.github.com/en/copilot/tutorials/explore-a-codebase" target="_blank" rel="noopener noreferrer">GitHub Docs: Using GitHub Copilot to explore a codebase</a>.</li>
+  <li>
+<a href="https://docs.github.com/en/copilot/tutorials/review-ai-generated-code" target="_blank" rel="noopener noreferrer">GitHub Docs: Review AI-generated code</a>.</li>
+  <li>
+<a href="https://guides.rubyonrails.org/routing.html" target="_blank" rel="noopener noreferrer">Rails Guides: Routing from the Outside In</a>.</li>
+  <li>
+<a href="https://guides.rubyonrails.org/active_record_migrations.html" target="_blank" rel="noopener noreferrer">Rails Guides: Active Record Migrations</a>.</li>
+</ul>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Documenting a Rails Repository with AI | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="Documenting a Rails Repository with AI">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="An evidence-based workflow for using AI to document a Rails repository, map its architecture, and investigate features and bugs.">
+<meta property="og:description" content="An evidence-based workflow for using AI to document a Rails repository, map its architecture, and investigate features and bugs.">
+<link rel="canonical" href="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-architecture/2026/09/13/documenting-rails-repositories-with-ai.html">
+<meta property="og:url" content="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-architecture/2026/09/13/documenting-rails-repositories-with-ai.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/documenting-rails-repositories-with-ai/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-09-13T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/documenting-rails-repositories-with-ai/cover.webp">
+<meta property="twitter:title" content="Documenting a Rails Repository with AI">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-13T00:00:00+00:00","datePublished":"2026-09-13T00:00:00+00:00","description":"An evidence-based workflow for using AI to document a Rails repository, map its architecture, and investigate features and bugs.","headline":"Documenting a Rails Repository with AI","image":"https://enogrob.github.io/assets/images/posts/documenting-rails-repositories-with-ai/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/ruby/rails/artificial-intelligence/software-architecture/2026/09/13/documenting-rails-repositories-with-ai.html"},"url":"https://enogrob.github.io/ruby/rails/artificial-intelligence/software-architecture/2026/09/13/documenting-rails-repositories-with-ai.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2026-09-13-documenting-rails-repositories-with-ai.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/ruby/rails/artificial-intelligence/software-architecture/2026/09/13/documenting-rails-repositories-with-ai.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-architecture/2026/09/13/documenting-rails-repositories-with-ai.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/documenting-rails-repositories-with-ai/cover.webp" alt="An unfamiliar Rails repository transformed by AI into a layered evidence-based architecture map" style="width:100%;height:auto;"></p>
+
+<p>An unfamiliar Rails repository rarely lacks structure. What it lacks is a map connecting conventions, domain behavior, callbacks, jobs, configuration, integrations, and operational failure paths. This guide presents an evidence-based workflow for using AI agents to build that map progressively—from a repository overview to a focused feature or bug investigation—using Basecamp’s Fizzy repository as an openly inspectable case study.</p>
+
+<h2 id="at-a-glance">At a Glance</h2>
+
+<p>This workflow solves a common problem: an unfamiliar Rails repository may be locally readable while its system-level behavior remains difficult to explain. AI can help reconstruct that behavior, but only when its conclusions are tied to code, configuration, tests, documentation, and runtime evidence.</p>
+
+<p>The workflow is:</p>
+
+<ol>
+  <li>Pin the repository and define the investigation scope.</li>
+  <li>Run a blind overview using code, configuration, schema, tests, and deployment files.</li>
+  <li>Compare the result with human-authored documentation.</li>
+  <li>Trace one feature or failure path through authorization, state changes, callbacks, transactions, jobs, tenancy, integrations, and tests.</li>
+  <li>Challenge the proposed explanation with counterevidence and missing branches.</li>
+  <li>Review, label, and publish only the conclusions that can be supported.</li>
+</ol>
+
+<p>The Fizzy repository is the case study used to demonstrate this process. The general method comes first; Fizzy-specific examples begin in the repository overview pass and become more detailed in the card-closure-to-webhook investigation.</p>
+
+<p>The final artifact is not a generated README. It is a small, reviewable documentation package containing:</p>
+
+<ul>
+  <li>a repository overview and stack profile;</li>
+  <li>architecture, dependency, and integration maps;</li>
+  <li>an unknowns and risks register;</li>
+  <li>one or more feature or bug dossiers;</li>
+  <li>evidence references for every material claim;</li>
+  <li>observed, inferred, and unknown labels;</li>
+  <li>a pinned commit, reviewer, approval date, and refresh triggers.</li>
+</ul>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#at-a-glance">At a Glance</a></li>
+  <li><a href="#why-rails-repositories-become-hard-to-understand">Why Rails Repositories Become Hard to Understand</a></li>
+  <li><a href="#documentation-as-a-living-map">Documentation as a Living Map</a></li>
+  <li><a href="#what-ai-can-discover-from-a-rails-repository">What AI Can Discover from a Rails Repository</a></li>
+  <li><a href="#case-study-the-fizzy-repository-overview-pass">Case Study: The Fizzy Repository Overview Pass</a></li>
+  <li><a href="#building-the-architecture-and-dependency-map">Building the Architecture and Dependency Map</a></li>
+  <li><a href="#zooming-into-a-feature-or-business-flow">Zooming into a Feature or Business Flow</a></li>
+  <li><a href="#using-ai-to-investigate-a-bug">Using AI to Investigate a Bug</a></li>
+  <li><a href="#evidence-confidence-and-human-review">Evidence, Confidence, and Human Review</a></li>
+  <li><a href="#a-reusable-rails-documentation-workflow">A Reusable Rails Documentation Workflow</a></li>
+  <li><a href="#the-documentation-package-and-next-steps">The Documentation Package and Next Steps</a></li>
+  <li><a href="#references-and-further-exploration">References and Further Exploration</a></li>
+</ul>
+
+<h2 id="why-rails-repositories-become-hard-to-understand">Why Rails Repositories Become Hard to Understand</h2>
+
+<p>Rails makes an application easy to enter locally. Routes point to controllers, controllers coordinate requests, models represent persistent domain state, and conventions remove a great deal of ceremony. That local predictability is one of Rails’ greatest strengths. It is not, however, the same as understanding the system.</p>
+
+<p>In a mature repository, one user action may cross a controller, a model concern, a transaction callback, an event record, a background job, an integration adapter, and a second job responsible for delivery. Configuration may switch the database, queue, storage, or product mode. Tests may encode invariants that are never stated beside the implementation. A directory tree can show where files live while hiding why they cooperate.</p>
+
+<p>Fizzy makes this distinction visible. Its repository contains a conventional Rails application, but its behavior is distributed across rich domain models, narrowly named concerns, resource-oriented controllers, database-backed asynchronous services, Hotwire interactions, and conditional self-hosted and SaaS configuration. For example, <code class="language-plaintext highlighter-rouge">Card</code> composes capabilities for assignment, events, tagging, triage, watching, postponement, broadcasting, and attachments. Reading <a href="https://github.com/basecamp/fizzy/blob/9312f6b35f5446a04f7caa2c5850c6921c81ca18/app/models/card.rb" target="_blank" rel="noopener noreferrer"><code class="language-plaintext highlighter-rouge">app/models/card.rb</code></a> explains the composition, but not every execution path created by those concerns.</p>
+
+<p>This is where AI can help—not by summarizing every file, but by correlating evidence that no single file contains. The useful question is not “What classes exist?” It is “What path does this behavior take, which conditions control it, where does state change, and what evidence supports that conclusion?”</p>
+
+<p>That distinction matters for legacy work. A plausible explanation produced from naming conventions alone can sound authoritative while being wrong about callbacks, queue boundaries, tenancy, feature flags, or failure handling. The first rule of AI-assisted documentation is therefore simple:</p>
+
+<blockquote>
+  <p>Generate a map of verified relationships, not a story that merely sounds like Rails.</p>
+</blockquote>
+
+<p>The rest of this workflow applies that rule at two levels: a repository overview for orientation and a scoped investigation for a feature or bug.</p>
+
+<h2 id="documentation-as-a-living-map">Documentation as a Living Map</h2>
+
+<p>A generated megadocument becomes stale almost as soon as it is published. A living map behaves differently. It has layers, declares its scope, links conclusions to evidence, exposes uncertainty, and says how it should be refreshed.</p>
+
+<p>The overview layer answers broad questions: What is the stack? What are the major runtime responsibilities? Which data stores and external systems exist? Where are the likely architectural boundaries? It deliberately avoids pretending to explain every feature.</p>
+
+<p>The scoped layer begins with one bounded question: How is a card closed? Why might a webhook not be delivered? Which code participates in a particular business capability? It follows one path deeply enough to reveal conditions, side effects, tests, and failure branches.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0OCwncmFua1NwYWNpbmcnOjU4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjOEI4RTkxJywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTdweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBUQlxuY2xhc3NEZWYgc291cmNlIGZpbGw6I0ZGRjNENixzdHJva2U6I0M3QTQ1QSxjb2xvcjojNEEzQTE2XG5jbGFzc0RlZiBvdmVydmlldyBmaWxsOiNFN0YwRkYsc3Ryb2tlOiM2RTkxQzksY29sb3I6IzIwMzY1M1xuY2xhc3NEZWYgc2NvcGUgZmlsbDojRURFN0Y2LHN0cm9rZTojOEI3OUI1LGNvbG9yOiMzMzI4NERcbmNsYXNzRGVmIHJldmlldyBmaWxsOiNFOEY1RTksc3Ryb2tlOiM3NUE0NzgsY29sb3I6IzI0NDIyOFxuJSUtXG5zdWJncmFwaCBFW1wi8J-TpiBSZXBvc2l0b3J5IGV2aWRlbmNlXCJdXG5DW1wi8J-nqiBDb2RlIGFuZCB0ZXN0c1wiXTo6OnNvdXJjZVxuRltcIuKame-4jyBDb25maWd1cmF0aW9uXCJdOjo6c291cmNlXG5IW1wi8J-TmiBIdW1hbiBkb2N1bWVudGF0aW9uXCJdOjo6c291cmNlXG5lbmRcbiUlLVxuT1tcIvCfp60gUmVwb3NpdG9yeSBvdmVydmlld1wiXTo6Om92ZXJ2aWV3XG5TW1wi8J-UjSBTY29wZWQgaW52ZXN0aWdhdGlvblwiXTo6OnNjb3BlXG5SW1wi4pyFIEh1bWFuIHJldmlldyBhbmQgcmVmcmVzaFwiXTo6OnJldmlld1xuJSUtXG5DIC0tPiBPXG5GIC0tPiBPXG5IIC0tPiBPXG5PIC0tPiBTXG5TIC0tPiBSXG5SIC0uIGNoYW5nZWQgZXZpZGVuY2UgLi0-IE8iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ"></p>
+
+<figure class="post-figure">
+  <img src="/assets/images/posts/documenting-rails-repositories-with-ai/landscape-to-scope.webp" alt="A system landscape progressively narrowed into an evidence-linked Rails feature and bug investigation." loading="lazy" style="width:100%;height:auto;">
+  <figcaption>Keep the repository landscape visible while narrowing the investigation to one bounded feature or failure path.</figcaption>
+</figure>
+
+<p>This layered approach borrows the idea of levels of abstraction from the <a href="https://c4model.com/" target="_blank" rel="noopener noreferrer">C4 model</a>: context, containers, components, and code answer different questions. We do not need to force every Rails diagram into formal C4 notation. We do need to state the level of zoom and avoid mixing a deployment topology, an object relationship, and an execution sequence into one unreadable picture.</p>
+
+<p>Every generated document should carry a small evidence header:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Repository: basecamp/fizzy
+Commit: 9312f6b...
+Scope: repository overview | webhook delivery
+Sources admitted: code, configuration, tests, human docs
+Confidence: observed | inferred | unknown
+Refresh when: listed evidence paths change
+</code></pre></div></div>
+
+<p>This turns documentation into a reviewable engineering artifact. A reader can distinguish a fact observed in code from an architectural inference. A maintainer can challenge an incomplete map without rewriting the entire document. An agent can later refresh the affected scope rather than regenerate everything.</p>
+
+<h2 id="what-ai-can-discover-from-a-rails-repository">What AI Can Discover from a Rails Repository</h2>
+
+<p>A useful repository scan is concern-driven. Instead of asking an agent to “analyze the project,” give it a matrix of questions and the first evidence to inspect.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0OCwncmFua1NwYWNpbmcnOjU4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjOEI4RTkxJywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTdweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBUQlxuY2xhc3NEZWYgaW5wdXQgZmlsbDojRkZGM0Q2LHN0cm9rZTojQzdBNDVBLGNvbG9yOiM0QTNBMTZcbmNsYXNzRGVmIHJ1bnRpbWUgZmlsbDojRTdGMEZGLHN0cm9rZTojNkU5MUM5LGNvbG9yOiMyMDM2NTNcbmNsYXNzRGVmIGJlaGF2aW9yIGZpbGw6I0VERTdGNixzdHJva2U6IzhCNzlCNSxjb2xvcjojMzMyODREXG5jbGFzc0RlZiBvdXRwdXQgZmlsbDojRThGNUU5LHN0cm9rZTojNzVBNDc4LGNvbG9yOiMyNDQyMjhcbiUlLVxuc3ViZ3JhcGggSVtcIvCfk6YgUmVwb3NpdG9yeSBzaWduYWxzXCJdXG5WW1wi8J-SjiBWZXJzaW9ucyBhbmQgZ2Vtc1wiXTo6OmlucHV0XG5FW1wi8J-aqiBFbnRyeXBvaW50cyBhbmQgY29uZmlnXCJdOjo6aW5wdXRcbkRbXCLwn6exIE1vZGVscywgc2NoZW1hLCB0ZXN0c1wiXTo6OmlucHV0XG5PW1wi4pqZ77iPIERlcGxveSBhbmQgb3BlcmF0aW9uc1wiXTo6OmlucHV0XG5lbmRcbiUlLVxuc3ViZ3JhcGggQVtcIvCflI0gQUkgY29ycmVsYXRpb25cIl1cblNUW1wi8J-nsCBTdGFjayBwcm9maWxlXCJdOjo6cnVudGltZVxuRkxbXCLwn5SEIFJ1bnRpbWUgZmxvd3NcIl06OjpiZWhhdmlvclxuQkRbXCLwn6etIEJvdW5kYXJpZXMgYW5kIGRlcGVuZGVuY2llc1wiXTo6OmJlaGF2aW9yXG5lbmRcbiUlLVxuWFtcIuKchSBFdmlkZW5jZSBpbmRleCB3aXRoIHVua25vd25zXCJdOjo6b3V0cHV0XG4lJS1cblYgLS0-IFNUXG5FIC0tPiBTVFxuRSAtLT4gRkxcbkQgLS0-IEZMXG5EIC0tPiBCRFxuTyAtLT4gQkRcblNUIC0tPiBYXG5GTCAtLT4gWFxuQkQgLS0-IFgiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ"></p>
+
+<p>For Fizzy, version and dependency evidence begins in <a href="https://github.com/basecamp/fizzy/blob/9312f6b35f5446a04f7caa2c5850c6921c81ca18/.ruby-version" target="_blank" rel="noopener noreferrer"><code class="language-plaintext highlighter-rouge">.ruby-version</code></a>, <a href="https://github.com/basecamp/fizzy/blob/9312f6b35f5446a04f7caa2c5850c6921c81ca18/Gemfile" target="_blank" rel="noopener noreferrer"><code class="language-plaintext highlighter-rouge">Gemfile</code></a>, and <a href="https://github.com/basecamp/fizzy/blob/9312f6b35f5446a04f7caa2c5850c6921c81ca18/Gemfile.lock" target="_blank" rel="noopener noreferrer"><code class="language-plaintext highlighter-rouge">Gemfile.lock</code></a>. Together they establish Ruby 3.4.8 and a Rails dependency resolving to an 8.2 alpha snapshot at the pinned commit. The wording matters: this is an observed repository state, not a claim that all readers should adopt an alpha Rails version.</p>
+
+<p>Entrypoints and runtime choices come from several sources:</p>
+
+<ul>
+  <li>
+<a href="https://github.com/basecamp/fizzy/blob/9312f6b35f5446a04f7caa2c5850c6921c81ca18/config/routes.rb" target="_blank" rel="noopener noreferrer"><code class="language-plaintext highlighter-rouge">config/routes.rb</code></a> reveals HTTP resources and mounted operational interfaces.</li>
+  <li>
+<a href="https://github.com/basecamp/fizzy/blob/9312f6b35f5446a04f7caa2c5850c6921c81ca18/config/environments/production.rb" target="_blank" rel="noopener noreferrer"><code class="language-plaintext highlighter-rouge">config/environments/production.rb</code></a> selects production cache and job behavior.</li>
+  <li>
+<a href="https://github.com/basecamp/fizzy/blob/9312f6b35f5446a04f7caa2c5850c6921c81ca18/config/database.yml" target="_blank" rel="noopener noreferrer"><code class="language-plaintext highlighter-rouge">config/database.yml</code></a>, <a href="https://github.com/basecamp/fizzy/blob/9312f6b35f5446a04f7caa2c5850c6921c81ca18/config/queue.yml" target="_blank" rel="noopener noreferrer"><code class="language-plaintext highlighter-rouge">config/queue.yml</code></a>, and <a href="https://github.com/basecamp/fizzy/blob/9312f6b35f5446a04f7caa2c5850c6921c81ca18/config/cable.yml" target="_blank" rel="noopener noreferrer"><code class="language-plaintext highlighter-rouge">config/cable.yml</code></a> expose database-backed persistence, jobs, and real-time communication.</li>
+  <li>
+<a href="https://github.com/basecamp/fizzy/blob/9312f6b35f5446a04f7caa2c5850c6921c81ca18/config/importmap.rb" target="_blank" rel="noopener noreferrer"><code class="language-plaintext highlighter-rouge">config/importmap.rb</code></a> and <code class="language-plaintext highlighter-rouge">app/javascript/</code> show the Hotwire-oriented browser layer.</li>
+  <li>
+<a href="https://github.com/basecamp/fizzy/blob/9312f6b35f5446a04f7caa2c5850c6921c81ca18/Dockerfile" target="_blank" rel="noopener noreferrer"><code class="language-plaintext highlighter-rouge">Dockerfile</code></a> and <a href="https://github.com/basecamp/fizzy/blob/9312f6b35f5446a04f7caa2c5850c6921c81ca18/config/deploy.yml" target="_blank" rel="noopener noreferrer"><code class="language-plaintext highlighter-rouge">config/deploy.yml</code></a> describe the included container and Kamal topology.</li>
+</ul>
+
+<p>No single source proves the whole runtime. A gem declaration proves availability, not execution. A job class proves an implementation exists, not that it is enqueued. A deployment sample proves a supported topology, not every production topology. The agent should therefore produce claims with evidence and confidence, such as:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Claim</th>
+      <th>Label</th>
+      <th>Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Solid Queue is configured as the production Active Job backend</td>
+      <td>Observed</td>
+      <td>Explicit production configuration</td>
+    </tr>
+    <tr>
+      <td>The application favors rich domain models composed from concerns</td>
+      <td>Inferred</td>
+      <td>Repeated structure across sampled domain models</td>
+    </tr>
+    <tr>
+      <td>Every deployment uses the provided Kamal layout</td>
+      <td>Unknown</td>
+      <td>Repository configuration cannot establish all real environments</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This discipline is more useful than a longer stack list. It tells the next investigator where certainty ends.</p>
+
+<h2 id="case-study-the-fizzy-repository-overview-pass">Case Study: The Fizzy Repository Overview Pass</h2>
+
+<p>The first pass should be intentionally blind to explanatory documentation. Admit code, configuration, schema, tests, and deployment files; temporarily exclude the README, <code class="language-plaintext highlighter-rouge">AGENTS.md</code>, and <code class="language-plaintext highlighter-rouge">docs/</code>. This is not because human documentation is less valuable. It creates a baseline that can later be compared against maintainer intent.</p>
+
+<p>For Fizzy, the blind pass produced five artifacts:</p>
+
+<ol>
+  <li>a repository inventory;</li>
+  <li>a stack profile;</li>
+  <li>a system context;</li>
+  <li>an architectural and dependency summary;</li>
+  <li>an unknowns register.</li>
+</ol>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0OCwncmFua1NwYWNpbmcnOjU4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjOEI4RTkxJywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTdweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBUQlxuY2xhc3NEZWYgcGVyc29uIGZpbGw6I0ZDRThFNixzdHJva2U6I0M5N0M3NSxjb2xvcjojNEEyQTI3XG5jbGFzc0RlZiBhcHAgZmlsbDojRTdGMEZGLHN0cm9rZTojNkU5MUM5LGNvbG9yOiMyMDM2NTNcbmNsYXNzRGVmIGRhdGEgZmlsbDojRThGNUU5LHN0cm9rZTojNzVBNDc4LGNvbG9yOiMyNDQyMjhcbmNsYXNzRGVmIGV4dGVybmFsIGZpbGw6I0ZGRjNENixzdHJva2U6I0M3QTQ1QSxjb2xvcjojNEEzQTE2XG4lJS1cblVbXCLwn5GkIFVzZXIgb3IgQVBJIGNsaWVudFwiXTo6OnBlcnNvblxuJSUtXG5zdWJncmFwaCBGW1wi8J-SjiBGaXp6eSBSYWlscyBhcHBsaWNhdGlvblwiXVxuV1tcIvCfjJAgSG90d2lyZSB3ZWIgaW50ZXJmYWNlXCJdOjo6YXBwXG5NW1wi8J-nsSBEb21haW4gbW9kZWxcIl06OjphcHBcbkpbXCLimpnvuI8gQmFja2dyb3VuZCBqb2JzXCJdOjo6YXBwXG5lbmRcbiUlLVxuc3ViZ3JhcGggUFtcIvCfl4TvuI8gRGF0YWJhc2UtYmFja2VkIHNlcnZpY2VzXCJdXG5EQltcIvCfk6YgUHJpbWFyeSBkYXRhXCJdOjo6ZGF0YVxuUVtcIvCflIQgUXVldWUsIGNhY2hlLCBjYWJsZVwiXTo6OmRhdGFcbmVuZFxuJSUtXG5YW1wi8J-TpCBFbWFpbCwgcHVzaCwgd2ViaG9va3MsIHN0b3JhZ2VcIl06OjpleHRlcm5hbFxuJSUtXG5VIC0tPiBXXG5XIC0tPiBNXG5NIC0tPiBEQlxuTSAtLT4gSlxuSiAtLT4gUVxuVyA8LS0-IFFcbkogLS0-IFgiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ"></p>
+
+<p>At this level, the diagram intentionally hides individual models and job classes. Its job is orientation. It shows a server-rendered Rails application with Hotwire, a domain-centered model layer, asynchronous processing, database-backed operational services, and external delivery/storage boundaries.</p>
+
+<p>Then the second pass admits human-authored documentation and compares, rather than merges, its findings. In the Fizzy pilot, this comparison confirmed 11 selected claims, refined five, found seven material facts missed by the broad scan, and added eight implementation facts from code that the task-oriented documentation did not explain. No material contradiction was found.</p>
+
+<p>The misses are as valuable as the confirmations. <code class="language-plaintext highlighter-rouge">AGENTS.md</code> explains invariants such as identity-versus-membership semantics, UUID encoding, and adapter-specific search behavior. Deployment guides add operational knowledge about very large imports. Conversely, code analysis exposes webhook commit boundaries, delivery-selection rules, HMAC signing, public-IP enforcement, timeouts, response limits, and delinquency behavior.</p>
+
+<p>The resulting documentation model has three sources of truth with different strengths:</p>
+
+<ul>
+  <li>code and configuration reveal executable structures and conditions;</li>
+  <li>human documentation records intent, invariants, and operational experience;</li>
+  <li>AI-generated maps correlate both and make gaps navigable.</li>
+</ul>
+
+<p>An overview is ready for review when it answers the main orientation questions and openly lists what it could not establish. Completeness is not the absence of unknowns; it is the absence of hidden uncertainty.</p>
+
+<h2 id="building-the-architecture-and-dependency-map">Building the Architecture and Dependency Map</h2>
+
+<p>A diagram should answer one question that prose answers poorly. “Show the architecture” is too vague. “Which responsibilities connect a web request to domain state, asynchronous work, and external delivery?” is specific enough to diagram and review.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjQ4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjOEI4RTkxJywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTdweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBMUlxuY2xhc3NEZWYgZWRnZSBmaWxsOiNGQ0U4RTYsc3Ryb2tlOiNDOTdDNzUsY29sb3I6IzRBMkEyN1xuY2xhc3NEZWYgd2ViIGZpbGw6I0U3RjBGRixzdHJva2U6IzZFOTFDOSxjb2xvcjojMjAzNjUzXG5jbGFzc0RlZiBkb21haW4gZmlsbDojRURFN0Y2LHN0cm9rZTojOEI3OUI1LGNvbG9yOiMzMzI4NERcbmNsYXNzRGVmIGRhdGEgZmlsbDojRThGNUU5LHN0cm9rZTojNzVBNDc4LGNvbG9yOiMyNDQyMjhcbmNsYXNzRGVmIGludGVncmF0aW9uIGZpbGw6I0ZGRjNENixzdHJva2U6I0M3QTQ1QSxjb2xvcjojNEEzQTE2XG4lJS1cblVbXCLwn5GkIEJyb3dzZXIgb3IgQVBJIGNsaWVudFwiXTo6OmVkZ2VcbiUlLVxuc3ViZ3JhcGggUltcIvCfjJAgUmVxdWVzdCBib3VuZGFyeVwiXVxuZGlyZWN0aW9uIFRCXG5SVFtcIvCfmqogUm91dGVzIGFuZCBjb250cm9sbGVyc1wiXTo6OndlYlxuVUlbXCLimqEgVHVyYm8gYW5kIFN0aW11bHVzXCJdOjo6d2ViXG5lbmRcbiUlLVxuc3ViZ3JhcGggRFtcIvCfp7EgRG9tYWluIGJvdW5kYXJ5XCJdXG5kaXJlY3Rpb24gVEJcbkRNW1wi8J-SjiBNb2RlbHMgYW5kIGNvbmNlcm5zXCJdOjo6ZG9tYWluXG5FVltcIvCfk6MgRXZlbnRzIGFuZCBub3RpZmljYXRpb25zXCJdOjo6ZG9tYWluXG5lbmRcbiUlLVxuc3ViZ3JhcGggQVtcIuKame-4jyBBc3luYyBhbmQgaW50ZWdyYXRpb25zXCJdXG5kaXJlY3Rpb24gVEJcbkpCW1wi8J-UhCBBY3RpdmUgSm9iIGFuZCBTb2xpZCBRdWV1ZVwiXTo6OmludGVncmF0aW9uXG5FWFtcIvCfk6QgTWFpbCwgcHVzaCwgd2ViaG9va3MsIHN0b3JhZ2VcIl06OjppbnRlZ3JhdGlvblxuZW5kXG4lJS1cblBTW1wi8J-XhO-4jyBBY3RpdmUgUmVjb3JkIGRhdGFcIl06OjpkYXRhXG4lJS1cblUgLS0-IFJUXG5VIC0tPiBVSVxuUlQgLS0-IERNXG5VSSAtLT4gUlRcbkRNIC0tPiBQU1xuRE0gLS0-IEVWXG5FViAtLT4gSkJcbkpCIC0tPiBFWCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"></p>
+
+<p>This is a conceptual component map, not a complete call graph. The distinction prevents false precision. Routes and controllers form a request boundary; models and concerns carry much of the domain behavior; events connect committed domain activity to notifications and integrations; Active Job and Solid Queue provide asynchronous execution; external adapters cross the system boundary.</p>
+
+<p>Five rules keep AI-generated diagrams defensible:</p>
+
+<ol>
+  <li>
+<strong>Declare the question and scope.</strong> A system context, dependency map, sequence, state model, and hypothesis tree are not interchangeable.</li>
+  <li>
+<strong>Generate relationships from evidence, not names.</strong> <code class="language-plaintext highlighter-rouge">Webhook::DeliveryJob</code> sounds relevant; an enqueue site and executed method prove its place in the flow.</li>
+  <li>
+<strong>Collapse detail deliberately.</strong> The overview may group queue, cache, and cable as database-backed services. A deployment view should separate them.</li>
+  <li>
+<strong>Mark conceptual edges.</strong> An arrow can mean an observed call, persisted relationship, async handoff, or high-level dependency. The surrounding text must say which.</li>
+  <li>
+<strong>Challenge the result.</strong> Ask a second pass to find missing branches, callbacks, transactions, tenancy restoration, retries, and configuration switches.</li>
+</ol>
+
+<p>Mermaid is useful here because the source remains reviewable beside the documentation. The Blog Factory renders it with the Jekyll-specific <code class="language-plaintext highlighter-rouge">mermaid!</code> fence, semantic pastel colors, and meaningful subgraphs. The colors distinguish roles; they must not invent status or criticality. Subgraphs express real boundaries, not decoration.</p>
+
+<p>At the end of the overview pass, the reader should be able to navigate the repository without believing the map is the repository. The next step is to zoom into one concrete path. In Fizzy, that path begins when a card is closed and ends—or fails to end—with an outbound webhook delivery.</p>
+
+<h2 id="zooming-into-a-feature-or-business-flow">Zooming into a Feature or Business Flow</h2>
+
+<p>A repository overview gives us landmarks. It does not explain one behavior end to end. To create scoped documentation, begin with a concrete trigger and a concrete outcome:</p>
+
+<blockquote>
+  <p>When a published card is closed, how can that domain action become an outbound webhook delivery?</p>
+</blockquote>
+
+<p>This boundary is narrow enough to investigate and broad enough to demonstrate the real difficulty of legacy comprehension. The path crosses authorization, domain state, a transaction, event tracking, an <code class="language-plaintext highlighter-rouge">after_create_commit</code> callback, two background jobs, tenant context, selection rules, payload construction, network security, and delivery persistence.</p>
+
+<p>Start at the entry point, not at the class whose name resembles the expected outcome. Fizzy exposes card closure through <a href="https://github.com/basecamp/fizzy/blob/9312f6b35f5446a04f7caa2c5850c6921c81ca18/config/routes.rb" target="_blank" rel="noopener noreferrer"><code class="language-plaintext highlighter-rouge">config/routes.rb</code></a> and <code class="language-plaintext highlighter-rouge">app/controllers/cards/closures_controller.rb</code>. The controller resolves the card through the current user’s accessible-card scope before calling the domain transition. That gives the first investigation rule: document how the object enters scope before tracing what the object does.</p>
+
+<p>The close behavior lives in <code class="language-plaintext highlighter-rouge">app/models/card/closeable.rb</code>. When the card is eligible, the operation creates the closure and tracks <code class="language-plaintext highlighter-rouge">:closed</code> inside a transaction. The shared event concern prefixes the action with the record type, producing <code class="language-plaintext highlighter-rouge">card_closed</code>. Card-specific event behavior adds another condition: the card must be published.</p>
+
+<p>The transaction boundary is essential. <code class="language-plaintext highlighter-rouge">app/models/event.rb</code> enqueues <code class="language-plaintext highlighter-rouge">Event::WebhookDispatchJob</code> through <code class="language-plaintext highlighter-rouge">after_create_commit</code>. The delivery path is therefore not meant to begin merely because code attempted to create an event. It begins after the event transaction commits.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdzZXF1ZW5jZSc6eyd1c2VNYXhXaWR0aCc6dHJ1ZSwnZGlhZ3JhbU1hcmdpblgnOjQwLCdkaWFncmFtTWFyZ2luWSc6MzAsJ2FjdG9yTWFyZ2luJzo1NSwnbWVzc2FnZU1hcmdpbic6Mzh9LCd0aGVtZVZhcmlhYmxlcyc6eydiYWNrZ3JvdW5kJzonI0ZGRjhFRicsJ3ByaW1hcnlUZXh0Q29sb3InOicjM0UzNDJDJywnbGluZUNvbG9yJzonIzhCOEU5MScsJ2ZvbnRGYW1pbHknOidUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWYnLCdmb250U2l6ZSc6JzE3cHgnLCdub3RlQmtnQ29sb3InOicjRkZGMUJGJywnbm90ZVRleHRDb2xvcic6JyMzRTM0MkMnLCdhY3RvckJrZyc6JyNEOUVBRjcnLCdhY3RvckJvcmRlcic6JyM3QUE2QzInLCdhY3RvclRleHRDb2xvcic6JyMzRTM0MkMnLCdzaWduYWxDb2xvcic6JyM2Rjc0ODAnLCdzaWduYWxUZXh0Q29sb3InOicjM0UzNDJDJywnbGFiZWxCb3hCa2dDb2xvcic6JyNFOERERjUnLCdsYWJlbEJveEJvcmRlckNvbG9yJzonI0E2OEJDNCcsJ2xhYmVsVGV4dENvbG9yJzonIzNFMzQyQycsJ2FjdGl2YXRpb25Ca2dDb2xvcic6JyNGOERGQzQnLCdhY3RpdmF0aW9uQm9yZGVyQ29sb3InOicjQzk5ODZEJ319fSUlXG5zZXF1ZW5jZURpYWdyYW1cbmF1dG9udW1iZXJcbmFjdG9yIFVzZXIgYXMg8J-RpCBVc2VyXG5wYXJ0aWNpcGFudCBDb250cm9sbGVyIGFzIPCfmqogQ2xvc3VyZXMgQ29udHJvbGxlclxucGFydGljaXBhbnQgQ2FyZCBhcyDwn5KOIENhcmQgYW5kIEV2ZW50XG5wYXJ0aWNpcGFudCBEaXNwYXRjaCBhcyDwn5SNIERpc3BhdGNoIEpvYlxucGFydGljaXBhbnQgRGVsaXZlcnkgYXMg4pqZ77iPIERlbGl2ZXJ5IEpvYlxucGFydGljaXBhbnQgVGFyZ2V0IGFzIPCfjJAgRXh0ZXJuYWwgVGFyZ2V0XG4lJS1cblVzZXItPj5Db250cm9sbGVyOiBDbG9zZSBhY2Nlc3NpYmxlIGNhcmRcbkNvbnRyb2xsZXItPj5DYXJkOiBjbG9zZVxuQ2FyZC0-PkNhcmQ6IFBlcnNpc3QgY2xvc3VyZSBhbmQgY2FyZF9jbG9zZWRcbkNhcmQtLT4-RGlzcGF0Y2g6IEVucXVldWUgYWZ0ZXIgY29tbWl0XG5EaXNwYXRjaC0-PkRpc3BhdGNoOiBNYXRjaCBhY3RpdmUgYm9hcmQgd2ViaG9vayBhbmQgYWN0aW9uXG5EaXNwYXRjaC0tPj5EZWxpdmVyeTogQ3JlYXRlIGFuZCBlbnF1ZXVlIGRlbGl2ZXJ5XG5EZWxpdmVyeS0-PkRlbGl2ZXJ5OiBCdWlsZCBwYXlsb2FkLCB0aW1lc3RhbXAsIGFuZCBzaWduYXR1cmVcbkRlbGl2ZXJ5LT4-VGFyZ2V0OiBQT1NUIHRocm91Z2ggcGlubmVkIHB1YmxpYyBJUFxuVGFyZ2V0LS0-PkRlbGl2ZXJ5OiBIVFRQIG9yIG5ldHdvcmsgb3V0Y29tZVxuRGVsaXZlcnktPj5EZWxpdmVyeTogUGVyc2lzdCByZXN1bHQgYW5kIHVwZGF0ZSBkZWxpbnF1ZW5jeSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"></p>
+
+<p>The dispatch job searches for active webhooks belonging to the event’s board and subscribed to <code class="language-plaintext highlighter-rouge">card_closed</code>. Triggering creates a <code class="language-plaintext highlighter-rouge">Webhook::Delivery</code> unless the account is cancelled. Creating that record enqueues a second job. Both jobs rely on the account-tenancy behavior composed into <code class="language-plaintext highlighter-rouge">ApplicationJob</code>, so the investigation must include job context rather than assuming request-local state survives asynchronously.</p>
+
+<p>The delivery step is not a simple <code class="language-plaintext highlighter-rouge">POST</code>. Code in <code class="language-plaintext highlighter-rouge">app/models/webhook/delivery.rb</code> builds destination-specific payloads, adds an event timestamp, signs the body with HMAC-SHA256, resolves a publicly routable destination, and connects to the resolved IP. That last step helps prevent a hostname from resolving publicly during validation and privately during connection. The request also uses seven-second open and read timeouts and caps the response at 100 KB.</p>
+
+<p>The result becomes part of the domain record. HTTP success, non-2xx responses, DNS errors, blocked private destinations, connection timeouts, TLS failures, unreachable targets, and oversized responses are converted into structured outcomes. Expected transport problems can therefore produce a <code class="language-plaintext highlighter-rouge">completed</code> delivery with a failure result. An unexpected exception follows a different path and leaves the delivery <code class="language-plaintext highlighter-rouge">errored</code> after the exception is re-raised.</p>
+
+<p>This feature map is useful because every arrow carries an operational question:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Boundary</th>
+      <th>Question to preserve in the documentation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Controller to card</td>
+      <td>Was the card accessible to the current user?</td>
+    </tr>
+    <tr>
+      <td>Card to event</td>
+      <td>Was the card eligible and published?</td>
+    </tr>
+    <tr>
+      <td>Event to dispatch job</td>
+      <td>Did the transaction commit?</td>
+    </tr>
+    <tr>
+      <td>Dispatch to webhook</td>
+      <td>Was the hook active, on the board, and subscribed?</td>
+    </tr>
+    <tr>
+      <td>Webhook to delivery</td>
+      <td>Was the account allowed to create a delivery?</td>
+    </tr>
+    <tr>
+      <td>Delivery job to target</td>
+      <td>Did validation, DNS, TLS, connection, and HTTP complete?</td>
+    </tr>
+    <tr>
+      <td>Result to webhook</td>
+      <td>Did failures contribute to automatic deactivation?</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>That table is more reusable than a prose summary. It becomes a checklist for tests, logs, and future refreshes.</p>
+
+<h2 id="using-ai-to-investigate-a-bug">Using AI to Investigate a Bug</h2>
+
+<p>Now change the prompt from a feature question to a symptom:</p>
+
+<blockquote>
+  <p>A card was closed, but the webhook receiver reports nothing. Where could the path have stopped?</p>
+</blockquote>
+
+<p>This is a hypothetical diagnostic scenario, not a claim that Fizzy contains a webhook bug. The goal is to show how AI can organize hypotheses without promoting any of them to a diagnosis.</p>
+
+<p>The first mistake would be to search only for HTTP errors. “Not received” can mean that no domain event was created, no delivery record was created, a delivery remains pending, a handled transport failure was recorded, or the receiver accepted the request but failed to process it. These are different branches with different evidence.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0OCwncmFua1NwYWNpbmcnOjU4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjOEI4RTkxJywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTdweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBUQlxuY2xhc3NEZWYgc3ltcHRvbSBmaWxsOiNGQ0U4RTYsc3Ryb2tlOiNDOTdDNzUsY29sb3I6IzRBMkEyN1xuY2xhc3NEZWYgcXVlc3Rpb24gZmlsbDojRTdGMEZGLHN0cm9rZTojNkU5MUM5LGNvbG9yOiMyMDM2NTNcbmNsYXNzRGVmIGludGVybmFsIGZpbGw6I0ZGRjNENixzdHJva2U6I0M3QTQ1QSxjb2xvcjojNEEzQTE2XG5jbGFzc0RlZiByZXN1bHQgZmlsbDojRThGNUU5LHN0cm9rZTojNzVBNDc4LGNvbG9yOiMyNDQyMjhcbiUlLVxuU1tcIuKaoO-4jyBXZWJob29rIG5vdCByZWNlaXZlZFwiXTo6OnN5bXB0b21cbkV7XCLwn5SNIERvZXMgY2FyZF9jbG9zZWQgZXhpc3Q_XCJ9Ojo6cXVlc3Rpb25cbkR7XCLwn5SNIERvZXMgYSBkZWxpdmVyeSBleGlzdD9cIn06OjpxdWVzdGlvblxuUntcIvCfp60gV2hhdCBzdGF0ZSBhbmQgcmVzdWx0P1wifTo6OnF1ZXN0aW9uXG4lJS1cbnN1YmdyYXBoIE4xW1wi8J-ToyBFdmVudCBicmFuY2hcIl1cbkFbXCLimqDvuI8gQWxyZWFkeSBjbG9zZWQsIHVucHVibGlzaGVkLCBvciByb2xsYmFja1wiXTo6OmludGVybmFsXG5lbmRcbiUlLVxuc3ViZ3JhcGggTjJbXCLwn5SNIERpc3BhdGNoIGJyYW5jaFwiXVxuQltcIuKaoO-4jyBJbmFjdGl2ZSwgd3JvbmcgYm9hcmQvYWN0aW9uLCBjYW5jZWxsZWQgYWNjb3VudFwiXTo6OmludGVybmFsXG5lbmRcbiUlLVxuc3ViZ3JhcGggTjNbXCLimpnvuI8gRGVsaXZlcnkgYnJhbmNoXCJdXG5DW1wi4pqg77iPIFF1ZXVlLCBETlMsIHByaXZhdGUgSVAsIHRpbWVvdXQsIFRMUywgSFRUUCwgc2l6ZVwiXTo6OmludGVybmFsXG5lbmRcbiUlLVxuWFtcIuKchSBDb3JyZWxhdGUgd2l0aCByZWNlaXZlciBldmlkZW5jZVwiXTo6OnJlc3VsdFxuJSUtXG5TIC0tPiBFXG5FIC0tPnxOb3wgQVxuRSAtLT58WWVzfCBEXG5EIC0tPnxOb3wgQlxuRCAtLT58WWVzfCBSXG5SIC0tPiBDXG5SIC0tPiBYIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0"></p>
+
+<h3 id="stage-1-establish-the-domain-event">Stage 1: establish the domain event</h3>
+
+<p>Look for <code class="language-plaintext highlighter-rouge">card_closed</code> for the expected card and board. If it does not exist, inspect the state before closure, publication status, the transaction outcome, and whether this entry point invokes event tracking. Do not investigate the webhook client yet; the execution path has not reached it.</p>
+
+<h3 id="stage-2-establish-the-delivery-record">Stage 2: establish the delivery record</h3>
+
+<p>If the event exists but no delivery does, inspect the webhook’s active state, board ownership, exact subscribed action, and account cancellation state. Then verify execution of <code class="language-plaintext highlighter-rouge">Event::WebhookDispatchJob</code> and whether its serialized arguments could be restored. The absence of a delivery narrows the problem to dispatch or trigger eligibility.</p>
+
+<h3 id="stage-3-interpret-state-and-structured-result">Stage 3: interpret state and structured result</h3>
+
+<p>If a delivery exists, state changes the meaning of the symptom:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Interpretation</th>
+      <th>Next evidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">pending</code></td>
+      <td>The delivery exists but has not visibly started</td>
+      <td>queue and worker execution</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">in_progress</code></td>
+      <td>Execution started without a stored terminal result</td>
+      <td>worker lifecycle and interruption evidence</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">completed</code> with 2xx</td>
+      <td>Fizzy observed HTTP success</td>
+      <td>receiver logs and payload correlation</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">completed</code> with non-2xx/error</td>
+      <td>A handled outcome explains failure</td>
+      <td>response code or structured error</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">errored</code></td>
+      <td>An unexpected exception escaped delivery</td>
+      <td>exception, job logs, and retry behavior</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This distinction prevents a common diagnostic error: treating <code class="language-plaintext highlighter-rouge">completed</code> as equivalent to successful. In this implementation, a handled network failure can be complete and unsuccessful.</p>
+
+<h3 id="stage-4-inspect-prior-failure-history">Stage 4: inspect prior failure history</h3>
+
+<p><code class="language-plaintext highlighter-rouge">app/models/webhook/delinquency_tracker.rb</code> counts consecutive failures and remembers the first failure time. A webhook is deactivated when at least ten consecutive failures have accumulated and the first failure is more than one hour old. A later missing delivery may therefore be caused by an earlier sequence of failures. A successful delivery resets the tracked sequence; administrators can reactivate the webhook.</p>
+
+<h3 id="stage-5-cross-the-repository-boundary">Stage 5: cross the repository boundary</h3>
+
+<p>Only after the internal evidence is established should the investigation rely on receiver logs, proxies, firewalls, or downstream processing. The repository can show what Fizzy intended, attempted, and recorded. It cannot prove what happened inside an external service.</p>
+
+<p>The output of an AI bug investigation should therefore be a hypothesis register:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hypothesis</th>
+      <th>Supporting evidence required</th>
+      <th>Evidence that weakens it</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Event eligibility prevented dispatch</td>
+      <td>no <code class="language-plaintext highlighter-rouge">card_closed</code>; card unpublished or unchanged</td>
+      <td>event record exists</td>
+      <td>Open</td>
+    </tr>
+    <tr>
+      <td>Webhook did not match</td>
+      <td>event exists; no delivery; inactive/board/action mismatch</td>
+      <td>matching active hook and delivery exist</td>
+      <td>Open</td>
+    </tr>
+    <tr>
+      <td>Account cancellation suppressed trigger</td>
+      <td>event exists; no delivery; cancelled account</td>
+      <td>active account or delivery exists</td>
+      <td>Open</td>
+    </tr>
+    <tr>
+      <td>Transport protection rejected target</td>
+      <td>delivery contains <code class="language-plaintext highlighter-rouge">private_uri</code>, DNS, TLS, or timeout error</td>
+      <td>2xx result</td>
+      <td>Open</td>
+    </tr>
+    <tr>
+      <td>Webhook was auto-deactivated</td>
+      <td>prior consecutive failures and inactive hook</td>
+      <td>active hook with no delinquency threshold</td>
+      <td>Open</td>
+    </tr>
+    <tr>
+      <td>Receiver failed after accepting request</td>
+      <td>completed 2xx plus missing downstream effect</td>
+      <td>no successful HTTP result</td>
+      <td>Outside repository scope</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The status remains open until evidence closes it. AI accelerates correlation; it does not lower the standard of proof.</p>
+
+<h2 id="evidence-confidence-and-human-review">Evidence, Confidence, and Human Review</h2>
+
+<p>An AI-generated map becomes trustworthy through traceability and review, not through confident language. Each material claim should carry three coordinates:</p>
+
+<ol>
+  <li>
+<strong>scope</strong> — repository overview, feature, bug, component, or deployment;</li>
+  <li>
+<strong>evidence</strong> — exact paths, tests, configuration, documentation, or runtime records;</li>
+  <li>
+<strong>epistemic label</strong> — observed, inferred, or unknown.</li>
+</ol>
+
+<p>“Observed” means the admitted evidence directly establishes the claim. “Inferred” means multiple observations support an interpretation, but maintainers may refine it. “Unknown” means the available evidence cannot decide.</p>
+
+<figure class="post-figure">
+  <img src="/assets/images/posts/documenting-rails-repositories-with-ai/evidence-and-confidence.webp" alt="Repository evidence illuminates observed architecture paths while inferred relationships and unknown regions remain visibly distinct." loading="lazy" style="width:100%;height:auto;">
+  <figcaption>Evidence illuminates verified paths; inference remains distinguishable, and unknown territory is left visible for human review.</figcaption>
+</figure>
+
+<p>For the webhook scope:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Claim</th>
+      <th>Label</th>
+      <th style="text-align: right">Confidence</th>
+      <th>Review note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Eligible card closure can create <code class="language-plaintext highlighter-rouge">card_closed</code>
+</td>
+      <td>Observed</td>
+      <td style="text-align: right">High</td>
+      <td>Verify model and concern paths</td>
+    </tr>
+    <tr>
+      <td>Dispatch is enqueued after commit</td>
+      <td>Observed</td>
+      <td style="text-align: right">High</td>
+      <td>Verify <code class="language-plaintext highlighter-rouge">Event</code> callback</td>
+    </tr>
+    <tr>
+      <td>Matching uses active state, board, and action</td>
+      <td>Observed</td>
+      <td style="text-align: right">High</td>
+      <td>Verify dispatch query and trigger concern</td>
+    </tr>
+    <tr>
+      <td>Handled network failures become completed failed deliveries</td>
+      <td>Observed and tested</td>
+      <td style="text-align: right">High</td>
+      <td>Verify delivery tests and state mutation</td>
+    </tr>
+    <tr>
+      <td>Consecutive failures can deactivate a webhook</td>
+      <td>Observed and tested</td>
+      <td style="text-align: right">High</td>
+      <td>Verify threshold and elapsed-time test</td>
+    </tr>
+    <tr>
+      <td>One listed branch caused a real production symptom</td>
+      <td>Unknown</td>
+      <td style="text-align: right">None without runtime evidence</td>
+      <td>Requires event, delivery, job, and receiver records</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The human review gate should ask more than “Does this sound right?” A reviewer should be able to answer:</p>
+
+<ul>
+  <li>Are the scope and pinned commit explicit?</li>
+  <li>Can every material claim be followed to evidence?</li>
+  <li>Did the agent inspect callbacks, transactions, jobs, tenancy, and configuration switches?</li>
+  <li>Are tests being used to establish expected behavior rather than production occurrence?</li>
+  <li>Does each diagram distinguish observed edges from conceptual grouping?</li>
+  <li>Are contradictions and missing evidence visible?</li>
+  <li>Has any hypothesis silently become a diagnosis?</li>
+</ul>
+
+<p>The Fizzy pilot also shows why human documentation belongs after the blind repository scan. The scan reconstructed the main stack and runtime shape. <code class="language-plaintext highlighter-rouge">AGENTS.md</code> and deployment guides then added maintainer intent and operational invariants that broad code sampling missed. Code, in turn, exposed webhook security and failure behavior not needed in the public API guide. Review is the act of reconciling these different kinds of truth.</p>
+
+<p>A practical approval record can stay compact:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Scope: webhook delivery after card_closed
+Commit: 9312f6b...
+Observed claims reviewed: yes
+Inferences accepted or revised: yes
+Unknowns retained: yes
+Runtime diagnosis claimed: no
+Reviewer decision: approve | revise
+Refresh triggers: webhook, event, job, tenancy, or delivery code changes
+</code></pre></div></div>
+
+<p>This turns AI documentation into a maintained engineering asset. It can support onboarding today, a bug investigation tomorrow, and an upgrade later—without pretending that yesterday’s generated explanation remains true forever.</p>
+
+<h2 id="a-reusable-rails-documentation-workflow">A Reusable Rails Documentation Workflow</h2>
+
+<p>The Fizzy investigation can be generalized into a repeatable workflow. The key is to make the agent produce reviewable intermediate artifacts instead of asking for a finished architecture document in one prompt.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0OCwncmFua1NwYWNpbmcnOjU4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjOEI4RTkxJywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTdweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBUQlxuY2xhc3NEZWYgaW5wdXQgZmlsbDojRkZGM0Q2LHN0cm9rZTojQzdBNDVBLGNvbG9yOiM0QTNBMTZcbmNsYXNzRGVmIGFuYWx5c2lzIGZpbGw6I0U3RjBGRixzdHJva2U6IzZFOTFDOSxjb2xvcjojMjAzNjUzXG5jbGFzc0RlZiBjaGFsbGVuZ2UgZmlsbDojRkNFOEU2LHN0cm9rZTojQzk3Qzc1LGNvbG9yOiM0QTJBMjdcbmNsYXNzRGVmIG91dHB1dCBmaWxsOiNFOEY1RTksc3Ryb2tlOiM3NUE0NzgsY29sb3I6IzI0NDIyOFxuJSUtXG5TW1wi8J-OryBEZWZpbmUgcXVlc3Rpb24gYW5kIHBpbiBjb21taXRcIl06OjppbnB1dFxuJSUtXG5zdWJncmFwaCBPVltcIvCfp60gUmVwb3NpdG9yeSBvdmVydmlld1wiXVxuSVtcIvCfk6YgSW52ZW50b3J5IGNvZGUgYW5kIGNvbmZpZ3VyYXRpb25cIl06OjphbmFseXNpc1xuTVtcIvCfl7rvuI8gTWFwIHN0YWNrLCBib3VuZGFyaWVzLCBhbmQgdW5rbm93bnNcIl06OjphbmFseXNpc1xuZW5kXG4lJS1cbnN1YmdyYXBoIFNDW1wi8J-UjSBTY29wZWQgaW52ZXN0aWdhdGlvblwiXVxuVFtcIvCflI4gVHJhY2Ugb25lIGZlYXR1cmUgb3Igc3ltcHRvbVwiXTo6OmFuYWx5c2lzXG5FW1wi4pqg77iPIFJlY29yZCBnYXRlcywgc3RhdGVzLCBhbmQgZmFpbHVyZXNcIl06OjphbmFseXNpc1xuZW5kXG4lJS1cbkNbXCLwn6eqIENoYWxsZW5nZSB3aXRoIHRlc3RzIGFuZCBodW1hbiBkb2NzXCJdOjo6Y2hhbGxlbmdlXG5SW1wi8J-RpCBIdW1hbiByZXZpZXdcIl06OjpjaGFsbGVuZ2VcblBbXCLinIUgUHVibGlzaCBhbmQgcmVjb3JkIHJlZnJlc2ggdHJpZ2dlcnNcIl06OjpvdXRwdXRcbiUlLVxuUyAtLT4gSVxuSSAtLT4gTVxuTSAtLT4gVFxuVCAtLT4gRVxuRSAtLT4gQ1xuQyAtLT4gUlxuUiAtLT4gUFxuUCAtLi0-fPCflIQgUmVsZXZhbnQgY29kZSBjaGFuZ2VkfCBTIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0"></p>
+
+<h3 id="phase-1-establish-the-contract">Phase 1: establish the contract</h3>
+
+<p>Record the repository, branch, commit, analysis mode, allowed sources, excluded sources, reader outcome, and intended scope. Decide whether the first pass is read-only. For confidential repositories, define which material may leave the environment before an agent reads anything.</p>
+
+<p>A useful opening instruction is:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Analyze this Rails repository in read-only mode at the pinned commit.
+Produce evidence-linked documentation, not code changes.
+Label findings observed, inferred, or unknown.
+Do not claim runtime behavior from file presence alone.
+Record every material claim with one or more repository paths.
+</code></pre></div></div>
+
+<h3 id="phase-2-run-the-blind-overview">Phase 2: run the blind overview</h3>
+
+<p>Admit code, configuration, schema, tests, containers, CI, and deployment files. Temporarily exclude explanatory documentation. Ask for a repository inventory, stack profile, entry points, data stores, asynchronous systems, integrations, deployment shape, risks, and unknowns.</p>
+
+<p>The output should be small enough to review. Counts describe repository shape; they do not assign equal architectural importance to every file.</p>
+
+<h3 id="phase-3-compare-with-human-knowledge">Phase 3: compare with human knowledge</h3>
+
+<p>Admit <code class="language-plaintext highlighter-rouge">README</code>, <code class="language-plaintext highlighter-rouge">AGENTS.md</code>, development guides, API documentation, runbooks, and architecture decision records. Classify selected claims as confirmed, partial, missed, code-added, or contradicted. This makes human documentation an active challenger rather than background text silently absorbed by the model.</p>
+
+<h3 id="phase-4-select-and-trace-one-scope">Phase 4: select and trace one scope</h3>
+
+<p>Choose a route, event, job, domain concept, integration, symptom, or bug. Name the trigger and expected outcome. Trace authorization, state transitions, callbacks, transactions, jobs, tenancy, persistence, external calls, tests, and failure behavior. Stop when the investigation crosses a boundary for which no evidence was admitted.</p>
+
+<h3 id="phase-5-challenge-the-map">Phase 5: challenge the map</h3>
+
+<p>Give a second agent role—or a second pass—the task of disproving the first explanation:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Find branches, callbacks, configuration switches, transaction boundaries,
+job serialization, retries, authorization, tenancy, and tests that could
+invalidate or narrow the proposed flow. Preserve unresolved contradictions.
+</code></pre></div></div>
+
+<p>The “challenger” need not be a separate model. What matters is a separate objective and an explicit artifact containing gaps and counterevidence.</p>
+
+<h3 id="phase-6-review-and-publish">Phase 6: review and publish</h3>
+
+<p>Review the evidence ledger, diagrams, uncertainty labels, and scope boundary. Record which paths should trigger a refresh. Publish only the approved overview and scope documents; keep raw exploration notes separate from the maintained map.</p>
+
+<h2 id="the-documentation-package-and-next-steps">The Documentation Package and Next Steps</h2>
+
+<p>The final product should not be one AI-generated README. Keep a small index at <code class="language-plaintext highlighter-rouge">docs/ai-map/README.md</code> and separate stable overview documents from volatile scoped investigations:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docs/ai-map/
+  README.md
+  stack.md
+  architecture.md
+  dependencies.md
+  integrations.md
+  risks-and-unknowns.md
+  evidence/
+    repository-index.md
+  diagrams/
+    system-context.md
+    component-map.md
+  scopes/
+    features/
+      webhook-delivery/
+        overview.md
+        sequence.md
+        states-and-failures.md
+    bugs/
+      webhook-not-received/
+        hypothesis-tree.md
+        evidence-checklist.md
+        unresolved-runtime-questions.md
+</code></pre></div></div>
+
+<p>Every maintained file should contain:</p>
+
+<ul>
+  <li>repository and pinned commit;</li>
+  <li>investigated scope;</li>
+  <li>admitted evidence sources;</li>
+  <li>observed, inferred, and unknown findings;</li>
+  <li>relevant paths and tests;</li>
+  <li>owner or reviewer;</li>
+  <li>generation and approval dates;</li>
+  <li>paths or events that require refresh.</li>
+</ul>
+
+<p>The overview supports onboarding and modernization planning. Feature dossiers help engineers understand business behavior before refactoring. Bug dossiers preserve hypotheses and evidence during incidents. Upgrade work can compare the documented boundaries against framework changes. None of these documents replaces tests, runbooks, API guides, or architecture decisions; the map connects them.</p>
+
+<p>Agent instructions belong near this package, but they serve a different purpose. Documentation records what the team currently understands. Instructions tell future agents how to behave. A concise repository instruction could say:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>When updating docs/ai-map, cite repository paths at the analyzed commit.
+Separate observed facts, inferences, and unknowns.
+Do not turn a bug hypothesis into a diagnosis without runtime evidence.
+Refresh only affected scopes and preserve human-approved invariants.
+Validate Mermaid diagrams and keep each diagram at one abstraction level.
+</code></pre></div></div>
+
+<p>This distinction prevents generated prose from becoming an uncontrolled source of instructions and prevents agent rules from masquerading as architectural truth.</p>
+
+<p>Refresh should also be scoped. A change to <code class="language-plaintext highlighter-rouge">Gemfile.lock</code> may affect the stack profile. A change to a webhook delivery model should refresh the webhook dossier, not regenerate every document. A route, job, initializer, deployment, or schema change can be mapped to the documents that cite it. Over time, that reverse index becomes the basis for automated staleness checks.</p>
+
+<p>The next practical extension is therefore not more prose. It is a small verification pipeline that checks pinned commits, broken evidence links, changed cited paths, Mermaid syntax, and missing review metadata.</p>
+
+<h2 id="references-and-further-exploration">References and Further Exploration</h2>
+
+<p>The method in this post combines Rails-specific evidence, hierarchical architecture views, diagrams as code, repository-level agent guidance, and recent research on LLM-assisted architecture recovery.</p>
+
+<h3 id="primary-guides-and-methods">Primary guides and methods</h3>
+
+<ul>
+  <li>
+<a href="https://guides.rubyonrails.org/" target="_blank" rel="noopener noreferrer">Ruby on Rails Guides</a> — canonical entry point for Rails routing, Active Record, callbacks, jobs, configuration, testing, security, and operations.</li>
+  <li>
+<a href="https://guides.rubyonrails.org/active_record_callbacks.html" target="_blank" rel="noopener noreferrer">Active Record Callbacks</a> — useful when reconstructing behavior hidden behind lifecycle transitions.</li>
+  <li>
+<a href="https://guides.rubyonrails.org/active_job_basics.html" target="_blank" rel="noopener noreferrer">Active Job Basics</a> — reference for asynchronous boundaries, enqueueing, execution, and failure behavior.</li>
+  <li>
+<a href="https://c4model.com/" target="_blank" rel="noopener noreferrer">C4 Model</a> — hierarchical system, container, component, and code views, plus dynamic and deployment diagrams.</li>
+  <li>
+<a href="https://mermaid.js.org/" target="_blank" rel="noopener noreferrer">Mermaid documentation</a> — text-based diagrams suitable for version control and review.</li>
+  <li>
+<a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams" target="_blank" rel="noopener noreferrer">Creating Mermaid diagrams on GitHub</a> — repository-native Mermaid rendering.</li>
+  <li>
+<a href="https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot" target="_blank" rel="noopener noreferrer">Repository custom instructions for GitHub Copilot</a> — persistent project guidance for AI-assisted work.</li>
+</ul>
+
+<h3 id="recent-research">Recent research</h3>
+
+<ul>
+  <li>
+<a href="https://arxiv.org/abs/2601.13007" target="_blank" rel="noopener noreferrer">ArchAgent: Scalable Legacy Software Architecture Recovery with LLMs</a> — agentic, multiview recovery using static analysis, segmentation, and synthesis.</li>
+  <li>
+<a href="https://arxiv.org/abs/2604.08293" target="_blank" rel="noopener noreferrer">CIAO: Code In Architecture Out</a> — structured generation of system-level architecture documentation from repositories.</li>
+  <li>
+<a href="https://arxiv.org/abs/2510.24428" target="_blank" rel="noopener noreferrer">CodeWiki: Automated Repository-Level Documentation at Scale</a> — hierarchical decomposition and repository-level textual and visual documentation.</li>
+</ul>
+
+<p>These research papers are recent preprints. They are useful evidence of emerging methods, not settled standards. Their reported limitations—especially high-level context, deployment views, and diagram quality—are reasons to keep evidence links and human approval in the workflow.</p>
+
+<h3 id="closing-perspective">Closing perspective</h3>
+
+<p>AI can make a Rails repository legible faster, but speed is not the most important outcome. The real gain is a disciplined way to move between scales: from the system landscape to one component, from one feature to one failure branch, and from a plausible explanation to the evidence that supports or rejects it.</p>
+
+<p>The Fizzy webhook example crosses enough Rails boundaries to show why this matters. A simple symptom led through authorization, domain state, callbacks, transactions, jobs, tenancy, network security, persistence, and operational history. The result was not an omniscient description of the codebase. It was something more useful: a navigable map with visible limits.</p>
+
+<p>The practical outcome is not “the AI understands the repository.” It is a reviewable documentation package containing a stack profile, architecture and dependency maps, one evidence-linked feature flow, one bounded bug investigation, an unknowns register, and refresh triggers. That package gives a new engineer starting points, gives a maintainer claims to challenge, and gives upgrade or refactoring work an explicit map of affected boundaries.</p>
+
+<p>This approach helps when the team treats AI as a correlation engine and documentation assistant—not as an architectural authority. It cannot prove production behavior without runtime evidence, recover unwritten business intent, or decide whether an inference is acceptable. Those limits are why paths, confidence labels, tests, and human approval remain part of every artifact.</p>
+
+<p>Start with one repository, pin one commit, and ask one bounded question. Produce the overview first; then trace a single feature or symptom deeply enough to test whether the map improves onboarding, debugging, or change planning. If another engineer can follow the evidence, find the relevant code faster, and identify what is still unknown, the documentation has done useful work.</p>
+
+<p>That is the standard for documenting a legacy Rails repository with AI: not documentation generated once, but understanding that can be traced, challenged, used, and renewed.</p>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

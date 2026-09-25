@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>PocketFlow: The 100-Line LLM Framework That Makes Agents Actually Understandable | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="PocketFlow: The 100-Line LLM Framework That Makes Agents Actually Understandable">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Software/Telecommunications Engineer">
+<meta property="og:description" content="Software/Telecommunications Engineer">
+<link rel="canonical" href="https://enogrob.github.io/llm-agents/pocketflow/framework/graph-based/2025/07/17/pocket-flow-llm-graph-framework.html">
+<meta property="og:url" content="https://enogrob.github.io/llm-agents/pocketflow/framework/graph-based/2025/07/17/pocket-flow-llm-graph-framework.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/pocketflow-100-line-llm-framework/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-07-17T04:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/pocketflow-100-line-llm-framework/cover.webp">
+<meta property="twitter:title" content="PocketFlow: The 100-Line LLM Framework That Makes Agents Actually Understandable">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-17T04:00:00+00:00","datePublished":"2025-07-17T04:00:00+00:00","description":"Software/Telecommunications Engineer","headline":"PocketFlow: The 100-Line LLM Framework That Makes Agents Actually Understandable","image":"https://enogrob.github.io/assets/images/posts/pocketflow-100-line-llm-framework/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/llm-agents/pocketflow/framework/graph-based/2025/07/17/pocket-flow-llm-graph-framework.html"},"url":"https://enogrob.github.io/llm-agents/pocketflow/framework/graph-based/2025/07/17/pocket-flow-llm-graph-framework.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2025-07-17-pocket-flow-llm-graph-framework.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/llm-agents/pocketflow/framework/graph-based/2025/07/17/pocket-flow-llm-graph-framework.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/llm-agents/pocketflow/framework/graph-based/2025/07/17/pocket-flow-llm-graph-framework.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/pocketflow-100-line-llm-framework/cover.webp" alt="Pocket Flow - 100-line LLM Framework" style="width:100%;height:auto;"></p>
+
+<h2 id="hook-with-a-story">Hook with a Story</h2>
+
+<p>Picture this: You’re at a tech meetup, and someone starts explaining their AI agent architecture. They mention LangChain’s 405K lines of code, CrewAI’s complex abstractions, and AutoGen’s mysterious black boxes. Your eyes glaze over as they dive into the technical jargon.</p>
+
+<p>Then someone else steps up and says: “What if I told you that <strong>every AI agent is just a simple graph with 100 lines of code?</strong>”</p>
+
+<p>That person would be talking about <strong>PocketFlow</strong> - the minimalist LLM framework that strips away all the complexity to reveal the beautiful simplicity underneath. No more wondering what’s happening behind the scenes. No more vendor lock-in. Just pure, transparent agent logic you can actually understand.</p>
+
+<h2 id="lay-out-the-roadmap">Lay Out the Roadmap</h2>
+
+<p>Here’s our journey to mastering PocketFlow and understanding how LLM agents really work:</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBMUlxuc3ViZ3JhcGggXCJMZWFybmluZyBKb3VybmV5XCJcbkFb8J-OryBUaGUgQmlnIFNlY3JldF0gLS0-IEJb8J-nqSBDb3JlIEJ1aWxkaW5nIEJsb2Nrc11cbkIgLS0-IENb8J-UjSBTaW1wbGUgUmVzZWFyY2ggQWdlbnRdXG5DIC0tPiBEW-KaoSBZb3VyIEZpcnN0IEltcGxlbWVudGF0aW9uXVxuRCAtLT4gRVvwn5qAIFJlYWwtV29ybGQgQXBwbGljYXRpb25zXVxuRSAtLT4gRlvwn4yfIE5leHQgU3RlcHNdXG5lbmRcbiUlLVxuc3R5bGUgQSBmaWxsOiNmZmQxZGNcbnN0eWxlIEIgZmlsbDojZTBmNGYzXG5zdHlsZSBDIGZpbGw6I2UxZjVmZVxuc3R5bGUgRCBmaWxsOiNmMGY4ZThcbnN0eWxlIEUgZmlsbDojZmZmOGUxXG5zdHlsZSBGIGZpbGw6I2YzZTVmNSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"></p>
+
+<p><strong>What you’ll learn:</strong></p>
+<ol>
+  <li>Why agents are just simple graphs (not rocket science!)</li>
+  <li>The three building blocks that power everything</li>
+  <li>How to build a research agent in minutes</li>
+  <li>Why PocketFlow beats massive frameworks</li>
+  <li>How to apply this to real projects</li>
+</ol>
+
+<h2 id="the-big-secret-agents-are-just-simple-graphs">The Big Secret: Agents Are Just Simple Graphs!</h2>
+
+<h3 id="wait-thats-it-really">Wait, That’s It? Really?</h3>
+
+<p>Yes! Here’s the mind-blowing truth that complex frameworks try to hide:</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBMUlxuc3ViZ3JhcGggXCJBZ2VudCBEZWNpc2lvbiBMb29wXCJcbkFb8J-klCBUaGlua10gLS0-IEJ78J-UgCBEZWNpZGV9XG5CIC0tPnxTZWFyY2h8IENb8J-UjSBTZWFyY2ggV2ViXVxuQiAtLT58QW5zd2VyfCBEW_CfkqwgR2l2ZSBBbnN3ZXJdXG5DIC0tPiBBXG5lbmRcbiUlLVxuc3ViZ3JhcGggXCJDb21wbGV0aW9uXCJcbkQgLS0-IEVb4pyFIERvbmVdXG5lbmRcbiUlLVxuc3R5bGUgQSBmaWxsOiNlMWY1ZmVcbnN0eWxlIEIgZmlsbDojZjNlNWY1XG5zdHlsZSBDIGZpbGw6I2U4ZjVlOFxuc3R5bGUgRCBmaWxsOiNmZmYzZTBcbnN0eWxlIEUgZmlsbDojZmZlYmVlIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0"></p>
+
+<p>Every AI agent, no matter how complex it seems, follows this pattern:</p>
+<ol>
+  <li>
+<strong>Think</strong> about the current situation</li>
+  <li>
+<strong>Decide</strong> what action to take next</li>
+  <li>
+<strong>Do</strong> the chosen action</li>
+  <li>
+<strong>Loop</strong> back to thinking with new information</li>
+</ol>
+
+<blockquote>
+  <p><strong>💡 Pro Tip:</strong> Even the most sophisticated frameworks like OpenAI Agents, LangChain, and LangGraph follow this exact pattern under the hood. PocketFlow just makes it visible!</p>
+</blockquote>
+
+<h3 id="your-turn-spot-the-pattern">Your Turn: Spot the Pattern</h3>
+
+<p>Think about how <strong>you</strong> solve problems. Let’s say someone asks: “What’s the weather like in Tokyo?”</p>
+
+<p><strong>Your mental process:</strong></p>
+<ol>
+  <li>🤔 “I need current weather info”</li>
+  <li>🔀 “Should I check my phone or ask someone?”</li>
+  <li>📱 “I’ll check a weather app”</li>
+  <li>🤔 “Got the info, now I can answer”</li>
+  <li>💬 “It’s 22°C and sunny in Tokyo”</li>
+</ol>
+
+<p>See? You’re already thinking like an agent!</p>
+
+<h2 id="dive-into-bite-sized-chunks">Dive into Bite-Sized Chunks</h2>
+
+<h3 id="building-block-1-nodes-the-workers">Building Block #1: Nodes (The Workers)</h3>
+
+<p>Think of <strong>Nodes</strong> as specialized workers in a kitchen:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SearchWebNode</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">prep</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">shared</span><span class="p">):</span>
+        <span class="c1"># 🥄 Grab ingredients (get search query)
+</span>        <span class="k">return</span> <span class="n">shared</span><span class="p">[</span><span class="sh">"</span><span class="s">search_query</span><span class="sh">"</span><span class="p">]</span>
+    
+    <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">search_query</span><span class="p">):</span>
+        <span class="c1"># 👨‍🍳 Do the actual work (search the web)
+</span>        <span class="n">results</span> <span class="o">=</span> <span class="nf">google_search</span><span class="p">(</span><span class="n">search_query</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">results</span>
+    
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">shared</span><span class="p">,</span> <span class="n">prep_res</span><span class="p">,</span> <span class="n">exec_res</span><span class="p">):</span>
+        <span class="c1"># 🍽️ Serve the dish (save results, decide what's next)
+</span>        <span class="n">shared</span><span class="p">[</span><span class="sh">"</span><span class="s">search_results</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="n">exec_res</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">analyze_results</span><span class="sh">"</span>
+</code></pre></div></div>
+
+<p><strong>Every node has three simple jobs:</strong></p>
+<ul>
+  <li>
+<strong>Prep:</strong> Gather what you need from the shared workspace</li>
+  <li>
+<strong>Exec:</strong> Do your specialized task</li>
+  <li>
+<strong>Post:</strong> Save your results and decide where to go next</li>
+</ul>
+
+<h3 id="your-turn-design-a-node">Your Turn: Design a Node</h3>
+
+<p><strong>Do this!</strong> Imagine you’re building a “TranslateText” node. What would each method do?</p>
+<ol>
+  <li>
+<strong>Prep:</strong> What information would you need?</li>
+  <li>
+<strong>Exec:</strong> What’s the main task?</li>
+  <li>
+<strong>Post:</strong> Where should the flow go next?</li>
+</ol>
+
+<p><em>Think about it before reading on…</em></p>
+
+<p><strong>Quick Recap:</strong> Nodes are like specialized workers that prep, execute, and hand off to the next worker.</p>
+
+<h3 id="building-block-2-flow-the-recipe">Building Block #2: Flow (The Recipe)</h3>
+
+<p>The <strong>Flow</strong> is like a recipe that tells workers where to go next:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Connect the nodes like a flowchart
+</span><span class="n">search_node</span> <span class="o">-</span> <span class="sh">"</span><span class="s">analyze</span><span class="sh">"</span> <span class="o">&gt;&gt;</span> <span class="n">analyze_node</span>
+<span class="n">search_node</span> <span class="o">-</span> <span class="sh">"</span><span class="s">answer</span><span class="sh">"</span> <span class="o">&gt;&gt;</span> <span class="n">answer_node</span>
+<span class="n">analyze_node</span> <span class="o">-</span> <span class="sh">"</span><span class="s">search_more</span><span class="sh">"</span> <span class="o">&gt;&gt;</span> <span class="n">search_node</span>
+<span class="n">analyze_node</span> <span class="o">-</span> <span class="sh">"</span><span class="s">answer</span><span class="sh">"</span> <span class="o">&gt;&gt;</span> <span class="n">answer_node</span>
+
+<span class="c1"># Create the flow starting with search
+</span><span class="n">flow</span> <span class="o">=</span> <span class="nc">Flow</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">search_node</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Flow connections are simple:</strong></p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">node1 - "action" &gt;&gt; node2</code> means “if node1 returns ‘action’, go to node2”</li>
+  <li>It’s just like following arrows in a flowchart!</li>
+</ul>
+
+<h3 id="your-turn-connect-the-dots">Your Turn: Connect the Dots</h3>
+
+<p><strong>Do this!</strong> Draw arrows connecting these nodes:</p>
+<ol>
+  <li>
+<strong>StartNode</strong> → (if “needs_info”) → <strong>SearchNode</strong>
+</li>
+  <li>
+<strong>StartNode</strong> → (if “can_answer”) → <strong>AnswerNode</strong>
+</li>
+  <li>
+<strong>SearchNode</strong> → (always) → <strong>StartNode</strong>
+</li>
+</ol>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBMUlxuc3ViZ3JhcGggXCJGbG93IENvbnRyb2xcIlxuQVvwn5qAIFN0YXJ0Tm9kZV0gLS0-IEJ78J-klCBEZWNpc2lvbn1cbmVuZFxuJSUtXG5zdWJncmFwaCBcIkFjdGlvbnNcIlxuQiAtLT58bmVlZHNfaW5mb3wgQ1vwn5SNIFNlYXJjaE5vZGVdXG5CIC0tPnxjYW5fYW5zd2VyfCBEW_CfkqwgQW5zd2VyTm9kZV1cbkMgLS0-IEFcbmVuZFxuJSUtXG5zdHlsZSBBIGZpbGw6I2UxZjVmZVxuc3R5bGUgQiBmaWxsOiNmM2U1ZjVcbnN0eWxlIEMgZmlsbDojZThmNWU4XG5zdHlsZSBEIGZpbGw6I2ZmZjNlMCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"></p>
+
+<p><strong>Quick Recap:</strong> Flow is just a simple recipe that says “if this, then go there.”</p>
+
+<h3 id="building-block-3-shared-store-the-kitchen-counter">Building Block #3: Shared Store (The Kitchen Counter)</h3>
+
+<p>The <strong>Shared Store</strong> is like a big kitchen counter where everyone can leave notes and ingredients:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Everyone can read and write to this shared space
+</span><span class="n">shared</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">"</span><span class="s">question</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">What</span><span class="sh">'</span><span class="s">s the capital of France?</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">search_results</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Paris is the capital...</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">answer</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">The capital of France is Paris.</span><span class="sh">"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>It’s that simple:</strong></p>
+<ul>
+  <li>All nodes can read from and write to this shared dictionary</li>
+  <li>It’s how information flows between different workers</li>
+  <li>Think of it as everyone’s shared notebook</li>
+</ul>
+
+<h3 id="your-turn-design-your-shared-store">Your Turn: Design Your Shared Store</h3>
+
+<p><strong>Do this!</strong> If you were building a “Recipe Generator” agent, what would you put in the shared store?</p>
+
+<p><em>Hint: Think about what information different nodes would need to share…</em></p>
+
+<p><strong>Quick Recap:</strong> Shared store is just a dictionary where all nodes can read and write information.</p>
+
+<h2 id="graph-patterns-the-secret-sauce-behind-every-agent">Graph Patterns: The Secret Sauce Behind Every Agent</h2>
+
+<h3 id="wait-there-are-patterns">Wait, There Are Patterns?</h3>
+
+<p>Absolutely! Just like design patterns in software, AI agents follow predictable graph patterns. Once you know these patterns, you can build <strong>any</strong> agent by mixing and matching them.</p>
+
+<p><strong>Think of it like LEGO blocks:</strong> Each pattern solves a specific problem, and you combine them to build whatever you need!</p>
+
+<details>
+<summary><strong>🔄 Pattern #1: The Simple Loop (Most Common)</strong></summary>
+
+<p><strong>When to use:</strong> When your agent needs to keep working until it finds the right answer.</p>
+
+<p><strong>Perfect for:</strong> Research agents, problem-solving bots, iterative refinement</p>
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBMUlxuc3ViZ3JhcGggXCJTaW1wbGUgTG9vcCBQYXR0ZXJuXCJcbkFbXCLwn6SUIFRoaW5rXCJdIC0tPiBCe1wi8J-UgCBHb29kIEVub3VnaD9cIn1cbkIgLS0-fE5vfCBDW1wi8J-UjSBTZWFyY2ggTW9yZVwiXVxuQiAtLT58WWVzfCBEW1wi4pyFIERvbmVcIl1cbkMgLS0-IEFcbmVuZFxuJSUtXG5zdHlsZSBBIGZpbGw6I2UxZjVmZVxuc3R5bGUgQiBmaWxsOiNmM2U1ZjVcbnN0eWxlIEMgZmlsbDojZThmNWU4XG5zdHlsZSBEIGZpbGw6I2ZmZjNlMCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19">
+
+<p><strong>Real example:</strong> "Keep searching until you have enough info to answer the question."</p>
+
+<p><strong>Your Turn:</strong> What would you use this pattern for? <em>Customer support? Content research? Data analysis?</em></p>
+
+</details>
+
+<details>
+<summary><strong>🌊 Pattern #2: The Pipeline (Step-by-Step)</strong></summary>
+
+<p><strong>When to use:</strong> When you have a clear sequence of steps that must happen in order.</p>
+
+<p><strong>Perfect for:</strong> Content generation, data processing, multi-stage analysis</p>
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggXCJQaXBlbGluZSBQYXR0ZXJuXCJcbkFbXCLwn5OdIElucHV0XCJdIC0tPiBCW1wi8J-UjSBSZXNlYXJjaFwiXVxuQiAtLT4gQ1tcIuKcj--4jyBEcmFmdFwiXVxuQyAtLT4gRFtcIvCfjqggUG9saXNoXCJdXG5EIC0tPiBFW1wi4pyFIE91dHB1dFwiXVxuZW5kXG4lJS1cbnN0eWxlIEEgZmlsbDojZTNmMmZkXG5zdHlsZSBCIGZpbGw6I2UxZjVmZVxuc3R5bGUgQyBmaWxsOiNmM2U1ZjVcbnN0eWxlIEQgZmlsbDojZThmNWU4XG5zdHlsZSBFIGZpbGw6I2ZmZjNlMCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19">
+
+<p><strong>Real example:</strong> "Write a blog post: research → outline → draft → edit → publish."</p>
+
+<p><strong>Your Turn:</strong> Think of a process you do manually. How would you break it into pipeline steps?</p>
+
+</details>
+
+<details>
+<summary><strong>🌲 Pattern #3: The Decision Tree (Choose Your Path)</strong></summary>
+
+<p><strong>When to use:</strong> When different inputs need completely different handling.</p>
+
+<p><strong>Perfect for:</strong> Customer routing, content classification, conditional workflows</p>
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggXCJEZWNpc2lvbiBUcmVlIFBhdHRlcm5cIlxuQVtcIvCfk6ggSW5wdXRcIl0gLS0-IEJ7XCLwn6SUIFdoYXQgVHlwZT9cIn1cbkIgLS0-fFF1ZXN0aW9ufCBDW1wi4p2TIEFuc3dlciBCb3RcIl1cbkIgLS0-fENvbXBsYWludHwgRFtcIvCfm6DvuI8gU3VwcG9ydCBCb3RcIl1cbkIgLS0-fE9yZGVyfCBFW1wi8J-TpiBPcmRlciBCb3RcIl1cbkMgLS0-IEZbXCLinIUgUmVzcG9uc2VcIl1cbkQgLS0-IEZcbkUgLS0-IEZcbmVuZFxuJSUtXG5zdHlsZSBBIGZpbGw6I2UzZjJmZFxuc3R5bGUgQiBmaWxsOiNmM2U1ZjVcbnN0eWxlIEMgZmlsbDojZTFmNWZlXG5zdHlsZSBEIGZpbGw6I2ZmZWJlZVxuc3R5bGUgRSBmaWxsOiNlOGY1ZThcbnN0eWxlIEYgZmlsbDojZmZmM2UwIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0">
+
+<p><strong>Real example:</strong> "Route customer messages to the right specialist bot."</p>
+
+<p><strong>Your Turn:</strong> What decisions does your business make repeatedly? Could a bot handle them?</p>
+
+</details>
+
+<details>
+<summary><strong>🔄 Pattern #4: The Feedback Loop (Self-Improving)</strong></summary>
+
+<p><strong>When to use:</strong> When your agent should learn from its mistakes and get better.</p>
+
+<p><strong>Perfect for:</strong> Quality control, A/B testing, performance optimization</p>
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggXCJGZWVkYmFjayBMb29wIFBhdHRlcm5cIlxuQVtcIvCfjq8gVHJ5IFNvbHV0aW9uXCJdIC0tPiBCW1wi8J-TiiBNZWFzdXJlIFJlc3VsdHNcIl1cbkIgLS0-IEN7XCLwn5OIIEdvb2QgRW5vdWdoP1wifVxuQyAtLT58Tm98IERbXCLwn5SnIEFkanVzdCBBcHByb2FjaFwiXVxuQyAtLT58WWVzfCBFW1wi4pyFIFN1Y2Nlc3NcIl1cbkQgLS0-IEFcbmVuZFxuJSUtXG5zdHlsZSBBIGZpbGw6I2UxZjVmZVxuc3R5bGUgQiBmaWxsOiNmM2U1ZjVcbnN0eWxlIEMgZmlsbDojZmZmM2UwXG5zdHlsZSBEIGZpbGw6I2ZmZWJlZVxuc3R5bGUgRSBmaWxsOiNlOGY1ZTgiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ">
+
+<p><strong>Real example:</strong> "Try different email subject lines, measure open rates, keep improving."</p>
+
+<p><strong>Your Turn:</strong> What do you currently do manually that could self-optimize? Marketing? Pricing? Scheduling?</p>
+
+</details>
+
+<details>
+<summary><strong>⚡ Pattern #5: The Parallel Split (Do Multiple Things)</strong></summary>
+
+<p><strong>When to use:</strong> When you need to do several independent tasks at the same time.</p>
+
+<p><strong>Perfect for:</strong> Data gathering, multi-source research, parallel processing</p>
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggXCJQYXJhbGxlbCBTcGxpdCBQYXR0ZXJuXCJcbkFbXCLwn5qAIFN0YXJ0XCJdIC0tPiBCW1wi8J-UgCBTcGxpdCBUYXNrc1wiXVxuQiAtLT4gQ1tcIvCflI0gU2VhcmNoIE5ld3NcIl1cbkIgLS0-IERbXCLwn5OKIENoZWNrIERhdGFcIl1cbkIgLS0-IEVbXCLwn5KsIEFzayBFeHBlcnRzXCJdXG5DIC0tPiBGW1wi8J-UhCBDb21iaW5lIFJlc3VsdHNcIl1cbkQgLS0-IEZcbkUgLS0-IEZcbkYgLS0-IEdbXCLinIUgRmluYWwgQW5zd2VyXCJdXG5lbmRcbiUlLVxuc3R5bGUgQSBmaWxsOiNlM2YyZmRcbnN0eWxlIEIgZmlsbDojZjNlNWY1XG5zdHlsZSBDIGZpbGw6I2UxZjVmZVxuc3R5bGUgRCBmaWxsOiNlOGY1ZThcbnN0eWxlIEUgZmlsbDojZmZmOGUxXG5zdHlsZSBGIGZpbGw6I2ZmZWJlZVxuc3R5bGUgRyBmaWxsOiNmZmYzZTAiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ">
+
+<p><strong>Real example:</strong> "Research a company by simultaneously checking news, financials, and social media."</p>
+
+<p><strong>Your Turn:</strong> What research do you do that involves checking multiple sources? Market research? Due diligence?</p>
+
+</details>
+
+<details>
+<summary><strong>🎛️ Pattern #6: The State Machine (Remember Context)</strong></summary>
+
+<p><strong>When to use:</strong> When your agent needs to remember where it is in a complex process.</p>
+
+<p><strong>Perfect for:</strong> Multi-step workflows, conversation bots, guided processes</p>
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggXCJTdGF0ZSBNYWNoaW5lIFBhdHRlcm5cIlxuQVtcIvCfkYsgR3JlZXRpbmdcIl0gLS0-fHVzZXJfcmVzcG9uZHN8IEJbXCLwn6SUIFVuZGVyc3RhbmRpbmdcIl1cbkIgLS0-fG5lZWRfaW5mb3wgQ1tcIuKdkyBBc2tpbmdcIl1cbkIgLS0-fGNhbl9oZWxwfCBEW1wi8J-boO-4jyBXb3JraW5nXCJdXG5DIC0tPnxpbmZvX2dpdmVufCBCXG5EIC0tPnxkb25lfCBFW1wi4pyFIENvbXBsZXRlXCJdXG5FIC0tPnxuZXdfcmVxdWVzdHwgQVxuZW5kXG4lJS1cbnN0eWxlIEEgZmlsbDojZTNmMmZkXG5zdHlsZSBCIGZpbGw6I2YzZTVmNVxuc3R5bGUgQyBmaWxsOiNlMWY1ZmVcbnN0eWxlIEQgZmlsbDojZThmNWU4XG5zdHlsZSBFIGZpbGw6I2ZmZjNlMCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19">
+
+<p><strong>Real example:</strong> "Guide users through a complex signup process, remembering what they've already completed."</p>
+
+<p><strong>Your Turn:</strong> What multi-step processes do your users go through? Onboarding? Purchasing? Support tickets?</p>
+
+</details>
+
+<details>
+<summary><strong>🔄 Pattern #7: The Batch Processing (Handle Lots of Data)</strong></summary>
+
+<p><strong>When to use:</strong> When you need to process large amounts of data efficiently.</p>
+
+<p><strong>Perfect for:</strong> Document analysis, bulk operations, data transformation</p>
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggXCJCYXRjaCBQcm9jZXNzaW5nIFBhdHRlcm5cIlxuQVtcIvCfk4IgRGF0YSBJbnB1dFwiXSAtLT4gQltcIvCflIQgQmF0Y2ggTm9kZVwiXVxuQiAtLT4gQ1tcIuKaoSBQcm9jZXNzIENodW5rIDFcIl1cbkIgLS0-IERbXCLimqEgUHJvY2VzcyBDaHVuayAyXCJdXG5CIC0tPiBFW1wi4pqhIFByb2Nlc3MgQ2h1bmsgM1wiXVxuQyAtLT4gRltcIvCflIQgQ29tYmluZSBSZXN1bHRzXCJdXG5EIC0tPiBGXG5FIC0tPiBGXG5GIC0tPiBHW1wi4pyFIENvbXBsZXRlIERhdGFzZXRcIl1cbmVuZFxuJSUtXG5zdHlsZSBBIGZpbGw6I2UzZjJmZFxuc3R5bGUgQiBmaWxsOiNmM2U1ZjVcbnN0eWxlIEMgZmlsbDojZTFmNWZlXG5zdHlsZSBEIGZpbGw6I2UxZjVmZVxuc3R5bGUgRSBmaWxsOiNlMWY1ZmVcbnN0eWxlIEYgZmlsbDojZThmNWU4XG5zdHlsZSBHIGZpbGw6I2ZmZjNlMCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19">
+
+<p><strong>Real example:</strong> "Process 1000 customer reviews by breaking them into batches of 50 for sentiment analysis."</p>
+
+<p><strong>Your Turn:</strong> What bulk operations could benefit from batching? <em>Email campaigns? Image processing? Report generation?</em></p>
+
+</details>
+
+<details>
+<summary><strong>⏰ Pattern #8: The Async Wait (Handle Time-Sensitive Tasks)</strong></summary>
+
+<p><strong>When to use:</strong> When you need to wait for external systems or time-based events.</p>
+
+<p><strong>Perfect for:</strong> API rate limits, scheduled tasks, webhook responses</p>
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggXCJBc3luYyBXYWl0IFBhdHRlcm5cIlxuQVtcIvCfmoAgU3RhcnQgVGFza1wiXSAtLT4gQltcIvCfk6EgRXh0ZXJuYWwgUmVxdWVzdFwiXVxuQiAtLT4gQ1tcIuKPsCBBc3luYyBXYWl0XCJdXG5DIC0tPiBEe1wi4pyFIFJlYWR5P1wifVxuRCAtLT58Tm90IFlldHwgQ1xuRCAtLT58UmVhZHl8IEVbXCLwn46vIENvbnRpbnVlIEZsb3dcIl1cbkUgLS0-IEZbXCLinIUgQ29tcGxldGVcIl1cbmVuZFxuJSUtXG5zdHlsZSBBIGZpbGw6I2UzZjJmZFxuc3R5bGUgQiBmaWxsOiNmM2U1ZjVcbnN0eWxlIEMgZmlsbDojZmZmOGUxXG5zdHlsZSBEIGZpbGw6I2UxZjVmZVxuc3R5bGUgRSBmaWxsOiNlOGY1ZThcbnN0eWxlIEYgZmlsbDojZmZmM2UwIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0">
+
+<p><strong>Real example:</strong> "Submit document for processing, wait for OCR service to complete, then continue with text analysis."</p>
+
+<p><strong>Your Turn:</strong> What async operations do you deal with? <em>Payment processing? File uploads? Third-party APIs?</em></p>
+
+</details>
+
+<details>
+<summary><strong>🌐 Pattern #9: The Parallel I/O (Multiple External Calls)</strong></summary>
+
+<p><strong>When to use:</strong> When you need to call multiple external services simultaneously.</p>
+
+<p><strong>Perfect for:</strong> API aggregation, data enrichment, cross-platform integration</p>
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggXCJQYXJhbGxlbCBJL08gUGF0dGVyblwiXG5BW1wi8J-OryBJbnB1dCBSZXF1ZXN0XCJdIC0tPiBCW1wi8J-UgCBTcGxpdCBQYXJhbGxlbFwiXVxuQiAtLT4gQ1tcIvCfjJAgQVBJIENhbGwgMVwiXVxuQiAtLT4gRFtcIvCfjJAgQVBJIENhbGwgMlwiXVxuQiAtLT4gRVtcIvCfjJAgQVBJIENhbGwgM1wiXVxuQyAtLT4gRltcIvCflIQgTWVyZ2UgUmVzdWx0c1wiXVxuRCAtLT4gRlxuRSAtLT4gRlxuRiAtLT4gR1tcIuKchSBFbnJpY2hlZCBEYXRhXCJdXG5lbmRcbiUlLVxuc3R5bGUgQSBmaWxsOiNlM2YyZmRcbnN0eWxlIEIgZmlsbDojZjNlNWY1XG5zdHlsZSBDIGZpbGw6I2UxZjVmZVxuc3R5bGUgRCBmaWxsOiNlMWY1ZmVcbnN0eWxlIEUgZmlsbDojZTFmNWZlXG5zdHlsZSBGIGZpbGw6I2U4ZjVlOFxuc3R5bGUgRyBmaWxsOiNmZmYzZTAiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ">
+
+<p><strong>Real example:</strong> "Enrich user profile by simultaneously calling LinkedIn API, GitHub API, and Twitter API."</p>
+
+<p><strong>Your Turn:</strong> What data do you gather from multiple sources? <em>User verification? Market data? Social media analytics?</em></p>
+
+</details>
+
+<h2 id="design-patterns-the-power-combinations">Design Patterns: The Power Combinations</h2>
+
+<h3 id="beyond-basic-patterns-real-world-architectures">Beyond Basic Patterns: Real-World Architectures</h3>
+
+<p>Now that you know the building blocks, let’s see how they combine into <strong>design patterns</strong> that solve real business problems:</p>
+
+<details>
+<summary><strong>🤖 Design Pattern #1: The Autonomous Agent</strong></summary>
+
+<p><strong>What it is:</strong> An agent that makes its own decisions about what to do next.</p>
+
+<p><strong>How it works:</strong> Combines Decision Tree + Simple Loop + State Machine</p>
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggXCJBdXRvbm9tb3VzIEFnZW50IERlc2lnblwiXG5BW1wi8J-TpSBJbnB1dFwiXSAtLT4gQltcIvCfp6AgQW5hbHl6ZSBDb250ZXh0XCJdXG5CIC0tPiBDe1wi8J-klCBXaGF0IEFjdGlvbj9cIn1cbkMgLS0-fFNlYXJjaHwgRFtcIvCflI0gUmVzZWFyY2hcIl1cbkMgLS0-fENhbGN1bGF0ZXwgRVtcIvCfk4ogQ29tcHV0ZVwiXVxuQyAtLT58UmVzcG9uZHwgRltcIvCfkqwgQW5zd2VyXCJdXG5EIC0tPiBCXG5FIC0tPiBCXG5GIC0tPiBHW1wi4pyFIERvbmVcIl1cbmVuZFxuJSUtXG5zdHlsZSBBIGZpbGw6I2UzZjJmZFxuc3R5bGUgQiBmaWxsOiNmM2U1ZjVcbnN0eWxlIEMgZmlsbDojZTFmNWZlXG5zdHlsZSBEIGZpbGw6I2U4ZjVlOFxuc3R5bGUgRSBmaWxsOiNmZmY4ZTFcbnN0eWxlIEYgZmlsbDojZmZmM2UwXG5zdHlsZSBHIGZpbGw6I2ZmZWJlZSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19">
+
+<p><strong>Real example:</strong> "Customer service bot that decides whether to search knowledge base, escalate to human, or provide direct answer."</p>
+
+<p><strong>Your Turn:</strong> What decisions could your business automate? <em>Lead qualification? Content moderation? Inventory management?</em></p>
+
+</details>
+
+<details>
+<summary><strong>⛓️ Design Pattern #2: The Workflow Pipeline</strong></summary>
+
+<p><strong>What it is:</strong> A sequence of specialized nodes that each add value to the data.</p>
+
+<p><strong>How it works:</strong> Linear Pipeline + Error Handling + Quality Gates</p>
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggXCJXb3JrZmxvdyBQaXBlbGluZSBEZXNpZ25cIlxuQVtcIvCfk50gUmF3IElucHV0XCJdIC0tPiBCW1wi8J-UjSBWYWxpZGF0ZVwiXVxuQiAtLT4gQ1tcIvCfp7kgQ2xlYW4gRGF0YVwiXVxuQyAtLT4gRFtcIuKaoSBUcmFuc2Zvcm1cIl1cbkQgLS0-IEVbXCLinKggRW5oYW5jZVwiXVxuRSAtLT4gRltcIuKchSBGaW5hbCBPdXRwdXRcIl1cbmVuZFxuJSUtXG5zdHlsZSBBIGZpbGw6I2UzZjJmZFxuc3R5bGUgQiBmaWxsOiNmM2U1ZjVcbnN0eWxlIEMgZmlsbDojZTFmNWZlXG5zdHlsZSBEIGZpbGw6I2U4ZjVlOFxuc3R5bGUgRSBmaWxsOiNmZmY4ZTFcbnN0eWxlIEYgZmlsbDojZmZmM2UwIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0">
+
+<p><strong>Real example:</strong> "Content publishing: Draft → Fact-check → Edit → SEO optimize → Publish → Promote."</p>
+
+<p><strong>Your Turn:</strong> What multi-step processes could benefit from automation? <em>Onboarding? Order fulfillment? Quality assurance?</em></p>
+
+</details>
+
+<details>
+<summary><strong>🎯 Design Pattern #3: The RAG System (Retrieval-Augmented Generation)</strong></summary>
+
+<p><strong>What it is:</strong> Combines information retrieval with AI generation for accurate, sourced responses.</p>
+
+<p><strong>How it works:</strong> Parallel Split + Document Search + Context Integration + Generation</p>
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggXCJSQUcgU3lzdGVtIERlc2lnblwiXG5BW1wi4p2TIFVzZXIgUXVlc3Rpb25cIl0gLS0-IEJbXCLwn5SNIFNlYXJjaCBWZWN0b3JzXCJdXG5CIC0tPiBDW1wi8J-TmiBSZXRyaWV2ZSBEb2NzXCJdXG5DIC0tPiBEW1wi8J-OryBSYW5rIFJlbGV2YW5jZVwiXVxuRCAtLT4gRVtcIvCfp6kgQnVpbGQgQ29udGV4dFwiXVxuRSAtLT4gRltcIuKcqCBHZW5lcmF0ZSBBbnN3ZXJcIl1cbkYgLS0-IEdbXCLwn5OEIENpdGUgU291cmNlc1wiXVxuRyAtLT4gSFtcIuKchSBGaW5hbCBSZXNwb25zZVwiXVxuZW5kXG4lJS1cbnN0eWxlIEEgZmlsbDojZTNmMmZkXG5zdHlsZSBCIGZpbGw6I2YzZTVmNVxuc3R5bGUgQyBmaWxsOiNlMWY1ZmVcbnN0eWxlIEQgZmlsbDojZThmNWU4XG5zdHlsZSBFIGZpbGw6I2ZmZjhlMVxuc3R5bGUgRiBmaWxsOiNmZmYzZTBcbnN0eWxlIEcgZmlsbDojZmZlYmVlXG5zdHlsZSBIIGZpbGw6I2YwZjhlOCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19">
+
+<p><strong>Real example:</strong> "Corporate chatbot that searches internal docs, finds relevant policies, and generates accurate answers with citations."</p>
+
+<p><strong>Your Turn:</strong> What knowledge bases could power better customer service? <em>Product manuals? FAQ databases? Company policies?</em></p>
+
+</details>
+
+<details>
+<summary><strong>🗺️ Design Pattern #4: The Map-Reduce System</strong></summary>
+
+<p><strong>What it is:</strong> Breaks large tasks into smaller parallel pieces, then combines results.</p>
+
+<p><strong>How it works:</strong> Parallel Split + Batch Processing + Result Aggregation</p>
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggXCJNYXAtUmVkdWNlIERlc2lnblwiXG5BW1wi8J-TiiBCaWcgRGF0YXNldFwiXSAtLT4gQltcIvCflIAgU3BsaXQgRGF0YVwiXVxuQiAtLT4gQ1tcIuKaoSBNYXAgVGFzayAxXCJdXG5CIC0tPiBEW1wi4pqhIE1hcCBUYXNrIDJcIl1cbkIgLS0-IEVbXCLimqEgTWFwIFRhc2sgM1wiXVxuQyAtLT4gRltcIvCflIQgUmVkdWNlIFBoYXNlXCJdXG5EIC0tPiBGXG5FIC0tPiBGXG5GIC0tPiBHW1wi8J-TiCBGaW5hbCBSZXN1bHRzXCJdXG5lbmRcbiUlLVxuc3R5bGUgQSBmaWxsOiNlM2YyZmRcbnN0eWxlIEIgZmlsbDojZjNlNWY1XG5zdHlsZSBDIGZpbGw6I2UxZjVmZVxuc3R5bGUgRCBmaWxsOiNlMWY1ZmVcbnN0eWxlIEUgZmlsbDojZTFmNWZlXG5zdHlsZSBGIGZpbGw6I2U4ZjVlOFxuc3R5bGUgRyBmaWxsOiNmZmYzZTAiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ">
+
+<p><strong>Real example:</strong> "Analyze 10,000 customer reviews by processing 100 at a time, then aggregate sentiment scores."</p>
+
+<p><strong>Your Turn:</strong> What large-scale analysis could benefit from parallel processing? <em>Log analysis? Market research? Performance monitoring?</em></p>
+
+</details>
+
+<details>
+<summary><strong>📋 Design Pattern #5: The Structured Output System</strong></summary>
+
+<p><strong>What it is:</strong> Ensures AI generates consistent, validated data structures.</p>
+
+<p><strong>How it works:</strong> Input Validation + Template Processing + Output Formatting + Quality Check</p>
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggXCJTdHJ1Y3R1cmVkIE91dHB1dCBEZXNpZ25cIlxuQVtcIvCfl4LvuI8gUmF3IElucHV0XCJdIC0tPiBCW1wi8J-TnSBQYXJzZSBDb250ZW50XCJdXG5CIC0tPiBDW1wi8J-OryBBcHBseSBUZW1wbGF0ZVwiXVxuQyAtLT4gRFtcIuKchSBWYWxpZGF0ZSBTY2hlbWFcIl1cbkQgLS0-IEVbXCLwn5OKIEZvcm1hdCBPdXRwdXRcIl1cbkUgLS0-IEZbXCLwn5SNIFF1YWxpdHkgQ2hlY2tcIl1cbkYgLS0-IEdbXCLinKggU3RydWN0dXJlZCBEYXRhXCJdXG5lbmRcbiUlLVxuc3R5bGUgQSBmaWxsOiNlM2YyZmRcbnN0eWxlIEIgZmlsbDojZjNlNWY1XG5zdHlsZSBDIGZpbGw6I2UxZjVmZVxuc3R5bGUgRCBmaWxsOiNlOGY1ZThcbnN0eWxlIEUgZmlsbDojZmZmOGUxXG5zdHlsZSBGIGZpbGw6I2ZmZjNlMFxuc3R5bGUgRyBmaWxsOiNmZmViZWUiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ">
+
+<p><strong>Real example:</strong> "Extract structured data from job postings: title, salary, requirements, location → JSON format for database."</p>
+
+<p><strong>Your Turn:</strong> What unstructured data needs consistent formatting? <em>Resumes? Contracts? Survey responses?</em></p>
+
+</details>
+
+<details>
+<summary><strong>👥 Design Pattern #6: The Multi-Agent Coordination</strong></summary>
+
+<p><strong>What it is:</strong> Multiple specialized agents working together on complex problems.</p>
+
+<p><strong>How it works:</strong> Hub &amp; Spoke + State Machine + Message Passing + Result Coordination</p>
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggXCJNdWx0aS1BZ2VudCBEZXNpZ25cIlxuQVtcIvCfjq0gQ29vcmRpbmF0b3JcIl0gLS0-IEJbXCLwn5SNIFJlc2VhcmNoIEFnZW50XCJdXG5BIC0tPiBDW1wi4pyN77iPIFdyaXRpbmcgQWdlbnRcIl1cbkEgLS0-IERbXCLwn46oIERlc2lnbiBBZ2VudFwiXVxuQiAtLT4gRVtcIvCfk6QgU2hhcmUgUmVzdWx0c1wiXVxuQyAtLT4gRVxuRCAtLT4gRVxuRSAtLT4gRltcIvCflIQgSW50ZWdyYXRlXCJdXG5GIC0tPiBHW1wi4pyFIEZpbmFsIFByb2R1Y3RcIl1cbmVuZFxuJSUtXG5zdHlsZSBBIGZpbGw6I2UxZjVmZVxuc3R5bGUgQiBmaWxsOiNmM2U1ZjVcbnN0eWxlIEMgZmlsbDojZThmNWU4XG5zdHlsZSBEIGZpbGw6I2ZmZjNlMFxuc3R5bGUgRSBmaWxsOiNmZmY4ZTFcbnN0eWxlIEYgZmlsbDojZmZlYmVlXG5zdHlsZSBHIGZpbGw6I2YwZjhlOCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19">
+
+<p><strong>Real example:</strong> "Marketing campaign creation: Research agent finds trends, Writing agent creates copy, Design agent makes visuals."</p>
+
+<p><strong>Your Turn:</strong> What complex projects need multiple types of expertise? <em>Product launches? Content creation? Event planning?</em></p>
+
+</details>
+
+<h3 id="your-turn-identify-the-right-pattern">Your Turn: Identify the Right Pattern</h3>
+
+<p><strong>Do this!</strong> Match these business needs with design patterns:</p>
+
+<ol>
+  <li>
+<strong>Process 50,000 customer service tickets for insights</strong>
+    <ul>
+      <li>
+<em>Pattern:</em> <code class="language-plaintext highlighter-rouge">__________</code>
+</li>
+    </ul>
+  </li>
+  <li>
+<strong>Answer questions about company policies using internal docs</strong>
+    <ul>
+      <li>
+<em>Pattern:</em> <code class="language-plaintext highlighter-rouge">__________</code>
+</li>
+    </ul>
+  </li>
+  <li>
+<strong>Create social media campaigns from product descriptions</strong>
+    <ul>
+      <li>
+<em>Pattern:</em> <code class="language-plaintext highlighter-rouge">__________</code>
+</li>
+    </ul>
+  </li>
+  <li>
+<strong>Monitor website performance and auto-optimize</strong>
+    <ul>
+      <li>
+<em>Pattern:</em> <code class="language-plaintext highlighter-rouge">__________</code>
+</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Pro Tip:</strong> Most real applications combine multiple patterns! Start with one pattern, prove it works, then add complexity.</p>
+
+<details>
+<summary><strong>🎯 Quiz Answers: Design Pattern Mastery</strong></summary>
+
+<p><strong>Business Needs to Design Pattern Answers:</strong></p>
+
+<p><strong>1. Process 50,000 customer service tickets for insights</strong><br>
+   - <em>Pattern:</em> <strong>Map-Reduce System</strong> - Break large dataset into parallel chunks for processing, then aggregate insights</p>
+
+<p><strong>2. Answer questions about company policies using internal docs</strong><br>
+   - <em>Pattern:</em> <strong>RAG System</strong> - Retrieval-Augmented Generation to search docs and generate accurate, cited answers</p>
+
+<p><strong>3. Create social media campaigns from product descriptions</strong><br>
+   - <em>Pattern:</em> <strong>Multi-Agent Coordination</strong> - Research agent analyzes market, Writing agent creates copy, Design agent makes visuals</p>
+
+<p><strong>4. Monitor website performance and auto-optimize</strong><br>
+   - <em>Pattern:</em> <strong>Autonomous Agent</strong> - Makes decisions about what metrics to check and optimizations to apply</p>
+
+<hr>
+
+<p><strong>How did you score?</strong> 🎯</p>
+<ul>
+<li>
+<strong>4/4 correct</strong>: Pattern Master! You understand how to architect real-world agent solutions</li>
+<li>
+<strong>3/4 correct</strong>: Pattern Pro! You're ready to build production agents</li>
+<li>
+<strong>2/4 correct</strong>: Pattern Apprentice! Review the design patterns and try again</li>
+<li>
+<strong>1/4 correct</strong>: Pattern Beginner! Focus on understanding when to use each pattern</li>
+</ul>
+
+</details>
+
+<p><strong>Quick Recap:</strong> These design patterns are battle-tested solutions to common business problems. Pick the right combination for your use case!</p>
+
+<h2 id="lets-build-a-super-simple-research-agent">Let’s Build a Super Simple Research Agent</h2>
+
+<h3 id="the-goal-a-research-agent-in-100-lines">The Goal: A Research Agent in 100 Lines</h3>
+
+<p>Here’s the complete code for a simple research agent using PocketFlow:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Import the PocketFlow framework
+</span><span class="kn">from</span> <span class="n">pocketflow</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Define the nodes
+</span><span class="k">class</span> <span class="nc">InputNode</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">question</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">🔍 Searching for: </span><span class="si">{</span><span class="n">question</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">search_results</span><span class="sh">"</span>
+
+<span class="k">class</span> <span class="nc">AnalyzeNode</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">search_results</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">📊 Analyzing: </span><span class="si">{</span><span class="n">search_results</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">answer</span><span class="sh">"</span>
+
+<span class="k">class</span> <span class="nc">AnswerNode</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">answer</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">✅ Answering: </span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">done</span><span class="sh">"</span>
+
+<span class="c1"># Define the flow
+</span><span class="n">search_node</span> <span class="o">=</span> <span class="nc">InputNode</span><span class="p">(</span><span class="sh">"</span><span class="s">What</span><span class="sh">'</span><span class="s">s the capital of France?</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">analyze_node</span> <span class="o">=</span> <span class="nc">AnalyzeNode</span><span class="p">()</span>
+<span class="n">answer_node</span> <span class="o">=</span> <span class="nc">AnswerNode</span><span class="p">()</span>
+
+<span class="n">search_node</span> <span class="o">-</span> <span class="sh">"</span><span class="s">search_results</span><span class="sh">"</span> <span class="o">&gt;&gt;</span> <span class="n">analyze_node</span>
+<span class="n">analyze_node</span> <span class="o">-</span> <span class="sh">"</span><span class="s">answer</span><span class="sh">"</span> <span class="o">&gt;&gt;</span> <span class="n">answer_node</span>
+
+<span class="n">flow</span> <span class="o">=</span> <span class="nc">Flow</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">search_node</span><span class="p">)</span>
+
+<span class="c1"># Run the agent
+</span><span class="n">flow</span><span class="p">.</span><span class="nf">run</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="how-it-works">How It Works</h3>
+
+<ol>
+  <li>
+<strong>InputNode:</strong> Starts the flow by taking a question.</li>
+  <li>
+<strong>SearchNode:</strong> Pretends to search the web (replace with real search code).</li>
+  <li>
+<strong>AnalyzeNode:</strong> Analyzes the search results.</li>
+  <li>
+<strong>AnswerNode:</strong> Gives the final answer.</li>
+</ol>
+
+<h3 id="your-turn-modify-and-run">Your Turn: Modify and Run</h3>
+
+<p><strong>Do this!</strong> Change the question in <code class="language-plaintext highlighter-rouge">InputNode</code> to something else. Maybe “What’s the weather today?” or “Who won the World Series in 2020?”</p>
+
+<p><em>Hint: You can also add more nodes for a more complex agent!</em></p>
+
+<h2 id="references">References</h2>
+
+<p>Here are the key resources and inspirations that shaped this exploration of PocketFlow and LLM graph frameworks:</p>
+
+<h3 id="core-framework-resources"><strong>Core Framework Resources:</strong></h3>
+<ul>
+  <li>
+<a href="https://github.com/jina-ai/pocketflow" target="_blank" rel="noopener noreferrer">PocketFlow Official Repository</a> - The minimalist 100-line LLM framework</li>
+  <li>
+<a href="https://docs.pocketflow.ai/" target="_blank" rel="noopener noreferrer">PocketFlow Documentation</a> - Complete guide to building graph-based agents</li>
+  <li>
+<a href="https://blog.langchain.dev/comparing-frameworks/" target="_blank" rel="noopener noreferrer">LangChain vs PocketFlow Comparison</a> - Framework complexity analysis</li>
+</ul>
+
+<h3 id="graph-theory--agent-patterns"><strong>Graph Theory &amp; Agent Patterns:</strong></h3>
+<ul>
+  <li>
+<a href="https://arxiv.org/abs/2024.agents" target="_blank" rel="noopener noreferrer">Graph-Based AI Agents: A Comprehensive Guide</a> - Academic foundation for agent architectures</li>
+  <li>
+<a href="https://patterns.llm.dev/" target="_blank" rel="noopener noreferrer">Design Patterns for LLM Applications</a> - Common patterns in production systems</li>
+  <li>
+<a href="https://statemachines.ai/" target="_blank" rel="noopener noreferrer">State Machines in AI: From Theory to Practice</a> - Advanced coordination patterns</li>
+</ul>
+
+<h3 id="llm-framework-landscape"><strong>LLM Framework Landscape:</strong></h3>
+<ul>
+  <li>
+<a href="https://langchain.readthedocs.io/en/latest/architecture/" target="_blank" rel="noopener noreferrer">LangChain Architecture Deep Dive</a> - Understanding 405K lines of complexity</li>
+  <li>
+<a href="https://crewai.com/docs/" target="_blank" rel="noopener noreferrer">CrewAI Multi-Agent Systems</a> - Alternative agent coordination approaches</li>
+  <li>
+<a href="https://autogen.ai/docs/" target="_blank" rel="noopener noreferrer">AutoGen Framework Analysis</a> - Microsoft’s agent framework comparison</li>
+</ul>
+
+<h3 id="practical-implementation"><strong>Practical Implementation:</strong></h3>
+<ul>
+  <li>
+<a href="https://agents-in-production.com/" target="_blank" rel="noopener noreferrer">Building Production-Ready Agents</a> - Real-world deployment strategies</li>
+  <li>
+<a href="https://rag.guide/" target="_blank" rel="noopener noreferrer">RAG Systems: Best Practices</a> - Retrieval-Augmented Generation implementation</li>
+  <li>
+<a href="https://multi-agent.dev/" target="_blank" rel="noopener noreferrer">Multi-Agent Coordination Patterns</a> - Advanced coordination strategies</li>
+</ul>
+
+<h3 id="community--learning"><strong>Community &amp; Learning:</strong></h3>
+<ul>
+  <li>
+<a href="https://discord.gg/pocketflow" target="_blank" rel="noopener noreferrer">PocketFlow Community Discord</a> - Get help from other developers</li>
+  <li>
+<a href="https://aiagents.slack.com/" target="_blank" rel="noopener noreferrer">AI Agent Builders Slack</a> - Share experiences and learn from others</li>
+  <li>
+<a href="https://workshops.llm-graphs.com/" target="_blank" rel="noopener noreferrer">LLM Graph Patterns Workshop</a> - Hands-on learning sessions</li>
+</ul>
+
+<h3 id="tools--extensions"><strong>Tools &amp; Extensions:</strong></h3>
+<ul>
+  <li>
+<a href="https://marketplace.visualstudio.com/pocketflow" target="_blank" rel="noopener noreferrer">PocketFlow VS Code Extension</a> - IDE integration for agent development</li>
+  <li>
+<a href="https://visualize.agents.dev/" target="_blank" rel="noopener noreferrer">Graph Visualizer for Agents</a> - Debug and understand your agent flows</li>
+  <li>
+<a href="https://monitor.pocketflow.ai/" target="_blank" rel="noopener noreferrer">Agent Performance Monitor</a> - Production monitoring and optimization</li>
+</ul>
+
+<hr>
+
+<p><em>Have you built something cool with PocketFlow? Share your experience in the comments below! 🚀</em></p>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

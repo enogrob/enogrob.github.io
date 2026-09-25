@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Ride the Tide with Tidewave: Runtime Intelligence for Rails and Phoenix | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="Ride the Tide with Tidewave: Runtime Intelligence for Rails and Phoenix">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Software/Telecommunications Engineer">
+<meta property="og:description" content="Software/Telecommunications Engineer">
+<link rel="canonical" href="https://enogrob.github.io/ruby/phoenix/2025/05/08/ride-the-tide-with-tidewave.html">
+<meta property="og:url" content="https://enogrob.github.io/ruby/phoenix/2025/05/08/ride-the-tide-with-tidewave.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/tidewave-runtime-intelligence/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-05-08T19:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/tidewave-runtime-intelligence/cover.webp">
+<meta property="twitter:title" content="Ride the Tide with Tidewave: Runtime Intelligence for Rails and Phoenix">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-05-08T19:00:00+00:00","datePublished":"2025-05-08T19:00:00+00:00","description":"Software/Telecommunications Engineer","headline":"Ride the Tide with Tidewave: Runtime Intelligence for Rails and Phoenix","image":"https://enogrob.github.io/assets/images/posts/tidewave-runtime-intelligence/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/ruby/phoenix/2025/05/08/ride-the-tide-with-tidewave.html"},"url":"https://enogrob.github.io/ruby/phoenix/2025/05/08/ride-the-tide-with-tidewave.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2025-05-08-ride-the-tide-with-tidewave.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/ruby/phoenix/2025/05/08/ride-the-tide-with-tidewave.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/ruby/phoenix/2025/05/08/ride-the-tide-with-tidewave.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/tidewave-runtime-intelligence/cover.webp" alt="Meet the Tidewave AI Assistant" style="width:100%;height:auto;"></p>
+
+<p>Imagine coding with an AI that doesn’t just read your code but understands your entire application as it runs. That’s the promise of Tidewave, the latest innovation from José Valim and the team at Dashbit.</p>
+
+<p>Tidewave introduces “Runtime Intelligence,” bridging the gap between static code analysis and dynamic application behavior. By embedding a Model Context Protocol (MCP) server into your web application, Tidewave enables AI assistants to interact with your app’s live state. This means AI tools can now:</p>
+
+<ul>
+  <li>Inspect and query your database directly.</li>
+  <li>Access and analyze real-time logs and traces.</li>
+  <li>Evaluate code within the actual running context of your app.</li>
+  <li>Retrieve and utilize your application’s documentation and dependencies.</li>
+</ul>
+
+<p>Currently supporting Phoenix and Ruby on Rails, Tidewave is open source and integrates seamlessly with AI tools like Claude, Cursor, VS Code (Copilot), Windsurf, and Zed.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggUGxhdGZvcm1bXCLwn4yQIExpdmUgQXBwbGljYXRpb25cIl1cbkFbXCLwn6exIFdlYiBBcHBsaWNhdGlvblxcblBob2VuaXggLyBSYWlsc1wiXVxuZW5kXG4lJS1cbnN1YmdyYXBoIEJyaWRnZVtcIvCfjIkgUnVudGltZSBCcmlkZ2VcIl1cbkJbXCLwn5SMIE1DUCBTZXJ2ZXJcIl1cbmVuZFxuJSUtXG5zdWJncmFwaCBJbnRlbGxpZ2VuY2VbXCLwn6egIEFJIENvbGxhYm9yYXRpb25cIl1cbkNbXCLinKggQUkgQXNzaXN0YW50XFxuQ2xhdWRlIC8gQ3Vyc29yIC8gVlMgQ29kZVwiXVxuZW5kXG4lJS1cbnN1YmdyYXBoIENvbnRleHRbXCLwn5OaIFJ1bnRpbWUgQ29udGV4dFwiXVxuRFtcIvCfl4TvuI8gRGF0YWJhc2VcIl1cbkVbXCLwn5OIIExvZ3MgLyBUcmFjZXNcIl1cbkZbXCLwn5OWIERvY3VtZW50YXRpb25cIl1cbkdbXCLwn6epIERlcGVuZGVuY2llc1wiXVxuZW5kXG4lJS1cbkEgLS0-fGxpdmUgZGF0YXwgQlxuQiAtLT58cnVudGltZSBjb250ZXh0fCBDXG5EIC0tPnxkYXRhYmFzZSBxdWVyeXwgQlxuRSAtLT58bG9nIGFuYWx5c2lzfCBCXG5GIC0tPnxkb2N1bWVudCByZXRyaWV2YWx8IEJcbkcgLS0-fGRlcGVuZGVuY3kgaW5mb3wgQlxuQyAtLT58cXVlcnkgcnVudGltZSBzdGF0ZXwgQlxuQyAtLT58ZXZhbHVhdGUgY29kZXwgQlxuQyAtLT58c3VnZ2VzdCBjb2RlIGZpeGVzfCBCXG5DIC0tPnxjb2RlIGNoYW5nZSBzdWdnZXN0aW9uc3wgQVxuQyAtLT58ZXJyb3IgZml4IHByb3Bvc2Fsc3wgQVxuJSUtXG5jbGFzc0RlZiBwbGF0Zm9ybSBmaWxsOiNlM2YyZmQsc3Ryb2tlOiM1YjliZDUsY29sb3I6IzE2MzI0ZixzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiBicmlkZ2UgZmlsbDojZmZmMWQ2LHN0cm9rZTojZDM5YjQ1LGNvbG9yOiM1YjNkMGIsc3Ryb2tlLXdpZHRoOjFweFxuY2xhc3NEZWYgaW50ZWxsaWdlbmNlIGZpbGw6I2U0ZjVlYyxzdHJva2U6IzY4YTc3ZCxjb2xvcjojMjA0YjJkLHN0cm9rZS13aWR0aDoxcHhcbmNsYXNzRGVmIGNvbnRleHQgZmlsbDojZmJlNWU3LHN0cm9rZTojY2Y3ZDg2LGNvbG9yOiM1YjI1MmIsc3Ryb2tlLXdpZHRoOjFweFxuY2xhc3MgQSBwbGF0Zm9ybVxuY2xhc3MgQiBicmlkZ2VcbmNsYXNzIEMgaW50ZWxsaWdlbmNlXG5jbGFzcyBELEUsRixHIGNvbnRleHQiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ"></p>
+
+<h3 id="a-glimpse-into-the-future-ai-powered-development">A Glimpse into the Future: AI-Powered Development</h3>
+
+<p>In a recent demonstration, José Valim showcased Tidewave’s capabilities by guiding Claude Desktop to implement a pricing plan component in a Phoenix application. The AI assistant was able to:</p>
+
+<ul>
+  <li>Identify the relevant live view page.</li>
+  <li>Modify the appropriate files with contextual awareness.</li>
+  <li>Compile the project, detect errors, and apply fixes autonomously.</li>
+</ul>
+
+<p>This level of integration signifies a shift towards more intelligent and context-aware development tools.</p>
+
+<h3 id="join-the-tidewave-movement">Join the Tidewave Movement</h3>
+
+<p>Tidewave is more than just a tool; it’s a step towards a future where AI and developers collaborate more closely. By providing AI assistants with a deeper understanding of your application’s runtime, Tidewave enhances productivity and opens new possibilities in software development.</p>
+
+<p>To learn more or get involved, visit <a href="https://tidewave.ai" target="_blank" rel="noopener noreferrer">tidewave.ai</a> and explore the repositories for Phoenix and Rails on GitHub:</p>
+<ul>
+  <li><a href="https://github.com/tidewave-ai/tidewave_phoenix" target="_blank" rel="noopener noreferrer">Tidewave Phoenix</a></li>
+  <li><a href="https://github.com/tidewave-ai/tidewave_rails" target="_blank" rel="noopener noreferrer">Tidewave Rails</a></li>
+</ul>
+
+<h3 id="references">References</h3>
+
+<ul>
+  <li><a href="https://tidewave.ai" target="_blank" rel="noopener noreferrer">Tidewave Official Website</a></li>
+  <li><a href="https://x.com/josevalim/status/1917296901268910405" target="_blank" rel="noopener noreferrer">José Valim’s Announcement on X</a></li>
+  <li><a href="https://elixirforum.com/t/tidewave-has-just-been-announced-by-jose-valim/70674" target="_blank" rel="noopener noreferrer">Elixir Forum Discussion on Tidewave</a></li>
+  <li><a href="https://dev.to/adolfont/tidewave-connecting-web-apps-to-ai-powered-development-248h" target="_blank" rel="noopener noreferrer">DEV Community Article on Tidewave</a></li>
+</ul>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

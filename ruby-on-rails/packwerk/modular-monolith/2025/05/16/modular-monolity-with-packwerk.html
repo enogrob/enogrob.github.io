@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Building a Modular Ruby on Rails Application | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="Building a Modular Ruby on Rails Application">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Software/Telecommunications Engineer">
+<meta property="og:description" content="Software/Telecommunications Engineer">
+<link rel="canonical" href="https://enogrob.github.io/ruby-on-rails/packwerk/modular-monolith/2025/05/16/modular-monolity-with-packwerk.html">
+<meta property="og:url" content="https://enogrob.github.io/ruby-on-rails/packwerk/modular-monolith/2025/05/16/modular-monolity-with-packwerk.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/modular-rails-with-packwerk/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-05-16T11:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/modular-rails-with-packwerk/cover.webp">
+<meta property="twitter:title" content="Building a Modular Ruby on Rails Application">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-05-16T11:00:00+00:00","datePublished":"2025-05-16T11:00:00+00:00","description":"Software/Telecommunications Engineer","headline":"Building a Modular Ruby on Rails Application","image":"https://enogrob.github.io/assets/images/posts/modular-rails-with-packwerk/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/ruby-on-rails/packwerk/modular-monolith/2025/05/16/modular-monolity-with-packwerk.html"},"url":"https://enogrob.github.io/ruby-on-rails/packwerk/modular-monolith/2025/05/16/modular-monolity-with-packwerk.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2025-05-16-modular-monolity-with-packwerk.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/ruby-on-rails/packwerk/modular-monolith/2025/05/16/modular-monolity-with-packwerk.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/ruby-on-rails/packwerk/modular-monolith/2025/05/16/modular-monolity-with-packwerk.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/modular-rails-with-packwerk/cover.webp" alt="Building a Modular Ruby on Rails Application - Stephan Hagemann" style="width:100%;height:auto;"></p>
+
+<p>Imagine you’re building a massive Lego castle. At first, it’s just a few basic walls—easy to manage, right? But as you add towers, drawbridges, and intricate little windows, things start to get a bit… chaotic. You realize that if you don’t plan and structure it carefully, your castle could collapse or take ages to fix if one piece breaks. Welcome to the world of modularizing Ruby on Rails applications!</p>
+
+<h3 id="the-problem-one-big-unstable-block"><strong>The Problem: One Big Unstable Block</strong></h3>
+
+<p>Rails apps can quickly turn into sprawling monoliths—one big structure that’s hard to maintain and prone to collapse if a single component fails. Just like a Lego structure without proper support, your app might work today but fall apart tomorrow.</p>
+
+<h3 id="the-solution-building-with-lego-bricks"><strong>The Solution: Building with Lego Bricks</strong></h3>
+
+<p>Modularization is like swapping your monolithic castle for a modular Lego set. Each part—towers, gates, walls—is its own module, designed independently but fitting neatly into the larger whole. This way, if your drawbridge breaks, you can replace just that section without touching the entire castle.</p>
+
+<h3 id="packwerk-the-lego-brick-separator"><strong>Packwerk: The Lego Brick Separator</strong></h3>
+
+<p>Just as a Lego brick separator helps you split pieces without breaking the whole build, Packwerk helps divide your Rails app into manageable packages. It enforces boundaries, ensuring your bricks (modules) don’t get stuck together in unmanageable ways.</p>
+
+<h3 id="strategies-for-modularization"><strong>Strategies for Modularization</strong></h3>
+
+<ol>
+  <li>
+<strong>Start Small:</strong> Don’t demolish the whole castle! Begin by identifying the most unstable parts and isolating them first. In Rails, that means creating packages for your core components.</li>
+  <li>
+<strong>Functional Isolation over Domain Isolation:</strong> Instead of making every tower its own piece, group related functionalities together—like all the windows in a single package.</li>
+  <li>
+<strong>Gradual Build:</strong> Gradual modularization means adding one module at a time, ensuring each integrates well before moving on.</li>
+  <li>
+<strong>Avoid Premature Optimization:</strong> Don’t start modularizing before your castle even has a base—it’s about improving stability, not adding unnecessary complexity.</li>
+</ol>
+
+<h3 id="troubleshooting-when-your-bricks-dont-fit"><strong>Troubleshooting: When Your Bricks Don’t Fit</strong></h3>
+
+<p>Sometimes packages conflict—like trying to connect a round tower to a square base. The book covers this with strategies like:</p>
+
+<ul>
+  <li>Merging packages when dependencies overlap.</li>
+  <li>Splitting problematic packages into smaller, more manageable ones.</li>
+  <li>Injecting dependencies instead of hardwiring them.</li>
+</ul>
+
+<h3 id="the-result-a-stable-flexible-structure"><strong>The Result: A Stable, Flexible Structure</strong></h3>
+
+<p>When done right, modularization in Rails creates a resilient system where parts can be swapped or updated independently. Like a well-built Lego castle, it’s durable, flexible, and—best of all—manageable!</p>
+
+<h3 id="visualization-modularization-process"><strong>Visualization: Modularization Process</strong></h3>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1widGhlbWVcIjogXCJiYXNlXCIsIFwibG9va1wiOiBcImhhbmREcmF3blwiLCBcInRoZW1lVmFyaWFibGVzXCI6IHtcImZvbnRGYW1pbHlcIjogXCJ1aS1zYW5zLXNlcmlmLCBzeXN0ZW0tdWksIHNhbnMtc2VyaWZcIiwgXCJsaW5lQ29sb3JcIjogXCIjN2M4Nzk4XCIsIFwicHJpbWFyeVRleHRDb2xvclwiOiBcIiMyNjMyMzhcIn0sIFwiZmxvd2NoYXJ0XCI6IHtcIm5vZGVTcGFjaW5nXCI6IDU1LCBcInJhbmtTcGFjaW5nXCI6IDkwfX19JSVcbmZsb3djaGFydCBMUlxuc3ViZ3JhcGggSW5pdGlhbGl6YXRpb25bXCLwn6etIEluaXRpYWxpemF0aW9uXCJdXG5BW1wi8J-agCBTdGFydCBNb2R1bGFyaXphdGlvblwiXSAtLT4gQltcIvCflI4gSWRlbnRpZnkgQ29tcG9uZW50cyAmIERlcGVuZGVuY2llc1wiXVxuZW5kXG4lJS1cbnN1YmdyYXBoIFBhY2thZ2luZ1tcIvCfk6YgUGFja2FnaW5nXCJdXG5CIC0tPiBDW1wi8J-nsSBEZWZpbmUgJiBFbmZvcmNlIFBhY2thZ2VzXCJdXG5lbmRcbiUlLVxuc3ViZ3JhcGggUmVmYWN0b3JpbmdbXCLwn5SnIFJlZmFjdG9yaW5nXCJdXG5DIC0tPiBEW1wi8J-boO-4jyBNb25pdG9yICYgUmVmYWN0b3JcIl1cbmVuZFxuJSUtXG5zdWJncmFwaCBEZXBsb3ltZW50W1wi4pyFIERlcGxveW1lbnRcIl1cbkQgLS0-IEVbXCLwn6eqIFRlc3QgJiBEZXBsb3lcIl1cbmVuZFxuJSUtXG5zdWJncmFwaCBJbXByb3ZlbWVudFtcIvCflIEgQ29udGludW91cyBJbXByb3ZlbWVudFwiXVxuRSAtLT4gRltcIvCfk4ggQW5hbHl6ZSAmIEl0ZXJhdGVcIl1cbkYgLS0-IEJcbmVuZFxuJSUtXG5jbGFzc0RlZiBpbml0aWFsaXphdGlvbiBmaWxsOiNlM2YyZmQsc3Ryb2tlOiM1YjliZDUsY29sb3I6IzE2MzI0ZixzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiBwYWNrYWdpbmcgZmlsbDojZmZmMWQ2LHN0cm9rZTojZDM5YjQ1LGNvbG9yOiM1YjNkMGIsc3Ryb2tlLXdpZHRoOjFweFxuY2xhc3NEZWYgcmVmYWN0b3JpbmcgZmlsbDojZmJlNWU3LHN0cm9rZTojY2Y3ZDg2LGNvbG9yOiM1YjI1MmIsc3Ryb2tlLXdpZHRoOjFweFxuY2xhc3NEZWYgZGVwbG95bWVudCBmaWxsOiNlNGY1ZWMsc3Ryb2tlOiM2OGE3N2QsY29sb3I6IzIwNGIyZCxzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiBpbXByb3ZlbWVudCBmaWxsOiNlZWU4ZmEsc3Ryb2tlOiM4Yjc4YjgsY29sb3I6IzMzMjM0OCxzdHJva2Utd2lkdGg6MXB4XG5jbGFzcyBBLEIgaW5pdGlhbGl6YXRpb25cbmNsYXNzIEMgcGFja2FnaW5nXG5jbGFzcyBEIHJlZmFjdG9yaW5nXG5jbGFzcyBFIGRlcGxveW1lbnRcbmNsYXNzIEYgaW1wcm92ZW1lbnQiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ"></p>
+
+<h3 id="key-steps">Key Steps:</h3>
+
+<ol>
+  <li>
+<strong>Initialization:</strong> Start the modularization process and identify components and dependencies.</li>
+  <li>
+<strong>Packaging:</strong> Define modular packages and enforce boundaries.</li>
+  <li>
+<strong>Refactoring:</strong> Continuously monitor the modular structure and refactor as needed.</li>
+  <li>
+<strong>Deployment:</strong> Test the modular application and proceed with deployment.</li>
+  <li>
+<strong>Continuous Improvement:</strong> Analyze the modular setup and make iterative improvements, looping back to component identification.</li>
+</ol>
+
+<h3 id="final-thoughts"><strong>Final Thoughts</strong></h3>
+
+<p>Just as building a giant Lego castle requires careful planning and structure, modularizing a Rails app means thinking about stability, flexibility, and future-proofing. Use tools like Packwerk to ensure your bricks stay in place—and enjoy your well-organized, robust castle!</p>
+
+<blockquote>
+  <p><strong>Quick Heads-Up:</strong>Most of these brain-friendly building tips come straight from the awesome book <em><a href="https://leanpub.com/package-based-rails-applications" target="_blank" rel="noopener noreferrer">“Gradual Modularization for Ruby and Rails.”</a></em> by Stephan Hagemann. If you love stories, sketches, and learning by doing (Lego style!), check it out—it’s the instruction manual to keep handy as you build.</p>
+</blockquote>
+
+<p>Keep stacking, keep playing—and celebrate every brick that fits!</p>
+
+<p><img src="/assets/images/packwerk-ebook-cover.png" alt="Gradual Modularization for Ruby and Rails - Stephan Hagemann"></p>
+
+<h3 id="references"><strong>References</strong></h3>
+
+<ul>
+  <li>Hagemann, S. (2025). <a href="https://leanpub.com/package-based-rails-applications" target="_blank" rel="noopener noreferrer">Gradual Modularization for Ruby and Rails. Leanpub.</a>
+</li>
+  <li>Packwerk. (2020). Retrieved from <a href="https://github.com/Shopify/packwerk" target="_blank" rel="noopener noreferrer">https://github.com/Shopify/packwerk</a>
+</li>
+  <li>Evanczuk, Evan (2022). <a href="https://www.youtube.com/watch?v=J9S0qiGkAQY" target="_blank" rel="noopener noreferrer">Laying the Cultural and Technical Foundation for Big Rails</a>
+</li>
+</ul>
+
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

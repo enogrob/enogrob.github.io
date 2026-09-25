@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>When Ruby Made the Industry Rethink Programming | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="When Ruby Made the Industry Rethink Programming">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="A historical look at Ruby’s 2000s excitement: why its language design mattered, what the Symbian, IronRuby, and 3rdRail experiments meant, and which Rails ideas endured.">
+<meta property="og:description" content="A historical look at Ruby’s 2000s excitement: why its language design mattered, what the Symbian, IronRuby, and 3rdRail experiments meant, and which Rails ideas endured.">
+<link rel="canonical" href="https://enogrob.github.io/ruby/rails/software-history/2026/09/23/when-ruby-made-the-industry-rethink-programming.html">
+<meta property="og:url" content="https://enogrob.github.io/ruby/rails/software-history/2026/09/23/when-ruby-made-the-industry-rethink-programming.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/when-ruby-made-the-industry-rethink-programming/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-09-23T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/when-ruby-made-the-industry-rethink-programming/cover.webp">
+<meta property="twitter:title" content="When Ruby Made the Industry Rethink Programming">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-23T00:00:00+00:00","datePublished":"2026-09-23T00:00:00+00:00","description":"A historical look at Ruby’s 2000s excitement: why its language design mattered, what the Symbian, IronRuby, and 3rdRail experiments meant, and which Rails ideas endured.","headline":"When Ruby Made the Industry Rethink Programming","image":"https://enogrob.github.io/assets/images/posts/when-ruby-made-the-industry-rethink-programming/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/ruby/rails/software-history/2026/09/23/when-ruby-made-the-industry-rethink-programming.html"},"url":"https://enogrob.github.io/ruby/rails/software-history/2026/09/23/when-ruby-made-the-industry-rethink-programming.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2026-09-23-when-ruby-made-the-industry-rethink-programming.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/ruby/rails/software-history/2026/09/23/when-ruby-made-the-industry-rethink-programming.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/ruby/rails/software-history/2026/09/23/when-ruby-made-the-industry-rethink-programming.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/when-ruby-made-the-industry-rethink-programming/cover.webp" alt="Illustrated Yukihiro Matsumoto integrated into a crimson Ruby flow: Symbian, 3rdRail, and IronRuby fade into particles while a Rails application remains" style="width:100%;height:auto;"></p>
+
+<h1 id="when-ruby-made-the-industry-rethink-programming">When Ruby Made the Industry Rethink Programming</h1>
+
+<p><em>Symbian, IronRuby, 3rdRail, and the lasting ideas behind the 2000s Ruby wave</em></p>
+
+<p>In 2006, Ruby felt like more than a new language to learn. In a web industry accustomed to substantial framework configuration, long feedback loops, and elaborate tooling, it offered a startling proposition: software could be built in a language designed around the programmer’s experience. My <a href="https://holoflux.wordpress.com/2006/08/24/ruby-result-of-a-japanese-guy-that-just-wanted-to-be-happy-programming-and-made-a-revolution/" target="_blank" rel="noopener noreferrer">August 2006 HoloFlux post</a> catches that atmosphere in its title: a Japanese programmer wanted to be happy programming and ended up starting a revolution. Reading it twenty years later also reveals what I thought the revolution was for: room for human intelligence and creativity in the act of building software.</p>
+
+<p>The excitement spilled beyond Rails. People attempted to bring Ruby to Symbian phones. CodeGear shipped an IDE built expressly for Rails. Microsoft developed IronRuby for .NET. Companies asked how this way of building web applications would fit their existing systems. Each initiative had a different fate. Together, they capture the scale of the expectation: Ruby seemed capable of changing how software was written across platforms.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#why-ruby-felt-different">Why Ruby felt different</a></li>
+  <li><a href="#rails-made-the-language-visible">Rails made the language visible</a></li>
+  <li><a href="#a-language-travels-phones-ides-and-net">A language travels: phones, IDEs, and .NET</a></li>
+  <li><a href="#the-enterprise-question">The enterprise question</a></li>
+  <li><a href="#what-actually-endured">What actually endured</a></li>
+  <li><a href="#from-rubys-happiness-to-ai-delegation">From Ruby’s happiness to AI delegation</a></li>
+  <li><a href="#the-question-for-today">The question for today</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+<h2 id="why-ruby-felt-different">Why Ruby felt different</h2>
+
+<p>Consider <code class="language-plaintext highlighter-rouge">3.times { puts "hello" }</code>. The literal <code class="language-plaintext highlighter-rouge">3</code> evaluates to an object; <code class="language-plaintext highlighter-rouge">times</code> is its method; the block supplies behavior to the call. Strings, arrays, booleans, and <code class="language-plaintext highlighter-rouge">nil</code> are objects too. Classes are objects, and methods can be defined at runtime. Ruby let ordinary code express an idea with little machinery around it. Its object model, blocks, open classes, and reflection gave library authors fluid tools for shaping APIs. The official <a href="https://www.ruby-lang.org/en/about/" target="_blank" rel="noopener noreferrer">Ruby introduction</a> describes its object oriented design and Matz’s attention to the human side of programming.</p>
+
+<p>Ruby did not invent object orientation, dynamic typing, or metaprogramming. Its contribution lay in a particular composition of them: approachable syntax and powerful runtime behavior available in everyday application code. This mattered to developers working with verbose class definitions, repetitive accessors, framework wiring, and large configuration files. How much of that ceremony had become a habit rather than a necessity?</p>
+
+<p>The old post invited readers to open <code class="language-plaintext highlighter-rouge">irb</code> and discover this for themselves. A method can return its last evaluated expression without an explicit <code class="language-plaintext highlighter-rouge">return</code>; blocks and iterators let a caller supply behavior; duck typing lets an API care about what an object can do. These choices make a small experiment feel like a conversation with the language. The <a href="https://www.ruby-lang.org/en/documentation/quickstart/" target="_blank" rel="noopener noreferrer">Ruby quickstart</a> still starts in the interactive shell, and the <a href="https://docs.ruby-lang.org/en/4.0/syntax/methods_rdoc.html" target="_blank" rel="noopener noreferrer">method syntax reference</a> documents the implicit return. My claim then was not a benchmark result: it was that readable code could increase enjoyment, and enjoyment could sustain motivation and productivity.</p>
+
+<p>The contemporary debate around static languages and IDEs was real, but it was never a proof that types or editors were mistakes. It was a challenge to workflows in which navigating tools and declaring configuration seemed to consume more energy than expressing the problem. That distinction matters because Ruby’s history also includes people trying to build <em>better</em> tools for Ruby. CodeGear’s contemporary pitch for 3rdRail even promised to <a href="https://blog.marcocantu.com/blog/milan_codegear_3rdrails_delphi.html" target="_blank" rel="noopener noreferrer">combine the command line and IDE</a>.</p>
+
+<h2 id="rails-made-the-language-visible">Rails made the language visible</h2>
+
+<p>Rails supplied the demonstration. A model could look like this:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="n">belongs_to</span> <span class="ss">:author</span>
+  <span class="n">validates</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">presence: </span><span class="kp">true</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">belongs_to</code> and <code class="language-plaintext highlighter-rouge">validates</code> read as domain declarations. They are method calls inside a class definition; Rails records their meaning and supplies the association and validation behavior. A model can receive attribute methods based on its database schema, while naming conventions link a class to a table. This is the practical meeting point of dynamic language features and framework design. Routing and migrations offered similar moments: describe the intent in Ruby and let the framework do the routine wiring. The language made these APIs possible; the framework made them visible.</p>
+
+<p>The <a href="https://guides.rubyonrails.org/getting_started.html" target="_blank" rel="noopener noreferrer">Rails Guides</a> still identify DRY and convention over configuration as central principles. Their <a href="https://guides.rubyonrails.org/active_record_basics.html" target="_blank" rel="noopener noreferrer">Active Record guide</a> shows how naming and schema conventions reduce mapping code. Rails did not originate every underlying technique: its achievement was combining them into a coherent way to build web applications. Its design gave developers a concrete reason to question how much setup a framework should demand.</p>
+
+<p>My 2006 comparison with code generation points to a useful distinction: Rails could generate a starting scaffold, but the lasting productivity gain came from conventions that kept working after the generated files were edited. A model and table can follow predictable names, while application code stays open to customization. Rails <a href="https://guides.rubyonrails.org/command_line.html" target="_blank" rel="noopener noreferrer">does generate scaffold code</a>, so the old phrasing that it did not really generate code was too absolute. The stronger point is that scaffolding was an entry point, not a promise to manufacture a finished product.</p>
+
+<p><img src="/assets/images/posts/when-ruby-made-the-industry-rethink-programming/ruby-becomes-rails.webp" alt="From Ruby to Rails: objects and blocks become conventions, associations, validations, data, and routes" style="width:100%;height:auto;"></p>
+
+<p><em>Ruby’s expressive objects and blocks become Rails declarations, while conventions connect application code to data and behavior.</em></p>
+
+<h2 id="a-language-travels-phones-ides-and-net">A language travels: phones, IDEs, and .NET</h2>
+
+<p>The era’s experiments show both the reach and the limits of the excitement.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Experiment</th>
+      <th>What was real</th>
+      <th>What it signaled</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ruby on Symbian</strong></td>
+      <td>A <a href="https://sourceforge.net/projects/ruby4s/">Ruby for Symbian OS project</a> offered a port; an <a href="https://www.thecodingforums.com/threads/ann-ruby-for-symbian-preview-release.833270/">early preview announcement</a> described substantial limitations.</td>
+      <td>Developers imagined Ruby outside the server, even on constrained phones. This was an experiment, not evidence of mass mobile adoption.</td>
+    </tr>
+    <tr>
+      <td><strong>CodeGear 3rdRail</strong></td>
+      <td>CodeGear released a <a href="https://visualstudiomagazine.com/articles/2007/09/18/codegear-touches-3rdrail-with-new-ide.aspx">Rails IDE in September 2007</a>; a <a href="https://blog.marcocantu.com/blog/milan_codegear_3rdrails_delphi.html">contemporary developer account</a> describes its introduction.</td>
+      <td>An established tools vendor saw Rails as a market worth serving. The IDE challenged the idea that Ruby’s rise meant the end of IDEs.</td>
+    </tr>
+    <tr>
+      <td><strong>Microsoft IronRuby</strong></td>
+      <td>Microsoft explored Ruby on the .NET runtime through the Dynamic Language Runtime; <a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/net-interop-getting-started-with-ironruby-and-rspec-part-1">Microsoft’s 2009 account</a> explains the implementation and .NET interoperability.</td>
+      <td>Dynamic language design had become relevant even inside an ecosystem identified with statically typed languages. It did not mean that .NET switched to Ruby.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These stories should be read as evidence of attention and experimentation. A preview, a commercial IDE, and a runtime implementation are not the same kind of success. The historical signal is that phone developers, tooling companies, and Microsoft each believed Ruby was important enough to investigate on their own terrain.</p>
+
+<h2 id="the-enterprise-question">The enterprise question</h2>
+
+<p>The next test was whether Ruby’s speed of expression could coexist with integration, operations, and organizational scale. JRuby offered one route into Java infrastructure: a <a href="https://blog.jruby.org/2011/09/bringing-jruby-to-the-cloud" target="_blank" rel="noopener noreferrer">JRuby maintainer’s account</a> recalls the team’s move to Sun Microsystems and the run up to JRuby 1.0 at JavaOne 2007. The same retrospective names Oracle and ThoughtWorks as early production users, while acknowledging that JRuby 1.0 was slow and not yet fully compatible. In the Rails community, a <a href="https://discuss.rubyonrails.org/t/enterprise-and-legacy-database-support/13171" target="_blank" rel="noopener noreferrer">2007 discussion on legacy databases</a> shows how concrete the enterprise questions had become.</p>
+
+<div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:1.25rem;margin:1.75rem 0;">
+  <figure style="flex:0 0 150px;max-width:150px;margin:0;">
+    <img src="/assets/images/posts/when-ruby-made-the-industry-rethink-programming/linux-journal-july-2006.webp" alt="July 2006 Linux Journal cover: Ruby Everywhere, Including Rails; David Heinemeier Hansson; Ruby, the Enterprise Guide" width="393" height="508" loading="lazy" style="display:block;width:100%;height:auto;">
+    <figcaption style="font-size:0.78em;line-height:1.35;margin-top:0.4rem;"><a href="https://www.linuxjournal.com/article/900147" target="_blank" rel="noopener noreferrer"><em>Linux Journal</em>, issue 147 (July 2006)</a>. Cover © <em>Linux Journal</em>.</figcaption>
+  </figure>
+  <div style="flex:1 1 240px;min-width:0;">
+    <p style="margin-top:0;">The cover puts Rails creator David Heinemeier Hansson beside the promise of “Ruby, the Enterprise Guide.” It captures a moment when Ruby's appeal was moving beyond developer conversations into mainstream technical publishing.</p>
+    <p>Adoption also moved from predictions to running products. Shopify says its core Rails monolith has been under continuous development <a href="https://shopify.engineering/shopify-monolith" target="_blank" rel="noopener noreferrer">since at least 2006</a>. <a href="https://github.blog/engineering/building-github-with-ruby-and-rails/" target="_blank" rel="noopener noreferrer">GitHub says</a> GitHub.com has been a Rails monolith from the beginning. These are later accounts of long lived production systems, not a claim that every enterprise chose Rails. The difference between early possibility and sustained operation is where the most useful history lies.</p>
+  </div>
+</div>
+
+<h2 id="what-actually-endured">What actually endured</h2>
+
+<p>Some of the period’s bets were temporary. Symbian did not become Ruby’s mobile home; IronRuby did not become the default language of .NET; 3rdRail did not settle how Ruby developers should work. Their importance is historical: they reveal how far the excitement traveled and how seriously different parts of the industry took it. The surprising image is 3rdRail: a language associated with escaping heavy tooling became important enough for an established vendor to build a dedicated IDE around it.</p>
+
+<p><img src="/assets/images/posts/when-ruby-made-the-industry-rethink-programming/legacy-beyond-the-hype.webp" alt="What actually endured: Symbian, 3rdRail, and IronRuby fade at left, while Ruby flows into Rails, JRuby on the JVM, and expressive APIs at right" style="width:100%;height:auto;"></p>
+
+<p><em>The period’s shorter-lived experiments fade. Rails, JRuby on the JVM, and expressive Ruby APIs represent different kinds of continuing work.</em></p>
+
+<p>The enduring achievement is more concrete than the survival of those experiments. Rails made a persuasive case that productive web development could start with sensible defaults, concise domain language, and a short path from idea to working product. Its <a href="https://rubyonrails.org/doctrine" target="_blank" rel="noopener noreferrer">doctrine</a> explicitly defends convention over configuration and integrated applications. Shopify and GitHub show that a monolith built around those conventions can keep evolving at considerable scale, provided its teams invest in architecture, operations, and maintenance. Ruby and Rails helped redefine the developer’s productivity as a serious design concern.</p>
+
+<p>JRuby belongs on the enduring side, too. Unlike IronRuby, the Ruby implementation on the JVM continued to evolve: the <a href="https://www.jruby.org/" target="_blank" rel="noopener noreferrer">JRuby project reports releases in 2026</a>, including a <a href="https://www.jruby.org/2026/04/21/jruby-10-1-0-0.html" target="_blank" rel="noopener noreferrer">10.1 series targeting Ruby 4.0 compatibility</a>. Its contribution is a different one from Rails’: a way to run Ruby in the Java ecosystem, with access to Java libraries and infrastructure. Its survival also sharpens the historical distinction: experiments in bringing Ruby to another platform did not all meet the same fate.</p>
+
+<p><img src="/assets/images/posts/when-ruby-made-the-industry-rethink-programming/rails-dhh-legacy.webp" alt="Original digital illustration of Rails creator David Heinemeier Hansson presenting an integrated web application, with convention over configuration, productivity, and robust monolith labels" style="width:100%;height:auto;"></p>
+
+<p><em>David Heinemeier Hansson’s Rails made Ruby’s expressive potential practical for web products: conventions connect routing, application code, and data in one durable system. This is an interpretive illustration, not a photograph.</em></p>
+
+<p>There is another legacy, but it needs careful attribution. Ruby made metaprogramming and expressive APIs tangible for many web developers. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Meta_programming" target="_blank" rel="noopener noreferrer">JavaScript’s Proxy and Reflect</a>, <a href="https://www.typescriptlang.org/docs/handbook/decorators.html" target="_blank" rel="noopener noreferrer">TypeScript decorators</a>, and <a href="https://hexdocs.pm/elixir/domain-specific-languages.html" target="_blank" rel="noopener noreferrer">Elixir macros and DSLs</a> show other ways to expose or shape behavior through code. These mechanisms differ: JavaScript’s proxying happens at runtime, TypeScript adds annotations and tooling to JavaScript, and Elixir macros transform syntax at compile time. Similarity of purpose alone does not establish that Ruby caused their creation. JavaScript’s history also predates the Rails wave.</p>
+
+<p>Elixir offers a more personal connection to the Ruby ecosystem. Its creator José Valim worked on Rails and Ruby libraries, and his team’s <a href="https://blog.plataformatec.com.br/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/" target="_blank" rel="noopener noreferrer">account of Elixir’s origins</a> describes the difficulty of concurrency in that work as one motivation for exploring a new language. Elixir inherited neither Ruby’s object model nor its runtime metaprogramming; it pursued a different answer on the Erlang VM. The shared thread is the willingness to make powerful abstractions usable by everyday developers.</p>
+
+<p>There were costs, too. Powerful metaprogramming can make behavior harder to discover; conventions can hide work that engineers need to understand; runtime flexibility does not remove the need for tests, observability, and careful architecture. A fair retrospective includes both the delight and the maintenance work that followed it.</p>
+
+<p>Looking back at my own 2006 text, I would also revise some of its technical shorthand. Ruby variables do not define their own scope; lexical context and variable kind matter. Duck typing concerns supported behavior, not the absence of classes. DRY means avoiding duplicated knowledge, not merely omitting semicolons. And multiple ways to express code can be welcome without making TMTOWDI a defining Ruby principle. The enthusiasm survives these corrections because its central challenge was about the developer’s experience, not any single slogan.</p>
+
+<h2 id="the-question-for-today">The question for today</h2>
+
+<p>Ruby’s early advocates asked how software would change if a language made programmers happier. Today, with assistants and agents writing more code, that question extends to the humans who must read, verify, and maintain what is produced. Rails <a href="https://rubyonrails.org/ai" target="_blank" rel="noopener noreferrer">now frames its conventions</a> as useful structure for coding agents as well as people. That is a present day claim from the Rails project, rather than proof that AI development has already vindicated every early Ruby promise.</p>
+
+<h3 id="from-rubys-happiness-to-ai-delegation">From Ruby’s happiness to AI delegation</h3>
+
+<p>Ruby’s original promise was to bring programming closer to human intention. Its syntax, object model, blocks, and metaprogramming reduced the distance between an idea and its implementation.</p>
+
+<p>At <a href="https://www.youtube.com/watch?v=vDjW_dRyKXY" target="_blank" rel="noopener noreferrer">Rails World 2026</a>, David Heinemeier Hansson proposed a more radical next step: “pencils down.” In this view, manually writing code becomes the exception. Developers describe intent in English, delegate implementation to AI agents, inspect the result, and move at a radically faster pace. The Rails Foundation presents the keynote in similar terms: the age of AI agents, “pencils down” on handwritten code, and Rails conventions as an advantage in this new environment.</p>
+
+<p>This raises a sharper question about the future of programming languages. If Ruby once moved us further from the machine and closer to expressing intent, AI may add another layer: describe a change in natural language, inspect the generated code, run it, and decide whether it deserves to live in the system.</p>
+
+<blockquote>
+  <p><strong>Today’s Ruby might become tomorrow’s assembly.</strong><br>
+<strong>And AI, tomorrow’s Ruby.</strong></p>
+</blockquote>
+
+<p>This is a provocation about shifting levels of abstraction, not a prediction that Ruby will disappear or that natural language can replace precise programs. It also does not mean that the programmer becomes merely a manager of agents. Architecture, domain understanding, security, testing, observability, and judgment remain essential. I still want to write code by hand when it helps me think. The essential skill is to understand the behavior, test the assumptions, and take responsibility for the result, whichever tool produced the first draft.</p>
+
+<p>There is a deep tension here. Ruby’s revolution was built around the joy of writing beautiful code. DHH’s current proposal suggests that handwritten code may become a specialized craft rather than the center of software production. Both ideas can be true: code can remain valuable as a medium for thought, even as AI increasingly becomes the first author of implementation.</p>
+
+<p>The historical continuity is not that Ruby or Rails will simply be replaced. It is that both challenged the accepted boundary between human intention and machine execution. Ruby moved developers away from lower-level ceremony. Rails moved them away from repetitive application wiring. AI agents may now move them away from manually producing much of the code itself.</p>
+
+<p>What makes the old excitement worth remembering is that Ruby asked developers to question the cost of building software. The Symbian port, 3rdRail IDE, and IronRuby implementation mark the reach of the moment; their fading does not erase it. What remained was a new benchmark for productive web development, a lasting proof that integrated Rails applications could grow into large technology businesses, a continuing Ruby implementation on the JVM, and a vocabulary for expressive software that still invites comparison across language communities.</p>
+
+<p><strong>Reflection:</strong> Which part of your current development workflow still feels like the configuration burden Rails challenged twenty years ago? Where does writing code by hand help you think, and where could AI help without hiding the behavior your team needs to inspect?</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>
+<a href="https://holoflux.wordpress.com/2006/08/24/ruby-result-of-a-japanese-guy-that-just-wanted-to-be-happy-programming-and-made-a-revolution/" target="_blank" rel="noopener noreferrer">HoloFlux: Ruby and programmer happiness (August 2006)</a> — my original article; historical framing and claims revisited here.</li>
+  <li>
+<a href="https://www.ruby-lang.org/en/documentation/quickstart/" target="_blank" rel="noopener noreferrer">Ruby in Twenty Minutes</a> and <a href="https://docs.ruby-lang.org/en/4.0/syntax/methods_rdoc.html" target="_blank" rel="noopener noreferrer">Ruby method syntax</a> — interactive exploration and return values.</li>
+  <li>
+<a href="https://www.ruby-lang.org/en/about/" target="_blank" rel="noopener noreferrer">Ruby language: About Ruby</a> — language philosophy and object model.</li>
+  <li>
+<a href="https://guides.rubyonrails.org/getting_started.html" target="_blank" rel="noopener noreferrer">Rails Guides: Getting Started</a> and <a href="https://guides.rubyonrails.org/active_record_basics.html" target="_blank" rel="noopener noreferrer">Active Record Basics</a> — Rails design principles and concrete conventions.</li>
+  <li>
+<a href="https://sourceforge.net/projects/ruby4s/" target="_blank" rel="noopener noreferrer">Ruby for Symbian OS project</a> and <a href="https://www.thecodingforums.com/threads/ann-ruby-for-symbian-preview-release.833270/" target="_blank" rel="noopener noreferrer">early preview announcement</a> — port and early limitations.</li>
+  <li>
+<a href="https://visualstudiomagazine.com/articles/2007/09/18/codegear-touches-3rdrail-with-new-ide.aspx" target="_blank" rel="noopener noreferrer">3rdRail launch coverage</a> and <a href="https://blog.marcocantu.com/blog/milan_codegear_3rdrails_delphi.html" target="_blank" rel="noopener noreferrer">contemporary developer account</a> — date and context.</li>
+  <li>
+<a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/net-interop-getting-started-with-ironruby-and-rspec-part-1" target="_blank" rel="noopener noreferrer">Microsoft MSDN: Getting Started with IronRuby and RSpec</a> — IronRuby and the DLR.</li>
+  <li>
+<a href="https://blog.jruby.org/2011/09/bringing-jruby-to-the-cloud" target="_blank" rel="noopener noreferrer">JRuby maintainer on Sun and JRuby 1.0</a> — Java ecosystem connection.</li>
+  <li>
+<a href="https://www.jruby.org/2026/04/21/jruby-10-1-0-0.html" target="_blank" rel="noopener noreferrer">JRuby project and 10.1 release</a> — evidence that JRuby continued into 2026.</li>
+  <li>
+<a href="https://discuss.rubyonrails.org/t/enterprise-and-legacy-database-support/13171" target="_blank" rel="noopener noreferrer">Rails discussion: legacy database support (2007)</a> — enterprise integration concerns.</li>
+  <li>
+<a href="https://www.linuxjournal.com/article/900147" target="_blank" rel="noopener noreferrer">Linux Journal, issue 147 (July 2006)</a> — Ruby special issue and historical cover with David Heinemeier Hansson.</li>
+  <li>
+<a href="https://shopify.engineering/shopify-monolith" target="_blank" rel="noopener noreferrer">Shopify: State of the Monolith</a> — later evidence of sustained use.</li>
+  <li>
+<a href="https://github.blog/engineering/building-github-with-ruby-and-rails/" target="_blank" rel="noopener noreferrer">GitHub: Building GitHub with Ruby and Rails</a> — the long lived Rails monolith.</li>
+  <li>
+<a href="https://rubyonrails.org/doctrine" target="_blank" rel="noopener noreferrer">Rails Doctrine</a> — conventions, happiness, and integrated systems.</li>
+  <li>
+<a href="https://guides.rubyonrails.org/command_line.html" target="_blank" rel="noopener noreferrer">Rails Command Line guide</a> — generators and scaffold code.</li>
+  <li>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Meta_programming" target="_blank" rel="noopener noreferrer">MDN: JavaScript metaprogramming</a>, <a href="https://www.typescriptlang.org/docs/handbook/decorators.html" target="_blank" rel="noopener noreferrer">TypeScript decorators</a>, and <a href="https://hexdocs.pm/elixir/domain-specific-languages.html" target="_blank" rel="noopener noreferrer">Elixir DSLs</a> — technically distinct language mechanisms.</li>
+  <li>
+<a href="https://blog.plataformatec.com.br/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/" target="_blank" rel="noopener noreferrer">Plataformatec: Elixir and concurrency</a> — creator’s Rails background and motivation.</li>
+  <li>
+<a href="https://www.flickr.com/photos/luludico/287350118" target="_blank" rel="noopener noreferrer">Matz at RubyConf 2006</a> — historical portrait reference for the illustration; no photograph reproduced.</li>
+  <li>
+<a href="https://rubyonrails.org/ai" target="_blank" rel="noopener noreferrer">Rails and AI</a> — present day project position.</li>
+  <li>
+<a href="https://www.youtube.com/watch?v=vDjW_dRyKXY" target="_blank" rel="noopener noreferrer">Rails World 2026 Opening Keynote — DHH</a> — the “pencils down” proposal and AI-agent perspective.</li>
+</ul>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
