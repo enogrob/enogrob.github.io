@@ -46,7 +46,7 @@ From the companion repository root, run:
 ruby scripts/build_caseflow_inventory.rb
 ```
 
-This generates `docs/architecture/generated-inventory.md`: a table of **file:line** declarations extracted from five named CaseFlow files. It is reproducible and intentionally narrow. It does not execute Rails, discover every indirect dependency or assert that tests passed. It gives Copilot and the reader a set of anchors to investigate.
+This generates `docs/architecture/generated-inventory.md`: a CaseFlow application guide with **file:line** declarations, Gemfile dependencies, the SQLite adapter, an architecture diagram, local setup and API examples. The extraction is reproducible and intentionally narrow. The diagram and runbook explain source-backed relationships; they do not execute Rails, discover every indirect dependency or assert that tests passed.
 
 Start with `caseflow/config/routes.rb`:
 
