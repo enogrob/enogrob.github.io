@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>A Repeatable Rails Copilot Workflow | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="A Repeatable Rails Copilot Workflow">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Complete the Rails/Copilot series with a repeatable evidence workflow: choose between instructions, skills, tools, hooks and MCP, validate a local record in Ruby and keep a human decision gate.">
+<meta property="og:description" content="Complete the Rails/Copilot series with a repeatable evidence workflow: choose between instructions, skills, tools, hooks and MCP, validate a local record in Ruby and keep a human decision gate.">
+<link rel="canonical" href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-repeatable-rails-copilot-workflow.html">
+<meta property="og:url" content="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-repeatable-rails-copilot-workflow.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/repeatable-rails-copilot-workflow/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-09-26T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/repeatable-rails-copilot-workflow/cover.webp">
+<meta property="twitter:title" content="A Repeatable Rails Copilot Workflow">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-26T00:00:00+00:00","datePublished":"2026-09-26T00:00:00+00:00","description":"Complete the Rails/Copilot series with a repeatable evidence workflow: choose between instructions, skills, tools, hooks and MCP, validate a local record in Ruby and keep a human decision gate.","headline":"A Repeatable Rails Copilot Workflow","image":"https://enogrob.github.io/assets/images/posts/repeatable-rails-copilot-workflow/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-repeatable-rails-copilot-workflow.html"},"url":"https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-repeatable-rails-copilot-workflow.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2026-09-26-a-repeatable-rails-copilot-workflow.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/ruby/rails/software-engineering/github-copilot/2026/09/26/a-repeatable-rails-copilot-workflow.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-repeatable-rails-copilot-workflow.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/repeatable-rails-copilot-workflow/cover.webp" alt="GitHub Copilot for Rails Engineers Part 08: a digitized guide faces the CaseFlow Rails workbench, where repository instructions, a task recipe and permitted tools feed evidence to a human reviewer; optional boundaries remain visible." style="width:100%;height:auto;"></p>
+
+<blockquote>
+  <p><strong>A successful prompt is a moment; a reliable workflow can be taught.</strong> This final chapter turns eight Rails/Copilot exercises into a small, auditable procedure that knows when to stop.</p>
+</blockquote>
+
+<p><em>GitHub Copilot for Rails Engineers · Part 08 · Final chapter</em></p>
+
+<p>Parts 01–07 took one synthetic CaseFlow Rails app from source orientation through instructions, a candidate change, staged CI, an adoption pilot, a client workshop and a Copilot CLI rehearsal. The last question is architectural: <strong>which parts should be repeated by an agent, and which must remain decisions by a developer or client?</strong> A stack of customizations is not the answer by itself. This chapter makes one workflow explicit, gives it a Ruby evidence check, and leaves all rollout switches off until there is a reason to enable them.</p>
+
+<p>The <a href="/assets/downloads/repeatable-rails-copilot-workflow-support.zip">cumulative companion package</a> contains Parts 01–08, the integrated CaseFlow source, this complete article, a workflow blueprint, a blank JSON evidence record, a Ruby structural validator, Mermaid source, visual masters, and exercises with answers. No Copilot skill, hook or MCP server is installed by this educational release.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#task">Begin with one Rails task</a></li>
+  <li><a href="#mechanisms">Choose the smallest useful mechanism</a></li>
+  <li><a href="#evidence">Make evidence explicit in Ruby</a></li>
+  <li><a href="#extensions">Know where optional extensions fit</a></li>
+  <li><a href="#promote">Promote a procedure only after review</a></li>
+  <li><a href="#lab">Try the final lab</a></li>
+  <li><a href="#references">References and supporting material</a></li>
+</ul>
+
+<h2 id="begin-with-one-rails-task-task">Begin with one Rails task {:#task}</h2>
+
+<p>Use the same bounded exercise: the CaseFlow baseline allows <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">show</code> and <code class="language-plaintext highlighter-rouge">create</code> for <code class="language-plaintext highlighter-rouge">api/requests</code>; Part 03 proposes a separate <code class="language-plaintext highlighter-rouge">PATCH /api/requests/:id/resolve</code> route. Part 07 asks Copilot CLI to plan and potentially propose that change on a local branch. The Part 03 patch is a candidate, and Part 04’s CI workflow is staged. The purpose here is to capture what a reviewer would need: exact source files, candidate diff, actual focused test command/log, and a named review decision. Do not turn an imagined result into a “passed” badge.</p>
+
+<p>This makes a useful question for every mechanism: <em>What new failure or authority does it introduce, and what evidence makes it worthwhile?</em> A task can succeed with the existing repository instructions, CLI permission prompts, a human review and a single Ruby check. Add another component only when a repeated need justifies it.</p>
+
+<h2 id="choose-the-smallest-useful-mechanism-mechanisms">Choose the smallest useful mechanism {:#mechanisms}</h2>
+
+<p>GitHub’s <a href="https://docs.github.com/en/copilot/concepts/agents/copilot-cli/comparing-cli-features" target="_blank" rel="noopener noreferrer">Copilot CLI customization comparison</a> separates several tools that are often blended into “agentic workflow.” Apply them to the same Rails task:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mechanism</th>
+      <th>Job in CaseFlow</th>
+      <th>Is it installed by this chapter?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Repository instructions</td>
+      <td>Always remind Copilot of Rails conventions and the difference between source and runtime evidence</td>
+      <td>Already present from Part 02 in <code class="language-plaintext highlighter-rouge">caseflow/.github/copilot-instructions.md</code>
+</td>
+    </tr>
+    <tr>
+      <td>Task skill</td>
+      <td>Load a reusable recipe when someone asks for a reviewable Rails change</td>
+      <td>
+<strong>No</strong>; blueprint describes when to author one</td>
+    </tr>
+    <tr>
+      <td>Built-in CLI tools</td>
+      <td>Read source, propose an edit or run a command after permission review</td>
+      <td>Available in the CLI; no operation run during authoring</td>
+    </tr>
+    <tr>
+      <td>MCP tool</td>
+      <td>Access an external system only if an authorized task actually needs it</td>
+      <td>
+<strong>No</strong> server or credential added</td>
+    </tr>
+    <tr>
+      <td>Hook</td>
+      <td>Execute a deterministic command at a lifecycle point after payload and failure behavior are tested</td>
+      <td>
+<strong>No</strong> hook configured</td>
+    </tr>
+    <tr>
+      <td>Human reviewer</td>
+      <td>Evaluate relevant outputs, security implications and approval</td>
+      <td>Decision field intentionally blank</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This table is a design choice for <strong>this</strong> lab, not a list of everything Copilot can do. A <code class="language-plaintext highlighter-rouge">SKILL.md</code> is suited to a repeatable, relevant procedure; GitHub’s <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills" target="_blank" rel="noopener noreferrer">skills guide</a> describes project locations and loading. Its documentation warns about pre-approving shell access in a skill. We therefore provide a <strong>workflow blueprint</strong>, not an installed skill granting tool permission. The learner can propose a skill after several human-reviewed repetitions.</p>
+
+<h2 id="make-evidence-explicit-in-ruby-evidence">Make evidence explicit in Ruby {:#evidence}</h2>
+
+<p>The companion’s <code class="language-plaintext highlighter-rouge">parts/08-repeatable-rails-workflow/EVIDENCE.json</code> has two source paths and blank fields for diff, test command, exit code, test log, reviewer and decision. A small Ruby standard-library script checks that these fields are filled and that referenced files exist inside the companion repo:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby scripts/08_validate_evidence.rb parts/08-repeatable-rails-workflow/EVIDENCE.json
+</code></pre></div></div>
+
+<p><strong>Expected on the shipped template:</strong> a nonzero exit listing missing evidence. The script does not run RSpec or the CLI, read a remote service or mark a test as passed. If you fill the record after a real Part 07 session, a zero exit means only that the structure and paths look complete. A human still checks that the log belongs to the stated branch and command, that negative tests are relevant, that authorization is sound and that the decision is accountable. Fake data can make a structural validator happy; that is why it is not an approval system.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"candidate_diff"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"test_command"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"test_exit_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"test_log"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reviewer"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"decision"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Those fields are excerpts from an intentionally blank template, not a transcript. Store no secrets or personal telemetry in it. The <a href="#references">blueprint</a> shows the expected location of local files and the exact command to run from the companion root. The validator cannot establish genuine provenance or actual test quality.</p>
+
+<h2 id="know-where-optional-extensions-fit-extensions">Know where optional extensions fit {:#extensions}</h2>
+
+<p>Suppose a team repeats this evidence procedure every week. A <strong>skill</strong> can teach Copilot to collect the exact diff and check logs when that task is requested. If every attempted operation must be screened against a protected directory, a <strong>hook</strong> may enforce a reviewed rule; hooks execute commands at lifecycle points, so mistakes affect real work. GitHub’s <a href="https://docs.github.com/en/copilot/reference/hooks-reference" target="_blank" rel="noopener noreferrer">hook reference</a> describes events and payloads that a team must test against its installed CLI. Neither mechanism is active in this package.</p>
+
+<p><img src="/assets/images/posts/repeatable-rails-copilot-workflow/one-request-many-boundaries.webp" alt="A cutaway CaseFlow workbench shows persistent instructions around a task recipe, a local tool action, an optional external MCP bridge and an inactive guard checkpoint; Ruby evidence and human review remain downstream." style="width:100%;height:auto;"></p>
+
+<p><em>The illustration shows different jobs around one task, not a stack every team must install.</em> A built-in tool is enough to read <code class="language-plaintext highlighter-rouge">config/routes.rb</code>. An <strong>MCP</strong> connection would add an external source such as a client ticket system; that requires specific permission, scope, retention and revocation. It brings no value to the synthetic CaseFlow exercise. An unarmed hook in the drawing is a design possibility, not an implemented guardrail.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCd0aGVtZVZhcmlhYmxlcyc6eydiYWNrZ3JvdW5kJzonI0ZGRkZGRicsJ3ByaW1hcnlUZXh0Q29sb3InOicjM0UzNDJDJywnbGluZUNvbG9yJzonIzZGNzM3Nyd9fX0lJVxuZmxvd2NoYXJ0IFRCXG5zdWJncmFwaCBjb250ZXh0W1wi8J-TmiBHdWlkZSB0aGUgdGFza1wiXVxuQVtcIvCfk48gUmVwbyBpbnN0cnVjdGlvbnNcIl0gLS0-IENbXCLwn6etIFJhaWxzIHRhc2tcIl1cbkJbXCLwn5OWIE9wdGlvbmFsIHNraWxsIHJlY2lwZVwiXSAtLT4gQ1xuZW5kXG5zdWJncmFwaCBhY3Rpb25zW1wi8J-boO-4jyBSZXF1ZXN0IGFjdGlvbnNcIl1cbkMgLS0-IFRbXCLwn5SnIExvY2FsIHRvb2xcIl1cbkMgLS4tPnxcImV4dGVybmFsIG5lZWRcInwgTVtcIvCflIwgTUNQIHRvb2xcIl1cblQgLS0-IFBbXCLwn5SQIFBlcm1pc3Npb24gLyBvcHRpb25hbCBob29rXCJdXG5NIC0tPiBQXG5lbmRcbnN1YmdyYXBoIGV2aWRlbmNlW1wi8J-RpSBEZWNpZGUgd2l0aCBldmlkZW5jZVwiXVxuUCAtLT4gUltcIvCfp6ogUnVieSBldmlkZW5jZSBjaGVja1wiXVxuUiAtLT4gVltcIvCfkaQgSHVtYW4gdmVyaWZpZXMgcmVzdWx0XCJdXG5WIC0tPnxcImNvbXBsZXRlICsgYXBwcm92ZWRcInwgWFtcIvCfk6YgUmV1c2UgYXMgYSB0ZWFtIHByb2NlZHVyZVwiXVxuViAtLT58XCJtaXNzaW5nIC8gdW5zYWZlXCJ8IFlbXCLwn5SBIFJldmlzZSBvciBzdG9wXCJdXG5lbmRcbmNsYXNzRGVmIGd1aWRlIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgdG9vbCBmaWxsOiNFOERERjUsc3Ryb2tlOiNBNjhCQzQsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIGd1YXJkIGZpbGw6I0ZGRjFCRixzdHJva2U6I0JBOUM0Myxjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgZXZpZGVuY2UgZmlsbDojRENFRkQ2LHN0cm9rZTojODZBODc4LGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBzdG9wIGZpbGw6I0Y1RDlEQyxzdHJva2U6I0JDODE5MSxjb2xvcjojM0UzNDJDO1xuY2xhc3MgQSxCLEMgZ3VpZGU7XG5jbGFzcyBULE0gdG9vbDtcbmNsYXNzIFAgZ3VhcmQ7XG5jbGFzcyBSLFYsWCBldmlkZW5jZTtcbmNsYXNzIFkgc3RvcDsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ"></p>
+
+<p>The matching editable diagram lives in <code class="language-plaintext highlighter-rouge">docs/diagrams/08-workflow-boundaries.mmd</code>. Its optional dashed MCP edge and two possible human outcomes are intentional. The diagram is a proposal, not evidence of an installed agent, server or passed gate.</p>
+
+<p>There are neighboring surfaces you may study later: <code class="language-plaintext highlighter-rouge">gh</code> performs GitHub repository operations and is a different executable from <code class="language-plaintext highlighter-rouge">copilot</code>; the <a href="https://docs.github.com/en/copilot/concepts/agents/github-copilot-app" target="_blank" rel="noopener noreferrer">Copilot desktop app</a> addresses desktop agent sessions; the <a href="https://docs.github.com/en/copilot/how-tos/copilot-sdk" target="_blank" rel="noopener noreferrer">Copilot SDK</a> is for building an application around its runtime. GitHub’s current SDK guides list examples in TypeScript, Python, Go, .NET, Java and Rust, so this Ruby-only companion does not pretend to provide an official Ruby SDK integration. <strong>HydraFusion</strong> is a visual/thematic reference from the blog’s agentic-engine post, not an additional dependency or security control required by the Rails exercise.</p>
+
+<h2 id="promote-a-procedure-only-after-review-promote">Promote a procedure only after review {:#promote}</h2>
+
+<p>The right end state is modest: a team that can explain its source map, show a focused candidate change, reproduce its checks, state a privacy boundary and hand a reviewer an honest ledger. A real organization may then choose to publish repository instructions, package a skill, prototype a hook or authorize an MCP service. Give each addition an owner and a separate test. Keep baseline measurements and client approval out of this synthetic repo until they genuinely exist.</p>
+
+<p>Across this series, <strong>repeatability means that another engineer can follow the same decision points and challenge the same evidence</strong>. It does not mean every action should run without a person. Stop if the route claim lacks a source path, the agent touches a secret, test output cannot be tied to the diff, or no authorized reviewer can decide what happens next.</p>
+
+<h2 id="try-the-final-lab-lab">Try the final lab {:#lab}</h2>
+
+<ol>
+  <li>
+<strong>Map (10 min):</strong> point to the CaseFlow route, Part 03 candidate patch and Part 07 prompt. Label source, proposal and unknown.</li>
+  <li>
+<strong>Choose (10 min):</strong> use the <a href="#mechanisms">mechanism table</a> and <a href="#references">workflow blueprint</a> to say which customizations you would actually enable for this task.</li>
+  <li>
+<strong>Check (10 min):</strong> run the Ruby structural validator on the intentionally blank JSON on your Mac; record its <em>actual</em> exit and findings. Do not fill invented results just to get green.</li>
+  <li>
+<strong>Rehearse (15 min):</strong> imagine a real focused RSpec run and describe where its authentic log, branch, command and review decision would go. Then try the <a href="#references">workbook</a> before reading its answer key.</li>
+  <li>
+<strong>Transfer (5 min):</strong> deliver a two-minute client explanation of what you would reuse, what still needs permission, and what would make you stop.</li>
+</ol>
+
+<h2 id="references-and-supporting-material-references">References and supporting material {:#references}</h2>
+
+<ul>
+  <li>
+<a href="/assets/downloads/repeatable-rails-copilot-workflow-support.zip">Download the cumulative companion with Parts 01–08</a>. Start at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/08-repeatable-rails-workflow/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/08-repeatable-rails-workflow/article.md</code>.</li>
+  <li>Companion paths: <code class="language-plaintext highlighter-rouge">parts/08-repeatable-rails-workflow/POST-BRIEF.md</code>, <code class="language-plaintext highlighter-rouge">WORKFLOW-BLUEPRINT.md</code>, <code class="language-plaintext highlighter-rouge">EVIDENCE.json</code>; <code class="language-plaintext highlighter-rouge">scripts/08_validate_evidence.rb</code>; <code class="language-plaintext highlighter-rouge">docs/labs/08-workflow-workbook.md</code>; <code class="language-plaintext highlighter-rouge">docs/diagrams/08-workflow-boundaries.mmd</code>; <code class="language-plaintext highlighter-rouge">docs/posts/08-repeatable-rails-workflow/post-manifest.md</code>.</li>
+  <li>
+<a href="https://docs.github.com/en/copilot/concepts/agents/copilot-cli/comparing-cli-features" target="_blank" rel="noopener noreferrer">GitHub Docs: Copilot CLI customization comparison</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills" target="_blank" rel="noopener noreferrer">agent skills</a>; <a href="https://docs.github.com/en/copilot/reference/hooks-reference" target="_blank" rel="noopener noreferrer">hooks reference</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview" target="_blank" rel="noopener noreferrer">Copilot CLI use</a>.</li>
+  <li>
+<a href="https://docs.github.com/en/copilot/concepts/agents/github-copilot-app" target="_blank" rel="noopener noreferrer">GitHub Docs: Copilot desktop app</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-sdk" target="_blank" rel="noopener noreferrer">Copilot SDK</a>.</li>
+  <li>Previous chapters: <a href="#references">Part 07’s CLI lab</a> at <code class="language-plaintext highlighter-rouge">parts/07-cli-rails-change/RUNBOOK.md</code> and <a href="#references">Part 06 workshop</a> at <code class="language-plaintext highlighter-rouge">parts/06-client-workshop/WORKSHOP-AGENDA.md</code> in the same download.</li>
+</ul>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

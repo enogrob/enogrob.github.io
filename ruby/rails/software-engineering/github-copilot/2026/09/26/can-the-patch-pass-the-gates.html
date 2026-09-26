@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Can the Patch Pass the Gates? | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="Can the Patch Pass the Gates?">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Turn a Copilot-assisted Rails change into an evidence-led review: tests, dependency controls, static analysis and explicit human decisions.">
+<meta property="og:description" content="Turn a Copilot-assisted Rails change into an evidence-led review: tests, dependency controls, static analysis and explicit human decisions.">
+<link rel="canonical" href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/can-the-patch-pass-the-gates.html">
+<meta property="og:url" content="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/can-the-patch-pass-the-gates.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/rails-ci-security-human-review/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-09-26T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/rails-ci-security-human-review/cover.webp">
+<meta property="twitter:title" content="Can the Patch Pass the Gates?">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-26T00:00:00+00:00","datePublished":"2026-09-26T00:00:00+00:00","description":"Turn a Copilot-assisted Rails change into an evidence-led review: tests, dependency controls, static analysis and explicit human decisions.","headline":"Can the Patch Pass the Gates?","image":"https://enogrob.github.io/assets/images/posts/rails-ci-security-human-review/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/can-the-patch-pass-the-gates.html"},"url":"https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/can-the-patch-pass-the-gates.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2026-09-26-can-the-patch-pass-the-gates.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/ruby/rails/software-engineering/github-copilot/2026/09/26/can-the-patch-pass-the-gates.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/can-the-patch-pass-the-gates.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/rails-ci-security-human-review/cover.webp" alt="Part 04: a digitized Copilot-inspired character in profile examines a proposed Rails CI workflow, source diff, unrun RSpec draft and an open policy question, linked by flowing Holoflux." style="width:100%;height:auto;"></p>
+
+<blockquote>
+  <p><strong>A fast patch still needs evidence.</strong> Build a Rails CI path that exposes failures, checks security assumptions and leaves the approval decision with a human reviewer.</p>
+</blockquote>
+
+<p><em>GitHub Copilot for Rails Engineers · Part 04</em></p>
+
+<p>In <a href="/ruby/rails/software-engineering/github-copilot/2026/09/26/from-issue-to-reviewable-rails-pr.html">Part 03</a>, we gave an agent a narrow CaseFlow status-transition issue and produced a local candidate patch. An agent can propose a route, controller and request specs. Those files tell us what <em>might</em> happen; they do not tell us what actually happened on a runner, whether dependencies are known or who may authorize the change. Here we design a chain of checks that produces inspectable evidence while preserving the human decision.</p>
+
+<p>The <a href="/assets/downloads/rails-ci-security-human-review-support.zip">companion repository</a> contains the integrated Rails API, the Part 03 patch, a staged GitHub Actions workflow, Mermaid source, a lab workbook with answers and a review worksheet. This educational workflow has <strong>not run in GitHub Actions</strong>. There is no <code class="language-plaintext highlighter-rouge">Gemfile.lock</code> in the supplied baseline, and no successful RSpec, security scan or PR run is claimed. The illustration shows <strong>conceptual review artifacts</strong>, not a GitHub screenshot or observed CI result.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#boundary">Start with a truthful evidence boundary</a></li>
+  <li><a href="#test-gate">Make the Rails test gate reproducible</a></li>
+  <li><a href="#security">Add a security layer that says what it covers</a></li>
+  <li><a href="#failure">Read failures as evidence</a></li>
+  <li><a href="#review">Keep the merge decision human</a></li>
+  <li><a href="#lab">Run the 45-minute lab</a></li>
+  <li><a href="#references">References and supporting material</a></li>
+</ul>
+
+<h2 id="start-with-a-truthful-evidence-boundary-boundary">Start with a truthful evidence boundary {:#boundary}</h2>
+
+<p>A PR has different kinds of claims. A spec file contains <strong>assertions</strong>. A workflow file contains <strong>planned commands</strong>. A job log shows <strong>observed execution</strong> on a given commit and environment. A reviewer decides whether those observations and the product policy justify the change. None substitutes for the others.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Layer</th>
+      <th>CaseFlow artifact</th>
+      <th>What it can establish</th>
+      <th>What it cannot establish</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Intent</td>
+      <td>Part 03 <code class="language-plaintext highlighter-rouge">ISSUE.md</code> in the companion repository</td>
+      <td>Proposed transition and exercise assumptions</td>
+      <td>Actual customer authorization</td>
+    </tr>
+    <tr>
+      <td>Source</td>
+      <td><code class="language-plaintext highlighter-rouge">candidate.patch</code></td>
+      <td>Exact proposed route, action and request specs</td>
+      <td>Test pass or deployability</td>
+    </tr>
+    <tr>
+      <td>Runner</td>
+      <td>Proposed <code class="language-plaintext highlighter-rouge">rails-pr.yml</code>
+</td>
+      <td>Commands that <em>would</em> run after setup</td>
+      <td>An observed green status until it runs</td>
+    </tr>
+    <tr>
+      <td>Human</td>
+      <td>Review worksheet</td>
+      <td>Explicit disposition and residual risk</td>
+      <td>Guarantee that no defect exists</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The link to the companion <code class="language-plaintext highlighter-rouge">ISSUE.md</code> appears in the <a href="#references">support materials</a>. GitHub’s <a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/review-copilot-output" target="_blank" rel="noopener noreferrer">Copilot review guidance</a> calls for human review of agent-produced changes. In the CaseFlow exercise, approving a policy for <em>who</em> can resolve a request remains outside the authority of an automated test.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCd0aGVtZVZhcmlhYmxlcyc6eydiYWNrZ3JvdW5kJzonI0ZGRkZGRicsJ3ByaW1hcnlUZXh0Q29sb3InOicjM0UzNDJDJywnbGluZUNvbG9yJzonIzZGNzM3Nyd9fX0lJVxuZmxvd2NoYXJ0IFRCXG5zdWJncmFwaCBwcm9wb3NhbFtcIvCfpJYgUHJvcG9zZWQgY2hhbmdlXCJdXG5BW1wi8J-TiyBJc3N1ZSArIGRpZmZcIl0gLS0-IEJbXCLwn6eqIFNwZWNzIGluIHNvdXJjZVwiXVxuZW5kXG5zdWJncmFwaCBydW5uZXJbXCLimpnvuI8gUnVubmVyIGV2aWRlbmNlXCJdXG5CIC0tPiBDW1wi8J-UkiBMb2NrZWQgZ2VtcyArIHNldHVwXCJdXG5DIC0tPnxcInNldHVwIHdvcmtzXCJ8IERbXCLwn6eqIFJTcGVjICsgc2NhblwiXVxuQyAtLT58XCJzZXR1cCBibG9ja2VkXCJ8IFhbXCLinZQgQmxvY2tlciBsb2dcIl1cbkQgLS0-fFwiZmFpbHVyZVwifCBYXG5lbmRcbnN1YmdyYXBoIGRlY2lzaW9uW1wi8J-nrSBIdW1hbiBkZWNpc2lvblwiXVxuRCAtLT58XCJvYnNlcnZlZCByZXN1bHRzXCJ8IEhbXCLwn5GkIFJldmlldyBwb2xpY3kgKyByaXNrXCJdXG5YIC0tPiBIXG5IIC0tPiBZW1wi8J-ThCBBcHByb3ZlIG9yIHJlcXVlc3QgY2hhbmdlc1wiXVxuZW5kXG5jbGFzc0RlZiBwcm9wb3NlZCBmaWxsOiNFOERERjUsc3Ryb2tlOiNBNjhCQzQsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIHNldHVwIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgcnVuIGZpbGw6I0RDRUZENixzdHJva2U6Izg2QTg3OCxjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgYmxvY2tlZCBmaWxsOiNGRkYxQkYsc3Ryb2tlOiNCQTlDNDMsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIHJldmlldyBmaWxsOiNGOERGQzQsc3Ryb2tlOiNDOTk4NkQsY29sb3I6IzNFMzQyQztcbmNsYXNzIEEsQiBwcm9wb3NlZDtcbmNsYXNzIEMgc2V0dXA7XG5jbGFzcyBEIHJ1bjtcbmNsYXNzIFggYmxvY2tlZDtcbmNsYXNzIEgsWSByZXZpZXc7IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0"></p>
+
+<p>The arrow into review carries <strong>observed results</strong>, including failures. Green in this diagram identifies the <em>type of evidence</em>, not a passing CaseFlow run. The matching Mermaid source is included as a local <code class="language-plaintext highlighter-rouge">.mmd</code> file in the package.</p>
+
+<h2 id="make-the-rails-test-gate-reproducible-test-gate">Make the Rails test gate reproducible {:#test-gate}</h2>
+
+<p>CaseFlow’s baseline <code class="language-plaintext highlighter-rouge">Gemfile</code> declares Rails <code class="language-plaintext highlighter-rouge">~&gt; 8.0.0</code>, SQLite, Puma and RSpec. It has no <code class="language-plaintext highlighter-rouge">Gemfile.lock</code>. Installing from that Gemfile could resolve different compatible versions on different days. Before requiring a CI check, on a Mac with Ruby installed, resolve and commit a lockfile in the <strong>companion repository’s</strong> <code class="language-plaintext highlighter-rouge">caseflow/</code> directory, review the resolved gems, then run the app locally:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>caseflow
+bundle <span class="nb">install
+</span><span class="nv">RAILS_ENV</span><span class="o">=</span><span class="nb">test </span>bin/rails db:prepare
+bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
+</code></pre></div></div>
+
+<p>Do not paste an invented lockfile into the project. If <code class="language-plaintext highlighter-rouge">bundle install</code> fails, record the Ruby version, command and first actionable error; a failed setup is evidence, not a passed test. Apply <a href="#lab">Part 03’s candidate patch</a> <strong>before</strong> expecting its four proposed transition cases in RSpec. The unpatched baseline runs only its original request specs.</p>
+
+<p>The supplied <a href="#references">staged workflow</a> illustrates the first useful GitHub Actions job. It is stored outside <code class="language-plaintext highlighter-rouge">.github/workflows/</code> so this package does not silently activate a check in any repository. The central excerpt is:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">permissions</span><span class="pi">:</span>
+  <span class="na">contents</span><span class="pi">:</span> <span class="s">read</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">rails_specs</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">defaults</span><span class="pi">:</span>
+      <span class="na">run</span><span class="pi">:</span>
+        <span class="na">working-directory</span><span class="pi">:</span> <span class="s">caseflow</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v6</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">ruby/setup-ruby@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">ruby-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.3'</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">bundle config set frozen </span><span class="kc">true</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">bundle install</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">RAILS_ENV=test bin/rails db:prepare</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">bundle exec rspec spec/requests/api/requests_spec.rb</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">bundle config set frozen true</code> makes a missing or inconsistent lockfile fail early. The sample targets Ubuntu and a Ruby 3.3 interpreter; verify that version against your local app and choose pinned action SHAs under your organization’s policy before production. GitHub’s <a href="https://docs.github.com/en/actions/tutorials/build-and-test-code/ruby" target="_blank" rel="noopener noreferrer">Ruby Actions guide</a> documents <code class="language-plaintext highlighter-rouge">ruby/setup-ruby</code>, Bundler and caching. After a checked-in lockfile and first reliable run, <code class="language-plaintext highlighter-rouge">bundler-cache: true</code> can shorten future jobs; it does not prove the code is secure.</p>
+
+<h2 id="add-a-security-layer-that-says-what-it-covers-security">Add a security layer that says what it covers {:#security}</h2>
+
+<p>“DevSecOps passed” is too vague for review. Match each proposed gate to a known question:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Candidate check</th>
+      <th>Important limit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Do request specs catch this transition?</td>
+      <td>RSpec positive <strong>and</strong> negative cases</td>
+      <td>Assertions are only observed after a run; specs can miss policy defects.</td>
+    </tr>
+    <tr>
+      <td>Did a new dependency introduce known risks?</td>
+      <td>GitHub dependency review on PRs; review <code class="language-plaintext highlighter-rouge">Gemfile.lock</code> diff</td>
+      <td>Requires repository support and correctly configured workflow; no new gem means little differential signal.</td>
+    </tr>
+    <tr>
+      <td>Does Rails source contain recognizable risky patterns?</td>
+      <td>Brakeman after adding it to the reviewed Gemfile and lockfile</td>
+      <td>Static analysis can miss domain authorization errors.</td>
+    </tr>
+    <tr>
+      <td>Are code paths flagged by code scanning?</td>
+      <td>CodeQL default setup where available</td>
+      <td>Configuration/eligibility and findings need review; do not claim it ran here.</td>
+    </tr>
+    <tr>
+      <td>Can this actor resolve that request?</td>
+      <td>Product decision + auth design + negative tests</td>
+      <td>A shared operator token in the lab is <strong>not</strong> production identity policy.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>GitHub describes <a href="https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/configure-dependency-review-action" target="_blank" rel="noopener noreferrer">dependency review</a> as a PR dependency-diff check, and <a href="https://docs.github.com/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning" target="_blank" rel="noopener noreferrer">CodeQL default setup</a> as repository code scanning configuration. Their availability and billing can vary with repository settings; inspect the target repository before making either a required check. The <a href="#references">security worksheet</a> lists the exact decision and evidence fields, rather than assuming a green badge.</p>
+
+<p>Keep the sample workflow on <code class="language-plaintext highlighter-rouge">pull_request</code> with <code class="language-plaintext highlighter-rouge">contents: read</code>; it does not request secrets or a write token. GitHub’s <a href="https://docs.github.com/en/actions/reference/security/secure-use" target="_blank" rel="noopener noreferrer">secure use reference</a> discusses risks of untrusted PR code and least privilege. Do not change it to <code class="language-plaintext highlighter-rouge">pull_request_target</code> while checking out and running a contributor’s untrusted code.</p>
+
+<h2 id="read-failures-as-evidence-failure">Read failures as evidence {:#failure}</h2>
+
+<p><img src="/assets/images/posts/rails-ci-security-human-review/read-the-failure.webp" alt="Conceptual evidence desk with CaseFlow Gemfile, an empty Gemfile.lock position, unrun request specs and a human policy question, connected by Holoflux; no test result is depicted." style="width:100%;height:auto;"></p>
+
+<p><em>The empty lockfile position is a teaching cue. There is no recorded failing CaseFlow CI run in this package.</em> A missing <code class="language-plaintext highlighter-rouge">Gemfile.lock</code>, failing <code class="language-plaintext highlighter-rouge">bundle install</code>, an RSpec assertion failure and a security finding mean different things. Capture <strong>which command failed, on which commit, in which environment</strong>, then triage the smallest cause. Do not mark a spec “fixed” merely because the agent changed the expectation to fit its implementation.</p>
+
+<p>A practical failure record uses four fields: <code class="language-plaintext highlighter-rouge">commit SHA</code>, <code class="language-plaintext highlighter-rouge">command</code>, <code class="language-plaintext highlighter-rouge">observed exit status or blocker</code>, and <code class="language-plaintext highlighter-rouge">next owner/action</code>. When setup fails, downstream scans are <strong>not run</strong>, not “passed”. If RSpec fails for an unauthorized request, inspect the proposed token guard and the request spec; if the product policy is unclear, return to the issue instead of weakening the test. The <a href="#references">worksheet</a> includes examples labeled <em>illustrative</em> rather than fabricated logs.</p>
+
+<h2 id="keep-the-merge-decision-human-review">Keep the merge decision human {:#review}</h2>
+
+<p>Require the reviewer to read the three changed files from Part 03 and decide whether <code class="language-plaintext highlighter-rouge">open → resolved</code> and the shared operator token model the intended business rule. Even a real green RSpec and static scan would answer only their defined checks. Attach the run URL and commit SHA to the review note, describe unchecked cases (concurrency, token rotation, actor identity, auditing), then approve the lab proposal, request changes or escalate policy. Do not turn the synthetic review into a real customer release decision.</p>
+
+<h2 id="run-the-45-minute-lab-lab">Run the 45-minute lab {:#lab}</h2>
+
+<ol>
+  <li>
+<strong>Predict (5 min):</strong> before opening the workflow, name two ways a job can fail without running any specs.</li>
+  <li>
+<strong>Prepare (12 min):</strong> in a clean checkout, apply <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/candidate.patch</code>; generate and inspect <code class="language-plaintext highlighter-rouge">caseflow/Gemfile.lock</code> on your Mac; never commit secrets.</li>
+  <li>
+<strong>Observe (12 min):</strong> run the focused RSpec command and record the exact outcome or first blocker. Read the staged <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/rails-pr.yml</code>; compare each command with what your machine actually ran.</li>
+  <li>
+<strong>Decide (10 min):</strong> fill the <a href="#references">review worksheet</a>. Which missing decision prevents calling the token guard production authorization?</li>
+  <li>
+<strong>Transfer (6 min):</strong> choose a separate Rails PR from your experience and identify one missing negative case and one security check with a clear limitation.</li>
+</ol>
+
+<p>The <a href="#references">workbook with worked answers</a> supplies prediction questions, a failure triage exercise and an answer key. If Ruby is unavailable, complete the source review and write “not run: no Ruby”; that is a valid, honest lab result.</p>
+
+<h2 id="references-and-supporting-material-references">References and supporting material {:#references}</h2>
+
+<ul>
+  <li>
+<a href="/assets/downloads/rails-ci-security-human-review-support.zip">Download complete companion repository and Part 04 materials</a>. Start at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/04-ci-and-devsecops/article.md</code>.</li>
+  <li>Companion paths: <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/ISSUE.md</code>, <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/candidate.patch</code>, <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/rails-pr.yml</code>, <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/REVIEW-GATES.md</code>, <code class="language-plaintext highlighter-rouge">docs/labs/04-ci-and-devsecops-workbook.md</code>, <code class="language-plaintext highlighter-rouge">docs/diagrams/04-ci-evidence.mmd</code>, and <code class="language-plaintext highlighter-rouge">docs/posts/04-ci-and-devsecops/post-manifest.md</code>.</li>
+  <li>
+<a href="https://docs.github.com/en/actions/tutorials/build-and-test-code/ruby" target="_blank" rel="noopener noreferrer">GitHub Docs: Building and testing Ruby</a>; <a href="https://github.com/ruby/setup-ruby/blob/master/README.md" target="_blank" rel="noopener noreferrer">ruby/setup-ruby README</a>.</li>
+  <li>
+<a href="https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/configure-dependency-review-action" target="_blank" rel="noopener noreferrer">GitHub Docs: Configuring the dependency review action</a>; <a href="https://docs.github.com/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning" target="_blank" rel="noopener noreferrer">CodeQL default setup</a>.</li>
+  <li>
+<a href="https://docs.github.com/en/actions/reference/security/secure-use" target="_blank" rel="noopener noreferrer">GitHub Docs: Secure use of Actions</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/review-copilot-output" target="_blank" rel="noopener noreferrer">Review Copilot output</a>.</li>
+</ul>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

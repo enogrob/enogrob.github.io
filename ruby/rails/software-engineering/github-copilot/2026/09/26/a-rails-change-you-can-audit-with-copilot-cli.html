@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>A Rails Change You Can Audit with Copilot CLI | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="A Rails Change You Can Audit with Copilot CLI">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Use GitHub Copilot CLI with a real Rails project to plan a bounded change, inspect tool permissions, gather test evidence and hand off a candidate diff for review.">
+<meta property="og:description" content="Use GitHub Copilot CLI with a real Rails project to plan a bounded change, inspect tool permissions, gather test evidence and hand off a candidate diff for review.">
+<link rel="canonical" href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-rails-change-you-can-audit-with-copilot-cli.html">
+<meta property="og:url" content="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-rails-change-you-can-audit-with-copilot-cli.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/rails-change-copilot-cli/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-09-26T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/rails-change-copilot-cli/cover.webp">
+<meta property="twitter:title" content="A Rails Change You Can Audit with Copilot CLI">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-26T00:00:00+00:00","datePublished":"2026-09-26T00:00:00+00:00","description":"Use GitHub Copilot CLI with a real Rails project to plan a bounded change, inspect tool permissions, gather test evidence and hand off a candidate diff for review.","headline":"A Rails Change You Can Audit with Copilot CLI","image":"https://enogrob.github.io/assets/images/posts/rails-change-copilot-cli/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-rails-change-you-can-audit-with-copilot-cli.html"},"url":"https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-rails-change-you-can-audit-with-copilot-cli.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2026-09-26-a-rails-change-you-can-audit-with-copilot-cli.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/ruby/rails/software-engineering/github-copilot/2026/09/26/a-rails-change-you-can-audit-with-copilot-cli.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-rails-change-you-can-audit-with-copilot-cli.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/rails-change-copilot-cli/cover.webp" alt="GitHub Copilot for Rails Engineers Part 07: a digital guide faces a terminal connected to the CaseFlow Rails application, a proposed diff, an unrun test and a human reviewer." style="width:100%;height:auto;"></p>
+
+<blockquote>
+  <p><strong>A useful agentic workflow leaves a trail you can inspect.</strong> Use Copilot CLI to plan one Rails change, approve each consequential action deliberately and report what the tests actually showed.</p>
+</blockquote>
+
+<p><em>GitHub Copilot for Rails Engineers · Part 07</em></p>
+
+<p>Part 06 ended with a hypothetical workshop and a request for one bounded experiment. Here is the developer’s next move: open the integrated CaseFlow Rails app on a Mac, ask <strong>GitHub Copilot CLI</strong> to plan a small status-resolution change, inspect what it wants to read or execute, and return a candidate diff with an evidence ledger. This post is a runnable teaching plan, <strong>not a transcript of a CLI session or a report of passing tests</strong>.</p>
+
+<p>The <a href="/assets/downloads/rails-change-copilot-cli-support.zip">cumulative companion package</a> includes all seven posts, the complete CaseFlow Rails app, a macOS runbook, two-stage prompt, Ruby source preflight, editable Mermaid diagram, exercises with answers and an empty evidence ledger. Open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/README.md</code> after download.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#why-cli">Why the terminal changes the task</a></li>
+  <li><a href="#scope">Trust the directory and bound the request</a></li>
+  <li><a href="#plan">Plan against the actual Rails baseline</a></li>
+  <li><a href="#permissions">Inspect every requested tool action</a></li>
+  <li><a href="#verify">Verify the candidate and report the outcome</a></li>
+  <li><a href="#lab">Try the guided lab</a></li>
+  <li><a href="#references">References and supporting material</a></li>
+</ul>
+
+<h2 id="why-the-terminal-changes-the-task-why-cli">Why the terminal changes the task {:#why-cli}</h2>
+
+<p>In an editor, a developer often selects code, chats and accepts a suggestion. A terminal agent can navigate files and propose a sequence of operations, including commands that run tests or edit a branch. That can shorten the path from question to candidate diff, but a readable answer alone cannot establish that the patch works. <strong>The unit of progress is a verified artifact:</strong> source citation, plan, diff, command output, then human review.</p>
+
+<p>GitHub documents Copilot CLI as an interactive tool launched from a directory containing code. It can use an <code class="language-plaintext highlighter-rouge">@</code> file reference in a prompt, has a plan mode, accepts repository instructions, and asks for permission for tools that may modify or execute files. Those details may change, so follow the <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview" target="_blank" rel="noopener noreferrer">current usage guide</a> for your installed version. This lab does not require an MCP server, hook, SDK, cloud agent or GitHub Desktop. Those extensions solve different needs; start with the smallest sufficient surface.</p>
+
+<h2 id="trust-the-directory-and-bound-the-request-scope">Trust the directory and bound the request {:#scope}</h2>
+
+<p>On macOS, GitHub currently documents a <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli" target="_blank" rel="noopener noreferrer">Homebrew installation</a> with <code class="language-plaintext highlighter-rouge">brew install --cask copilot-cli</code>. Check your Copilot entitlement and organization policy before starting. Do not use an organization’s private repository without approval, and do not put tokens or customer records into the example.</p>
+
+<p>From the companion repository root, the <strong>read-only Ruby preflight</strong> lists exact source paths and short SHA-256 fingerprints. It does not run Rails, install gems or contact GitHub:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby scripts/07_caseflow_cli_preflight.rb
+git status <span class="nt">--short</span>
+<span class="nb">cd </span>caseflow
+copilot
+</code></pre></div></div>
+
+<p>If the CLI asks you to trust the directory, check that it is <code class="language-plaintext highlighter-rouge">caseflow/</code> and that the starting Git tree contains no unrelated work. GitHub says the CLI may read, modify or execute files inside a trusted directory during a session; a request to use another directory requires separate access. Choose per-session trust if the workspace is disposable. Authenticate using the CLI’s <code class="language-plaintext highlighter-rouge">/login</code> flow if prompted; never paste a token into the article’s prompt.</p>
+
+<p>The <a href="#references">runbook</a> distinguishes commands typed into your regular shell from text typed into an interactive Copilot session. Use VS Code alongside the terminal to inspect the exact diff. The repo already has <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code> and path-specific Rails guidance from Part 02; these guide the agent but cannot enforce a security policy by themselves.</p>
+
+<h2 id="plan-against-the-actual-rails-baseline-plan">Plan against the actual Rails baseline {:#plan}</h2>
+
+<p>The source file <code class="language-plaintext highlighter-rouge">caseflow/config/routes.rb</code> declares only <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">show</code> and <code class="language-plaintext highlighter-rouge">create</code> actions for <code class="language-plaintext highlighter-rouge">api/requests</code>. The model allows <code class="language-plaintext highlighter-rouge">resolved</code> as stored data, but the baseline has no route for a client to resolve a request. Part 03 supplies a <strong>separate candidate patch</strong> and synthetic issue for <code class="language-plaintext highlighter-rouge">PATCH /api/requests/:id/resolve</code>. Your CLI task is to <em>plan and inspect</em> a fresh, small candidate, then compare it with that issue. Do not tell the agent the endpoint already works.</p>
+
+<p>With <code class="language-plaintext highlighter-rouge">caseflow/</code> as your working directory, enable CLI plan mode using <code class="language-plaintext highlighter-rouge">Shift</code>+<code class="language-plaintext highlighter-rouge">Tab</code> if your installed version offers it. Paste <strong>stage 1</strong> of the <a href="#references">companion prompt</a>. The <code class="language-plaintext highlighter-rouge">@config/routes.rb</code> and <code class="language-plaintext highlighter-rouge">@app/models/service_request.rb</code> references direct Copilot to files; the prompt explicitly forbids edits and commands during planning. Demand a path citation for each baseline claim, an explicit list of files it would change, focused negative tests and unknowns needing runtime or security review.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Claim made during planning</th>
+      <th>What can establish it</th>
+      <th>What cannot establish it</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Baseline has create/list/show routes</td>
+      <td>Inspect <code class="language-plaintext highlighter-rouge">config/routes.rb</code>
+</td>
+      <td>A confident agent answer without a file citation</td>
+    </tr>
+    <tr>
+      <td>Candidate patch proposes resolution</td>
+      <td>Inspect the candidate diff and issue</td>
+      <td>The baseline model’s allowed status value</td>
+    </tr>
+    <tr>
+      <td>New request specs assert auth failures</td>
+      <td>Inspect the proposed spec source</td>
+      <td>A claim that those specs passed</td>
+    </tr>
+    <tr>
+      <td>Change is ready for a client PR</td>
+      <td>Real runs, review and policy approval</td>
+      <td>Test generation alone</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If the plan adds a generic status-update API, exposes a token, or proposes a different service without evidence, stop and correct it before stage 2. A strong prompt narrows the task; it does not prove the answer.</p>
+
+<h2 id="inspect-every-requested-tool-action-permissions">Inspect every requested tool action {:#permissions}</h2>
+
+<p>GitHub’s CLI <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview" target="_blank" rel="noopener noreferrer">usage documentation</a> says tools that could modify or execute files prompt for approval. That is a decision point, not a decorative dialog. Check the command, target files and working directory. Grant a narrowly scoped action only when you understand why it is needed. If the request would delete files, run a network installer or touch an external directory, reject it and request a safer plan. An approval for the rest of the session has a broader effect than approval once.</p>
+
+<p><img src="/assets/images/posts/rails-change-copilot-cli/permission-boundary.webp" alt="An illustrated Copilot CLI session reads the trusted CaseFlow workspace; a human permission gate separates a proposed edit and shell command from source reading, with unexecuted tests beyond it." style="width:100%;height:auto;"></p>
+
+<p><em>A permission prompt is where intention becomes an operation.</em> Reading relevant source, proposing a diff and running a command are separate actions with separate evidence. The adjacent Mermaid source makes this sequence editable without treating the illustration as an executable policy.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCd0aGVtZVZhcmlhYmxlcyc6eydiYWNrZ3JvdW5kJzonI0ZGRkZGRicsJ3ByaW1hcnlUZXh0Q29sb3InOicjM0UzNDJDJywnbGluZUNvbG9yJzonIzZGNzM3Nyd9fX0lJVxuZmxvd2NoYXJ0IFRCXG5zdWJncmFwaCBzY29wZVtcIvCflJAgVHJ1c3RlZCBsb2NhbCBzY29wZVwiXVxuQVtcIvCfk4EgY2FzZWZsb3cvIHdvcmtzcGFjZVwiXSAtLT4gQltcIvCfp60gUmVhZCBzb3VyY2UgKyBpbnN0cnVjdGlvbnNcIl1cbmVuZFxuc3ViZ3JhcGggcHJvcG9zZVtcIvCfm6DvuI8gUHJvcG9zZSwgdGhlbiBpbnNwZWN0XCJdXG5CIC0tPiBDW1wi8J-TnSBQbGFuIG9ubHlcIl1cbkMgLS0-IERbXCLwn5SOIENhbmRpZGF0ZSBkaWZmXCJdXG5EIC0tPiBFW1wi8J-RpCBBcHByb3ZlIHJlcXVlc3RlZCB0b29sc1wiXVxuZW5kXG5zdWJncmFwaCB2ZXJpZnlbXCLwn6eqIEV2aWRlbmNlIGdhdGVcIl1cbkUgLS0-IEZbXCLwn6eqIFJ1biBsb2NhbCBzcGVjc1wiXVxuRiAtLT58XCJhY3R1YWwgb3V0cHV0XCJ8IEdbXCLwn5OLIEV2aWRlbmNlIGxlZGdlclwiXVxuRiAtLT58XCJibG9ja2VkXCJ8IEhbXCLinZQgUmVjb3JkIGJsb2NrZXJcIl1cbkcgLS0-IElbXCLwn5GlIEh1bWFuIFBSIHJldmlld1wiXVxuSCAtLT4gSVxuZW5kXG5jbGFzc0RlZiBzY29wZSBmaWxsOiNEOUVBRjcsc3Ryb2tlOiM3QUE2QzIsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIHByb3Bvc2FsIGZpbGw6I0U4RERGNSxzdHJva2U6I0E2OEJDNCxjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgYXBwcm92YWwgZmlsbDojRkZGMUJGLHN0cm9rZTojQkE5QzQzLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBldmlkZW5jZSBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIHVua25vd24gZmlsbDojRjhERkM0LHN0cm9rZTojQzk5ODZELGNvbG9yOiMzRTM0MkM7XG5jbGFzcyBBLEIgc2NvcGU7XG5jbGFzcyBDLEQgcHJvcG9zYWw7XG5jbGFzcyBFLEkgYXBwcm92YWw7XG5jbGFzcyBGLEcgZXZpZGVuY2U7XG5jbGFzcyBIIHVua25vd247IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0"></p>
+
+<p>The diagram is a proposed workflow. No tool request, diff, RSpec output or approval has been observed in this package. Its editable source is <code class="language-plaintext highlighter-rouge">docs/diagrams/07-cli-evidence-gates.mmd</code>.</p>
+
+<h2 id="verify-the-candidate-and-report-the-outcome-verify">Verify the candidate and report the outcome {:#verify}</h2>
+
+<p>Only after reviewing the plan and your branch should you paste <strong>stage 2</strong> of the prompt to request a local candidate. Compare any change with the synthetic <a href="#references">Part 03 issue</a>, particularly negative cases for wrong/missing/unconfigured operator tokens. This lab’s token mechanism is an exercise constraint, <strong>not production authorization guidance</strong>. Discuss real auth, secrets and repository policy with the client.</p>
+
+<p>In a separate terminal under <code class="language-plaintext highlighter-rouge">caseflow/</code>, review the diff and run the focused checks <strong>if dependencies are installed</strong>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff <span class="nt">--check</span>
+git diff <span class="nt">--</span> config/routes.rb app/controllers/api/requests_controller.rb app/models/service_request.rb spec/requests/api/requests_spec.rb
+bundle <span class="nb">install
+</span><span class="nv">RAILS_ENV</span><span class="o">=</span><span class="nb">test </span>bin/rails db:prepare
+bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
+</code></pre></div></div>
+
+<p>Record exactly what ran, its exit status and first failure in the <a href="#references">evidence ledger</a>. If Ruby, Bundler, SQLite or a resolved lockfile is missing, record the blocker. The existence of an RSpec file states expectations; it never stands in for a green test run. The Part 04 GitHub Actions sample remains staged under <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/</code>, so it supplies no CI result here.</p>
+
+<p>Close by showing the reviewer the actual diff, negative paths, test output or blocker, and remaining security questions. A rejected candidate with a precise diagnosis can be a better result than an unreviewed PR. That is what makes the CLI useful in a short consulting engagement: the team can inspect the path from a source-backed question to the next decision.</p>
+
+<h2 id="try-the-guided-lab-lab">Try the guided lab {:#lab}</h2>
+
+<ol>
+  <li>
+<strong>Orient (10 min):</strong> read the baseline route, Part 03 issue and your <code class="language-plaintext highlighter-rouge">git status</code>; run the Ruby preflight if available.</li>
+  <li>
+<strong>Plan (12 min):</strong> start CLI in <code class="language-plaintext highlighter-rouge">caseflow/</code>, use stage 1 of the prompt and mark any uncited or inaccurate statement.</li>
+  <li>
+<strong>Approve (10 min):</strong> for a proposed write or shell command, state what it touches and approve only if it fits the lab. You may stop after planning.</li>
+  <li>
+<strong>Verify (15 min):</strong> inspect the candidate diff, run focused checks when dependencies allow, and copy <em>actual</em> output or first blocker to the evidence ledger.</li>
+  <li>
+<strong>Explain (8 min):</strong> summarize what is source fact, proposal, observed result and unresolved review. Compare your response to the <a href="#references">workbook’s answer key</a>.</li>
+</ol>
+
+<h2 id="references-and-supporting-material-references">References and supporting material {:#references}</h2>
+
+<ul>
+  <li>
+<a href="/assets/downloads/rails-change-copilot-cli-support.zip">Download the cumulative companion repository and Part 07 lab</a>. Begin at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/07-cli-rails-change/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/07-cli-rails-change/article.md</code>.</li>
+  <li>Companion paths: <code class="language-plaintext highlighter-rouge">parts/07-cli-rails-change/RUNBOOK.md</code>, <code class="language-plaintext highlighter-rouge">CLI-PROMPT.md</code>, <code class="language-plaintext highlighter-rouge">EVIDENCE-LEDGER.md</code>, <code class="language-plaintext highlighter-rouge">POST-BRIEF.md</code>; <code class="language-plaintext highlighter-rouge">scripts/07_caseflow_cli_preflight.rb</code>; <code class="language-plaintext highlighter-rouge">docs/labs/07-cli-workbook.md</code>; <code class="language-plaintext highlighter-rouge">docs/diagrams/07-cli-evidence-gates.mmd</code>; <code class="language-plaintext highlighter-rouge">docs/posts/07-cli-rails-change/post-manifest.md</code>.</li>
+  <li>Previous CaseFlow lab: <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/ISSUE.md</code> and <code class="language-plaintext highlighter-rouge">candidate.patch</code>; staged workflow: <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/rails-pr.yml</code>.</li>
+  <li>
+<a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli" target="_blank" rel="noopener noreferrer">GitHub Docs: install Copilot CLI</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview" target="_blank" rel="noopener noreferrer">use Copilot CLI and approve tools</a>; <a href="https://docs.github.com/en/copilot/concepts/agents/copilot-cli/comparing-cli-features" target="_blank" rel="noopener noreferrer">compare instructions, skills, tools and hooks</a>.</li>
+  <li>
+<a href="https://developer.microsoft.com/blog/get-started-with-github-copilot-cli-a-free-hands-on-course/" target="_blank" rel="noopener noreferrer">Microsoft’s free hands-on Copilot CLI course</a> for optional further practice.</li>
+</ul>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

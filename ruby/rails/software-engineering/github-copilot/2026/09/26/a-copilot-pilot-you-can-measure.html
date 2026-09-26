@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>A Copilot Pilot You Can Measure | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="A Copilot Pilot You Can Measure">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Design a small GitHub Copilot pilot for Rails teams with a baseline, consent and policy guardrails, usage and quality signals, and an honest expansion decision.">
+<meta property="og:description" content="Design a small GitHub Copilot pilot for Rails teams with a baseline, consent and policy guardrails, usage and quality signals, and an honest expansion decision.">
+<link rel="canonical" href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html">
+<meta property="og:url" content="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/measurable-copilot-rails-pilot/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-09-26T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/measurable-copilot-rails-pilot/cover.webp">
+<meta property="twitter:title" content="A Copilot Pilot You Can Measure">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-26T00:00:00+00:00","datePublished":"2026-09-26T00:00:00+00:00","description":"Design a small GitHub Copilot pilot for Rails teams with a baseline, consent and policy guardrails, usage and quality signals, and an honest expansion decision.","headline":"A Copilot Pilot You Can Measure","image":"https://enogrob.github.io/assets/images/posts/measurable-copilot-rails-pilot/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html"},"url":"https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2026-09-26-a-copilot-pilot-you-can-measure.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" alt="GitHub Copilot for Rails Engineers Part 05: a Rails team scopes a pilot around CaseFlow, establishes a baseline, observes usage, quality and safety separately, and reaches an expand, revise or pause decision beside a digital Copilot-inspired profile." style="width:100%;height:auto;"></p>
+
+<blockquote>
+  <p><strong>Usage tells you who tried Copilot; it cannot tell you what improved.</strong> Design a small Rails pilot that measures engineering outcomes, protects sensitive context and gives the team a real decision at the end.</p>
+</blockquote>
+
+<p><em>GitHub Copilot for Rails Engineers · Part 05</em></p>
+
+<p>The first four parts followed one CaseFlow Rails repository from orientation to a proposed, reviewed patch and a staged CI workflow. None of those artifacts means a team should turn on every Copilot capability overnight. A solutions architect has to ask a different question: <strong>who can safely try which workflow, what would count as improvement, and what would make us stop?</strong> This article lays out a synthetic 2–4 week pilot. It describes a plan, not an engagement that has taken place.</p>
+
+<p>The <a href="/assets/downloads/measurable-copilot-rails-pilot-support.zip">cumulative companion package</a> includes Parts 01–05, a complete CaseFlow app, a pilot charter, an empty aggregate CSV template, a Ruby summarizer, exercises and answers, and the original Mermaid source. <strong>There are no collected user metrics, measured productivity gains or configured enterprise settings in this package.</strong> The team must obtain consent and validate its actual GitHub plan, product settings and data access before any real pilot.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#question">Choose one bounded question</a></li>
+  <li><a href="#guardrails">Set the safety boundaries first</a></li>
+  <li><a href="#measures">Separate usage from engineering outcomes</a></li>
+  <li><a href="#evidence">Collect the smallest useful evidence</a></li>
+  <li><a href="#decision">Decide whether to expand</a></li>
+  <li><a href="#lab">Try the 50-minute lab</a></li>
+  <li><a href="#references">References and supporting material</a></li>
+</ul>
+
+<h2 id="choose-one-bounded-question-question">Choose one bounded question {:#question}</h2>
+
+<p>Here is a useful <strong>hypothesis</strong>, not a promised result: <em>Can a small Rails team use Copilot to orient in unfamiliar code and draft bounded changes while keeping review quality and sensitive context under control?</em> Start with a willing cohort, one Rails repository, two narrow tasks and a named engineering owner. CaseFlow’s <a href="#references">Part 01</a> repository map and <a href="#references">Part 03</a> issue-to-patch exercise are examples of task types; the synthetic app is not customer production code.</p>
+
+<p>Write down before enabling the tool: who may participate; which repo and feature modes are in scope; what data may be sent into prompts; what PR evidence is required; who can pause the pilot; how to collect qualitative feedback; and how long the baseline and pilot windows are. Define comparable work types and any concurrent changes (new reviewer policy, migration, incident) that could affect a comparison. In a 2–4 week pilot, those factors can dominate the signal. Never present a directional association as proof Copilot caused it.</p>
+
+<p>GitHub’s <a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success" target="_blank" rel="noopener noreferrer">trial measurement guidance</a> recommends goals, adoption/engagement evidence, developer feedback and a decision about expansion. Treat that guidance as a framework; the appropriate thresholds and governance authority belong to the client.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCd0aGVtZVZhcmlhYmxlcyc6eydiYWNrZ3JvdW5kJzonI0ZGRkZGRicsJ3ByaW1hcnlUZXh0Q29sb3InOicjM0UzNDJDJywnbGluZUNvbG9yJzonIzZGNzM3Nyd9fX0lJVxuZmxvd2NoYXJ0IFRCXG5zdWJncmFwaCBzY29wZVtcIvCfjq8gRGVmaW5lIHRoZSBwaWxvdFwiXVxuUVtcIvCfk4sgVGFzayArIGNvaG9ydFwiXSAtLT4gR1tcIvCfm6HvuI8gQ29uc2VudCArIGJvdW5kYXJpZXNcIl1cbmVuZFxuc3ViZ3JhcGggZXZpZGVuY2VbXCLwn5SNIE9ic2VydmUgc2VwYXJhdGVseVwiXVxuRyAtLT4gQltcIvCfk40gQmFzZWxpbmVcIl1cbkIgLS0-IFVbXCLwn5GlIFVzYWdlICsgZmVlZGJhY2tcIl1cbkIgLS0-IEVbXCLwn6eqIFJldmlldyArIHF1YWxpdHlcIl1cbmVuZFxuc3ViZ3JhcGggbGVhcm5bXCLwn6etIEludGVycHJldCBhbmQgZGVjaWRlXCJdXG5VIC0tPiBEW1wi8J-TnSBIdW1hbiBldmFsdWF0aW9uXCJdXG5FIC0tPiBEXG5EIC0tPnxcImd1YXJkcmFpbCBicmVhY2hcInwgU1tcIuKblCBQYXVzZSArIHJlbWVkaWF0ZVwiXVxuRCAtLT58XCJldmlkZW5jZSBpbnN1ZmZpY2llbnRcInwgUltcIvCflIEgUmV2aXNlIHNjb3BlXCJdXG5EIC0tPnxcImNyaXRlcmlhIG1ldFwifCBYW1wi8J-RpCBBcHByb3ZlIG5leHQgY29ob3J0XCJdXG5lbmRcbmNsYXNzRGVmIGlucHV0IGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgZ3VhcmQgZmlsbDojRjVEOURDLHN0cm9rZTojQkM4MTkxLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBhY3Rpdml0eSBmaWxsOiNFOERERjUsc3Ryb2tlOiNBNjhCQzQsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIHF1YWxpdHkgZmlsbDojRENFRkQ2LHN0cm9rZTojODZBODc4LGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBjYXV0aW9uIGZpbGw6I0ZGRjFCRixzdHJva2U6I0JBOUM0Myxjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgZGVjaXNpb24gZmlsbDojRjhERkM0LHN0cm9rZTojQzk5ODZELGNvbG9yOiMzRTM0MkM7XG5jbGFzcyBRLEIgaW5wdXQ7XG5jbGFzcyBHLFMgZ3VhcmQ7XG5jbGFzcyBVIGFjdGl2aXR5O1xuY2xhc3MgRSBxdWFsaXR5O1xuY2xhc3MgUiBjYXV0aW9uO1xuY2xhc3MgRCxYIGRlY2lzaW9uOyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"></p>
+
+<p>This is a <strong>proposed decision loop</strong>. It does not represent a running customer program. The matching Mermaid source is in <code class="language-plaintext highlighter-rouge">docs/diagrams/05-pilot-decision.mmd</code> in the download.</p>
+
+<h2 id="set-the-safety-boundaries-first-guardrails">Set the safety boundaries first {:#guardrails}</h2>
+
+<p>Make a short, explicit threat and data map. Copilot use in VS Code, GitHub.com and cloud agents is not one uniform surface. The organization chooses which capabilities to allow; repository access, feature policy, data handling and permissible prompt content need to be checked <strong>per surface</strong>. Ask a security owner to decide on customer data, credentials, private repositories and any regulated material before trying realistic tasks.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Boundary</th>
+      <th>Pilot choice to document</th>
+      <th>Verification before launch</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Repository and actor</td>
+      <td>One approved Rails repo and participant cohort</td>
+      <td>Access list, least privilege and enrollment record</td>
+    </tr>
+    <tr>
+      <td>Prompts and context</td>
+      <td>Synthetic CaseFlow examples; no customer records or tokens</td>
+      <td>Prompt rules, example review, approved data types</td>
+    </tr>
+    <tr>
+      <td>Agent actions</td>
+      <td>Default to draft and human review for any proposed PR</td>
+      <td>Repository agent settings, allowed tools and review rules</td>
+    </tr>
+    <tr>
+      <td>Content exclusion</td>
+      <td>Identify sensitive paths but <strong>verify limits by feature</strong>
+</td>
+      <td>Test the exact VS Code/agent surface; do not assume a universal shield</td>
+    </tr>
+    <tr>
+      <td>Change control</td>
+      <td>Require source review, CI evidence and owner decision</td>
+      <td>Branch protections and escalation route in the target repo</td>
+    </tr>
+    <tr>
+      <td>Measurement</td>
+      <td>Aggregate only the minimum needed</td>
+      <td>Permission, retention period and cohort size review</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>GitHub documents <a href="https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies" target="_blank" rel="noopener noreferrer">organization Copilot policies</a>, and its <a href="https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion" target="_blank" rel="noopener noreferrer">content exclusion guide</a> warns that exclusions do <strong>not</strong> cover every feature or mode; in particular, Edit and Agent modes in editors have limitations. Verify the current support table and test the exact client before relying on exclusion. A written rule not to put secrets into prompts remains necessary. GitHub’s <a href="https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent" target="_blank" rel="noopener noreferrer">cloud agent overview</a> describes an agent that can make code changes for review; enabling it requires separate consideration from IDE suggestions.</p>
+
+<h2 id="separate-usage-from-engineering-outcomes-measures">Separate usage from engineering outcomes {:#measures}</h2>
+
+<p><img src="/assets/images/posts/measurable-copilot-rails-pilot/usage-is-not-impact.webp" alt="Three proposed evidence lanes from a Rails pilot: reach among eligible developers, quality through rework and defects, and safety through incidents, converging on a baseline comparison marked with a question mark; no measured results are shown." style="width:100%;height:auto;"></p>
+
+<p><em>Activity and quality answer different questions.</em> Usage telemetry tells you whether eligible developers tried the tool and how engagement changes. Code review, CI and defect evidence tell you how work is going. Developer feedback can explain friction that neither number shows. GitHub’s <a href="https://docs.github.com/en/copilot/reference/copilot-usage-metrics" target="_blank" rel="noopener noreferrer">Copilot usage metrics</a> provide usage and engagement fields; GitHub’s <a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-copilot-impact" target="_blank" rel="noopener noreferrer">measurement path</a> explicitly moves from adoption to engineering outcomes. The API and dashboards require suitable access and can present different aggregations; check definitions and permissions before collecting.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lens</th>
+      <th>Candidate measure</th>
+      <th>Source and interpretation guard</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Reach</td>
+      <td>Active Copilot users ÷ eligible pilot developers per time window</td>
+      <td>Only within an agreed cohort; do not publish identifiable small-group usage.</td>
+    </tr>
+    <tr>
+      <td>Experience</td>
+      <td>Anonymous feedback on usefulness and context switching</td>
+      <td>Ask task-specific questions; record selection bias and missing responses.</td>
+    </tr>
+    <tr>
+      <td>Delivery</td>
+      <td>Comparable PR review turnaround and change size</td>
+      <td>Compare similar work, not a fast typo fix with an API migration.</td>
+    </tr>
+    <tr>
+      <td>Quality</td>
+      <td>Review rework, test failures, escaped defects</td>
+      <td>Keep denominator and observation period; an early increase can reflect better detection.</td>
+    </tr>
+    <tr>
+      <td>Safety</td>
+      <td>Prompt policy incidents, access exceptions, unresolved findings</td>
+      <td>A serious breach triggers pause regardless of high activity.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For example, if a report lists <em>active users</em>, the ratio needs an <strong>eligible</strong> cohort size for the same time window; assigned licenses alone are not an outcome. Do not calculate a universal “productivity score” by mixing hours, lines of code and review comments. GitHub’s <a href="https://docs.github.com/en/copilot/reference/copilot-usage-metrics/interpret-copilot-metrics" target="_blank" rel="noopener noreferrer">interpretation guide</a> explains how usage metrics should be read, including window definitions. Your pilot’s engineering signals come from the team’s own PR, CI and incident systems and require careful comparison.</p>
+
+<h2 id="collect-the-smallest-useful-evidence-evidence">Collect the smallest useful evidence {:#evidence}</h2>
+
+<p>The companion <code class="language-plaintext highlighter-rouge">parts/05-adoption-and-governance/pilot-observations.csv</code> is intentionally <strong>header-only</strong>. Fill one aggregate row per cohort and period after permission and source checks. No names, emails, prompt content, source code, customer records or raw tokens belong in it. The accompanying <code class="language-plaintext highlighter-rouge">scripts/summarize_pilot.rb</code> validates integer counts and prints an adoption ratio only where a valid denominator exists; it refuses an empty dataset and makes no causal inference.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby scripts/summarize_pilot.rb parts/05-adoption-and-governance/pilot-observations.csv
+</code></pre></div></div>
+
+<p>No script execution or pilot observation was completed in this authoring environment. The <a href="#references">pilot charter</a> supplies field definitions, privacy review and a decision log. For a real organization with permission, use GitHub’s <a href="https://docs.github.com/rest/copilot/copilot-usage-metrics" target="_blank" rel="noopener noreferrer">usage metrics documentation</a> as the starting point for its <em>actual</em> telemetry; this package does not fetch or process user-level API data. Follow the organization’s retention and reporting rules.</p>
+
+<h2 id="decide-whether-to-expand-decision">Decide whether to expand {:#decision}</h2>
+
+<p>At the checkpoint, ask three separate questions. <strong>Was use enabled and helpful?</strong> Check activity and qualitative feedback. <strong>Was engineering quality at least acceptable for this scoped work?</strong> Inspect PR and CI evidence alongside the pre-pilot baseline and note confounders. <strong>Were the boundaries respected?</strong> Review incidents, data handling and policy exceptions. A strong usage graph cannot cancel a sensitive-context breach. An absent baseline or tiny incomparable sample warrants learning more rather than a claim of benefit.</p>
+
+<p>Choose and record <em>expand to another cohort</em>, <em>revise and rerun</em>, or <em>pause</em>. State who owns the decision and what evidence would change it. The reusable <a href="#references">decision worksheet</a> has blank cells on purpose. In an interview, this framing lets you explain how you would deliver a small client engagement without claiming a deployment or numbers you have not observed.</p>
+
+<h2 id="try-the-50-minute-lab-lab">Try the 50-minute lab {:#lab}</h2>
+
+<ol>
+  <li>
+<strong>Scope (10 min):</strong> pick two CaseFlow tasks and write the pilot hypothesis, cohort and one exclusion criterion.</li>
+  <li>
+<strong>Threat review (10 min):</strong> list three sources of sensitive context and identify one Copilot surface where exclusion coverage needs verification.</li>
+  <li>
+<strong>Measure (12 min):</strong> distinguish usage, quality and safety signals; label the source and denominator for each. Inspect the empty CSV and Ruby summarizer; do not fabricate a report.</li>
+  <li>
+<strong>Decision (10 min):</strong> complete a <em>hypothetical</em> pause/expand decision using the worked case in the workbook, clearly labeling it hypothetical.</li>
+  <li>
+<strong>Transfer (8 min):</strong> describe your 2-minute pilot recommendation to a Rails engineering lead and security stakeholder.</li>
+</ol>
+
+<p>The <a href="#references">workbook with answers</a> contains a prediction exercise, a misleading-metric challenge, a safety scenario and sample interview wording.</p>
+
+<h2 id="references-and-supporting-material-references">References and supporting material {:#references}</h2>
+
+<ul>
+  <li>
+<a href="/assets/downloads/measurable-copilot-rails-pilot-support.zip">Download cumulative companion repository and Part 05 materials</a>. Start at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/05-adoption-and-governance/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/05-adoption-and-governance/article.md</code>.</li>
+  <li>Companion paths: <code class="language-plaintext highlighter-rouge">parts/05-adoption-and-governance/PILOT-CHARTER.md</code>, <code class="language-plaintext highlighter-rouge">pilot-observations.csv</code>, <code class="language-plaintext highlighter-rouge">DECISION-RECORD.md</code>, <code class="language-plaintext highlighter-rouge">scripts/summarize_pilot.rb</code>, <code class="language-plaintext highlighter-rouge">docs/labs/05-pilot-workbook.md</code>, <code class="language-plaintext highlighter-rouge">docs/diagrams/05-pilot-decision.mmd</code>, <code class="language-plaintext highlighter-rouge">docs/posts/05-adoption-and-governance/post-manifest.md</code>.</li>
+  <li>Prior chapters inside the same companion: <code class="language-plaintext highlighter-rouge">docs/posts/01-first-30-minutes/article.md</code>, <code class="language-plaintext highlighter-rouge">docs/posts/03-issue-to-pr/article.md</code>, <code class="language-plaintext highlighter-rouge">docs/posts/04-ci-and-devsecops/article.md</code>.</li>
+  <li>
+<a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success" target="_blank" rel="noopener noreferrer">GitHub Docs: measuring trial success</a>; <a href="https://docs.github.com/en/copilot/reference/copilot-usage-metrics" target="_blank" rel="noopener noreferrer">usage metrics</a>; <a href="https://docs.github.com/en/copilot/reference/copilot-usage-metrics/interpret-copilot-metrics" target="_blank" rel="noopener noreferrer">interpretation</a>; <a href="https://docs.github.com/rest/copilot/copilot-usage-metrics" target="_blank" rel="noopener noreferrer">REST usage metrics</a>.</li>
+  <li>
+<a href="https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion" target="_blank" rel="noopener noreferrer">GitHub Docs: content exclusion and its limitations</a>; <a href="https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies" target="_blank" rel="noopener noreferrer">organization policy settings</a>; <a href="https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent" target="_blank" rel="noopener noreferrer">cloud agent overview</a>.</li>
+</ul>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
