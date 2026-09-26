@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>From Issue to Reviewable PR | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="From Issue to Reviewable PR">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Turn a bounded CaseFlow status-transition issue into an auditable Rails patch: scope, agent task, negative tests, diff review and honest verification.">
+<meta property="og:description" content="Turn a bounded CaseFlow status-transition issue into an auditable Rails patch: scope, agent task, negative tests, diff review and honest verification.">
+<link rel="canonical" href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/from-issue-to-reviewable-rails-pr.html">
+<meta property="og:url" content="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/from-issue-to-reviewable-rails-pr.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/issue-to-reviewable-rails-pr/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-09-26T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/issue-to-reviewable-rails-pr/cover.webp">
+<meta property="twitter:title" content="From Issue to Reviewable PR">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-26T00:00:00+00:00","datePublished":"2026-09-26T00:00:00+00:00","description":"Turn a bounded CaseFlow status-transition issue into an auditable Rails patch: scope, agent task, negative tests, diff review and honest verification.","headline":"From Issue to Reviewable PR","image":"https://enogrob.github.io/assets/images/posts/issue-to-reviewable-rails-pr/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/from-issue-to-reviewable-rails-pr.html"},"url":"https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/from-issue-to-reviewable-rails-pr.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2026-09-26-from-issue-to-reviewable-rails-pr.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/ruby/rails/software-engineering/github-copilot/2026/09/26/from-issue-to-reviewable-rails-pr.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/from-issue-to-reviewable-rails-pr.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/issue-to-reviewable-rails-pr/cover.webp" alt="GitHub Copilot for Rails Engineers Part 03 cover: a digitized Copilot-inspired character in profile examines a central CaseFlow patch dossier with route, action, specs and an unresolved policy question, amid colorful Holoflux." style="width:100%;height:auto;"></p>
+
+<p><em>GitHub Copilot for Rails Engineers · Part 03</em></p>
+
+<p>A Rails agent can edit a route and controller in minutes. The hard part is deciding which behavior it was authorized to add, how a reviewer can verify it, and what remains unknown. In <a href="/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html">Part 01</a>, we mapped CaseFlow: <code class="language-plaintext highlighter-rouge">resolved</code> is a legal model value, but there is no update endpoint. In <a href="/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html">Part 02</a>, we taught Copilot to cite that boundary. Here we turn the question into <strong>an issue, a candidate diff and a review worksheet</strong>.</p>
+
+<p>The <a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">companion package</a> includes the full baseline Rails API, the issue, an agent prompt, an applicable patch, four proposed request specs, the review worksheet and a study workbook with answers. No GitHub issue or PR has been opened in this educational repository. The patch is a <strong>local review artifact</strong>; Ruby/RSpec and HTTP calls have not been executed in this authoring environment.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#issue">First, make the issue decidable</a></li>
+  <li><a href="#agent">Give the agent a bounded task</a></li>
+  <li><a href="#diff">Inspect the patch as a reviewer</a></li>
+  <li><a href="#verify">Separate test assertions from results</a></li>
+  <li><a href="#review">Turn review into a PR decision</a></li>
+  <li><a href="#lab">Your 35-minute lab</a></li>
+  <li><a href="#references">References and supporting materials</a></li>
+</ul>
+
+<h2 id="first-make-the-issue-decidable-issue">First, make the issue decidable {:#issue}</h2>
+
+<p>“Let users update status” hides unanswered questions: which user, which transitions, what happens on an invalid state, and which unrelated fields can change? A good issue turns that uncertainty into acceptance criteria. For this <strong>synthetic exercise</strong>, we propose <code class="language-plaintext highlighter-rouge">PATCH /api/requests/:id/resolve</code>, accepting only <code class="language-plaintext highlighter-rouge">open → resolved</code> and requiring an operator token stored server-side in <code class="language-plaintext highlighter-rouge">CASEFLOW_OPERATOR_TOKEN</code>. This token models an operator capability for the lab; it is <strong>not</strong> a customer-approved production identity system. Missing configuration or missing/incorrect credentials should fail closed. A real engagement would settle actors, authorization, rotation, audit trail and concurrent requests before deployment.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Requested case</th>
+      <th>Expected from candidate source and proposed specs</th>
+      <th>What remains unobserved</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Open + valid token</td>
+      <td>
+<code class="language-plaintext highlighter-rouge">200</code>, serialized <code class="language-plaintext highlighter-rouge">resolved</code>, persisted change</td>
+      <td>Focused RSpec and manual response</td>
+    </tr>
+    <tr>
+      <td>Missing/wrong token</td>
+      <td>
+<code class="language-plaintext highlighter-rouge">401</code>, original state retained</td>
+      <td>Focused negative spec run</td>
+    </tr>
+    <tr>
+      <td>Already <code class="language-plaintext highlighter-rouge">in_progress</code>
+</td>
+      <td>
+<code class="language-plaintext highlighter-rouge">409</code>, clear error, state retained</td>
+      <td>Focused negative spec run</td>
+    </tr>
+    <tr>
+      <td>Client tries arbitrary status</td>
+      <td>No generic update action; resolve never accepts status from payload</td>
+      <td>Route audit and unexpected-input probe</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The full <a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">issue in the package</a> distinguishes the lab decision from unknown production policy. Keep that distinction in a client conversation: a reviewer can evaluate the code against <strong>this issue</strong>, while still withholding deployment approval.</p>
+
+<h2 id="give-the-agent-a-bounded-task-agent">Give the agent a bounded task {:#agent}</h2>
+
+<p>GitHub’s <a href="https://docs.github.com/en/copilot/get-started/quickstart-for-using-github-copilot-on-github-com" target="_blank" rel="noopener noreferrer">Copilot cloud agent quickstart</a> describes assigning an issue and reviewing the resulting pull request. On your Mac, you can also use VS Code agent mode with the packaged <a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">task prompt</a>. Both routes depend on repository access and feature availability. This package has no GitHub remote for the CaseFlow lab, so nothing here claims the cloud agent opened a PR.</p>
+
+<p>Ask for <strong>plan → change → focused tests → diff summary → review</strong>, in that order. Give the agent exact context: the issue, <code class="language-plaintext highlighter-rouge">config/routes.rb</code>, <code class="language-plaintext highlighter-rouge">app/controllers/api/requests_controller.rb</code>, <code class="language-plaintext highlighter-rouge">app/models/service_request.rb</code>, and <code class="language-plaintext highlighter-rouge">spec/requests/api/requests_spec.rb</code>. Open <code class="language-plaintext highlighter-rouge">caseflow/</code> as the workspace root so its <code class="language-plaintext highlighter-rouge">.github/</code> instructions are in scope. One useful instruction from the packaged prompt is:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Implement only the issue's scope. Report the exact files changed,
+negative cases, tests you actually ran, and any blocker.
+Do not invent a passing CI run or treat the lab token as a production policy.
+</code></pre></div></div>
+
+<p>The review stage cannot be delegated away. GitHub’s <a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/review-copilot-output" target="_blank" rel="noopener noreferrer">guide to reviewing agent output</a> tells reviewers to inspect changes and test results before merging. It also documents conditions under which workflows for agent-authored PRs need explicit approval; check the actual Actions state instead of assuming that a badge ran automatically.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggZGVmaW5lW1wi8J-nrSBCb3VuZCB0aGUgdGFza1wiXVxuSVtcIvCfk4sgSXNzdWUgKyBwb2xpY3kgYXNzdW1wdGlvblwiXSAtLT4gQVtcIvCfpJYgQWdlbnQgcHJvcG9zYWxcIl1cbmVuZFxuc3ViZ3JhcGggaW5zcGVjdFtcIvCflI0gUmV2aWV3IHRoZSBjYW5kaWRhdGVcIl1cbkEgLS0-IERbXCLwn6exIFJvdXRlICsgYWN0aW9uICsgc3BlYyBkaWZmXCJdXG5EIC0tPiBDW1wi8J-boe-4jyBIdW1hbiBhdXRoIHJldmlld1wiXVxuRCAtLT4gVFtcIvCfp6ogRm9jdXNlZCB0ZXN0IHJ1blwiXVxuZW5kXG5DIC0tPiBQW1wi8J-ThCBQUiB3aXRoIGV2aWRlbmNlXCJdXG5UIC0tPnxcIm91dHB1dCByZWNvcmRlZFwifCBQXG5UIC0tPnxcImJsb2NrZWQgb3IgZmFpbGluZ1wifCBCW1wi4p2UIE9wZW4gYmxvY2tlclwiXVxuY2xhc3NEZWYgaW5wdXQgZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBhaSBmaWxsOiNFOERERjUsc3Ryb2tlOiNBNjhCQzQsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIGNoYW5nZSBmaWxsOiNGOERGQzQsc3Ryb2tlOiNDOTk4NkQsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIHJpc2sgZmlsbDojRjVEOURDLHN0cm9rZTojQkM4MTkxLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBldmlkZW5jZSBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIHVua25vd24gZmlsbDojRkZGMUJGLHN0cm9rZTojQkE5QzQzLGNvbG9yOiMzRTM0MkM7XG5jbGFzcyBJIGlucHV0O1xuY2xhc3MgQSBhaTtcbmNsYXNzIEQgY2hhbmdlO1xuY2xhc3MgQyByaXNrO1xuY2xhc3MgVCxQIGV2aWRlbmNlO1xuY2xhc3MgQiB1bmtub3duOyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"></p>
+
+<p>The green PR node means <strong>a document with recorded evidence</strong>, not a merged or production-safe feature. The test branch can land in a blocker. That branch is as important as the happy path.</p>
+
+<h2 id="inspect-the-patch-as-a-reviewer-diff">Inspect the patch as a reviewer {:#diff}</h2>
+
+<p>A local candidate patch in <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/candidate.patch</code> proposes exactly three changed files: route, controller and request spec. From the <strong>companion root</strong>, inspect before applying:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git apply <span class="nt">--check</span> parts/03-issue-to-pr/candidate.patch
+git apply <span class="nt">--stat</span> parts/03-issue-to-pr/candidate.patch
+git apply parts/03-issue-to-pr/candidate.patch
+</code></pre></div></div>
+
+<p>The support ZIP contains the complete baseline <code class="language-plaintext highlighter-rouge">caseflow/</code> Rails app. The patch is an optional change to that app; keep a clean copy if you want to repeat the exercise. <code class="language-plaintext highlighter-rouge">git apply --check</code> passed on the packaged baseline at authoring time; that check says only that the patch fits, not that the Rails feature works.</p>
+
+<p>The route patch declares a single member action, without exposing general update:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resources</span> <span class="ss">:requests</span><span class="p">,</span> <span class="ss">only: </span><span class="sx">%i[index show create]</span> <span class="k">do</span>
+  <span class="n">patch</span> <span class="ss">:resolve</span><span class="p">,</span> <span class="ss">on: :member</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The controller’s proposed guard reads the token from the environment, refuses empty configuration, and compares supplied credentials using Rails’ secure comparison utility. Its <code class="language-plaintext highlighter-rouge">resolve</code> action looks up the request, rejects non-<code class="language-plaintext highlighter-rouge">open</code> state, then writes <code class="language-plaintext highlighter-rouge">resolved</code> explicitly. It does <strong>not</strong> permit <code class="language-plaintext highlighter-rouge">params[:status]</code>. Rails documents <a href="https://guides.rubyonrails.org/action_controller_advanced_topics.html#http-token-authentication" target="_blank" rel="noopener noreferrer">HTTP token authentication</a>; the candidate uses that mechanism as an educational boundary, not as a finished authorization design.</p>
+
+<figure>
+  <img src="/assets/images/posts/issue-to-reviewable-rails-pr/review-diff.webp" alt="A central cutaway of an operator-token authorization guard is surrounded by valid-token, no-token and wrong-state specimens; an amber tag says run pending." style="width:100%;height:auto;">
+  <figcaption>The proposed guard and three request cases sit at the center of this conceptual cross-section. The colored streams express alternatives; “run pending” remains until an actual result is captured.</figcaption>
+</figure>
+
+<p>Review questions are concrete. Does the token guard run <strong>before</strong> the database lookup? If the environment variable is unset, could the endpoint become public? Can a client transition <code class="language-plaintext highlighter-rouge">in_progress</code>? Could a second concurrent request race between the state check and the write? What does a missing ID return on your actual Rails configuration? The candidate handles the first three in source, but lacks a focused unset-token spec and does not settle concurrency, audit or missing-ID behavior. Those are findings, not silent assumptions.</p>
+
+<h2 id="separate-test-assertions-from-results-verify">Separate test assertions from results {:#verify}</h2>
+
+<p>The candidate adds four request examples: valid token and open request, no token, wrong token, and valid token with <code class="language-plaintext highlighter-rouge">in_progress</code>. Each asserts the expected status and persistence. Apply the patch, then from <code class="language-plaintext highlighter-rouge">caseflow/</code> run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install
+</span><span class="nv">RAILS_ENV</span><span class="o">=</span><span class="nb">test </span>bin/rails db:prepare
+bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
+</code></pre></div></div>
+
+<p>Log the versions, command, exit code and output in your private <code class="language-plaintext highlighter-rouge">ENVIRONMENT.md</code>; the <a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">app README</a> explains initial setup. A green output in one local environment would support this specific candidate, not a production guarantee. If Bundler or SQLite blocks setup, record the first error. The verified baseline still contains only the original route and specs until you apply the patch.</p>
+
+<p>For an optional manual probe, start the patched server with a <strong>synthetic, locally set</strong> value, then use an existing request ID returned by <code class="language-plaintext highlighter-rouge">POST</code>. Do not commit the token or paste a real secret into the issue:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">CASEFLOW_OPERATOR_TOKEN</span><span class="o">=</span>synthetic-operator-token bin/rails server
+
+curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhost:3000/api/requests/1/resolve <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Authorization: Bearer synthetic-operator-token'</span>
+
+curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhost:3000/api/requests/1/resolve
+</code></pre></div></div>
+
+<p>Replace <code class="language-plaintext highlighter-rouge">1</code> with the actual created ID. Expected source branches are a successful transition and a <code class="language-plaintext highlighter-rouge">401</code> for a missing token. They are <strong>not captured responses</strong>. Confirm whether your Rails version accepts the chosen token header and inspect the actual JSON and database state. For a real service, use HTTPS and a reviewed credential and authorization design.</p>
+
+<h2 id="turn-review-into-a-pr-decision-review">Turn review into a PR decision {:#review}</h2>
+
+<p>The packaged <code class="language-plaintext highlighter-rouge">PR-REVIEW.md</code> is a review worksheet, <strong>not a fabricated PR</strong>. It requests exact results, highlights the single shared operator token as a production decision, and asks for an unset-token case and concurrency discussion. A useful draft PR description states the scope, links the issue, gives the focused command and its actual result, lists remaining unknowns and asks for a reviewer decision. If tests have not run, “pending due to environment blocker” is the correct entry.</p>
+
+<p>In a consultative engagement, the client receives a bounded answer: “We have a candidate patch with a narrow endpoint and explicit rejection cases. We cannot recommend deployment until your authorization rule is defined and we have real test and review evidence.” The agent accelerated the diff; the review made it accountable.</p>
+
+<h2 id="your-35-minute-lab-lab">Your 35-minute lab {:#lab}</h2>
+
+<ol>
+  <li>Read <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/ISSUE.md</code>. Mark the synthetic operator-token assumption and write one different production authorization question.</li>
+  <li>Ask Copilot to plan and propose the change using <code class="language-plaintext highlighter-rouge">prompts/03-agent-issue-to-pr.md</code>. Record paths and tests it proposes before seeing the packaged candidate patch.</li>
+  <li>Inspect <code class="language-plaintext highlighter-rouge">candidate.patch</code>; apply it to a clean copy with <code class="language-plaintext highlighter-rouge">git apply --check</code>, then compare your agent’s diff to the candidate. Flag extra migrations, mass-assigned status or invented policy classes.</li>
+  <li>Run focused RSpec where possible, record its exact output, then inspect the positive and negative branches. Do not call a static <code class="language-plaintext highlighter-rouge">git apply</code> result a passed test.</li>
+  <li>Complete <code class="language-plaintext highlighter-rouge">PR-REVIEW.md</code> and the <a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">study workbook</a>. Make one explicit <strong>review decision</strong>: change requested, evidence pending or acceptable for this lab; distinguish each from production approval.</li>
+</ol>
+
+<p><strong>Acceptance criterion:</strong> a reviewer can inspect every changed path, tie each acceptance case to an assertion or observed run, and identify the unresolved customer authorization decision.</p>
+
+<h2 id="references-and-supporting-materials-references">References and supporting materials {:#references}</h2>
+
+<ul>
+  <li>
+<a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">Download Part 03 package</a>: this article’s Markdown, integrated baseline Rails app, candidate patch, issue, agent prompt, review worksheet, workbook with answers, editable Mermaid and visual masters.</li>
+  <li><a href="https://docs.github.com/en/copilot/get-started/quickstart-for-using-github-copilot-on-github-com" target="_blank" rel="noopener noreferrer">GitHub Docs: Copilot on GitHub quickstart</a></li>
+  <li><a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/review-copilot-output" target="_blank" rel="noopener noreferrer">GitHub Docs: review Copilot output</a></li>
+  <li><a href="https://docs.github.com/en/copilot/concepts/agents/code-review" target="_blank" rel="noopener noreferrer">GitHub Docs: Copilot code review</a></li>
+  <li><a href="https://guides.rubyonrails.org/action_controller_advanced_topics.html#http-token-authentication" target="_blank" rel="noopener noreferrer">Rails Guides: HTTP token authentication</a></li>
+</ul>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
