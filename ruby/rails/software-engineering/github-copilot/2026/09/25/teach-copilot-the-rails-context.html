@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Teach Copilot the Rails Context | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="Teach Copilot the Rails Context">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Give Copilot scoped Rails guidance, then audit what its proposal knows, assumes and cannot yet prove.">
+<meta property="og:description" content="Give Copilot scoped Rails guidance, then audit what its proposal knows, assumes and cannot yet prove.">
+<link rel="canonical" href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html">
+<meta property="og:url" content="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/teach-copilot-rails-context/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-09-25T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/teach-copilot-rails-context/cover.webp">
+<meta property="twitter:title" content="Teach Copilot the Rails Context">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-25T00:00:00+00:00","datePublished":"2026-09-25T00:00:00+00:00","description":"Give Copilot scoped Rails guidance, then audit what its proposal knows, assumes and cannot yet prove.","headline":"Teach Copilot the Rails Context","image":"https://enogrob.github.io/assets/images/posts/teach-copilot-rails-context/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html"},"url":"https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2026-09-25-teach-copilot-the-rails-context.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/teach-copilot-rails-context/cover.webp" alt="A digitized AI guide in side profile faces a conceptual CaseFlow Rails editor; layered context and a ruby-colored flow lead to an unresolved evidence question beneath the GitHub Copilot for Rails Engineers Part 02 series heading." style="width:100%;height:auto;"></p>
+
+<p><em>GitHub Copilot for Rails Engineers · Part 02</em></p>
+
+<p>The first chapter left us with a CaseFlow architecture atlas and a client question: can a user transition a service request to <code class="language-plaintext highlighter-rouge">resolved</code>? The code lists <code class="language-plaintext highlighter-rouge">resolved</code> as an allowed stored status, but routes expose only <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">show</code> and <code class="language-plaintext highlighter-rouge">create</code>. A broad prompt such as “implement status changes” invites plausible Rails code and unsupported assumptions about authorization. This chapter narrows the <strong>context</strong> before asking Copilot for any change.</p>
+
+<p>We will add three different kinds of guidance to the <a href="/assets/downloads/teach-copilot-rails-context-support.zip">integrated CaseFlow lab</a>: a repository instruction, a model-path instruction and a single-use audit prompt. Then we will compare Copilot’s response with the code and a small evidence register. The exercise asks for a <strong>proposal only</strong>; we will implement and review a change in Part 03.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#scopes">Three scopes, one engineering question</a></li>
+  <li><a href="#repository">Write the smallest useful repository guidance</a></li>
+  <li><a href="#models">Narrow guidance to a Rails model</a></li>
+  <li><a href="#prompt">Ask for a source-backed change proposal</a></li>
+  <li><a href="#audit">Audit context against evidence</a></li>
+  <li><a href="#lab">Your 25-minute lab</a></li>
+  <li><a href="#references">References and supporting materials</a></li>
+</ul>
+
+<h2 id="three-scopes-one-engineering-question-scopes">Three scopes, one engineering question {:#scopes}</h2>
+
+<p>GitHub distinguishes repository-wide <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code>, path-specific <code class="language-plaintext highlighter-rouge">.github/instructions/*.instructions.md</code>, and agent-oriented <code class="language-plaintext highlighter-rouge">AGENTS.md</code>. Prompt files serve a particular interaction. Their availability varies by Copilot surface: consult the <a href="https://docs.github.com/en/copilot/reference/custom-instructions-support" target="_blank" rel="noopener noreferrer">official support matrix</a> for the feature and editor you actually use. These files <strong>guide responses</strong>; they are not Rails code, tests or access controls.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Context</th>
+      <th>CaseFlow file</th>
+      <th>Question it should answer</th>
+      <th>Avoid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Repository</td>
+      <td><code class="language-plaintext highlighter-rouge">caseflow/.github/copilot-instructions.md</code></td>
+      <td>What kind of app is this, and what evidence is required?</td>
+      <td>A full copy of the codebase</td>
+    </tr>
+    <tr>
+      <td>Model path</td>
+      <td><code class="language-plaintext highlighter-rouge">caseflow/.github/instructions/models.instructions.md</code></td>
+      <td>What is special about model edits?</td>
+      <td>Global rules repeated at length</td>
+    </tr>
+    <tr>
+      <td>One task</td>
+      <td><code class="language-plaintext highlighter-rouge">caseflow/.github/prompts/02-context-audit.prompt.md</code></td>
+      <td>What should this investigation deliver now?</td>
+      <td>Unbounded “build everything” request</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code class="language-plaintext highlighter-rouge">caseflow/</code> directory should be opened as the <strong>VS Code workspace root</strong> for this exercise. Its <code class="language-plaintext highlighter-rouge">.github/</code> is then at the root of the Rails repository as Copilot expects. If you open the companion repository’s outer folder instead, check which workspace and instruction files your Copilot surface is actually using. Do not infer automatic loading from a good answer; open the citations and inspect the available session context.</p>
+
+<figure>
+  <img src="/assets/images/posts/teach-copilot-rails-context/context-boundary.webp" alt="A Ruby model and task prompt in a conceptual editor receive repository guidance; an amber evidence gate separates a cited proposal from an unresolved question." style="width:100%;height:auto;">
+  <figcaption>Repository rules, model scope and the task prompt inform a cited proposal. The amber gate marks evidence to check; this conceptual editor is not a screenshot or a test run.</figcaption>
+</figure>
+
+<h2 id="write-the-smallest-useful-repository-guidance-repository">Write the smallest useful repository guidance {:#repository}</h2>
+
+<p>Place durable facts and review habits in <code class="language-plaintext highlighter-rouge">caseflow/.github/copilot-instructions.md</code>. The support package includes the complete file; its core contract is short:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> Inspect the actual route, controller, model, migration, and request specs before describing behavior; do not infer a UI, authentication, jobs, or a status transition.
+<span class="p">-</span> Distinguish a source declaration, an existing spec assertion, and a command you actually ran. Quote the path for every behavioral claim and state unknowns explicitly.
+<span class="p">-</span> Keep proposed changes within the requested scope. Before editing, identify affected files and a focused verification step.
+</code></pre></div></div>
+
+<p>An instruction that says “tests always pass” would be false. An instruction that says “run a focused spec and report its exit status” is operationally useful. A repository file tells the assistant <strong>how to work</strong>; it cannot attest that a local database migrated or that a particular HTTP response was observed. Avoid copying a full README into instructions: link to existing files and keep the rules that change decisions.</p>
+
+<h2 id="narrow-guidance-to-a-rails-model-models">Narrow guidance to a Rails model {:#models}</h2>
+
+<p>A model change has a different failure mode than a README edit. The packaged <code class="language-plaintext highlighter-rouge">.github/instructions/models.instructions.md</code> starts with:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">applyTo</span><span class="pi">:</span> <span class="s2">"</span><span class="s">app/models/**/*.rb"</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>It asks for controller, model, migration and specs to be inspected together. CaseFlow validates <code class="language-plaintext highlighter-rouge">title</code> presence and maximum length in the model; the migration declares <code class="language-plaintext highlighter-rouge">title</code> non-null but no database length limit. <code class="language-plaintext highlighter-rouge">resolved</code> is an accepted status <strong>value</strong> in <code class="language-plaintext highlighter-rouge">ServiceRequest::STATUSES</code>; that does not provide an update route or establish who may use it. The path-specific rules keep those distinctions visible whenever a matching model file is in scope. They do not automatically govern every question about the project; verify actual file context and <a href="https://docs.github.com/en/copilot/reference/custom-instructions-support" target="_blank" rel="noopener noreferrer">support for your Copilot feature</a>.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTZweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggZ3VpZGFuY2VbXCLwn5OaIFNjb3BlIG9mIGd1aWRhbmNlXCJdXG5SW1wi8J-MkCBSZXBvc2l0b3J5IGd1aWRhbmNlXCJdXG5NW1wi8J-nsSBNb2RlbCBwYXRoIGd1aWRhbmNlXCJdXG5UW1wi8J-OryBPbmUgdGFzayBwcm9tcHRcIl1cbmVuZFxuc3ViZ3JhcGggYXVkaXRbXCLwn5SNIEV2aWRlbmNlIGJvdW5kYXJ5XCJdXG5TW1wi8J-TiyBTb3VyY2UgYW5kIHNwZWNzXCJdXG5DW1wi8J-TnSBDaXRlZCBwcm9wb3NhbFwiXVxuVVtcIuKdlCBVbmtub3duIHVudGlsIHJ1blwiXVxuZW5kXG5SIC0tPiBDXG5NIC0tPiBDXG5UIC0tPiBDXG5TIC0tPiBDXG5DIC0tPiBVXG5jbGFzc0RlZiBjb250ZXh0IGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgbW9kZWwgZmlsbDojRThEREY1LHN0cm9rZTojQTY4QkM0LGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiB0YXNrIGZpbGw6I0Y4REZDNCxzdHJva2U6I0M5OTg2RCxjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgZXZpZGVuY2UgZmlsbDojRkZGMUJGLHN0cm9rZTojQkE5QzQzLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiByZXN1bHQgZmlsbDojRENFRkQ2LHN0cm9rZTojODZBODc4LGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiB1bmtub3duIGZpbGw6I0Y1RDlEQyxzdHJva2U6I0JDODE5MSxjb2xvcjojM0UzNDJDO1xuY2xhc3MgUiBjb250ZXh0O1xuY2xhc3MgTSBtb2RlbDtcbmNsYXNzIFQgdGFzaztcbmNsYXNzIFMgZXZpZGVuY2U7XG5jbGFzcyBDIHJlc3VsdDtcbmNsYXNzIFUgdW5rbm93bjsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ"></p>
+
+<p>Notice that the dotted, hypothetical “AI remembers everything” arrow is absent. The diagram shows <strong>inputs to an audited proposal</strong>, not a guarantee of which context a particular model session used. The evidence boundary still needs human review.</p>
+
+<h2 id="ask-for-a-source-backed-change-proposal-prompt">Ask for a source-backed change proposal {:#prompt}</h2>
+
+<p>The <a href="/assets/downloads/teach-copilot-rails-context-support.zip">packaged task prompt</a> asks for four artifacts: an evidence table with paths, a list of applicable instructions, a minimal change surface with positive and negative tests, and unresolved authorization and runtime questions. Open <code class="language-plaintext highlighter-rouge">caseflow/</code> in VS Code; use the prompt file if your Copilot workflow supports it, or paste its body into chat with the relevant files explicitly referenced. The key instruction is <strong>“Do not edit files.”</strong> This is an investigation before Part 03, not agent implementation.</p>
+
+<p>A useful answer could say: <code class="language-plaintext highlighter-rouge">config/routes.rb</code> declares no update route; <code class="language-plaintext highlighter-rouge">app/models/service_request.rb</code> allows <code class="language-plaintext highlighter-rouge">resolved</code>; <code class="language-plaintext highlighter-rouge">app/controllers/api/requests_controller.rb</code> permits only <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">description</code> for creation; a future update should define its own authorization requirement. That last sentence is a <strong>design requirement to resolve</strong>, not proof an authorization system exists. Ask Copilot to label it accordingly.</p>
+
+<h2 id="audit-context-against-evidence-audit">Audit context against evidence {:#audit}</h2>
+
+<p>Before accepting the response, fill in this table from the files, then compare Copilot’s exact paths. Supplied RSpec examples describe expectations for create, list and show; they have <strong>not</strong> been executed in this authoring environment.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Claim from an answer</th>
+      <th>Check</th>
+      <th>Evidence class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">resolved</code> can be stored</td>
+      <td><code class="language-plaintext highlighter-rouge">caseflow/app/models/service_request.rb</code></td>
+      <td>Source: allowed value</td>
+    </tr>
+    <tr>
+      <td>A client can transition a request today</td>
+      <td>
+<code class="language-plaintext highlighter-rouge">caseflow/config/routes.rb</code> and controller</td>
+      <td>Unsupported; no update action</td>
+    </tr>
+    <tr>
+      <td>A create payload can set <code class="language-plaintext highlighter-rouge">status</code>
+</td>
+      <td><code class="language-plaintext highlighter-rouge">caseflow/app/controllers/api/requests_controller.rb</code></td>
+      <td>Unsupported; not permitted there</td>
+    </tr>
+    <tr>
+      <td>All current request specs passed</td>
+      <td>Actual <code class="language-plaintext highlighter-rouge">bundle exec rspec</code> output and exit code</td>
+      <td>Unknown until a real run</td>
+    </tr>
+    <tr>
+      <td>A user may perform a transition</td>
+      <td>Written product rule and implemented authorization</td>
+      <td>Unknown; must be designed</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This is an <strong>instruction audit</strong> as well as a code audit: if the assistant claims to have seen instructions, ask it to name their paths and explain which file scope matched. If it invents an <code class="language-plaintext highlighter-rouge">ApplicationPolicy</code> or conflates the database default with an HTTP guarantee, correct the guidance or task prompt only after identifying the actual failure. Do not treat instruction text as a security control: enforce permissions in code and verify them with tests.</p>
+
+<h2 id="your-25-minute-lab-lab">Your 25-minute lab {:#lab}</h2>
+
+<ol>
+  <li>Open <code class="language-plaintext highlighter-rouge">caseflow/</code> as the VS Code workspace root. Read the <a href="/assets/downloads/teach-copilot-rails-context-support.zip">CaseFlow README</a>, instructions and the three code paths in the audit table.</li>
+  <li>Predict which statements in “A user can set any <code class="language-plaintext highlighter-rouge">ServiceRequest</code> status through the API” are unsupported. Write the paths before asking Copilot.</li>
+  <li>Run the packaged <code class="language-plaintext highlighter-rouge">02-context-audit.prompt.md</code> in your Copilot setup, or paste the prompt content. Save a <strong>redacted</strong> answer in your own notes; do not add secrets or customer data.</li>
+  <li>Compare paths, claims and unknowns with the <a href="/assets/downloads/teach-copilot-rails-context-support.zip">workbook and answer key</a>. For an optional controlled comparison, repeat the prompt with the model instruction excluded from your explicit context and record what changes; do not conclude which file was automatically loaded from output quality alone.</li>
+  <li>Hand the client a two-sentence finding: what the current API supports, and what must be decided before implementing transitions. Part 03 will start from that bounded issue.</li>
+</ol>
+
+<p><strong>Acceptance criterion:</strong> a reviewer can trace each present-tense behavior to source, distinguish tests that exist from tests that ran, and find at least one open authorization question before writing code.</p>
+
+<h2 id="references-and-supporting-materials-references">References and supporting materials {:#references}</h2>
+
+<ul>
+  <li>
+<a href="/assets/downloads/teach-copilot-rails-context-support.zip">Download the Part 02 companion package</a>: complete post Markdown, integrated CaseFlow Rails app, instruction files, prompt, editable Mermaid source, workbook with answers and validation record.</li>
+  <li><a href="/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html">Part 01: The First 30 Minutes in an Unfamiliar Rails Repository</a></li>
+  <li><a href="https://docs.github.com/en/copilot/how-tos/configure-custom-instructions-in-your-ide/add-repository-instructions-in-your-ide" target="_blank" rel="noopener noreferrer">GitHub Docs: repository instructions for Copilot in an IDE</a></li>
+  <li><a href="https://docs.github.com/en/copilot/reference/custom-instructions-support" target="_blank" rel="noopener noreferrer">GitHub Docs: custom instruction support by feature</a></li>
+  <li><a href="https://docs.github.com/en/copilot/concepts/prompting/response-customization" target="_blank" rel="noopener noreferrer">GitHub Docs: customizing Copilot responses</a></li>
+  <li><a href="https://guides.rubyonrails.org/active_record_validations.html" target="_blank" rel="noopener noreferrer">Rails Guides: Active Record Validations</a></li>
+</ul>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

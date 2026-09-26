@@ -1,4 +1,162 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-09-25T23:51:18+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">The First 30 Minutes in an Unfamiliar Rails Repository</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html" rel="alternate" type="text/html" title="The First 30 Minutes in an Unfamiliar Rails Repository" /><published>2026-09-25T00:00:00+00:00</published><updated>2026-09-25T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html"><![CDATA[<p><img src="/assets/images/posts/first-30-minutes-rails-repository/cover.webp" alt="A digitized Copilot-inspired guide in side profile studies a conceptual CaseFlow Rails site; Ruby source, an unverified test and an amber question flow around the browser." style="width:100%;height:auto;" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-09-26T00:33:24+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Teach Copilot the Rails Context</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html" rel="alternate" type="text/html" title="Teach Copilot the Rails Context" /><published>2026-09-25T00:00:00+00:00</published><updated>2026-09-25T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html"><![CDATA[<p><img src="/assets/images/posts/teach-copilot-rails-context/cover.webp" alt="A digitized AI guide in side profile faces a conceptual CaseFlow Rails editor; layered context and a ruby-colored flow lead to an unresolved evidence question beneath the GitHub Copilot for Rails Engineers Part 02 series heading." style="width:100%;height:auto;" /></p>
+
+<p><em>GitHub Copilot for Rails Engineers · Part 02</em></p>
+
+<p>The first chapter left us with a CaseFlow architecture atlas and a client question: can a user transition a service request to <code class="language-plaintext highlighter-rouge">resolved</code>? The code lists <code class="language-plaintext highlighter-rouge">resolved</code> as an allowed stored status, but routes expose only <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">show</code> and <code class="language-plaintext highlighter-rouge">create</code>. A broad prompt such as “implement status changes” invites plausible Rails code and unsupported assumptions about authorization. This chapter narrows the <strong>context</strong> before asking Copilot for any change.</p>
+
+<p>We will add three different kinds of guidance to the <a href="/assets/downloads/teach-copilot-rails-context-support.zip">integrated CaseFlow lab</a>: a repository instruction, a model-path instruction and a single-use audit prompt. Then we will compare Copilot’s response with the code and a small evidence register. The exercise asks for a <strong>proposal only</strong>; we will implement and review a change in Part 03.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#scopes">Three scopes, one engineering question</a></li>
+  <li><a href="#repository">Write the smallest useful repository guidance</a></li>
+  <li><a href="#models">Narrow guidance to a Rails model</a></li>
+  <li><a href="#prompt">Ask for a source-backed change proposal</a></li>
+  <li><a href="#audit">Audit context against evidence</a></li>
+  <li><a href="#lab">Your 25-minute lab</a></li>
+  <li><a href="#references">References and supporting materials</a></li>
+</ul>
+
+<h2 id="three-scopes-one-engineering-question-scopes">Three scopes, one engineering question {:#scopes}</h2>
+
+<p>GitHub distinguishes repository-wide <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code>, path-specific <code class="language-plaintext highlighter-rouge">.github/instructions/*.instructions.md</code>, and agent-oriented <code class="language-plaintext highlighter-rouge">AGENTS.md</code>. Prompt files serve a particular interaction. Their availability varies by Copilot surface: consult the <a href="https://docs.github.com/en/copilot/reference/custom-instructions-support">official support matrix</a> for the feature and editor you actually use. These files <strong>guide responses</strong>; they are not Rails code, tests or access controls.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Context</th>
+      <th>CaseFlow file</th>
+      <th>Question it should answer</th>
+      <th>Avoid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Repository</td>
+      <td><code class="language-plaintext highlighter-rouge">caseflow/.github/copilot-instructions.md</code></td>
+      <td>What kind of app is this, and what evidence is required?</td>
+      <td>A full copy of the codebase</td>
+    </tr>
+    <tr>
+      <td>Model path</td>
+      <td><code class="language-plaintext highlighter-rouge">caseflow/.github/instructions/models.instructions.md</code></td>
+      <td>What is special about model edits?</td>
+      <td>Global rules repeated at length</td>
+    </tr>
+    <tr>
+      <td>One task</td>
+      <td><code class="language-plaintext highlighter-rouge">caseflow/.github/prompts/02-context-audit.prompt.md</code></td>
+      <td>What should this investigation deliver now?</td>
+      <td>Unbounded “build everything” request</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code class="language-plaintext highlighter-rouge">caseflow/</code> directory should be opened as the <strong>VS Code workspace root</strong> for this exercise. Its <code class="language-plaintext highlighter-rouge">.github/</code> is then at the root of the Rails repository as Copilot expects. If you open the companion repository’s outer folder instead, check which workspace and instruction files your Copilot surface is actually using. Do not infer automatic loading from a good answer; open the citations and inspect the available session context.</p>
+
+<figure>
+  <img src="/assets/images/posts/teach-copilot-rails-context/context-boundary.webp" alt="A Ruby model and task prompt in a conceptual editor receive repository guidance; an amber evidence gate separates a cited proposal from an unresolved question." style="width:100%;height:auto;" />
+  <figcaption>Repository rules, model scope and the task prompt inform a cited proposal. The amber gate marks evidence to check; this conceptual editor is not a screenshot or a test run.</figcaption>
+</figure>
+
+<h2 id="write-the-smallest-useful-repository-guidance-repository">Write the smallest useful repository guidance {:#repository}</h2>
+
+<p>Place durable facts and review habits in <code class="language-plaintext highlighter-rouge">caseflow/.github/copilot-instructions.md</code>. The support package includes the complete file; its core contract is short:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> Inspect the actual route, controller, model, migration, and request specs before describing behavior; do not infer a UI, authentication, jobs, or a status transition.
+<span class="p">-</span> Distinguish a source declaration, an existing spec assertion, and a command you actually ran. Quote the path for every behavioral claim and state unknowns explicitly.
+<span class="p">-</span> Keep proposed changes within the requested scope. Before editing, identify affected files and a focused verification step.
+</code></pre></div></div>
+
+<p>An instruction that says “tests always pass” would be false. An instruction that says “run a focused spec and report its exit status” is operationally useful. A repository file tells the assistant <strong>how to work</strong>; it cannot attest that a local database migrated or that a particular HTTP response was observed. Avoid copying a full README into instructions: link to existing files and keep the rules that change decisions.</p>
+
+<h2 id="narrow-guidance-to-a-rails-model-models">Narrow guidance to a Rails model {:#models}</h2>
+
+<p>A model change has a different failure mode than a README edit. The packaged <code class="language-plaintext highlighter-rouge">.github/instructions/models.instructions.md</code> starts with:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">applyTo</span><span class="pi">:</span> <span class="s2">"</span><span class="s">app/models/**/*.rb"</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>It asks for controller, model, migration and specs to be inspected together. CaseFlow validates <code class="language-plaintext highlighter-rouge">title</code> presence and maximum length in the model; the migration declares <code class="language-plaintext highlighter-rouge">title</code> non-null but no database length limit. <code class="language-plaintext highlighter-rouge">resolved</code> is an accepted status <strong>value</strong> in <code class="language-plaintext highlighter-rouge">ServiceRequest::STATUSES</code>; that does not provide an update route or establish who may use it. The path-specific rules keep those distinctions visible whenever a matching model file is in scope. They do not automatically govern every question about the project; verify actual file context and <a href="https://docs.github.com/en/copilot/reference/custom-instructions-support">support for your Copilot feature</a>.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTZweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggZ3VpZGFuY2VbXCLwn5OaIFNjb3BlIG9mIGd1aWRhbmNlXCJdXG5SW1wi8J-MkCBSZXBvc2l0b3J5IGd1aWRhbmNlXCJdXG5NW1wi8J-nsSBNb2RlbCBwYXRoIGd1aWRhbmNlXCJdXG5UW1wi8J-OryBPbmUgdGFzayBwcm9tcHRcIl1cbmVuZFxuc3ViZ3JhcGggYXVkaXRbXCLwn5SNIEV2aWRlbmNlIGJvdW5kYXJ5XCJdXG5TW1wi8J-TiyBTb3VyY2UgYW5kIHNwZWNzXCJdXG5DW1wi8J-TnSBDaXRlZCBwcm9wb3NhbFwiXVxuVVtcIuKdlCBVbmtub3duIHVudGlsIHJ1blwiXVxuZW5kXG5SIC0tPiBDXG5NIC0tPiBDXG5UIC0tPiBDXG5TIC0tPiBDXG5DIC0tPiBVXG5jbGFzc0RlZiBjb250ZXh0IGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgbW9kZWwgZmlsbDojRThEREY1LHN0cm9rZTojQTY4QkM0LGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiB0YXNrIGZpbGw6I0Y4REZDNCxzdHJva2U6I0M5OTg2RCxjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgZXZpZGVuY2UgZmlsbDojRkZGMUJGLHN0cm9rZTojQkE5QzQzLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiByZXN1bHQgZmlsbDojRENFRkQ2LHN0cm9rZTojODZBODc4LGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiB1bmtub3duIGZpbGw6I0Y1RDlEQyxzdHJva2U6I0JDODE5MSxjb2xvcjojM0UzNDJDO1xuY2xhc3MgUiBjb250ZXh0O1xuY2xhc3MgTSBtb2RlbDtcbmNsYXNzIFQgdGFzaztcbmNsYXNzIFMgZXZpZGVuY2U7XG5jbGFzcyBDIHJlc3VsdDtcbmNsYXNzIFUgdW5rbm93bjsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ" /></p>
+
+<p>Notice that the dotted, hypothetical “AI remembers everything” arrow is absent. The diagram shows <strong>inputs to an audited proposal</strong>, not a guarantee of which context a particular model session used. The evidence boundary still needs human review.</p>
+
+<h2 id="ask-for-a-source-backed-change-proposal-prompt">Ask for a source-backed change proposal {:#prompt}</h2>
+
+<p>The <a href="/assets/downloads/teach-copilot-rails-context-support.zip">packaged task prompt</a> asks for four artifacts: an evidence table with paths, a list of applicable instructions, a minimal change surface with positive and negative tests, and unresolved authorization and runtime questions. Open <code class="language-plaintext highlighter-rouge">caseflow/</code> in VS Code; use the prompt file if your Copilot workflow supports it, or paste its body into chat with the relevant files explicitly referenced. The key instruction is <strong>“Do not edit files.”</strong> This is an investigation before Part 03, not agent implementation.</p>
+
+<p>A useful answer could say: <code class="language-plaintext highlighter-rouge">config/routes.rb</code> declares no update route; <code class="language-plaintext highlighter-rouge">app/models/service_request.rb</code> allows <code class="language-plaintext highlighter-rouge">resolved</code>; <code class="language-plaintext highlighter-rouge">app/controllers/api/requests_controller.rb</code> permits only <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">description</code> for creation; a future update should define its own authorization requirement. That last sentence is a <strong>design requirement to resolve</strong>, not proof an authorization system exists. Ask Copilot to label it accordingly.</p>
+
+<h2 id="audit-context-against-evidence-audit">Audit context against evidence {:#audit}</h2>
+
+<p>Before accepting the response, fill in this table from the files, then compare Copilot’s exact paths. Supplied RSpec examples describe expectations for create, list and show; they have <strong>not</strong> been executed in this authoring environment.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Claim from an answer</th>
+      <th>Check</th>
+      <th>Evidence class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">resolved</code> can be stored</td>
+      <td><code class="language-plaintext highlighter-rouge">caseflow/app/models/service_request.rb</code></td>
+      <td>Source: allowed value</td>
+    </tr>
+    <tr>
+      <td>A client can transition a request today</td>
+      <td><code class="language-plaintext highlighter-rouge">caseflow/config/routes.rb</code> and controller</td>
+      <td>Unsupported; no update action</td>
+    </tr>
+    <tr>
+      <td>A create payload can set <code class="language-plaintext highlighter-rouge">status</code></td>
+      <td><code class="language-plaintext highlighter-rouge">caseflow/app/controllers/api/requests_controller.rb</code></td>
+      <td>Unsupported; not permitted there</td>
+    </tr>
+    <tr>
+      <td>All current request specs passed</td>
+      <td>Actual <code class="language-plaintext highlighter-rouge">bundle exec rspec</code> output and exit code</td>
+      <td>Unknown until a real run</td>
+    </tr>
+    <tr>
+      <td>A user may perform a transition</td>
+      <td>Written product rule and implemented authorization</td>
+      <td>Unknown; must be designed</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This is an <strong>instruction audit</strong> as well as a code audit: if the assistant claims to have seen instructions, ask it to name their paths and explain which file scope matched. If it invents an <code class="language-plaintext highlighter-rouge">ApplicationPolicy</code> or conflates the database default with an HTTP guarantee, correct the guidance or task prompt only after identifying the actual failure. Do not treat instruction text as a security control: enforce permissions in code and verify them with tests.</p>
+
+<h2 id="your-25-minute-lab-lab">Your 25-minute lab {:#lab}</h2>
+
+<ol>
+  <li>Open <code class="language-plaintext highlighter-rouge">caseflow/</code> as the VS Code workspace root. Read the <a href="/assets/downloads/teach-copilot-rails-context-support.zip">CaseFlow README</a>, instructions and the three code paths in the audit table.</li>
+  <li>Predict which statements in “A user can set any <code class="language-plaintext highlighter-rouge">ServiceRequest</code> status through the API” are unsupported. Write the paths before asking Copilot.</li>
+  <li>Run the packaged <code class="language-plaintext highlighter-rouge">02-context-audit.prompt.md</code> in your Copilot setup, or paste the prompt content. Save a <strong>redacted</strong> answer in your own notes; do not add secrets or customer data.</li>
+  <li>Compare paths, claims and unknowns with the <a href="/assets/downloads/teach-copilot-rails-context-support.zip">workbook and answer key</a>. For an optional controlled comparison, repeat the prompt with the model instruction excluded from your explicit context and record what changes; do not conclude which file was automatically loaded from output quality alone.</li>
+  <li>Hand the client a two-sentence finding: what the current API supports, and what must be decided before implementing transitions. Part 03 will start from that bounded issue.</li>
+</ol>
+
+<p><strong>Acceptance criterion:</strong> a reviewer can trace each present-tense behavior to source, distinguish tests that exist from tests that ran, and find at least one open authorization question before writing code.</p>
+
+<h2 id="references-and-supporting-materials-references">References and supporting materials {:#references}</h2>
+
+<ul>
+  <li><a href="/assets/downloads/teach-copilot-rails-context-support.zip">Download the Part 02 companion package</a>: complete post Markdown, integrated CaseFlow Rails app, instruction files, prompt, editable Mermaid source, workbook with answers and validation record.</li>
+  <li><a href="/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html">Part 01: The First 30 Minutes in an Unfamiliar Rails Repository</a></li>
+  <li><a href="https://docs.github.com/en/copilot/how-tos/configure-custom-instructions-in-your-ide/add-repository-instructions-in-your-ide">GitHub Docs: repository instructions for Copilot in an IDE</a></li>
+  <li><a href="https://docs.github.com/en/copilot/reference/custom-instructions-support">GitHub Docs: custom instruction support by feature</a></li>
+  <li><a href="https://docs.github.com/en/copilot/concepts/prompting/response-customization">GitHub Docs: customizing Copilot responses</a></li>
+  <li><a href="https://guides.rubyonrails.org/active_record_validations.html">Rails Guides: Active Record Validations</a></li>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="custom-instructions" /><category term="context-engineering" /><summary type="html"><![CDATA[Give Copilot scoped Rails guidance, then audit what its proposal knows, assumes and cannot yet prove.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/teach-copilot-rails-context/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/teach-copilot-rails-context/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">The First 30 Minutes in an Unfamiliar Rails Repository</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html" rel="alternate" type="text/html" title="The First 30 Minutes in an Unfamiliar Rails Repository" /><published>2026-09-25T00:00:00+00:00</published><updated>2026-09-25T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html"><![CDATA[<p><img src="/assets/images/posts/first-30-minutes-rails-repository/cover.webp" alt="A digitized Copilot-inspired guide in side profile studies a conceptual CaseFlow Rails site; Ruby source, an unverified test and an amber question flow around the browser." style="width:100%;height:auto;" /></p>
 
 <p><em>Cover illustration: the CaseFlow browser is a conceptual application view. The companion lab supplies an integrated Rails API source app, not a working web interface.</em></p>
 
@@ -3049,465 +3207,4 @@ Validate Mermaid diagrams and keep each diagram at one abstraction level.
 
 <p>Start with one repository, pin one commit, and ask one bounded question. Produce the overview first; then trace a single feature or symptom deeply enough to test whether the map improves onboarding, debugging, or change planning. If another engineer can follow the evidence, find the relevant code faster, and identify what is still unknown, the documentation has done useful work.</p>
 
-<p>That is the standard for documenting a legacy Rails repository with AI: not documentation generated once, but understanding that can be traced, challenged, used, and renewed.</p>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="artificial-intelligence" /><category term="software-architecture" /><category term="ruby-on-rails" /><category term="ai-agents" /><category term="legacy-systems" /><category term="documentation" /><category term="mermaid" /><summary type="html"><![CDATA[An evidence-based workflow for using AI to document a Rails repository, map its architecture, and investigate features and bugs.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/documenting-rails-repositories-with-ai/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/documenting-rails-repositories-with-ai/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Architecture of the Mind: A Visual Model Through Ruby and Systems Thinking</title><link href="https://enogrob.github.io/philosophy/consciousness/visual-learning/ruby/2026/09/08/architecture-of-the-mind-krishnamurti.html" rel="alternate" type="text/html" title="Architecture of the Mind: A Visual Model Through Ruby and Systems Thinking" /><published>2026-09-08T04:00:00+00:00</published><updated>2026-09-08T04:00:00+00:00</updated><id>https://enogrob.github.io/philosophy/consciousness/visual-learning/ruby/2026/09/08/architecture-of-the-mind-krishnamurti</id><content type="html" xml:base="https://enogrob.github.io/philosophy/consciousness/visual-learning/ruby/2026/09/08/architecture-of-the-mind-krishnamurti.html"><![CDATA[<p><img src="/assets/images/posts/krishnamurti-mind-architecture/cover.webp" alt="Illustrated architecture of the mind through Ruby and systems thinking" style="width:100%;height:auto;" /></p>
-
-<p>The mind is usually described through isolated words: <em>thought</em>, <em>memory</em>, <em>fear</em>, <em>desire</em>, <em>attention</em>, and <em>insight</em>. But these are not separate pieces sitting side by side. They form relationships, feedback loops, and patterns that reveal how conditioning shapes perception.</p>
-
-<p>This visual map approaches the mind through systems thinking, object-oriented design, and direct observation. One of its principal conceptual references is J. Krishnamurti’s exploration of conditioning, thought, the observer, attention, and insight. The architecture metaphor can help us see relationships—but it must remain a metaphor. The description is never the described.</p>
-
-<blockquote>
-  <p><strong>Central question:</strong> Can the brain meet <em>what-is</em> directly, without translating the present through the accumulated past?</p>
-</blockquote>
-
-<h3 id="in-this-post">In this post</h3>
-
-<ul>
-  <li><a href="#explore-the-architecture-maps">Explore the architecture maps</a></li>
-  <li><a href="#your-visual-roadmap">Your visual roadmap</a></li>
-  <li><a href="#1-begin-with-what-is">1. Begin with what-is</a></li>
-  <li><a href="#2-the-brain-and-the-conditioned-mind">2. The brain and the conditioned mind</a></li>
-  <li><a href="#3-the-recursive-movement-of-the-known">3. The recursive movement of the known</a></li>
-  <li><a href="#4-how-thought-constructs-the-self">4. How thought constructs the self</a></li>
-  <li><a href="#5-thought-time-past-becoming-future">5. Thought-time: past becoming future</a></li>
-  <li><a href="#6-fear-desire-and-conflict-are-connected">6. Fear, desire, and conflict are connected</a></li>
-  <li><a href="#7-relationship-is-the-mirror">7. Relationship is the mirror</a></li>
-  <li><a href="#8-choiceless-awareness-is-not-another-controller">8. Choiceless awareness is not another controller</a></li>
-  <li><a href="#9-insight-ends-it-does-not-suppress">9. Insight ends; it does not suppress</a></li>
-  <li><a href="#10-silence-space-intelligence-and-action">10. Silence, space, intelligence, and action</a></li>
-  <li><a href="#11-the-same-architecture-expressed-through-ruby">11. The same architecture expressed through Ruby</a></li>
-  <li><a href="#12-a-five-minute-observation-experiment">12. A five-minute observation experiment</a></li>
-</ul>
-
-<h2 id="explore-the-architecture-maps">Explore the architecture maps</h2>
-
-<p>The cover introduces the central movement in a simple visual form. The two detailed maps below can be opened when you want to inspect the complete conceptual and Ruby-oriented architectures.</p>
-
-<div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-start;">
-  <figure style="flex:1 1 320px;margin:0;">
-    <a href="/assets/images/posts/krishnamurti-mind-architecture/mind-architecture-reference.webp">
-      <img src="/assets/images/posts/krishnamurti-mind-architecture/mind-architecture-reference.webp" alt="Detailed illustrated relational architecture of the mind" data-zoom-scale="2.4" style="width:100%;height:auto;border-radius:8px;" />
-    </a>
-    <figcaption style="text-align:center;"><em>Conceptual architecture — click to enlarge</em></figcaption>
-  </figure>
-  <figure style="flex:1 1 320px;margin:0;">
-    <a href="/assets/images/posts/krishnamurti-mind-architecture/ruby-architecture.webp">
-      <img src="/assets/images/posts/krishnamurti-mind-architecture/ruby-architecture.webp" alt="Detailed Ruby OOP and metaprogramming architecture of the mind" data-zoom-scale="2.4" style="width:100%;height:auto;border-radius:8px;" />
-    </a>
-    <figcaption style="text-align:center;"><em>Ruby architecture — click to enlarge</em></figcaption>
-  </figure>
-</div>
-
-<h3 id="reading-the-diagrams">Reading the diagrams</h3>
-
-<p>The diagrams use the same visual language throughout. The colors and shapes are interpretive cues, not claims that the mind literally operates like software.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Visual cue</th>
-      <th>Meaning in this model</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>🔵 Blue</td>
-      <td>Fact, perception, or incoming experience</td>
-    </tr>
-    <tr>
-      <td>🗄️ Lavender database shape</td>
-      <td>Memory and accumulated knowledge</td>
-    </tr>
-    <tr>
-      <td>💭 Amber</td>
-      <td>Thought, interpretation, or psychological time</td>
-    </tr>
-    <tr>
-      <td>🌹 Rose</td>
-      <td>Self-image, conflict, and emotional reaction</td>
-    </tr>
-    <tr>
-      <td>👁️ Mint</td>
-      <td>Awareness, insight, and quietness</td>
-    </tr>
-    <tr>
-      <td>🌱 Green</td>
-      <td>Intelligence and action</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="a-component-view-of-the-architecture">A component view of the architecture</h3>
-
-<p>The following diagram uses software architecture as a visual metaphor. Memory is drawn like a database because it stores traces that can be recalled, not because human memory is literally a database.</p>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IFRCXG5zdWJncmFwaCBIT1NUW_Cfp6AgQnJhaW4gLSBwaHlzaWNhbCBob3N0XVxuc3ViZ3JhcGggTE9PUFtDb25kaXRpb25lZCBsb29wXVxuSU5QVVRbXCLwn5S1IFdoYXQtaXMgLyBpbmNvbWluZyBmYWN0XCJdIC0tPiBQRVJDRVBUSU9OW1wi8J-UjiBQZXJjZXB0aW9uXCJdXG5QRVJDRVBUSU9OIC0tPiBUSE9VR0hUW1wi8J-SrSBUaG91Z2h0IGludGVycHJldGVyXCJdXG5USE9VR0hUIC0tPiBTRUxGW1wi8J-MuSBTZWxmLWltYWdlIC8gb2JzZXJ2ZXJcIl1cblNFTEYgLS0-IENPTkZMSUNUW1wi4pqhIENvbmZsaWN0LCBmZWFyLCBkZXNpcmVcIl1cbkNPTkZMSUNUIC0tPiBUSE9VR0hUXG4lJS1cbk1FTU9SWVsoXCLwn5eE77iPIE1lbW9yeSBzdG9yZVwiKV0gLS0-IEtOT1dMRURHRVtcIvCfk5ogS25vd2xlZGdlIGluZGV4XCJdXG5LTk9XTEVER0UgLS0-IFRIT1VHSFRcbkVYUEVSSUVOQ0VbXCLwn6epIEV4cGVyaWVuY2VcIl0gLS0-IE1FTU9SWVxuVEhPVUdIVCAtLT4gRVhQRVJJRU5DRVxuZW5kXG5lbmRcbiUlLVxuTUlORFtcIvCfjIwgTWluZCAvIEdyb3VuZFwiXSAtLiBub3QgYW4gb2JqZWN0IGluIHRoZSBtb2RlbCAuLT4gUVVJRVRbXCLwn4y_IFF1aWV0IGJyYWluXCJdXG5QRVJDRVBUSU9OIC0tPiBBV0FSRU5FU1NbXCLwn5GB77iPIENob2ljZWxlc3MgYXdhcmVuZXNzXCJdXG5BV0FSRU5FU1MgLS0-IElOU0lHSFRbXCLinKggSW5zaWdodFwiXVxuSU5TSUdIVCAtLT4gUVVJRVRcblFVSUVUIC0tPiBJTlRFTExJR0VOQ0VbXCLwn4yxIEludGVsbGlnZW5jZSBpbiBhY3Rpb25cIl1cbiUlLVxuY2xhc3NEZWYgZmFjdCBmaWxsOiNlNWY0ZmIsc3Ryb2tlOiM0YjljYzQsc3Ryb2tlLXdpZHRoOjFweFxuY2xhc3NEZWYgbWVtb3J5IGZpbGw6I2VlZThmYSxzdHJva2U6IzhiNzhiOCxzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiB0aG91Z2h0IGZpbGw6I2ZmZjFkNixzdHJva2U6I2M1OGEzNSxzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiBzZWxmIGZpbGw6I2ZiZTVlNyxzdHJva2U6I2M5Nzg4MCxzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiBhd2FyZW5lc3MgZmlsbDojZTRmNWVjLHN0cm9rZTojNWI5Yjc4LHN0cm9rZS13aWR0aDoxcHhcbmNsYXNzIE1FTU9SWSxLTk9XTEVER0UgbWVtb3J5XG5jbGFzcyBJTlBVVCxQRVJDRVBUSU9OLEVYUEVSSUVOQ0UgZmFjdFxuY2xhc3MgVEhPVUdIVCB0aG91Z2h0XG5jbGFzcyBTRUxGLENPTkZMSUNUIHNlbGZcbmNsYXNzIEFXQVJFTkVTUyxJTlNJR0hULFFVSUVULElOVEVMTElHRU5DRSBhd2FyZW5lc3MiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ" /></p>
-
-<h2 id="your-visual-roadmap">Your visual roadmap</h2>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IExSXG5zdWJncmFwaCBLTk9XTltDb25kaXRpb25lZCBtb3ZlbWVudF1cbldbXCLwn5S1IFdoYXQtaXNcIl0gLS0-IFBbXCLwn5SOIFBlcmNlcHRpb25cIl1cblAgLS0-IEtbXCLwn5OaIFRoZSBrbm93blwiXVxuSyAtLT4gU1tcIvCfjLkgU2VsZiAvIG9ic2VydmVyXCJdXG5TIC0tPiBDW1wi4pqhIENvbmZsaWN0XCJdXG5lbmRcbnN1YmdyYXBoIERJUkVDVFtEaXJlY3QgbW92ZW1lbnRdXG5QIC0tPiBBW1wi8J-Rge-4jyBDaG9pY2VsZXNzIGF3YXJlbmVzc1wiXVxuQSAtLT4gSVtcIuKcqCBJbnNpZ2h0XCJdXG5JIC0tPiBRW1wi8J-MvyBRdWlldCBicmFpblwiXVxuUSAtLT4gTltcIvCfjLEgSW50ZWxsaWdlbmNlIGluIGFjdGlvblwiXVxuZW5kXG5jbGFzc0RlZiBmYWN0IGZpbGw6I2U1ZjRmYixzdHJva2U6IzRiOWNjNCxzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiBrbm93biBmaWxsOiNmZmYxZDYsc3Ryb2tlOiNjNThhMzUsc3Ryb2tlLXdpZHRoOjFweFxuY2xhc3NEZWYgY29uZmxpY3QgZmlsbDojZmJlNWU3LHN0cm9rZTojYzk3ODgwLHN0cm9rZS13aWR0aDoxcHhcbmNsYXNzRGVmIGRpcmVjdCBmaWxsOiNlNGY1ZWMsc3Ryb2tlOiM1YjliNzgsc3Ryb2tlLXdpZHRoOjFweFxuY2xhc3MgVyxQIGZhY3RcbmNsYXNzIEsga25vd25cbmNsYXNzIFMsQyBjb25mbGljdFxuY2xhc3MgQSxJLFEsTiBkaXJlY3QiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ" /></p>
-
-<p>Keep two movements in view:</p>
-
-<ol>
-  <li>The known interprets the present and preserves its own continuity.</li>
-  <li>Direct observation reveals that movement without selecting, condemning, or escaping from it.</li>
-</ol>
-
-<h2 id="1-begin-with-what-is">1. Begin with <em>what-is</em></h2>
-
-<p><em>What-is</em> is the living fact before an image, label, judgment, ideal, or conclusion is placed over it. It might be a sensation, anger, loneliness, a spoken word, a tree, or the movement of a relationship.</p>
-
-<p>The first contact is simple:</p>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IExSXG5zdWJncmFwaCBDT05UQUNUW0ZpcnN0IGNvbnRhY3RdXG5BW1wi8J-UtSBXaGF0LWlzXCJdIC0tPnxwZXJjZWl2ZWQgYXN8IEJbXCLwn6SdIENvbnRhY3RcIl1cbkIgLS0-fGZlbHQgYXN8IENbXCLwn5SlIFNlbnNhdGlvblwiXVxuZW5kXG5DIC0tPiBEe1wiV2hhdCBoYXBwZW5zIG5leHQ_XCJ9XG5zdWJncmFwaCBSRVNQT05TRVNbVHdvIHJlc3BvbnNlc11cbkQgLS0-fHJlY29nbml0aW9uIGFuZCBpbnRlcnByZXRhdGlvbnwgRVtcIvCfk5ogVGhlIGtub3duXCJdXG5EIC0tPnxvYnNlcnZhdGlvbiB3aXRob3V0IGEgY2VudGVyfCBGW1wi8J-Rge-4jyBEaXJlY3QgcGVyY2VwdGlvblwiXVxuZW5kXG5jbGFzc0RlZiBmYWN0IGZpbGw6I2U1ZjRmYixzdHJva2U6IzRiOWNjNCxzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiBzZW5zYXRpb24gZmlsbDojZmRlYmRjLHN0cm9rZTojYzU4YTM1LHN0cm9rZS13aWR0aDoxcHhcbmNsYXNzRGVmIGtub3duIGZpbGw6I2VlZThmYSxzdHJva2U6IzhiNzhiOCxzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiBkaXJlY3QgZmlsbDojZTRmNWVjLHN0cm9rZTojNWI5Yjc4LHN0cm9rZS13aWR0aDoxcHhcbmNsYXNzIEEsQiBmYWN0XG5jbGFzcyBDLEQgc2Vuc2F0aW9uXG5jbGFzcyBFIGtub3duXG5jbGFzcyBGIGRpcmVjdCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-<p>The important distinction is not between having and avoiding thought. Practical thought is necessary for language, engineering, planning, and daily life. The question is whether psychological thought occupies the whole field of perception.</p>
-
-<h3 id="pause-and-notice">Pause and notice</h3>
-
-<p>Recall a moment of irritation. Before the sentence “I am angry” appeared, what was actually present—physical tension, heat, an image, a remembered insult?</p>
-
-<h2 id="2-the-brain-and-the-conditioned-mind">2. The brain and the conditioned mind</h2>
-
-<p>In the architecture illustration, the <strong>brain</strong> is the physical host. <strong>Conditioning</strong> is represented as an accumulated program formed through culture, experience, tradition, belief, knowledge, and humanity’s past.</p>
-
-<p>This does not mean the brain is literally a computer. The analogy highlights repetition: the present is commonly interpreted using patterns stored from previous experience.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Layer</th>
-      <th>Function in the visual model</th>
-      <th>Important distinction</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Brain</td>
-      <td>Physical organ in which memory and thought operate</td>
-      <td>The brain is not identical to the totality Krishnamurti calls Mind</td>
-    </tr>
-    <tr>
-      <td>Conditioning</td>
-      <td>Accumulated individual and collective patterns</td>
-      <td>It includes more than conscious personal beliefs</td>
-    </tr>
-    <tr>
-      <td>Memory</td>
-      <td>Records experience</td>
-      <td>Essential practically, distorting when it becomes the psychological observer</td>
-    </tr>
-    <tr>
-      <td>Knowledge</td>
-      <td>Organized content of the known</td>
-      <td>Always limited because experience is limited</td>
-    </tr>
-    <tr>
-      <td>Thought</td>
-      <td>Response of memory and knowledge</td>
-      <td>Useful in its proper field; fragmentary when claiming total perception</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="3-the-recursive-movement-of-the-known">3. The recursive movement of the known</h2>
-
-<p>Experience, memory, knowledge, and thought reinforce one another:</p>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IFREXG5zdWJncmFwaCBSRUNVUlNJT05bVGhlIGtub3duIC0gYSByZWluZm9yY2luZyBsb29wXVxuRVtcIvCfp6kgRXhwZXJpZW5jZVwiXSAtLT58c3RvcmVkIGFzfCBNWyhcIvCfl4TvuI8gTWVtb3J5XCIpXVxuTSAtLT58b3JnYW5pemVkIGFzfCBLW1wi8J-TmiBLbm93bGVkZ2VcIl1cbksgLS0-fHJlc3BvbmRzIGFzfCBUW1wi8J-SrSBUaG91Z2h0XCJdXG5UIC0tPnxjcmVhdGVzIGZ1cnRoZXJ8IEVcbmVuZFxuY2xhc3NEZWYgZXhwZXJpZW5jZSBmaWxsOiNlNWY0ZmIsc3Ryb2tlOiM0YjljYzQsc3Ryb2tlLXdpZHRoOjFweFxuY2xhc3NEZWYgbWVtb3J5IGZpbGw6I2VlZThmYSxzdHJva2U6IzhiNzhiOCxzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiB0aG91Z2h0IGZpbGw6I2ZmZjFkNixzdHJva2U6I2M1OGEzNSxzdHJva2Utd2lkdGg6MXB4XG5jbGFzcyBFIGV4cGVyaWVuY2VcbmNsYXNzIE0sSyBtZW1vcnlcbmNsYXNzIFQgdGhvdWdodCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-<p>This loop is not inherently wrong. Without it, there would be no language, technical skill, or recognition. Difficulty begins when the loop becomes the observer of every psychological fact. Then the known does not merely respond to reality—it pretends to be the one who sees reality.</p>
-
-<blockquote>
-  <p><strong>Quick recap:</strong> Thought is a response of the past. It can describe a fact, but the description is not the fact.</p>
-</blockquote>
-
-<h2 id="4-how-thought-constructs-the-self">4. How thought constructs the self</h2>
-
-<p>The psychological self is not presented here as a permanent inner entity. It is an image assembled through names, experiences, wounds, achievements, attachments, comparisons, and hopes.</p>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IFREXG5UW1wi8J-SrSBUaG91Z2h0LXRpbWVcIl0gLS0-fGNvbnN0cnVjdHN8IFNbXCLwn4y5IFNlbGYtaW1hZ2VcIl1cbnN1YmdyYXBoIFNFTEZbQ29uc3RydWN0ZWQgY2VudGVyXVxuUyAtLT4gSVtcIvCfqp4gSWRlbnRpZmljYXRpb25cIl1cblMgLS0-IENbXCLwn46vIENlbnRlclwiXVxuUyAtLT4gRFtcIuKGlO-4jyBTZXBhcmF0aW9uXCJdXG5TIC0tPiBCW1wi4o-zIFBzeWNob2xvZ2ljYWwgYmVjb21pbmdcIl1cbmVuZFxuY2xhc3NEZWYgdGhvdWdodCBmaWxsOiNmZmYxZDYsc3Ryb2tlOiNjNThhMzUsc3Ryb2tlLXdpZHRoOjFweFxuY2xhc3NEZWYgc2VsZiBmaWxsOiNmYmU1ZTcsc3Ryb2tlOiNjOTc4ODAsc3Ryb2tlLXdpZHRoOjFweFxuY2xhc3MgVCB0aG91Z2h0XG5jbGFzcyBTLEksQyxELEIgc2VsZiIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-<p>The self then appears to stand apart from its own reactions:</p>
-
-<ul>
-  <li>“I must control my fear.”</li>
-  <li>“I should overcome my anger.”</li>
-  <li>“I will gradually become peaceful.”</li>
-</ul>
-
-<p>But the controller is made from the same memories, images, and thought that created the reaction. This is the significance of Krishnamurti’s formulation: <strong>the observer is the observed</strong>.</p>
-
-<h2 id="5-thought-time-past-becoming-future">5. Thought-time: past becoming future</h2>
-
-<p>Chronological time is necessary. Psychological time is different: it is the projection that inwardly I will become something tomorrow.</p>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IFREXG5zdWJncmFwaCBUSU1FW1BzeWNob2xvZ2ljYWwgdGltZV1cblBbXCLil4DvuI8gUGFzdDogd2hhdCBoYXMgYmVlblwiXSAtLT4gVFtcIvCfkq0gVGhvdWdodCBpbiB0aGUgcHJlc2VudFwiXVxuVCAtLT4gRltcIuKWtu-4jyBGdXR1cmU6IHdoYXQgbWlnaHQgYmVcIl1cbkYgLS4tPnxmZWFyLCBob3BlLCBiZWNvbWluZ3wgVFxuZW5kXG5jbGFzc0RlZiBwYXN0IGZpbGw6I2VlZThmYSxzdHJva2U6IzhiNzhiOCxzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiBwcmVzZW50IGZpbGw6I2ZmZjFkNixzdHJva2U6I2M1OGEzNSxzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiBmdXR1cmUgZmlsbDojZmJlNWU3LHN0cm9rZTojYzk3ODgwLHN0cm9rZS13aWR0aDoxcHhcbmNsYXNzIFAgcGFzdFxuY2xhc3MgVCBwcmVzZW50XG5jbGFzcyBGIGZ1dHVyZSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-<p>Thought carries yesterday into the present and projects a modified version into tomorrow. The result may be fear of repetition, pursuit of pleasure, comparison with an ideal, or the promise of eventual transformation.</p>
-
-<h2 id="6-fear-desire-and-conflict-are-connected">6. Fear, desire, and conflict are connected</h2>
-
-<p>Fear and desire are not isolated modules. They share the movement of thought, sensation, image, and time.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Movement</th>
-      <th>Relationship to the self</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Fear</td>
-      <td>Resists loss, pain, uncertainty, or the ending of the known</td>
-    </tr>
-    <tr>
-      <td>Desire</td>
-      <td>Seeks continuation of sensation, pleasure, identity, or achievement</td>
-    </tr>
-    <tr>
-      <td>Attachment</td>
-      <td>Gives the self a sense of permanence and security</td>
-    </tr>
-    <tr>
-      <td>Becoming</td>
-      <td>Opposes *what-is* with an image of what should be</td>
-    </tr>
-    <tr>
-      <td>Conflict</td>
-      <td>Emerges from division, resistance, contradiction, and opposing desires</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IFREXG5TW1wi8J-MuSBTZWxmIC8gb2JzZXJ2ZXJcIl1cbnN1YmdyYXBoIE1PVkVNRU5UU1tNb3ZlbWVudHMgb2YgdGhlIHNlbGZdXG5TIC0tPnxyZXNpc3RzIHdoYXQtaXN8IEZbXCLwn5ioIEZlYXJcIl1cblMgLS0-fHNlZWtzIGNvbnRpbnVpdHl8IERbXCLwn4yfIERlc2lyZVwiXVxuUyAtLT58cHJvamVjdHMgYW4gaWRlYWx8IFRbXCLij7MgUHN5Y2hvbG9naWNhbCB0aW1lXCJdXG5TIC0tPnxlc2NhcGVzIGVtcHRpbmVzc3wgQVtcIvCflJcgQXR0YWNobWVudCAvIGF1dGhvcml0eVwiXVxuZW5kXG5zdWJncmFwaCBDT05TRVFVRU5DRVNbU2hhcmVkIGNvbnNlcXVlbmNlXVxuRiAtLT4gQ1tcIuKaoSBDb25mbGljdFwiXVxuRCAtLT4gQ1xuVCAtLT4gQ1xuQSAtLT4gQ1xuQyAtLT4gUltcIvCfkqcgU29ycm93IOKAoiB2aW9sZW5jZSDigKIgbG9uZWxpbmVzc1wiXVxuZW5kXG5jbGFzc0RlZiBzZWxmIGZpbGw6I2ZiZTVlNyxzdHJva2U6I2M5Nzg4MCxzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiBtb3ZlbWVudCBmaWxsOiNmZmYxZDYsc3Ryb2tlOiNjNThhMzUsc3Ryb2tlLXdpZHRoOjFweFxuY2xhc3NEZWYgY29uc2VxdWVuY2UgZmlsbDojZmRlM2UzLHN0cm9rZTojYzk3ODgwLHN0cm9rZS13aWR0aDoxcHhcbmNsYXNzIFMgc2VsZlxuY2xhc3MgRixELFQsQSBtb3ZlbWVudFxuY2xhc3MgQyxSIGNvbnNlcXVlbmNlIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0" /></p>
-
-<h3 id="remember-it-visually">Remember it visually</h3>
-
-<p>Fear looks backward and forward through a clock. Desire stretches a hand toward an image. Conflict is the knot produced when these movements pull in different directions.</p>
-
-<h2 id="7-relationship-is-the-mirror">7. Relationship is the mirror</h2>
-
-<p>Conditioning becomes visible in relationship. An image of “me” meets an image of “you”; expectations, memories, wounds, and demands interact. We may believe we are responding to another person while responding primarily to our accumulated image of them.</p>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IExSXG5zdWJncmFwaCBGQUNUU1tXaGF0IGlzIHByZXNlbnRdXG5GQUNUW1wi8J-UtSBXaGF0IHdhcyBhY3R1YWxseSBzYWlkXCJdIC0tPiBQRVJDRVBUSU9OW1wi8J-UjiBQZXJjZXB0aW9uXCJdXG5NRU1PUllbKFwi8J-XhO-4jyBNZW1vcnkgYW5kIGltYWdlc1wiKV0gLS0-IFBFUkNFUFRJT05cbmVuZFxuc3ViZ3JhcGggSU1BR0VTW0ltYWdlcyBpbiByZWxhdGlvbnNoaXBdXG5QRVJDRVBUSU9OIC0tPiBNRVtcIvCfjLkgSW1hZ2Ugb2YgbWVcIl1cblBFUkNFUFRJT04gLS0-IFlPVVtcIvCfqp4gSW1hZ2Ugb2YgeW91XCJdXG5lbmRcbk1FIC0tPiBSRUxBVElPTlNISVBbXCLwn6SdIFJlbGF0aW9uc2hpcFwiXVxuWU9VIC0tPiBSRUxBVElPTlNISVBcblJFTEFUSU9OU0hJUCAtLT4gUkVBQ1RJT05bXCLwn5KtIEV4cGVjdGF0aW9uLCB3b3VuZCwgZGVtYW5kXCJdXG5SRUFDVElPTiAtLT4gQ09ORkxJQ1RbXCLimqEgQ29uZmxpY3RcIl1cbkNPTkZMSUNUIC0uIHJldmVhbHMgdGhlIGhpZGRlbiBwYXR0ZXJuIC4tPiBSRUxBVElPTlNISVBcblJFTEFUSU9OU0hJUCAtLiBtaXJyb3IgLi0-IEFXQVJFTkVTU1tcIvCfkYHvuI8gT2JzZXJ2YXRpb25cIl1cbmNsYXNzRGVmIGZhY3QgZmlsbDojZTVmNGZiLHN0cm9rZTojNGI5Y2M0LHN0cm9rZS13aWR0aDoxcHhcbmNsYXNzRGVmIG1lbW9yeSBmaWxsOiNlZWU4ZmEsc3Ryb2tlOiM4Yjc4Yjgsc3Ryb2tlLXdpZHRoOjFweFxuY2xhc3NEZWYgc2VsZiBmaWxsOiNmYmU1ZTcsc3Ryb2tlOiNjOTc4ODAsc3Ryb2tlLXdpZHRoOjFweFxuY2xhc3NEZWYgcmVsYXRpb25zaGlwIGZpbGw6I2ZkZWJkYyxzdHJva2U6I2M1OGEzNSxzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiBhd2FyZW5lc3MgZmlsbDojZTRmNWVjLHN0cm9rZTojNWI5Yjc4LHN0cm9rZS13aWR0aDoxcHhcbmNsYXNzIEZBQ1QsUEVSQ0VQVElPTiBmYWN0XG5jbGFzcyBNRU1PUlkgbWVtb3J5XG5jbGFzcyBNRSxZT1UsUkVBQ1RJT04sQ09ORkxJQ1Qgc2VsZlxuY2xhc3MgUkVMQVRJT05TSElQIHJlbGF0aW9uc2hpcFxuY2xhc3MgQVdBUkVORVNTIGF3YXJlbmVzcyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-<blockquote>
-  <p>Relationship is not merely another component of the architecture. It is where the hidden architecture becomes observable.</p>
-</blockquote>
-
-<h3 id="your-turn">Your turn</h3>
-
-<p>During a disagreement, distinguish three things:</p>
-
-<ol>
-  <li>What was actually said.</li>
-  <li>The memory or interpretation that immediately appeared.</li>
-  <li>The image of yourself that felt threatened.</li>
-</ol>
-
-<p>Do not try to correct the reaction yet. First see its complete movement.</p>
-
-<h2 id="8-choiceless-awareness-is-not-another-controller">8. Choiceless awareness is not another controller</h2>
-
-<p>Choiceless awareness is observation without selecting what should remain and what should disappear. It is not indifference, passivity, or concentration on a chosen object.</p>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IExSXG5zdWJncmFwaCBTRUVJTkdbQ2hvaWNlbGVzcyBhd2FyZW5lc3NdXG5XW1wi8J-UtSBXaGF0LWlzXCJdIC0tPiBPW1wi8J-Rge-4jyBPYnNlcnZhdGlvblwiXVxuTyAtLT4gQVtcIvCfjL8gQXR0ZW50aW9uIHdpdGhvdXQgY2VudGVyXCJdXG5BIC0tPiBJW1wi4pyoIEluc2lnaHRcIl1cbmVuZFxuSSAtLT4gRVtcIvCflYrvuI8gRW5kaW5nIG9mIHRoZSBmYWxzZSBzdHJ1Y3R1cmVcIl1cbmNsYXNzRGVmIGZhY3QgZmlsbDojZTVmNGZiLHN0cm9rZTojNGI5Y2M0LHN0cm9rZS13aWR0aDoxcHhcbmNsYXNzRGVmIGF3YXJlbmVzcyBmaWxsOiNlNGY1ZWMsc3Ryb2tlOiM1YjliNzgsc3Ryb2tlLXdpZHRoOjFweFxuY2xhc3MgVyBmYWN0XG5jbGFzcyBPLEEsSSxFIGF3YXJlbmVzcyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-<p>If the self says, “I will practice awareness to eliminate fear,” the motive belongs to the old loop. Awareness has become a strategy of becoming. The diagram therefore does not model attention as a mode selected by the ego.</p>
-
-<h2 id="9-insight-ends-it-does-not-suppress">9. Insight ends; it does not suppress</h2>
-
-<p>Insight is direct perception of the whole structure of a fact. It is not intellectual agreement, analysis accumulated over time, or a partial conclusion.</p>
-
-<p>In the visual architecture, insight sends no request to <code class="language-plaintext highlighter-rouge">SelfImprovementService</code>. It does not refactor the ego into a better ego. Seeing the falseness of a psychological division is itself the ending of that division.</p>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IFREXG5zdWJncmFwaCBMT09QW0NvbmRpdGlvbmVkIGxvb3BdXG5GQUNUW1wi8J-UtSBQc3ljaG9sb2dpY2FsIGZhY3RcIl0gLS0-IFRIT1VHSFRbXCLwn5KtIFRob3VnaHQgYW5kIGltYWdlXCJdXG5USE9VR0hUIC0tPiBDT05GTElDVFtcIuKaoSBDb25mbGljdFwiXVxuQ09ORkxJQ1QgLS0-IFRIT1VHSFRcbmVuZFxuc3ViZ3JhcGggRkFMU0VfU09MVVRJT05TW0F0dGVtcHRzIHRvIGNvbnRpbnVlIHRoZSBsb29wXVxuQ09ORkxJQ1QgLS0-IFNVUFBSRVNTW1wi8J-aqyBTdXBwcmVzc2lvblwiXVxuQ09ORkxJQ1QgLS0-IElNUFJPVkVbXCLwn5ug77iPIFNlbGYtaW1wcm92ZW1lbnRcIl1cblNVUFBSRVNTIC0uIHJldHVybnMgYXMgcmVzaXN0YW5jZSAuLT4gVEhPVUdIVFxuSU1QUk9WRSAtLiByZXR1cm5zIGFzIGJlY29taW5nIC4tPiBUSE9VR0hUXG5lbmRcbklOU0lHSFRbXCLinKggSW5zaWdodFwiXSAtLiBzZWVzIHRoZSB3aG9sZSBzdHJ1Y3R1cmUgLi0-IENPTkZMSUNUXG5JTlNJR0hUIC0tPiBFTkRJTkdbXCLwn5WK77iPIEVuZGluZyBvZiBwc3ljaG9sb2dpY2FsIGF1dGhvcml0eVwiXVxuRU5ESU5HIC0tPiBTUEFDRVtcIvCfjIwgU2lsZW5jZSBhbmQgc3BhY2VcIl1cbmNsYXNzRGVmIGZhY3QgZmlsbDojZTVmNGZiLHN0cm9rZTojNGI5Y2M0LHN0cm9rZS13aWR0aDoxcHhcbmNsYXNzRGVmIHRob3VnaHQgZmlsbDojZmZmMWQ2LHN0cm9rZTojYzU4YTM1LHN0cm9rZS13aWR0aDoxcHhcbmNsYXNzRGVmIGNvbmZsaWN0IGZpbGw6I2ZiZTVlNyxzdHJva2U6I2M5Nzg4MCxzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiBmYWxzZVNvbHV0aW9uIGZpbGw6I2ZkZWJkYyxzdHJva2U6I2M1OGEzNSxzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiBpbnNpZ2h0IGZpbGw6I2U0ZjVlYyxzdHJva2U6IzViOWI3OCxzdHJva2Utd2lkdGg6MXB4XG5jbGFzcyBGQUNUIGZhY3RcbmNsYXNzIFRIT1VHSFQgdGhvdWdodFxuY2xhc3MgQ09ORkxJQ1QgY29uZmxpY3RcbmNsYXNzIFNVUFBSRVNTLElNUFJPVkUgZmFsc2VTb2x1dGlvblxuY2xhc3MgSU5TSUdIVCxFTkRJTkcsU1BBQ0UgaW5zaWdodCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-<blockquote>
-  <p><strong>Design principle:</strong> Insight does not optimize the conditioned loop. It ends its psychological authority.</p>
-</blockquote>
-
-<p>The energy previously consumed by resistance and conflict is no longer trapped in that pattern. This is represented as silence and empty psychological space—not blankness, but a brain no longer occupied by incessant self-centered movement.</p>
-
-<h2 id="10-silence-space-intelligence-and-action">10. Silence, space, intelligence, and action</h2>
-
-<p>One conceptual approach informing this model distinguishes the physical brain from the broader meaning of Mind found in Krishnamurti’s vocabulary. The infographic therefore places <strong>Mind / the Ground</strong> outside the object hierarchy.</p>
-
-<p>It is not a component possessed by <code class="language-plaintext highlighter-rouge">Brain</code>, not a superclass from which a person inherits, and not an object created by thought. The architecture can only indicate a possibility: when the brain is quiet, intelligence may act through it.</p>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IExSXG5zdWJncmFwaCBRVUlFVFtTcGFjZSBhZnRlciBpbnNpZ2h0XVxuSVtcIuKcqCBJbnNpZ2h0XCJdIC0tPiBRW1wi8J-MvyBRdWlldCBicmFpblwiXVxuUSAtLT4gU1tcIvCfjIwgU2lsZW5jZSBhbmQgc3BhY2VcIl1cbmVuZFxuc3ViZ3JhcGggQUNUSU9OW0ludGVsbGlnZW5jZSBpbiBhY3Rpb25dXG5TIC0tPiBOW1wi8J-MsSBJbnRlbGxpZ2VuY2VcIl1cbk4gLS0-IEFbXCLinaTvuI8gT3JkZXIg4oCiIGxvdmUg4oCiIGNvbXBhc3Npb24g4oCiIGFjdGlvblwiXVxuQSAtLT4gV1tcIvCflLUgV2hhdC1pc1wiXVxuZW5kXG5jbGFzc0RlZiBpbnNpZ2h0IGZpbGw6I2U0ZjVlYyxzdHJva2U6IzViOWI3OCxzdHJva2Utd2lkdGg6MXB4XG5jbGFzc0RlZiBhY3Rpb24gZmlsbDojZTdmNGRmLHN0cm9rZTojNmI5YjU1LHN0cm9rZS13aWR0aDoxcHhcbmNsYXNzIEksUSxTIGluc2lnaHRcbmNsYXNzIE4sQSxXIGFjdGlvbiIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-<h2 id="11-the-same-architecture-expressed-through-ruby">11. The same architecture expressed through Ruby</h2>
-
-<p><a href="/assets/images/posts/krishnamurti-mind-architecture/ruby-architecture.webp">Open the complete Ruby architecture infographic</a>.</p>
-
-<p>Ruby gives us a familiar language for visualizing composition, responsibilities, messages, and emergent behavior. It also lets us expose the limits of the metaphor.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Conditioning</span>
-  <span class="k">def</span> <span class="nf">inherited_patterns</span><span class="p">(</span><span class="o">*</span><span class="n">patterns</span><span class="p">)</span>
-    <span class="n">patterns</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">pattern</span><span class="o">|</span>
-      <span class="n">define_method</span><span class="p">(</span><span class="s2">"conditioned_by_</span><span class="si">#{</span><span class="n">pattern</span><span class="si">}</span><span class="s2">?"</span><span class="p">)</span> <span class="p">{</span> <span class="kp">true</span> <span class="p">}</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">ConditionedMind</span>
-  <span class="kp">extend</span> <span class="no">Conditioning</span>
-
-  <span class="n">inherited_patterns</span> <span class="ss">:culture</span><span class="p">,</span> <span class="ss">:tradition</span><span class="p">,</span> <span class="ss">:belief</span><span class="p">,</span> <span class="ss">:human_past</span>
-
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="ss">memory: </span><span class="no">MemoryStore</span><span class="p">.</span><span class="nf">new</span><span class="p">)</span>
-    <span class="vi">@memory</span> <span class="o">=</span> <span class="n">memory</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">interpret</span><span class="p">(</span><span class="n">fact</span><span class="p">)</span>
-    <span class="n">knowledge</span> <span class="o">=</span> <span class="vi">@memory</span><span class="p">.</span><span class="nf">recall</span><span class="p">(</span><span class="n">fact</span><span class="p">)</span>
-    <span class="no">ThoughtLoop</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="vi">@memory</span><span class="p">).</span><span class="nf">respond</span><span class="p">(</span><span class="n">fact</span><span class="p">,</span> <span class="n">knowledge</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>Metaprogramming is appropriate here because conditioning often behaves like inherited behavior: patterns operate before we explicitly choose them. Ruby can generate methods dynamically just as culture supplies ready-made responses. But the analogy stops there—human conditioning is not erased by calling <code class="language-plaintext highlighter-rouge">remove_method</code>.</p>
-
-<p>The direct-perception branch deliberately avoids a long object pipeline:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ChoicelessAwareness</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">observe</span><span class="p">(</span><span class="n">fact</span><span class="p">)</span>
-    <span class="n">fact</span> <span class="c1"># no judge, selector, label, or psychological owner</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Insight</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">call</span><span class="p">(</span><span class="n">what_is</span><span class="p">)</span>
-    <span class="no">ChoicelessAwareness</span><span class="p">.</span><span class="nf">observe</span><span class="p">(</span><span class="n">what_is</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>This code is intentionally paradoxical. Any implementation still belongs to thought and representation. It cannot manufacture attention or instantiate insight. Its purpose is to make one architectural distinction memorable:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">objects_can_model_the_movement</span> <span class="o">=</span> <span class="kp">true</span>
-<span class="n">objects_can_contain_the_living_truth</span> <span class="o">=</span> <span class="kp">false</span>
-</code></pre></div></div>
-
-<details>
-<summary><strong>Explore the complete Ruby mapping</strong></summary>
-
-<table>
-  <thead>
-    <tr>
-      <th>Krishnamurti concept</th>
-      <th>Ruby architecture metaphor</th>
-      <th>Why it helps</th>
-      <th>Where it breaks</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Brain</td>
-      <td>Aggregate / physical host</td>
-      <td>Provides an operating boundary</td>
-      <td>A living brain is not a software container</td>
-    </tr>
-    <tr>
-      <td>Conditioning</td>
-      <td>Module with inherited patterns</td>
-      <td>Shows cross-cutting learned behavior</td>
-      <td>Conditioning is embodied and collective, not merely code reuse</td>
-    </tr>
-    <tr>
-      <td>Memory</td>
-      <td>Repository</td>
-      <td>Stores traces of experience</td>
-      <td>Memory actively shapes perception</td>
-    </tr>
-    <tr>
-      <td>Thought</td>
-      <td>Recursive interpreter</td>
-      <td>Shows the known responding to input</td>
-      <td>Thought is not reducible to a deterministic function</td>
-    </tr>
-    <tr>
-      <td>Self</td>
-      <td>Constructed value/image object</td>
-      <td>Makes its dependence on memory visible</td>
-      <td>The self feels like the observer, not like a passive DTO</td>
-    </tr>
-    <tr>
-      <td>Fear and desire</td>
-      <td>Events derived from self-centered interpretation</td>
-      <td>Reveals shared upstream causes</td>
-      <td>Human feeling is not event-bus traffic</td>
-    </tr>
-    <tr>
-      <td>Relationship</td>
-      <td>Observability boundary</td>
-      <td>Exposes hidden state and assumptions</td>
-      <td>Another human being must never become a test double</td>
-    </tr>
-    <tr>
-      <td>Insight</td>
-      <td>Immediate termination of a false loop</td>
-      <td>Contrasts ending with gradual optimization</td>
-      <td>Insight cannot be invoked by a method call</td>
-    </tr>
-    <tr>
-      <td>Mind / Ground</td>
-      <td>Outside the object model</td>
-      <td>Prevents conceptual ownership by the brain</td>
-      <td>Even "outside" is still a spatial metaphor</td>
-    </tr>
-  </tbody>
-</table>
-
-</details>
-
-<h2 id="12-a-five-minute-observation-experiment">12. A five-minute observation experiment</h2>
-
-<p>Choose one reaction that appears today—defensiveness, irritation, fear, or the desire to be recognized.</p>
-
-<ol>
-  <li>Name the external fact with as little interpretation as possible.</li>
-  <li>Notice the bodily sensation.</li>
-  <li>Observe the memory or image that responds.</li>
-  <li>See whether a center appears that says, “This is happening to me.”</li>
-  <li>Notice the projected future or desired outcome.</li>
-  <li>Do not suppress, justify, or replace any part of the movement.</li>
-  <li>Ask whether the observer is different from what it observes.</li>
-</ol>
-
-<p>The goal is not to produce a preferred state. It is to learn through direct observation.</p>
-
-<h2 id="what-the-architecture-reveals">What the architecture reveals</h2>
-
-<ul>
-  <li>The self is not the owner of thought; it is constructed by thought.</li>
-  <li>Psychological time connects memory, fear, desire, and becoming.</li>
-  <li>Conflict begins with division between the fact and the image of what should be.</li>
-  <li>Relationship exposes conditioning in real time.</li>
-  <li>Awareness is not another controlling process.</li>
-  <li>Insight is an ending, not an incremental improvement.</li>
-  <li>Silence is not forced inactivity but space no longer occupied by psychological noise.</li>
-  <li>Intelligence acts in direct relationship with life, without a self-centered intermediary.</li>
-</ul>
-
-<h2 id="final-takeaway">Final takeaway</h2>
-
-<p>Systems thinking helps us see that fear, desire, memory, time, and the self are not independent objects. They participate in one movement of conditioning. Ruby helps make that movement visible through composition, messages, loops, and generated behavior.</p>
-
-<p>But the deepest point of the architecture is where architecture reaches its limit. A class can represent <code class="language-plaintext highlighter-rouge">Insight</code>; it cannot produce insight. A diagram can trace the movement of thought; only attention can reveal that movement as it happens.</p>
-
-<p>The map becomes valuable when it sends us back to the territory: relationship, perception, and the living fact of <em>what-is</em>.</p>
-
-<h2 id="conceptual-approach-and-references">Conceptual approach and references</h2>
-
-<p>Krishnamurti’s teachings are used here as an investigative approach to thought, conditioning, psychological time, the observer, and insight—not as a closed doctrine or as the ownership label for the architecture. Hillary Peter Rodrigues’s analysis provides the relational structure that helped translate those concepts into the visual and Ruby-oriented models.</p>
-
-<ul>
-  <li>Hillary Peter Rodrigues, <em>“Insight” and “The Religious Mind” in the Teachings of Jiddu Krishnamurti</em>.</li>
-  <li><a href="https://kfoundation.org/urgency-of-change-podcast-episode-73-krishnamurti-on-awareness/">Krishnamurti Foundation Trust — On Awareness</a></li>
-  <li><a href="https://kfoundation.org/krishnamurti-thought-and-the-awakening-of-intelligence-%C2%B7-from-the-awakening-of-intelligence/">Krishnamurti Foundation Trust — Thought and the Awakening of Intelligence</a></li>
-  <li><a href="https://kfoundation.org/krishnamurti-in-saanen-1975-talk-4-time-action-and-fear-transcript/">Krishnamurti Foundation Trust — Time, Action and Fear</a></li>
-</ul>]]></content><author><name></name></author><category term="philosophy" /><category term="consciousness" /><category term="visual-learning" /><category term="ruby" /><category term="j-krishnamurti" /><category term="mind" /><category term="thought" /><category term="insight" /><category term="oop" /><category term="metaprogramming" /><summary type="html"><![CDATA[A visual and brain-friendly map of the brain, conditioning, memory, thought, the self, fear, desire, attention, insight, and intelligence—with a companion Ruby architecture metaphor.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/krishnamurti-mind-architecture/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/krishnamurti-mind-architecture/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p>That is the standard for documenting a legacy Rails repository with AI: not documentation generated once, but understanding that can be traced, challenged, used, and renewed.</p>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="artificial-intelligence" /><category term="software-architecture" /><category term="ruby-on-rails" /><category term="ai-agents" /><category term="legacy-systems" /><category term="documentation" /><category term="mermaid" /><summary type="html"><![CDATA[An evidence-based workflow for using AI to document a Rails repository, map its architecture, and investigate features and bugs.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/documenting-rails-repositories-with-ai/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/documenting-rails-repositories-with-ai/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
