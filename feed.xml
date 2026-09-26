@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-09-26T17:16:39+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">A Copilot Pilot You Can Measure</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html" rel="alternate" type="text/html" title="A Copilot Pilot You Can Measure" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html"><![CDATA[<p><img src="/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" alt="GitHub Copilot for Rails Engineers Part 05: a Rails team scopes a pilot around CaseFlow, establishes a baseline, observes usage, quality and safety separately, and reaches an expand, revise or pause decision beside a digital Copilot-inspired profile." style="width:100%;height:auto;" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-09-26T17:34:55+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">A Copilot Pilot You Can Measure</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html" rel="alternate" type="text/html" title="A Copilot Pilot You Can Measure" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html"><![CDATA[<p><img src="/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" alt="GitHub Copilot for Rails Engineers Part 05: a Rails team scopes a pilot around CaseFlow, establishes a baseline, observes usage, quality and safety separately, and reaches an expand, revise or pause decision beside a digital Copilot-inspired profile." style="width:100%;height:auto;" /></p>
 
 <blockquote>
   <p><strong>Usage tells you who tried Copilot; it cannot tell you what improved.</strong> Design a small Rails pilot that measures engineering outcomes, protects sensitive context and gives the team a real decision at the end.</p>
@@ -894,7 +894,125 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
   <li>Previous chapter artifacts: <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/candidate.patch</code>; <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/rails-pr.yml</code>; <code class="language-plaintext highlighter-rouge">parts/05-adoption-and-governance/PILOT-CHARTER.md</code> and <code class="language-plaintext highlighter-rouge">pilot-observations.csv</code>.</li>
   <li><a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale">GitHub Docs: rolling out Copilot at scale</a>; <a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success">measuring a trial</a>; <a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-copilot-impact">connecting adoption with engineering outcomes</a>.</li>
   <li><a href="https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies">GitHub Docs: organization Copilot policies</a>; <a href="https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent">Copilot cloud agent</a>; <a href="https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion">content exclusion limits</a>.</li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="consulting" /><category term="workshop" /><category term="engineering-roadmap" /><summary type="html"><![CDATA[Use a 90-minute client workshop to turn a Rails repository map, proposed PR, CI gates and Copilot pilot design into an evidence-backed roadmap with named owners.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/rails-evidence-client-roadmap/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/rails-evidence-client-roadmap/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Teach Copilot the Rails Context</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html" rel="alternate" type="text/html" title="Teach Copilot the Rails Context" /><published>2026-09-25T00:00:00+00:00</published><updated>2026-09-25T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html"><![CDATA[<p><img src="/assets/images/posts/teach-copilot-rails-context/cover.webp" alt="A digitized AI guide in side profile faces a conceptual CaseFlow Rails editor; layered context and a ruby-colored flow lead to an unresolved evidence question beneath the GitHub Copilot for Rails Engineers Part 02 series heading." style="width:100%;height:auto;" /></p>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="consulting" /><category term="workshop" /><category term="engineering-roadmap" /><summary type="html"><![CDATA[Use a 90-minute client workshop to turn a Rails repository map, proposed PR, CI gates and Copilot pilot design into an evidence-backed roadmap with named owners.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/rails-evidence-client-roadmap/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/rails-evidence-client-roadmap/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">The Eight-Part GitHub Copilot for Rails Learning Map</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/the-eight-part-github-copilot-for-rails-learning-map.html" rel="alternate" type="text/html" title="The Eight-Part GitHub Copilot for Rails Learning Map" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/the-eight-part-github-copilot-for-rails-learning-map</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/the-eight-part-github-copilot-for-rails-learning-map.html"><![CDATA[<p><img src="/assets/images/posts/copilot-rails-learning-map/cover.webp" alt="Eight illustrated learning stations surround an integrated CaseFlow Rails app as a digitized engineer follows a multicolored path toward human review." style="width:100%;height:auto;" /></p>
+
+<blockquote>
+  <p><strong>Start here: eight chapters, one Rails application, and a question at every step—what can we actually demonstrate?</strong> This map lets you choose a chapter, follow the whole engineering journey, or prepare a concise interview story.</p>
+</blockquote>
+
+<p><em>GitHub Copilot for Rails Engineers · Series guide · Eight chapters</em></p>
+
+<p>The same synthetic <strong>CaseFlow</strong> Rails API anchors all eight posts. This guide is an index, <strong>not a ninth chapter</strong>. Each chapter introduces a different kind of engineering decision: understand source, constrain AI context, review a proposed change, establish trustworthy gates, measure adoption, advise a client, work in Copilot CLI, then turn the process into a reusable procedure. Read the posts in order for the full story or follow the <a href="#routes">interview route</a> if time is short.</p>
+
+<p>The <a href="/assets/downloads/copilot-rails-learning-map-support.zip">cumulative companion download</a> provides the integrated Rails source, the complete Markdown of all eight articles, workbooks with answers, editable Mermaid diagrams, Ruby scripts and original visual assets. Some supplied artifacts are deliberately <strong>proposals or blank templates</strong>; they do not represent a tested deployment, an approved client engagement or measured results.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#chapters">Choose your chapter</a></li>
+  <li><a href="#connections">See how the decisions connect</a></li>
+  <li><a href="#routes">Take one of two learning routes</a></li>
+  <li><a href="#outcomes">Show what you learned</a></li>
+  <li><a href="#exercise">Try a synthesis exercise</a></li>
+  <li><a href="#references">References and supporting material</a></li>
+</ul>
+
+<h2 id="choose-your-chapter-chapters">Choose your chapter {:#chapters}</h2>
+
+<p>Each link below points to the <strong>published article</strong>. Each outcome is an observable piece of work you can inspect or produce with the companion, rather than a claim that Copilot has already done it.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Part · read online</th>
+      <th>Learning objective</th>
+      <th>Make or review in CaseFlow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[01 · The First 30 Minutes in an Unfamiliar Rails Repository](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html)</td>
+      <td>Orient yourself in unfamiliar Rails source and distinguish declarations from observed behavior.</td>
+      <td>Architecture atlas, request path, source citations and unknowns.</td>
+    </tr>
+    <tr>
+      <td>[02 · Teach Copilot the Rails Context](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html)</td>
+      <td>Scope instructions and context so an answer can be traced to files and challenged.</td>
+      <td>Repository guidance, model-specific instructions and a citation audit.</td>
+    </tr>
+    <tr>
+      <td>[03 · From Issue to Reviewable PR](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/from-issue-to-reviewable-rails-pr.html)</td>
+      <td>Give an agent a bounded issue and review its proposed diff against behavior and policy.</td>
+      <td>A candidate resolve-status patch, request specs and a PR review worksheet.</td>
+    </tr>
+    <tr>
+      <td>[04 · Can the Patch Pass the Gates?](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/can-the-patch-pass-the-gates.html)</td>
+      <td>Design CI and security checks; tell a configured gate from a passing run.</td>
+      <td>Staged Rails Actions workflow, gate checklist and evidence questions.</td>
+    </tr>
+    <tr>
+      <td>[05 · A Copilot Pilot You Can Measure](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html)</td>
+      <td>Define an adoption pilot that separates tool use, engineering outcomes and privacy boundaries.</td>
+      <td>Pilot charter, empty observation template and a Ruby summarizer.</td>
+    </tr>
+    <tr>
+      <td>[06 · From Rails Evidence to Client Roadmap](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/from-rails-evidence-to-client-roadmap.html)</td>
+      <td>Facilitate a client decision using source, unresolved checks and named owners.</td>
+      <td>Workshop agenda, claim ledger, bounded roadmap and decision record.</td>
+    </tr>
+    <tr>
+      <td>[07 · A Rails Change You Can Audit with Copilot CLI](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-rails-change-you-can-audit-with-copilot-cli.html)</td>
+      <td>Control a local CLI task, inspect permissions and capture a reproducible handoff.</td>
+      <td>CLI runbook, two-stage prompt, Ruby preflight and blank evidence ledger.</td>
+    </tr>
+    <tr>
+      <td>[08 · A Repeatable Rails Copilot Workflow](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-repeatable-rails-copilot-workflow.html)</td>
+      <td>Decide where instructions, skills, tools, hooks, MCP and human judgment belong.</td>
+      <td>Workflow blueprint, blank evidence JSON and Ruby structural check.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>One thread, three scales:</strong> Parts 01–04 follow a request and a proposed change; Parts 05–06 move from engineering evidence to an organizational decision; Parts 07–08 revisit the same problem in the CLI and turn the judgment calls into a teachable procedure. The Part 03 patch is a proposal, the Part 04 workflow is staged, and the Part 05 observations have no measurements. Carry those distinctions forward when telling the story.</p>
+
+<h2 id="see-how-the-decisions-connect-connections">See how the decisions connect {:#connections}</h2>
+
+<p>The eight topics are related, but there is no automatic handoff from an agent’s code suggestion to a successful client outcome. The arrows show <strong>learning dependencies</strong>: a reviewable change needs a source map; a pilot needs defined gates and metrics; a repeatable procedure needs a human decision. They do not assert that the lab ran or that a client adopted it.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCd0aGVtZVZhcmlhYmxlcyc6eydiYWNrZ3JvdW5kJzonI0ZGRkZGRicsJ3ByaW1hcnlUZXh0Q29sb3InOicjM0UzNDJDJywnbGluZUNvbG9yJzonIzZGNzM3Nyd9fX0lJVxuZmxvd2NoYXJ0IFRCXG5zdWJncmFwaCB1bmRlcnN0YW5kW1wi8J-UjiBVbmRlcnN0YW5kXCJdXG5BW1wiMDEgwrcgTWFwIFJhaWxzIHNvdXJjZVwiXSAtLT4gQltcIjAyIMK3IEJvdW5kIEFJIGNvbnRleHRcIl1cbmVuZFxuc3ViZ3JhcGggZW5naW5lZXJbXCLwn5ug77iPIEVuZ2luZWVyXCJdXG5CIC0tPiBDW1wiMDMgwrcgUmV2aWV3IGNhbmRpZGF0ZSBQUlwiXSAtLT4gRFtcIjA0IMK3IERlZmluZSBDSSArIHNlY3VyaXR5IGdhdGVzXCJdXG5lbmRcbnN1YmdyYXBoIGFkdmlzZVtcIvCfkaUgQWR2aXNlXCJdXG5EIC0tPiBFW1wiMDUgwrcgRGVzaWduIG1lYXN1cmVkIHBpbG90XCJdIC0tPiBGW1wiMDYgwrcgRGVjaWRlIHdpdGggY2xpZW50XCJdXG5lbmRcbnN1YmdyYXBoIHJlcGVhdFtcIvCfp60gUmVwZWF0IGNhcmVmdWxseVwiXVxuRCAtLT4gR1tcIjA3IMK3IEF1ZGl0IENMSSB0YXNrXCJdIC0tPiBIW1wiMDggwrcgRGVzaWduIHJldXNhYmxlIHdvcmtmbG93XCJdXG5lbmRcbkYgLS0-IEhcbmNsYXNzRGVmIHNvdXJjZSBmaWxsOiNEOUVBRjcsc3Ryb2tlOiM3QUE2QzIsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIGVuZ2luZWVyaW5nIGZpbGw6I0U4RERGNSxzdHJva2U6I0E2OEJDNCxjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgZGVjaXNpb24gZmlsbDojRkZGMUJGLHN0cm9rZTojQkE5QzQzLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBvdXRjb21lIGZpbGw6I0RDRUZENixzdHJva2U6Izg2QTg3OCxjb2xvcjojM0UzNDJDO1xuY2xhc3MgQSxCIHNvdXJjZTtcbmNsYXNzIEMsRCxHIGVuZ2luZWVyaW5nO1xuY2xhc3MgRSxGIGRlY2lzaW9uO1xuY2xhc3MgSCBvdXRjb21lOyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
+
+<p>The editable source is <code class="language-plaintext highlighter-rouge">docs/diagrams/series-learning-map.mmd</code> in the download. For implementation details and runnable instructions use the relevant chapter and <code class="language-plaintext highlighter-rouge">caseflow/README.md</code>, rather than treating this diagram as code or as run evidence.</p>
+
+<h2 id="take-one-of-two-learning-routes-routes">Take one of two learning routes {:#routes}</h2>
+
+<p><img src="/assets/images/posts/copilot-rails-learning-map/two-routes.webp" alt="Two illuminated paths cross a Rails workbench: the interview route asks the reader to map, review and explain, while the hands-on route traces, changes, tests and decides with a reviewer." style="width:100%;height:auto;" /></p>
+
+<p><em>Both routes use the same CaseFlow source; the illustrated workbench is conceptual, and the exact commands and evidence belong in the chapter Markdown.</em></p>
+
+<p><strong>Interview route (about 2–3 hours of reading and rehearsal):</strong> read 01 → 02 → 03 → 04 → 06 → 08. For 01–04, prepare one sentence each on the source fact, the proposed behavior, the check you would run and the decision owner. Use 06 to give a two-minute client recommendation. Skim 05 if asked about adoption metrics, 07 if asked about CLI permissions. Explain why a proposed diff, a staged workflow and a blank pilot CSV cannot substantiate a success claim. These are suggested study times, not measured results.</p>
+
+<p><strong>Hands-on route (one or more sessions on your Mac):</strong> read 01 → 08 in order. Open <code class="language-plaintext highlighter-rouge">caseflow/</code> as the VS Code workspace, follow <code class="language-plaintext highlighter-rouge">caseflow/README.md</code> for Ruby, dependencies, SQLite and RSpec setup, and keep the baseline separate from the optional Part 03 patch. Attempt each chapter workbook <em>before</em> its answer key. Run commands only in your own environment, save the actual command, exit status and relevant output, and keep secrets and client data out of the synthetic case. Check a CI or CLI result only after running it; there is no supplied passing run.</p>
+
+<p>If you are beginning with Copilot itself, start with 01 and 02. If you already know Rails but need a consultative narrative, go to 05 and 06 after you have inspected the source and candidate patch. Chapter 08 is best read after 07 because its skill, hook and MCP choices build on a bounded CLI task. No official Ruby Copilot SDK integration is assumed in this series.</p>
+
+<h2 id="show-what-you-learned-outcomes">Show what you learned {:#outcomes}</h2>
+
+<p>You should be able to give a reviewer five concrete things: (1) a path-cited explanation of one CaseFlow request; (2) a change request scoped tightly enough to reject an unsafe diff; (3) a distinction between a test assertion, an actual run and a human approval; (4) a privacy-conscious pilot question with separate adoption and quality measures; and (5) a two-minute recommendation with an owner, next check and stop rule. The <a href="#references">series guide workbook</a> gives a short exercise and answer key for that final synthesis.</p>
+
+<p>For a future ebook, the eight articles can become eight chapter candidates and this map can serve as front matter. A book edition still needs transitions, refreshed links and validation of technical claims; the post series is the current source of truth.</p>
+
+<h2 id="try-a-synthesis-exercise-exercise">Try a synthesis exercise {:#exercise}</h2>
+
+<p>A stakeholder says: “Copilot implemented status updates in CaseFlow, CI passed, and productivity improved. Can we roll it out to all Rails teams?” Write four lines: <em>what the supplied source establishes; what is merely proposed; which checks or measurements are missing; what next step you recommend</em>. Then use the workbook answer key to challenge your language. The useful skill here is moving from attractive artifacts to defensible engineering and client decisions.</p>
+
+<h2 id="references-and-supporting-material-references">References and supporting material {:#references}</h2>
+
+<ul>
+  <li><a href="/assets/downloads/copilot-rails-learning-map-support.zip">Download the cumulative companion and series guide</a>: start at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/series-guide/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/series-guide/article.md</code>. The guide workbook with answers is <code class="language-plaintext highlighter-rouge">docs/labs/series-guide-workbook.md</code>; editable map: <code class="language-plaintext highlighter-rouge">docs/diagrams/series-learning-map.mmd</code>.</li>
+  <li><a href="#chapters">All eight published posts</a> above, with direct links, objectives and CaseFlow outputs. The companion includes each chapter’s own article Markdown, exercises, source images and diagram masters.</li>
+  <li><a href="#references">CaseFlow app and local setup</a> in the download at <code class="language-plaintext highlighter-rouge">caseflow/README.md</code>; <a href="#references">series map and source boundaries</a> at <code class="language-plaintext highlighter-rouge">docs/series-map.md</code> and <code class="language-plaintext highlighter-rouge">docs/validation-status.md</code>.</li>
+  <li><a href="https://docs.github.com/en/copilot">GitHub Copilot documentation</a>; <a href="https://docs.github.com/en/actions">GitHub Actions documentation</a>; <a href="https://guides.rubyonrails.org/">Ruby on Rails guides</a>.</li>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="learning-map" /><category term="caseflow" /><category term="interview-preparation" /><summary type="html"><![CDATA[A navigable guide to all eight GitHub Copilot for Rails Engineers chapters, with learning objectives, the integrated CaseFlow lab, an interview route and a practical route.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/copilot-rails-learning-map/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/copilot-rails-learning-map/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Teach Copilot the Rails Context</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html" rel="alternate" type="text/html" title="Teach Copilot the Rails Context" /><published>2026-09-25T00:00:00+00:00</published><updated>2026-09-25T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html"><![CDATA[<p><img src="/assets/images/posts/teach-copilot-rails-context/cover.webp" alt="A digitized AI guide in side profile faces a conceptual CaseFlow Rails editor; layered context and a ruby-colored flow lead to an unresolved evidence question beneath the GitHub Copilot for Rails Engineers Part 02 series heading." style="width:100%;height:auto;" /></p>
 
 <p><em>GitHub Copilot for Rails Engineers · Part 02</em></p>
 
@@ -1775,485 +1893,4 @@ produce an auditable before-and-after report
   <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/concepts/models/auto-model-selection">About Copilot Auto Model Selection</a>.</li>
   <li>Microsoft for Developers. <a href="https://developer.microsoft.com/blog/get-started-with-github-copilot-cli-a-free-hands-on-course/">Get Started with GitHub Copilot CLI: A Free, Hands-on Course</a>.</li>
   <li>James Montemagno. <a href="https://jamesmontemagno.github.io/first-steps-with-github-copilot/">First Steps with GitHub Copilot</a>.</li>
-</ul>]]></content><author><name></name></author><category term="artificial-intelligence" /><category term="software-engineering" /><category term="agentic-ai" /><category term="github-copilot" /><category term="GitHub Copilot" /><category term="Copilot CLI" /><category term="Copilot SDK" /><category term="HydraFusion" /><category term="agentic engineering" /><category term="custom agents" /><category term="agent skills" /><category term="MCP" /><category term="software architecture" /><summary type="html"><![CDATA[GitHub Copilot is evolving from autocomplete into an agent runtime. Explore its CLI, SDK, agents, skills, MCP integrations, HydraFusion, governance boundaries, and a falsifiable Rails experiment.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/copilot-agentic-engineering/cover-v8.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/copilot-agentic-engineering/cover-v8.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">The Agentic Monolith: Why Rails May Be the Operating System for AI Agent Societies</title><link href="https://enogrob.github.io/artificial-intelligence/architecture/agentic-ai/ruby/rails/2026/09/23/the-agentic-monolith.html" rel="alternate" type="text/html" title="The Agentic Monolith: Why Rails May Be the Operating System for AI Agent Societies" /><published>2026-09-23T00:00:00+00:00</published><updated>2026-09-23T00:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/architecture/agentic-ai/ruby/rails/2026/09/23/the-agentic-monolith</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/architecture/agentic-ai/ruby/rails/2026/09/23/the-agentic-monolith.html"><![CDATA[<p><img src="/assets/images/posts/the-agentic-monolith/cover.webp" alt="A faceted ruby-red Rails monolith coordinates memory, jobs, tools, policy, observability, and collaborating AI agents beneath a green network sphere." style="width:100%;height:auto;" /></p>
-
-<blockquote>
-  <p>What if the most important operating system for an AI-agent society is not a new agent framework, but the application architecture we already know how to operate?</p>
-</blockquote>
-
-<p>The current wave of agentic AI often begins with a seductive move: create another agent. One agent plans, another researches, another writes, another reviews, and a supervisor decides what happens next. The cast grows quickly. The architecture often does not.</p>
-
-<p>This creates a paradox. We add agents to distribute intelligence, yet every new agent introduces another boundary across which intent, context, authority, state, failure, and evidence must travel. The system acquires more cognitive capacity while becoming harder to coordinate.</p>
-
-<p>The next scaling problem may therefore be less about model intelligence and more about <strong>organized action</strong>.</p>
-
-<p>This essay develops a concrete hypothesis: a <strong>modular Rails monolith</strong> can act as the operating system for a society of AI agents. Not because Rails makes models smarter, and not because every agent should execute inside one Ruby process. Rails is interesting because it already provides many institutional capabilities an agent society lacks: durable records, transactions, jobs, authorization, interfaces, instrumentation, tests, deployment conventions, and visible human accountability.</p>
-
-<p>The proposal is narrower than “Rails is the best agent framework.” It is an architectural experiment: when several agents collaborate on consequential work, can Rails provide a coherent operational whole without forcing premature distribution?</p>
-
-<h2 id="contents">Contents</h2>
-
-<ul>
-  <li><a href="#the-lonely-generalist">The Lonely Generalist</a></li>
-  <li><a href="#why-more-agents-can-produce-less-intelligence">Why More Agents Can Produce Less Intelligence</a></li>
-  <li><a href="#the-coordination-scaling-law">The Coordination Scaling Law</a></li>
-  <li><a href="#rails-as-an-agent-operating-system">Rails as an Agent Operating System</a></li>
-  <li><a href="#anatomy-of-the-agentic-monolith">Anatomy of the Agentic Monolith</a></li>
-  <li><a href="#a-concrete-example-an-auditable-rails-maintenance-run">A Concrete Example: An Auditable Rails Maintenance Run</a></li>
-  <li><a href="#one-workflow-many-specialized-agents">One Workflow, Many Specialized Agents</a></li>
-  <li><a href="#concurrency-without-architectural-fragmentation">Concurrency Without Architectural Fragmentation</a></li>
-  <li><a href="#how-the-system-learns">How the System Learns</a></li>
-  <li><a href="#the-experiment-that-could-falsify-the-idea">The Experiment That Could Falsify the Idea</a></li>
-  <li><a href="#where-the-monolith-must-end">Where the Monolith Must End</a></li>
-  <li><a href="#a-practical-starting-point">A Practical Starting Point</a></li>
-  <li><a href="#conclusion">Conclusion</a></li>
-  <li><a href="#references">References</a></li>
-</ul>
-
-<h2 id="the-lonely-generalist">The Lonely Generalist</h2>
-
-<p>The simplest agent architecture is also the most attractive: one model receives the objective, sees a set of tools, accumulates context, and keeps acting until it reaches a result.</p>
-
-<p>For bounded work, that is often enough. Anthropic’s <a href="https://www.anthropic.com/engineering/building-effective-agents">guide to building effective agents</a> recommends starting with the simplest design that works and distinguishes deterministic workflows from agents that dynamically direct their own tool use. Complexity needs evidence.</p>
-
-<p>But a general-purpose agent eventually becomes a <em>lonely generalist</em>. It must simultaneously interpret the goal, retrieve knowledge, plan, choose tools, respect permissions, remember progress, recover from failures, judge quality, and decide when to stop. These concerns compete for the same context window and decision loop.</p>
-
-<p>The failure is not necessarily a lack of intelligence. It is an excess of institutional responsibility concentrated in one probabilistic actor.</p>
-
-<figure>
-  <img src="/assets/images/posts/the-agentic-monolith/lonely-generalist.webp" alt="A solitary agent is pulled apart by four flowing demands labeled context, tools, memory, and failure beneath a green network sphere." style="width:100%;height:auto;" />
-  <figcaption>A single agent can perform many roles, but each additional responsibility increases context pressure and makes failures harder to isolate.</figcaption>
-</figure>
-
-<p>Specialization appears to solve the problem. Give research to a researcher, implementation to a builder, verification to a reviewer, and orchestration to a supervisor. Yet specialization transfers complexity rather than eliminating it:</p>
-
-<ul>
-  <li>Which agent owns the current state?</li>
-  <li>Which observations are authoritative?</li>
-  <li>Can two agents modify the same artifact?</li>
-  <li>What happens after a partial failure?</li>
-  <li>Which agent may call a destructive tool?</li>
-  <li>How is duplicate work prevented?</li>
-  <li>Who decides that the objective is complete?</li>
-</ul>
-
-<p>A collection of prompts does not answer these questions. An architecture must.</p>
-
-<h2 id="why-more-agents-can-produce-less-intelligence">Why More Agents Can Produce Less Intelligence</h2>
-
-<p>Research increasingly treats communication and coordination as first-class design problems. <a href="https://arxiv.org/abs/2502.14321"><em>Beyond Self-Talk</em></a> organizes LLM-based multi-agent systems around architectures, goals, protocols, strategies, and message content. A survey of <a href="https://arxiv.org/abs/2501.06322">multi-agent collaboration mechanisms</a> likewise distinguishes actors, collaboration types, structures, strategies, and coordination protocols.</p>
-
-<p>The implication is easy to miss: <strong>adding agents creates a system problem, not merely a prompting problem</strong>.</p>
-
-<p>Empirical work gives reason for caution. <a href="https://arxiv.org/abs/2503.13657"><em>Why Do Multi-Agent LLM Systems Fail?</em></a> studies failure modes and challenges the assumption that more agents automatically produce meaningful gains. A 2026 analysis of <a href="https://arxiv.org/abs/2607.27942">architectural scalability</a> reports that performance can peak at intermediate complexity and then degrade, with consistency remaining a central challenge.</p>
-
-<p>This does not make multi-agent systems a dead end. It means collective intelligence has a coordination cost.</p>
-
-<p>If every one of n agents can communicate directly with every other agent, the number of possible pairwise relationships is:</p>
-
-<p>$$
-E = \frac{n(n-1)}{2}
-$$</p>
-
-<p>Five agents create ten possible relationships. Ten create forty-five. Twenty create 190. Real systems do not exercise every relationship equally, but the formula exposes the pressure: unbounded peer-to-peer collaboration grows faster than the agent count.</p>
-
-<p>The design goal is not maximum connectivity. It is <strong>useful constraint</strong>.</p>
-
-<h2 id="the-coordination-scaling-law">The Coordination Scaling Law</h2>
-
-<p>A productive agent society needs a shared grammar for action. Tasks need identities. State transitions must be explicit. Tools need contracts. Results must be recorded. Conflicts need resolution rules. Failures must become observable events instead of disappearing into conversational history.</p>
-
-<figure>
-  <img src="/assets/images/posts/the-agentic-monolith/coordination-scaling-law.webp" alt="Tangled agent flows labeled agents, conflicts, and handoffs pass through a green constraint ring and become coherent shared state entering a ruby-red monolith." style="width:100%;height:auto;" />
-  <figcaption>Coordination improves when unconstrained conversation becomes governed movement through explicit shared state.</figcaption>
-</figure>
-
-<p>This leads to a practical scaling law:</p>
-
-<blockquote>
-  <p>The useful capacity of an agent society grows only when coordination quality grows at least as fast as interaction complexity.</p>
-</blockquote>
-
-<p>That is an architectural hypothesis, not a universal mathematical law. Its purpose is to redirect attention. When a multi-agent system disappoints, a stronger supervisor prompt may be less effective than better state ownership, task boundaries, idempotency, observability, and evaluation.</p>
-
-<p>The most important component may not be another agent. It may be the institution that makes agents legible to one another.</p>
-
-<h2 id="rails-as-an-agent-operating-system">Rails as an Agent Operating System</h2>
-
-<p>An operating system does not perform every application task. It provides durable abstractions through which many tasks coexist: processes, memory, permissions, scheduling, I/O, isolation, and observation.</p>
-
-<p>A Rails application can play an analogous role:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Agent-society need</th>
-      <th>Rails capability</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Durable shared memory</td>
-      <td>Active Record models and relational constraints</td>
-    </tr>
-    <tr>
-      <td>Units of work</td>
-      <td>Active Job and database-backed queues</td>
-    </tr>
-    <tr>
-      <td>Atomic state changes</td>
-      <td>Transactions and locking</td>
-    </tr>
-    <tr>
-      <td>Tool contracts</td>
-      <td>Service objects, commands, APIs, and schemas</td>
-    </tr>
-    <tr>
-      <td>Identity and authority</td>
-      <td>Authentication, authorization, and policies</td>
-    </tr>
-    <tr>
-      <td>Human intervention</td>
-      <td>Controllers, forms, dashboards, and approvals</td>
-    </tr>
-    <tr>
-      <td>Evidence</td>
-      <td>Logs, events, traces, artifacts, and audit records</td>
-    </tr>
-    <tr>
-      <td>Verification</td>
-      <td>Unit, integration, job, and system tests</td>
-    </tr>
-    <tr>
-      <td>Boundaries</td>
-      <td>Engines, namespaces, packages, and modular-monolith conventions</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Rails 8 made this proposition more interesting by adopting database-backed components as defaults. The official <a href="https://guides.rubyonrails.org/8_0_release_notes.html">Rails 8.0 release notes</a> describe Solid Queue as the default Active Job backend. The <a href="https://guides.rubyonrails.org/active_job_basics.html">Active Job guide</a> documents queues, priorities, retries, recurring work, concurrency controls, and transactional integrity.</p>
-
-<p>This does not make a database queue sufficient for every AI workload. It means a Rails application can persist domain state and coordinate durable background work without beginning with a distributed platform.</p>
-
-<p>The central move is to stop storing the society only in prompts.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AgentTask</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
-  <span class="n">enum</span> <span class="ss">:status</span><span class="p">,</span> <span class="p">{</span>
-    <span class="ss">proposed: </span><span class="s2">"proposed"</span><span class="p">,</span>
-    <span class="ss">ready: </span><span class="s2">"ready"</span><span class="p">,</span>
-    <span class="ss">running: </span><span class="s2">"running"</span><span class="p">,</span>
-    <span class="ss">blocked: </span><span class="s2">"blocked"</span><span class="p">,</span>
-    <span class="ss">succeeded: </span><span class="s2">"succeeded"</span><span class="p">,</span>
-    <span class="ss">failed: </span><span class="s2">"failed"</span>
-  <span class="p">}</span>
-
-  <span class="n">belongs_to</span> <span class="ss">:objective</span>
-  <span class="n">belongs_to</span> <span class="ss">:assigned_agent</span><span class="p">,</span> <span class="ss">optional: </span><span class="kp">true</span>
-  <span class="n">has_many</span> <span class="ss">:observations</span>
-  <span class="n">has_many</span> <span class="ss">:tool_invocations</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>The model may propose the next action, but the application owns the transition. The database can enforce uniqueness. A job can retry. A policy can reject the tool call. A human can inspect the evidence. Another agent can resume from explicit state rather than reconstructing the past from prose.</p>
-
-<p>That is what makes Rails an operating-system candidate: not intelligence, but <strong>operational coherence</strong>.</p>
-
-<h2 id="anatomy-of-the-agentic-monolith">Anatomy of the Agentic Monolith</h2>
-
-<p>The agentic monolith is modular, not amorphous. Its internal boundaries correspond to responsibilities that must remain independently understandable.</p>
-
-<figure>
-  <img src="/assets/images/posts/the-agentic-monolith/agentic-monolith-anatomy.webp" alt="A cutaway ruby-red monolith shows five connected layers labeled memory, jobs, tools, policy, and observability, with a human hand joining the flow." style="width:100%;height:auto;" />
-  <figcaption>The monolith centralizes operational truth while preserving explicit internal boundaries.</figcaption>
-</figure>
-
-<h3 id="memory">Memory</h3>
-
-<p>Memory is not a transcript dump. Separate working context for one model call, resumable task state, durable domain memory, and artifacts such as patches, reports, images, and evaluations. Active Record lets memory participate in invariants: a decision can point to evidence, an observation can be immutable, and an artifact can carry a checksum.</p>
-
-<h3 id="jobs">Jobs</h3>
-
-<p>Agent work is naturally asynchronous. Model calls may time out, providers may rate-limit, tools may be slow, and humans may take hours to approve a step. Jobs turn those pauses into durable workflow boundaries. Each job should be small enough to retry safely and explicit about idempotency.</p>
-
-<h3 id="tools">Tools</h3>
-
-<p>A tool should be a narrow capability with a schema, permission policy, timeout, observable result, and explicit failure model. “Shell access” is not one tool; it is an unbounded capability surface. Tool results should enter the system as observations, with raw evidence retained for audit and a bounded representation returned to the model.</p>
-
-<h3 id="policy">Policy</h3>
-
-<p>Agent autonomy is scoped authority. Policies decide which agent can perform which action against which resource under which conditions. A model may explain why an action seems appropriate, but it should not be the only mechanism deciding whether production data can be deleted, money can move, or code can deploy.</p>
-
-<h3 id="observability">Observability</h3>
-
-<p>Traditional monitoring asks whether the service is healthy. Agent observability must also ask whether the work is coherent. Useful events include task creation, context assembly, model response, tool authorization, artifact production, evaluation, human intervention, and stop conditions.</p>
-
-<p>Rails exposes a rich instrumentation model through <a href="https://guides.rubyonrails.org/active_support_instrumentation.html">Active Support Instrumentation</a>. Agent-specific events can extend it while traces connect one objective across model, job, tool, and human boundaries.</p>
-
-<h2 id="a-concrete-example-an-auditable-rails-maintenance-run">A Concrete Example: An Auditable Rails Maintenance Run</h2>
-
-<p>Consider a pull request that changes authentication code and several dependencies. A maintenance run can combine deterministic tools with agent coordination.</p>
-
-<div class="mermaid-diagram">
-
-  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0OCwncmFua1NwYWNpbmcnOjU4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBURFxuUFJbXCLwn5OlIFB1bGwgcmVxdWVzdFwiXSAtLT4gRVxuc3ViZ3JhcGggRVZJREVOQ0VbXCLwn5SNIERldGVybWluaXN0aWMgRXZpZGVuY2VcIl1cbkVbXCLwn6eqIFJ1biBhdWRpdCB0b29sc1wiXVxuRSAtLT4gQ1tcIvCfk4ogU2ltcGxlQ292XCJdXG5FIC0tPiBTW1wi8J-boe-4jyBCcmFrZW1hblwiXVxuRSAtLT4gRFtcIvCfk6YgYnVuZGxlci1hdWRpdFwiXVxuRSAtLT4gUVtcIvCfp6kgUnVieUNyaXRpY1wiXVxuQyAtLT4gQVtcIvCfk4QgUGVyc2lzdCByYXcgcmVwb3J0c1wiXVxuUyAtLT4gQVxuRCAtLT4gQVxuUSAtLT4gQVxuZW5kXG5zdWJncmFwaCBSRUFTT05JTkdbXCLwn6etIEFnZW50IENvb3JkaW5hdGlvblwiXVxuQSAtLT4gUFtcIvCfjq8gUHJpb3JpdGl6ZSByaXNrc1wiXVxuUCAtLT4gUltcIvCfm6DvuI8gUHJvcG9zZSByZW1lZGlhdGlvblwiXVxuZW5kXG5zdWJncmFwaCBHT1ZFUk5BTkNFW1wi8J-UjiBHb3Zlcm5hbmNlICYgVmVyaWZpY2F0aW9uXCJdXG5SIC0tPiBHe1wi8J-boe-4jyBQb2xpY3kgZ2F0ZVwifVxuRyAtLT58YXBwcm92YWwgcmVxdWlyZWR8IEhbXCLwn5GkIEh1bWFuIGFwcHJvdmFsXCJdXG5HIC0tPnxhdXRob3JpemVkfCBYW1wi8J-UpyBBcHBseSBjaGFuZ2VcIl1cbkggLS0-fGFwcHJvdmVkfCBYXG5IIC0tPnxyZWplY3RlZHwgUlxuWCAtLT4gVltcIvCfp6ogUmVydW4gYXVkaXQgdG9vbHNcIl1cblYgLS0-IEZ7XCLinIUgRmluZGluZ3MgcmVzb2x2ZWQ_XCJ9XG5GIC0tPnxub3wgUFxuRiAtLT58eWVzfCBPW1wi4pyFIEF1ZGl0YWJsZSByZXN1bHRcIl1cbmVuZFxuY2xhc3NEZWYgYmx1ZSBmaWxsOiNEOUVBRjcsc3Ryb2tlOiM3QUE2QzIsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgcHVycGxlIGZpbGw6I0U4RERGNSxzdHJva2U6I0E2OEJDNCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBvcmFuZ2UgZmlsbDojRjhERkM0LHN0cm9rZTojQzk5ODZELGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjJweDtcbmNsYXNzRGVmIHllbGxvdyBmaWxsOiNGRkYxQkYsc3Ryb2tlOiNDOEE4NEUsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgcm9zZSBmaWxsOiNGNkQ2REQsc3Ryb2tlOiNDOTg3OTgsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgZ3JlZW4gZmlsbDojRENFRkQ2LHN0cm9rZTojODZBODc4LGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjJweDtcbmNsYXNzIFBSIGJsdWU7XG5jbGFzcyBFLEMsUyxELFEsVixYIG9yYW5nZTtcbmNsYXNzIEEgeWVsbG93O1xuY2xhc3MgUCxSIHB1cnBsZTtcbmNsYXNzIEcsSCxGIHJvc2U7XG5jbGFzcyBPIGdyZWVuOyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-</div>
-
-<p><em>Deterministic tools produce evidence; agents interpret it; Rails preserves state, governs changes, and closes the verification loop.</em></p>
-
-<p>The tools remain the source of evidence. SimpleCov measures coverage, Brakeman checks Rails security risks, bundler-audit checks vulnerable dependencies, and RubyCritic identifies complexity and maintainability problems. The agents interpret and coordinate those results; Rails persists the run, schedules jobs, records artifacts, and governs transitions.</p>
-
-<p>This distinction matters because a skill and an application solve different problems:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Need</th>
-      <th>Skill</th>
-      <th>Agentic monolith</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>One-off audit</td>
-      <td>Excellent</td>
-      <td>Excessive</td>
-    </tr>
-    <tr>
-      <td>Tool execution</td>
-      <td>Excellent</td>
-      <td>Excellent</td>
-    </tr>
-    <tr>
-      <td>History across runs</td>
-      <td>Limited</td>
-      <td>Natural</td>
-    </tr>
-    <tr>
-      <td>Multiple projects</td>
-      <td>Manual coordination</td>
-      <td>Natural</td>
-    </tr>
-    <tr>
-      <td>Retries and durable jobs</td>
-      <td>Limited</td>
-      <td>Strong</td>
-    </tr>
-    <tr>
-      <td>Dashboards and reports</td>
-      <td>Basic</td>
-      <td>Natural</td>
-    </tr>
-    <tr>
-      <td>Permissions and approvals</td>
-      <td>Limited</td>
-      <td>Strong</td>
-    </tr>
-    <tr>
-      <td>CI/CD integration</td>
-      <td>Possible</td>
-      <td>Strong</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>A skill is the right starting point for a one-off audit. A Rails application becomes justified when audits are recurring, shared across projects, persisted over time, integrated with CI, and subject to approval policies.</p>
-
-<p>The recent <a href="https://www.fastruby.io/blog/tech-debt-audit-with-claude-code.html">FastRuby technical debt audit workflow</a> is a useful implementation of that first stage. Its reusable Claude Code skill runs a broader set of Rails analysis tools and produces a consolidated HTML report. The architectural next step explored here is to make that workflow durable, observable, and governed by the application.</p>
-
-<p><strong>The skill executes and interprets a bounded audit. Rails remembers across runs, schedules durable work, governs changes, and verifies outcomes.</strong></p>
-
-<h2 id="one-workflow-many-specialized-agents">One Workflow, Many Specialized Agents</h2>
-
-<p>The monolith does not require agents to become synchronous Ruby objects inside one request. It gives them a common institutional surface.</p>
-
-<div class="mermaid-diagram">
-
-  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzoxODAsJ3JhbmtTcGFjaW5nJzo1OCwnY3VydmUnOidiYXNpcyd9LCd0aGVtZVZhcmlhYmxlcyc6eydiYWNrZ3JvdW5kJzonI0ZGRjhFRicsJ3ByaW1hcnlUZXh0Q29sb3InOicjM0UzNDJDJywnbGluZUNvbG9yJzonIzZGNzM3NycsJ2ZvbnRGYW1pbHknOidUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWYnLCdmb250U2l6ZSc6JzEzcHgnLCdjbHVzdGVyQmtnJzonI0ZCRjRFNycsJ2NsdXN0ZXJCb3JkZXInOicjQjhBMTdEJ319fSUlXG5mbG93Y2hhcnQgVERcblVbXCLwn46vIEh1bWFuIG9iamVjdGl2ZVwiXSAtLT4gT1xuc3ViZ3JhcGggUExBTltcIvCfp60gUGxhbm5pbmdcIl1cbk9bXCLwn5OlIE9iamVjdGl2ZSByZWNvcmRcIl0gLS0-IFBbXCLwn6etIFBsYW5uZXIgYWdlbnRcIl1cblAgLS0-IFRbXCLinIUgQXBwcm92ZWQgdGFzayBncmFwaFwiXVxuZW5kXG5zdWJncmFwaCBXT1JLW1wi8J-boO-4jyBTcGVjaWFsaXplZCBXb3JrXCJdXG5UIC0tPiBSW1wi8J-UjSBSZXNlYXJjaCBhZ2VudFwiXVxuVCAtLT4gQltcIvCfm6DvuI8gQnVpbGRlciBhZ2VudFwiXVxuUiAtLT4gQVtcIvCfk6YgU2hhcmVkIGFydGlmYWN0c1wiXVxuQiAtLT4gQVxuZW5kXG5zdWJncmFwaCBWRVJJRllbXCLwn5SOIFZlcmlmaWNhdGlvbiAmIERlbGl2ZXJ5XCJdXG5BIC0tPiBWW1wi8J-nqiBWZXJpZmllciBhZ2VudFwiXVxuViAtLT4gR3tcIvCfm6HvuI8gUG9saWN5ICsgcXVhbGl0eSBnYXRlXCJ9XG5HIC0tPnxyZXZpc2V8IFRcbkcgLS0-fGFjY2VwdHwgRFtcIuKchSBIdW1hbi12aXNpYmxlIHJlc3VsdFwiXVxuZW5kXG5jbGFzc0RlZiBibHVlIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBwdXJwbGUgZmlsbDojRThEREY1LHN0cm9rZTojQTY4QkM0LGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjJweDtcbmNsYXNzRGVmIG9yYW5nZSBmaWxsOiNGOERGQzQsc3Ryb2tlOiNDOTk4NkQsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgeWVsbG93IGZpbGw6I0ZGRjFCRixzdHJva2U6I0M4QTg0RSxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiByb3NlIGZpbGw6I0Y2RDZERCxzdHJva2U6I0M5ODc5OCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBncmVlbiBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3MgVSxPIGJsdWU7XG5jbGFzcyBQLFQgcHVycGxlO1xuY2xhc3MgUixCLFYgb3JhbmdlO1xuY2xhc3MgQSB5ZWxsb3c7XG5jbGFzcyBHIHJvc2U7XG5jbGFzcyBEIGdyZWVuOyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-</div>
-
-<p>Agents communicate primarily by changing governed state and producing artifacts. Natural-language messages still matter, but they are no longer the only source of truth.</p>
-
-<p>This also makes agents replaceable. A research task can be executed by a different model, a deterministic crawler, or a human without changing the rest of the workflow. The role remains stable when the performer changes.</p>
-
-<p>The boundary is simple:</p>
-
-<ul>
-  <li><strong>agents decide within bounded roles</strong>;</li>
-  <li><strong>the application decides what counts as a valid transition</strong>.</li>
-</ul>
-
-<p>That protects the system from turning every business invariant into a prompt.</p>
-
-<h2 id="concurrency-without-architectural-fragmentation">Concurrency Without Architectural Fragmentation</h2>
-
-<p>The word <em>monolith</em> is sometimes mistaken for “one process doing one thing at a time.” That is not the proposal.</p>
-
-<p>Rails web processes, job workers, provider requests, sandboxes, browsers, and external tools can run concurrently. The monolith is the coherent application and data model coordinating them, not a prohibition against parallel execution.</p>
-
-<ul>
-  <li>Network-bound model and tool calls belong in jobs or async I/O.</li>
-  <li>Independent tasks can run in parallel workers.</li>
-  <li>CPU-bound local computation may use separate processes or, where appropriate, Ruby Ractors.</li>
-  <li>Unsafe or resource-intensive tools should run in isolated environments.</li>
-  <li>Specialized services should be extracted when measurement reveals a real scaling or isolation boundary.</li>
-</ul>
-
-<p>Ractors are not the default answer for model calls. Most model interaction is I/O-bound, and surrounding libraries may not be Ractor-safe. The more important concurrency primitive is durable work with explicit ownership.</p>
-
-<p>The Rails guide on <a href="https://guides.rubyonrails.org/active_record_multiple_databases.html">multiple databases</a> also shows that a coherent application need not be limited to one physical database. A modular monolith can evolve through replicas, sharding, separate queue storage, and specialized infrastructure without first dissolving its domain model into services.</p>
-
-<h2 id="how-the-system-learns">How the System Learns</h2>
-
-<p>An agentic system should improve, but “the system learns” must not become a mystical claim that production software retrains itself after every interaction.</p>
-
-<p>The safer loop is governed:</p>
-
-<ol>
-  <li><strong>Observe</strong> executions, outputs, failures, latency, cost, and human corrections.</li>
-  <li><strong>Evaluate</strong> results against tests, rubrics, and domain outcomes.</li>
-  <li><strong>Adapt</strong> prompts, tools, policies, models, routing, or context assembly through reviewed changes.</li>
-  <li><strong>Release</strong> the tested configuration with versioning and rollback.</li>
-</ol>
-
-<figure>
-  <img src="/assets/images/posts/the-agentic-monolith/system-learning-loop.webp" alt="A governed circular flow around a ruby-red monolith is labeled observe, evaluate, adapt, and release, with a human hand approving a bounded change." style="width:100%;height:auto;" />
-  <figcaption>The system learns operationally when evidence becomes an evaluated, human-governed, testable change.</figcaption>
-</figure>
-
-<p>The application should record which prompt, model, tool version, policy version, and context recipe produced each result. Without that lineage, improvement becomes anecdotal.</p>
-
-<p>Evaluation belongs inside the architecture rather than at the end of a demo. Anthropic’s <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents">work on agent evaluations</a> emphasizes that the evaluated object is the agent system—including its harness—not only the model. Rails tests, jobs, audit records, feature flags, and deployment history can connect evaluation to the same system that performs the work.</p>
-
-<h2 id="the-experiment-that-could-falsify-the-idea">The Experiment That Could Falsify the Idea</h2>
-
-<p>A revolutionary claim is useful only if it can fail.</p>
-
-<p>Build the same bounded software-maintenance task in three configurations:</p>
-
-<ol>
-  <li><strong>Lonely generalist</strong> — one agent receives all tools and owns the task.</li>
-  <li><strong>Conversational swarm</strong> — specialized agents exchange messages with minimal shared structure.</li>
-  <li><strong>Agentic monolith</strong> — specialized agents use durable tasks, shared artifacts, policy gates, idempotent jobs, and explicit evaluation.</li>
-</ol>
-
-<p>Use identical model access and a controlled task set:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Dimension</th>
-      <th>Example measure</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Correctness</td>
-      <td>Tests passed and requirements satisfied</td>
-    </tr>
-    <tr>
-      <td>Reliability</td>
-      <td>Successful completion across repeated runs</td>
-    </tr>
-    <tr>
-      <td>Recovery</td>
-      <td>Completion after injected timeout or tool failure</td>
-    </tr>
-    <tr>
-      <td>Consistency</td>
-      <td>Contradictions and stale-state decisions</td>
-    </tr>
-    <tr>
-      <td>Efficiency</td>
-      <td>Tokens, model calls, wall time, and cost</td>
-    </tr>
-    <tr>
-      <td>Auditability</td>
-      <td>Decisions traceable to state and evidence</td>
-    </tr>
-    <tr>
-      <td>Human load</td>
-      <td>Interventions and review time</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The expected result is not that the monolith always wins. For small tasks, the generalist should be cheaper. For exploratory work, a flexible swarm may discover better paths.</p>
-
-<p>The hypothesis is more precise:</p>
-
-<blockquote>
-  <p>As tasks become longer, stateful, failure-prone, and consequential, the agentic monolith should improve reliability, recovery, and auditability enough to justify its coordination overhead.</p>
-</blockquote>
-
-<p>If it does not, the architecture is ceremony. If a simpler workflow matches it, choose the simpler workflow. No benchmark results are claimed here; the experiment is the next step.</p>
-
-<h2 id="where-the-monolith-must-end">Where the Monolith Must End</h2>
-
-<p>Central coordination can become central congestion. Split the architecture when evidence shows a boundary deserving independent operation:</p>
-
-<ul>
-  <li>workloads with different scaling characteristics;</li>
-  <li>strong security or data-isolation requirements;</li>
-  <li>failure domains that must not share deployment risk;</li>
-  <li>teams requiring independent release cadence;</li>
-  <li>specialized runtimes that cannot be operated responsibly inside the main application;</li>
-  <li>throughput limits demonstrated by measurement.</li>
-</ul>
-
-<p>“Agents are distributed by nature” is not enough. Start with boundaries in code and data ownership. Extract services when the operational boundary is real.</p>
-
-<h2 id="a-practical-starting-point">A Practical Starting Point</h2>
-
-<p>The first version does not need an elaborate autonomous society:</p>
-
-<ol>
-  <li>Define one objective with a measurable completion condition.</li>
-  <li>Persist objectives, tasks, observations, tool calls, artifacts, and evaluations.</li>
-  <li>Implement two roles: a worker and a verifier.</li>
-  <li>Expose three narrow tools with schemas and timeouts.</li>
-  <li>Execute tasks through idempotent background jobs.</li>
-  <li>Require a deterministic policy gate for consequential actions.</li>
-  <li>Trace the run and show it in a human-readable interface.</li>
-  <li>Inject one failure and prove the workflow can resume.</li>
-  <li>Compare it with a single-agent baseline.</li>
-</ol>
-
-<p>The most important artifact is not the agent roster. It is the state machine:</p>
-
-<div class="mermaid-diagram">
-
-  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0OCwncmFua1NwYWNpbmcnOjU4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTBweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbnN0YXRlRGlhZ3JhbS12Mlxuc3RhdGUgXCLwn46vIFByb3Bvc2VkXCIgYXMgUHJvcG9zZWRcbnN0YXRlIFwi4pyFIFJlYWR5XCIgYXMgUmVhZHlcbnN0YXRlIFwi4pqZ77iPIFJ1bm5pbmdcIiBhcyBSdW5uaW5nXG5zdGF0ZSBcIuKblCBCbG9ja2VkXCIgYXMgQmxvY2tlZFxuc3RhdGUgXCLinYwgRmFpbGVkXCIgYXMgRmFpbGVkXG5zdGF0ZSBcIvCflI0gVmVyaWZ5aW5nXCIgYXMgVmVyaWZ5aW5nXG5zdGF0ZSBcIuKchSBTdWNjZWVkZWRcIiBhcyBTdWNjZWVkZWRcblsqXSAtLT4gUHJvcG9zZWRcblByb3Bvc2VkIC0tPiBSZWFkeTogYXBwcm92ZWRcblJlYWR5IC0tPiBSdW5uaW5nOiB3b3JrZXIgY2xhaW1zXG5SdW5uaW5nIC0tPiBCbG9ja2VkOiBuZWVkcyBpbnB1dFxuQmxvY2tlZCAtLT4gUmVhZHk6IGlucHV0IHN1cHBsaWVkXG5SdW5uaW5nIC0tPiBGYWlsZWQ6IGVycm9yIHJlY29yZGVkXG5GYWlsZWQgLS0-IFJlYWR5OiByZXRyeSBhbGxvd2VkXG5SdW5uaW5nIC0tPiBWZXJpZnlpbmc6IGFydGlmYWN0IHByb2R1Y2VkXG5WZXJpZnlpbmcgLS0-IFJlYWR5OiByZXZpc2lvbiByZXF1ZXN0ZWRcblZlcmlmeWluZyAtLT4gU3VjY2VlZGVkOiBnYXRlIHBhc3NlZFxuU3VjY2VlZGVkIC0tPiBbKl1cbmNsYXNzRGVmIGJsdWUgZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjJweDtcbmNsYXNzRGVmIHB1cnBsZSBmaWxsOiNFOERERjUsc3Ryb2tlOiNBNjhCQzQsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgb3JhbmdlIGZpbGw6I0Y4REZDNCxzdHJva2U6I0M5OTg2RCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiByb3NlIGZpbGw6I0Y2RDZERCxzdHJva2U6I0M5ODc5OCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBncmVlbiBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3MgUHJvcG9zZWQgYmx1ZTtcbmNsYXNzIFJlYWR5LFZlcmlmeWluZyBwdXJwbGU7XG5jbGFzcyBSdW5uaW5nIG9yYW5nZTtcbmNsYXNzIEJsb2NrZWQsRmFpbGVkIHJvc2U7XG5jbGFzcyBTdWNjZWVkZWQgZ3JlZW47IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0" /></p>
-
-</div>
-
-<p>Once transitions are explicit, agents can be creative inside a structure that remains testable.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>The future of agentic software may not belong to the system with the largest number of agents. It may belong to the system that gives specialized intelligence a reliable way to become collective action.</p>
-
-<p>Rails already knows how to coordinate actors that do not share a request, a clock, or a perfect view of the world. It persists state, schedules work, protects invariants, exposes interfaces, records events, supports human decisions, and evolves toward greater distribution when reality demands it.</p>
-
-<p>That makes the modular monolith newly relevant. What looked like a conservative application architecture may become a powerful institutional substrate for AI.</p>
-
-<p>The model can reason. The agent can act. But the society needs memory, law, work, evidence, and a shared world.</p>
-
-<p>Rails may already be carrying the blueprint.</p>
-
-<h2 id="references">References</h2>
-
-<ul>
-  <li>Anthropic. <a href="https://www.anthropic.com/engineering/building-effective-agents">Building Effective Agents</a>.</li>
-  <li>Anthropic. <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents">Demystifying Evals for AI Agents</a>.</li>
-  <li>Ruby on Rails Guides. <a href="https://guides.rubyonrails.org/active_job_basics.html">Active Job Basics</a>.</li>
-  <li>Ruby on Rails Guides. <a href="https://guides.rubyonrails.org/8_0_release_notes.html">Ruby on Rails 8.0 Release Notes</a>.</li>
-  <li>Ruby on Rails Guides. <a href="https://guides.rubyonrails.org/active_support_instrumentation.html">Active Support Instrumentation</a>.</li>
-  <li>Ruby on Rails Guides. <a href="https://guides.rubyonrails.org/active_record_multiple_databases.html">Multiple Databases with Active Record</a>.</li>
-  <li>Yan et al. <a href="https://arxiv.org/abs/2502.14321">Beyond Self-Talk</a>.</li>
-  <li>Tran et al. <a href="https://arxiv.org/abs/2501.06322">Multi-Agent Collaboration Mechanisms</a>.</li>
-  <li>Cemri et al. <a href="https://arxiv.org/abs/2503.13657">Why Do Multi-Agent LLM Systems Fail?</a>.</li>
-  <li>Sander et al. <a href="https://arxiv.org/abs/2607.27942">Scaling LLM-Driven Multi-Agent Systems</a>.</li>
-  <li>FastRuby.io. <a href="https://www.fastruby.io/blog/tech-debt-audit-with-claude-code.html">Automate Tech Debt Audits with Claude Code</a>.</li>
-</ul>]]></content><author><name></name></author><category term="artificial-intelligence" /><category term="architecture" /><category term="agentic-ai" /><category term="ruby" /><category term="rails" /><category term="AI agents" /><category term="multi-agent systems" /><category term="Ruby on Rails" /><category term="modular monolith" /><category term="Active Job" /><category term="Solid Queue" /><category term="orchestration" /><category term="observability" /><summary type="html"><![CDATA[A practical architecture for coordinating AI agents with Rails: shared state, durable jobs, explicit tools, policy boundaries, observability, evaluation, and controlled adaptation.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/the-agentic-monolith/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/the-agentic-monolith/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ul>]]></content><author><name></name></author><category term="artificial-intelligence" /><category term="software-engineering" /><category term="agentic-ai" /><category term="github-copilot" /><category term="GitHub Copilot" /><category term="Copilot CLI" /><category term="Copilot SDK" /><category term="HydraFusion" /><category term="agentic engineering" /><category term="custom agents" /><category term="agent skills" /><category term="MCP" /><category term="software architecture" /><summary type="html"><![CDATA[GitHub Copilot is evolving from autocomplete into an agent runtime. Explore its CLI, SDK, agents, skills, MCP integrations, HydraFusion, governance boundaries, and a falsifiable Rails experiment.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/copilot-agentic-engineering/cover-v8.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/copilot-agentic-engineering/cover-v8.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
