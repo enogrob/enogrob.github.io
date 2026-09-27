@@ -86,7 +86,7 @@
   <li><a href="#references">References and supporting materials</a></li>
 </ul>
 
-<h2 id="first-make-the-issue-decidable-issue">First, make the issue decidable {:#issue}</h2>
+<h2 id="issue">First, make the issue decidable</h2>
 
 <p>“Let users update status” hides unanswered questions: which user, which transitions, what happens on an invalid state, and which unrelated fields can change? A good issue turns that uncertainty into acceptance criteria. For this <strong>synthetic exercise</strong>, we propose <code class="language-plaintext highlighter-rouge">PATCH /api/requests/:id/resolve</code>, accepting only <code class="language-plaintext highlighter-rouge">open → resolved</code> and requiring an operator token stored server-side in <code class="language-plaintext highlighter-rouge">CASEFLOW_OPERATOR_TOKEN</code>. This token models an operator capability for the lab; it is <strong>not</strong> a customer-approved production identity system. Missing configuration or missing/incorrect credentials should fail closed. A real engagement would settle actors, authorization, rotation, audit trail and concurrent requests before deployment.</p>
 
@@ -128,7 +128,7 @@
 
 <p>The full <a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">issue in the package</a> distinguishes the lab decision from unknown production policy. Keep that distinction in a client conversation: a reviewer can evaluate the code against <strong>this issue</strong>, while still withholding deployment approval.</p>
 
-<h2 id="give-the-agent-a-bounded-task-agent">Give the agent a bounded task {:#agent}</h2>
+<h2 id="agent">Give the agent a bounded task</h2>
 
 <p>GitHub’s <a href="https://docs.github.com/en/copilot/get-started/quickstart-for-using-github-copilot-on-github-com" target="_blank" rel="noopener noreferrer">Copilot cloud agent quickstart</a> describes assigning an issue and reviewing the resulting pull request. On your Mac, you can also use VS Code agent mode with the packaged <a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">task prompt</a>. Both routes depend on repository access and feature availability. This package has no GitHub remote for the CaseFlow lab, so nothing here claims the cloud agent opened a PR.</p>
 
@@ -145,7 +145,7 @@ Do not invent a passing CI run or treat the lab token as a production policy.
 
 <p>The green PR node means <strong>a document with recorded evidence</strong>, not a merged or production-safe feature. The test branch can land in a blocker. That branch is as important as the happy path.</p>
 
-<h2 id="inspect-the-patch-as-a-reviewer-diff">Inspect the patch as a reviewer {:#diff}</h2>
+<h2 id="diff">Inspect the patch as a reviewer</h2>
 
 <p>A local candidate patch in <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/candidate.patch</code> proposes exactly three changed files: route, controller and request spec. From the <strong>companion root</strong>, inspect before applying:</p>
 
@@ -172,7 +172,7 @@ git apply parts/03-issue-to-pr/candidate.patch
 
 <p>Review questions are concrete. Does the token guard run <strong>before</strong> the database lookup? If the environment variable is unset, could the endpoint become public? Can a client transition <code class="language-plaintext highlighter-rouge">in_progress</code>? Could a second concurrent request race between the state check and the write? What does a missing ID return on your actual Rails configuration? The candidate handles the first three in source, but lacks a focused unset-token spec and does not settle concurrency, audit or missing-ID behavior. Those are findings, not silent assumptions.</p>
 
-<h2 id="separate-test-assertions-from-results-verify">Separate test assertions from results {:#verify}</h2>
+<h2 id="verify">Separate test assertions from results</h2>
 
 <p>The candidate adds four request examples: valid token and open request, no token, wrong token, and valid token with <code class="language-plaintext highlighter-rouge">in_progress</code>. Each asserts the expected status and persistence. Apply the patch, then from <code class="language-plaintext highlighter-rouge">caseflow/</code> run:</p>
 
@@ -195,13 +195,13 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p>Replace <code class="language-plaintext highlighter-rouge">1</code> with the actual created ID. Expected source branches are a successful transition and a <code class="language-plaintext highlighter-rouge">401</code> for a missing token. They are <strong>not captured responses</strong>. Confirm whether your Rails version accepts the chosen token header and inspect the actual JSON and database state. For a real service, use HTTPS and a reviewed credential and authorization design.</p>
 
-<h2 id="turn-review-into-a-pr-decision-review">Turn review into a PR decision {:#review}</h2>
+<h2 id="review">Turn review into a PR decision</h2>
 
 <p>The packaged <code class="language-plaintext highlighter-rouge">PR-REVIEW.md</code> is a review worksheet, <strong>not a fabricated PR</strong>. It requests exact results, highlights the single shared operator token as a production decision, and asks for an unset-token case and concurrency discussion. A useful draft PR description states the scope, links the issue, gives the focused command and its actual result, lists remaining unknowns and asks for a reviewer decision. If tests have not run, “pending due to environment blocker” is the correct entry.</p>
 
 <p>In a consultative engagement, the client receives a bounded answer: “We have a candidate patch with a narrow endpoint and explicit rejection cases. We cannot recommend deployment until your authorization rule is defined and we have real test and review evidence.” The agent accelerated the diff; the review made it accountable.</p>
 
-<h2 id="your-35-minute-lab-lab">Your 35-minute lab {:#lab}</h2>
+<h2 id="lab">Your 35-minute lab</h2>
 
 <ol>
   <li>Read <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/ISSUE.md</code>. Mark the synthetic operator-token assumption and write one different production authorization question.</li>
@@ -213,7 +213,7 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p><strong>Acceptance criterion:</strong> a reviewer can inspect every changed path, tie each acceptance case to an assertion or observed run, and identify the unresolved customer authorization decision.</p>
 
-<h2 id="references-and-supporting-materials-references">References and supporting materials {:#references}</h2>
+<h2 id="references">References and supporting materials</h2>
 
 <p><strong>Finding the prompt after download:</strong> extract the support ZIP and open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/03-agent-issue-to-pr.md</code> to read the full prompt. For Copilot Chat, open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/caseflow/</code> as the VS Code workspace; the executable file is <code class="language-plaintext highlighter-rouge">.github/prompts/03-agent-issue-to-pr.prompt.md</code>. Invoke <code class="language-plaintext highlighter-rouge">/03-agent-issue-to-pr</code>. On macOS, Finder may hide the <code class="language-plaintext highlighter-rouge">.github</code> directory (press Command-Shift-Period to show hidden files). The companion also contains the complete three-prompt catalog in <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/</code>.</p>
 

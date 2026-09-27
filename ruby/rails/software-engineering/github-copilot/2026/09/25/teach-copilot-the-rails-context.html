@@ -82,7 +82,7 @@
   <li><a href="#references">References and supporting materials</a></li>
 </ul>
 
-<h2 id="three-scopes-one-engineering-question-scopes">Three scopes, one engineering question {:#scopes}</h2>
+<h2 id="scopes">Three scopes, one engineering question</h2>
 
 <p>GitHub distinguishes repository-wide <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code>, path-specific <code class="language-plaintext highlighter-rouge">.github/instructions/*.instructions.md</code>, and agent-oriented <code class="language-plaintext highlighter-rouge">AGENTS.md</code>. Prompt files serve a particular interaction. Their availability varies by Copilot surface: consult the <a href="https://docs.github.com/en/copilot/reference/custom-instructions-support" target="_blank" rel="noopener noreferrer">official support matrix</a> for the feature and editor you actually use. These files <strong>guide responses</strong>; they are not Rails code, tests or access controls.</p>
 
@@ -124,7 +124,7 @@
   <figcaption>Repository rules, model scope and the task prompt inform a cited proposal. The amber gate marks evidence to check; this conceptual editor is not a screenshot or a test run.</figcaption>
 </figure>
 
-<h2 id="write-the-smallest-useful-repository-guidance-repository">Write the smallest useful repository guidance {:#repository}</h2>
+<h2 id="repository">Write the smallest useful repository guidance</h2>
 
 <p>Place durable facts and review habits in <code class="language-plaintext highlighter-rouge">caseflow/.github/copilot-instructions.md</code>. The support package includes the complete file; its core contract is short:</p>
 
@@ -135,7 +135,7 @@
 
 <p>An instruction that says “tests always pass” would be false. An instruction that says “run a focused spec and report its exit status” is operationally useful. A repository file tells the assistant <strong>how to work</strong>; it cannot attest that a local database migrated or that a particular HTTP response was observed. Avoid copying a full README into instructions: link to existing files and keep the rules that change decisions.</p>
 
-<h2 id="narrow-guidance-to-a-rails-model-models">Narrow guidance to a Rails model {:#models}</h2>
+<h2 id="models">Narrow guidance to a Rails model</h2>
 
 <p>A model change has a different failure mode than a README edit. The packaged <code class="language-plaintext highlighter-rouge">.github/instructions/models.instructions.md</code> starts with:</p>
 
@@ -150,13 +150,13 @@
 
 <p>Notice that the dotted, hypothetical “AI remembers everything” arrow is absent. The diagram shows <strong>inputs to an audited proposal</strong>, not a guarantee of which context a particular model session used. The evidence boundary still needs human review.</p>
 
-<h2 id="ask-for-a-source-backed-change-proposal-prompt">Ask for a source-backed change proposal {:#prompt}</h2>
+<h2 id="prompt">Ask for a source-backed change proposal</h2>
 
 <p>The <a href="/assets/downloads/teach-copilot-rails-context-support.zip">packaged task prompt</a> asks for four artifacts: an evidence table with paths, a list of applicable instructions, a minimal change surface with positive and negative tests, and unresolved authorization and runtime questions. Open <code class="language-plaintext highlighter-rouge">caseflow/</code> in VS Code; use the prompt file if your Copilot workflow supports it, or paste its body into chat with the relevant files explicitly referenced. The key instruction is <strong>“Do not edit files.”</strong> This is an investigation before Part 03, not agent implementation.</p>
 
 <p>A useful answer could say: <code class="language-plaintext highlighter-rouge">config/routes.rb</code> declares no update route; <code class="language-plaintext highlighter-rouge">app/models/service_request.rb</code> allows <code class="language-plaintext highlighter-rouge">resolved</code>; <code class="language-plaintext highlighter-rouge">app/controllers/api/requests_controller.rb</code> permits only <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">description</code> for creation; a future update should define its own authorization requirement. That last sentence is a <strong>design requirement to resolve</strong>, not proof an authorization system exists. Ask Copilot to label it accordingly.</p>
 
-<h2 id="audit-context-against-evidence-audit">Audit context against evidence {:#audit}</h2>
+<h2 id="audit">Audit context against evidence</h2>
 
 <p>Before accepting the response, fill in this table from the files, then compare Copilot’s exact paths. Supplied RSpec examples describe expectations for create, list and show; they have <strong>not</strong> been executed in this authoring environment.</p>
 
@@ -202,7 +202,7 @@
 
 <p>This is an <strong>instruction audit</strong> as well as a code audit: if the assistant claims to have seen instructions, ask it to name their paths and explain which file scope matched. If it invents an <code class="language-plaintext highlighter-rouge">ApplicationPolicy</code> or conflates the database default with an HTTP guarantee, correct the guidance or task prompt only after identifying the actual failure. Do not treat instruction text as a security control: enforce permissions in code and verify them with tests.</p>
 
-<h2 id="your-25-minute-lab-lab">Your 25-minute lab {:#lab}</h2>
+<h2 id="lab">Your 25-minute lab</h2>
 
 <ol>
   <li>Open <code class="language-plaintext highlighter-rouge">caseflow/</code> as the VS Code workspace root. Read the <a href="/assets/downloads/teach-copilot-rails-context-support.zip">CaseFlow README</a>, instructions and the three code paths in the audit table.</li>
@@ -214,7 +214,7 @@
 
 <p><strong>Acceptance criterion:</strong> a reviewer can trace each present-tense behavior to source, distinguish tests that exist from tests that ran, and find at least one open authorization question before writing code.</p>
 
-<h2 id="references-and-supporting-materials-references">References and supporting materials {:#references}</h2>
+<h2 id="references">References and supporting materials</h2>
 
 <p><strong>Finding the prompt after download:</strong> extract the support ZIP and open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/02-context-audit.md</code> to read the full prompt. For Copilot Chat, open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/caseflow/</code> as the VS Code workspace; the executable file is <code class="language-plaintext highlighter-rouge">.github/prompts/02-context-audit.prompt.md</code>. Invoke <code class="language-plaintext highlighter-rouge">/02-context-audit</code>. On macOS, Finder may hide the <code class="language-plaintext highlighter-rouge">.github</code> directory (press Command-Shift-Period to show hidden files). The companion also contains the complete three-prompt catalog in <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/</code>.</p>
 

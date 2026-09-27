@@ -86,13 +86,13 @@
   <li><a href="#references">References and supporting material</a></li>
 </ul>
 
-<h2 id="begin-with-one-rails-task-task">Begin with one Rails task {:#task}</h2>
+<h2 id="task">Begin with one Rails task</h2>
 
 <p>Use the same bounded exercise: the CaseFlow baseline allows <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">show</code> and <code class="language-plaintext highlighter-rouge">create</code> for <code class="language-plaintext highlighter-rouge">api/requests</code>; Part 03 proposes a separate <code class="language-plaintext highlighter-rouge">PATCH /api/requests/:id/resolve</code> route. Part 07 asks Copilot CLI to plan and potentially propose that change on a local branch. The Part 03 patch is a candidate, and Part 04’s CI workflow is staged. The purpose here is to capture what a reviewer would need: exact source files, candidate diff, actual focused test command/log, and a named review decision. Do not turn an imagined result into a “passed” badge.</p>
 
 <p>This makes a useful question for every mechanism: <em>What new failure or authority does it introduce, and what evidence makes it worthwhile?</em> A task can succeed with the existing repository instructions, CLI permission prompts, a human review and a single Ruby check. Add another component only when a repeated need justifies it.</p>
 
-<h2 id="choose-the-smallest-useful-mechanism-mechanisms">Choose the smallest useful mechanism {:#mechanisms}</h2>
+<h2 id="mechanisms">Choose the smallest useful mechanism</h2>
 
 <p>GitHub’s <a href="https://docs.github.com/en/copilot/concepts/agents/copilot-cli/comparing-cli-features" target="_blank" rel="noopener noreferrer">Copilot CLI customization comparison</a> separates several tools that are often blended into “agentic workflow.” Apply them to the same Rails task:</p>
 
@@ -144,7 +144,7 @@
 
 <p>This table is a design choice for <strong>this</strong> lab, not a list of everything Copilot can do. A <code class="language-plaintext highlighter-rouge">SKILL.md</code> is suited to a repeatable, relevant procedure; GitHub’s <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills" target="_blank" rel="noopener noreferrer">skills guide</a> describes project locations and loading. Its documentation warns about pre-approving shell access in a skill. We therefore provide a <strong>workflow blueprint</strong>, not an installed skill granting tool permission. The learner can propose a skill after several human-reviewed repetitions.</p>
 
-<h2 id="make-evidence-explicit-in-ruby-evidence">Make evidence explicit in Ruby {:#evidence}</h2>
+<h2 id="evidence">Make evidence explicit in Ruby</h2>
 
 <p>The companion’s <code class="language-plaintext highlighter-rouge">parts/08-repeatable-rails-workflow/EVIDENCE.json</code> has two source paths and blank fields for diff, test command, exit code, test log, reviewer and decision. A small Ruby standard-library script checks that these fields are filled and that referenced files exist inside the companion repo:</p>
 
@@ -165,7 +165,7 @@
 
 <p>Those fields are excerpts from an intentionally blank template, not a transcript. Store no secrets or personal telemetry in it. The <a href="#references">blueprint</a> shows the expected location of local files and the exact command to run from the companion root. The validator cannot establish genuine provenance or actual test quality.</p>
 
-<h2 id="know-where-optional-extensions-fit-extensions">Know where optional extensions fit {:#extensions}</h2>
+<h2 id="extensions">Know where optional extensions fit</h2>
 
 <p>Suppose a team repeats this evidence procedure every week. A <strong>skill</strong> can teach Copilot to collect the exact diff and check logs when that task is requested. If every attempted operation must be screened against a protected directory, a <strong>hook</strong> may enforce a reviewed rule; hooks execute commands at lifecycle points, so mistakes affect real work. GitHub’s <a href="https://docs.github.com/en/copilot/reference/hooks-reference" target="_blank" rel="noopener noreferrer">hook reference</a> describes events and payloads that a team must test against its installed CLI. Neither mechanism is active in this package.</p>
 
@@ -179,13 +179,13 @@
 
 <p>There are neighboring surfaces you may study later: <code class="language-plaintext highlighter-rouge">gh</code> performs GitHub repository operations and is a different executable from <code class="language-plaintext highlighter-rouge">copilot</code>; the <a href="https://docs.github.com/en/copilot/concepts/agents/github-copilot-app" target="_blank" rel="noopener noreferrer">Copilot desktop app</a> addresses desktop agent sessions; the <a href="https://docs.github.com/en/copilot/how-tos/copilot-sdk" target="_blank" rel="noopener noreferrer">Copilot SDK</a> is for building an application around its runtime. GitHub’s current SDK guides list examples in TypeScript, Python, Go, .NET, Java and Rust, so this Ruby-only companion does not pretend to provide an official Ruby SDK integration. <strong>HydraFusion</strong> is a visual/thematic reference from the blog’s agentic-engine post, not an additional dependency or security control required by the Rails exercise.</p>
 
-<h2 id="promote-a-procedure-only-after-review-promote">Promote a procedure only after review {:#promote}</h2>
+<h2 id="promote">Promote a procedure only after review</h2>
 
 <p>The right end state is modest: a team that can explain its source map, show a focused candidate change, reproduce its checks, state a privacy boundary and hand a reviewer an honest ledger. A real organization may then choose to publish repository instructions, package a skill, prototype a hook or authorize an MCP service. Give each addition an owner and a separate test. Keep baseline measurements and client approval out of this synthetic repo until they genuinely exist.</p>
 
 <p>Across this series, <strong>repeatability means that another engineer can follow the same decision points and challenge the same evidence</strong>. It does not mean every action should run without a person. Stop if the route claim lacks a source path, the agent touches a secret, test output cannot be tied to the diff, or no authorized reviewer can decide what happens next.</p>
 
-<h2 id="try-the-final-lab-lab">Try the final lab {:#lab}</h2>
+<h2 id="lab">Try the final lab</h2>
 
 <ol>
   <li>
@@ -200,7 +200,7 @@
 <strong>Transfer (5 min):</strong> deliver a two-minute client explanation of what you would reuse, what still needs permission, and what would make you stop.</li>
 </ol>
 
-<h2 id="references-and-supporting-material-references">References and supporting material {:#references}</h2>
+<h2 id="references">References and supporting material</h2>
 
 <ul>
   <li>

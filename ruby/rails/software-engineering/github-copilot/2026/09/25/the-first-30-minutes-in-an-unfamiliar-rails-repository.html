@@ -86,13 +86,13 @@
   <li><a href="#references">References and supporting materials</a></li>
 </ul>
 
-<h2 id="05-minutes-predict-before-you-inspect-predict">0–5 minutes: predict before you inspect {:#predict}</h2>
+<h2 id="predict">0–5 minutes: predict before you inspect</h2>
 
 <p>Write down your current hypothesis for <code class="language-plaintext highlighter-rouge">POST /api/requests</code>: what input is accepted, what gets saved and what comes back. Label every sentence <strong>prediction</strong>. This prevents your first impression or an AI suggestion from quietly turning into a fact.</p>
 
 <p>The question is about one change, but its impact can cross more than one file. Predict whether an update endpoint, authorization check or background job already exists. Later, compare these predictions with a capability map and evidence register. GitHub’s <a href="https://docs.github.com/en/copilot/tutorials/explore-a-codebase" target="_blank" rel="noopener noreferrer">codebase exploration guide</a> shows how repository and file context can narrow a question. Its <a href="https://docs.github.com/en/copilot/tutorials/review-ai-generated-code" target="_blank" rel="noopener noreferrer">review guidance</a> is equally relevant: inspect the answer against actual files. Here, the hypothesis is an investigation aid, not a delivery promise.</p>
 
-<h2 id="512-minutes-generate-an-inventory-and-trace-one-path-trace">5–12 minutes: generate an inventory and trace one path {:#trace}</h2>
+<h2 id="trace">5–12 minutes: generate an inventory and trace one path</h2>
 
 <p>From the companion repository root, run:</p>
 
@@ -140,7 +140,7 @@
 
 <p><em>The dotted link marks schema context, not an extra runtime step. The status labels describe the supplied controller branches; they are not a report of executed responses.</em></p>
 
-<h2 id="1220-minutes-ask-copilot-for-an-architecture-atlas-ask">12–20 minutes: ask Copilot for an architecture atlas {:#ask}</h2>
+<h2 id="ask">12–20 minutes: ask Copilot for an architecture atlas</h2>
 
 <p>Open <strong><code class="language-plaintext highlighter-rouge">caseflow/</code> as the VS Code workspace</strong> and give Copilot a change question: “Can a client resolve a request through this API?” Workspace search or its semantic index can find likely source; the generated inventory gives you explicit declarations to cross-check. Ask for four connected artifacts, rather than a prose summary:</p>
 
@@ -195,7 +195,7 @@ files and symbols. Do not invent an update action, a job or a passing test.
 
 <p>This is more useful than “I found a controller.” It links a client question to the API surface, persisted state, verification and missing decisions. The <a href="/assets/downloads/first-30-minutes-rails-repository-support.zip">reviewed atlas</a> is included in the companion package under <code class="language-plaintext highlighter-rouge">docs/architecture/</code>.</p>
 
-<h2 id="2027-minutes-audit-the-atlas-and-run-one-check-observe">20–27 minutes: audit the atlas and run one check {:#observe}</h2>
+<h2 id="observe">20–27 minutes: audit the atlas and run one check</h2>
 
 <p>Audit every diagram edge and table row against the cited file. A search result, a plausible Rails convention and an agent-generated link are leads; each still needs verification. The included request spec has two cases: a valid title expecting a <code class="language-plaintext highlighter-rouge">201</code> response, an <code class="language-plaintext highlighter-rouge">open</code> status and one stored record; and a missing title expecting <code class="language-plaintext highlighter-rouge">422</code> with no record. Those are <strong>assertions in source</strong>, not reported pass results. The companion includes an integrated Rails API source app, but has no resolved lockfile or installed dependencies here; we have not executed its specs in the authoring environment.</p>
 
@@ -254,13 +254,13 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
   </tbody>
 </table>
 
-<h2 id="2730-minutes-give-the-client-one-bounded-answer-client">27–30 minutes: give the client one bounded answer {:#client}</h2>
+<h2 id="client">27–30 minutes: give the client one bounded answer</h2>
 
 <p>The useful answer is a shareable atlas, not “Copilot says the endpoint works.” Alongside the map, tell the client: “The source defines creation with title and description, title and status validations, and a schema default of <code class="language-plaintext highlighter-rouge">open</code>. The supplied specs cover valid creation and missing title, but I have not run them in this environment. I do not see an update route. The next safe step is to boot the integrated app, record the focused spec result, then scope a status-transition contract and tests.”</p>
 
 <p>The atlas supports a short engagement: a visible inventory, a diagram of the current path, a change-impact table, a named uncertainty and a testable next issue. It also gives a stakeholder a clear boundary between discovery and implementation.</p>
 
-<h3 id="your-2030-minute-lab-lab">Your 20–30 minute lab {:#lab}</h3>
+<h3 id="lab">Your 20–30 minute lab</h3>
 
 <ol>
   <li>Make three predictions in a local <code class="language-plaintext highlighter-rouge">ENVIRONMENT.md</code> using the template (<code class="language-plaintext highlighter-rouge">caseflow/ENVIRONMENT.template.md</code>).</li>
@@ -273,7 +273,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p><strong>Next in the series:</strong> we will refine the context we give Copilot—repository guidance, instructions and tool boundaries—and test how the atlas changes. The reviewed atlas, generator, Mermaid source and workbook are in the companion package.</p>
 
-<h2 id="references-and-supporting-materials-references">References and supporting materials {:#references}</h2>
+<h2 id="references">References and supporting materials</h2>
 
 <p><strong>Finding the prompt after download:</strong> extract the support ZIP and open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/01-trace-request.md</code> to read the full prompt. For Copilot Chat, open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/caseflow/</code> as the VS Code workspace; the executable file is <code class="language-plaintext highlighter-rouge">.github/prompts/01-trace-request.prompt.md</code>. Invoke <code class="language-plaintext highlighter-rouge">/01-trace-request</code>. On macOS, Finder may hide the <code class="language-plaintext highlighter-rouge">.github</code> directory (press Command-Shift-Period to show hidden files). The companion also contains the complete three-prompt catalog in <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/</code>.</p>
 

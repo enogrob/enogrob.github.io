@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-09-27T08:10:44+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">A Copilot Pilot You Can Measure</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html" rel="alternate" type="text/html" title="A Copilot Pilot You Can Measure" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html"><![CDATA[<p><img src="/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" alt="GitHub Copilot for Rails Engineers Part 05: a Rails team scopes a pilot around CaseFlow, establishes a baseline, observes usage, quality and safety separately, and reaches an expand, revise or pause decision beside a digital Copilot-inspired profile." style="width:100%;height:auto;" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-09-27T08:17:50+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">A Copilot Pilot You Can Measure</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html" rel="alternate" type="text/html" title="A Copilot Pilot You Can Measure" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html"><![CDATA[<p><img src="/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" alt="GitHub Copilot for Rails Engineers Part 05: a Rails team scopes a pilot around CaseFlow, establishes a baseline, observes usage, quality and safety separately, and reaches an expand, revise or pause decision beside a digital Copilot-inspired profile." style="width:100%;height:auto;" /></p>
 
 <blockquote>
   <p><strong>Usage tells you who tried Copilot; it cannot tell you what improved.</strong> Design a small Rails pilot that measures engineering outcomes, protects sensitive context and gives the team a real decision at the end.</p>
@@ -22,7 +22,7 @@
   <li><a href="#references">References and supporting material</a></li>
 </ul>
 
-<h2 id="choose-one-bounded-question-question">Choose one bounded question {:#question}</h2>
+<h2 id="question">Choose one bounded question</h2>
 
 <p>Here is a useful <strong>hypothesis</strong>, not a promised result: <em>Can a small Rails team use Copilot to orient in unfamiliar code and draft bounded changes while keeping review quality and sensitive context under control?</em> Start with a willing cohort, one Rails repository, two narrow tasks and a named engineering owner. CaseFlow’s <a href="#references">Part 01</a> repository map and <a href="#references">Part 03</a> issue-to-patch exercise are examples of task types; the synthetic app is not customer production code.</p>
 
@@ -34,7 +34,7 @@
 
 <p>This is a <strong>proposed decision loop</strong>. It does not represent a running customer program. The matching Mermaid source is in <code class="language-plaintext highlighter-rouge">docs/diagrams/05-pilot-decision.mmd</code> in the download.</p>
 
-<h2 id="set-the-safety-boundaries-first-guardrails">Set the safety boundaries first {:#guardrails}</h2>
+<h2 id="guardrails">Set the safety boundaries first</h2>
 
 <p>Make a short, explicit threat and data map. Copilot use in VS Code, GitHub.com and cloud agents is not one uniform surface. The organization chooses which capabilities to allow; repository access, feature policy, data handling and permissible prompt content need to be checked <strong>per surface</strong>. Ask a security owner to decide on customer data, credentials, private repositories and any regulated material before trying realistic tasks.</p>
 
@@ -82,7 +82,7 @@
 
 <p>GitHub documents <a href="https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies">organization Copilot policies</a>, and its <a href="https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion">content exclusion guide</a> warns that exclusions do <strong>not</strong> cover every feature or mode; in particular, Edit and Agent modes in editors have limitations. Verify the current support table and test the exact client before relying on exclusion. A written rule not to put secrets into prompts remains necessary. GitHub’s <a href="https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent">cloud agent overview</a> describes an agent that can make code changes for review; enabling it requires separate consideration from IDE suggestions.</p>
 
-<h2 id="separate-usage-from-engineering-outcomes-measures">Separate usage from engineering outcomes {:#measures}</h2>
+<h2 id="measures">Separate usage from engineering outcomes</h2>
 
 <p><img src="/assets/images/posts/measurable-copilot-rails-pilot/usage-is-not-impact.webp" alt="Three proposed evidence lanes from a Rails pilot: reach among eligible developers, quality through rework and defects, and safety through incidents, converging on a baseline comparison marked with a question mark; no measured results are shown." style="width:100%;height:auto;" /></p>
 
@@ -127,7 +127,7 @@
 
 <p>For example, if a report lists <em>active users</em>, the ratio needs an <strong>eligible</strong> cohort size for the same time window; assigned licenses alone are not an outcome. Do not calculate a universal “productivity score” by mixing hours, lines of code and review comments. GitHub’s <a href="https://docs.github.com/en/copilot/reference/copilot-usage-metrics/interpret-copilot-metrics">interpretation guide</a> explains how usage metrics should be read, including window definitions. Your pilot’s engineering signals come from the team’s own PR, CI and incident systems and require careful comparison.</p>
 
-<h2 id="collect-the-smallest-useful-evidence-evidence">Collect the smallest useful evidence {:#evidence}</h2>
+<h2 id="evidence">Collect the smallest useful evidence</h2>
 
 <p>The companion <code class="language-plaintext highlighter-rouge">parts/05-adoption-and-governance/pilot-observations.csv</code> is intentionally <strong>header-only</strong>. Fill one aggregate row per cohort and period after permission and source checks. No names, emails, prompt content, source code, customer records or raw tokens belong in it. The accompanying <code class="language-plaintext highlighter-rouge">scripts/summarize_pilot.rb</code> validates integer counts and prints an adoption ratio only where a valid denominator exists; it refuses an empty dataset and makes no causal inference.</p>
 
@@ -136,13 +136,13 @@
 
 <p>No script execution or pilot observation was completed in this authoring environment. The <a href="#references">pilot charter</a> supplies field definitions, privacy review and a decision log. For a real organization with permission, use GitHub’s <a href="https://docs.github.com/rest/copilot/copilot-usage-metrics">usage metrics documentation</a> as the starting point for its <em>actual</em> telemetry; this package does not fetch or process user-level API data. Follow the organization’s retention and reporting rules.</p>
 
-<h2 id="decide-whether-to-expand-decision">Decide whether to expand {:#decision}</h2>
+<h2 id="decision">Decide whether to expand</h2>
 
 <p>At the checkpoint, ask three separate questions. <strong>Was use enabled and helpful?</strong> Check activity and qualitative feedback. <strong>Was engineering quality at least acceptable for this scoped work?</strong> Inspect PR and CI evidence alongside the pre-pilot baseline and note confounders. <strong>Were the boundaries respected?</strong> Review incidents, data handling and policy exceptions. A strong usage graph cannot cancel a sensitive-context breach. An absent baseline or tiny incomparable sample warrants learning more rather than a claim of benefit.</p>
 
 <p>Choose and record <em>expand to another cohort</em>, <em>revise and rerun</em>, or <em>pause</em>. State who owns the decision and what evidence would change it. The reusable <a href="#references">decision worksheet</a> has blank cells on purpose. In an interview, this framing lets you explain how you would deliver a small client engagement without claiming a deployment or numbers you have not observed.</p>
 
-<h2 id="try-the-50-minute-lab-lab">Try the 50-minute lab {:#lab}</h2>
+<h2 id="lab">Try the 50-minute lab</h2>
 
 <ol>
   <li><strong>Scope (10 min):</strong> pick two CaseFlow tasks and write the pilot hypothesis, cohort and one exclusion criterion.</li>
@@ -154,7 +154,7 @@
 
 <p>The <a href="#references">workbook with answers</a> contains a prediction exercise, a misleading-metric challenge, a safety scenario and sample interview wording.</p>
 
-<h2 id="references-and-supporting-material-references">References and supporting material {:#references}</h2>
+<h2 id="references">References and supporting material</h2>
 
 <ul>
   <li><a href="/assets/downloads/measurable-copilot-rails-pilot-support.zip">Download cumulative companion repository and Part 05 materials</a>. Start at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/05-adoption-and-governance/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/05-adoption-and-governance/article.md</code>.</li>
@@ -186,13 +186,13 @@
   <li><a href="#references">References and supporting material</a></li>
 </ul>
 
-<h2 id="why-the-terminal-changes-the-task-why-cli">Why the terminal changes the task {:#why-cli}</h2>
+<h2 id="why-cli">Why the terminal changes the task</h2>
 
 <p>In an editor, a developer often selects code, chats and accepts a suggestion. A terminal agent can navigate files and propose a sequence of operations, including commands that run tests or edit a branch. That can shorten the path from question to candidate diff, but a readable answer alone cannot establish that the patch works. <strong>The unit of progress is a verified artifact:</strong> source citation, plan, diff, command output, then human review.</p>
 
 <p>GitHub documents Copilot CLI as an interactive tool launched from a directory containing code. It can use an <code class="language-plaintext highlighter-rouge">@</code> file reference in a prompt, has a plan mode, accepts repository instructions, and asks for permission for tools that may modify or execute files. Those details may change, so follow the <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview">current usage guide</a> for your installed version. This lab does not require an MCP server, hook, SDK, cloud agent or GitHub Desktop. Those extensions solve different needs; start with the smallest sufficient surface.</p>
 
-<h2 id="trust-the-directory-and-bound-the-request-scope">Trust the directory and bound the request {:#scope}</h2>
+<h2 id="scope">Trust the directory and bound the request</h2>
 
 <p>On macOS, GitHub currently documents a <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli">Homebrew installation</a> with <code class="language-plaintext highlighter-rouge">brew install --cask copilot-cli</code>. Check your Copilot entitlement and organization policy before starting. Do not use an organization’s private repository without approval, and do not put tokens or customer records into the example.</p>
 
@@ -208,7 +208,7 @@ copilot
 
 <p>The <a href="#references">runbook</a> distinguishes commands typed into your regular shell from text typed into an interactive Copilot session. Use VS Code alongside the terminal to inspect the exact diff. The repo already has <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code> and path-specific Rails guidance from Part 02; these guide the agent but cannot enforce a security policy by themselves.</p>
 
-<h2 id="plan-against-the-actual-rails-baseline-plan">Plan against the actual Rails baseline {:#plan}</h2>
+<h2 id="plan">Plan against the actual Rails baseline</h2>
 
 <p>The source file <code class="language-plaintext highlighter-rouge">caseflow/config/routes.rb</code> declares only <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">show</code> and <code class="language-plaintext highlighter-rouge">create</code> actions for <code class="language-plaintext highlighter-rouge">api/requests</code>. The model allows <code class="language-plaintext highlighter-rouge">resolved</code> as stored data, but the baseline has no route for a client to resolve a request. Part 03 supplies a <strong>separate candidate patch</strong> and synthetic issue for <code class="language-plaintext highlighter-rouge">PATCH /api/requests/:id/resolve</code>. Your CLI task is to <em>plan and inspect</em> a fresh, small candidate, then compare it with that issue. Do not tell the agent the endpoint already works.</p>
 
@@ -248,7 +248,7 @@ copilot
 
 <p>If the plan adds a generic status-update API, exposes a token, or proposes a different service without evidence, stop and correct it before stage 2. A strong prompt narrows the task; it does not prove the answer.</p>
 
-<h2 id="inspect-every-requested-tool-action-permissions">Inspect every requested tool action {:#permissions}</h2>
+<h2 id="permissions">Inspect every requested tool action</h2>
 
 <p>GitHub’s CLI <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview">usage documentation</a> says tools that could modify or execute files prompt for approval. That is a decision point, not a decorative dialog. Check the command, target files and working directory. Grant a narrowly scoped action only when you understand why it is needed. If the request would delete files, run a network installer or touch an external directory, reject it and request a safer plan. An approval for the rest of the session has a broader effect than approval once.</p>
 
@@ -260,7 +260,7 @@ copilot
 
 <p>The diagram is a proposed workflow. No tool request, diff, RSpec output or approval has been observed in this package. Its editable source is <code class="language-plaintext highlighter-rouge">docs/diagrams/07-cli-evidence-gates.mmd</code>.</p>
 
-<h2 id="verify-the-candidate-and-report-the-outcome-verify">Verify the candidate and report the outcome {:#verify}</h2>
+<h2 id="verify">Verify the candidate and report the outcome</h2>
 
 <p>Only after reviewing the plan and your branch should you paste <strong>stage 2</strong> of the prompt to request a local candidate. Compare any change with the synthetic <a href="#references">Part 03 issue</a>, particularly negative cases for wrong/missing/unconfigured operator tokens. This lab’s token mechanism is an exercise constraint, <strong>not production authorization guidance</strong>. Discuss real auth, secrets and repository policy with the client.</p>
 
@@ -277,7 +277,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p>Close by showing the reviewer the actual diff, negative paths, test output or blocker, and remaining security questions. A rejected candidate with a precise diagnosis can be a better result than an unreviewed PR. That is what makes the CLI useful in a short consulting engagement: the team can inspect the path from a source-backed question to the next decision.</p>
 
-<h2 id="try-the-guided-lab-lab">Try the guided lab {:#lab}</h2>
+<h2 id="lab">Try the guided lab</h2>
 
 <ol>
   <li><strong>Orient (10 min):</strong> read the baseline route, Part 03 issue and your <code class="language-plaintext highlighter-rouge">git status</code>; run the Ruby preflight if available.</li>
@@ -287,7 +287,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
   <li><strong>Explain (8 min):</strong> summarize what is source fact, proposal, observed result and unresolved review. Compare your response to the <a href="#references">workbook’s answer key</a>.</li>
 </ol>
 
-<h2 id="references-and-supporting-material-references">References and supporting material {:#references}</h2>
+<h2 id="references">References and supporting material</h2>
 
 <ul>
   <li><a href="/assets/downloads/rails-change-copilot-cli-support.zip">Download the cumulative companion repository and Part 07 lab</a>. Begin at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/07-cli-rails-change/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/07-cli-rails-change/article.md</code>.</li>
@@ -319,13 +319,13 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
   <li><a href="#references">References and supporting material</a></li>
 </ul>
 
-<h2 id="begin-with-one-rails-task-task">Begin with one Rails task {:#task}</h2>
+<h2 id="task">Begin with one Rails task</h2>
 
 <p>Use the same bounded exercise: the CaseFlow baseline allows <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">show</code> and <code class="language-plaintext highlighter-rouge">create</code> for <code class="language-plaintext highlighter-rouge">api/requests</code>; Part 03 proposes a separate <code class="language-plaintext highlighter-rouge">PATCH /api/requests/:id/resolve</code> route. Part 07 asks Copilot CLI to plan and potentially propose that change on a local branch. The Part 03 patch is a candidate, and Part 04’s CI workflow is staged. The purpose here is to capture what a reviewer would need: exact source files, candidate diff, actual focused test command/log, and a named review decision. Do not turn an imagined result into a “passed” badge.</p>
 
 <p>This makes a useful question for every mechanism: <em>What new failure or authority does it introduce, and what evidence makes it worthwhile?</em> A task can succeed with the existing repository instructions, CLI permission prompts, a human review and a single Ruby check. Add another component only when a repeated need justifies it.</p>
 
-<h2 id="choose-the-smallest-useful-mechanism-mechanisms">Choose the smallest useful mechanism {:#mechanisms}</h2>
+<h2 id="mechanisms">Choose the smallest useful mechanism</h2>
 
 <p>GitHub’s <a href="https://docs.github.com/en/copilot/concepts/agents/copilot-cli/comparing-cli-features">Copilot CLI customization comparison</a> separates several tools that are often blended into “agentic workflow.” Apply them to the same Rails task:</p>
 
@@ -373,7 +373,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p>This table is a design choice for <strong>this</strong> lab, not a list of everything Copilot can do. A <code class="language-plaintext highlighter-rouge">SKILL.md</code> is suited to a repeatable, relevant procedure; GitHub’s <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills">skills guide</a> describes project locations and loading. Its documentation warns about pre-approving shell access in a skill. We therefore provide a <strong>workflow blueprint</strong>, not an installed skill granting tool permission. The learner can propose a skill after several human-reviewed repetitions.</p>
 
-<h2 id="make-evidence-explicit-in-ruby-evidence">Make evidence explicit in Ruby {:#evidence}</h2>
+<h2 id="evidence">Make evidence explicit in Ruby</h2>
 
 <p>The companion’s <code class="language-plaintext highlighter-rouge">parts/08-repeatable-rails-workflow/EVIDENCE.json</code> has two source paths and blank fields for diff, test command, exit code, test log, reviewer and decision. A small Ruby standard-library script checks that these fields are filled and that referenced files exist inside the companion repo:</p>
 
@@ -394,7 +394,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p>Those fields are excerpts from an intentionally blank template, not a transcript. Store no secrets or personal telemetry in it. The <a href="#references">blueprint</a> shows the expected location of local files and the exact command to run from the companion root. The validator cannot establish genuine provenance or actual test quality.</p>
 
-<h2 id="know-where-optional-extensions-fit-extensions">Know where optional extensions fit {:#extensions}</h2>
+<h2 id="extensions">Know where optional extensions fit</h2>
 
 <p>Suppose a team repeats this evidence procedure every week. A <strong>skill</strong> can teach Copilot to collect the exact diff and check logs when that task is requested. If every attempted operation must be screened against a protected directory, a <strong>hook</strong> may enforce a reviewed rule; hooks execute commands at lifecycle points, so mistakes affect real work. GitHub’s <a href="https://docs.github.com/en/copilot/reference/hooks-reference">hook reference</a> describes events and payloads that a team must test against its installed CLI. Neither mechanism is active in this package.</p>
 
@@ -408,13 +408,13 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p>There are neighboring surfaces you may study later: <code class="language-plaintext highlighter-rouge">gh</code> performs GitHub repository operations and is a different executable from <code class="language-plaintext highlighter-rouge">copilot</code>; the <a href="https://docs.github.com/en/copilot/concepts/agents/github-copilot-app">Copilot desktop app</a> addresses desktop agent sessions; the <a href="https://docs.github.com/en/copilot/how-tos/copilot-sdk">Copilot SDK</a> is for building an application around its runtime. GitHub’s current SDK guides list examples in TypeScript, Python, Go, .NET, Java and Rust, so this Ruby-only companion does not pretend to provide an official Ruby SDK integration. <strong>HydraFusion</strong> is a visual/thematic reference from the blog’s agentic-engine post, not an additional dependency or security control required by the Rails exercise.</p>
 
-<h2 id="promote-a-procedure-only-after-review-promote">Promote a procedure only after review {:#promote}</h2>
+<h2 id="promote">Promote a procedure only after review</h2>
 
 <p>The right end state is modest: a team that can explain its source map, show a focused candidate change, reproduce its checks, state a privacy boundary and hand a reviewer an honest ledger. A real organization may then choose to publish repository instructions, package a skill, prototype a hook or authorize an MCP service. Give each addition an owner and a separate test. Keep baseline measurements and client approval out of this synthetic repo until they genuinely exist.</p>
 
 <p>Across this series, <strong>repeatability means that another engineer can follow the same decision points and challenge the same evidence</strong>. It does not mean every action should run without a person. Stop if the route claim lacks a source path, the agent touches a secret, test output cannot be tied to the diff, or no authorized reviewer can decide what happens next.</p>
 
-<h2 id="try-the-final-lab-lab">Try the final lab {:#lab}</h2>
+<h2 id="lab">Try the final lab</h2>
 
 <ol>
   <li><strong>Map (10 min):</strong> point to the CaseFlow route, Part 03 candidate patch and Part 07 prompt. Label source, proposal and unknown.</li>
@@ -424,7 +424,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
   <li><strong>Transfer (5 min):</strong> deliver a two-minute client explanation of what you would reuse, what still needs permission, and what would make you stop.</li>
 </ol>
 
-<h2 id="references-and-supporting-material-references">References and supporting material {:#references}</h2>
+<h2 id="references">References and supporting material</h2>
 
 <ul>
   <li><a href="/assets/downloads/repeatable-rails-copilot-workflow-support.zip">Download the cumulative companion with Parts 01–08</a>. Start at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/08-repeatable-rails-workflow/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/08-repeatable-rails-workflow/article.md</code>.</li>
@@ -456,7 +456,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
   <li><a href="#references">References and supporting material</a></li>
 </ul>
 
-<h2 id="start-with-a-truthful-evidence-boundary-boundary">Start with a truthful evidence boundary {:#boundary}</h2>
+<h2 id="boundary">Start with a truthful evidence boundary</h2>
 
 <p>A PR has different kinds of claims. A spec file contains <strong>assertions</strong>. A workflow file contains <strong>planned commands</strong>. A job log shows <strong>observed execution</strong> on a given commit and environment. A reviewer decides whether those observations and the product policy justify the change. None substitutes for the others.</p>
 
@@ -503,7 +503,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p>The arrow into review carries <strong>observed results</strong>, including failures. Green in this diagram identifies the <em>type of evidence</em>, not a passing CaseFlow run. The matching Mermaid source is included as a local <code class="language-plaintext highlighter-rouge">.mmd</code> file in the package.</p>
 
-<h2 id="make-the-rails-test-gate-reproducible-test-gate">Make the Rails test gate reproducible {:#test-gate}</h2>
+<h2 id="test-gate">Make the Rails test gate reproducible</h2>
 
 <p>CaseFlow’s baseline <code class="language-plaintext highlighter-rouge">Gemfile</code> declares Rails <code class="language-plaintext highlighter-rouge">~&gt; 8.0.0</code>, SQLite, Puma and RSpec. It has no <code class="language-plaintext highlighter-rouge">Gemfile.lock</code>. Installing from that Gemfile could resolve different compatible versions on different days. Before requiring a CI check, on a Mac with Ruby installed, resolve and commit a lockfile in the <strong>companion repository’s</strong> <code class="language-plaintext highlighter-rouge">caseflow/</code> directory, review the resolved gems, then run the app locally:</p>
 
@@ -538,7 +538,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p><code class="language-plaintext highlighter-rouge">bundle config set frozen true</code> makes a missing or inconsistent lockfile fail early. The sample targets Ubuntu and a Ruby 3.3 interpreter; verify that version against your local app and choose pinned action SHAs under your organization’s policy before production. GitHub’s <a href="https://docs.github.com/en/actions/tutorials/build-and-test-code/ruby">Ruby Actions guide</a> documents <code class="language-plaintext highlighter-rouge">ruby/setup-ruby</code>, Bundler and caching. After a checked-in lockfile and first reliable run, <code class="language-plaintext highlighter-rouge">bundler-cache: true</code> can shorten future jobs; it does not prove the code is secure.</p>
 
-<h2 id="add-a-security-layer-that-says-what-it-covers-security">Add a security layer that says what it covers {:#security}</h2>
+<h2 id="security">Add a security layer that says what it covers</h2>
 
 <p>“DevSecOps passed” is too vague for review. Match each proposed gate to a known question:</p>
 
@@ -583,7 +583,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p>Keep the sample workflow on <code class="language-plaintext highlighter-rouge">pull_request</code> with <code class="language-plaintext highlighter-rouge">contents: read</code>; it does not request secrets or a write token. GitHub’s <a href="https://docs.github.com/en/actions/reference/security/secure-use">secure use reference</a> discusses risks of untrusted PR code and least privilege. Do not change it to <code class="language-plaintext highlighter-rouge">pull_request_target</code> while checking out and running a contributor’s untrusted code.</p>
 
-<h2 id="read-failures-as-evidence-failure">Read failures as evidence {:#failure}</h2>
+<h2 id="failure">Read failures as evidence</h2>
 
 <p><img src="/assets/images/posts/rails-ci-security-human-review/read-the-failure.webp" alt="Conceptual evidence desk with CaseFlow Gemfile, an empty Gemfile.lock position, unrun request specs and a human policy question, connected by Holoflux; no test result is depicted." style="width:100%;height:auto;" /></p>
 
@@ -591,11 +591,11 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p>A practical failure record uses four fields: <code class="language-plaintext highlighter-rouge">commit SHA</code>, <code class="language-plaintext highlighter-rouge">command</code>, <code class="language-plaintext highlighter-rouge">observed exit status or blocker</code>, and <code class="language-plaintext highlighter-rouge">next owner/action</code>. When setup fails, downstream scans are <strong>not run</strong>, not “passed”. If RSpec fails for an unauthorized request, inspect the proposed token guard and the request spec; if the product policy is unclear, return to the issue instead of weakening the test. The <a href="#references">worksheet</a> includes examples labeled <em>illustrative</em> rather than fabricated logs.</p>
 
-<h2 id="keep-the-merge-decision-human-review">Keep the merge decision human {:#review}</h2>
+<h2 id="review">Keep the merge decision human</h2>
 
 <p>Require the reviewer to read the three changed files from Part 03 and decide whether <code class="language-plaintext highlighter-rouge">open → resolved</code> and the shared operator token model the intended business rule. Even a real green RSpec and static scan would answer only their defined checks. Attach the run URL and commit SHA to the review note, describe unchecked cases (concurrency, token rotation, actor identity, auditing), then approve the lab proposal, request changes or escalate policy. Do not turn the synthetic review into a real customer release decision.</p>
 
-<h2 id="run-the-45-minute-lab-lab">Run the 45-minute lab {:#lab}</h2>
+<h2 id="lab">Run the 45-minute lab</h2>
 
 <ol>
   <li><strong>Predict (5 min):</strong> before opening the workflow, name two ways a job can fail without running any specs.</li>
@@ -607,7 +607,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p>The <a href="#references">workbook with worked answers</a> supplies prediction questions, a failure triage exercise and an answer key. If Ruby is unavailable, complete the source review and write “not run: no Ruby”; that is a valid, honest lab result.</p>
 
-<h2 id="references-and-supporting-material-references">References and supporting material {:#references}</h2>
+<h2 id="references">References and supporting material</h2>
 
 <ul>
   <li><a href="/assets/downloads/rails-ci-security-human-review-support.zip">Download complete companion repository and Part 04 materials</a>. Start at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/04-ci-and-devsecops/article.md</code>.</li>
@@ -639,7 +639,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
   <li><a href="#references">References and supporting materials</a></li>
 </ul>
 
-<h2 id="first-make-the-issue-decidable-issue">First, make the issue decidable {:#issue}</h2>
+<h2 id="issue">First, make the issue decidable</h2>
 
 <p>“Let users update status” hides unanswered questions: which user, which transitions, what happens on an invalid state, and which unrelated fields can change? A good issue turns that uncertainty into acceptance criteria. For this <strong>synthetic exercise</strong>, we propose <code class="language-plaintext highlighter-rouge">PATCH /api/requests/:id/resolve</code>, accepting only <code class="language-plaintext highlighter-rouge">open → resolved</code> and requiring an operator token stored server-side in <code class="language-plaintext highlighter-rouge">CASEFLOW_OPERATOR_TOKEN</code>. This token models an operator capability for the lab; it is <strong>not</strong> a customer-approved production identity system. Missing configuration or missing/incorrect credentials should fail closed. A real engagement would settle actors, authorization, rotation, audit trail and concurrent requests before deployment.</p>
 
@@ -677,7 +677,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p>The full <a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">issue in the package</a> distinguishes the lab decision from unknown production policy. Keep that distinction in a client conversation: a reviewer can evaluate the code against <strong>this issue</strong>, while still withholding deployment approval.</p>
 
-<h2 id="give-the-agent-a-bounded-task-agent">Give the agent a bounded task {:#agent}</h2>
+<h2 id="agent">Give the agent a bounded task</h2>
 
 <p>GitHub’s <a href="https://docs.github.com/en/copilot/get-started/quickstart-for-using-github-copilot-on-github-com">Copilot cloud agent quickstart</a> describes assigning an issue and reviewing the resulting pull request. On your Mac, you can also use VS Code agent mode with the packaged <a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">task prompt</a>. Both routes depend on repository access and feature availability. This package has no GitHub remote for the CaseFlow lab, so nothing here claims the cloud agent opened a PR.</p>
 
@@ -694,7 +694,7 @@ Do not invent a passing CI run or treat the lab token as a production policy.
 
 <p>The green PR node means <strong>a document with recorded evidence</strong>, not a merged or production-safe feature. The test branch can land in a blocker. That branch is as important as the happy path.</p>
 
-<h2 id="inspect-the-patch-as-a-reviewer-diff">Inspect the patch as a reviewer {:#diff}</h2>
+<h2 id="diff">Inspect the patch as a reviewer</h2>
 
 <p>A local candidate patch in <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/candidate.patch</code> proposes exactly three changed files: route, controller and request spec. From the <strong>companion root</strong>, inspect before applying:</p>
 
@@ -721,7 +721,7 @@ git apply parts/03-issue-to-pr/candidate.patch
 
 <p>Review questions are concrete. Does the token guard run <strong>before</strong> the database lookup? If the environment variable is unset, could the endpoint become public? Can a client transition <code class="language-plaintext highlighter-rouge">in_progress</code>? Could a second concurrent request race between the state check and the write? What does a missing ID return on your actual Rails configuration? The candidate handles the first three in source, but lacks a focused unset-token spec and does not settle concurrency, audit or missing-ID behavior. Those are findings, not silent assumptions.</p>
 
-<h2 id="separate-test-assertions-from-results-verify">Separate test assertions from results {:#verify}</h2>
+<h2 id="verify">Separate test assertions from results</h2>
 
 <p>The candidate adds four request examples: valid token and open request, no token, wrong token, and valid token with <code class="language-plaintext highlighter-rouge">in_progress</code>. Each asserts the expected status and persistence. Apply the patch, then from <code class="language-plaintext highlighter-rouge">caseflow/</code> run:</p>
 
@@ -744,13 +744,13 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p>Replace <code class="language-plaintext highlighter-rouge">1</code> with the actual created ID. Expected source branches are a successful transition and a <code class="language-plaintext highlighter-rouge">401</code> for a missing token. They are <strong>not captured responses</strong>. Confirm whether your Rails version accepts the chosen token header and inspect the actual JSON and database state. For a real service, use HTTPS and a reviewed credential and authorization design.</p>
 
-<h2 id="turn-review-into-a-pr-decision-review">Turn review into a PR decision {:#review}</h2>
+<h2 id="review">Turn review into a PR decision</h2>
 
 <p>The packaged <code class="language-plaintext highlighter-rouge">PR-REVIEW.md</code> is a review worksheet, <strong>not a fabricated PR</strong>. It requests exact results, highlights the single shared operator token as a production decision, and asks for an unset-token case and concurrency discussion. A useful draft PR description states the scope, links the issue, gives the focused command and its actual result, lists remaining unknowns and asks for a reviewer decision. If tests have not run, “pending due to environment blocker” is the correct entry.</p>
 
 <p>In a consultative engagement, the client receives a bounded answer: “We have a candidate patch with a narrow endpoint and explicit rejection cases. We cannot recommend deployment until your authorization rule is defined and we have real test and review evidence.” The agent accelerated the diff; the review made it accountable.</p>
 
-<h2 id="your-35-minute-lab-lab">Your 35-minute lab {:#lab}</h2>
+<h2 id="lab">Your 35-minute lab</h2>
 
 <ol>
   <li>Read <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/ISSUE.md</code>. Mark the synthetic operator-token assumption and write one different production authorization question.</li>
@@ -762,7 +762,7 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p><strong>Acceptance criterion:</strong> a reviewer can inspect every changed path, tie each acceptance case to an assertion or observed run, and identify the unresolved customer authorization decision.</p>
 
-<h2 id="references-and-supporting-materials-references">References and supporting materials {:#references}</h2>
+<h2 id="references">References and supporting materials</h2>
 
 <p><strong>Finding the prompt after download:</strong> extract the support ZIP and open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/03-agent-issue-to-pr.md</code> to read the full prompt. For Copilot Chat, open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/caseflow/</code> as the VS Code workspace; the executable file is <code class="language-plaintext highlighter-rouge">.github/prompts/03-agent-issue-to-pr.prompt.md</code>. Invoke <code class="language-plaintext highlighter-rouge">/03-agent-issue-to-pr</code>. On macOS, Finder may hide the <code class="language-plaintext highlighter-rouge">.github</code> directory (press Command-Shift-Period to show hidden files). The companion also contains the complete three-prompt catalog in <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/</code>.</p>
 
@@ -797,7 +797,7 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
   <li><a href="#references">References and supporting material</a></li>
 </ul>
 
-<h2 id="begin-with-the-clients-decision-decision-first">Begin with the client’s decision {:#decision-first}</h2>
+<h2 id="decision-first">Begin with the client’s decision</h2>
 
 <p>The useful opening question is concrete: <em>Which Rails workflow should this team test with Copilot, under which data boundaries, and what evidence would justify another step?</em> Ask the engineering sponsor what costly friction they want to change, the maintainer what repository task is safely bounded, and the security reviewer what permissions and prompt inputs are allowed. If they disagree, record the disagreement. Agreement by the loudest participant is not governance.</p>
 
@@ -805,7 +805,7 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p>GitHub’s <a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale">rollout guidance</a> covers enablement, governance and measurement. Its <a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success">trial guide</a> calls for goals, adoption evidence, developer feedback and a later decision about expansion. These resources inform the agenda; the client still decides authorization, scope and success criteria.</p>
 
-<h2 id="bring-an-evidence-pack-not-a-promise-evidence">Bring an evidence pack, not a promise {:#evidence}</h2>
+<h2 id="evidence">Bring an evidence pack, not a promise</h2>
 
 <p>Before the meeting, make a short ledger with four different statuses. A file’s existence establishes what is written there; a test assertion states the expected behavior; a real test run gives environment-specific evidence; an approval belongs to the accountable reviewer. Keep the distinction visible on screen.</p>
 
@@ -848,7 +848,7 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p>The companion <a href="#references">claim ledger</a> has file references, evidence statuses, checks and suggested roles. Replace role labels with real names only once the client appoints owners. Never copy secrets or customer code into the demonstration repo.</p>
 
-<h2 id="run-a-workshop-that-surfaces-disagreement-workshop">Run a workshop that surfaces disagreement {:#workshop}</h2>
+<h2 id="workshop">Run a workshop that surfaces disagreement</h2>
 
 <p>The <a href="#references">90-minute agenda</a> timeboxes the session: ten minutes for the decision question, fifteen for a source walk, twenty for candidate PR and CI review, fifteen for data and policy boundaries, twenty for the next experiment, and ten to replay the decision. Move security discussion earlier if the reviewer must leave early. A participant with authority to approve access should be identified before proposing activation.</p>
 
@@ -864,7 +864,7 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p>This is a <strong>proposed</strong> workshop flow. No branch is selected in the supplied materials; the decision record is blank. The matching editable diagram lives in <code class="language-plaintext highlighter-rouge">docs/diagrams/06-workshop-decision.mmd</code> inside the download.</p>
 
-<h2 id="turn-unknowns-into-a-bounded-roadmap-roadmap">Turn unknowns into a bounded roadmap {:#roadmap}</h2>
+<h2 id="roadmap">Turn unknowns into a bounded roadmap</h2>
 
 <p>A useful roadmap is ordered by <em>evidence dependencies</em>, not optimistic dates. Validate the Rails source and record an actual RSpec result or blocker. Then review the candidate change with the human engineering owner and determine which CI/security controls apply. Only after the authorized team defines permissible Copilot surfaces and data should it consider a consenting trial with a baseline, comparison criteria and incident path. The <a href="#references">one-page roadmap</a> supplies these slices with deliberately unassigned names and no fabricated schedule.</p>
 
@@ -872,13 +872,13 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p>Show the client an example of a testable recommendation: “Authorize one consenting Rails cohort to try source orientation on one approved repository for a defined interval, after security checks the allowed surface and prompt data. Compare like-for-like PR rework and test outcomes with a stated baseline; pause on a serious boundary breach.” This is a <strong>proposal</strong>, not a statement that anyone authorized or completed that experiment. Define numerical criteria with the sponsor before data collection; do not invent thresholds in the article.</p>
 
-<h2 id="close-with-an-accountable-decision-close">Close with an accountable decision {:#close}</h2>
+<h2 id="close">Close with an accountable decision</h2>
 
 <p>The final ten minutes produce a signed or explicitly pending <a href="#references">decision record</a>. It lists the chosen next step, the claims and observations behind it, who owns each unresolved check, the checkpoint, and what would force a pause. It is valid to end with “revise” or “pause” when the baseline, permission or security owner is missing. The engineering team still gets a clear next task and the sponsor can see exactly what is blocking approval.</p>
 
 <p>In an interview, a two-minute version is enough: “I would bring a source-backed CaseFlow map and a candidate PR, separate planned CI from observed results, let the security and engineering owners settle scope, and leave with one bounded experiment and a stop rule. I would not report adoption benefit from an empty CSV.” This demonstrates consultative architecture without inventing a client engagement.</p>
 
-<h2 id="practice-the-facilitation-lab">Practice the facilitation {:#lab}</h2>
+<h2 id="lab">Practice the facilitation</h2>
 
 <ol>
   <li><strong>Before (10 min):</strong> inspect the <a href="#references">agenda and claim ledger</a>. Classify one source fact, one proposed change and one missing run result.</li>
@@ -889,7 +889,7 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p>The <a href="#references">full workbook</a> includes a prediction, a misleading-claim challenge, an agenda repair exercise, a safety scenario and sample answers. The companion code is Ruby/Rails; this final workshop is a facilitation exercise and introduces no new runtime code.</p>
 
-<h2 id="references-and-supporting-material-references">References and supporting material {:#references}</h2>
+<h2 id="references">References and supporting material</h2>
 
 <ul>
   <li><a href="/assets/downloads/rails-evidence-client-roadmap-support.zip">Download the cumulative CaseFlow companion and Part 06 workshop materials</a>. Start at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/06-client-workshop/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/06-client-workshop/article.md</code>.</li>
@@ -1045,7 +1045,7 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
   <li><a href="#references">References and supporting materials</a></li>
 </ul>
 
-<h2 id="three-scopes-one-engineering-question-scopes">Three scopes, one engineering question {:#scopes}</h2>
+<h2 id="scopes">Three scopes, one engineering question</h2>
 
 <p>GitHub distinguishes repository-wide <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code>, path-specific <code class="language-plaintext highlighter-rouge">.github/instructions/*.instructions.md</code>, and agent-oriented <code class="language-plaintext highlighter-rouge">AGENTS.md</code>. Prompt files serve a particular interaction. Their availability varies by Copilot surface: consult the <a href="https://docs.github.com/en/copilot/reference/custom-instructions-support">official support matrix</a> for the feature and editor you actually use. These files <strong>guide responses</strong>; they are not Rails code, tests or access controls.</p>
 
@@ -1087,7 +1087,7 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
   <figcaption>Repository rules, model scope and the task prompt inform a cited proposal. The amber gate marks evidence to check; this conceptual editor is not a screenshot or a test run.</figcaption>
 </figure>
 
-<h2 id="write-the-smallest-useful-repository-guidance-repository">Write the smallest useful repository guidance {:#repository}</h2>
+<h2 id="repository">Write the smallest useful repository guidance</h2>
 
 <p>Place durable facts and review habits in <code class="language-plaintext highlighter-rouge">caseflow/.github/copilot-instructions.md</code>. The support package includes the complete file; its core contract is short:</p>
 
@@ -1098,7 +1098,7 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p>An instruction that says “tests always pass” would be false. An instruction that says “run a focused spec and report its exit status” is operationally useful. A repository file tells the assistant <strong>how to work</strong>; it cannot attest that a local database migrated or that a particular HTTP response was observed. Avoid copying a full README into instructions: link to existing files and keep the rules that change decisions.</p>
 
-<h2 id="narrow-guidance-to-a-rails-model-models">Narrow guidance to a Rails model {:#models}</h2>
+<h2 id="models">Narrow guidance to a Rails model</h2>
 
 <p>A model change has a different failure mode than a README edit. The packaged <code class="language-plaintext highlighter-rouge">.github/instructions/models.instructions.md</code> starts with:</p>
 
@@ -1113,13 +1113,13 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p>Notice that the dotted, hypothetical “AI remembers everything” arrow is absent. The diagram shows <strong>inputs to an audited proposal</strong>, not a guarantee of which context a particular model session used. The evidence boundary still needs human review.</p>
 
-<h2 id="ask-for-a-source-backed-change-proposal-prompt">Ask for a source-backed change proposal {:#prompt}</h2>
+<h2 id="prompt">Ask for a source-backed change proposal</h2>
 
 <p>The <a href="/assets/downloads/teach-copilot-rails-context-support.zip">packaged task prompt</a> asks for four artifacts: an evidence table with paths, a list of applicable instructions, a minimal change surface with positive and negative tests, and unresolved authorization and runtime questions. Open <code class="language-plaintext highlighter-rouge">caseflow/</code> in VS Code; use the prompt file if your Copilot workflow supports it, or paste its body into chat with the relevant files explicitly referenced. The key instruction is <strong>“Do not edit files.”</strong> This is an investigation before Part 03, not agent implementation.</p>
 
 <p>A useful answer could say: <code class="language-plaintext highlighter-rouge">config/routes.rb</code> declares no update route; <code class="language-plaintext highlighter-rouge">app/models/service_request.rb</code> allows <code class="language-plaintext highlighter-rouge">resolved</code>; <code class="language-plaintext highlighter-rouge">app/controllers/api/requests_controller.rb</code> permits only <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">description</code> for creation; a future update should define its own authorization requirement. That last sentence is a <strong>design requirement to resolve</strong>, not proof an authorization system exists. Ask Copilot to label it accordingly.</p>
 
-<h2 id="audit-context-against-evidence-audit">Audit context against evidence {:#audit}</h2>
+<h2 id="audit">Audit context against evidence</h2>
 
 <p>Before accepting the response, fill in this table from the files, then compare Copilot’s exact paths. Supplied RSpec examples describe expectations for create, list and show; they have <strong>not</strong> been executed in this authoring environment.</p>
 
@@ -1162,7 +1162,7 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p>This is an <strong>instruction audit</strong> as well as a code audit: if the assistant claims to have seen instructions, ask it to name their paths and explain which file scope matched. If it invents an <code class="language-plaintext highlighter-rouge">ApplicationPolicy</code> or conflates the database default with an HTTP guarantee, correct the guidance or task prompt only after identifying the actual failure. Do not treat instruction text as a security control: enforce permissions in code and verify them with tests.</p>
 
-<h2 id="your-25-minute-lab-lab">Your 25-minute lab {:#lab}</h2>
+<h2 id="lab">Your 25-minute lab</h2>
 
 <ol>
   <li>Open <code class="language-plaintext highlighter-rouge">caseflow/</code> as the VS Code workspace root. Read the <a href="/assets/downloads/teach-copilot-rails-context-support.zip">CaseFlow README</a>, instructions and the three code paths in the audit table.</li>
@@ -1174,7 +1174,7 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p><strong>Acceptance criterion:</strong> a reviewer can trace each present-tense behavior to source, distinguish tests that exist from tests that ran, and find at least one open authorization question before writing code.</p>
 
-<h2 id="references-and-supporting-materials-references">References and supporting materials {:#references}</h2>
+<h2 id="references">References and supporting materials</h2>
 
 <p><strong>Finding the prompt after download:</strong> extract the support ZIP and open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/02-context-audit.md</code> to read the full prompt. For Copilot Chat, open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/caseflow/</code> as the VS Code workspace; the executable file is <code class="language-plaintext highlighter-rouge">.github/prompts/02-context-audit.prompt.md</code>. Invoke <code class="language-plaintext highlighter-rouge">/02-context-audit</code>. On macOS, Finder may hide the <code class="language-plaintext highlighter-rouge">.github</code> directory (press Command-Shift-Period to show hidden files). The companion also contains the complete three-prompt catalog in <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/</code>.</p>
 
@@ -1210,13 +1210,13 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
   <li><a href="#references">References and supporting materials</a></li>
 </ul>
 
-<h2 id="05-minutes-predict-before-you-inspect-predict">0–5 minutes: predict before you inspect {:#predict}</h2>
+<h2 id="predict">0–5 minutes: predict before you inspect</h2>
 
 <p>Write down your current hypothesis for <code class="language-plaintext highlighter-rouge">POST /api/requests</code>: what input is accepted, what gets saved and what comes back. Label every sentence <strong>prediction</strong>. This prevents your first impression or an AI suggestion from quietly turning into a fact.</p>
 
 <p>The question is about one change, but its impact can cross more than one file. Predict whether an update endpoint, authorization check or background job already exists. Later, compare these predictions with a capability map and evidence register. GitHub’s <a href="https://docs.github.com/en/copilot/tutorials/explore-a-codebase">codebase exploration guide</a> shows how repository and file context can narrow a question. Its <a href="https://docs.github.com/en/copilot/tutorials/review-ai-generated-code">review guidance</a> is equally relevant: inspect the answer against actual files. Here, the hypothesis is an investigation aid, not a delivery promise.</p>
 
-<h2 id="512-minutes-generate-an-inventory-and-trace-one-path-trace">5–12 minutes: generate an inventory and trace one path {:#trace}</h2>
+<h2 id="trace">5–12 minutes: generate an inventory and trace one path</h2>
 
 <p>From the companion repository root, run:</p>
 
@@ -1264,7 +1264,7 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p><em>The dotted link marks schema context, not an extra runtime step. The status labels describe the supplied controller branches; they are not a report of executed responses.</em></p>
 
-<h2 id="1220-minutes-ask-copilot-for-an-architecture-atlas-ask">12–20 minutes: ask Copilot for an architecture atlas {:#ask}</h2>
+<h2 id="ask">12–20 minutes: ask Copilot for an architecture atlas</h2>
 
 <p>Open <strong><code class="language-plaintext highlighter-rouge">caseflow/</code> as the VS Code workspace</strong> and give Copilot a change question: “Can a client resolve a request through this API?” Workspace search or its semantic index can find likely source; the generated inventory gives you explicit declarations to cross-check. Ask for four connected artifacts, rather than a prose summary:</p>
 
@@ -1316,7 +1316,7 @@ files and symbols. Do not invent an update action, a job or a passing test.
 
 <p>This is more useful than “I found a controller.” It links a client question to the API surface, persisted state, verification and missing decisions. The <a href="/assets/downloads/first-30-minutes-rails-repository-support.zip">reviewed atlas</a> is included in the companion package under <code class="language-plaintext highlighter-rouge">docs/architecture/</code>.</p>
 
-<h2 id="2027-minutes-audit-the-atlas-and-run-one-check-observe">20–27 minutes: audit the atlas and run one check {:#observe}</h2>
+<h2 id="observe">20–27 minutes: audit the atlas and run one check</h2>
 
 <p>Audit every diagram edge and table row against the cited file. A search result, a plausible Rails convention and an agent-generated link are leads; each still needs verification. The included request spec has two cases: a valid title expecting a <code class="language-plaintext highlighter-rouge">201</code> response, an <code class="language-plaintext highlighter-rouge">open</code> status and one stored record; and a missing title expecting <code class="language-plaintext highlighter-rouge">422</code> with no record. Those are <strong>assertions in source</strong>, not reported pass results. The companion includes an integrated Rails API source app, but has no resolved lockfile or installed dependencies here; we have not executed its specs in the authoring environment.</p>
 
@@ -1371,13 +1371,13 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
   </tbody>
 </table>
 
-<h2 id="2730-minutes-give-the-client-one-bounded-answer-client">27–30 minutes: give the client one bounded answer {:#client}</h2>
+<h2 id="client">27–30 minutes: give the client one bounded answer</h2>
 
 <p>The useful answer is a shareable atlas, not “Copilot says the endpoint works.” Alongside the map, tell the client: “The source defines creation with title and description, title and status validations, and a schema default of <code class="language-plaintext highlighter-rouge">open</code>. The supplied specs cover valid creation and missing title, but I have not run them in this environment. I do not see an update route. The next safe step is to boot the integrated app, record the focused spec result, then scope a status-transition contract and tests.”</p>
 
 <p>The atlas supports a short engagement: a visible inventory, a diagram of the current path, a change-impact table, a named uncertainty and a testable next issue. It also gives a stakeholder a clear boundary between discovery and implementation.</p>
 
-<h3 id="your-2030-minute-lab-lab">Your 20–30 minute lab {:#lab}</h3>
+<h3 id="lab">Your 20–30 minute lab</h3>
 
 <ol>
   <li>Make three predictions in a local <code class="language-plaintext highlighter-rouge">ENVIRONMENT.md</code> using the template (<code class="language-plaintext highlighter-rouge">caseflow/ENVIRONMENT.template.md</code>).</li>
@@ -1390,7 +1390,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p><strong>Next in the series:</strong> we will refine the context we give Copilot—repository guidance, instructions and tool boundaries—and test how the atlas changes. The reviewed atlas, generator, Mermaid source and workbook are in the companion package.</p>
 
-<h2 id="references-and-supporting-materials-references">References and supporting materials {:#references}</h2>
+<h2 id="references">References and supporting materials</h2>
 
 <p><strong>Finding the prompt after download:</strong> extract the support ZIP and open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/01-trace-request.md</code> to read the full prompt. For Copilot Chat, open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/caseflow/</code> as the VS Code workspace; the executable file is <code class="language-plaintext highlighter-rouge">.github/prompts/01-trace-request.prompt.md</code>. Invoke <code class="language-plaintext highlighter-rouge">/01-trace-request</code>. On macOS, Finder may hide the <code class="language-plaintext highlighter-rouge">.github</code> directory (press Command-Shift-Period to show hidden files). The companion also contains the complete three-prompt catalog in <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/</code>.</p>
 

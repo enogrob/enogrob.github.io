@@ -86,7 +86,7 @@
   <li><a href="#references">References and supporting material</a></li>
 </ul>
 
-<h2 id="start-with-a-truthful-evidence-boundary-boundary">Start with a truthful evidence boundary {:#boundary}</h2>
+<h2 id="boundary">Start with a truthful evidence boundary</h2>
 
 <p>A PR has different kinds of claims. A spec file contains <strong>assertions</strong>. A workflow file contains <strong>planned commands</strong>. A job log shows <strong>observed execution</strong> on a given commit and environment. A reviewer decides whether those observations and the product policy justify the change. None substitutes for the others.</p>
 
@@ -134,7 +134,7 @@
 
 <p>The arrow into review carries <strong>observed results</strong>, including failures. Green in this diagram identifies the <em>type of evidence</em>, not a passing CaseFlow run. The matching Mermaid source is included as a local <code class="language-plaintext highlighter-rouge">.mmd</code> file in the package.</p>
 
-<h2 id="make-the-rails-test-gate-reproducible-test-gate">Make the Rails test gate reproducible {:#test-gate}</h2>
+<h2 id="test-gate">Make the Rails test gate reproducible</h2>
 
 <p>CaseFlow’s baseline <code class="language-plaintext highlighter-rouge">Gemfile</code> declares Rails <code class="language-plaintext highlighter-rouge">~&gt; 8.0.0</code>, SQLite, Puma and RSpec. It has no <code class="language-plaintext highlighter-rouge">Gemfile.lock</code>. Installing from that Gemfile could resolve different compatible versions on different days. Before requiring a CI check, on a Mac with Ruby installed, resolve and commit a lockfile in the <strong>companion repository’s</strong> <code class="language-plaintext highlighter-rouge">caseflow/</code> directory, review the resolved gems, then run the app locally:</p>
 
@@ -169,7 +169,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p><code class="language-plaintext highlighter-rouge">bundle config set frozen true</code> makes a missing or inconsistent lockfile fail early. The sample targets Ubuntu and a Ruby 3.3 interpreter; verify that version against your local app and choose pinned action SHAs under your organization’s policy before production. GitHub’s <a href="https://docs.github.com/en/actions/tutorials/build-and-test-code/ruby" target="_blank" rel="noopener noreferrer">Ruby Actions guide</a> documents <code class="language-plaintext highlighter-rouge">ruby/setup-ruby</code>, Bundler and caching. After a checked-in lockfile and first reliable run, <code class="language-plaintext highlighter-rouge">bundler-cache: true</code> can shorten future jobs; it does not prove the code is secure.</p>
 
-<h2 id="add-a-security-layer-that-says-what-it-covers-security">Add a security layer that says what it covers {:#security}</h2>
+<h2 id="security">Add a security layer that says what it covers</h2>
 
 <p>“DevSecOps passed” is too vague for review. Match each proposed gate to a known question:</p>
 
@@ -214,7 +214,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p>Keep the sample workflow on <code class="language-plaintext highlighter-rouge">pull_request</code> with <code class="language-plaintext highlighter-rouge">contents: read</code>; it does not request secrets or a write token. GitHub’s <a href="https://docs.github.com/en/actions/reference/security/secure-use" target="_blank" rel="noopener noreferrer">secure use reference</a> discusses risks of untrusted PR code and least privilege. Do not change it to <code class="language-plaintext highlighter-rouge">pull_request_target</code> while checking out and running a contributor’s untrusted code.</p>
 
-<h2 id="read-failures-as-evidence-failure">Read failures as evidence {:#failure}</h2>
+<h2 id="failure">Read failures as evidence</h2>
 
 <p><img src="/assets/images/posts/rails-ci-security-human-review/read-the-failure.webp" alt="Conceptual evidence desk with CaseFlow Gemfile, an empty Gemfile.lock position, unrun request specs and a human policy question, connected by Holoflux; no test result is depicted." style="width:100%;height:auto;"></p>
 
@@ -222,11 +222,11 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p>A practical failure record uses four fields: <code class="language-plaintext highlighter-rouge">commit SHA</code>, <code class="language-plaintext highlighter-rouge">command</code>, <code class="language-plaintext highlighter-rouge">observed exit status or blocker</code>, and <code class="language-plaintext highlighter-rouge">next owner/action</code>. When setup fails, downstream scans are <strong>not run</strong>, not “passed”. If RSpec fails for an unauthorized request, inspect the proposed token guard and the request spec; if the product policy is unclear, return to the issue instead of weakening the test. The <a href="#references">worksheet</a> includes examples labeled <em>illustrative</em> rather than fabricated logs.</p>
 
-<h2 id="keep-the-merge-decision-human-review">Keep the merge decision human {:#review}</h2>
+<h2 id="review">Keep the merge decision human</h2>
 
 <p>Require the reviewer to read the three changed files from Part 03 and decide whether <code class="language-plaintext highlighter-rouge">open → resolved</code> and the shared operator token model the intended business rule. Even a real green RSpec and static scan would answer only their defined checks. Attach the run URL and commit SHA to the review note, describe unchecked cases (concurrency, token rotation, actor identity, auditing), then approve the lab proposal, request changes or escalate policy. Do not turn the synthetic review into a real customer release decision.</p>
 
-<h2 id="run-the-45-minute-lab-lab">Run the 45-minute lab {:#lab}</h2>
+<h2 id="lab">Run the 45-minute lab</h2>
 
 <ol>
   <li>
@@ -243,7 +243,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p>The <a href="#references">workbook with worked answers</a> supplies prediction questions, a failure triage exercise and an answer key. If Ruby is unavailable, complete the source review and write “not run: no Ruby”; that is a valid, honest lab result.</p>
 
-<h2 id="references-and-supporting-material-references">References and supporting material {:#references}</h2>
+<h2 id="references">References and supporting material</h2>
 
 <ul>
   <li>

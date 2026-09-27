@@ -86,7 +86,7 @@
   <li><a href="#references">References and supporting material</a></li>
 </ul>
 
-<h2 id="begin-with-the-clients-decision-decision-first">Begin with the client’s decision {:#decision-first}</h2>
+<h2 id="decision-first">Begin with the client’s decision</h2>
 
 <p>The useful opening question is concrete: <em>Which Rails workflow should this team test with Copilot, under which data boundaries, and what evidence would justify another step?</em> Ask the engineering sponsor what costly friction they want to change, the maintainer what repository task is safely bounded, and the security reviewer what permissions and prompt inputs are allowed. If they disagree, record the disagreement. Agreement by the loudest participant is not governance.</p>
 
@@ -94,7 +94,7 @@
 
 <p>GitHub’s <a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale" target="_blank" rel="noopener noreferrer">rollout guidance</a> covers enablement, governance and measurement. Its <a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success" target="_blank" rel="noopener noreferrer">trial guide</a> calls for goals, adoption evidence, developer feedback and a later decision about expansion. These resources inform the agenda; the client still decides authorization, scope and success criteria.</p>
 
-<h2 id="bring-an-evidence-pack-not-a-promise-evidence">Bring an evidence pack, not a promise {:#evidence}</h2>
+<h2 id="evidence">Bring an evidence pack, not a promise</h2>
 
 <p>Before the meeting, make a short ledger with four different statuses. A file’s existence establishes what is written there; a test assertion states the expected behavior; a real test run gives environment-specific evidence; an approval belongs to the accountable reviewer. Keep the distinction visible on screen.</p>
 
@@ -137,7 +137,7 @@
 
 <p>The companion <a href="#references">claim ledger</a> has file references, evidence statuses, checks and suggested roles. Replace role labels with real names only once the client appoints owners. Never copy secrets or customer code into the demonstration repo.</p>
 
-<h2 id="run-a-workshop-that-surfaces-disagreement-workshop">Run a workshop that surfaces disagreement {:#workshop}</h2>
+<h2 id="workshop">Run a workshop that surfaces disagreement</h2>
 
 <p>The <a href="#references">90-minute agenda</a> timeboxes the session: ten minutes for the decision question, fifteen for a source walk, twenty for candidate PR and CI review, fifteen for data and policy boundaries, twenty for the next experiment, and ten to replay the decision. Move security discussion earlier if the reviewer must leave early. A participant with authority to approve access should be identified before proposing activation.</p>
 
@@ -153,7 +153,7 @@
 
 <p>This is a <strong>proposed</strong> workshop flow. No branch is selected in the supplied materials; the decision record is blank. The matching editable diagram lives in <code class="language-plaintext highlighter-rouge">docs/diagrams/06-workshop-decision.mmd</code> inside the download.</p>
 
-<h2 id="turn-unknowns-into-a-bounded-roadmap-roadmap">Turn unknowns into a bounded roadmap {:#roadmap}</h2>
+<h2 id="roadmap">Turn unknowns into a bounded roadmap</h2>
 
 <p>A useful roadmap is ordered by <em>evidence dependencies</em>, not optimistic dates. Validate the Rails source and record an actual RSpec result or blocker. Then review the candidate change with the human engineering owner and determine which CI/security controls apply. Only after the authorized team defines permissible Copilot surfaces and data should it consider a consenting trial with a baseline, comparison criteria and incident path. The <a href="#references">one-page roadmap</a> supplies these slices with deliberately unassigned names and no fabricated schedule.</p>
 
@@ -161,13 +161,13 @@
 
 <p>Show the client an example of a testable recommendation: “Authorize one consenting Rails cohort to try source orientation on one approved repository for a defined interval, after security checks the allowed surface and prompt data. Compare like-for-like PR rework and test outcomes with a stated baseline; pause on a serious boundary breach.” This is a <strong>proposal</strong>, not a statement that anyone authorized or completed that experiment. Define numerical criteria with the sponsor before data collection; do not invent thresholds in the article.</p>
 
-<h2 id="close-with-an-accountable-decision-close">Close with an accountable decision {:#close}</h2>
+<h2 id="close">Close with an accountable decision</h2>
 
 <p>The final ten minutes produce a signed or explicitly pending <a href="#references">decision record</a>. It lists the chosen next step, the claims and observations behind it, who owns each unresolved check, the checkpoint, and what would force a pause. It is valid to end with “revise” or “pause” when the baseline, permission or security owner is missing. The engineering team still gets a clear next task and the sponsor can see exactly what is blocking approval.</p>
 
 <p>In an interview, a two-minute version is enough: “I would bring a source-backed CaseFlow map and a candidate PR, separate planned CI from observed results, let the security and engineering owners settle scope, and leave with one bounded experiment and a stop rule. I would not report adoption benefit from an empty CSV.” This demonstrates consultative architecture without inventing a client engagement.</p>
 
-<h2 id="practice-the-facilitation-lab">Practice the facilitation {:#lab}</h2>
+<h2 id="lab">Practice the facilitation</h2>
 
 <ol>
   <li>
@@ -182,7 +182,7 @@
 
 <p>The <a href="#references">full workbook</a> includes a prediction, a misleading-claim challenge, an agenda repair exercise, a safety scenario and sample answers. The companion code is Ruby/Rails; this final workshop is a facilitation exercise and introduces no new runtime code.</p>
 
-<h2 id="references-and-supporting-material-references">References and supporting material {:#references}</h2>
+<h2 id="references">References and supporting material</h2>
 
 <ul>
   <li>

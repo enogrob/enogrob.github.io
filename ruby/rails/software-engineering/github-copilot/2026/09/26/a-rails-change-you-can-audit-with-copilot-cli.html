@@ -86,13 +86,13 @@
   <li><a href="#references">References and supporting material</a></li>
 </ul>
 
-<h2 id="why-the-terminal-changes-the-task-why-cli">Why the terminal changes the task {:#why-cli}</h2>
+<h2 id="why-cli">Why the terminal changes the task</h2>
 
 <p>In an editor, a developer often selects code, chats and accepts a suggestion. A terminal agent can navigate files and propose a sequence of operations, including commands that run tests or edit a branch. That can shorten the path from question to candidate diff, but a readable answer alone cannot establish that the patch works. <strong>The unit of progress is a verified artifact:</strong> source citation, plan, diff, command output, then human review.</p>
 
 <p>GitHub documents Copilot CLI as an interactive tool launched from a directory containing code. It can use an <code class="language-plaintext highlighter-rouge">@</code> file reference in a prompt, has a plan mode, accepts repository instructions, and asks for permission for tools that may modify or execute files. Those details may change, so follow the <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview" target="_blank" rel="noopener noreferrer">current usage guide</a> for your installed version. This lab does not require an MCP server, hook, SDK, cloud agent or GitHub Desktop. Those extensions solve different needs; start with the smallest sufficient surface.</p>
 
-<h2 id="trust-the-directory-and-bound-the-request-scope">Trust the directory and bound the request {:#scope}</h2>
+<h2 id="scope">Trust the directory and bound the request</h2>
 
 <p>On macOS, GitHub currently documents a <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli" target="_blank" rel="noopener noreferrer">Homebrew installation</a> with <code class="language-plaintext highlighter-rouge">brew install --cask copilot-cli</code>. Check your Copilot entitlement and organization policy before starting. Do not use an organization’s private repository without approval, and do not put tokens or customer records into the example.</p>
 
@@ -108,7 +108,7 @@ copilot
 
 <p>The <a href="#references">runbook</a> distinguishes commands typed into your regular shell from text typed into an interactive Copilot session. Use VS Code alongside the terminal to inspect the exact diff. The repo already has <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code> and path-specific Rails guidance from Part 02; these guide the agent but cannot enforce a security policy by themselves.</p>
 
-<h2 id="plan-against-the-actual-rails-baseline-plan">Plan against the actual Rails baseline {:#plan}</h2>
+<h2 id="plan">Plan against the actual Rails baseline</h2>
 
 <p>The source file <code class="language-plaintext highlighter-rouge">caseflow/config/routes.rb</code> declares only <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">show</code> and <code class="language-plaintext highlighter-rouge">create</code> actions for <code class="language-plaintext highlighter-rouge">api/requests</code>. The model allows <code class="language-plaintext highlighter-rouge">resolved</code> as stored data, but the baseline has no route for a client to resolve a request. Part 03 supplies a <strong>separate candidate patch</strong> and synthetic issue for <code class="language-plaintext highlighter-rouge">PATCH /api/requests/:id/resolve</code>. Your CLI task is to <em>plan and inspect</em> a fresh, small candidate, then compare it with that issue. Do not tell the agent the endpoint already works.</p>
 
@@ -149,7 +149,7 @@ copilot
 
 <p>If the plan adds a generic status-update API, exposes a token, or proposes a different service without evidence, stop and correct it before stage 2. A strong prompt narrows the task; it does not prove the answer.</p>
 
-<h2 id="inspect-every-requested-tool-action-permissions">Inspect every requested tool action {:#permissions}</h2>
+<h2 id="permissions">Inspect every requested tool action</h2>
 
 <p>GitHub’s CLI <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview" target="_blank" rel="noopener noreferrer">usage documentation</a> says tools that could modify or execute files prompt for approval. That is a decision point, not a decorative dialog. Check the command, target files and working directory. Grant a narrowly scoped action only when you understand why it is needed. If the request would delete files, run a network installer or touch an external directory, reject it and request a safer plan. An approval for the rest of the session has a broader effect than approval once.</p>
 
@@ -161,7 +161,7 @@ copilot
 
 <p>The diagram is a proposed workflow. No tool request, diff, RSpec output or approval has been observed in this package. Its editable source is <code class="language-plaintext highlighter-rouge">docs/diagrams/07-cli-evidence-gates.mmd</code>.</p>
 
-<h2 id="verify-the-candidate-and-report-the-outcome-verify">Verify the candidate and report the outcome {:#verify}</h2>
+<h2 id="verify">Verify the candidate and report the outcome</h2>
 
 <p>Only after reviewing the plan and your branch should you paste <strong>stage 2</strong> of the prompt to request a local candidate. Compare any change with the synthetic <a href="#references">Part 03 issue</a>, particularly negative cases for wrong/missing/unconfigured operator tokens. This lab’s token mechanism is an exercise constraint, <strong>not production authorization guidance</strong>. Discuss real auth, secrets and repository policy with the client.</p>
 
@@ -178,7 +178,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <p>Close by showing the reviewer the actual diff, negative paths, test output or blocker, and remaining security questions. A rejected candidate with a precise diagnosis can be a better result than an unreviewed PR. That is what makes the CLI useful in a short consulting engagement: the team can inspect the path from a source-backed question to the next decision.</p>
 
-<h2 id="try-the-guided-lab-lab">Try the guided lab {:#lab}</h2>
+<h2 id="lab">Try the guided lab</h2>
 
 <ol>
   <li>
@@ -193,7 +193,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 <strong>Explain (8 min):</strong> summarize what is source fact, proposal, observed result and unresolved review. Compare your response to the <a href="#references">workbook’s answer key</a>.</li>
 </ol>
 
-<h2 id="references-and-supporting-material-references">References and supporting material {:#references}</h2>
+<h2 id="references">References and supporting material</h2>
 
 <ul>
   <li>
