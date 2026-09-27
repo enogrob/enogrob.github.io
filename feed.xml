@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-09-27T08:01:07+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">A Copilot Pilot You Can Measure</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html" rel="alternate" type="text/html" title="A Copilot Pilot You Can Measure" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html"><![CDATA[<p><img src="/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" alt="GitHub Copilot for Rails Engineers Part 05: a Rails team scopes a pilot around CaseFlow, establishes a baseline, observes usage, quality and safety separately, and reaches an expand, revise or pause decision beside a digital Copilot-inspired profile." style="width:100%;height:auto;" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-09-27T08:10:44+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">A Copilot Pilot You Can Measure</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html" rel="alternate" type="text/html" title="A Copilot Pilot You Can Measure" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html"><![CDATA[<p><img src="/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" alt="GitHub Copilot for Rails Engineers Part 05: a Rails team scopes a pilot around CaseFlow, establishes a baseline, observes usage, quality and safety separately, and reaches an expand, revise or pause decision beside a digital Copilot-inspired profile." style="width:100%;height:auto;" /></p>
 
 <blockquote>
   <p><strong>Usage tells you who tried Copilot; it cannot tell you what improved.</strong> Design a small Rails pilot that measures engineering outcomes, protects sensitive context and gives the team a real decision at the end.</p>
@@ -921,13 +921,13 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
   <li><a href="#references">References and supporting material</a></li>
 </ul>
 
-<h2 id="begin-with-the-bigger-picture-bigger-picture">Begin with the bigger picture {:#bigger-picture}</h2>
+<h2 id="bigger-picture">Begin with the bigger picture</h2>
 
 <p>For a wider view before the Rails exercises, read <a href="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/23/inside-github-copilot-agentic-engine.html"><em>Inside GitHub Copilot’s Agentic Engine: CLI, SDK, and HydraFusion</em></a>. It connects Copilot’s development surfaces, agent tools, skills, MCP and SDK to the engineering responsibility of supervising and verifying agentic work. Then return to Part 01 and follow one concrete Rails application through source inspection, a proposed change and human decisions.</p>
 
 <p>That article is an <strong>optional conceptual prologue</strong>, not one of this series’ eight chapters. Its discussion of HydraFusion includes research-preview context; CaseFlow does not install it or depend on it. Likewise, the Rails labs do not implement the Copilot SDK. The distinction helps you move from the broader architecture to what the supplied CaseFlow artifacts can actually demonstrate.</p>
 
-<h2 id="choose-your-chapter-chapters">Choose your chapter {:#chapters}</h2>
+<h2 id="chapters">Choose your chapter</h2>
 
 <p>Each link below points to the <strong>published article</strong>. Each outcome is an observable piece of work you can inspect or produce with the companion, rather than a claim that Copilot has already done it.</p>
 
@@ -985,7 +985,7 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p><strong>One thread, three scales:</strong> Parts 01–04 follow a request and a proposed change; Parts 05–06 move from engineering evidence to an organizational decision; Parts 07–08 revisit the same problem in the CLI and turn the judgment calls into a teachable procedure. The Part 03 patch is a proposal, the Part 04 workflow is staged, and the Part 05 observations have no measurements. Carry those distinctions forward when telling the story.</p>
 
-<h2 id="see-how-the-decisions-connect-connections">See how the decisions connect {:#connections}</h2>
+<h2 id="connections">See how the decisions connect</h2>
 
 <p>The eight topics are related, but there is no automatic handoff from an agent’s code suggestion to a successful client outcome. The arrows show <strong>learning dependencies</strong>: a reviewable change needs a source map; a pilot needs defined gates and metrics; a repeatable procedure needs a human decision. They do not assert that the lab ran or that a client adopted it.</p>
 
@@ -993,7 +993,7 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p>The editable source is <code class="language-plaintext highlighter-rouge">docs/diagrams/series-learning-map.mmd</code> in the download. For implementation details and runnable instructions use the relevant chapter and <code class="language-plaintext highlighter-rouge">caseflow/README.md</code>, rather than treating this diagram as code or as run evidence.</p>
 
-<h2 id="take-one-of-two-learning-routes-routes">Take one of two learning routes {:#routes}</h2>
+<h2 id="routes">Take one of two learning routes</h2>
 
 <p><img src="/assets/images/posts/copilot-rails-learning-map/two-routes.webp" alt="Two illuminated paths cross a Rails workbench: the interview route asks the reader to map, review and explain, while the hands-on route traces, changes, tests and decides with a reviewer." style="width:100%;height:auto;" /></p>
 
@@ -1007,17 +1007,17 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
 
 <p>If you are beginning with Copilot itself, start with 01 and 02. If you already know Rails but need a consultative narrative, go to 05 and 06 after you have inspected the source and candidate patch. Chapter 08 is best read after 07 because its skill, hook and MCP choices build on a bounded CLI task. No official Ruby Copilot SDK integration is assumed in this series.</p>
 
-<h2 id="show-what-you-learned-outcomes">Show what you learned {:#outcomes}</h2>
+<h2 id="outcomes">Show what you learned</h2>
 
 <p>You should be able to give a reviewer five concrete things: (1) a path-cited explanation of one CaseFlow request; (2) a change request scoped tightly enough to reject an unsafe diff; (3) a distinction between a test assertion, an actual run and a human approval; (4) a privacy-conscious pilot question with separate adoption and quality measures; and (5) a two-minute recommendation with an owner, next check and stop rule. The <a href="#references">series guide workbook</a> gives a short exercise and answer key for that final synthesis.</p>
 
 <p>For a future ebook, the eight articles can become eight chapter candidates and this map can serve as front matter. A book edition still needs transitions, refreshed links and validation of technical claims; the post series is the current source of truth.</p>
 
-<h2 id="try-a-synthesis-exercise-exercise">Try a synthesis exercise {:#exercise}</h2>
+<h2 id="exercise">Try a synthesis exercise</h2>
 
 <p>A stakeholder says: “Copilot implemented status updates in CaseFlow, CI passed, and productivity improved. Can we roll it out to all Rails teams?” Write four lines: <em>what the supplied source establishes; what is merely proposed; which checks or measurements are missing; what next step you recommend</em>. Then use the workbook answer key to challenge your language. The useful skill here is moving from attractive artifacts to defensible engineering and client decisions.</p>
 
-<h2 id="references-and-supporting-material-references">References and supporting material {:#references}</h2>
+<h2 id="references">References and supporting material</h2>
 
 <ul>
   <li><a href="/assets/downloads/copilot-rails-learning-map-support.zip">Download the cumulative companion and series guide</a>: start at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/series-guide/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/series-guide/article.md</code>. The guide workbook with answers is <code class="language-plaintext highlighter-rouge">docs/labs/series-guide-workbook.md</code>; editable map: <code class="language-plaintext highlighter-rouge">docs/diagrams/series-learning-map.mmd</code>.</li>
