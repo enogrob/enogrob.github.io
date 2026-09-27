@@ -1,0 +1,9 @@
+We are considering a future status transition for a CaseFlow service request. Read the actual routes, controller, model, migration, request specs, and the applicable repository instructions. Do not edit files.
+
+Return:
+1. A 4-row table: claim, exact supporting path, evidence type (source/spec/run/unknown), and what remains to check.
+2. The repository-wide and model-scoped guidance that applies to `app/models/service_request.rb`; cite each instruction path. If you cannot establish whether instructions were loaded automatically, say so.
+3. One proposed minimal change surface and the smallest positive and negative tests. Label as proposal, not as existing behavior.
+4. An explicit list of unknowns: authentication, authorization, status-transition semantics and runtime results.
+
+Do not invent passing tests, an update route, or a security guarantee from an instruction file. Flag contradictions between instructions and inspected code.

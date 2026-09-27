@@ -1,0 +1,22 @@
+You are working inside the `caseflow/` Rails workspace. This is a **synthetic Part 03 lab**, not a customer-approved authorization design. Read `config/routes.rb`, `app/controllers/api/requests_controller.rb`, `app/models/service_request.rb`, the migration, request specs, and applicable `.github/` instructions before proposing changes. Do not assume a status-update route already exists.
+
+## Exercise issue and acceptance cases
+
+Propose only `PATCH /api/requests/:id/resolve` to change an **open** request to **resolved**. For this teaching exercise, require a server-side `CASEFLOW_OPERATOR_TOKEN`; missing configuration, a missing request token, and a wrong request token must deny the operation. Use synthetic token values in specs and never commit a real secret. This token is a provisional lab assumption, **not a production identity or authorization policy**.
+
+Propose request specs for these cases:
+
+- Open request, correct operator token: selected response shows `resolved` and status is persisted.
+- Missing or incorrect token: respond `401`; status remains `open`.
+- `in_progress` request with a correct token: respond `409`; status remains unchanged.
+- Missing `CASEFLOW_OPERATOR_TOKEN` configuration: deny the request without a public fallback.
+- Existing create, index, and show behavior: preserve existing assertions.
+
+Do not add a generic PATCH endpoint, mass-assign `status`, or introduce a gem, migration, background job or UI. Record unanswered product and security questions, including actor identity, token rotation, missing-id handling, concurrency, audit events, HTTPS and observability. Do not invent decisions on these questions.
+
+## Work in two steps
+
+1. **Plan:** return exact file paths, expected behavior, authorization assumptions, positive and negative tests, and unknowns. Pause for review of the plan before changing code.
+2. **Candidate change:** after plan review, implement only the approved scope on a local branch or clean workspace. Run focused RSpec if the environment supports it; quote the real command, exit status and relevant output. If Ruby, Bundler or SQLite blocks the run, record the first reproducible blocker and do not claim success.
+
+Finish with a file-by-file diff summary, evidence table distinguishing source assertions from observed runs, and reviewer questions. Do not merge or declare production readiness. The companion materials outside this VS Code workspace contain `parts/03-issue-to-pr/ISSUE.md`, `candidate.patch` and `PR-REVIEW.md`; consult the candidate patch **only after** proposing your own solution, and do not assume it is visible inside `caseflow/`.
