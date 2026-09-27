@@ -34,12 +34,18 @@ for archive_name in "${archives[@]}"; do
     cmp "$unpacked/prompts/$prompt.md" "$unpacked/github-copilot-rails-labs/caseflow/.github/prompts/$prompt.prompt.md"
   done
 
+  lab_source="$prompt_source/01-copilot-init-lab.txt"
+  test -s "$lab_source"
+  mkdir -p "$unpacked/github-copilot-rails-labs/parts/01-first-30-minutes"
+  cp "$lab_source" "$unpacked/github-copilot-rails-labs/parts/01-first-30-minutes/copilot-init-lab.md"
+
   cat > "$unpacked/START-HERE.md" <<'EOF'
 # GitHub Copilot for Rails Engineers · support archive
 
 Read the three full prompts in `prompts/` at the root of this archive.
 To run one in VS Code, open `github-copilot-rails-labs/caseflow/` as the workspace. Its executable prompt files live under `.github/prompts/`; invoke `/01-trace-request`, `/02-context-audit`, or `/03-agent-issue-to-pr` in Copilot Chat.
 On macOS, press Command-Shift-Period in Finder if `.github` is hidden.
+Part 01 also includes `github-copilot-rails-labs/parts/01-first-30-minutes/copilot-init-lab.md` for trying CLI initialization in a disposable copy.
 EOF
 
   rm "$archive_path"
@@ -49,5 +55,6 @@ EOF
     unzip -Z1 "$archive_path" | grep -Fqx "prompts/$prompt.md"
     unzip -Z1 "$archive_path" | grep -Fqx "github-copilot-rails-labs/caseflow/.github/prompts/$prompt.prompt.md"
   done
+  unzip -Z1 "$archive_path" | grep -Fqx "github-copilot-rails-labs/parts/01-first-30-minutes/copilot-init-lab.md"
   echo "Refreshed $archive_name"
 done

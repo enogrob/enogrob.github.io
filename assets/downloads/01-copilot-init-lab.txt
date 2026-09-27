@@ -1,0 +1,15 @@
+# CaseFlow Part 01 · Copilot CLI initialization lab
+
+Objective: see what `copilot init` says about a Rails repository, then verify its claims before treating them as team instructions.
+
+1. From the extracted companion root, copy `caseflow/` to a disposable `caseflow-init-trial/`.
+2. Run `(cd caseflow-init-trial && copilot init)` after installing and signing into Copilot CLI. The interactive command is `/init` *inside the CLI*, not a VS Code command.
+3. Compare the trial's `.github/copilot-instructions.md` with the original file. The cumulative app already contains instructions and `AGENTS.md`, so your output is not a clean-room repository analysis.
+4. Check every proposed build/test command against the actual `Gemfile`, `bin/` scripts and `spec/`. Check every route or component claim against `config/routes.rb` and source. Record: source-backed, existing instruction, unverified, or contradicted.
+5. Keep the original `caseflow/` unchanged. In the Part 01 atlas, trace `POST /api/requests` with exact file citations, and do not report tests as passing unless you ran them.
+
+Questions: What guidance does `/init` improve? Which request-path facts still require the architecture atlas? Why might existing instructions bias the generated result?
+
+Expected finding: `copilot init` drafts or updates instructions for future sessions; it does not by itself establish runtime behavior or a tested API contract. Actual output depends on your Copilot CLI version and local project state.
+
+Official reference: https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#project-initialization-for-copilot
