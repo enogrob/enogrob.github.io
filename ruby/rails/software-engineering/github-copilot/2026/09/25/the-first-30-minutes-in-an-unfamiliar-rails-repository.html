@@ -78,6 +78,7 @@
 
 <ul>
   <li><a href="#predict">0–5 minutes: predict before you inspect</a></li>
+  <li><a href="#init">Early Copilot CLI check: <code class="language-plaintext highlighter-rouge">copilot init</code></a></li>
   <li><a href="#trace">5–12 minutes: generate an inventory and trace one path</a></li>
   <li><a href="#ask">12–20 minutes: ask Copilot for an architecture atlas</a></li>
   <li><a href="#observe">20–27 minutes: audit the atlas and run one check</a></li>
@@ -91,6 +92,21 @@
 <p>Write down your current hypothesis for <code class="language-plaintext highlighter-rouge">POST /api/requests</code>: what input is accepted, what gets saved and what comes back. Label every sentence <strong>prediction</strong>. This prevents your first impression or an AI suggestion from quietly turning into a fact.</p>
 
 <p>The question is about one change, but its impact can cross more than one file. Predict whether an update endpoint, authorization check or background job already exists. Later, compare these predictions with a capability map and evidence register. GitHub’s <a href="https://docs.github.com/en/copilot/tutorials/explore-a-codebase" target="_blank" rel="noopener noreferrer">codebase exploration guide</a> shows how repository and file context can narrow a question. Its <a href="https://docs.github.com/en/copilot/tutorials/review-ai-generated-code" target="_blank" rel="noopener noreferrer">review guidance</a> is equally relevant: inspect the answer against actual files. Here, the hypothesis is an investigation aid, not a delivery promise.</p>
+
+<h3 id="init">Early Copilot CLI check: <code class="language-plaintext highlighter-rouge">copilot init</code>
+</h3>
+
+<p>You’re right to try Copilot’s own repository onboarding early. From a terminal, <code class="language-plaintext highlighter-rouge">copilot init</code> (or <code class="language-plaintext highlighter-rouge">/init</code> in an interactive <strong>Copilot CLI</strong> session) analyzes the current project and creates or suggests changes to <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code>. It can surface build/test commands, high-level architecture and conventions. It is a <strong>draft of guidance for future sessions</strong>, not a verified request trace or a test run. Check every generated command and architectural claim against the repository. See the <a href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#project-initialization-for-copilot" target="_blank" rel="noopener noreferrer">GitHub CLI command reference</a>.</p>
+
+<p>Our cumulative CaseFlow download already includes <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code> and <code class="language-plaintext highlighter-rouge">AGENTS.md</code>, so <code class="language-plaintext highlighter-rouge">/init</code> here sees existing guidance and may suggest improvements rather than producing an independent first map. Try it in a throwaway copy from the <strong>companion root</strong> (after installing and signing into Copilot CLI):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> <span class="nt">-R</span> caseflow caseflow-init-trial
+<span class="o">(</span><span class="nb">cd </span>caseflow-init-trial <span class="o">&amp;&amp;</span> copilot init<span class="o">)</span>
+diff <span class="nt">-u</span> caseflow/.github/copilot-instructions.md <span class="se">\</span>
+  caseflow-init-trial/.github/copilot-instructions.md <span class="o">||</span> <span class="nb">true</span>
+</code></pre></div></div>
+
+<p>Review any proposed change; keep the original <code class="language-plaintext highlighter-rouge">caseflow/</code> untouched. Ask: which build/test command and which architecture claim can you cite in source, and which are only assumptions? Keep that comparison as a discovery artifact. In the next steps we trace the actual request path and build an evidence-backed atlas; Part 02 revisits the instruction file deliberately.</p>
 
 <h2 id="trace">5–12 minutes: generate an inventory and trace one path</h2>
 
@@ -264,6 +280,7 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <ol>
   <li>Make three predictions in a local <code class="language-plaintext highlighter-rouge">ENVIRONMENT.md</code> using the template (<code class="language-plaintext highlighter-rouge">caseflow/ENVIRONMENT.template.md</code>).</li>
+  <li>In a throwaway copy, try <code class="language-plaintext highlighter-rouge">copilot init</code> from the CaseFlow directory. Compare any proposed instructions with <code class="language-plaintext highlighter-rouge">config/routes.rb</code>, <code class="language-plaintext highlighter-rouge">Gemfile</code>, the existing specs and the original instructions; record one supported claim and one unknown. Keep the packaged app unchanged.</li>
   <li>Generate the inventory; ask Copilot for four atlas views. Compare them with <code class="language-plaintext highlighter-rouge">docs/architecture/README.md</code> and the five files in <code class="language-plaintext highlighter-rouge">docs/labs/01-codebase-diagnosis.md</code>. Mark every unsupported edge.</li>
   <li>Attempt the focused spec; record the versions, command, actual outcome or first blocker.</li>
   <li>Explain why a model that lists <code class="language-plaintext highlighter-rouge">resolved</code> does <strong>not</strong> prove a client can perform a status transition. Deliver the corrected capability table, request diagram, change-impact table and one bounded issue.</li>
@@ -286,6 +303,8 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 <a href="https://code.visualstudio.com/docs/agents/overview" target="_blank" rel="noopener noreferrer">VS Code Docs: Working with agents in an unfamiliar codebase</a>.</li>
   <li>
 <a href="https://code.visualstudio.com/docs/agents/reference/workspace-context" target="_blank" rel="noopener noreferrer">VS Code Docs: How Copilot understands your workspace</a>.</li>
+  <li>
+<a href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#project-initialization-for-copilot" target="_blank" rel="noopener noreferrer">GitHub Docs: Copilot CLI project initialization (<code class="language-plaintext highlighter-rouge">copilot init</code>)</a>.</li>
   <li>
 <a href="https://docs.github.com/en/copilot/tutorials/explore-a-codebase" target="_blank" rel="noopener noreferrer">GitHub Docs: Using GitHub Copilot to explore a codebase</a>.</li>
   <li>
