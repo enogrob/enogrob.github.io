@@ -38,6 +38,7 @@ for archive_name in "${archives[@]}"; do
   test -s "$lab_source"
   mkdir -p "$unpacked/github-copilot-rails-labs/parts/01-first-30-minutes"
   cp "$lab_source" "$unpacked/github-copilot-rails-labs/parts/01-first-30-minutes/copilot-init-lab.md"
+  python3 scripts/sync_copilot_init_companion.py "$unpacked" "_posts/2026-09-25-the-first-30-minutes-in-an-unfamiliar-rails-repository.md"
 
   cat > "$unpacked/START-HERE.md" <<'EOF'
 # GitHub Copilot for Rails Engineers · support archive
