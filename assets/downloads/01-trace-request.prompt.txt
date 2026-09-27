@@ -1,0 +1,11 @@
+You are in the `caseflow/` Rails workspace. A client asks whether they can resolve a CaseFlow request through this API. Investigate the source in **read-only mode**. Inspect `config/routes.rb`, the requests controller, model, migration and request specs. Follow additional dependencies only when the source actually references them. Apply the repository instructions under `.github/` and `AGENTS.md`.
+
+Produce a **draft architecture atlas** in your response:
+
+1. A capabilities table: operation, entry point, exact source file/symbol and unknown.
+2. An editable Mermaid `flowchart TD` for `POST /api/requests` through route, permitted fields, validation/save and the expected `201`/`422` branches. Show the migration as a dotted schema dependency, **not** as a runtime call.
+3. A change-impact table for a possible `open → resolved` transition: API, model/data, tests, authorization and other effects. Label absent or undiscovered components.
+4. An evidence register: separate source fact, spec assertion, observed run and unknown. Cite exact relative paths for source-backed claims.
+5. Three targeted checks that could falsify the most consequential assumptions.
+
+Do **not** edit code, invent routes, claim tests passed, or infer a job or authorization policy from a name. The baseline app has no status-update endpoint. If you have not executed a check, describe it as a proposed check. The companion's generated inventory and reviewed atlas live outside this workspace in `../docs/architecture/`; compare your draft to them only **after** your independent investigation and label the difference between declared source and observed behavior.
