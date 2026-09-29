@@ -1,4 +1,745 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-09-27T17:16:52+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">A Copilot Pilot You Can Measure</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html" rel="alternate" type="text/html" title="A Copilot Pilot You Can Measure" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html"><![CDATA[<p><img src="/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" alt="GitHub Copilot for Rails Engineers Part 05: a Rails team scopes a pilot around CaseFlow, establishes a baseline, observes usage, quality and safety separately, and reaches an expand, revise or pause decision beside a digital Copilot-inspired profile." style="width:100%;height:auto;" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-09-29T15:58:25+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Pencils Down, Intent Up</title><link href="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html" rel="alternate" type="text/html" title="Pencils Down, Intent Up" /><published>2026-09-29T15:00:00+00:00</published><updated>2026-09-29T15:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html"><![CDATA[<figure class="post-figure" style="margin:1.5rem 0;">
+  <img src="/assets/images/posts/pencils-down-intent-up/cover.webp" alt="Pencils Down, Intent Up — AI as the new abstraction above Ruby" loading="eager" style="width:100%;height:auto;display:block;object-fit:contain;" />
+  <figcaption>The new abstraction boundary: from human intent to agents, then into programming languages and systems.</figcaption>
+</figure>
+
+<blockquote>
+  <p><strong>Pencils down. Intent up.</strong> If AI becomes the abstraction closest to human intent, Ruby may matter less as what we type—and more as what we still want to understand.</p>
+</blockquote>
+
+<p>DHH walked onto the Rails World 2026 stage with a message that would have sounded almost heretical a few years earlier: <strong>put the pencils down</strong>.</p>
+
+<p>Not because programming no longer matters. Not because software engineering has disappeared. But because the highest-leverage work is rapidly moving away from manually typing every implementation detail and toward <strong>delegating as much as possible to AI agents</strong>—then improving how we specify, evaluate, correct, and evolve what those agents produce.</p>
+
+<p>For someone whose work helped make programming itself feel more human, that is a remarkable turn.</p>
+
+<p>I had been critical of DHH for spending so much energy on Omarchy while, from my perspective, Ruby on Rails seemed to be moving more cautiously around AI. But perhaps I was looking at it backward. Omarchy may have been part of the path that made this shift visible. Its own site now presents it as an <strong>agentic Linux</strong> and explicitly describes an environment where agents can debug problems, customize the system, and help users change it continuously.</p>
+
+<p>The interesting question is therefore not whether DHH changed his mind.</p>
+
+<p>The interesting question is what he finally saw.</p>
+
+<blockquote>
+  <p><strong>The abstraction closest to the programmer is no longer necessarily a programming language. It may be AI itself.</strong></p>
+</blockquote>
+
+<p>And that changes the Ruby conversation completely.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#the-pencils-down-moment">The pencils-down moment</a></li>
+  <li><a href="#the-abstraction-moved-again">The abstraction moved again</a></li>
+  <li><a href="#when-ai-became-the-new-ruby">When AI became the new Ruby</a></li>
+  <li><a href="#omarchy-may-have-been-the-laboratory">Omarchy may have been the laboratory</a></li>
+  <li><a href="#performance-is-becoming-cheaper-to-explore">Performance is becoming cheaper to explore</a></li>
+  <li><a href="#ruby-does-not-need-to-beat-rust-at-being-rust">Ruby does not need to beat Rust at being Rust</a></li>
+  <li><a href="#the-language-we-still-want-to-read">The language we still want to read</a></li>
+  <li><a href="#spinel-jruby-and-the-cost-of-opportunity">Spinel, JRuby, and the cost of opportunity</a></li>
+  <li><a href="#what-if-the-answer-is-not-ruby">What if the answer is not Ruby?</a></li>
+  <li><a href="#a-wider-opportunity-landscape">A wider opportunity landscape</a></li>
+  <li><a href="#pencils-down-does-not-mean-ruby-down">Pencils down does not mean Ruby down</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+<h2 id="the-pencils-down-moment">The pencils-down moment</h2>
+
+<p>The <a href="https://www.youtube.com/watch?v=vDjW_dRyKXY">Rails World 2026 opening keynote</a> is useful precisely because the message is not subtle. DHH is describing a new default: instead of beginning with handwritten implementation, begin with delegation.</p>
+
+<p>That does <strong>not</strong> mean engineering judgment disappears. In fact, it makes judgment more important.</p>
+
+<p>The engineer still has to decide:</p>
+
+<ul>
+  <li>what should exist;</li>
+  <li>what constraints matter;</li>
+  <li>what trade-offs are acceptable;</li>
+  <li>what evidence is sufficient;</li>
+  <li>whether the result is understandable;</li>
+  <li>whether it belongs in the system at all.</li>
+</ul>
+
+<p>The mechanical act of producing source code is only one part of that work—and increasingly, it is a part an agent can perform.</p>
+
+<p>The provocative phrase is therefore useful because it forces us to separate two things we often treated as the same:</p>
+
+<p><strong>programming</strong> and <strong>typing programs</strong>.</p>
+
+<p>They are no longer synonymous.</p>
+
+<h2 id="the-abstraction-moved-again">The abstraction moved again</h2>
+
+<p>Programming has always been a history of abstraction.</p>
+
+<p>We stopped thinking directly in electrical states. Then we stopped writing machine instructions. Assembly gave way to higher-level languages. Higher-level languages moved closer to the domain. Ruby went unusually far in that direction by making expressiveness, readability, and programmer happiness central design concerns.</p>
+
+<p>Then another layer appeared.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBUQlxuc3ViZ3JhcGggaW50ZW50W1wi8J-noCBIdW1hbiBleHByZXNzaW9uXCJdXG5IW1wi8J-SoSBIdW1hbiBpbnRlbnRcIl0gLS0-IE5bXCLwn5KsIE5hdHVyYWwgbGFuZ3VhZ2VcIl1cbmVuZFxuc3ViZ3JhcGggYWdlbnRpY1tcIvCfpJYgQWdlbnRpYyBhYnN0cmFjdGlvblwiXVxuTiAtLT4gQVtcIuKcqCBBSSAvIGFnZW50c1wiXVxuZW5kXG5zdWJncmFwaCBpbXBsZW1lbnRhdGlvbltcIvCfp7AgSW1wbGVtZW50YXRpb24gY2hvaWNlc1wiXVxuQSAtLT4gUFtcIuKMqO-4jyBQcm9ncmFtbWluZyBsYW5ndWFnZXNcIl1cblAgLS0-IFJbXCLwn5KOIFJ1YnlcIl1cblAgLS0-IEpbXCLimJUgSmF2YVwiXVxuUCAtLT4gRVtcIvCfkqcgRWxpeGlyXCJdXG5QIC0tPiBVW1wi4pqZ77iPIFJ1c3RcIl1cbmVuZFxuc3ViZ3JhcGggcnVudGltZVtcIvCflqXvuI8gRXhlY3V0aW9uXCJdXG5SIC0tPiBNW1wi4pqhIFJ1bnRpbWUgLyBtYWNoaW5lXCJdXG5KIC0tPiBNXG5FIC0tPiBNXG5VIC0tPiBNXG5lbmRcbiUlLVxuY2xhc3NEZWYgaHVtYW4gZmlsbDojRkZGMUJGLHN0cm9rZTojQkE5QzQzLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBhaSBmaWxsOiNFOERERjUsc3Ryb2tlOiNBNjhCQzQsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIHJ1YnkgZmlsbDojRjVEOURDLHN0cm9rZTojQkM4MTkxLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBsYW5nIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgbWFjaGluZSBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQztcbmNsYXNzIEgsTiBodW1hbjtcbmNsYXNzIEEgYWk7XG5jbGFzcyBSIHJ1Ynk7XG5jbGFzcyBQLEosRSxVIGxhbmc7XG5jbGFzcyBNIG1hY2hpbmU7IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0" /></p>
+
+<p>The important thing about this diagram is not the exact order of every technology. It is the direction of travel.</p>
+
+<p>Each major abstraction layer lets the human express <strong>more intent with less concern for mechanism</strong>.</p>
+
+<p>Ruby was important because it moved programming closer to the way developers wanted to think.</p>
+
+<p>AI moves the interface closer still.</p>
+
+<h2 id="when-ai-became-the-new-ruby">When AI became the new Ruby</h2>
+
+<figure class="post-figure" style="margin:1.5rem 0;">
+  <img src="/assets/images/posts/pencils-down-intent-up/abstraction-shift.webp" alt="The abstraction stack from machine and assembly through programming languages, Ruby, AI agents, and human intent" loading="lazy" style="width:100%;height:auto;display:block;object-fit:contain;" />
+  <figcaption>AI moves the abstraction boundary closer to human intent; programming languages remain implementation layers beneath it.</figcaption>
+</figure>
+
+<p>In my earlier post, <a href="https://enogrob.github.io/ruby/rails/software-history/2026/09/23/when-ruby-made-the-industry-rethink-programming.html">When Ruby Made the Industry Rethink Programming</a>, I ended a section called <strong>The question for today</strong> with this thought:</p>
+
+<blockquote>
+  <p><strong>Today’s Ruby might become tomorrow’s assembly.</strong><br />
+<strong>And AI, tomorrow’s Ruby.</strong></p>
+</blockquote>
+
+<p>The phrase can sound like a demotion of Ruby. I increasingly think it is the opposite.</p>
+
+<p>Ruby’s historical advantage was that it felt unusually close to the programmer. It removed ceremony. It let ideas surface with less syntactic friction. It treated source code as something humans should enjoy reading and writing.</p>
+
+<p>But natural language is closer to human intent than Ruby syntax can ever be.</p>
+
+<p>That means AI is now occupying the position that Ruby once occupied relative to lower-level languages: <strong>the most human-facing abstraction in the stack</strong>.</p>
+
+<p>The interface becomes something like:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Human intent
+    ↓
+Natural language
+    ↓
+AI / agents
+    ↓
+Ruby / Elixir / Java / Rust / ...
+    ↓
+Runtime / hardware
+</code></pre></div></div>
+
+<p>The consequence is profound: the programming language may increasingly become an <strong>implementation target</strong> rather than the primary interface through which the human expresses the system.</p>
+
+<h2 id="omarchy-may-have-been-the-laboratory">Omarchy may have been the laboratory</h2>
+
+<figure class="post-figure" style="margin:1.5rem 0;">
+  <img src="/assets/images/posts/pencils-down-intent-up/omarchy-agentic-os.webp" alt="Omarchy represented as an agentic operating environment where user intent flows through agents into terminal, files, plugins, themes, debugging, and automation" loading="lazy" style="width:100%;height:auto;display:block;object-fit:contain;" />
+  <figcaption>Omarchy as an agentic environment: intent is delegated into tools, diagnosis, configuration, and continuous change.</figcaption>
+</figure>
+
+<p>This is why I now see Omarchy differently.</p>
+
+<p>I used to look at DHH’s attention on Omarchy and think: why invest so heavily there while AI is changing the development model around Rails?</p>
+
+<p>But Omarchy itself may have been an experiment in exactly that new model.</p>
+
+<p>The project’s current language is explicit: Omarchy describes itself as <strong>“Beautiful, fun &amp; agentic Linux”</strong> and as a malleable operating system for the age of agents. Its site says agents can debug issues and that users should be able to modify the operating system with the same ease with which they can vibe-code an application.</p>
+
+<p>That moves AI out of the editor sidebar.</p>
+
+<p>The agent is no longer just autocomplete.</p>
+
+<p>It can become a participant in the environment:</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBMUlxuVVtcIvCfkqEgVXNlciBpbnRlbnRcIl0gLS0-IEFbXCLwn6SWIEFnZW50XCJdXG5zdWJncmFwaCBzdXJmYWNlc1tcIvCfp7AgTWFsbGVhYmxlIGVudmlyb25tZW50XCJdXG5BIC0tPiBUW1wi4oyo77iPIFRlcm1pbmFsXCJdXG5BIC0tPiBGW1wi8J-TgSBGaWxlc1wiXVxuQSAtLT4gRFtcIvCflI0gRGVidWdnaW5nXCJdXG5BIC0tPiBDW1wi4pqZ77iPIENvbmZpZ3VyYXRpb25cIl1cbkEgLS0-IFBbXCLwn6epIFBsdWdpbnNcIl1cbkEgLS0-IFhbXCLwn5SBIEF1dG9tYXRpb25cIl1cbmVuZFxuVCAtLT4gT1tcIvCflqXvuI8gV29ya2luZyBlbnZpcm9ubWVudFwiXVxuRiAtLT4gT1xuRCAtLT4gT1xuQyAtLT4gT1xuUCAtLT4gT1xuWCAtLT4gT1xuTyAtLiBcImZlZWRiYWNrXCIgLi0-IFVcbiUlLVxuY2xhc3NEZWYgaW5wdXQgZmlsbDojRkZGMUJGLHN0cm9rZTojQkE5QzQzLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBhaSBmaWxsOiNFOERERjUsc3Ryb2tlOiNBNjhCQzQsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIHRvb2wgZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBldmlkZW5jZSBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQztcbmNsYXNzIFUgaW5wdXQ7XG5jbGFzcyBBIGFpO1xuY2xhc3MgVCxGLEQsQyxQLFggdG9vbDtcbmNsYXNzIE8gZXZpZGVuY2U7IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0" /></p>
+
+<p>The environment becomes malleable.</p>
+
+<p>That is a very different mental model from “AI helps me write code faster.”</p>
+
+<p>And it helps explain the Rails World message: once you experience software as something that can be changed through intent and delegation, manually writing every line begins to feel like starting one abstraction layer too low.</p>
+
+<h2 id="performance-is-becoming-cheaper-to-explore">Performance is becoming cheaper to explore</h2>
+
+<p>Another clue came shortly afterward in <a href="https://x.com/dhh/status/2104633108092092880">DHH’s post about converting an implementation to Ruby with AI</a>.</p>
+
+<p>The interesting part is not simply that a Ruby version could perform well in a particular experiment. Performance comparisons are highly workload-specific, and one result should not be turned into a universal benchmark.</p>
+
+<p>The larger point is this:</p>
+
+<p><strong>DHH did not have to personally perform every step of the rewrite. The AI could explore the implementation space for him.</strong></p>
+
+<p>That changes the economics of experimentation.</p>
+
+<p>Historically, a rewrite carried a large human cost:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>idea → design → rewrite → debug → benchmark → reconsider
+</code></pre></div></div>
+
+<p>Now the loop can become:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>idea → delegate → inspect → benchmark → redirect → repeat
+</code></pre></div></div>
+
+<p>The cost of asking <em>“What if we implemented this differently?”</em> collapses.</p>
+
+<p>That matters more than any single benchmark result.</p>
+
+<h2 id="ruby-does-not-need-to-beat-rust-at-being-rust">Ruby does not need to beat Rust at being Rust</h2>
+
+<p>For years, programming-language discussions often became contests:</p>
+
+<p>Which language is faster? Which runtime uses less memory? Which compiler produces the best machine code? Which ecosystem wins the benchmark?</p>
+
+<p>Those questions still matter. Infrastructure does not become free because an agent wrote the code.</p>
+
+<p>But the strategic meaning changes.</p>
+
+<p>If an AI agent can generate a specialized Rust implementation when a hot path genuinely needs Rust, Ruby does not necessarily need to transform itself into Rust to remain relevant.</p>
+
+<p>Likewise, if Java is the better fit for a particular deployment environment, an agent can explore that path. A reply to DHH’s performance discussion even raised exactly that question: <a href="https://x.com/BaronHakkinen/status/2104648060680994846">why not consider Java rather than Rust?</a></p>
+
+<p>This is where the new abstraction layer becomes liberating.</p>
+
+<p>The language does not need to win every category.</p>
+
+<p>The system needs to make it cheap to select the right implementation while preserving a surface humans can understand.</p>
+
+<h2 id="the-language-we-still-want-to-read">The language we still want to read</h2>
+
+<figure class="post-figure" style="margin:1.5rem 0;">
+  <img src="/assets/images/posts/pencils-down-intent-up/ruby-readable-artifact.webp" alt="AI agents producing implementations in Ruby, Rust, Java, and Elixir, with Ruby highlighted as a readable artifact for human review" loading="lazy" style="width:100%;height:auto;display:block;object-fit:contain;" />
+  <figcaption>When agents can generate many implementations, the human bottleneck shifts toward reading, reviewing, and maintaining the result.</figcaption>
+</figure>
+
+<p>There is a paradox here.</p>
+
+<p>As AI makes <strong>writing</strong> code cheaper, <strong>reading</strong> code may become more important.</p>
+
+<p>Agents can produce far more code than a human can review. They can generate alternatives in Ruby, Rust, Java, Elixir, or whatever else is available. Human attention, however, remains scarce.</p>
+
+<p>That means a new optimization target appears:</p>
+
+<blockquote>
+  <p><strong>In an agentic world, readability may become more valuable than writability.</strong></p>
+</blockquote>
+
+<p>Imagine assigning an agent a substantial task. It returns an implementation. You now need to decide whether to trust it, modify it, maintain it, explain it to another engineer, or debug it six months later.</p>
+
+<p>Which language do you want to encounter?</p>
+
+<p>That question gives Ruby a powerful new role.</p>
+
+<p>Not necessarily the language humans type the most.</p>
+
+<p>Perhaps the language humans most want to <strong>read</strong>.</p>
+
+<p>Ruby’s human orientation becomes an interface for verification.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBMUlxuSVtcIvCfkqEgSW50ZW50XCJdIC0tPiBBW1wi8J-kliBBZ2VudFwiXVxuc3ViZ3JhcGggZ2VuZXJhdGVkW1wi8J-nsSBHZW5lcmF0ZWQgaW1wbGVtZW50YXRpb25zXCJdXG5BIC0tPiBSW1wi8J-SjiBSdWJ5XCJdXG5BIC0tPiBVW1wi4pqZ77iPIFJ1c3RcIl1cbkEgLS0-IEpbXCLimJUgSmF2YVwiXVxuQSAtLT4gRVtcIvCfkqcgRWxpeGlyXCJdXG5lbmRcblIgLS0-IEhbXCLwn5GAIEh1bWFuIHJldmlld1wiXVxuVSAtLT4gSFxuSiAtLT4gSFxuRSAtLT4gSFxuSCAtLT4gVltcIuKchSBWYWxpZGF0ZVwiXSAtLT4gTVtcIvCflKcgTWFpbnRhaW4gLyBldm9sdmVcIl1cbiUlLVxuY2xhc3NEZWYgaW5wdXQgZmlsbDojRkZGMUJGLHN0cm9rZTojQkE5QzQzLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBhaSBmaWxsOiNFOERERjUsc3Ryb2tlOiNBNjhCQzQsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIHJ1YnkgZmlsbDojRjVEOURDLHN0cm9rZTojQkM4MTkxLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBsYW5nIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgZXZpZGVuY2UgZmlsbDojRENFRkQ2LHN0cm9rZTojODZBODc4LGNvbG9yOiMzRTM0MkM7XG5jbGFzcyBJIGlucHV0O1xuY2xhc3MgQSBhaTtcbmNsYXNzIFIgcnVieTtcbmNsYXNzIFUsSixFIGxhbmc7XG5jbGFzcyBILFYsTSBldmlkZW5jZTsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ" /></p>
+
+<p>The question is no longer just, “What is easiest to produce?”</p>
+
+<p>It becomes, “What leaves behind the clearest artifact for humans and agents to reason about together?”</p>
+
+<p>Ruby has an unusually strong answer to that question.</p>
+
+<h2 id="spinel-jruby-and-the-cost-of-opportunity">Spinel, JRuby, and the cost of opportunity</h2>
+
+<p>This is also where projects such as <a href="https://github.com/matz/spinel">Spinel</a> become interesting in a different way.</p>
+
+<p>Spinel is an ahead-of-time Ruby compiler. Its current README describes a pipeline that parses Ruby with Prism, performs whole-program type inference, emits optimized C, invokes the system compiler, and produces a standalone native executable.</p>
+
+<p>That is technically fascinating.</p>
+
+<p>But the arrival of agentic development introduces another question beyond technical merit:</p>
+
+<blockquote>
+  <p><strong>Where should the Ruby community spend its finite attention in a world where agents make cross-language experimentation dramatically cheaper?</strong></p>
+</blockquote>
+
+<p>That is not an argument that Spinel should not exist. Experiments that push Ruby into new execution models can teach us a great deal.</p>
+
+<p>It is an argument that the <strong>opportunity cost has changed</strong>.</p>
+
+<p>If the goal is to reach different runtime characteristics, perhaps some experiments should also revisit paths that already connect Ruby to mature execution environments.</p>
+
+<p><a href="https://www.jruby.org/">JRuby</a> is the obvious example. JRuby is Ruby on the JVM. Its current project site highlights real threading, the JVM library ecosystem, platform independence, and Ruby 4.0 compatibility in the current JRuby 10.1.x line.</p>
+
+<p>That suggests a different kind of question:</p>
+
+<p>Instead of asking only:</p>
+
+<blockquote>
+  <p>How do we make Ruby itself compile into something faster?</p>
+</blockquote>
+
+<p>we can also ask:</p>
+
+<blockquote>
+  <p>How can agents make the cost of moving Ruby workloads across execution models almost trivial?</p>
+</blockquote>
+
+<p>Those are not mutually exclusive paths.</p>
+
+<p>They are experiments in a much larger search space.</p>
+
+<h2 id="what-if-the-answer-is-not-ruby">What if the answer is not Ruby?</h2>
+
+<p>And then comes the uncomfortable—but useful—question.</p>
+
+<p>What if the best answer for a particular subsystem is not Ruby at all?</p>
+
+<p>Perhaps the system needs the JVM ecosystem.</p>
+
+<p>Perhaps it needs Rust at a performance boundary.</p>
+
+<p>Perhaps it needs the BEAM.</p>
+
+<p><a href="https://elixir-lang.org/">Elixir</a> is especially interesting in this context because its strengths are not merely syntactic. It sits on decades of Erlang experience around concurrency, distribution, and fault tolerance. Its official site emphasizes vertical and horizontal scalability, message-oriented systems, and robust recovery from failures.</p>
+
+<p>In the old model, adopting another language could mean a steep organizational cost: new expertise, tooling, conventions, deployment, and maintenance burden.</p>
+
+<p>Agents do not eliminate those costs.</p>
+
+<p>But they can lower the friction of exploring them.</p>
+
+<p>That means the Ruby community may benefit from becoming <strong>more open</strong>, not more defensive.</p>
+
+<p>Ruby can be the language in which we express and inspect much of a product while agents help us cross boundaries when another runtime or paradigm is genuinely useful.</p>
+
+<p>That is not defeat.</p>
+
+<p>That is leverage.</p>
+
+<h2 id="a-wider-opportunity-landscape">A wider opportunity landscape</h2>
+
+<figure class="post-figure" style="margin:1.5rem 0;">
+  <img src="/assets/images/posts/pencils-down-intent-up/ruby-crossroads.webp" alt="Ruby at a crossroads with paths toward CRuby and YJIT, JRuby and the JVM, Spinel AOT, Elixir and the BEAM, and polyglot AI agents" loading="lazy" style="width:100%;height:auto;display:block;object-fit:contain;" />
+  <figcaption>The Ruby ecosystem does not need a single answer: agents make multiple runtime and language paths cheaper to explore.</figcaption>
+</figure>
+
+<p>The future of Ruby does not need to collapse into a single bet.</p>
+
+<p>It can expand.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBUQlxuUltcIvCfko4gUnVieSBlY29zeXN0ZW1cIl1cbnN1YmdyYXBoIHBhdGhzW1wi8J-bo--4jyBNdWx0aXBsZSBwYXRocywgbm90IG9uZSB2ZXJkaWN0XCJdXG5SIC0tPiBDW1wi8J-agCBDUnVieSArIFlKSVRcIl1cblIgLS0-IEpbXCLimJUgSlJ1YnkgLyBKVk1cIl1cblIgLS0-IFNbXCLwn6eqIFNwaW5lbCAvIEFPVFwiXVxuUiAtLT4gRVtcIvCfkqcgRWxpeGlyIC8gQkVBTSBjb2xsYWJvcmF0aW9uXCJdXG5SIC0tPiBQW1wi8J-kliBQb2x5Z2xvdCBhZ2VudHNcIl1cbmVuZFxuQyAtLT4gQzFbXCLimqEgUGVyZm9ybWFuY2VcIl1cbkogLS0-IEoxW1wi8J-UjCBJbnRlcm9wXCJdXG5TIC0tPiBTMVtcIvCflKwgRXhwZXJpbWVudGF0aW9uXCJdXG5FIC0tPiBFMVtcIvCfm6HvuI8gQ29uY3VycmVuY3kgLyByZXNpbGllbmNlXCJdXG5QIC0tPiBQMVtcIvCfp7AgUmlnaHQgdG9vbCBwZXIgc3Vic3lzdGVtXCJdXG5DMSAtLT4gT1tcIvCfjIUgT3Bwb3J0dW5pdHkgbGFuZHNjYXBlXCJdXG5KMSAtLT4gT1xuUzEgLS0-IE9cbkUxIC0tPiBPXG5QMSAtLT4gT1xuJSUtXG5jbGFzc0RlZiBydWJ5IGZpbGw6I0Y1RDlEQyxzdHJva2U6I0JDODE5MSxjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgYnJhbmNoIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgZXhwZXJpbWVudCBmaWxsOiNGOERGQzQsc3Ryb2tlOiNDOTk4NkQsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIG91dGNvbWUgZmlsbDojRENFRkQ2LHN0cm9rZTojODZBODc4LGNvbG9yOiMzRTM0MkM7XG5jbGFzcyBSIHJ1Ynk7XG5jbGFzcyBDLEosRSxQLEMxLEoxLEUxLFAxIGJyYW5jaDtcbmNsYXNzIFMsUzEgZXhwZXJpbWVudDtcbmNsYXNzIE8gb3V0Y29tZTsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ" /></p>
+
+<p>CRuby and YJIT can continue improving the mainstream runtime.</p>
+
+<p>JRuby can make the JVM an increasingly accessible execution target.</p>
+
+<p>Spinel can explore ahead-of-time compilation and native deployment.</p>
+
+<p>Elixir can inspire—or directly participate in—systems where the BEAM’s concurrency model is the stronger fit.</p>
+
+<p>Agents can sit above all of them and make experimentation less expensive.</p>
+
+<p>The strategic shift is from <strong>language loyalty as a constraint</strong> to <strong>language choice as a delegated implementation decision</strong>.</p>
+
+<p>And that can actually make Ruby more valuable, because Ruby no longer has to pretend to be the optimal substrate for every problem.</p>
+
+<h2 id="pencils-down-does-not-mean-ruby-down">Pencils down does not mean Ruby down</h2>
+
+<p>There is understandable euphoria around AI right now, including in DHH’s recent remarks. Some of it will be right. Some of it will be exaggerated. The tools will improve, fail, surprise us, and force us to revise our assumptions repeatedly.</p>
+
+<p>So this is not a prediction that handwritten programming disappears tomorrow.</p>
+
+<p>It is a recognition that the center of gravity is moving.</p>
+
+<p>For decades, we improved programming by creating languages that let humans talk to computers at higher and higher levels of abstraction.</p>
+
+<p>Ruby became one of the clearest expressions of that movement.</p>
+
+<p>AI now moves the boundary again.</p>
+
+<p>Our native language can increasingly become the abstraction through which we describe what we want, while agents translate intent into programs, tests, configurations, migrations, deployments, and perhaps entire environments.</p>
+
+<p>That does not make programming languages irrelevant.</p>
+
+<p>It changes what we need from them.</p>
+
+<p>We may care less about how pleasant they are to type for eight hours a day and more about whether they produce systems that are easy to inspect, explain, modify, and trust.</p>
+
+<p>Which brings us back to Ruby.</p>
+
+<p>Ruby may no longer be the highest abstraction in the stack.</p>
+
+<p>But it can still be one of the best places for humans to meet the code that agents leave behind.</p>
+
+<p>And if an agent needs to generate something I am expected to understand, review, and live with, I still know which language I would rather open first.</p>
+
+<blockquote>
+  <p><strong>Today’s Ruby might become tomorrow’s assembly.</strong><br />
+<strong>And AI, tomorrow’s Ruby.</strong></p>
+
+  <p>But that does not make Ruby less important.</p>
+
+  <p>It may finally allow Ruby to become exactly what it always wanted to be:</p>
+
+  <p><strong>a language for humans.</strong></p>
+</blockquote>
+
+<p><strong>Pencils down does not mean Ruby down.</strong></p>
+
+<p>It may mean the field around Ruby just became much larger.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>
+    <p><strong>DHH — Rails World 2026 Opening Keynote</strong><br />
+<a href="https://www.youtube.com/watch?v=vDjW_dRyKXY">https://www.youtube.com/watch?v=vDjW_dRyKXY</a></p>
+  </li>
+  <li>
+    <p><strong>DHH — “Pencils down” discussion on X</strong><br />
+<a href="https://x.com/dhh/status/2102936073642869121">https://x.com/dhh/status/2102936073642869121</a></p>
+  </li>
+  <li>
+    <p><strong>Roberto Nogueira — <em>When Ruby Made the Industry Rethink Programming</em></strong><br />
+<a href="https://enogrob.github.io/ruby/rails/software-history/2026/09/23/when-ruby-made-the-industry-rethink-programming.html">https://enogrob.github.io/ruby/rails/software-history/2026/09/23/when-ruby-made-the-industry-rethink-programming.html</a></p>
+  </li>
+  <li>
+    <p><strong>DHH — Ruby conversion / performance experiment on X</strong><br />
+<a href="https://x.com/dhh/status/2104633108092092880">https://x.com/dhh/status/2104633108092092880</a></p>
+  </li>
+  <li>
+    <p><strong>BaronHakkinen — response suggesting Java in the Rust discussion</strong><br />
+<a href="https://x.com/BaronHakkinen/status/2104648060680994846">https://x.com/BaronHakkinen/status/2104648060680994846</a></p>
+  </li>
+  <li>
+    <p><strong>Omarchy — <em>Beautiful, fun &amp; agentic Linux</em></strong><br />
+<a href="https://omarchy.nz/">https://omarchy.nz/</a></p>
+  </li>
+  <li>
+    <p><strong>Spinel — Ruby AOT Compiler</strong><br />
+<a href="https://github.com/matz/spinel">https://github.com/matz/spinel</a></p>
+  </li>
+  <li>
+    <p><strong>JRuby — The Ruby Programming Language on the JVM</strong><br />
+<a href="https://www.jruby.org/">https://www.jruby.org/</a></p>
+  </li>
+  <li>
+    <p><strong>Elixir — official language site</strong><br />
+<a href="https://elixir-lang.org/">https://elixir-lang.org/</a></p>
+  </li>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="artificial-intelligence" /><category term="software-engineering" /><category term="ruby" /><category term="ruby-on-rails" /><category term="ai" /><category term="agents" /><category term="dhh" /><category term="omarchy" /><category term="jruby" /><category term="spinel" /><category term="elixir" /><category term="software-engineering" /><summary type="html"><![CDATA[DHH's 'pencils down' moment at Rails World points to a deeper shift: AI is becoming the abstraction closest to human intent. What does that mean for Ruby, Rails, JRuby, Spinel, Elixir, and the future of programming?]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/pencils-down-intent-up/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/pencils-down-intent-up/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Start With the Workflow, Not the AI Tool</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/28/start-with-the-workflow-not-the-ai-tool.html" rel="alternate" type="text/html" title="Start With the Workflow, Not the AI Tool" /><published>2026-09-28T00:00:00+00:00</published><updated>2026-09-28T00:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/28/start-with-the-workflow-not-the-ai-tool</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/28/start-with-the-workflow-not-the-ai-tool.html"><![CDATA[<blockquote>
+  <p><strong>Series — AI-Native SDLC with GitHub Copilot · Part 01</strong><br />
+The strongest AI adoption programs do not begin with a feature checklist. They begin by understanding how engineering work actually happens.</p>
+</blockquote>
+
+<p>GitHub Copilot can help explain code, draft documentation, generate tests, edit files, operate in the terminal, and participate in increasingly agentic workflows. None of those capabilities automatically tells us <strong>where AI will create meaningful value</strong>.</p>
+
+<p>That decision starts earlier.</p>
+
+<p>Before choosing chat, agent mode, CLI automation, skills, hooks, MCP servers, or a custom integration, we need to understand the workflow itself: where engineers spend time, where context is lost, which tasks repeat, where decisions stall, and which outcomes matter to the team.</p>
+
+<p>This first part establishes the discovery discipline that the rest of the series will build on.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ol>
+  <li>Why workflow comes before tooling</li>
+  <li>Observe the work as it actually happens</li>
+  <li>Build a developer-journey map</li>
+  <li>Turn friction into AI opportunities</li>
+  <li>Prioritize value instead of novelty</li>
+  <li>Establish a measurable baseline</li>
+  <li>Lab: create the discovery artifacts</li>
+  <li>What we carry into Part 02</li>
+</ol>
+
+<hr />
+
+<h2 id="1-why-workflow-comes-before-tooling">1. Why workflow comes before tooling</h2>
+
+<p>A common AI-adoption mistake is to start with the product surface:</p>
+
+<ul>
+  <li>Which Copilot features do we have?</li>
+  <li>Should we create an agent?</li>
+  <li>Do we need an MCP server?</li>
+  <li>Should the team create reusable skills?</li>
+  <li>Can we automate pull requests?</li>
+</ul>
+
+<p>Those are useful questions later. At the beginning, they can cause us to automate the wrong thing.</p>
+
+<p>A better sequence is:</p>
+
+<pre><code class="language-mermaid">flowchart LR
+    A[Observe real work] --&gt; B[Map the workflow]
+    B --&gt; C[Identify friction]
+    C --&gt; D[Find AI-suitable opportunities]
+    D --&gt; E[Prioritize by value]
+    E --&gt; F[Pilot one workflow]
+    F --&gt; G[Measure outcomes]
+</code></pre>
+
+<p>The objective is not to maximize the amount of AI in the process. It is to improve the engineering system.</p>
+
+<p>Typical areas worth observing include unfamiliar repositories, repetitive boilerplate, documentation gaps, issue triage, pull-request preparation, test generation, and context switching. These are useful starting points because the work is visible enough to inspect and the cost of friction can often be measured.</p>
+
+<h2 id="2-observe-the-work-as-it-actually-happens">2. Observe the work as it actually happens</h2>
+
+<p>Discovery should describe the current system, not the ideal process written in a handbook.</p>
+
+<p>Watch a real workflow from beginning to end. For example, take one engineer handling an unfamiliar issue in an existing repository:</p>
+
+<ol>
+  <li>read the issue;</li>
+  <li>locate the relevant repository and service;</li>
+  <li>understand project structure;</li>
+  <li>find related code;</li>
+  <li>trace data flow;</li>
+  <li>reproduce the problem;</li>
+  <li>decide on a change;</li>
+  <li>implement it;</li>
+  <li>run tests;</li>
+  <li>prepare a pull request;</li>
+  <li>respond to review feedback.</li>
+</ol>
+
+<p>At every step, capture four things:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Question</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Time</td>
+      <td>Where is time being lost?</td>
+    </tr>
+    <tr>
+      <td>Friction</td>
+      <td>Where does the engineer get stuck or repeat work?</td>
+    </tr>
+    <tr>
+      <td>Context</td>
+      <td>What information has to be rediscovered or moved between systems?</td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td>What visible engineering or business result does this step influence?</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Do not assume every slow step should be automated. Some steps are slow because they require judgment. The discovery exercise is about distinguishing <strong>mechanical friction</strong> from <strong>valuable thinking</strong>.</p>
+
+<h2 id="3-build-a-developer-journey-map">3. Build a developer-journey map</h2>
+
+<p>The developer journey makes hidden transitions visible.</p>
+
+<pre><code class="language-mermaid">flowchart LR
+    I[Issue] --&gt; R[Repository]
+    R --&gt; U[Understand]
+    U --&gt; P[Plan]
+    P --&gt; C[Change code]
+    C --&gt; T[Test]
+    T --&gt; PR[Prepare PR]
+    PR --&gt; V[Review]
+    V --&gt; M[Merge]
+
+    U -. friction .-&gt; U1[Missing docs\nUnknown architecture]
+    T -. friction .-&gt; T1[Test setup\nEdge cases]
+    PR -. friction .-&gt; P1[Summaries\nChecklists]
+</code></pre>
+
+<p>This diagram is intentionally simple. The goal is not architecture documentation; it is <strong>workflow visibility</strong>.</p>
+
+<p>Once the journey exists, interview developers and stakeholders around concrete transitions:</p>
+
+<ul>
+  <li>Which step takes longer than it should?</li>
+  <li>Which work is repeated across issues or repositories?</li>
+  <li>Where do people leave the IDE to search for context?</li>
+  <li>Which tasks have a predictable input and output?</li>
+  <li>Where are mistakes expensive?</li>
+  <li>Which improvement would be visible to the team or customer?</li>
+</ul>
+
+<p>These questions help separate a compelling demo from a useful engineering capability.</p>
+
+<h2 id="4-turn-friction-into-ai-opportunities">4. Turn friction into AI opportunities</h2>
+
+<p>Not every friction point needs the same Copilot capability.</p>
+
+<p>A useful first-pass mapping is:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Friction</th>
+      <th>Potential capability</th>
+      <th>Why it may fit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Understanding an unfamiliar codebase</td>
+      <td>Chat / agent-assisted exploration</td>
+      <td>Contextual explanation and repository navigation</td>
+    </tr>
+    <tr>
+      <td>Repetitive documentation</td>
+      <td>Prompt or reusable skill</td>
+      <td>Predictable structure and repeatable output</td>
+    </tr>
+    <tr>
+      <td>Local scripts and shell work</td>
+      <td>Copilot CLI</td>
+      <td>Natural-language terminal assistance</td>
+    </tr>
+    <tr>
+      <td>Issue-to-change workflow</td>
+      <td>Agent mode</td>
+      <td>Bounded multi-step work across files</td>
+    </tr>
+    <tr>
+      <td>Internal systems or live data</td>
+      <td>MCP-enabled tools</td>
+      <td>Access to approved external capabilities</td>
+    </tr>
+    <tr>
+      <td>Repeated team workflow</td>
+      <td>Skill / agent / shared instruction</td>
+      <td>Reuse and consistency</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The important word is <strong>potential</strong>.</p>
+
+<p>Capability selection belongs after the problem is understood. The same friction may have a simpler solution: better documentation, a shell script, a template, a build fix, or removing an unnecessary approval.</p>
+
+<h2 id="5-prioritize-value-instead-of-novelty">5. Prioritize value instead of novelty</h2>
+
+<p>For the lab, we will score opportunities using five dimensions:</p>
+
+<ul>
+  <li><strong>Frequency</strong> — how often the workflow occurs.</li>
+  <li><strong>Friction</strong> — how much delay, repetition, or cognitive load it creates.</li>
+  <li><strong>AI suitability</strong> — whether the work can be assisted with reliable context, tools, and validation.</li>
+  <li><strong>Outcome visibility</strong> — whether improvement can be measured.</li>
+  <li><strong>Risk</strong> — whether mistakes could create security, compliance, quality, or operational problems.</li>
+</ul>
+
+<p>A lightweight score can help compare opportunities without pretending that the score is scientific truth:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Opportunity score =
+  frequency
++ friction
++ AI suitability
++ outcome visibility
+- risk
+</code></pre></div></div>
+
+<p>Use the number to provoke discussion, not to replace judgment.</p>
+
+<p>A high-value first pilot normally has a bounded scope, trusted context, a clear success condition, and an output a human can verify.</p>
+
+<h2 id="6-establish-a-measurable-baseline">6. Establish a measurable baseline</h2>
+
+<p>If we want to know whether AI helped, we need a baseline before the pilot.</p>
+
+<p>Possible measures include:</p>
+
+<ul>
+  <li>time to understand an unfamiliar repository;</li>
+  <li>issue-to-first-implementation time;</li>
+  <li>pull-request preparation time;</li>
+  <li>cycle time;</li>
+  <li>time to first meaningful contribution for a new engineer;</li>
+  <li>test-writing time;</li>
+  <li>defect or rework rate;</li>
+  <li>number of manual context switches;</li>
+  <li>developer confidence or satisfaction for the target workflow.</li>
+</ul>
+
+<p>The baseline does <strong>not</strong> need to become a giant metrics program. Part 01 needs only enough evidence to compare the pilot with the previous way of working.</p>
+
+<pre><code class="language-mermaid">flowchart LR
+    U[Usage] --&gt; A[Adoption]
+    A --&gt; E[Engineering outcome]
+    E --&gt; T[Team capability]
+    T --&gt; B[Business value]
+</code></pre>
+
+<p>Usage by itself is not the goal. A large number of Copilot interactions can coexist with no meaningful improvement in delivery, quality, learning, or customer outcomes.</p>
+
+<h2 id="7-lab--create-the-discovery-artifacts">7. Lab — create the discovery artifacts</h2>
+
+<p>This series uses a cumulative lab. Every part inherits the artifacts and decisions created earlier.</p>
+
+<p>For Part 01, the target is deliberately tool-agnostic: <strong>understand one real engineering workflow well enough to justify an AI pilot</strong>.</p>
+
+<p>The downloadable lab contains:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>labs/01-workflow-discovery/
+├── README.md
+├── LAB.md
+├── EXERCISES.md
+├── ANSWERS.md
+├── prompts/
+│   ├── 01-observe-workflow.prompt.md
+│   ├── 02-friction-audit.prompt.md
+│   └── 03-prioritize-opportunities.prompt.md
+├── scripts/
+│   └── score_opportunities.rb
+├── examples/
+│   ├── workflow-map.example.md
+│   ├── friction-register.example.md
+│   ├── ai-opportunities.example.md
+│   └── baseline-metrics.example.md
+└── diagrams/
+    └── workflow-discovery.mmd
+</code></pre></div></div>
+
+<p>By the end of the lab you should have four project artifacts:</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">workflow-map.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">friction-register.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ai-opportunities.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">baseline-metrics.md</code></li>
+</ol>
+
+<p>Those four files become input for Part 02, where we design the context architecture required to make the selected workflow reliable.</p>
+
+<h2 id="8-what-we-carry-into-part-02">8. What we carry into Part 02</h2>
+
+<p>Part 01 intentionally does <strong>not</strong> start by creating an agent, an MCP server, or a RAG layer.</p>
+
+<p>We first establish:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>real workflow
+    ↓
+observable friction
+    ↓
+valuable AI opportunity
+    ↓
+measurable baseline
+</code></pre></div></div>
+
+<p>Part 02 can then ask a much better question:</p>
+
+<blockquote>
+  <p>What context must Copilot receive — from the developer, repository, team, organization, product knowledge, and external systems — to assist this workflow well?</p>
+</blockquote>
+
+<p>That is where <strong>context engineering</strong> begins.</p>
+
+<hr />
+
+<h2 id="key-takeaway">Key takeaway</h2>
+
+<p><strong>Start with the workflow, not the AI tool.</strong></p>
+
+<p>Understand the work, locate the friction, choose a bounded opportunity, and establish how success will be measured. Only then select the Copilot capability and supporting AI assets.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>Source series material: <em>AI Transformation with GitHub Copilot</em> — workflow discovery, capability selection, context engineering, governance, adoption, and measurement.</li>
+  <li>Source series material: <em>AI Across the SDLC with GitHub Copilot</em> — discovery, planning, architecture, development, testing, review, delivery, production, and continuous improvement.</li>
+</ul>]]></content><author><name></name></author><category term="artificial-intelligence" /><category term="software-engineering" /><category term="agentic-ai" /><category term="github-copilot" /><category term="github-copilot" /><category term="ai-native" /><category term="sdlc" /><category term="workflow-discovery" /><category term="context-engineering" /><category term="developer-experience" /><summary type="html"><![CDATA[Series — AI-Native SDLC with GitHub Copilot · Part 01 The strongest AI adoption programs do not begin with a feature checklist. They begin by understanding how engineering work actually happens.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/og/posts/start-with-the-workflow-not-the-ai-tool.png" /><media:content medium="image" url="https://enogrob.github.io/assets/images/og/posts/start-with-the-workflow-not-the-ai-tool.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">A Copilot Pilot You Can Measure</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html" rel="alternate" type="text/html" title="A Copilot Pilot You Can Measure" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html"><![CDATA[<p><img src="/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" alt="GitHub Copilot for Rails Engineers Part 05: a Rails team scopes a pilot around CaseFlow, establishes a baseline, observes usage, quality and safety separately, and reaches an expand, revise or pause decision beside a digital Copilot-inspired profile." style="width:100%;height:auto;" /></p>
 
 <blockquote>
   <p><strong>Usage tells you who tried Copilot; it cannot tell you what improved.</strong> Design a small Rails pilot that measures engineering outcomes, protects sensitive context and gives the team a real decision at the end.</p>
@@ -1186,748 +1927,4 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
   <li><a href="https://docs.github.com/en/copilot/reference/custom-instructions-support">GitHub Docs: custom instruction support by feature</a></li>
   <li><a href="https://docs.github.com/en/copilot/concepts/prompting/response-customization">GitHub Docs: customizing Copilot responses</a></li>
   <li><a href="https://guides.rubyonrails.org/active_record_validations.html">Rails Guides: Active Record Validations</a></li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="custom-instructions" /><category term="context-engineering" /><summary type="html"><![CDATA[Give Copilot scoped Rails guidance, then audit what its proposal knows, assumes and cannot yet prove.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/teach-copilot-rails-context/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/teach-copilot-rails-context/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">The First 30 Minutes in an Unfamiliar Rails Repository</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html" rel="alternate" type="text/html" title="The First 30 Minutes in an Unfamiliar Rails Repository" /><published>2026-09-25T00:00:00+00:00</published><updated>2026-09-25T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html"><![CDATA[<p><img src="/assets/images/posts/first-30-minutes-rails-repository/cover.webp" alt="A digitized Copilot-inspired guide in side profile studies a conceptual CaseFlow Rails site; Ruby source, an unverified test and an amber question flow around the browser." style="width:100%;height:auto;" /></p>
-
-<p><em>Cover illustration: the CaseFlow browser is a conceptual application view. The companion lab supplies an integrated Rails API source app, not a working web interface.</em></p>
-
-<p><em>GitHub Copilot for Rails Engineers · Part 01</em></p>
-
-<p><em>The first half-hour in a new repository should produce a navigable architecture atlas, named unknowns and one useful next action.</em></p>
-
-<p>A client asks: “Can we add status transitions to this Rails API this week?” You have never seen the codebase. GitHub Copilot can help you explore it, but an answer that <em>sounds</em> like Rails is not evidence that this particular application behaves that way. Our goal is a <strong>small, navigable architecture atlas</strong>: what the API exposes, how a request flows, what a status change might affect, and which claims still need a run. Copilot should discover and connect evidence; we should be able to challenge the resulting map.</p>
-
-<p>We will use <strong>CaseFlow</strong>, a synthetic integrated Rails API source app. It is deliberately small enough to inspect and incomplete enough to expose an important habit: distinguish what source says, what a test asserts, and what a running system actually did. The <a href="/assets/downloads/first-30-minutes-rails-repository-support.zip">companion materials</a> contain the integrated app, the finished atlas under <code class="language-plaintext highlighter-rouge">docs/architecture/</code>, a deterministic declaration inventory, the Copilot prompt, Mermaid source and a workbook with answers. The atlas is a reviewed source map, not an observed production trace.</p>
-
-<h2 id="contents">Contents</h2>
-
-<ul>
-  <li><a href="#predict">0–5 minutes: predict before you inspect</a></li>
-  <li><a href="#init">Early Copilot CLI check: <code class="language-plaintext highlighter-rouge">copilot init</code></a></li>
-  <li><a href="#trace">5–12 minutes: generate an inventory and trace one path</a></li>
-  <li><a href="#ask">12–20 minutes: ask Copilot for an architecture atlas</a></li>
-  <li><a href="#observe">20–27 minutes: audit the atlas and run one check</a></li>
-  <li><a href="#client">27–30 minutes: give the client one bounded answer</a></li>
-  <li><a href="#lab">Your 20–30 minute lab</a></li>
-  <li><a href="#references">References and supporting materials</a></li>
-</ul>
-
-<h2 id="predict">0–5 minutes: predict before you inspect</h2>
-
-<p>Write down your current hypothesis for <code class="language-plaintext highlighter-rouge">POST /api/requests</code>: what input is accepted, what gets saved and what comes back. Label every sentence <strong>prediction</strong>. This prevents your first impression or an AI suggestion from quietly turning into a fact.</p>
-
-<p>The question is about one change, but its impact can cross more than one file. Predict whether an update endpoint, authorization check or background job already exists. Later, compare these predictions with a capability map and evidence register. GitHub’s <a href="https://docs.github.com/en/copilot/tutorials/explore-a-codebase">codebase exploration guide</a> shows how repository and file context can narrow a question. Its <a href="https://docs.github.com/en/copilot/tutorials/review-ai-generated-code">review guidance</a> is equally relevant: inspect the answer against actual files. Here, the hypothesis is an investigation aid, not a delivery promise.</p>
-
-<h3 id="init">Early Copilot CLI check: <code class="language-plaintext highlighter-rouge">copilot init</code></h3>
-
-<p>You’re right to try Copilot’s own repository onboarding early. From a terminal, <code class="language-plaintext highlighter-rouge">copilot init</code> (or <code class="language-plaintext highlighter-rouge">/init</code> in an interactive <strong>Copilot CLI</strong> session) analyzes the current project and creates or suggests changes to <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code>. It can surface build/test commands, high-level architecture and conventions. It is a <strong>draft of guidance for future sessions</strong>, not a verified request trace or a test run. Check every generated command and architectural claim against the repository. See the <a href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#project-initialization-for-copilot">GitHub CLI command reference</a>.</p>
-
-<p>Our cumulative CaseFlow download already includes <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code> and <code class="language-plaintext highlighter-rouge">AGENTS.md</code>, so <code class="language-plaintext highlighter-rouge">/init</code> here sees existing guidance and may suggest improvements rather than producing an independent first map. Try it in a throwaway copy from the <strong>companion root</strong> (after installing and signing into Copilot CLI):</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> <span class="nt">-R</span> caseflow caseflow-init-trial
-<span class="o">(</span><span class="nb">cd </span>caseflow-init-trial <span class="o">&amp;&amp;</span> copilot init<span class="o">)</span>
-diff <span class="nt">-u</span> caseflow/.github/copilot-instructions.md <span class="se">\</span>
-  caseflow-init-trial/.github/copilot-instructions.md <span class="o">||</span> <span class="nb">true</span>
-</code></pre></div></div>
-
-<p>Review any proposed change; keep the original <code class="language-plaintext highlighter-rouge">caseflow/</code> untouched. Ask: which build/test command and which architecture claim can you cite in source, and which are only assumptions? Keep that comparison as a discovery artifact. In the next steps we trace the actual request path and build an evidence-backed atlas; Part 02 revisits the instruction file deliberately.</p>
-
-<h2 id="trace">5–12 minutes: generate an inventory and trace one path</h2>
-
-<p>From the companion repository root, run:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby scripts/build_caseflow_inventory.rb
-</code></pre></div></div>
-
-<p>This generates <code class="language-plaintext highlighter-rouge">docs/architecture/generated-inventory.md</code>: a CaseFlow application guide with <strong>file:line</strong> declarations, Gemfile dependencies, the SQLite adapter, an architecture diagram, local setup and API examples. The extraction is reproducible and intentionally narrow. The diagram and runbook explain source-backed relationships; they do not execute Rails, discover every indirect dependency or assert that tests passed.</p>
-
-<p>Start with <code class="language-plaintext highlighter-rouge">caseflow/config/routes.rb</code>:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">namespace</span> <span class="ss">:api</span> <span class="k">do</span>
-  <span class="n">resources</span> <span class="ss">:requests</span><span class="p">,</span> <span class="ss">only: </span><span class="sx">%i[index show create]</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>This declares a create route under <code class="language-plaintext highlighter-rouge">/api</code>. Rails routes dispatch incoming HTTP methods and paths to controller actions, as described in the <a href="https://guides.rubyonrails.org/routing.html">Rails routing guide</a>. The <code class="language-plaintext highlighter-rouge">only:</code> list matters: it does <strong>not</strong> declare an update route. Then inspect <code class="language-plaintext highlighter-rouge">app/controllers/api/requests_controller.rb</code>:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create</span>
-  <span class="n">request</span> <span class="o">=</span> <span class="no">ServiceRequest</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">request_params</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">save</span>
-    <span class="n">render</span> <span class="ss">json: </span><span class="n">serialize</span><span class="p">(</span><span class="n">request</span><span class="p">),</span> <span class="ss">status: :created</span>
-  <span class="k">else</span>
-    <span class="n">render</span> <span class="ss">json: </span><span class="p">{</span> <span class="ss">errors: </span><span class="n">request</span><span class="p">.</span><span class="nf">errors</span><span class="p">.</span><span class="nf">full_messages</span> <span class="p">},</span> <span class="ss">status: :unprocessable_entity</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">def</span> <span class="nf">request_params</span>
-  <span class="n">params</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:request</span><span class="p">).</span><span class="nf">permit</span><span class="p">(</span><span class="ss">:title</span><span class="p">,</span> <span class="ss">:description</span><span class="p">)</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>The controller allows <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">description</code> from the request payload; <code class="language-plaintext highlighter-rouge">status</code> is not permitted there. Its private <code class="language-plaintext highlighter-rouge">serialize</code> method selects <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">description</code>, <code class="language-plaintext highlighter-rouge">status</code>, <code class="language-plaintext highlighter-rouge">created_at</code> and <code class="language-plaintext highlighter-rouge">updated_at</code>. There is no separate serializer file in this CaseFlow app. A reader who guesses “the serializer” from habit would be looking in the wrong place.</p>
-
-<p>Next, the model constrains title presence, title length and status membership:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">STATUSES</span> <span class="o">=</span> <span class="sx">%w[open in_progress resolved]</span><span class="p">.</span><span class="nf">freeze</span>
-
-<span class="n">validates</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">presence: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">length: </span><span class="p">{</span> <span class="ss">maximum: </span><span class="mi">160</span> <span class="p">}</span>
-<span class="n">validates</span> <span class="ss">:status</span><span class="p">,</span> <span class="ss">inclusion: </span><span class="p">{</span> <span class="ss">in: </span><span class="no">STATUSES</span> <span class="p">}</span>
-</code></pre></div></div>
-
-<p>The migration declares a <code class="language-plaintext highlighter-rouge">service_requests</code> table with <code class="language-plaintext highlighter-rouge">status</code> defaulting to <code class="language-plaintext highlighter-rouge">open</code>. A migration describes a schema change applied during setup; it is <strong>not</strong> another method called for each POST. In a correctly migrated database, the default is a reasonable expectation for a new record created without an explicit status, but we still have to run the application before claiming to have observed it. See the <a href="https://guides.rubyonrails.org/active_record_migrations.html">Rails migration guide</a> for the schema role of migrations.</p>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0OCwncmFua1NwYWNpbmcnOjU4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTdweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggcmVxdWVzdFtcIvCfjJAgUmVxdWVzdCBwYXRoXCJdXG5BW1wi8J-OryBQT1NUIC9hcGkvcmVxdWVzdHNcIl0gLS0-IEJbXCLwn6etIFJvdXRlOiBjcmVhdGVcIl1cbkIgLS0-IENbXCLimpnvuI8gQ29udHJvbGxlcjogcGVybWl0IGZpZWxkc1wiXVxuQyAtLT4gRFtcIvCfp7EgTW9kZWw6IHZhbGlkYXRlIGFuZCBzYXZlXCJdXG5lbmRcbnN1YmdyYXBoIG91dGNvbWVzW1wi8J-UjSBFeHBlY3RlZCBicmFuY2hlczsgcnVuIHBlbmRpbmdcIl1cbkQgLS0-fFwic2F2ZSBzdWNjZWVkc1wifCBFW1wi4pyFIDIwMSArIHNlbGVjdGVkIEpTT05cIl1cbkQgLS0-fFwic2F2ZSBmYWlsc1wifCBGW1wi4pqg77iPIDQyMiArIGVycm9yc1wiXVxuZW5kXG5HW1wi8J-TpiBNaWdyYXRpb246IHNjaGVtYSArIG9wZW4gZGVmYXVsdFwiXSAtLi0-IERcbmNsYXNzRGVmIHBhc3RlbEJsdWUgZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjJweDtcbmNsYXNzRGVmIHBhc3RlbE9yYW5nZSBmaWxsOiNGOERGQzQsc3Ryb2tlOiNDOTk4NkQsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgcGFzdGVsUHVycGxlIGZpbGw6I0U4RERGNSxzdHJva2U6I0E2OEJDNCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBwYXN0ZWxHcmVlbiBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgcGFzdGVsUm9zZSBmaWxsOiNGNUQ5REMsc3Ryb2tlOiNCQzgxOTEsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgcGFzdGVsU2FuZCBmaWxsOiNGQkY0RTcsc3Ryb2tlOiNCOEExN0QsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3MgQSxCIHBhc3RlbEJsdWU7XG5jbGFzcyBDIHBhc3RlbE9yYW5nZTtcbmNsYXNzIEQgcGFzdGVsUHVycGxlO1xuY2xhc3MgRSBwYXN0ZWxHcmVlbjtcbmNsYXNzIEYgcGFzdGVsUm9zZTtcbmNsYXNzIEcgcGFzdGVsU2FuZDsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ" /></p>
-
-<p><em>The dotted link marks schema context, not an extra runtime step. The status labels describe the supplied controller branches; they are not a report of executed responses.</em></p>
-
-<h2 id="ask">12–20 minutes: ask Copilot for an architecture atlas</h2>
-
-<p>Open <strong><code class="language-plaintext highlighter-rouge">caseflow/</code> as the VS Code workspace</strong> and give Copilot a change question: “Can a client resolve a request through this API?” Workspace search or its semantic index can find likely source; the generated inventory gives you explicit declarations to cross-check. Ask for four connected artifacts, rather than a prose summary:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Investigate this Rails workspace in read-only mode. The client asks whether
-open → resolved is available. Produce: (1) a capability table with entry
-points and source files; (2) a Mermaid flowchart TD for POST /api/requests,
-with the migration as a dotted schema dependency; (3) a change-impact table
-for API, data, tests, authorization and other effects; (4) an evidence
-register classifying source, spec assertion, observation or unknown.
-Suggest three checks that could falsify important assumptions. Cite exact
-files and symbols. Do not invent an update action, a job or a passing test.
-</code></pre></div></div>
-
-<p>Compare the result with the reviewed <code class="language-plaintext highlighter-rouge">docs/architecture/README.md</code>, its generated inventory and <code class="language-plaintext highlighter-rouge">docs/diagrams/request-path.mmd</code> in the companion package. Check each path yourself. A citation is useful only if it points to a file that exists and supports that exact claim. Record a missing citation or a mistaken inference; correcting Copilot’s map is part of the exercise. In a client repository, keep sensitive data out of the prompt and follow the organization’s approved tooling rules.</p>
-
-<h3 id="what-the-atlas-should-reveal">What the atlas should reveal</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Atlas view</th>
-      <th>Source-backed finding</th>
-      <th>Important limit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Capabilities</td>
-      <td><code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">show</code>, <code class="language-plaintext highlighter-rouge">create</code> are declared</td>
-      <td>No <code class="language-plaintext highlighter-rouge">update</code> route in the supplied app</td>
-    </tr>
-    <tr>
-      <td>Request path</td>
-      <td>Create permits <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">description</code>; controller branches to <code class="language-plaintext highlighter-rouge">201</code> or <code class="language-plaintext highlighter-rouge">422</code></td>
-      <td>Branches are source expectations, not observed responses</td>
-    </tr>
-    <tr>
-      <td>Change impact</td>
-      <td>Model allows stored <code class="language-plaintext highlighter-rouge">resolved</code></td>
-      <td>There is no transition contract or authorization policy here</td>
-    </tr>
-    <tr>
-      <td>Evidence register</td>
-      <td>Two request specs describe create behavior</td>
-      <td>Their presence does not prove they passed</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>This is more useful than “I found a controller.” It links a client question to the API surface, persisted state, verification and missing decisions. The <a href="/assets/downloads/first-30-minutes-rails-repository-support.zip">reviewed atlas</a> is included in the companion package under <code class="language-plaintext highlighter-rouge">docs/architecture/</code>.</p>
-
-<h2 id="observe">20–27 minutes: audit the atlas and run one check</h2>
-
-<p>Audit every diagram edge and table row against the cited file. A search result, a plausible Rails convention and an agent-generated link are leads; each still needs verification. The included request spec has two cases: a valid title expecting a <code class="language-plaintext highlighter-rouge">201</code> response, an <code class="language-plaintext highlighter-rouge">open</code> status and one stored record; and a missing title expecting <code class="language-plaintext highlighter-rouge">422</code> with no record. Those are <strong>assertions in source</strong>, not reported pass results. The companion includes an integrated Rails API source app, but has no resolved lockfile or installed dependencies here; we have not executed its specs in the authoring environment.</p>
-
-<figure>
-  <img src="/assets/images/posts/first-30-minutes-rails-repository/evidence-boundary.webp" alt="A conceptual Ruby request spec in an editor is surrounded by source and assertion flows; an amber unverified gate precedes an empty observation pane." style="width:100%;height:auto;" />
-  <figcaption>Source and a test assertion can suggest behavior. Only an actual run can supply observation; CaseFlow has not crossed that boundary yet.</figcaption>
-</figure>
-
-<p>On a Mac with compatible Ruby and Bundler installed, follow <code class="language-plaintext highlighter-rouge">caseflow/README.md</code> in the <a href="/assets/downloads/first-30-minutes-rails-repository-support.zip">companion materials</a>. Use the integrated <code class="language-plaintext highlighter-rouge">caseflow/</code> app, install dependencies, and record the actual output of:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install
-</span>bin/rails db:prepare
-bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
-</code></pre></div></div>
-
-<p>If setup fails, keep the first useful error. A blocker is evidence. Do not replace it with a hypothetical green test run. If it succeeds, send a synthetic HTTP request and capture the actual response before promoting the expected behavior to observed behavior.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Statement</th>
-      <th>Evidence now</th>
-      <th>Classification</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Route includes <code class="language-plaintext highlighter-rouge">create</code> but no <code class="language-plaintext highlighter-rouge">update</code></td>
-      <td><code class="language-plaintext highlighter-rouge">config/routes.rb</code></td>
-      <td>Source fact</td>
-    </tr>
-    <tr>
-      <td>Controller permits <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">description</code></td>
-      <td><code class="language-plaintext highlighter-rouge">RequestsController#request_params</code></td>
-      <td>Source fact</td>
-    </tr>
-    <tr>
-      <td>Migration declares default <code class="language-plaintext highlighter-rouge">open</code></td>
-      <td>Migration source</td>
-      <td>Schema fact; runtime effect pending</td>
-    </tr>
-    <tr>
-      <td>Valid request returns <code class="language-plaintext highlighter-rouge">201</code> in this environment</td>
-      <td>Spec assertion only</td>
-      <td>Unverified until execution</td>
-    </tr>
-    <tr>
-      <td>Client can transition to <code class="language-plaintext highlighter-rouge">resolved</code></td>
-      <td>No route/action or test supplied</td>
-      <td>Unsupported</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="client">27–30 minutes: give the client one bounded answer</h2>
-
-<p>The useful answer is a shareable atlas, not “Copilot says the endpoint works.” Alongside the map, tell the client: “The source defines creation with title and description, title and status validations, and a schema default of <code class="language-plaintext highlighter-rouge">open</code>. The supplied specs cover valid creation and missing title, but I have not run them in this environment. I do not see an update route. The next safe step is to boot the integrated app, record the focused spec result, then scope a status-transition contract and tests.”</p>
-
-<p>The atlas supports a short engagement: a visible inventory, a diagram of the current path, a change-impact table, a named uncertainty and a testable next issue. It also gives a stakeholder a clear boundary between discovery and implementation.</p>
-
-<h3 id="lab">Your 20–30 minute lab</h3>
-
-<ol>
-  <li>Make three predictions in a local <code class="language-plaintext highlighter-rouge">ENVIRONMENT.md</code> using the template (<code class="language-plaintext highlighter-rouge">caseflow/ENVIRONMENT.template.md</code>).</li>
-  <li>In a throwaway copy, try <code class="language-plaintext highlighter-rouge">copilot init</code> from the CaseFlow directory. Compare any proposed instructions with <code class="language-plaintext highlighter-rouge">config/routes.rb</code>, <code class="language-plaintext highlighter-rouge">Gemfile</code>, the existing specs and the original instructions; record one supported claim and one unknown. Keep the packaged app unchanged.</li>
-  <li>Generate the inventory; ask Copilot for four atlas views. Compare them with <code class="language-plaintext highlighter-rouge">docs/architecture/README.md</code> and the five files in <code class="language-plaintext highlighter-rouge">docs/labs/01-codebase-diagnosis.md</code>. Mark every unsupported edge.</li>
-  <li>Attempt the focused spec; record the versions, command, actual outcome or first blocker.</li>
-  <li>Explain why a model that lists <code class="language-plaintext highlighter-rouge">resolved</code> does <strong>not</strong> prove a client can perform a status transition. Deliver the corrected capability table, request diagram, change-impact table and one bounded issue.</li>
-</ol>
-
-<p><strong>Retrieval question:</strong> What evidence would let you change “the source suggests <code class="language-plaintext highlighter-rouge">201</code>” to “I observed <code class="language-plaintext highlighter-rouge">201</code>,” and why does a passing spec not prove the entire API is production ready?</p>
-
-<p><strong>Next in the series:</strong> we will refine the context we give Copilot—repository guidance, instructions and tool boundaries—and test how the atlas changes. The reviewed atlas, generator, Mermaid source and workbook are in the companion package.</p>
-
-<h2 id="references">References and supporting materials</h2>
-
-<p><strong>Finding the prompt after download:</strong> extract the support ZIP and open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/01-trace-request.md</code> to read the full prompt. For Copilot Chat, open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/caseflow/</code> as the VS Code workspace; the executable file is <code class="language-plaintext highlighter-rouge">.github/prompts/01-trace-request.prompt.md</code>. Invoke <code class="language-plaintext highlighter-rouge">/01-trace-request</code>. On macOS, Finder may hide the <code class="language-plaintext highlighter-rouge">.github</code> directory (press Command-Shift-Period to show hidden files). The companion also contains the complete three-prompt catalog in <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/</code>.</p>
-
-<ul>
-  <li><a href="/assets/downloads/01-trace-request.prompt.txt">Read or download the Part 01 Copilot prompt</a>: a standalone text copy. To run it as a VS Code prompt file, use the matching <code class="language-plaintext highlighter-rouge">.prompt.md</code> inside the support ZIP under <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/caseflow/.github/prompts/</code>.</li>
-  <li><a href="/assets/downloads/first-30-minutes-rails-repository-support.zip">Download the CaseFlow companion package</a>: the complete post in Markdown, integrated Rails API app, study workbook with exercises and answers, field lab, atlas, reproducible inventory, Copilot prompt, Mermaid source and validation status. The integrated app still requires installing dependencies and its request specs remain unexecuted in this authoring environment.</li>
-  <li><a href="https://code.visualstudio.com/docs/agents/overview">VS Code Docs: Working with agents in an unfamiliar codebase</a>.</li>
-  <li><a href="https://code.visualstudio.com/docs/agents/reference/workspace-context">VS Code Docs: How Copilot understands your workspace</a>.</li>
-  <li><a href="/assets/downloads/01-copilot-init-lab.txt">Part 01 <code class="language-plaintext highlighter-rouge">copilot init</code> discovery exercise</a>: optional read-and-verify worksheet, also packaged under <code class="language-plaintext highlighter-rouge">parts/01-first-30-minutes/copilot-init-lab.md</code>.</li>
-  <li><a href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#project-initialization-for-copilot">GitHub Docs: Copilot CLI project initialization (<code class="language-plaintext highlighter-rouge">copilot init</code>)</a>.</li>
-  <li><a href="https://docs.github.com/en/copilot/tutorials/explore-a-codebase">GitHub Docs: Using GitHub Copilot to explore a codebase</a>.</li>
-  <li><a href="https://docs.github.com/en/copilot/tutorials/review-ai-generated-code">GitHub Docs: Review AI-generated code</a>.</li>
-  <li><a href="https://guides.rubyonrails.org/routing.html">Rails Guides: Routing from the Outside In</a>.</li>
-  <li><a href="https://guides.rubyonrails.org/active_record_migrations.html">Rails Guides: Active Record Migrations</a>.</li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="codebase-discovery" /><category term="evidence" /><summary type="html"><![CDATA[Build an evidence-backed Rails architecture atlas with Copilot: capabilities, request flow, change impact, and the smallest safe next step.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/first-30-minutes-rails-repository/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/first-30-minutes-rails-repository/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Inside GitHub Copilot’s Agentic Engine: CLI, SDK, and HydraFusion</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/23/inside-github-copilot-agentic-engine.html" rel="alternate" type="text/html" title="Inside GitHub Copilot’s Agentic Engine: CLI, SDK, and HydraFusion" /><published>2026-09-23T00:00:00+00:00</published><updated>2026-09-23T00:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/23/inside-github-copilot-agentic-engine</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/23/inside-github-copilot-agentic-engine.html"><![CDATA[<p><img src="/assets/images/posts/copilot-agentic-engineering/cover-v8.webp" alt="A developer dissolves into a digital network while Copilot flows from code suggestions and CLI through the shared runtime, an organic multi-model Holoflux, and independent verification." style="width:100%;height:auto;" /></p>
-
-<blockquote>
-  <p>The most consequential change in AI-assisted development may not be that machines write more code. It may be that developers increasingly design, supervise, and verify the systems that write it.</p>
-</blockquote>
-
-<p>GitHub Copilot began in the public imagination as autocomplete: a probabilistic collaborator waiting at the cursor, predicting the next useful fragment. That mental model is now incomplete.</p>
-
-<p>Copilot can operate from a terminal, maintain a multi-turn session, plan work, invoke tools, edit files, delegate to specialized agents, load reusable skills, connect to external systems through the Model Context Protocol, and expose its runtime through an SDK. In research preview, Project HydraFusion goes one level deeper: it can select not only a model, but a multi-model execution pattern for the task.</p>
-
-<p>This is a shift from <strong>code generation</strong> to <strong>work orchestration</strong>.</p>
-
-<p>At the first GitHub Copilot Day, GitHub COO Kyle Daigle framed the transition as a move away from manually producing every line and toward agentic orchestration. The claim is larger than a product announcement. It suggests a change in the unit of software engineering: from the line, function, or prompt to the governed workflow.</p>
-
-<p>But orchestration is not automatically engineering. An agent can act without producing trustworthy work. A runtime can coordinate tools without preserving evidence. A router can reduce cost while making decisions harder to explain. The architectural question is therefore not whether Copilot can perform more actions. It is whether those actions can become <strong>observable, bounded, reproducible, and independently verified</strong>.</p>
-
-<h2 id="contents">Contents</h2>
-
-<ul>
-  <li><a href="#the-end-of-copilot-as-autocomplete">The End of Copilot as Autocomplete</a></li>
-  <li><a href="#the-developer-becomes-the-orchestrator">The Developer Becomes the Orchestrator</a></li>
-  <li><a href="#one-runtime-many-surfaces">One Runtime, Many Surfaces</a></li>
-  <li><a href="#the-new-copilot-stack">The New Copilot Stack</a></li>
-  <li><a href="#prompts-instructions-agents-skills-and-mcp">Prompts, Instructions, Agents, Skills, and MCP</a></li>
-  <li><a href="#from-model-selection-to-workflow-selection">From Model Selection to Workflow Selection</a></li>
-  <li><a href="#what-hydrafusion-changes">What HydraFusion Changes</a></li>
-  <li><a href="#a-concrete-rails-experiment">A Concrete Rails Experiment</a></li>
-  <li><a href="#who-governs-the-agents">Who Governs the Agents?</a></li>
-  <li><a href="#the-risk-of-invisible-orchestration">The Risk of Invisible Orchestration</a></li>
-  <li><a href="#what-agentic-engineering-actually-changes">What Agentic Engineering Actually Changes</a></li>
-  <li><a href="#conclusion">Conclusion</a></li>
-  <li><a href="#references">References</a></li>
-</ul>
-
-<h2 id="the-end-of-copilot-as-autocomplete">The End of Copilot as Autocomplete</h2>
-
-<p>Autocomplete is local. It reacts to the text around the cursor, proposes a continuation, and leaves the developer in direct control of the edit. Agentic work is different. It begins with an objective and may cross files, tools, processes, repositories, services, and time.</p>
-
-<p>The progression is not simply “more powerful completion.” Each stage introduces a new architectural responsibility.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Stage</th>
-      <th>Unit of interaction</th>
-      <th>New responsibility</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Completion</td>
-      <td>Next tokens</td>
-      <td>Accept or reject a suggestion</td>
-    </tr>
-    <tr>
-      <td>Chat</td>
-      <td>Conversation</td>
-      <td>Supply useful context</td>
-    </tr>
-    <tr>
-      <td>Edit or agent mode</td>
-      <td>Multi-file change</td>
-      <td>Review a proposed implementation</td>
-    </tr>
-    <tr>
-      <td>CLI</td>
-      <td>Repository workflow</td>
-      <td>Control tools, permissions, and sessions</td>
-    </tr>
-    <tr>
-      <td>Custom agents and skills</td>
-      <td>Reusable specialization</td>
-      <td>Define roles and procedures</td>
-    </tr>
-    <tr>
-      <td>MCP</td>
-      <td>External systems</td>
-      <td>Bound authority across integrations</td>
-    </tr>
-    <tr>
-      <td>SDK</td>
-      <td>Embedded agent runtime</td>
-      <td>Own lifecycle, policy, and product behavior</td>
-    </tr>
-    <tr>
-      <td>HydraFusion</td>
-      <td>Multi-model workflow</td>
-      <td>Evaluate routing, cost, and quality</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The visible interface may still be a prompt. Behind it, however, the system increasingly resembles a runtime.</p>
-
-<figure>
-  <img src="/assets/images/posts/copilot-agentic-engineering/copilot-evolution-v8.webp" alt="A progressively digitized developer advances through five color-coded stages as Copilot evolves from completion through conversation, planning, action, and orchestration." style="width:100%;height:auto;" />
-  <figcaption>Copilot's surface evolves from local suggestions toward reusable, embeddable, multi-model workflows.</figcaption>
-</figure>
-
-<style>
-.mermaid-diagram img,
-.mermaid-diagram svg {
-  display: block;
-  width: 100%;
-  max-width: 520px;
-  height: auto;
-  margin: 1.1rem auto;
-}
-</style>
-
-<p>The transition matters because the cost of a bad suggestion is small; the cost of a badly governed action may not be. Once an assistant can run commands, edit multiple files, call APIs, or open a pull request, quality depends on more than model intelligence. It depends on the harness around the model.</p>
-
-<h2 id="the-developer-becomes-the-orchestrator">The Developer Becomes the Orchestrator</h2>
-
-<p>“The developer becomes the orchestrator” can sound like the developer is leaving implementation behind. That would be a mistake. Orchestration is not passive delegation. It is the design of a system in which probabilistic actors can do useful work without becoming the sole authority on whether that work is correct.</p>
-
-<p>The developer’s attention moves upward:</p>
-
-<ul>
-  <li>from syntax to intent;</li>
-  <li>from isolated edits to task decomposition;</li>
-  <li>from choosing every action to defining allowed actions;</li>
-  <li>from inspecting only the patch to inspecting evidence and lineage;</li>
-  <li>from manually performing every check to designing checks that cannot be skipped;</li>
-  <li>from selecting one model to evaluating the workflow that selects models.</li>
-</ul>
-
-<p>This resembles the historical movement from machine code to higher-level languages, and from manually managed servers to declarative infrastructure. Abstraction removes some direct labor, but it creates a new obligation: understanding what the abstraction does when reality diverges from the happy path.</p>
-
-<p>Agentic engineering is therefore not “prompting with more confidence.” It is building a control system around uncertain execution.</p>
-
-<h2 id="one-runtime-many-surfaces">One Runtime, Many Surfaces</h2>
-
-<p>Copilot now appears across IDEs such as VS Code and RubyMine, the GitHub Copilot desktop app, Copilot CLI, GitHub.com, cloud agents, and embedded applications. The surfaces differ, but GitHub describes the Copilot SDK as programmatic access to the same production-tested agent runtime that powers Copilot CLI and cloud agents.</p>
-
-<p>That runtime can plan, invoke tools, edit files, stream responses, and maintain multi-turn sessions. The SDK makes those capabilities available to applications instead of requiring every team to assemble an orchestration layer from scratch.</p>
-
-<figure>
-  <img src="/assets/images/posts/copilot-agentic-engineering/copilot-stack-v9.webp" alt="A deeply digitized developer works across VS Code and RubyMine, the Copilot desktop app, Copilot CLI, and GitHub.com while MCP, Skills, SDK, and Hooks extend the shared runtime and HydraFusion orchestrates multiple model streams into a verified strategy." style="width:100%;height:auto;" />
-  <figcaption>One agentic runtime spans IDE, desktop, terminal, and cloud; MCP, Skills, SDK, and Hooks extend it, while HydraFusion occupies a distinct multi-model orchestration layer.</figcaption>
-</figure>
-
-<p>The distinction is architectural. IDE, desktop, terminal, and GitHub.com are interaction surfaces. MCP, Skills, SDK, and Hooks connect, package, embed, or constrain capabilities. HydraFusion sits elsewhere in the stack: it experiments with selecting and composing model workflows inside the runtime rather than merely adding another tool.</p>
-
-<p>This unification is powerful, but it changes the platform boundary. When applications embed the runtime, they inherit questions that were previously hidden inside an editor feature: session ownership, tool permissions, memory, failure recovery, spend limits, observability, and user consent.</p>
-
-<h2 id="the-new-copilot-stack">The New Copilot Stack</h2>
-
-<p>The emerging stack is easier to understand if each layer answers a different question.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Layer</th>
-      <th>Question</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Objective</td>
-      <td>What outcome does the developer want?</td>
-    </tr>
-    <tr>
-      <td>Instructions</td>
-      <td>What rules should consistently shape behavior?</td>
-    </tr>
-    <tr>
-      <td>Plan</td>
-      <td>What sequence of work is proposed?</td>
-    </tr>
-    <tr>
-      <td>Agent</td>
-      <td>Which specialized role should reason about the task?</td>
-    </tr>
-    <tr>
-      <td>Skill</td>
-      <td>Which reusable procedure and resources apply?</td>
-    </tr>
-    <tr>
-      <td>Tool</td>
-      <td>What bounded capability may be invoked?</td>
-    </tr>
-    <tr>
-      <td>MCP server</td>
-      <td>Which external system supplies context or actions?</td>
-    </tr>
-    <tr>
-      <td>Hook</td>
-      <td>What deterministic behavior runs at lifecycle boundaries?</td>
-    </tr>
-    <tr>
-      <td>Model workflow</td>
-      <td>Which model or combination of models performs the reasoning?</td>
-    </tr>
-    <tr>
-      <td>Verification</td>
-      <td>What independent evidence determines acceptance?</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Confusing these layers produces brittle systems. A long prompt becomes a substitute for policy. A custom agent accumulates every procedure. An MCP server is treated as trusted simply because it is connected. A model’s self-review is mistaken for independent verification.</p>
-
-<p>The stack becomes reliable only when its boundaries remain explicit.</p>
-
-<h2 id="prompts-instructions-agents-skills-and-mcp">Prompts, Instructions, Agents, Skills, and MCP</h2>
-
-<p>Copilot’s customization mechanisms overlap, but they are not interchangeable.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Mechanism</th>
-      <th>Best use</th>
-      <th>Avoid using it as</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Prompt</td>
-      <td>One immediate objective</td>
-      <td>Permanent project policy</td>
-    </tr>
-    <tr>
-      <td>Custom instructions</td>
-      <td>Stable repository conventions</td>
-      <td>A long executable workflow</td>
-    </tr>
-    <tr>
-      <td>Custom agent</td>
-      <td>A bounded specialist with its own role and tools</td>
-      <td>A universal supervisor</td>
-    </tr>
-    <tr>
-      <td>Agent skill</td>
-      <td>A reusable task procedure with instructions, scripts, and resources</td>
-      <td>An identity or permission system</td>
-    </tr>
-    <tr>
-      <td>MCP server</td>
-      <td>Structured access to external context and actions</td>
-      <td>An automatically trusted data source</td>
-    </tr>
-    <tr>
-      <td>Hook</td>
-      <td>Deterministic behavior at lifecycle events</td>
-      <td>Open-ended reasoning</td>
-    </tr>
-    <tr>
-      <td>CI workflow</td>
-      <td>Independent, repeatable validation</td>
-      <td>A model-generated confidence statement</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>GitHub documents custom agents in Copilot CLI as subagents with their own context windows. This matters: specialization can prevent the main agent’s context from accumulating every domain detail. Skills solve a different problem. They package instructions, scripts, and resources that Copilot can load when relevant. MCP servers extend the system outward by providing tools and context from other systems. Hooks insert deterministic commands at defined moments in execution.</p>
-
-<p>The architectural principle is simple:</p>
-
-<blockquote>
-  <p>Put stable rules in instructions, specialized judgment in agents, reusable procedures in skills, external capabilities behind MCP, deterministic lifecycle behavior in hooks, and acceptance criteria in independent verification.</p>
-</blockquote>
-
-<h2 id="from-model-selection-to-workflow-selection">From Model Selection to Workflow Selection</h2>
-
-<p>The first generation of multi-model products asked: <strong>Which model should answer this prompt?</strong></p>
-
-<p>Auto model selection improves that decision by considering task complexity, system health, availability, quality, latency, and cost. But it still tends to frame execution as a single-model choice.</p>
-
-<p>HydraFusion introduces a more consequential question:</p>
-
-<blockquote>
-  <p>Which reasoning workflow should execute this task?</p>
-</blockquote>
-
-<p>A simple request may use one efficient model. A harder request may begin with an inexpensive draft and escalate when a quality signal is weak. Another may use one model to draft, another to critique, and a final pass to revise. The unit of optimization becomes the workflow rather than the individual response.</p>
-
-<figure>
-  <img src="/assets/images/posts/copilot-agentic-engineering/hydrafusion-workflows-v8.webp" alt="A particle-formed hand adjusts a networked routing lens that refracts a task into richly colored single-model, cascade, and critique-and-revise workflows before independent verification." style="width:100%;height:auto;" />
-  <figcaption>HydraFusion changes the optimization target from choosing one model to choosing an execution workflow.</figcaption>
-</figure>
-
-<p>The final verification gate is intentionally outside the model workflow. A critique can improve a draft, but agreement among models is not proof that the code compiles, the tests pass, the vulnerability is closed, or the requirement is satisfied.</p>
-
-<h2 id="what-hydrafusion-changes">What HydraFusion Changes</h2>
-
-<p>HydraFusion is currently a research preview, so it should be treated as an experiment rather than a stable architectural guarantee. Even so, it reveals where coding assistants are heading.</p>
-
-<p>First, <strong>model identity becomes less visible</strong>. The developer may select a fused capability while the runtime chooses the participating models and execution pattern.</p>
-
-<p>Second, <strong>cost becomes a runtime property</strong>. Spend is influenced by routing, critique passes, escalation, retries, caching, and context—not only by the advertised price of one model.</p>
-
-<p>Third, <strong>quality claims move to the harness</strong>. If the system says a cheaper workflow matches a frontier baseline, the interesting artifact is no longer a single response. It is the evaluation design: benchmarks, routing criteria, failure distribution, latency, and cost accounting.</p>
-
-<p>Fourth, <strong>observability becomes essential</strong>. Teams need to know which workflow ran, what evidence triggered escalation, how many model calls occurred, which tools changed state, and what verification accepted the result.</p>
-
-<p>HydraFusion therefore strengthens the thesis of agentic engineering while also exposing its central risk: sophisticated orchestration can become invisible precisely when it becomes most consequential.</p>
-
-<h2 id="a-concrete-rails-experiment">A Concrete Rails Experiment</h2>
-
-<p>Claims about agentic engineering should survive contact with a controlled task. Consider a Rails application with an outdated authentication dependency and a pull request that changes session handling.</p>
-
-<p>Run the same maintenance objective in three configurations:</p>
-
-<ol>
-  <li><strong>Single Copilot session</strong> — one agent, one selected model, repository tools.</li>
-  <li><strong>Specialized workflow</strong> — planner, Rails maintainer, security reviewer, reusable upgrade skill, documentation through MCP, and deterministic gates.</li>
-  <li><strong>HydraFusion workflow</strong> — the same tools and gates, but with runtime multi-model orchestration enabled.</li>
-</ol>
-
-<p>The task is not “make the code better.” It is bounded:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>upgrade the authentication dependency
-preserve existing login and logout behavior
-remove known advisories
-avoid reducing test coverage
-produce an auditable before-and-after report
-</code></pre></div></div>
-
-<div class="mermaid-diagram">
-
-  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzozNiwncmFua1NwYWNpbmcnOjQ0LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggRVZJREVOQ0VbXCLwn5SNIEV2aWRlbmNlXCJdXG5CW1wi8J-TiiBCYXNlbGluZSBldmlkZW5jZVwiXVxuZW5kXG5zdWJncmFwaCBDSEFOR0VbXCLwn5ug77iPIENoYW5nZVwiXVxuUFtcIvCfp60gUGxhblwiXSAtLT4gQ1tcIvCflKcgRGVwZW5kZW5jeSBjaGFuZ2VcIl1cbmVuZFxuc3ViZ3JhcGggVkVSSUZZW1wi4pyFIFZlcmlmaWNhdGlvbiAmIGdvdmVybmFuY2VcIl1cblZbXCLwn6eqIFRlc3RzICsgc2Nhbm5lcnNcIl0gLS0-IER7XCLwn5uh77iPIFBvbGljeSBnYXRlXCJ9XG5EIC0tPnxhcHByb3ZhbCByZXF1aXJlZHwgSFtcIvCfkaQgSHVtYW4gYXBwcm92YWxcIl1cbkQgLS0-fGF1dGhvcml6ZWR8IEFbXCLinIUgQWNjZXB0IHdpdGggZXZpZGVuY2VcIl1cbmVuZFxuQiAtLT4gUFxuQyAtLT4gVlxuRCAtLT58cmV2aXNlfCBQXG5IIC0tPnxhcHByb3ZlZHwgQVxuSCAtLT58cmVqZWN0ZWR8IFBcbmNsYXNzRGVmIGJsdWUgZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjJweDtcbmNsYXNzRGVmIHB1cnBsZSBmaWxsOiNFOERERjUsc3Ryb2tlOiNBNjhCQzQsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgb3JhbmdlIGZpbGw6I0Y4REZDNCxzdHJva2U6I0M5OTg2RCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiByb3NlIGZpbGw6I0Y2RDZERCxzdHJva2U6I0M5ODc5OCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBncmVlbiBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3MgQiBibHVlO1xuY2xhc3MgUCBwdXJwbGU7XG5jbGFzcyBDLFYgb3JhbmdlO1xuY2xhc3MgRCxIIHJvc2U7XG5jbGFzcyBBIGdyZWVuOyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-</div>
-
-<p>The workflow should collect evidence before any edit:</p>
-
-<ul>
-  <li>current dependency versions;</li>
-  <li>relevant security advisories;</li>
-  <li>passing and failing tests;</li>
-  <li>SimpleCov coverage;</li>
-  <li>Brakeman findings;</li>
-  <li>bundler-audit results;</li>
-  <li>files and configuration affected by authentication.</li>
-</ul>
-
-<p>After the proposed change, the same checks run again. The model may explain the result, but the tools remain the source of evidence.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Dimension</th>
-      <th>Measure</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Correctness</td>
-      <td>Authentication tests and acceptance criteria</td>
-    </tr>
-    <tr>
-      <td>Security</td>
-      <td>Brakeman and bundler-audit deltas</td>
-    </tr>
-    <tr>
-      <td>Regression risk</td>
-      <td>Full test suite and changed behavior</td>
-    </tr>
-    <tr>
-      <td>Coverage</td>
-      <td>SimpleCov before and after</td>
-    </tr>
-    <tr>
-      <td>Human effort</td>
-      <td>Interventions and review time</td>
-    </tr>
-    <tr>
-      <td>Recovery</td>
-      <td>Completion after an injected tool failure</td>
-    </tr>
-    <tr>
-      <td>Cost</td>
-      <td>Session credits or model usage</td>
-    </tr>
-    <tr>
-      <td>Traceability</td>
-      <td>Reconstructable plan, actions, evidence, and approvals</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The experiment is falsifiable. The specialized or fused workflow should not be declared better because it appears more sophisticated. It must improve measurable outcomes enough to justify added complexity, cost, and opacity.</p>
-
-<h2 id="who-governs-the-agents">Who Governs the Agents?</h2>
-
-<p>Copilot CLI can ask for permission before potentially destructive tools run. SDK applications can add lifecycle hooks, scoped tools, custom agents, and spending limits. These are necessary controls, but they do not replace application-level governance.</p>
-
-<p>Useful governance boundaries include:</p>
-
-<ul>
-  <li><strong>least authority</strong> — an agent receives only the tools required for its role;</li>
-  <li><strong>explicit mutation</strong> — reading, proposing, modifying, and publishing are distinct capabilities;</li>
-  <li><strong>human checkpoints</strong> — sensitive changes require approval at the moment authority expands;</li>
-  <li><strong>durable evidence</strong> — raw reports and tool outputs are retained, not only summarized;</li>
-  <li><strong>independent verification</strong> — tests and scanners run outside the model’s confidence loop;</li>
-  <li><strong>bounded spend</strong> — sessions have explicit cost limits and stop conditions;</li>
-  <li><strong>recovery semantics</strong> — retries are idempotent and partial changes are visible;</li>
-  <li><strong>lineage</strong> — the system records instructions, agent, skill, tools, models, and configuration used.</li>
-</ul>
-
-<p>The core distinction is the same one that separates autonomy from sovereignty:</p>
-
-<blockquote>
-  <p>Agents may decide how to pursue an authorized objective. They should not unilaterally decide what authority they possess or what evidence counts as success.</p>
-</blockquote>
-
-<h2 id="the-risk-of-invisible-orchestration">The Risk of Invisible Orchestration</h2>
-
-<p>Agentic systems compress visible work. A developer may see one request and one final patch even though the runtime planned multiple steps, invoked tools, delegated to agents, routed across models, retried failures, and rewrote its answer after critique.</p>
-
-<p>Compression is convenient, but it can conceal the causal chain.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Invisible decision</th>
-      <th>Engineering question</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Context selection</td>
-      <td>Which files or instructions were omitted?</td>
-    </tr>
-    <tr>
-      <td>Agent delegation</td>
-      <td>Why was this specialist chosen?</td>
-    </tr>
-    <tr>
-      <td>Tool permission</td>
-      <td>What authority was granted, and for how long?</td>
-    </tr>
-    <tr>
-      <td>Model routing</td>
-      <td>Which quality, cost, or availability signal drove the choice?</td>
-    </tr>
-    <tr>
-      <td>Critique</td>
-      <td>Was the reviewer independent or sharing the same failure mode?</td>
-    </tr>
-    <tr>
-      <td>Retry</td>
-      <td>Did the second attempt change the plan or merely repeat it?</td>
-    </tr>
-    <tr>
-      <td>Acceptance</td>
-      <td>Which external evidence closed the task?</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The goal is not to expose every token. Raw model reasoning is neither necessary nor sufficient for accountability. What matters is operational lineage: inputs, plans, tool calls, mutations, artifacts, evaluations, approvals, cost, and outcome.</p>
-
-<p>Without that lineage, orchestration becomes theater. The system may look autonomous while leaving humans unable to explain why a change happened.</p>
-
-<h2 id="what-agentic-engineering-actually-changes">What Agentic Engineering Actually Changes</h2>
-
-<p>Agentic engineering changes the shape of leverage, not the need for engineering judgment.</p>
-
-<p>Developers can spend less time on mechanical navigation and more time defining outcomes. Specialized agents can keep domain procedures out of one overloaded context. Skills can make good practices reusable. MCP can connect the workflow to authoritative systems. Hooks can enforce deterministic behavior. Multi-model orchestration can allocate intelligence more efficiently.</p>
-
-<p>But the durable artifacts of software engineering remain familiar:</p>
-
-<ul>
-  <li>explicit requirements;</li>
-  <li>constrained authority;</li>
-  <li>versioned code and configuration;</li>
-  <li>executable tests;</li>
-  <li>observable behavior;</li>
-  <li>reviewable changes;</li>
-  <li>rollback paths;</li>
-  <li>accountable human decisions.</li>
-</ul>
-
-<p>The revolutionary part is not that these disciplines disappear. It is that they move from surrounding human execution to surrounding mixed human-agent execution.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>GitHub Copilot is no longer well described as an AI pair programmer living beside the cursor. The CLI turns it into a repository-level operator. Custom agents and skills make specialization reusable. MCP extends its reach. Hooks introduce deterministic lifecycle behavior. The SDK makes the runtime embeddable. HydraFusion experiments with selecting entire multi-model workflows.</p>
-
-<p>Together, these capabilities point toward a new layer in the software stack: the <strong>agent runtime</strong>.</p>
-
-<p>The developer’s job does not become merely “tell the agents what to do.” It becomes more architectural: define objectives, shape context, allocate authority, encode procedures, design verification, observe execution, and decide what evidence is sufficient.</p>
-
-<p>The line of code is no longer the only unit of work. The workflow is becoming programmable.</p>
-
-<p>And once the workflow becomes programmable, it must be engineered.</p>
-
-<h2 id="references">References</h2>
-
-<ul>
-  <li>GitHub. <a href="https://www.youtube.com/watch?v=wtMaYmkhANQ">Welcome to GitHub Copilot Day: The Future of Agentic Engineering</a>.</li>
-  <li>GitHub. <a href="https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/">Project HydraFusion: Frontier Quality via Multi-Model Orchestration</a>.</li>
-  <li>GitHub. <a href="https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/">Copilot SDK Is Now Generally Available</a>.</li>
-  <li>GitHub. <a href="https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/">Build an Agent into Any App with the GitHub Copilot SDK</a>.</li>
-  <li>GitHub. <a href="https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available/">GitHub Copilot App Generally Available</a>.</li>
-  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/get-started/where-to-use-github-copilot">Where to Use GitHub Copilot</a>.</li>
-  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/concepts/agents/copilot-in-jetbrains">Using GitHub Copilot in JetBrains IDEs</a>.</li>
-  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/concepts/context/mcp">About Model Context Protocol (MCP)</a>.</li>
-  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview">Using GitHub Copilot CLI</a>.</li>
-  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/overview">Overview of Customizing GitHub Copilot CLI</a>.</li>
-  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills">Adding Agent Skills for GitHub Copilot CLI</a>.</li>
-  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers">Adding MCP Servers for GitHub Copilot CLI</a>.</li>
-  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools">Allowing and Denying Tool Use</a>.</li>
-  <li>GitHub Docs. <a href="https://docs.github.com/en/copilot/concepts/models/auto-model-selection">About Copilot Auto Model Selection</a>.</li>
-  <li>Microsoft for Developers. <a href="https://developer.microsoft.com/blog/get-started-with-github-copilot-cli-a-free-hands-on-course/">Get Started with GitHub Copilot CLI: A Free, Hands-on Course</a>.</li>
-  <li>James Montemagno. <a href="https://jamesmontemagno.github.io/first-steps-with-github-copilot/">First Steps with GitHub Copilot</a>.</li>
-</ul>]]></content><author><name></name></author><category term="artificial-intelligence" /><category term="software-engineering" /><category term="agentic-ai" /><category term="github-copilot" /><category term="GitHub Copilot" /><category term="Copilot CLI" /><category term="Copilot SDK" /><category term="HydraFusion" /><category term="agentic engineering" /><category term="custom agents" /><category term="agent skills" /><category term="MCP" /><category term="software architecture" /><summary type="html"><![CDATA[GitHub Copilot is evolving from autocomplete into an agent runtime. Explore its CLI, SDK, agents, skills, MCP integrations, HydraFusion, governance boundaries, and a falsifiable Rails experiment.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/copilot-agentic-engineering/cover-v8.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/copilot-agentic-engineering/cover-v8.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="custom-instructions" /><category term="context-engineering" /><summary type="html"><![CDATA[Give Copilot scoped Rails guidance, then audit what its proposal knows, assumes and cannot yet prove.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/teach-copilot-rails-context/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/teach-copilot-rails-context/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Pencils Down, Intent Up | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="Pencils Down, Intent Up">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="DHH’s ‘pencils down’ moment at Rails World points to a deeper shift: AI is becoming the abstraction closest to human intent. What does that mean for Ruby, Rails, JRuby, Spinel, Elixir, and the future of programming?">
+<meta property="og:description" content="DHH’s ‘pencils down’ moment at Rails World points to a deeper shift: AI is becoming the abstraction closest to human intent. What does that mean for Ruby, Rails, JRuby, Spinel, Elixir, and the future of programming?">
+<link rel="canonical" href="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html">
+<meta property="og:url" content="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/pencils-down-intent-up/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-09-29T15:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/pencils-down-intent-up/cover.webp">
+<meta property="twitter:title" content="Pencils Down, Intent Up">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-29T15:00:00+00:00","datePublished":"2026-09-29T15:00:00+00:00","description":"DHH’s ‘pencils down’ moment at Rails World points to a deeper shift: AI is becoming the abstraction closest to human intent. What does that mean for Ruby, Rails, JRuby, Spinel, Elixir, and the future of programming?","headline":"Pencils Down, Intent Up","image":"https://enogrob.github.io/assets/images/posts/pencils-down-intent-up/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html"},"url":"https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2026-09-29-pencils-down-intent-up.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <figure class="post-figure" style="margin:1.5rem 0;">
+  <img src="/assets/images/posts/pencils-down-intent-up/cover.webp" alt="Pencils Down, Intent Up — AI as the new abstraction above Ruby" loading="eager" style="width:100%;height:auto;display:block;object-fit:contain;">
+  <figcaption>The new abstraction boundary: from human intent to agents, then into programming languages and systems.</figcaption>
+</figure>
+
+<blockquote>
+  <p><strong>Pencils down. Intent up.</strong> If AI becomes the abstraction closest to human intent, Ruby may matter less as what we type—and more as what we still want to understand.</p>
+</blockquote>
+
+<p>DHH walked onto the Rails World 2026 stage with a message that would have sounded almost heretical a few years earlier: <strong>put the pencils down</strong>.</p>
+
+<p>Not because programming no longer matters. Not because software engineering has disappeared. But because the highest-leverage work is rapidly moving away from manually typing every implementation detail and toward <strong>delegating as much as possible to AI agents</strong>—then improving how we specify, evaluate, correct, and evolve what those agents produce.</p>
+
+<p>For someone whose work helped make programming itself feel more human, that is a remarkable turn.</p>
+
+<p>I had been critical of DHH for spending so much energy on Omarchy while, from my perspective, Ruby on Rails seemed to be moving more cautiously around AI. But perhaps I was looking at it backward. Omarchy may have been part of the path that made this shift visible. Its own site now presents it as an <strong>agentic Linux</strong> and explicitly describes an environment where agents can debug problems, customize the system, and help users change it continuously.</p>
+
+<p>The interesting question is therefore not whether DHH changed his mind.</p>
+
+<p>The interesting question is what he finally saw.</p>
+
+<blockquote>
+  <p><strong>The abstraction closest to the programmer is no longer necessarily a programming language. It may be AI itself.</strong></p>
+</blockquote>
+
+<p>And that changes the Ruby conversation completely.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#the-pencils-down-moment">The pencils-down moment</a></li>
+  <li><a href="#the-abstraction-moved-again">The abstraction moved again</a></li>
+  <li><a href="#when-ai-became-the-new-ruby">When AI became the new Ruby</a></li>
+  <li><a href="#omarchy-may-have-been-the-laboratory">Omarchy may have been the laboratory</a></li>
+  <li><a href="#performance-is-becoming-cheaper-to-explore">Performance is becoming cheaper to explore</a></li>
+  <li><a href="#ruby-does-not-need-to-beat-rust-at-being-rust">Ruby does not need to beat Rust at being Rust</a></li>
+  <li><a href="#the-language-we-still-want-to-read">The language we still want to read</a></li>
+  <li><a href="#spinel-jruby-and-the-cost-of-opportunity">Spinel, JRuby, and the cost of opportunity</a></li>
+  <li><a href="#what-if-the-answer-is-not-ruby">What if the answer is not Ruby?</a></li>
+  <li><a href="#a-wider-opportunity-landscape">A wider opportunity landscape</a></li>
+  <li><a href="#pencils-down-does-not-mean-ruby-down">Pencils down does not mean Ruby down</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+<h2 id="the-pencils-down-moment">The pencils-down moment</h2>
+
+<p>The <a href="https://www.youtube.com/watch?v=vDjW_dRyKXY" target="_blank" rel="noopener noreferrer">Rails World 2026 opening keynote</a> is useful precisely because the message is not subtle. DHH is describing a new default: instead of beginning with handwritten implementation, begin with delegation.</p>
+
+<p>That does <strong>not</strong> mean engineering judgment disappears. In fact, it makes judgment more important.</p>
+
+<p>The engineer still has to decide:</p>
+
+<ul>
+  <li>what should exist;</li>
+  <li>what constraints matter;</li>
+  <li>what trade-offs are acceptable;</li>
+  <li>what evidence is sufficient;</li>
+  <li>whether the result is understandable;</li>
+  <li>whether it belongs in the system at all.</li>
+</ul>
+
+<p>The mechanical act of producing source code is only one part of that work—and increasingly, it is a part an agent can perform.</p>
+
+<p>The provocative phrase is therefore useful because it forces us to separate two things we often treated as the same:</p>
+
+<p><strong>programming</strong> and <strong>typing programs</strong>.</p>
+
+<p>They are no longer synonymous.</p>
+
+<h2 id="the-abstraction-moved-again">The abstraction moved again</h2>
+
+<p>Programming has always been a history of abstraction.</p>
+
+<p>We stopped thinking directly in electrical states. Then we stopped writing machine instructions. Assembly gave way to higher-level languages. Higher-level languages moved closer to the domain. Ruby went unusually far in that direction by making expressiveness, readability, and programmer happiness central design concerns.</p>
+
+<p>Then another layer appeared.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBUQlxuc3ViZ3JhcGggaW50ZW50W1wi8J-noCBIdW1hbiBleHByZXNzaW9uXCJdXG5IW1wi8J-SoSBIdW1hbiBpbnRlbnRcIl0gLS0-IE5bXCLwn5KsIE5hdHVyYWwgbGFuZ3VhZ2VcIl1cbmVuZFxuc3ViZ3JhcGggYWdlbnRpY1tcIvCfpJYgQWdlbnRpYyBhYnN0cmFjdGlvblwiXVxuTiAtLT4gQVtcIuKcqCBBSSAvIGFnZW50c1wiXVxuZW5kXG5zdWJncmFwaCBpbXBsZW1lbnRhdGlvbltcIvCfp7AgSW1wbGVtZW50YXRpb24gY2hvaWNlc1wiXVxuQSAtLT4gUFtcIuKMqO-4jyBQcm9ncmFtbWluZyBsYW5ndWFnZXNcIl1cblAgLS0-IFJbXCLwn5KOIFJ1YnlcIl1cblAgLS0-IEpbXCLimJUgSmF2YVwiXVxuUCAtLT4gRVtcIvCfkqcgRWxpeGlyXCJdXG5QIC0tPiBVW1wi4pqZ77iPIFJ1c3RcIl1cbmVuZFxuc3ViZ3JhcGggcnVudGltZVtcIvCflqXvuI8gRXhlY3V0aW9uXCJdXG5SIC0tPiBNW1wi4pqhIFJ1bnRpbWUgLyBtYWNoaW5lXCJdXG5KIC0tPiBNXG5FIC0tPiBNXG5VIC0tPiBNXG5lbmRcbiUlLVxuY2xhc3NEZWYgaHVtYW4gZmlsbDojRkZGMUJGLHN0cm9rZTojQkE5QzQzLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBhaSBmaWxsOiNFOERERjUsc3Ryb2tlOiNBNjhCQzQsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIHJ1YnkgZmlsbDojRjVEOURDLHN0cm9rZTojQkM4MTkxLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBsYW5nIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgbWFjaGluZSBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQztcbmNsYXNzIEgsTiBodW1hbjtcbmNsYXNzIEEgYWk7XG5jbGFzcyBSIHJ1Ynk7XG5jbGFzcyBQLEosRSxVIGxhbmc7XG5jbGFzcyBNIG1hY2hpbmU7IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0"></p>
+
+<p>The important thing about this diagram is not the exact order of every technology. It is the direction of travel.</p>
+
+<p>Each major abstraction layer lets the human express <strong>more intent with less concern for mechanism</strong>.</p>
+
+<p>Ruby was important because it moved programming closer to the way developers wanted to think.</p>
+
+<p>AI moves the interface closer still.</p>
+
+<h2 id="when-ai-became-the-new-ruby">When AI became the new Ruby</h2>
+
+<figure class="post-figure" style="margin:1.5rem 0;">
+  <img src="/assets/images/posts/pencils-down-intent-up/abstraction-shift.webp" alt="The abstraction stack from machine and assembly through programming languages, Ruby, AI agents, and human intent" loading="lazy" style="width:100%;height:auto;display:block;object-fit:contain;">
+  <figcaption>AI moves the abstraction boundary closer to human intent; programming languages remain implementation layers beneath it.</figcaption>
+</figure>
+
+<p>In my earlier post, <a href="https://enogrob.github.io/ruby/rails/software-history/2026/09/23/when-ruby-made-the-industry-rethink-programming.html">When Ruby Made the Industry Rethink Programming</a>, I ended a section called <strong>The question for today</strong> with this thought:</p>
+
+<blockquote>
+  <p><strong>Today’s Ruby might become tomorrow’s assembly.</strong><br>
+<strong>And AI, tomorrow’s Ruby.</strong></p>
+</blockquote>
+
+<p>The phrase can sound like a demotion of Ruby. I increasingly think it is the opposite.</p>
+
+<p>Ruby’s historical advantage was that it felt unusually close to the programmer. It removed ceremony. It let ideas surface with less syntactic friction. It treated source code as something humans should enjoy reading and writing.</p>
+
+<p>But natural language is closer to human intent than Ruby syntax can ever be.</p>
+
+<p>That means AI is now occupying the position that Ruby once occupied relative to lower-level languages: <strong>the most human-facing abstraction in the stack</strong>.</p>
+
+<p>The interface becomes something like:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Human intent
+    ↓
+Natural language
+    ↓
+AI / agents
+    ↓
+Ruby / Elixir / Java / Rust / ...
+    ↓
+Runtime / hardware
+</code></pre></div></div>
+
+<p>The consequence is profound: the programming language may increasingly become an <strong>implementation target</strong> rather than the primary interface through which the human expresses the system.</p>
+
+<h2 id="omarchy-may-have-been-the-laboratory">Omarchy may have been the laboratory</h2>
+
+<figure class="post-figure" style="margin:1.5rem 0;">
+  <img src="/assets/images/posts/pencils-down-intent-up/omarchy-agentic-os.webp" alt="Omarchy represented as an agentic operating environment where user intent flows through agents into terminal, files, plugins, themes, debugging, and automation" loading="lazy" style="width:100%;height:auto;display:block;object-fit:contain;">
+  <figcaption>Omarchy as an agentic environment: intent is delegated into tools, diagnosis, configuration, and continuous change.</figcaption>
+</figure>
+
+<p>This is why I now see Omarchy differently.</p>
+
+<p>I used to look at DHH’s attention on Omarchy and think: why invest so heavily there while AI is changing the development model around Rails?</p>
+
+<p>But Omarchy itself may have been an experiment in exactly that new model.</p>
+
+<p>The project’s current language is explicit: Omarchy describes itself as <strong>“Beautiful, fun &amp; agentic Linux”</strong> and as a malleable operating system for the age of agents. Its site says agents can debug issues and that users should be able to modify the operating system with the same ease with which they can vibe-code an application.</p>
+
+<p>That moves AI out of the editor sidebar.</p>
+
+<p>The agent is no longer just autocomplete.</p>
+
+<p>It can become a participant in the environment:</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBMUlxuVVtcIvCfkqEgVXNlciBpbnRlbnRcIl0gLS0-IEFbXCLwn6SWIEFnZW50XCJdXG5zdWJncmFwaCBzdXJmYWNlc1tcIvCfp7AgTWFsbGVhYmxlIGVudmlyb25tZW50XCJdXG5BIC0tPiBUW1wi4oyo77iPIFRlcm1pbmFsXCJdXG5BIC0tPiBGW1wi8J-TgSBGaWxlc1wiXVxuQSAtLT4gRFtcIvCflI0gRGVidWdnaW5nXCJdXG5BIC0tPiBDW1wi4pqZ77iPIENvbmZpZ3VyYXRpb25cIl1cbkEgLS0-IFBbXCLwn6epIFBsdWdpbnNcIl1cbkEgLS0-IFhbXCLwn5SBIEF1dG9tYXRpb25cIl1cbmVuZFxuVCAtLT4gT1tcIvCflqXvuI8gV29ya2luZyBlbnZpcm9ubWVudFwiXVxuRiAtLT4gT1xuRCAtLT4gT1xuQyAtLT4gT1xuUCAtLT4gT1xuWCAtLT4gT1xuTyAtLiBcImZlZWRiYWNrXCIgLi0-IFVcbiUlLVxuY2xhc3NEZWYgaW5wdXQgZmlsbDojRkZGMUJGLHN0cm9rZTojQkE5QzQzLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBhaSBmaWxsOiNFOERERjUsc3Ryb2tlOiNBNjhCQzQsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIHRvb2wgZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBldmlkZW5jZSBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQztcbmNsYXNzIFUgaW5wdXQ7XG5jbGFzcyBBIGFpO1xuY2xhc3MgVCxGLEQsQyxQLFggdG9vbDtcbmNsYXNzIE8gZXZpZGVuY2U7IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0"></p>
+
+<p>The environment becomes malleable.</p>
+
+<p>That is a very different mental model from “AI helps me write code faster.”</p>
+
+<p>And it helps explain the Rails World message: once you experience software as something that can be changed through intent and delegation, manually writing every line begins to feel like starting one abstraction layer too low.</p>
+
+<h2 id="performance-is-becoming-cheaper-to-explore">Performance is becoming cheaper to explore</h2>
+
+<p>Another clue came shortly afterward in <a href="https://x.com/dhh/status/2104633108092092880" target="_blank" rel="noopener noreferrer">DHH’s post about converting an implementation to Ruby with AI</a>.</p>
+
+<p>The interesting part is not simply that a Ruby version could perform well in a particular experiment. Performance comparisons are highly workload-specific, and one result should not be turned into a universal benchmark.</p>
+
+<p>The larger point is this:</p>
+
+<p><strong>DHH did not have to personally perform every step of the rewrite. The AI could explore the implementation space for him.</strong></p>
+
+<p>That changes the economics of experimentation.</p>
+
+<p>Historically, a rewrite carried a large human cost:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>idea → design → rewrite → debug → benchmark → reconsider
+</code></pre></div></div>
+
+<p>Now the loop can become:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>idea → delegate → inspect → benchmark → redirect → repeat
+</code></pre></div></div>
+
+<p>The cost of asking <em>“What if we implemented this differently?”</em> collapses.</p>
+
+<p>That matters more than any single benchmark result.</p>
+
+<h2 id="ruby-does-not-need-to-beat-rust-at-being-rust">Ruby does not need to beat Rust at being Rust</h2>
+
+<p>For years, programming-language discussions often became contests:</p>
+
+<p>Which language is faster? Which runtime uses less memory? Which compiler produces the best machine code? Which ecosystem wins the benchmark?</p>
+
+<p>Those questions still matter. Infrastructure does not become free because an agent wrote the code.</p>
+
+<p>But the strategic meaning changes.</p>
+
+<p>If an AI agent can generate a specialized Rust implementation when a hot path genuinely needs Rust, Ruby does not necessarily need to transform itself into Rust to remain relevant.</p>
+
+<p>Likewise, if Java is the better fit for a particular deployment environment, an agent can explore that path. A reply to DHH’s performance discussion even raised exactly that question: <a href="https://x.com/BaronHakkinen/status/2104648060680994846" target="_blank" rel="noopener noreferrer">why not consider Java rather than Rust?</a></p>
+
+<p>This is where the new abstraction layer becomes liberating.</p>
+
+<p>The language does not need to win every category.</p>
+
+<p>The system needs to make it cheap to select the right implementation while preserving a surface humans can understand.</p>
+
+<h2 id="the-language-we-still-want-to-read">The language we still want to read</h2>
+
+<figure class="post-figure" style="margin:1.5rem 0;">
+  <img src="/assets/images/posts/pencils-down-intent-up/ruby-readable-artifact.webp" alt="AI agents producing implementations in Ruby, Rust, Java, and Elixir, with Ruby highlighted as a readable artifact for human review" loading="lazy" style="width:100%;height:auto;display:block;object-fit:contain;">
+  <figcaption>When agents can generate many implementations, the human bottleneck shifts toward reading, reviewing, and maintaining the result.</figcaption>
+</figure>
+
+<p>There is a paradox here.</p>
+
+<p>As AI makes <strong>writing</strong> code cheaper, <strong>reading</strong> code may become more important.</p>
+
+<p>Agents can produce far more code than a human can review. They can generate alternatives in Ruby, Rust, Java, Elixir, or whatever else is available. Human attention, however, remains scarce.</p>
+
+<p>That means a new optimization target appears:</p>
+
+<blockquote>
+  <p><strong>In an agentic world, readability may become more valuable than writability.</strong></p>
+</blockquote>
+
+<p>Imagine assigning an agent a substantial task. It returns an implementation. You now need to decide whether to trust it, modify it, maintain it, explain it to another engineer, or debug it six months later.</p>
+
+<p>Which language do you want to encounter?</p>
+
+<p>That question gives Ruby a powerful new role.</p>
+
+<p>Not necessarily the language humans type the most.</p>
+
+<p>Perhaps the language humans most want to <strong>read</strong>.</p>
+
+<p>Ruby’s human orientation becomes an interface for verification.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBMUlxuSVtcIvCfkqEgSW50ZW50XCJdIC0tPiBBW1wi8J-kliBBZ2VudFwiXVxuc3ViZ3JhcGggZ2VuZXJhdGVkW1wi8J-nsSBHZW5lcmF0ZWQgaW1wbGVtZW50YXRpb25zXCJdXG5BIC0tPiBSW1wi8J-SjiBSdWJ5XCJdXG5BIC0tPiBVW1wi4pqZ77iPIFJ1c3RcIl1cbkEgLS0-IEpbXCLimJUgSmF2YVwiXVxuQSAtLT4gRVtcIvCfkqcgRWxpeGlyXCJdXG5lbmRcblIgLS0-IEhbXCLwn5GAIEh1bWFuIHJldmlld1wiXVxuVSAtLT4gSFxuSiAtLT4gSFxuRSAtLT4gSFxuSCAtLT4gVltcIuKchSBWYWxpZGF0ZVwiXSAtLT4gTVtcIvCflKcgTWFpbnRhaW4gLyBldm9sdmVcIl1cbiUlLVxuY2xhc3NEZWYgaW5wdXQgZmlsbDojRkZGMUJGLHN0cm9rZTojQkE5QzQzLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBhaSBmaWxsOiNFOERERjUsc3Ryb2tlOiNBNjhCQzQsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIHJ1YnkgZmlsbDojRjVEOURDLHN0cm9rZTojQkM4MTkxLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBsYW5nIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgZXZpZGVuY2UgZmlsbDojRENFRkQ2LHN0cm9rZTojODZBODc4LGNvbG9yOiMzRTM0MkM7XG5jbGFzcyBJIGlucHV0O1xuY2xhc3MgQSBhaTtcbmNsYXNzIFIgcnVieTtcbmNsYXNzIFUsSixFIGxhbmc7XG5jbGFzcyBILFYsTSBldmlkZW5jZTsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ"></p>
+
+<p>The question is no longer just, “What is easiest to produce?”</p>
+
+<p>It becomes, “What leaves behind the clearest artifact for humans and agents to reason about together?”</p>
+
+<p>Ruby has an unusually strong answer to that question.</p>
+
+<h2 id="spinel-jruby-and-the-cost-of-opportunity">Spinel, JRuby, and the cost of opportunity</h2>
+
+<p>This is also where projects such as <a href="https://github.com/matz/spinel" target="_blank" rel="noopener noreferrer">Spinel</a> become interesting in a different way.</p>
+
+<p>Spinel is an ahead-of-time Ruby compiler. Its current README describes a pipeline that parses Ruby with Prism, performs whole-program type inference, emits optimized C, invokes the system compiler, and produces a standalone native executable.</p>
+
+<p>That is technically fascinating.</p>
+
+<p>But the arrival of agentic development introduces another question beyond technical merit:</p>
+
+<blockquote>
+  <p><strong>Where should the Ruby community spend its finite attention in a world where agents make cross-language experimentation dramatically cheaper?</strong></p>
+</blockquote>
+
+<p>That is not an argument that Spinel should not exist. Experiments that push Ruby into new execution models can teach us a great deal.</p>
+
+<p>It is an argument that the <strong>opportunity cost has changed</strong>.</p>
+
+<p>If the goal is to reach different runtime characteristics, perhaps some experiments should also revisit paths that already connect Ruby to mature execution environments.</p>
+
+<p><a href="https://www.jruby.org/" target="_blank" rel="noopener noreferrer">JRuby</a> is the obvious example. JRuby is Ruby on the JVM. Its current project site highlights real threading, the JVM library ecosystem, platform independence, and Ruby 4.0 compatibility in the current JRuby 10.1.x line.</p>
+
+<p>That suggests a different kind of question:</p>
+
+<p>Instead of asking only:</p>
+
+<blockquote>
+  <p>How do we make Ruby itself compile into something faster?</p>
+</blockquote>
+
+<p>we can also ask:</p>
+
+<blockquote>
+  <p>How can agents make the cost of moving Ruby workloads across execution models almost trivial?</p>
+</blockquote>
+
+<p>Those are not mutually exclusive paths.</p>
+
+<p>They are experiments in a much larger search space.</p>
+
+<h2 id="what-if-the-answer-is-not-ruby">What if the answer is not Ruby?</h2>
+
+<p>And then comes the uncomfortable—but useful—question.</p>
+
+<p>What if the best answer for a particular subsystem is not Ruby at all?</p>
+
+<p>Perhaps the system needs the JVM ecosystem.</p>
+
+<p>Perhaps it needs Rust at a performance boundary.</p>
+
+<p>Perhaps it needs the BEAM.</p>
+
+<p><a href="https://elixir-lang.org/" target="_blank" rel="noopener noreferrer">Elixir</a> is especially interesting in this context because its strengths are not merely syntactic. It sits on decades of Erlang experience around concurrency, distribution, and fault tolerance. Its official site emphasizes vertical and horizontal scalability, message-oriented systems, and robust recovery from failures.</p>
+
+<p>In the old model, adopting another language could mean a steep organizational cost: new expertise, tooling, conventions, deployment, and maintenance burden.</p>
+
+<p>Agents do not eliminate those costs.</p>
+
+<p>But they can lower the friction of exploring them.</p>
+
+<p>That means the Ruby community may benefit from becoming <strong>more open</strong>, not more defensive.</p>
+
+<p>Ruby can be the language in which we express and inspect much of a product while agents help us cross boundaries when another runtime or paradigm is genuinely useful.</p>
+
+<p>That is not defeat.</p>
+
+<p>That is leverage.</p>
+
+<h2 id="a-wider-opportunity-landscape">A wider opportunity landscape</h2>
+
+<figure class="post-figure" style="margin:1.5rem 0;">
+  <img src="/assets/images/posts/pencils-down-intent-up/ruby-crossroads.webp" alt="Ruby at a crossroads with paths toward CRuby and YJIT, JRuby and the JVM, Spinel AOT, Elixir and the BEAM, and polyglot AI agents" loading="lazy" style="width:100%;height:auto;display:block;object-fit:contain;">
+  <figcaption>The Ruby ecosystem does not need a single answer: agents make multiple runtime and language paths cheaper to explore.</figcaption>
+</figure>
+
+<p>The future of Ruby does not need to collapse into a single bet.</p>
+
+<p>It can expand.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBUQlxuUltcIvCfko4gUnVieSBlY29zeXN0ZW1cIl1cbnN1YmdyYXBoIHBhdGhzW1wi8J-bo--4jyBNdWx0aXBsZSBwYXRocywgbm90IG9uZSB2ZXJkaWN0XCJdXG5SIC0tPiBDW1wi8J-agCBDUnVieSArIFlKSVRcIl1cblIgLS0-IEpbXCLimJUgSlJ1YnkgLyBKVk1cIl1cblIgLS0-IFNbXCLwn6eqIFNwaW5lbCAvIEFPVFwiXVxuUiAtLT4gRVtcIvCfkqcgRWxpeGlyIC8gQkVBTSBjb2xsYWJvcmF0aW9uXCJdXG5SIC0tPiBQW1wi8J-kliBQb2x5Z2xvdCBhZ2VudHNcIl1cbmVuZFxuQyAtLT4gQzFbXCLimqEgUGVyZm9ybWFuY2VcIl1cbkogLS0-IEoxW1wi8J-UjCBJbnRlcm9wXCJdXG5TIC0tPiBTMVtcIvCflKwgRXhwZXJpbWVudGF0aW9uXCJdXG5FIC0tPiBFMVtcIvCfm6HvuI8gQ29uY3VycmVuY3kgLyByZXNpbGllbmNlXCJdXG5QIC0tPiBQMVtcIvCfp7AgUmlnaHQgdG9vbCBwZXIgc3Vic3lzdGVtXCJdXG5DMSAtLT4gT1tcIvCfjIUgT3Bwb3J0dW5pdHkgbGFuZHNjYXBlXCJdXG5KMSAtLT4gT1xuUzEgLS0-IE9cbkUxIC0tPiBPXG5QMSAtLT4gT1xuJSUtXG5jbGFzc0RlZiBydWJ5IGZpbGw6I0Y1RDlEQyxzdHJva2U6I0JDODE5MSxjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgYnJhbmNoIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgZXhwZXJpbWVudCBmaWxsOiNGOERGQzQsc3Ryb2tlOiNDOTk4NkQsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIG91dGNvbWUgZmlsbDojRENFRkQ2LHN0cm9rZTojODZBODc4LGNvbG9yOiMzRTM0MkM7XG5jbGFzcyBSIHJ1Ynk7XG5jbGFzcyBDLEosRSxQLEMxLEoxLEUxLFAxIGJyYW5jaDtcbmNsYXNzIFMsUzEgZXhwZXJpbWVudDtcbmNsYXNzIE8gb3V0Y29tZTsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ"></p>
+
+<p>CRuby and YJIT can continue improving the mainstream runtime.</p>
+
+<p>JRuby can make the JVM an increasingly accessible execution target.</p>
+
+<p>Spinel can explore ahead-of-time compilation and native deployment.</p>
+
+<p>Elixir can inspire—or directly participate in—systems where the BEAM’s concurrency model is the stronger fit.</p>
+
+<p>Agents can sit above all of them and make experimentation less expensive.</p>
+
+<p>The strategic shift is from <strong>language loyalty as a constraint</strong> to <strong>language choice as a delegated implementation decision</strong>.</p>
+
+<p>And that can actually make Ruby more valuable, because Ruby no longer has to pretend to be the optimal substrate for every problem.</p>
+
+<h2 id="pencils-down-does-not-mean-ruby-down">Pencils down does not mean Ruby down</h2>
+
+<p>There is understandable euphoria around AI right now, including in DHH’s recent remarks. Some of it will be right. Some of it will be exaggerated. The tools will improve, fail, surprise us, and force us to revise our assumptions repeatedly.</p>
+
+<p>So this is not a prediction that handwritten programming disappears tomorrow.</p>
+
+<p>It is a recognition that the center of gravity is moving.</p>
+
+<p>For decades, we improved programming by creating languages that let humans talk to computers at higher and higher levels of abstraction.</p>
+
+<p>Ruby became one of the clearest expressions of that movement.</p>
+
+<p>AI now moves the boundary again.</p>
+
+<p>Our native language can increasingly become the abstraction through which we describe what we want, while agents translate intent into programs, tests, configurations, migrations, deployments, and perhaps entire environments.</p>
+
+<p>That does not make programming languages irrelevant.</p>
+
+<p>It changes what we need from them.</p>
+
+<p>We may care less about how pleasant they are to type for eight hours a day and more about whether they produce systems that are easy to inspect, explain, modify, and trust.</p>
+
+<p>Which brings us back to Ruby.</p>
+
+<p>Ruby may no longer be the highest abstraction in the stack.</p>
+
+<p>But it can still be one of the best places for humans to meet the code that agents leave behind.</p>
+
+<p>And if an agent needs to generate something I am expected to understand, review, and live with, I still know which language I would rather open first.</p>
+
+<blockquote>
+  <p><strong>Today’s Ruby might become tomorrow’s assembly.</strong><br>
+<strong>And AI, tomorrow’s Ruby.</strong></p>
+
+  <p>But that does not make Ruby less important.</p>
+
+  <p>It may finally allow Ruby to become exactly what it always wanted to be:</p>
+
+  <p><strong>a language for humans.</strong></p>
+</blockquote>
+
+<p><strong>Pencils down does not mean Ruby down.</strong></p>
+
+<p>It may mean the field around Ruby just became much larger.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>
+    <p><strong>DHH — Rails World 2026 Opening Keynote</strong><br>
+<a href="https://www.youtube.com/watch?v=vDjW_dRyKXY" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=vDjW_dRyKXY</a></p>
+  </li>
+  <li>
+    <p><strong>DHH — “Pencils down” discussion on X</strong><br>
+<a href="https://x.com/dhh/status/2102936073642869121" target="_blank" rel="noopener noreferrer">https://x.com/dhh/status/2102936073642869121</a></p>
+  </li>
+  <li>
+    <p><strong>Roberto Nogueira — <em>When Ruby Made the Industry Rethink Programming</em></strong><br>
+<a href="https://enogrob.github.io/ruby/rails/software-history/2026/09/23/when-ruby-made-the-industry-rethink-programming.html">https://enogrob.github.io/ruby/rails/software-history/2026/09/23/when-ruby-made-the-industry-rethink-programming.html</a></p>
+  </li>
+  <li>
+    <p><strong>DHH — Ruby conversion / performance experiment on X</strong><br>
+<a href="https://x.com/dhh/status/2104633108092092880" target="_blank" rel="noopener noreferrer">https://x.com/dhh/status/2104633108092092880</a></p>
+  </li>
+  <li>
+    <p><strong>BaronHakkinen — response suggesting Java in the Rust discussion</strong><br>
+<a href="https://x.com/BaronHakkinen/status/2104648060680994846" target="_blank" rel="noopener noreferrer">https://x.com/BaronHakkinen/status/2104648060680994846</a></p>
+  </li>
+  <li>
+    <p><strong>Omarchy — <em>Beautiful, fun &amp; agentic Linux</em></strong><br>
+<a href="https://omarchy.nz/" target="_blank" rel="noopener noreferrer">https://omarchy.nz/</a></p>
+  </li>
+  <li>
+    <p><strong>Spinel — Ruby AOT Compiler</strong><br>
+<a href="https://github.com/matz/spinel" target="_blank" rel="noopener noreferrer">https://github.com/matz/spinel</a></p>
+  </li>
+  <li>
+    <p><strong>JRuby — The Ruby Programming Language on the JVM</strong><br>
+<a href="https://www.jruby.org/" target="_blank" rel="noopener noreferrer">https://www.jruby.org/</a></p>
+  </li>
+  <li>
+    <p><strong>Elixir — official language site</strong><br>
+<a href="https://elixir-lang.org/" target="_blank" rel="noopener noreferrer">https://elixir-lang.org/</a></p>
+  </li>
+</ul>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Start With the Workflow, Not the AI Tool | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="Start With the Workflow, Not the AI Tool">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Series — AI-Native SDLC with GitHub Copilot · Part 01 The strongest AI adoption programs do not begin with a feature checklist. They begin by understanding how engineering work actually happens.">
+<meta property="og:description" content="Series — AI-Native SDLC with GitHub Copilot · Part 01 The strongest AI adoption programs do not begin with a feature checklist. They begin by understanding how engineering work actually happens.">
+<link rel="canonical" href="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/28/start-with-the-workflow-not-the-ai-tool.html">
+<meta property="og:url" content="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/28/start-with-the-workflow-not-the-ai-tool.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/og/posts/start-with-the-workflow-not-the-ai-tool.png">
+<meta property="og:image:height" content="600">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:alt" content="Start With the Workflow, Not the AI Tool">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-09-28T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/og/posts/start-with-the-workflow-not-the-ai-tool.png">
+<meta name="twitter:image:alt" content="Start With the Workflow, Not the AI Tool">
+<meta property="twitter:title" content="Start With the Workflow, Not the AI Tool">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-28T00:00:00+00:00","datePublished":"2026-09-28T00:00:00+00:00","description":"Series — AI-Native SDLC with GitHub Copilot · Part 01 The strongest AI adoption programs do not begin with a feature checklist. They begin by understanding how engineering work actually happens.","headline":"Start With the Workflow, Not the AI Tool","image":{"width":1200,"height":600,"alt":"Start With the Workflow, Not the AI Tool","url":"https://enogrob.github.io/assets/images/og/posts/start-with-the-workflow-not-the-ai-tool.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/28/start-with-the-workflow-not-the-ai-tool.html"},"url":"https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/28/start-with-the-workflow-not-the-ai-tool.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2026-09-28-start-with-the-workflow-not-the-ai-tool.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/28/start-with-the-workflow-not-the-ai-tool.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/28/start-with-the-workflow-not-the-ai-tool.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <blockquote>
+  <p><strong>Series — AI-Native SDLC with GitHub Copilot · Part 01</strong><br>
+The strongest AI adoption programs do not begin with a feature checklist. They begin by understanding how engineering work actually happens.</p>
+</blockquote>
+
+<p>GitHub Copilot can help explain code, draft documentation, generate tests, edit files, operate in the terminal, and participate in increasingly agentic workflows. None of those capabilities automatically tells us <strong>where AI will create meaningful value</strong>.</p>
+
+<p>That decision starts earlier.</p>
+
+<p>Before choosing chat, agent mode, CLI automation, skills, hooks, MCP servers, or a custom integration, we need to understand the workflow itself: where engineers spend time, where context is lost, which tasks repeat, where decisions stall, and which outcomes matter to the team.</p>
+
+<p>This first part establishes the discovery discipline that the rest of the series will build on.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ol>
+  <li>Why workflow comes before tooling</li>
+  <li>Observe the work as it actually happens</li>
+  <li>Build a developer-journey map</li>
+  <li>Turn friction into AI opportunities</li>
+  <li>Prioritize value instead of novelty</li>
+  <li>Establish a measurable baseline</li>
+  <li>Lab: create the discovery artifacts</li>
+  <li>What we carry into Part 02</li>
+</ol>
+
+<hr>
+
+<h2 id="1-why-workflow-comes-before-tooling">1. Why workflow comes before tooling</h2>
+
+<p>A common AI-adoption mistake is to start with the product surface:</p>
+
+<ul>
+  <li>Which Copilot features do we have?</li>
+  <li>Should we create an agent?</li>
+  <li>Do we need an MCP server?</li>
+  <li>Should the team create reusable skills?</li>
+  <li>Can we automate pull requests?</li>
+</ul>
+
+<p>Those are useful questions later. At the beginning, they can cause us to automate the wrong thing.</p>
+
+<p>A better sequence is:</p>
+
+<pre><code class="language-mermaid">flowchart LR
+    A[Observe real work] --&gt; B[Map the workflow]
+    B --&gt; C[Identify friction]
+    C --&gt; D[Find AI-suitable opportunities]
+    D --&gt; E[Prioritize by value]
+    E --&gt; F[Pilot one workflow]
+    F --&gt; G[Measure outcomes]
+</code></pre>
+
+<p>The objective is not to maximize the amount of AI in the process. It is to improve the engineering system.</p>
+
+<p>Typical areas worth observing include unfamiliar repositories, repetitive boilerplate, documentation gaps, issue triage, pull-request preparation, test generation, and context switching. These are useful starting points because the work is visible enough to inspect and the cost of friction can often be measured.</p>
+
+<h2 id="2-observe-the-work-as-it-actually-happens">2. Observe the work as it actually happens</h2>
+
+<p>Discovery should describe the current system, not the ideal process written in a handbook.</p>
+
+<p>Watch a real workflow from beginning to end. For example, take one engineer handling an unfamiliar issue in an existing repository:</p>
+
+<ol>
+  <li>read the issue;</li>
+  <li>locate the relevant repository and service;</li>
+  <li>understand project structure;</li>
+  <li>find related code;</li>
+  <li>trace data flow;</li>
+  <li>reproduce the problem;</li>
+  <li>decide on a change;</li>
+  <li>implement it;</li>
+  <li>run tests;</li>
+  <li>prepare a pull request;</li>
+  <li>respond to review feedback.</li>
+</ol>
+
+<p>At every step, capture four things:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Question</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Time</td>
+      <td>Where is time being lost?</td>
+    </tr>
+    <tr>
+      <td>Friction</td>
+      <td>Where does the engineer get stuck or repeat work?</td>
+    </tr>
+    <tr>
+      <td>Context</td>
+      <td>What information has to be rediscovered or moved between systems?</td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td>What visible engineering or business result does this step influence?</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Do not assume every slow step should be automated. Some steps are slow because they require judgment. The discovery exercise is about distinguishing <strong>mechanical friction</strong> from <strong>valuable thinking</strong>.</p>
+
+<h2 id="3-build-a-developer-journey-map">3. Build a developer-journey map</h2>
+
+<p>The developer journey makes hidden transitions visible.</p>
+
+<pre><code class="language-mermaid">flowchart LR
+    I[Issue] --&gt; R[Repository]
+    R --&gt; U[Understand]
+    U --&gt; P[Plan]
+    P --&gt; C[Change code]
+    C --&gt; T[Test]
+    T --&gt; PR[Prepare PR]
+    PR --&gt; V[Review]
+    V --&gt; M[Merge]
+
+    U -. friction .-&gt; U1[Missing docs\nUnknown architecture]
+    T -. friction .-&gt; T1[Test setup\nEdge cases]
+    PR -. friction .-&gt; P1[Summaries\nChecklists]
+</code></pre>
+
+<p>This diagram is intentionally simple. The goal is not architecture documentation; it is <strong>workflow visibility</strong>.</p>
+
+<p>Once the journey exists, interview developers and stakeholders around concrete transitions:</p>
+
+<ul>
+  <li>Which step takes longer than it should?</li>
+  <li>Which work is repeated across issues or repositories?</li>
+  <li>Where do people leave the IDE to search for context?</li>
+  <li>Which tasks have a predictable input and output?</li>
+  <li>Where are mistakes expensive?</li>
+  <li>Which improvement would be visible to the team or customer?</li>
+</ul>
+
+<p>These questions help separate a compelling demo from a useful engineering capability.</p>
+
+<h2 id="4-turn-friction-into-ai-opportunities">4. Turn friction into AI opportunities</h2>
+
+<p>Not every friction point needs the same Copilot capability.</p>
+
+<p>A useful first-pass mapping is:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Friction</th>
+      <th>Potential capability</th>
+      <th>Why it may fit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Understanding an unfamiliar codebase</td>
+      <td>Chat / agent-assisted exploration</td>
+      <td>Contextual explanation and repository navigation</td>
+    </tr>
+    <tr>
+      <td>Repetitive documentation</td>
+      <td>Prompt or reusable skill</td>
+      <td>Predictable structure and repeatable output</td>
+    </tr>
+    <tr>
+      <td>Local scripts and shell work</td>
+      <td>Copilot CLI</td>
+      <td>Natural-language terminal assistance</td>
+    </tr>
+    <tr>
+      <td>Issue-to-change workflow</td>
+      <td>Agent mode</td>
+      <td>Bounded multi-step work across files</td>
+    </tr>
+    <tr>
+      <td>Internal systems or live data</td>
+      <td>MCP-enabled tools</td>
+      <td>Access to approved external capabilities</td>
+    </tr>
+    <tr>
+      <td>Repeated team workflow</td>
+      <td>Skill / agent / shared instruction</td>
+      <td>Reuse and consistency</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The important word is <strong>potential</strong>.</p>
+
+<p>Capability selection belongs after the problem is understood. The same friction may have a simpler solution: better documentation, a shell script, a template, a build fix, or removing an unnecessary approval.</p>
+
+<h2 id="5-prioritize-value-instead-of-novelty">5. Prioritize value instead of novelty</h2>
+
+<p>For the lab, we will score opportunities using five dimensions:</p>
+
+<ul>
+  <li>
+<strong>Frequency</strong> — how often the workflow occurs.</li>
+  <li>
+<strong>Friction</strong> — how much delay, repetition, or cognitive load it creates.</li>
+  <li>
+<strong>AI suitability</strong> — whether the work can be assisted with reliable context, tools, and validation.</li>
+  <li>
+<strong>Outcome visibility</strong> — whether improvement can be measured.</li>
+  <li>
+<strong>Risk</strong> — whether mistakes could create security, compliance, quality, or operational problems.</li>
+</ul>
+
+<p>A lightweight score can help compare opportunities without pretending that the score is scientific truth:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Opportunity score =
+  frequency
++ friction
++ AI suitability
++ outcome visibility
+- risk
+</code></pre></div></div>
+
+<p>Use the number to provoke discussion, not to replace judgment.</p>
+
+<p>A high-value first pilot normally has a bounded scope, trusted context, a clear success condition, and an output a human can verify.</p>
+
+<h2 id="6-establish-a-measurable-baseline">6. Establish a measurable baseline</h2>
+
+<p>If we want to know whether AI helped, we need a baseline before the pilot.</p>
+
+<p>Possible measures include:</p>
+
+<ul>
+  <li>time to understand an unfamiliar repository;</li>
+  <li>issue-to-first-implementation time;</li>
+  <li>pull-request preparation time;</li>
+  <li>cycle time;</li>
+  <li>time to first meaningful contribution for a new engineer;</li>
+  <li>test-writing time;</li>
+  <li>defect or rework rate;</li>
+  <li>number of manual context switches;</li>
+  <li>developer confidence or satisfaction for the target workflow.</li>
+</ul>
+
+<p>The baseline does <strong>not</strong> need to become a giant metrics program. Part 01 needs only enough evidence to compare the pilot with the previous way of working.</p>
+
+<pre><code class="language-mermaid">flowchart LR
+    U[Usage] --&gt; A[Adoption]
+    A --&gt; E[Engineering outcome]
+    E --&gt; T[Team capability]
+    T --&gt; B[Business value]
+</code></pre>
+
+<p>Usage by itself is not the goal. A large number of Copilot interactions can coexist with no meaningful improvement in delivery, quality, learning, or customer outcomes.</p>
+
+<h2 id="7-lab--create-the-discovery-artifacts">7. Lab — create the discovery artifacts</h2>
+
+<p>This series uses a cumulative lab. Every part inherits the artifacts and decisions created earlier.</p>
+
+<p>For Part 01, the target is deliberately tool-agnostic: <strong>understand one real engineering workflow well enough to justify an AI pilot</strong>.</p>
+
+<p>The downloadable lab contains:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>labs/01-workflow-discovery/
+├── README.md
+├── LAB.md
+├── EXERCISES.md
+├── ANSWERS.md
+├── prompts/
+│   ├── 01-observe-workflow.prompt.md
+│   ├── 02-friction-audit.prompt.md
+│   └── 03-prioritize-opportunities.prompt.md
+├── scripts/
+│   └── score_opportunities.rb
+├── examples/
+│   ├── workflow-map.example.md
+│   ├── friction-register.example.md
+│   ├── ai-opportunities.example.md
+│   └── baseline-metrics.example.md
+└── diagrams/
+    └── workflow-discovery.mmd
+</code></pre></div></div>
+
+<p>By the end of the lab you should have four project artifacts:</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">workflow-map.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">friction-register.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ai-opportunities.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">baseline-metrics.md</code></li>
+</ol>
+
+<p>Those four files become input for Part 02, where we design the context architecture required to make the selected workflow reliable.</p>
+
+<h2 id="8-what-we-carry-into-part-02">8. What we carry into Part 02</h2>
+
+<p>Part 01 intentionally does <strong>not</strong> start by creating an agent, an MCP server, or a RAG layer.</p>
+
+<p>We first establish:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>real workflow
+    ↓
+observable friction
+    ↓
+valuable AI opportunity
+    ↓
+measurable baseline
+</code></pre></div></div>
+
+<p>Part 02 can then ask a much better question:</p>
+
+<blockquote>
+  <p>What context must Copilot receive — from the developer, repository, team, organization, product knowledge, and external systems — to assist this workflow well?</p>
+</blockquote>
+
+<p>That is where <strong>context engineering</strong> begins.</p>
+
+<hr>
+
+<h2 id="key-takeaway">Key takeaway</h2>
+
+<p><strong>Start with the workflow, not the AI tool.</strong></p>
+
+<p>Understand the work, locate the friction, choose a bounded opportunity, and establish how success will be measured. Only then select the Copilot capability and supporting AI assets.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>Source series material: <em>AI Transformation with GitHub Copilot</em> — workflow discovery, capability selection, context engineering, governance, adoption, and measurement.</li>
+  <li>Source series material: <em>AI Across the SDLC with GitHub Copilot</em> — discovery, planning, architecture, development, testing, review, delivery, production, and continuous improvement.</li>
+</ul>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
