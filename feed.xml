@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-09-29T17:04:11+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Pencils Down, Intent Up</title><link href="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html" rel="alternate" type="text/html" title="Pencils Down, Intent Up" /><published>2026-09-29T15:00:00+00:00</published><updated>2026-09-29T15:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html"><![CDATA[<figure class="post-figure" style="margin:1.5rem 0;">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-09-29T17:09:56+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Pencils Down, Intent Up</title><link href="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html" rel="alternate" type="text/html" title="Pencils Down, Intent Up" /><published>2026-09-29T15:00:00+00:00</published><updated>2026-09-29T15:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html"><![CDATA[<figure class="post-figure" style="margin:1.5rem 0;">
   <img src="/assets/images/posts/pencils-down-intent-up/cover.webp" alt="Pencils Down, Intent Up — AI as the new abstraction above Ruby" loading="eager" style="width:100%;height:auto;display:block;object-fit:contain;" />
   <figcaption>The new abstraction boundary: from human intent to agents, then into programming languages and systems.</figcaption>
 </figure>
@@ -415,331 +415,7 @@ Runtime / hardware
     <p><strong>Elixir — official language site</strong><br />
 <a href="https://elixir-lang.org/">https://elixir-lang.org/</a></p>
   </li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="artificial-intelligence" /><category term="software-engineering" /><category term="ruby" /><category term="ruby-on-rails" /><category term="ai" /><category term="agents" /><category term="dhh" /><category term="omarchy" /><category term="jruby" /><category term="spinel" /><category term="elixir" /><category term="software-engineering" /><summary type="html"><![CDATA[DHH's 'pencils down' moment at Rails World points to a deeper shift: AI is becoming the abstraction closest to human intent. What does that mean for Ruby, Rails, JRuby, Spinel, Elixir, and the future of programming?]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/pencils-down-intent-up/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/pencils-down-intent-up/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Start With the Workflow, Not the AI Tool</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/28/start-with-the-workflow-not-the-ai-tool.html" rel="alternate" type="text/html" title="Start With the Workflow, Not the AI Tool" /><published>2026-09-28T00:00:00+00:00</published><updated>2026-09-28T00:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/28/start-with-the-workflow-not-the-ai-tool</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/28/start-with-the-workflow-not-the-ai-tool.html"><![CDATA[<blockquote>
-  <p><strong>Series — AI-Native SDLC with GitHub Copilot · Part 01</strong><br />
-The strongest AI adoption programs do not begin with a feature checklist. They begin by understanding how engineering work actually happens.</p>
-</blockquote>
-
-<p>GitHub Copilot can help explain code, draft documentation, generate tests, edit files, operate in the terminal, and participate in increasingly agentic workflows. None of those capabilities automatically tells us <strong>where AI will create meaningful value</strong>.</p>
-
-<p>That decision starts earlier.</p>
-
-<p>Before choosing chat, agent mode, CLI automation, skills, hooks, MCP servers, or a custom integration, we need to understand the workflow itself: where engineers spend time, where context is lost, which tasks repeat, where decisions stall, and which outcomes matter to the team.</p>
-
-<p>This first part establishes the discovery discipline that the rest of the series will build on.</p>
-
-<h2 id="contents">Contents</h2>
-
-<ol>
-  <li>Why workflow comes before tooling</li>
-  <li>Observe the work as it actually happens</li>
-  <li>Build a developer-journey map</li>
-  <li>Turn friction into AI opportunities</li>
-  <li>Prioritize value instead of novelty</li>
-  <li>Establish a measurable baseline</li>
-  <li>Lab: create the discovery artifacts</li>
-  <li>What we carry into Part 02</li>
-</ol>
-
-<hr />
-
-<h2 id="1-why-workflow-comes-before-tooling">1. Why workflow comes before tooling</h2>
-
-<p>A common AI-adoption mistake is to start with the product surface:</p>
-
-<ul>
-  <li>Which Copilot features do we have?</li>
-  <li>Should we create an agent?</li>
-  <li>Do we need an MCP server?</li>
-  <li>Should the team create reusable skills?</li>
-  <li>Can we automate pull requests?</li>
-</ul>
-
-<p>Those are useful questions later. At the beginning, they can cause us to automate the wrong thing.</p>
-
-<p>A better sequence is:</p>
-
-<pre><code class="language-mermaid">flowchart LR
-    A[Observe real work] --&gt; B[Map the workflow]
-    B --&gt; C[Identify friction]
-    C --&gt; D[Find AI-suitable opportunities]
-    D --&gt; E[Prioritize by value]
-    E --&gt; F[Pilot one workflow]
-    F --&gt; G[Measure outcomes]
-</code></pre>
-
-<p>The objective is not to maximize the amount of AI in the process. It is to improve the engineering system.</p>
-
-<p>Typical areas worth observing include unfamiliar repositories, repetitive boilerplate, documentation gaps, issue triage, pull-request preparation, test generation, and context switching. These are useful starting points because the work is visible enough to inspect and the cost of friction can often be measured.</p>
-
-<h2 id="2-observe-the-work-as-it-actually-happens">2. Observe the work as it actually happens</h2>
-
-<p>Discovery should describe the current system, not the ideal process written in a handbook.</p>
-
-<p>Watch a real workflow from beginning to end. For example, take one engineer handling an unfamiliar issue in an existing repository:</p>
-
-<ol>
-  <li>read the issue;</li>
-  <li>locate the relevant repository and service;</li>
-  <li>understand project structure;</li>
-  <li>find related code;</li>
-  <li>trace data flow;</li>
-  <li>reproduce the problem;</li>
-  <li>decide on a change;</li>
-  <li>implement it;</li>
-  <li>run tests;</li>
-  <li>prepare a pull request;</li>
-  <li>respond to review feedback.</li>
-</ol>
-
-<p>At every step, capture four things:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Dimension</th>
-      <th>Question</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Time</td>
-      <td>Where is time being lost?</td>
-    </tr>
-    <tr>
-      <td>Friction</td>
-      <td>Where does the engineer get stuck or repeat work?</td>
-    </tr>
-    <tr>
-      <td>Context</td>
-      <td>What information has to be rediscovered or moved between systems?</td>
-    </tr>
-    <tr>
-      <td>Outcome</td>
-      <td>What visible engineering or business result does this step influence?</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Do not assume every slow step should be automated. Some steps are slow because they require judgment. The discovery exercise is about distinguishing <strong>mechanical friction</strong> from <strong>valuable thinking</strong>.</p>
-
-<h2 id="3-build-a-developer-journey-map">3. Build a developer-journey map</h2>
-
-<p>The developer journey makes hidden transitions visible.</p>
-
-<pre><code class="language-mermaid">flowchart LR
-    I[Issue] --&gt; R[Repository]
-    R --&gt; U[Understand]
-    U --&gt; P[Plan]
-    P --&gt; C[Change code]
-    C --&gt; T[Test]
-    T --&gt; PR[Prepare PR]
-    PR --&gt; V[Review]
-    V --&gt; M[Merge]
-
-    U -. friction .-&gt; U1[Missing docs\nUnknown architecture]
-    T -. friction .-&gt; T1[Test setup\nEdge cases]
-    PR -. friction .-&gt; P1[Summaries\nChecklists]
-</code></pre>
-
-<p>This diagram is intentionally simple. The goal is not architecture documentation; it is <strong>workflow visibility</strong>.</p>
-
-<p>Once the journey exists, interview developers and stakeholders around concrete transitions:</p>
-
-<ul>
-  <li>Which step takes longer than it should?</li>
-  <li>Which work is repeated across issues or repositories?</li>
-  <li>Where do people leave the IDE to search for context?</li>
-  <li>Which tasks have a predictable input and output?</li>
-  <li>Where are mistakes expensive?</li>
-  <li>Which improvement would be visible to the team or customer?</li>
-</ul>
-
-<p>These questions help separate a compelling demo from a useful engineering capability.</p>
-
-<h2 id="4-turn-friction-into-ai-opportunities">4. Turn friction into AI opportunities</h2>
-
-<p>Not every friction point needs the same Copilot capability.</p>
-
-<p>A useful first-pass mapping is:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Friction</th>
-      <th>Potential capability</th>
-      <th>Why it may fit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Understanding an unfamiliar codebase</td>
-      <td>Chat / agent-assisted exploration</td>
-      <td>Contextual explanation and repository navigation</td>
-    </tr>
-    <tr>
-      <td>Repetitive documentation</td>
-      <td>Prompt or reusable skill</td>
-      <td>Predictable structure and repeatable output</td>
-    </tr>
-    <tr>
-      <td>Local scripts and shell work</td>
-      <td>Copilot CLI</td>
-      <td>Natural-language terminal assistance</td>
-    </tr>
-    <tr>
-      <td>Issue-to-change workflow</td>
-      <td>Agent mode</td>
-      <td>Bounded multi-step work across files</td>
-    </tr>
-    <tr>
-      <td>Internal systems or live data</td>
-      <td>MCP-enabled tools</td>
-      <td>Access to approved external capabilities</td>
-    </tr>
-    <tr>
-      <td>Repeated team workflow</td>
-      <td>Skill / agent / shared instruction</td>
-      <td>Reuse and consistency</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The important word is <strong>potential</strong>.</p>
-
-<p>Capability selection belongs after the problem is understood. The same friction may have a simpler solution: better documentation, a shell script, a template, a build fix, or removing an unnecessary approval.</p>
-
-<h2 id="5-prioritize-value-instead-of-novelty">5. Prioritize value instead of novelty</h2>
-
-<p>For the lab, we will score opportunities using five dimensions:</p>
-
-<ul>
-  <li><strong>Frequency</strong> — how often the workflow occurs.</li>
-  <li><strong>Friction</strong> — how much delay, repetition, or cognitive load it creates.</li>
-  <li><strong>AI suitability</strong> — whether the work can be assisted with reliable context, tools, and validation.</li>
-  <li><strong>Outcome visibility</strong> — whether improvement can be measured.</li>
-  <li><strong>Risk</strong> — whether mistakes could create security, compliance, quality, or operational problems.</li>
-</ul>
-
-<p>A lightweight score can help compare opportunities without pretending that the score is scientific truth:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Opportunity score =
-  frequency
-+ friction
-+ AI suitability
-+ outcome visibility
-- risk
-</code></pre></div></div>
-
-<p>Use the number to provoke discussion, not to replace judgment.</p>
-
-<p>A high-value first pilot normally has a bounded scope, trusted context, a clear success condition, and an output a human can verify.</p>
-
-<h2 id="6-establish-a-measurable-baseline">6. Establish a measurable baseline</h2>
-
-<p>If we want to know whether AI helped, we need a baseline before the pilot.</p>
-
-<p>Possible measures include:</p>
-
-<ul>
-  <li>time to understand an unfamiliar repository;</li>
-  <li>issue-to-first-implementation time;</li>
-  <li>pull-request preparation time;</li>
-  <li>cycle time;</li>
-  <li>time to first meaningful contribution for a new engineer;</li>
-  <li>test-writing time;</li>
-  <li>defect or rework rate;</li>
-  <li>number of manual context switches;</li>
-  <li>developer confidence or satisfaction for the target workflow.</li>
-</ul>
-
-<p>The baseline does <strong>not</strong> need to become a giant metrics program. Part 01 needs only enough evidence to compare the pilot with the previous way of working.</p>
-
-<pre><code class="language-mermaid">flowchart LR
-    U[Usage] --&gt; A[Adoption]
-    A --&gt; E[Engineering outcome]
-    E --&gt; T[Team capability]
-    T --&gt; B[Business value]
-</code></pre>
-
-<p>Usage by itself is not the goal. A large number of Copilot interactions can coexist with no meaningful improvement in delivery, quality, learning, or customer outcomes.</p>
-
-<h2 id="7-lab--create-the-discovery-artifacts">7. Lab — create the discovery artifacts</h2>
-
-<p>This series uses a cumulative lab. Every part inherits the artifacts and decisions created earlier.</p>
-
-<p>For Part 01, the target is deliberately tool-agnostic: <strong>understand one real engineering workflow well enough to justify an AI pilot</strong>.</p>
-
-<p>The downloadable lab contains:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>labs/01-workflow-discovery/
-├── README.md
-├── LAB.md
-├── EXERCISES.md
-├── ANSWERS.md
-├── prompts/
-│   ├── 01-observe-workflow.prompt.md
-│   ├── 02-friction-audit.prompt.md
-│   └── 03-prioritize-opportunities.prompt.md
-├── scripts/
-│   └── score_opportunities.rb
-├── examples/
-│   ├── workflow-map.example.md
-│   ├── friction-register.example.md
-│   ├── ai-opportunities.example.md
-│   └── baseline-metrics.example.md
-└── diagrams/
-    └── workflow-discovery.mmd
-</code></pre></div></div>
-
-<p>By the end of the lab you should have four project artifacts:</p>
-
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">workflow-map.md</code></li>
-  <li><code class="language-plaintext highlighter-rouge">friction-register.md</code></li>
-  <li><code class="language-plaintext highlighter-rouge">ai-opportunities.md</code></li>
-  <li><code class="language-plaintext highlighter-rouge">baseline-metrics.md</code></li>
-</ol>
-
-<p>Those four files become input for Part 02, where we design the context architecture required to make the selected workflow reliable.</p>
-
-<h2 id="8-what-we-carry-into-part-02">8. What we carry into Part 02</h2>
-
-<p>Part 01 intentionally does <strong>not</strong> start by creating an agent, an MCP server, or a RAG layer.</p>
-
-<p>We first establish:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>real workflow
-    ↓
-observable friction
-    ↓
-valuable AI opportunity
-    ↓
-measurable baseline
-</code></pre></div></div>
-
-<p>Part 02 can then ask a much better question:</p>
-
-<blockquote>
-  <p>What context must Copilot receive — from the developer, repository, team, organization, product knowledge, and external systems — to assist this workflow well?</p>
-</blockquote>
-
-<p>That is where <strong>context engineering</strong> begins.</p>
-
-<hr />
-
-<h2 id="key-takeaway">Key takeaway</h2>
-
-<p><strong>Start with the workflow, not the AI tool.</strong></p>
-
-<p>Understand the work, locate the friction, choose a bounded opportunity, and establish how success will be measured. Only then select the Copilot capability and supporting AI assets.</p>
-
-<h2 id="references">References</h2>
-
-<ul>
-  <li>Source series material: <em>AI Transformation with GitHub Copilot</em> — workflow discovery, capability selection, context engineering, governance, adoption, and measurement.</li>
-  <li>Source series material: <em>AI Across the SDLC with GitHub Copilot</em> — discovery, planning, architecture, development, testing, review, delivery, production, and continuous improvement.</li>
-</ul>]]></content><author><name></name></author><category term="artificial-intelligence" /><category term="software-engineering" /><category term="agentic-ai" /><category term="github-copilot" /><category term="github-copilot" /><category term="ai-native" /><category term="sdlc" /><category term="workflow-discovery" /><category term="context-engineering" /><category term="developer-experience" /><summary type="html"><![CDATA[Series — AI-Native SDLC with GitHub Copilot · Part 01 The strongest AI adoption programs do not begin with a feature checklist. They begin by understanding how engineering work actually happens.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/og/posts/start-with-the-workflow-not-the-ai-tool.png" /><media:content medium="image" url="https://enogrob.github.io/assets/images/og/posts/start-with-the-workflow-not-the-ai-tool.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">A Copilot Pilot You Can Measure</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html" rel="alternate" type="text/html" title="A Copilot Pilot You Can Measure" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html"><![CDATA[<p><img src="/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" alt="GitHub Copilot for Rails Engineers Part 05: a Rails team scopes a pilot around CaseFlow, establishes a baseline, observes usage, quality and safety separately, and reaches an expand, revise or pause decision beside a digital Copilot-inspired profile." style="width:100%;height:auto;" /></p>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="artificial-intelligence" /><category term="software-engineering" /><category term="ruby" /><category term="ruby-on-rails" /><category term="ai" /><category term="agents" /><category term="dhh" /><category term="omarchy" /><category term="jruby" /><category term="spinel" /><category term="elixir" /><category term="software-engineering" /><summary type="html"><![CDATA[DHH's 'pencils down' moment at Rails World points to a deeper shift: AI is becoming the abstraction closest to human intent. What does that mean for Ruby, Rails, JRuby, Spinel, Elixir, and the future of programming?]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/pencils-down-intent-up/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/pencils-down-intent-up/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">A Copilot Pilot You Can Measure</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html" rel="alternate" type="text/html" title="A Copilot Pilot You Can Measure" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html"><![CDATA[<p><img src="/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" alt="GitHub Copilot for Rails Engineers Part 05: a Rails team scopes a pilot around CaseFlow, establishes a baseline, observes usage, quality and safety separately, and reaches an expand, revise or pause decision beside a digital Copilot-inspired profile." style="width:100%;height:auto;" /></p>
 
 <blockquote>
   <p><strong>Usage tells you who tried Copilot; it cannot tell you what improved.</strong> Design a small Rails pilot that measures engineering outcomes, protects sensitive context and gives the team a real decision at the end.</p>
@@ -1927,4 +1603,239 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
   <li><a href="https://docs.github.com/en/copilot/reference/custom-instructions-support">GitHub Docs: custom instruction support by feature</a></li>
   <li><a href="https://docs.github.com/en/copilot/concepts/prompting/response-customization">GitHub Docs: customizing Copilot responses</a></li>
   <li><a href="https://guides.rubyonrails.org/active_record_validations.html">Rails Guides: Active Record Validations</a></li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="custom-instructions" /><category term="context-engineering" /><summary type="html"><![CDATA[Give Copilot scoped Rails guidance, then audit what its proposal knows, assumes and cannot yet prove.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/teach-copilot-rails-context/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/teach-copilot-rails-context/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="custom-instructions" /><category term="context-engineering" /><summary type="html"><![CDATA[Give Copilot scoped Rails guidance, then audit what its proposal knows, assumes and cannot yet prove.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/teach-copilot-rails-context/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/teach-copilot-rails-context/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">The First 30 Minutes in an Unfamiliar Rails Repository</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html" rel="alternate" type="text/html" title="The First 30 Minutes in an Unfamiliar Rails Repository" /><published>2026-09-25T00:00:00+00:00</published><updated>2026-09-25T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html"><![CDATA[<p><img src="/assets/images/posts/first-30-minutes-rails-repository/cover.webp" alt="A digitized Copilot-inspired guide in side profile studies a conceptual CaseFlow Rails site; Ruby source, an unverified test and an amber question flow around the browser." style="width:100%;height:auto;" /></p>
+
+<p><em>Cover illustration: the CaseFlow browser is a conceptual application view. The companion lab supplies an integrated Rails API source app, not a working web interface.</em></p>
+
+<p><em>GitHub Copilot for Rails Engineers · Part 01</em></p>
+
+<p><em>The first half-hour in a new repository should produce a navigable architecture atlas, named unknowns and one useful next action.</em></p>
+
+<p>A client asks: “Can we add status transitions to this Rails API this week?” You have never seen the codebase. GitHub Copilot can help you explore it, but an answer that <em>sounds</em> like Rails is not evidence that this particular application behaves that way. Our goal is a <strong>small, navigable architecture atlas</strong>: what the API exposes, how a request flows, what a status change might affect, and which claims still need a run. Copilot should discover and connect evidence; we should be able to challenge the resulting map.</p>
+
+<p>We will use <strong>CaseFlow</strong>, a synthetic integrated Rails API source app. It is deliberately small enough to inspect and incomplete enough to expose an important habit: distinguish what source says, what a test asserts, and what a running system actually did. The <a href="/assets/downloads/first-30-minutes-rails-repository-support.zip">companion materials</a> contain the integrated app, the finished atlas under <code class="language-plaintext highlighter-rouge">docs/architecture/</code>, a deterministic declaration inventory, the Copilot prompt, Mermaid source and a workbook with answers. The atlas is a reviewed source map, not an observed production trace.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#predict">0–5 minutes: predict before you inspect</a></li>
+  <li><a href="#init">Early Copilot CLI check: <code class="language-plaintext highlighter-rouge">copilot init</code></a></li>
+  <li><a href="#trace">5–12 minutes: generate an inventory and trace one path</a></li>
+  <li><a href="#ask">12–20 minutes: ask Copilot for an architecture atlas</a></li>
+  <li><a href="#observe">20–27 minutes: audit the atlas and run one check</a></li>
+  <li><a href="#client">27–30 minutes: give the client one bounded answer</a></li>
+  <li><a href="#lab">Your 20–30 minute lab</a></li>
+  <li><a href="#references">References and supporting materials</a></li>
+</ul>
+
+<h2 id="predict">0–5 minutes: predict before you inspect</h2>
+
+<p>Write down your current hypothesis for <code class="language-plaintext highlighter-rouge">POST /api/requests</code>: what input is accepted, what gets saved and what comes back. Label every sentence <strong>prediction</strong>. This prevents your first impression or an AI suggestion from quietly turning into a fact.</p>
+
+<p>The question is about one change, but its impact can cross more than one file. Predict whether an update endpoint, authorization check or background job already exists. Later, compare these predictions with a capability map and evidence register. GitHub’s <a href="https://docs.github.com/en/copilot/tutorials/explore-a-codebase">codebase exploration guide</a> shows how repository and file context can narrow a question. Its <a href="https://docs.github.com/en/copilot/tutorials/review-ai-generated-code">review guidance</a> is equally relevant: inspect the answer against actual files. Here, the hypothesis is an investigation aid, not a delivery promise.</p>
+
+<h3 id="init">Early Copilot CLI check: <code class="language-plaintext highlighter-rouge">copilot init</code></h3>
+
+<p>You’re right to try Copilot’s own repository onboarding early. From a terminal, <code class="language-plaintext highlighter-rouge">copilot init</code> (or <code class="language-plaintext highlighter-rouge">/init</code> in an interactive <strong>Copilot CLI</strong> session) analyzes the current project and creates or suggests changes to <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code>. It can surface build/test commands, high-level architecture and conventions. It is a <strong>draft of guidance for future sessions</strong>, not a verified request trace or a test run. Check every generated command and architectural claim against the repository. See the <a href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#project-initialization-for-copilot">GitHub CLI command reference</a>.</p>
+
+<p>Our cumulative CaseFlow download already includes <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code> and <code class="language-plaintext highlighter-rouge">AGENTS.md</code>, so <code class="language-plaintext highlighter-rouge">/init</code> here sees existing guidance and may suggest improvements rather than producing an independent first map. Try it in a throwaway copy from the <strong>companion root</strong> (after installing and signing into Copilot CLI):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> <span class="nt">-R</span> caseflow caseflow-init-trial
+<span class="o">(</span><span class="nb">cd </span>caseflow-init-trial <span class="o">&amp;&amp;</span> copilot init<span class="o">)</span>
+diff <span class="nt">-u</span> caseflow/.github/copilot-instructions.md <span class="se">\</span>
+  caseflow-init-trial/.github/copilot-instructions.md <span class="o">||</span> <span class="nb">true</span>
+</code></pre></div></div>
+
+<p>Review any proposed change; keep the original <code class="language-plaintext highlighter-rouge">caseflow/</code> untouched. Ask: which build/test command and which architecture claim can you cite in source, and which are only assumptions? Keep that comparison as a discovery artifact. In the next steps we trace the actual request path and build an evidence-backed atlas; Part 02 revisits the instruction file deliberately.</p>
+
+<h2 id="trace">5–12 minutes: generate an inventory and trace one path</h2>
+
+<p>From the companion repository root, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby scripts/build_caseflow_inventory.rb
+</code></pre></div></div>
+
+<p>This generates <code class="language-plaintext highlighter-rouge">docs/architecture/generated-inventory.md</code>: a CaseFlow application guide with <strong>file:line</strong> declarations, Gemfile dependencies, the SQLite adapter, an architecture diagram, local setup and API examples. The extraction is reproducible and intentionally narrow. The diagram and runbook explain source-backed relationships; they do not execute Rails, discover every indirect dependency or assert that tests passed.</p>
+
+<p>Start with <code class="language-plaintext highlighter-rouge">caseflow/config/routes.rb</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">namespace</span> <span class="ss">:api</span> <span class="k">do</span>
+  <span class="n">resources</span> <span class="ss">:requests</span><span class="p">,</span> <span class="ss">only: </span><span class="sx">%i[index show create]</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>This declares a create route under <code class="language-plaintext highlighter-rouge">/api</code>. Rails routes dispatch incoming HTTP methods and paths to controller actions, as described in the <a href="https://guides.rubyonrails.org/routing.html">Rails routing guide</a>. The <code class="language-plaintext highlighter-rouge">only:</code> list matters: it does <strong>not</strong> declare an update route. Then inspect <code class="language-plaintext highlighter-rouge">app/controllers/api/requests_controller.rb</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create</span>
+  <span class="n">request</span> <span class="o">=</span> <span class="no">ServiceRequest</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">request_params</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">save</span>
+    <span class="n">render</span> <span class="ss">json: </span><span class="n">serialize</span><span class="p">(</span><span class="n">request</span><span class="p">),</span> <span class="ss">status: :created</span>
+  <span class="k">else</span>
+    <span class="n">render</span> <span class="ss">json: </span><span class="p">{</span> <span class="ss">errors: </span><span class="n">request</span><span class="p">.</span><span class="nf">errors</span><span class="p">.</span><span class="nf">full_messages</span> <span class="p">},</span> <span class="ss">status: :unprocessable_entity</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">request_params</span>
+  <span class="n">params</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:request</span><span class="p">).</span><span class="nf">permit</span><span class="p">(</span><span class="ss">:title</span><span class="p">,</span> <span class="ss">:description</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The controller allows <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">description</code> from the request payload; <code class="language-plaintext highlighter-rouge">status</code> is not permitted there. Its private <code class="language-plaintext highlighter-rouge">serialize</code> method selects <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">description</code>, <code class="language-plaintext highlighter-rouge">status</code>, <code class="language-plaintext highlighter-rouge">created_at</code> and <code class="language-plaintext highlighter-rouge">updated_at</code>. There is no separate serializer file in this CaseFlow app. A reader who guesses “the serializer” from habit would be looking in the wrong place.</p>
+
+<p>Next, the model constrains title presence, title length and status membership:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">STATUSES</span> <span class="o">=</span> <span class="sx">%w[open in_progress resolved]</span><span class="p">.</span><span class="nf">freeze</span>
+
+<span class="n">validates</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">presence: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">length: </span><span class="p">{</span> <span class="ss">maximum: </span><span class="mi">160</span> <span class="p">}</span>
+<span class="n">validates</span> <span class="ss">:status</span><span class="p">,</span> <span class="ss">inclusion: </span><span class="p">{</span> <span class="ss">in: </span><span class="no">STATUSES</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>The migration declares a <code class="language-plaintext highlighter-rouge">service_requests</code> table with <code class="language-plaintext highlighter-rouge">status</code> defaulting to <code class="language-plaintext highlighter-rouge">open</code>. A migration describes a schema change applied during setup; it is <strong>not</strong> another method called for each POST. In a correctly migrated database, the default is a reasonable expectation for a new record created without an explicit status, but we still have to run the application before claiming to have observed it. See the <a href="https://guides.rubyonrails.org/active_record_migrations.html">Rails migration guide</a> for the schema role of migrations.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0OCwncmFua1NwYWNpbmcnOjU4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTdweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggcmVxdWVzdFtcIvCfjJAgUmVxdWVzdCBwYXRoXCJdXG5BW1wi8J-OryBQT1NUIC9hcGkvcmVxdWVzdHNcIl0gLS0-IEJbXCLwn6etIFJvdXRlOiBjcmVhdGVcIl1cbkIgLS0-IENbXCLimpnvuI8gQ29udHJvbGxlcjogcGVybWl0IGZpZWxkc1wiXVxuQyAtLT4gRFtcIvCfp7EgTW9kZWw6IHZhbGlkYXRlIGFuZCBzYXZlXCJdXG5lbmRcbnN1YmdyYXBoIG91dGNvbWVzW1wi8J-UjSBFeHBlY3RlZCBicmFuY2hlczsgcnVuIHBlbmRpbmdcIl1cbkQgLS0-fFwic2F2ZSBzdWNjZWVkc1wifCBFW1wi4pyFIDIwMSArIHNlbGVjdGVkIEpTT05cIl1cbkQgLS0-fFwic2F2ZSBmYWlsc1wifCBGW1wi4pqg77iPIDQyMiArIGVycm9yc1wiXVxuZW5kXG5HW1wi8J-TpiBNaWdyYXRpb246IHNjaGVtYSArIG9wZW4gZGVmYXVsdFwiXSAtLi0-IERcbmNsYXNzRGVmIHBhc3RlbEJsdWUgZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjJweDtcbmNsYXNzRGVmIHBhc3RlbE9yYW5nZSBmaWxsOiNGOERGQzQsc3Ryb2tlOiNDOTk4NkQsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgcGFzdGVsUHVycGxlIGZpbGw6I0U4RERGNSxzdHJva2U6I0E2OEJDNCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBwYXN0ZWxHcmVlbiBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgcGFzdGVsUm9zZSBmaWxsOiNGNUQ5REMsc3Ryb2tlOiNCQzgxOTEsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgcGFzdGVsU2FuZCBmaWxsOiNGQkY0RTcsc3Ryb2tlOiNCOEExN0QsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3MgQSxCIHBhc3RlbEJsdWU7XG5jbGFzcyBDIHBhc3RlbE9yYW5nZTtcbmNsYXNzIEQgcGFzdGVsUHVycGxlO1xuY2xhc3MgRSBwYXN0ZWxHcmVlbjtcbmNsYXNzIEYgcGFzdGVsUm9zZTtcbmNsYXNzIEcgcGFzdGVsU2FuZDsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ" /></p>
+
+<p><em>The dotted link marks schema context, not an extra runtime step. The status labels describe the supplied controller branches; they are not a report of executed responses.</em></p>
+
+<h2 id="ask">12–20 minutes: ask Copilot for an architecture atlas</h2>
+
+<p>Open <strong><code class="language-plaintext highlighter-rouge">caseflow/</code> as the VS Code workspace</strong> and give Copilot a change question: “Can a client resolve a request through this API?” Workspace search or its semantic index can find likely source; the generated inventory gives you explicit declarations to cross-check. Ask for four connected artifacts, rather than a prose summary:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Investigate this Rails workspace in read-only mode. The client asks whether
+open → resolved is available. Produce: (1) a capability table with entry
+points and source files; (2) a Mermaid flowchart TD for POST /api/requests,
+with the migration as a dotted schema dependency; (3) a change-impact table
+for API, data, tests, authorization and other effects; (4) an evidence
+register classifying source, spec assertion, observation or unknown.
+Suggest three checks that could falsify important assumptions. Cite exact
+files and symbols. Do not invent an update action, a job or a passing test.
+</code></pre></div></div>
+
+<p>Compare the result with the reviewed <code class="language-plaintext highlighter-rouge">docs/architecture/README.md</code>, its generated inventory and <code class="language-plaintext highlighter-rouge">docs/diagrams/request-path.mmd</code> in the companion package. Check each path yourself. A citation is useful only if it points to a file that exists and supports that exact claim. Record a missing citation or a mistaken inference; correcting Copilot’s map is part of the exercise. In a client repository, keep sensitive data out of the prompt and follow the organization’s approved tooling rules.</p>
+
+<h3 id="what-the-atlas-should-reveal">What the atlas should reveal</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Atlas view</th>
+      <th>Source-backed finding</th>
+      <th>Important limit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Capabilities</td>
+      <td><code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">show</code>, <code class="language-plaintext highlighter-rouge">create</code> are declared</td>
+      <td>No <code class="language-plaintext highlighter-rouge">update</code> route in the supplied app</td>
+    </tr>
+    <tr>
+      <td>Request path</td>
+      <td>Create permits <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">description</code>; controller branches to <code class="language-plaintext highlighter-rouge">201</code> or <code class="language-plaintext highlighter-rouge">422</code></td>
+      <td>Branches are source expectations, not observed responses</td>
+    </tr>
+    <tr>
+      <td>Change impact</td>
+      <td>Model allows stored <code class="language-plaintext highlighter-rouge">resolved</code></td>
+      <td>There is no transition contract or authorization policy here</td>
+    </tr>
+    <tr>
+      <td>Evidence register</td>
+      <td>Two request specs describe create behavior</td>
+      <td>Their presence does not prove they passed</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This is more useful than “I found a controller.” It links a client question to the API surface, persisted state, verification and missing decisions. The <a href="/assets/downloads/first-30-minutes-rails-repository-support.zip">reviewed atlas</a> is included in the companion package under <code class="language-plaintext highlighter-rouge">docs/architecture/</code>.</p>
+
+<h2 id="observe">20–27 minutes: audit the atlas and run one check</h2>
+
+<p>Audit every diagram edge and table row against the cited file. A search result, a plausible Rails convention and an agent-generated link are leads; each still needs verification. The included request spec has two cases: a valid title expecting a <code class="language-plaintext highlighter-rouge">201</code> response, an <code class="language-plaintext highlighter-rouge">open</code> status and one stored record; and a missing title expecting <code class="language-plaintext highlighter-rouge">422</code> with no record. Those are <strong>assertions in source</strong>, not reported pass results. The companion includes an integrated Rails API source app, but has no resolved lockfile or installed dependencies here; we have not executed its specs in the authoring environment.</p>
+
+<figure>
+  <img src="/assets/images/posts/first-30-minutes-rails-repository/evidence-boundary.webp" alt="A conceptual Ruby request spec in an editor is surrounded by source and assertion flows; an amber unverified gate precedes an empty observation pane." style="width:100%;height:auto;" />
+  <figcaption>Source and a test assertion can suggest behavior. Only an actual run can supply observation; CaseFlow has not crossed that boundary yet.</figcaption>
+</figure>
+
+<p>On a Mac with compatible Ruby and Bundler installed, follow <code class="language-plaintext highlighter-rouge">caseflow/README.md</code> in the <a href="/assets/downloads/first-30-minutes-rails-repository-support.zip">companion materials</a>. Use the integrated <code class="language-plaintext highlighter-rouge">caseflow/</code> app, install dependencies, and record the actual output of:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install
+</span>bin/rails db:prepare
+bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
+</code></pre></div></div>
+
+<p>If setup fails, keep the first useful error. A blocker is evidence. Do not replace it with a hypothetical green test run. If it succeeds, send a synthetic HTTP request and capture the actual response before promoting the expected behavior to observed behavior.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Statement</th>
+      <th>Evidence now</th>
+      <th>Classification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Route includes <code class="language-plaintext highlighter-rouge">create</code> but no <code class="language-plaintext highlighter-rouge">update</code></td>
+      <td><code class="language-plaintext highlighter-rouge">config/routes.rb</code></td>
+      <td>Source fact</td>
+    </tr>
+    <tr>
+      <td>Controller permits <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">description</code></td>
+      <td><code class="language-plaintext highlighter-rouge">RequestsController#request_params</code></td>
+      <td>Source fact</td>
+    </tr>
+    <tr>
+      <td>Migration declares default <code class="language-plaintext highlighter-rouge">open</code></td>
+      <td>Migration source</td>
+      <td>Schema fact; runtime effect pending</td>
+    </tr>
+    <tr>
+      <td>Valid request returns <code class="language-plaintext highlighter-rouge">201</code> in this environment</td>
+      <td>Spec assertion only</td>
+      <td>Unverified until execution</td>
+    </tr>
+    <tr>
+      <td>Client can transition to <code class="language-plaintext highlighter-rouge">resolved</code></td>
+      <td>No route/action or test supplied</td>
+      <td>Unsupported</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="client">27–30 minutes: give the client one bounded answer</h2>
+
+<p>The useful answer is a shareable atlas, not “Copilot says the endpoint works.” Alongside the map, tell the client: “The source defines creation with title and description, title and status validations, and a schema default of <code class="language-plaintext highlighter-rouge">open</code>. The supplied specs cover valid creation and missing title, but I have not run them in this environment. I do not see an update route. The next safe step is to boot the integrated app, record the focused spec result, then scope a status-transition contract and tests.”</p>
+
+<p>The atlas supports a short engagement: a visible inventory, a diagram of the current path, a change-impact table, a named uncertainty and a testable next issue. It also gives a stakeholder a clear boundary between discovery and implementation.</p>
+
+<h3 id="lab">Your 20–30 minute lab</h3>
+
+<ol>
+  <li>Make three predictions in a local <code class="language-plaintext highlighter-rouge">ENVIRONMENT.md</code> using the template (<code class="language-plaintext highlighter-rouge">caseflow/ENVIRONMENT.template.md</code>).</li>
+  <li>In a throwaway copy, try <code class="language-plaintext highlighter-rouge">copilot init</code> from the CaseFlow directory. Compare any proposed instructions with <code class="language-plaintext highlighter-rouge">config/routes.rb</code>, <code class="language-plaintext highlighter-rouge">Gemfile</code>, the existing specs and the original instructions; record one supported claim and one unknown. Keep the packaged app unchanged.</li>
+  <li>Generate the inventory; ask Copilot for four atlas views. Compare them with <code class="language-plaintext highlighter-rouge">docs/architecture/README.md</code> and the five files in <code class="language-plaintext highlighter-rouge">docs/labs/01-codebase-diagnosis.md</code>. Mark every unsupported edge.</li>
+  <li>Attempt the focused spec; record the versions, command, actual outcome or first blocker.</li>
+  <li>Explain why a model that lists <code class="language-plaintext highlighter-rouge">resolved</code> does <strong>not</strong> prove a client can perform a status transition. Deliver the corrected capability table, request diagram, change-impact table and one bounded issue.</li>
+</ol>
+
+<p><strong>Retrieval question:</strong> What evidence would let you change “the source suggests <code class="language-plaintext highlighter-rouge">201</code>” to “I observed <code class="language-plaintext highlighter-rouge">201</code>,” and why does a passing spec not prove the entire API is production ready?</p>
+
+<p><strong>Next in the series:</strong> we will refine the context we give Copilot—repository guidance, instructions and tool boundaries—and test how the atlas changes. The reviewed atlas, generator, Mermaid source and workbook are in the companion package.</p>
+
+<h2 id="references">References and supporting materials</h2>
+
+<p><strong>Finding the prompt after download:</strong> extract the support ZIP and open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/01-trace-request.md</code> to read the full prompt. For Copilot Chat, open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/caseflow/</code> as the VS Code workspace; the executable file is <code class="language-plaintext highlighter-rouge">.github/prompts/01-trace-request.prompt.md</code>. Invoke <code class="language-plaintext highlighter-rouge">/01-trace-request</code>. On macOS, Finder may hide the <code class="language-plaintext highlighter-rouge">.github</code> directory (press Command-Shift-Period to show hidden files). The companion also contains the complete three-prompt catalog in <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/</code>.</p>
+
+<ul>
+  <li><a href="/assets/downloads/01-trace-request.prompt.txt">Read or download the Part 01 Copilot prompt</a>: a standalone text copy. To run it as a VS Code prompt file, use the matching <code class="language-plaintext highlighter-rouge">.prompt.md</code> inside the support ZIP under <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/caseflow/.github/prompts/</code>.</li>
+  <li><a href="/assets/downloads/first-30-minutes-rails-repository-support.zip">Download the CaseFlow companion package</a>: the complete post in Markdown, integrated Rails API app, study workbook with exercises and answers, field lab, atlas, reproducible inventory, Copilot prompt, Mermaid source and validation status. The integrated app still requires installing dependencies and its request specs remain unexecuted in this authoring environment.</li>
+  <li><a href="https://code.visualstudio.com/docs/agents/overview">VS Code Docs: Working with agents in an unfamiliar codebase</a>.</li>
+  <li><a href="https://code.visualstudio.com/docs/agents/reference/workspace-context">VS Code Docs: How Copilot understands your workspace</a>.</li>
+  <li><a href="/assets/downloads/01-copilot-init-lab.txt">Part 01 <code class="language-plaintext highlighter-rouge">copilot init</code> discovery exercise</a>: optional read-and-verify worksheet, also packaged under <code class="language-plaintext highlighter-rouge">parts/01-first-30-minutes/copilot-init-lab.md</code>.</li>
+  <li><a href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#project-initialization-for-copilot">GitHub Docs: Copilot CLI project initialization (<code class="language-plaintext highlighter-rouge">copilot init</code>)</a>.</li>
+  <li><a href="https://docs.github.com/en/copilot/tutorials/explore-a-codebase">GitHub Docs: Using GitHub Copilot to explore a codebase</a>.</li>
+  <li><a href="https://docs.github.com/en/copilot/tutorials/review-ai-generated-code">GitHub Docs: Review AI-generated code</a>.</li>
+  <li><a href="https://guides.rubyonrails.org/routing.html">Rails Guides: Routing from the Outside In</a>.</li>
+  <li><a href="https://guides.rubyonrails.org/active_record_migrations.html">Rails Guides: Active Record Migrations</a>.</li>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="codebase-discovery" /><category term="evidence" /><summary type="html"><![CDATA[Build an evidence-backed Rails architecture atlas with Copilot: capabilities, request flow, change impact, and the smallest safe next step.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/first-30-minutes-rails-repository/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/first-30-minutes-rails-repository/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
