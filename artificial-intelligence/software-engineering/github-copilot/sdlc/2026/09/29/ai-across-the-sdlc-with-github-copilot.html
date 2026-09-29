@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AI Across the SDLC with GitHub Copilot | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="AI Across the SDLC with GitHub Copilot">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="A practical map of Applied AI and AI Transformation across the SDLC using the GitHub Copilot product ecosystem, reusable AI assets, organizational knowledge, controls, and feedback loops.">
+<meta property="og:description" content="A practical map of Applied AI and AI Transformation across the SDLC using the GitHub Copilot product ecosystem, reusable AI assets, organizational knowledge, controls, and feedback loops.">
+<link rel="canonical" href="https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/29/ai-across-the-sdlc-with-github-copilot.html">
+<meta property="og:url" content="https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/29/ai-across-the-sdlc-with-github-copilot.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/ai-across-sdlc-github-copilot/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-09-29T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/ai-across-sdlc-github-copilot/cover.webp">
+<meta property="twitter:title" content="AI Across the SDLC with GitHub Copilot">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-09-29T00:00:00+00:00","datePublished":"2026-09-29T00:00:00+00:00","description":"A practical map of Applied AI and AI Transformation across the SDLC using the GitHub Copilot product ecosystem, reusable AI assets, organizational knowledge, controls, and feedback loops.","headline":"AI Across the SDLC with GitHub Copilot","image":"https://enogrob.github.io/assets/images/posts/ai-across-sdlc-github-copilot/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/29/ai-across-the-sdlc-with-github-copilot.html"},"url":"https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/29/ai-across-the-sdlc-with-github-copilot.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2026-09-29-ai-across-the-sdlc-with-github-copilot.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/29/ai-across-the-sdlc-with-github-copilot.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/29/ai-across-the-sdlc-with-github-copilot.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/ai-across-sdlc-github-copilot/cover.webp" alt="AI Across the SDLC with GitHub Copilot: products, reusable AI assets, and a continuous software delivery lifecycle." style="width:100%;height:auto;object-fit:contain;"></p>
+
+<blockquote>
+  <p><strong>AI transformation is not a Copilot button. Applied AI happens inside SDLC activities; transformation happens when those capabilities become reusable, governed, measurable, and connected across the lifecycle.</strong></p>
+</blockquote>
+
+<p>GitHub Copilot began, for many developers, as a faster way to complete a line of code. That mental model is now too small.</p>
+
+<p>The useful unit is no longer only <strong>code generation</strong>. It is the <strong>software-delivery system</strong> around the code: discovery, planning, architecture, implementation, testing, review, release, production, incident response, learning, and the knowledge that connects one cycle to the next.</p>
+
+<p>This article is the introduction to a larger series. The companion infographic maps the lifecycle in ten pages: an overview followed by discovery, sprint planning, architecture, development, testing, review, release, production, and continuous improvement. <a href="/assets/downloads/ai-across-the-sdlc-with-github-copilot-a4.pdf">Download the source infographic</a>.</p>
+
+<p>The central question is:</p>
+
+<p><strong>How do GitHub Copilot products and reusable AI assets fit together when the goal is not merely “use AI while coding,” but apply AI throughout the SDLC and use those applications as building blocks for a broader AI Transformation?</strong></p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#applied-vs-transformation">Applied AI and AI Transformation are related, but not identical</a></li>
+  <li><a href="#larger-than-editor">The transformation is larger than the editor</a></li>
+  <li><a href="#product-landscape">The GitHub Copilot product landscape</a></li>
+  <li><a href="#hydrafusion">HydraFusion: runtime multi-model orchestration</a></li>
+  <li><a href="#three-things">Three things that must not be confused</a></li>
+  <li><a href="#ecosystem">A practical model of the Copilot ecosystem</a></li>
+  <li><a href="#across-sdlc">Where AI fits across the SDLC</a></li>
+  <li><a href="#assets">What each AI asset actually does</a></li>
+  <li><a href="#rag-mcp">RAG is knowledge; MCP is access</a></li>
+  <li><a href="#local-global">From local customization to organizational capability</a></li>
+  <li><a href="#governance">Hooks, review, and the return of determinism</a></li>
+  <li><a href="#ai-native">From AI-assisted to AI-native</a></li>
+  <li><a href="#roadmap">The series roadmap</a></li>
+  <li><a href="#closing">Closing the loop</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+<h2 id="applied-vs-transformation">Applied AI and AI Transformation are related, but not identical</h2>
+
+<p>The identification of <strong>Skills, Agents, RAG, MCP, Hooks, Instructions, Memory, SDK, and related assets inside SDLC phases</strong> is best understood first as <strong>Applied AI</strong>: concrete uses of AI to improve a planning activity, architecture decision, development task, test workflow, review, deployment, or incident investigation.</p>
+
+<p><strong>AI Transformation</strong> is the larger organizational change that makes those applications repeatable and systemic.</p>
+
+<p>Applied AI asks:</p>
+
+<blockquote>
+  <p><em>Where can AI improve this activity?</em></p>
+</blockquote>
+
+<p>AI Transformation asks:</p>
+
+<blockquote>
+  <p><em>How do we make those capabilities reusable across teams, governed by policy, connected to organizational knowledge, measurable through engineering outcomes, and continuously improved?</em></p>
+</blockquote>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBMUlxuY2xhc3NEZWYgb3JnIGZpbGw6I0U3RjBGRixzdHJva2U6IzZFOTFDOSxjb2xvcjojMjAzNjUzXG5jbGFzc0RlZiBhcHBsaWVkIGZpbGw6I0Y4REZDNCxzdHJva2U6I0M5OTg2RCxjb2xvcjojNEEzMjFGXG5jbGFzc0RlZiBnb3Zlcm4gZmlsbDojRURFN0Y2LHN0cm9rZTojOEI3OUI1LGNvbG9yOiMzMzI4NERcbmNsYXNzRGVmIG1lYXN1cmUgZmlsbDojRThGNUU5LHN0cm9rZTojNzVBNDc4LGNvbG9yOiMyNDQyMjhcbiUlLVxuc3ViZ3JhcGggVFtcIvCfj6IgQUkgVHJhbnNmb3JtYXRpb24g4oCUIG9wZXJhdGluZyBtb2RlbFwiXVxuR09WW1wiUG9saWNpZXMgwrcgcm9sZXMgwrcgZW5hYmxlbWVudCDCtyBzaGFyZWQgcGxhdGZvcm1cIl06OjpvcmdcblBPUlRbXCJSZXVzYWJsZSBhc3NldHMgwrcgcHJvZHVjdCBzdXJmYWNlcyDCtyBrbm93bGVkZ2UgYXJjaGl0ZWN0dXJlXCJdOjo6b3JnXG5lbmRcbiUlLVxuc3ViZ3JhcGggQVtcIvCfm6DvuI8gQXBwbGllZCBBSSDigJQgd29yayBpbnNpZGUgdGhlIFNETENcIl1cblVTRVtcIlVzZSBDb3BpbG90IHByb2R1Y3RzIGFuZCBBSSBhc3NldHM8YnIvPmF0IGEgY29uY3JldGUgbGlmZWN5Y2xlIGFjdGl2aXR5XCJdOjo6YXBwbGllZFxuT1VUW1wiQ29kZSDCtyBBRFIgwrcgdGVzdCDCtyByZXZpZXcgwrcgcmVsZWFzZSDCtyBpbmNpZGVudCBhbmFseXNpc1wiXTo6OmFwcGxpZWRcbmVuZFxuJSUtXG5zdWJncmFwaCBHW1wi8J-boe-4jyBHb3Zlcm5hbmNlICYgZXZpZGVuY2VcIl1cbkNUUkxbXCJIb29rcyDCtyBwZXJtaXNzaW9ucyDCtyByZXZpZXcgwrcgZGV0ZXJtaW5pc3RpYyBjaGVja3NcIl06Ojpnb3Zlcm5cbk1FVFtcIlF1YWxpdHkgwrcgbGVhZCB0aW1lIMK3IHJlbGlhYmlsaXR5IMK3IGFkb3B0aW9uIMK3IGxlYXJuaW5nXCJdOjo6bWVhc3VyZVxuZW5kXG4lJS1cbkdPViAtLT4gUE9SVCAtLT4gVVNFIC0tPiBPVVQgLS0-IENUUkwgLS0-IE1FVFxuTUVUIC0uIGluZm9ybXMgLi0-IEdPVlxuJSUtIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0"></p>
+
+<p>This distinction strengthens the model rather than replacing it. The SDLC map describes <strong>where AI is applied</strong>; the transformation model describes <strong>how those applications become an organizational capability</strong>.</p>
+
+<h2 id="larger-than-editor">The transformation is larger than the editor</h2>
+
+<p>The familiar picture of Copilot is a developer inside an IDE asking for code, explanations, tests, or refactors. That remains useful, but the current GitHub Copilot ecosystem extends far beyond that interaction.</p>
+
+<p>Copilot can participate locally in an IDE or terminal, asynchronously in the cloud, in pull-request review, inside a dedicated desktop application, and programmatically through an SDK. GitHub CLI can also start and track Copilot cloud-agent sessions using <code class="language-plaintext highlighter-rouge">gh agent-task</code>, which is distinct from the separate <strong>GitHub Copilot CLI</strong>.</p>
+
+<p>That distinction matters:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GitHub CLI          = gh, the GitHub platform CLI
+GitHub Copilot CLI  = the local agentic Copilot terminal experience
+</code></pre></div></div>
+
+<p>The result is an ecosystem in which the same knowledge, skills, tools, and controls can support different moments of delivery.</p>
+
+<figure class="post-figure">
+  <img src="/assets/images/posts/ai-across-sdlc-github-copilot/copilot-across-sdlc.webp" alt="GitHub Copilot products and AI assets connected across planning, design, development, testing, release, and operations." loading="lazy" style="width:100%;height:auto;object-fit:contain;">
+  <figcaption>Applied AI appears at individual SDLC activities; AI Transformation connects those uses into a shared delivery capability.</figcaption>
+</figure>
+
+<h2 id="product-landscape">The GitHub Copilot product landscape</h2>
+
+<p>For this series, it is useful to separate <strong>official GitHub Copilot products/surfaces</strong> from reusable assets and from adjacent orchestration concepts.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product or surface</th>
+      <th>What it contributes to the SDLC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>GitHub Copilot in the IDE</strong></td>
+      <td>Suggestions, Chat, Ask/Plan/Agent workflows, code edits, tests, explanation, repository work</td>
+    </tr>
+    <tr>
+      <td><strong>GitHub Copilot CLI</strong></td>
+      <td>Local agentic work from the terminal: inspect, modify, run commands, delegate to subagents, use skills, hooks and MCP</td>
+    </tr>
+    <tr>
+      <td><strong>GitHub CLI (<code class="language-plaintext highlighter-rouge">gh</code>)</strong></td>
+      <td>GitHub platform CLI; can start and track <strong>Copilot cloud agent</strong> sessions using <code class="language-plaintext highlighter-rouge">gh agent-task</code>
+</td>
+    </tr>
+    <tr>
+      <td><strong>GitHub Copilot app</strong></td>
+      <td>Desktop application for parallel agent workstreams, GitHub issues/PRs, automations, canvases, local repositories and cloud sandboxes</td>
+    </tr>
+    <tr>
+      <td><strong>GitHub Copilot cloud agent</strong></td>
+      <td>Asynchronous agent that can research a repository, make changes and create pull requests in cloud environments</td>
+    </tr>
+    <tr>
+      <td><strong>GitHub Copilot code review</strong></td>
+      <td>AI-assisted PR review on GitHub and supported development surfaces</td>
+    </tr>
+    <tr>
+      <td><strong>GitHub Copilot SDK</strong></td>
+      <td>Programmatic foundation for building custom Copilot-powered applications, agent sessions and integrations</td>
+    </tr>
+    <tr>
+      <td><strong>GitHub MCP Server / MCP integrations</strong></td>
+      <td>Connect Copilot-capable clients and agents with GitHub and external tools/data through MCP</td>
+    </tr>
+    <tr>
+      <td><strong>Project HydraFusion (Research Preview)</strong></td>
+      <td>Adaptive multi-model runtime orchestration in Copilot CLI; selects Single, Cascade, or Critique workflows</td>
+    </tr>
+    <tr>
+      <td><strong>GitHub Mobile / GitHub.com entry points</strong></td>
+      <td>Additional places to start, monitor or interact with cloud-agent work</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>GitHub’s current documentation explicitly describes the <strong>GitHub Copilot app</strong> as built on Copilot CLI and the Copilot SDK, and describes the cloud agent as accessible from GitHub, IDEs, REST API, GitHub CLI, GitHub MCP Server, mobile, and several external work systems.</p>
+
+<h2 id="hydrafusion">HydraFusion: runtime multi-model orchestration</h2>
+
+<p><strong>Project HydraFusion is an official GitHub Copilot research preview for adaptive multi-model runtime orchestration.</strong> GitHub introduced it in September 2026 as a runtime layer that creates an execution plan and can choose among models from multiple providers according to the task.</p>
+
+<p>HydraFusion is currently available through <strong>GitHub Copilot CLI</strong> as an experimental model option. A developer enables experimental features, selects <code class="language-plaintext highlighter-rouge">HydraFusion (Research Preview)</code>, and then interacts with Copilot normally while the orchestration happens behind the scenes.</p>
+
+<p>Its role is different from Skills, Agents, MCP, Hooks, or Instructions. Those are reusable capabilities, context mechanisms, integrations, or controls. HydraFusion sits closer to the <strong>agentic runtime and model-selection layer</strong>.</p>
+
+<p>A useful mental model is:</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBUQlxuY2xhc3NEZWYgaHVtYW4gZmlsbDojRkNFOEU2LHN0cm9rZTojQzk3Qzc1LGNvbG9yOiM0QTJBMjdcbmNsYXNzRGVmIHByb2R1Y3QgZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMyMDM2NTNcbmNsYXNzRGVmIHJ1bnRpbWUgZmlsbDojRURFN0Y2LHN0cm9rZTojOEI3OUI1LGNvbG9yOiMzMzI4NERcbmNsYXNzRGVmIG1vZGVsIGZpbGw6I0ZGRjNENixzdHJva2U6I0M3QTQ1QSxjb2xvcjojNEEzQTE2XG5jbGFzc0RlZiBhc3NldCBmaWxsOiNFMUY0RjMsc3Ryb2tlOiM2RUE5QTUsY29sb3I6IzFFNEE0N1xuY2xhc3NEZWYgZXZpZGVuY2UgZmlsbDojRENFRkQ2LHN0cm9rZTojODZBODc4LGNvbG9yOiMyNDQyMjhcbiUlLVxuSFtcIvCfkaQgSHVtYW4gaW50ZW50XCJdOjo6aHVtYW5cbkNbXCLijKjvuI8gR2l0SHViIENvcGlsb3QgQ0xJXCJdOjo6cHJvZHVjdFxuJSUtXG5zdWJncmFwaCBSW1wi8J-noCBBZ2VudGljIHJ1bnRpbWVcIl1cbkhGW1wi8J-MiiBIeWRyYUZ1c2lvblwiXTo6OnJ1bnRpbWVcblNbXCJTaW5nbGVcIl06OjpydW50aW1lXG5DQVtcIkNhc2NhZGVcIl06OjpydW50aW1lXG5DUltcIkNyaXRpcXVlXCJdOjo6cnVudGltZVxuZW5kXG4lJS1cbnN1YmdyYXBoIE1bXCLwn6SWIE1vZGVsIHBvb2xcIl1cbk0xW1wiTW9kZWwgQVwiXTo6Om1vZGVsXG5NMltcIk1vZGVsIEJcIl06Ojptb2RlbFxuTTNbXCJNb2RlbCBDXCJdOjo6bW9kZWxcbmVuZFxuJSUtXG5BW1wi8J-nqSBTa2lsbHMgwrcgQWdlbnRzIMK3IE1DUCDCtyBIb29rcyDCtyBJbnN0cnVjdGlvbnNcIl06Ojphc3NldFxuRVtcIuKchSBSZXBvc2l0b3J5IHdvcmsgwrcgdGVzdHMgwrcgcmV2aWV3IMK3IGV2aWRlbmNlXCJdOjo6ZXZpZGVuY2VcbiUlLVxuSCAtLT4gQyAtLT4gSEZcbkhGIC0tPiBTXG5IRiAtLT4gQ0FcbkhGIC0tPiBDUlxuUyAtLT4gTTFcbkNBIC0tPiBNMVxuQ0EgLS0-IE0yXG5DUiAtLT4gTTJcbkNSIC0tPiBNM1xuTTEgLS0-IEFcbk0yIC0tPiBBXG5NMyAtLT4gQVxuQSAtLT4gRSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"></p>
+
+<p>HydraFusion currently selects one of three execution patterns:</p>
+
+<ul>
+  <li>
+<strong>Single</strong> — one selected model solves the task directly.</li>
+  <li>
+<strong>Cascade</strong> — an efficient model drafts first; a quality gate decides whether to accept or escalate to a stronger model.</li>
+  <li>
+<strong>Critique</strong> — one model drafts, an independent read-only critic from another model family reviews, and the drafting model revises once.</li>
+</ul>
+
+<p>The point is not merely model choice. GitHub describes HydraFusion as <strong>runtime orchestration</strong>: it dynamically constructs the workflow expected to meet a quality target while balancing performance, latency, and cost.</p>
+
+<p>For this SDLC series, that makes HydraFusion relevant mainly where substantial agentic work happens—development, debugging, code transformation, testing, investigation, and other tasks in which the runtime can benefit from choosing a compound workflow rather than a single-model response.</p>
+
+<p>Because it is still a <strong>research preview</strong>, the article should not treat its current behavior, availability, model pool, or workflows as fixed production contracts.</p>
+
+<h2 id="three-things">Three things that must not be confused</h2>
+
+<p>A lot of AI adoption becomes confusing because <strong>product surfaces</strong>, <strong>AI assets</strong>, and <strong>organizational knowledge</strong> are mixed together.</p>
+
+<p>They are related, but they are not the same thing.</p>
+
+<h3 id="1-product-surfaces">1. Product surfaces</h3>
+
+<p>These are places where people or systems interact with Copilot: IDE, GitHub Copilot CLI, GitHub CLI entry points to the cloud agent, GitHub Copilot app, GitHub.com, cloud-agent APIs, code review, and custom experiences built with the Copilot SDK.</p>
+
+<p>A surface answers: <strong>Where does the interaction or execution happen?</strong></p>
+
+<h3 id="2-ai-assets">2. AI assets</h3>
+
+<p>These are reusable pieces of behavior, capability, or control:</p>
+
+<ul>
+  <li>custom instructions;</li>
+  <li>skills;</li>
+  <li>custom agents;</li>
+  <li>hooks;</li>
+  <li>MCP configurations;</li>
+  <li>plugins;</li>
+  <li>prompts and prompt files;</li>
+  <li>reusable policies and evaluation routines.</li>
+</ul>
+
+<p>An asset answers: <strong>What behavior, capability, or constraint should be reusable?</strong></p>
+
+<h3 id="3-knowledge-and-context">3. Knowledge and context</h3>
+
+<p>This includes:</p>
+
+<ul>
+  <li>repository source;</li>
+  <li>architecture documentation;</li>
+  <li>ADRs;</li>
+  <li>runbooks;</li>
+  <li>tickets;</li>
+  <li>standards;</li>
+  <li>product documentation;</li>
+  <li>organizational knowledge bases;</li>
+  <li>Copilot Memory where supported;</li>
+  <li>retrieved context through RAG-style systems.</li>
+</ul>
+
+<p>Knowledge answers: <strong>What should the AI know for this task?</strong></p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBMUlxuY2xhc3NEZWYgaHVtYW4gZmlsbDojRkNFOEU2LHN0cm9rZTojQzk3Qzc1LGNvbG9yOiM0QTJBMjdcbmNsYXNzRGVmIHByb2R1Y3QgZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMyMDM2NTNcbmNsYXNzRGVmIGFzc2V0IGZpbGw6I0VERTdGNixzdHJva2U6IzhCNzlCNSxjb2xvcjojMzMyODREXG5jbGFzc0RlZiBrbm93bGVkZ2UgZmlsbDojRkZGM0Q2LHN0cm9rZTojQzdBNDVBLGNvbG9yOiM0QTNBMTZcbmNsYXNzRGVmIGNvbnRyb2wgZmlsbDojRjVEOURDLHN0cm9rZTojQkM4MTkxLGNvbG9yOiM0QTJBMzVcbmNsYXNzRGVmIGV2aWRlbmNlIGZpbGw6I0RDRUZENixzdHJva2U6Izg2QTg3OCxjb2xvcjojMjQ0MjI4XG4lJS1cbkhbXCLwn5GkIEh1bWFuIGludGVudFwiXTo6Omh1bWFuXG4lJS1cbnN1YmdyYXBoIFBbXCLwn6etIFByb2R1Y3QgJiBleGVjdXRpb24gc3VyZmFjZXNcIl1cbklERVtcIvCfkrsgR2l0SHViIENvcGlsb3QgaW4gSURFPGJyLz5DaGF0IMK3IEFzayDCtyBQbGFuIMK3IEFnZW50XCJdOjo6cHJvZHVjdFxuQ0NMSVtcIuKMqO-4jyBHaXRIdWIgQ29waWxvdCBDTEk8YnIvPkxvY2FsIGFnZW50aWMgdGVybWluYWxcIl06Ojpwcm9kdWN0XG5HQ0xJW1wi8J-QmSBHaXRIdWIgQ0xJPGJyLz5naCBhZ2VudC10YXNrIOKGkiBjbG91ZCBhZ2VudFwiXTo6OnByb2R1Y3RcbkFQUFtcIvCflqXvuI8gR2l0SHViIENvcGlsb3QgYXBwPGJyLz5QYXJhbGxlbCBhZ2VudCB3b3Jrc3RyZWFtc1wiXTo6OnByb2R1Y3RcbkNMT1VEW1wi4piB77iPIENvcGlsb3QgY2xvdWQgYWdlbnQ8YnIvPkFzeW5jIHdvcmsgKyBwdWxsIHJlcXVlc3RzXCJdOjo6cHJvZHVjdFxuUkVWSUVXW1wi8J-UjiBDb3BpbG90IGNvZGUgcmV2aWV3XCJdOjo6cHJvZHVjdFxuU0RLW1wi8J-nqSBDb3BpbG90IFNESzxici8-Q3VzdG9tIEFJIGFwcGxpY2F0aW9uc1wiXTo6OnByb2R1Y3RcbmVuZFxuJSUtXG5zdWJncmFwaCBBW1wi8J-noCBSZXVzYWJsZSBBSSBhc3NldHNcIl1cbklOU1tcIvCfk4QgSW5zdHJ1Y3Rpb25zXCJdOjo6YXNzZXRcblNLW1wi8J-TmCBTa2lsbHNcIl06Ojphc3NldFxuQUdbXCLwn6SWIEN1c3RvbSBhZ2VudHNcIl06Ojphc3NldFxuTUNQW1wi8J-UjCBNQ1BcIl06Ojphc3NldFxuSEtbXCLimqEgSG9va3NcIl06Ojpjb250cm9sXG5NRU1bXCLwn6egIE1lbW9yeVwiXTo6OmFzc2V0XG5lbmRcbiUlLVxuc3ViZ3JhcGggS1tcIvCfk5ogS25vd2xlZGdlICYgb3JnYW5pemF0aW9uYWwgY29udGV4dFwiXVxuUkFHW1wi8J-XhO-4jyBSQUcgLyBzZWFyY2ggLyBrbm93bGVkZ2UgbGF5ZXJcIl06Ojprbm93bGVkZ2VcbkRPQ1NbXCLwn5OaIENvZGUgwrcgQURScyDCtyBkb2NzIMK3IHJ1bmJvb2tzIMK3IHRpY2tldHNcIl06Ojprbm93bGVkZ2VcbmVuZFxuJSUtXG5FVltcIuKchSBUZXN0cyDCtyByZXZpZXcgwrcgQ0kgwrcgdGVsZW1ldHJ5IMK3IGh1bWFuIGFwcHJvdmFsXCJdOjo6ZXZpZGVuY2VcbiUlLVxuSCAtLT4gUFxuUCAtLT4gQVxuRE9DUyAtLT4gUkFHIC0tPiBBXG5BIC0tPiBFVlxuUkVWSUVXIC0tPiBFVlxuRVYgLS4gbGVhcm5pbmcgLi0-IEtcbiUlLSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"></p>
+
+<p>This separation is one of the foundations of an AI architecture. A team that stores everything in one giant prompt has not created a reusable capability model; it has created a fragile conversation.</p>
+
+<h2 id="ecosystem">A practical model of the Copilot ecosystem</h2>
+
+<p>A useful way to reason about GitHub Copilot is as a set of layers.</p>
+
+<p><strong>Human intent</strong> enters through a product or execution surface. That surface assembles context from the repository, instructions, memory, skills, and available knowledge. Agents reason over the task. MCP can expose tools and external systems. Hooks can introduce deterministic checks or automation at lifecycle points. Tests, code review, CI results, runtime telemetry, and human decisions become evidence.</p>
+
+<p>The result is not simply “AI generated code.”</p>
+
+<p>It is:</p>
+
+<p><strong>Intent → surface → context → reasoning → tools → controls → evidence → learning.</strong></p>
+
+<figure class="post-figure">
+  <img src="/assets/images/posts/ai-across-sdlc-github-copilot/copilot-ecosystem.webp" alt="The GitHub Copilot ecosystem connecting products and reusable AI assets with the software development lifecycle." loading="lazy" style="width:100%;height:auto;object-fit:contain;">
+  <figcaption>The ecosystem matters more than any one feature: products provide execution surfaces, assets provide reusable capability, and evidence closes the loop.</figcaption>
+</figure>
+
+<p>GitHub’s Copilot CLI customization model currently includes <strong>custom instructions, hooks, skills, custom agents, MCP servers, plugins, and settings</strong>. Copilot Memory provides persistent repository understanding, and the Copilot SDK makes agent sessions and capabilities programmable.</p>
+
+<p>This is a shift from “AI assistant” toward <strong>programmable agentic infrastructure</strong>.</p>
+
+<h2 id="across-sdlc">Where AI fits across the SDLC</h2>
+
+<p>The companion infographic divides the lifecycle into a beginning, a middle, and what happens after release. That framing is useful because it prevents AI from being reduced to implementation.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBUQlxuY2xhc3NEZWYgYmVnaW4gZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMyMDM2NTNcbmNsYXNzRGVmIGR1cmluZyBmaWxsOiNGOERGQzQsc3Ryb2tlOiNDOTk4NkQsY29sb3I6IzRBMzIxRlxuY2xhc3NEZWYgYWZ0ZXIgZmlsbDojRENFRkQ2LHN0cm9rZTojODZBODc4LGNvbG9yOiMyNDQyMjhcbmNsYXNzRGVmIGNyb3NzIGZpbGw6I0VERTdGNixzdHJva2U6IzhCNzlCNSxjb2xvcjojMzMyODREXG5jbGFzc0RlZiBmZWVkYmFjayBmaWxsOiNGRkYxQkYsc3Ryb2tlOiNCQTlDNDMsY29sb3I6IzRBM0ExNlxuJSUtXG5zdWJncmFwaCBCW1wiMSDCtyBCZWdpbm5pbmcg4oCUIFVuZGVyc3RhbmQgYW5kIHNoYXBlXCJdXG5ESVNDW1wi8J-UjiBEaXNjb3ZlcnkgJiBwcm9kdWN0IHBsYW5uaW5nXCJdOjo6YmVnaW5cbkJBQ0tbXCLwn5OLIFNwcmludCBwbGFubmluZyAmIGJhY2tsb2dcIl06OjpiZWdpblxuQVJDSFtcIvCfj5vvuI8gQXJjaGl0ZWN0dXJlICYgc29sdXRpb24gZGVzaWduXCJdOjo6YmVnaW5cbkRJU0MgLS0-IEJBQ0sgLS0-IEFSQ0hcbmVuZFxuJSUtXG5zdWJncmFwaCBEW1wiMiDCtyBEdXJpbmcg4oCUIEJ1aWxkIGFuZCB2YWxpZGF0ZVwiXVxuREVWW1wi8J-SuyBEZXZlbG9wbWVudFwiXTo6OmR1cmluZ1xuVEVTVFtcIvCfp6ogVGVzdGluZyAmIHF1YWxpdHlcIl06OjpkdXJpbmdcblJFVltcIvCflI0gQ29kZSByZXZpZXcgwrcgc2VjdXJpdHkgwrcgY29tcGxpYW5jZVwiXTo6OmR1cmluZ1xuQVJDSCAtLT4gREVWIC0tPiBURVNUIC0tPiBSRVZcbmVuZFxuJSUtXG5zdWJncmFwaCBBW1wiMyDCtyBBZnRlciByZWxlYXNlIOKAlCBPcGVyYXRlIGFuZCBsZWFyblwiXVxuUkVMW1wi8J-agCBDSS9DRCDCtyByZWxlYXNlIMK3IGRlcGxveW1lbnRcIl06OjphZnRlclxuUFJPRFtcIvCfk4ggUHJvZHVjdGlvbiDCtyBtb25pdG9yaW5nIMK3IGluY2lkZW50c1wiXTo6OmFmdGVyXG5MRUFSTltcIuKZu--4jyBGZWVkYmFjayDCtyBsZWFybmluZyDCtyBpbXByb3ZlbWVudFwiXTo6OmFmdGVyXG5SRVYgLS0-IFJFTCAtLT4gUFJPRCAtLT4gTEVBUk5cbmVuZFxuJSUtXG5YW1wi8J-noCBDcm9zcy1TRExDIEFJIGFzc2V0czxici8-SW5zdHJ1Y3Rpb25zIMK3IFNraWxscyDCtyBBZ2VudHMgwrcgTUNQIMK3IFJBRyDCtyBIb29rcyDCtyBNZW1vcnkgwrcgU0RLXCJdOjo6Y3Jvc3NcbiUlLVxuWCAtLiBjb250ZXh0dWFsaXplIC4tPiBESVNDXG5YIC0uIG9yY2hlc3RyYXRlIC4tPiBERVZcblggLS4gdmFsaWRhdGUgLi0-IFJFVlxuWCAtLiBpbnZlc3RpZ2F0ZSAuLT4gUFJPRFxuWCAtLiBjYXB0dXJlIGxlYXJuaW5nIC4tPiBMRUFSTlxuTEVBUk4gLS4gbmV4dCBjeWNsZSAuLT4gRElTQ1xuJSUtIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0"></p>
+
+<p>A practical mapping looks like this:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>SDLC phase</th>
+      <th>GitHub/Copilot surfaces</th>
+      <th>Useful AI assets</th>
+      <th>Applied-AI outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Discovery &amp; product planning</td>
+      <td>Copilot Chat, GitHub, Copilot app, SDK experiences</td>
+      <td>Instructions, RAG, MCP, skills</td>
+      <td>Themes, requirements, risks, early roadmap</td>
+    </tr>
+    <tr>
+      <td>Sprint planning &amp; backlog shaping</td>
+      <td>GitHub, Copilot app, GitHub CLI, Copilot CLI</td>
+      <td>Skills, agents, instructions, hooks</td>
+      <td>Stories, criteria, dependencies, sprint plan</td>
+    </tr>
+    <tr>
+      <td>Architecture &amp; solution design</td>
+      <td>IDE, Chat, Copilot CLI, SDK apps</td>
+      <td>RAG, skills, MCP, agents, instructions</td>
+      <td>ADRs, diagrams, contracts, trade-off exploration</td>
+    </tr>
+    <tr>
+      <td>Development</td>
+      <td>IDE Copilot, Copilot CLI, Copilot app, cloud agent</td>
+      <td>Instructions, skills, agents, MCP</td>
+      <td>Code, refactors, documentation, delegated implementation</td>
+    </tr>
+    <tr>
+      <td>Testing &amp; quality engineering</td>
+      <td>IDE, Copilot CLI, cloud agent</td>
+      <td>Skills, hooks, RAG, MCP</td>
+      <td>Tests, edge cases, fixtures, failure analysis</td>
+    </tr>
+    <tr>
+      <td>Code review, security &amp; compliance</td>
+      <td>Copilot code review, GitHub.com, IDE, GitHub CLI</td>
+      <td>Instructions, skills, MCP, hooks</td>
+      <td>Review findings, policy context, suggested fixes</td>
+    </tr>
+    <tr>
+      <td>CI/CD, release &amp; deployment</td>
+      <td>GitHub Actions context, GitHub CLI, Copilot CLI, cloud agent, SDK apps</td>
+      <td>Hooks, MCP, skills, agents</td>
+      <td>Workflow authoring, release notes, rollout and rollback assistance</td>
+    </tr>
+    <tr>
+      <td>Production &amp; incident response</td>
+      <td>Copilot CLI, Copilot app, custom SDK apps, agents</td>
+      <td>MCP, RAG, skills, agents, hooks</td>
+      <td>Correlation, runbook retrieval, investigation, guided remediation</td>
+    </tr>
+    <tr>
+      <td>Feedback &amp; continuous improvement</td>
+      <td>GitHub, Copilot app, SDK apps, Chat</td>
+      <td>RAG, memory, agents, skills</td>
+      <td>Learning captured into backlog, docs, playbooks and new assets</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This table describes <strong>Applied AI</strong>.</p>
+
+<p>When the same assets become shared across repositories, governed at organization or enterprise level, connected to standardized knowledge, and measured against engineering outcomes, the organization begins moving toward <strong>AI Transformation</strong>.</p>
+
+<h2 id="assets">What each AI asset actually does</h2>
+
+<p>The names overlap enough that teams often ask whether they are interchangeable. They are not.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBMUlxuY2xhc3NEZWYgaW5zdHJ1Y3Rpb24gZmlsbDojRkZGM0Q2LHN0cm9rZTojQzdBNDVBLGNvbG9yOiM0QTNBMTZcbmNsYXNzRGVmIHNraWxsIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojMjAzNjUzXG5jbGFzc0RlZiBhZ2VudCBmaWxsOiNFREU3RjYsc3Ryb2tlOiM4Qjc5QjUsY29sb3I6IzMzMjg0RFxuY2xhc3NEZWYgdG9vbCBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzI0NDIyOFxuY2xhc3NEZWYgY29udHJvbCBmaWxsOiNGNUQ5REMsc3Ryb2tlOiNCQzgxOTEsY29sb3I6IzRBMkEzNVxuY2xhc3NEZWYga25vd2xlZGdlIGZpbGw6I0UxRjRGMyxzdHJva2U6IzZFQTlBNSxjb2xvcjojMUU0QTQ3XG5jbGFzc0RlZiBwbGF0Zm9ybSBmaWxsOiNGOERGQzQsc3Ryb2tlOiNDOTk4NkQsY29sb3I6IzRBMzIxRlxuJSUtXG5JW1wi8J-ThCBJbnN0cnVjdGlvbnM8YnIvPlBlcnNpc3RlbnQgd2F5cyBvZiB3b3JraW5nXCJdOjo6aW5zdHJ1Y3Rpb25cblNbXCLwn5OYIFNraWxsczxici8-UmV1c2FibGUgcHJvY2VkdXJlc1wiXTo6OnNraWxsXG5SW1wi8J-XhO-4jyBSQUcgLyBrbm93bGVkZ2U8YnIvPlJldHJpZXZlIHJlbGV2YW50IGNvbnRleHRcIl06Ojprbm93bGVkZ2VcbkFbXCLwn6SWIEFnZW50czxici8-U3BlY2lhbGl6ZWQgcmVzcG9uc2liaWxpdHlcIl06OjphZ2VudFxuTVtcIvCflIwgTUNQPGJyLz5Ub29scyArIGV4dGVybmFsIHN5c3RlbXNcIl06Ojp0b29sXG5IW1wi4pqhIEhvb2tzPGJyLz5EZXRlcm1pbmlzdGljIGxpZmVjeWNsZSBjb250cm9sc1wiXTo6OmNvbnRyb2xcbktbXCLwn6epIFNESzxici8-RW1iZWQgQ29waWxvdCBpbnRvIGN1c3RvbSBhcHBzXCJdOjo6cGxhdGZvcm1cbiUlLVxuSSAtLT4gQVxuUyAtLT4gQVxuUiAtLT4gQVxuTSAtLT4gQVxuSyAtLT4gQVxuQSAtLT4gSFxuSCAtLT4gRVtcIuKchSBSZXZpZXdhYmxlLCBldmlkZW5jZS1wcm9kdWNpbmcgd29ya2Zsb3dcIl1cbiUlLSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"></p>
+
+<h3 id="instructions--the-persistent-how-we-work">Instructions — the persistent “how we work”</h3>
+
+<p>Instructions encode stable guidance such as coding conventions, architecture constraints, testing expectations, build commands, security requirements, and repository context.</p>
+
+<h3 id="skills--reusable-procedures-with-domain-knowledge">Skills — reusable procedures with domain knowledge</h3>
+
+<p>GitHub describes agent skills as reusable folders of instructions, scripts, and resources that can be loaded for specialized tasks. A skill is useful when a capability should be repeatable across work: reviewing a Rails migration, creating an ADR, performing a threat-model pass, or preparing a release.</p>
+
+<h3 id="custom-agents--specialized-responsibility">Custom agents — specialized responsibility</h3>
+
+<p>Custom agents package expertise, prompts, tool permissions, and optionally MCP integrations. They are useful when responsibility itself should be reusable: architecture agent, test-design agent, security reviewer, or incident investigator.</p>
+
+<h3 id="mcp--access-to-tools-and-external-systems">MCP — access to tools and external systems</h3>
+
+<p>MCP lets agents use tools and data sources beyond the immediate repository. It can expose issue trackers, CI/CD systems, databases, observability tools, documentation systems, browsers, and internal services.</p>
+
+<h3 id="hooks--deterministic-control-points">Hooks — deterministic control points</h3>
+
+<p>Hooks execute commands at defined agent lifecycle points. They can automate tests, validation, security checks, logging, policy enforcement, or other deterministic operations.</p>
+
+<h3 id="memory--persistent-context-where-supported">Memory — persistent context where supported</h3>
+
+<p>Copilot Memory stores useful repository facts and preferences so the system can avoid reconstructing all context from scratch in every session. It should complement, not replace, canonical documentation and policy.</p>
+
+<h3 id="plugins--distributable-customization-bundles">Plugins — distributable customization bundles</h3>
+
+<p>Copilot CLI plugins package multiple customization components so teams can distribute reusable behavior more conveniently.</p>
+
+<h3 id="sdk--copilot-as-a-building-block">SDK — Copilot as a building block</h3>
+
+<p>The Copilot SDK lets teams build custom Copilot-powered applications. It supports programmatic sessions and capabilities such as custom agents, MCP integrations, hooks, skills, and observability.</p>
+
+<h3 id="rag--knowledge-retrieval-architecture">RAG — knowledge retrieval architecture</h3>
+
+<p>RAG is not a GitHub-specific file or Copilot product. It is an architecture for finding relevant knowledge and placing that context into an AI task.</p>
+
+<figure class="post-figure">
+  <img src="/assets/images/posts/ai-across-sdlc-github-copilot/products-assets-context.webp" alt="Products, AI assets, and context organized around the GitHub Copilot ecosystem and the SDLC." loading="lazy" style="width:100%;height:auto;object-fit:contain;">
+  <figcaption>Products are where work happens; AI assets encode reusable capability; knowledge supplies context; controls and evidence make execution governable.</figcaption>
+</figure>
+
+<h2 id="rag-mcp">RAG is knowledge; MCP is access</h2>
+
+<p>This distinction deserves its own section because the two are often treated as synonyms.</p>
+
+<p>They are not.</p>
+
+<p>A RAG system can index multiple repositories, architecture documents, incidents, standards, product knowledge, and runbooks. It performs retrieval so the AI receives a focused slice of that knowledge.</p>
+
+<p>MCP can be one way a Copilot surface or agent <strong>reaches</strong> that RAG system.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RAG = knowledge retrieval architecture
+MCP = protocol for exposing tools and context
+</code></pre></div></div>
+
+<p>A RAG system does not inherently require MCP. It may be embedded in an application, exposed through an API, or integrated into a custom Copilot SDK application.</p>
+
+<p>Conversely, an MCP server does not need to expose RAG. It may expose a deployment API, issue tracker, observability query, database, browser, or another tool.</p>
+
+<p>For a product composed of many repositories, this becomes especially useful: local repository assets can express local truth while a cross-repository knowledge service supplies product-wide context.</p>
+
+<h2 id="local-global">From local customization to organizational capability</h2>
+
+<p>An AI asset has a scope.</p>
+
+<p>Some assets belong <strong>inside a repository</strong> because they describe local reality. Others represent shared organizational capability.</p>
+
+<p>Current Copilot CLI documentation supports custom agents at user, repository, organization, and enterprise scopes, which makes this distinction practical rather than purely conceptual.</p>
+
+<p>A useful pattern is:</p>
+
+<ol>
+  <li>keep repository truth beside the repository;</li>
+  <li>publish shared skills and agents at organization or enterprise scope where supported;</li>
+  <li>package reusable CLI customizations as plugins;</li>
+  <li>expose external capabilities through shared MCP services;</li>
+  <li>centralize cross-repository knowledge behind search/RAG services;</li>
+  <li>use the Copilot SDK when the organization needs a purpose-built workflow or application.</li>
+</ol>
+
+<p>The architectural principle is:</p>
+
+<blockquote>
+  <p><strong>Centralize what represents shared organizational capability; localize what represents repository truth.</strong></p>
+</blockquote>
+
+<p>That is one of the bridges from isolated Applied AI to AI Transformation.</p>
+
+<h2 id="governance">Hooks, review, and the return of determinism</h2>
+
+<p>The more work we delegate to agents, the more valuable deterministic control becomes.</p>
+
+<p>A model can propose a deployment sequence; a hook can require tests before proceeding.</p>
+
+<p>A model can review a change; branch protection can still require human approval.</p>
+
+<p>A model can interpret a security rule; a scanner can still return an objective result.</p>
+
+<p>A model can suggest a rollback; production telemetry can still determine whether the system recovered.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Probabilistic layer:
+reason · explore · summarize · propose · adapt
+
+Deterministic layer:
+validate · enforce · record · approve · measure
+</code></pre></div></div>
+
+<p>GitHub’s hooks documentation explicitly supports lifecycle hooks in Copilot CLI and Copilot cloud agent. Copilot code review can also use custom instructions, agent skills, and configured MCP context, but its output remains evidence to validate rather than an unquestionable approval.</p>
+
+<p>An AI Transformation should therefore not remove engineering controls.</p>
+
+<p>It should make those controls <strong>discoverable, invocable, explainable, and reusable by agents</strong>.</p>
+
+<h2 id="ai-native">From AI-assisted to AI-native</h2>
+
+<p>A useful maturity progression is:</p>
+
+<ol>
+  <li>
+<strong>AI-assisted</strong> — individuals use completion, Chat, and ad hoc prompts.</li>
+  <li>
+<strong>Contextualized</strong> — repositories teach Copilot through instructions, skills, and structured knowledge.</li>
+  <li>
+<strong>Agentic</strong> — bounded tasks are delegated through Copilot CLI, the Copilot app, cloud agent, custom agents, and MCP-connected tools.</li>
+  <li>
+<strong>Governed</strong> — hooks, permissions, review, CI and human checkpoints constrain execution.</li>
+  <li>
+<strong>Learning</strong> — production, incidents, review findings, and engineering metrics feed better context and reusable assets into the next cycle.</li>
+</ol>
+
+<p>Applied AI may happen at any one of these stages.</p>
+
+<p>AI Transformation begins when the organization deliberately connects them.</p>
+
+<h2 id="roadmap">The series roadmap</h2>
+
+<p>The companion infographic is intentionally structured as a future series. This introductory post provides the map; the next posts can zoom into each phase.</p>
+
+<ol>
+  <li><strong>Discovery &amp; Product Planning</strong></li>
+  <li><strong>Sprint Planning &amp; Backlog Shaping</strong></li>
+  <li><strong>Architecture &amp; Solution Design</strong></li>
+  <li><strong>Development &amp; AI Pair Programming</strong></li>
+  <li><strong>Testing &amp; Quality Engineering</strong></li>
+  <li><strong>Code Review, Security &amp; Compliance</strong></li>
+  <li><strong>CI/CD, Release &amp; Deployment</strong></li>
+  <li><strong>Production, Monitoring &amp; Incident Response</strong></li>
+  <li><strong>Feedback, Learning &amp; Continuous Improvement</strong></li>
+</ol>
+
+<p>Every post can ask the same five questions:</p>
+
+<ul>
+  <li>Which <strong>Copilot product/surface</strong> is appropriate here?</li>
+  <li>Which <strong>AI assets</strong> should be reusable?</li>
+  <li>Which <strong>knowledge</strong> must be retrieved?</li>
+  <li>Which <strong>controls and human decisions</strong> must remain explicit?</li>
+  <li>Which <strong>evidence</strong> should feed the next cycle?</li>
+</ul>
+
+<h2 id="closing">Closing the loop</h2>
+
+<p>A software lifecycle is already a feedback system.</p>
+
+<p>AI makes that loop potentially much tighter.</p>
+
+<p>Production telemetry can become investigation context. Incidents can become runbooks and new tests. Review findings can become skills or instructions. Repeated agent failures can become hooks. Product feedback can become backlog evidence. Architecture decisions can become retrievable context for the next implementation.</p>
+
+<figure class="post-figure">
+  <img src="/assets/images/posts/ai-across-sdlc-github-copilot/release-to-learning.webp" alt="A continuous loop from production telemetry and incident response through postmortems, knowledge, backlog, and planning." loading="lazy" style="width:100%;height:auto;object-fit:contain;">
+  <figcaption>The strongest transformation loop does not end at deployment: real-world signals become context for the next cycle.</figcaption>
+</figure>
+
+<p>The model can now be stated more precisely:</p>
+
+<p><strong>Applied AI improves individual activities. AI Transformation connects those applications into a shared organizational capability.</strong></p>
+
+<p>People define intent. Copilot products provide execution surfaces. AI assets encode reusable capability. Knowledge systems provide context. Controls preserve trust. Evidence creates learning.</p>
+
+<p>That is where GitHub Copilot becomes more than a coding assistant.</p>
+
+<p>It becomes part of the architecture of software delivery.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>
+    <p><strong>GitHub Docs — About GitHub Copilot CLI</strong><br>
+<a href="https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — Customize GitHub Copilot CLI</strong><br>
+<a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — Overview of customizing GitHub Copilot CLI</strong><br>
+<a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/overview" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/overview</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — GitHub Copilot CLI hooks</strong><br>
+<a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/use-hooks" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/use-hooks</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — GitHub Copilot hooks reference</strong><br>
+<a href="https://docs.github.com/en/copilot/reference/hooks-reference" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/copilot/reference/hooks-reference</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — About the GitHub Copilot app</strong><br>
+<a href="https://docs.github.com/en/copilot/concepts/agents/github-copilot-app" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/copilot/concepts/agents/github-copilot-app</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — GitHub Copilot app guides</strong><br>
+<a href="https://docs.github.com/en/copilot/how-tos/github-copilot-app" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/copilot/how-tos/github-copilot-app</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — GitHub Copilot cloud agent</strong><br>
+<a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — Use Copilot cloud agent from GitHub CLI</strong><br>
+<a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/use-cloud-agent-from-cli" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/use-cloud-agent-from-cli</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — About GitHub Copilot code review</strong><br>
+<a href="https://docs.github.com/en/copilot/concepts/agents/code-review" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/copilot/concepts/agents/code-review</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — Use GitHub Copilot code review</strong><br>
+<a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/copilot-code-review" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/copilot-code-review</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — Copilot SDK</strong><br>
+<a href="https://docs.github.com/en/copilot/how-tos/copilot-sdk" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/copilot/how-tos/copilot-sdk</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — Copilot SDK features</strong><br>
+<a href="https://docs.github.com/en/copilot/how-tos/copilot-sdk/features" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/copilot/how-tos/copilot-sdk/features</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — Copilot Chat in the IDE</strong><br>
+<a href="https://docs.github.com/en/copilot/how-tos/chat-with-copilot/chat-in-ide" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/copilot/how-tos/chat-with-copilot/chat-in-ide</a></p>
+  </li>
+  <li>
+    <p><strong>Model Context Protocol</strong><br>
+<a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer">https://modelcontextprotocol.io/</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Blog — Project HydraFusion: Frontier quality via multi-model orchestration</strong><br>
+<a href="https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/" target="_blank" rel="noopener noreferrer">https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/</a></p>
+  </li>
+  <li>
+    <p><strong>Companion infographic — AI Across the SDLC with GitHub Copilot</strong><br>
+<a href="/assets/downloads/ai-across-the-sdlc-with-github-copilot-a4.pdf">Download the 10-page PDF</a></p>
+  </li>
+</ul>
+
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+  <style>
+    .mermaid {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 1.25rem auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
