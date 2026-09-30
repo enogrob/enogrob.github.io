@@ -1,4 +1,285 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-09-29T20:00:34+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Pencils Down, Intent Up</title><link href="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html" rel="alternate" type="text/html" title="Pencils Down, Intent Up" /><published>2026-09-29T15:00:00+00:00</published><updated>2026-09-29T15:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html"><![CDATA[<figure class="post-figure" style="margin:1.5rem 0;">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-09-30T20:05:41+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">AI Across the SDLC · Part 01 — Discovery &amp;amp; Product Planning</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/30/ai-across-the-sdlc-part-01-discovery-product-planning.html" rel="alternate" type="text/html" title="AI Across the SDLC · Part 01 — Discovery &amp;amp; Product Planning" /><published>2026-09-30T00:00:00+00:00</published><updated>2026-09-30T00:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/30/ai-across-the-sdlc-part-01-discovery-product-planning</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/30/ai-across-the-sdlc-part-01-discovery-product-planning.html"><![CDATA[<p><img src="/assets/images/posts/ai-across-sdlc-part-01-discovery-product-planning/cover.webp" alt="AI Across the SDLC Part 01 cover showing Discovery and Product Planning for CaseFlow." style="width:100%;height:auto;object-fit:contain;" /></p>
+
+<blockquote>
+  <p><strong>Before AI helps us build better software, it should help us understand what should be built — and why.</strong></p>
+</blockquote>
+
+<p>In the introductory map for this series, the SDLC was presented as a lifecycle that can be progressively transformed by GitHub Copilot products, AI assets, knowledge, controls, and feedback loops. This first installment starts at the beginning: <strong>product discovery</strong>.</p>
+
+<p>The practical challenge is simple, but foundational:</p>
+
+<blockquote>
+  <p>How do we transform scattered signals — interviews, support tickets, roadmap notes, existing documentation, and architecture constraints — into a clean, evidence-based understanding of what should happen next?</p>
+</blockquote>
+
+<p>In this post, the running example is <strong>CaseFlow</strong>, a Rails-based product used to manage operational cases. The discovery topic is an apparently straightforward request: <strong>SLA-based escalation</strong>. The trick is that we do <strong>not</strong> want to jump directly from request to implementation. We first want <strong>product intent</strong>.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#why-discovery-matters">Why discovery matters in an AI-enabled SDLC</a></li>
+  <li><a href="#initialize-context">The first shift: initialize context only when needed</a></li>
+  <li><a href="#signals-to-intent">From signals to product intent</a></li>
+  <li><a href="#evidence-inference-unknowns">Evidence, inference, and unknowns</a></li>
+  <li><a href="#workflow-context">Discovery workflow in context</a></li>
+  <li><a href="#caseflow-lab">A simple lab with CaseFlow</a></li>
+  <li><a href="#support-material">Support material included in this package</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+<h2 id="why-discovery-matters">Why discovery matters in an AI-enabled SDLC</h2>
+
+<p>It is tempting to think of AI as an implementation accelerator. But a weak understanding of the problem simply leads to <strong>faster mistakes</strong>.</p>
+
+<p>Discovery is where we decide whether a request is:</p>
+<ul>
+  <li>a real problem,</li>
+  <li>a pattern across multiple signals,</li>
+  <li>aligned with product direction,</li>
+  <li>constrained by existing architecture,</li>
+  <li>or still too ambiguous to become backlog work.</li>
+</ul>
+
+<p>That is why discovery is a strong place to begin introducing AI assets.</p>
+
+<p>In this phase, the most relevant building blocks are:</p>
+
+<ul>
+  <li><strong>Instructions</strong> — how the assistant should behave during discovery;</li>
+  <li><strong>Discovery Skill</strong> — a reusable method for synthesizing signals;</li>
+  <li><strong>Product Discovery Agent</strong> — a role-oriented way to analyze the problem;</li>
+  <li><strong>Product Knowledge / early RAG</strong> — the relevant product context gathered from the repository and support materials;</li>
+  <li><strong>MCP (optional)</strong> — useful if discovery must reach external tools or data sources.</li>
+</ul>
+
+<div class="mermaid-diagram mermaid-diagram-wide">
+
+  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0OCwncmFua1NwYWNpbmcnOjU4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J3ByaW1hcnlUZXh0Q29sb3InOicjMUUyOTNCJywnbGluZUNvbG9yJzonIzUyNjA2RCcsJ2ZvbnRGYW1pbHknOidUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWYnLCdmb250U2l6ZSc6JzEzcHgnLCdjbHVzdGVyQmtnJzonI0Y0RjZGOCcsJ2NsdXN0ZXJCb3JkZXInOicjNTI2MDZEJ319fSUlXG5mbG93Y2hhcnQgTFJcbmNsYXNzRGVmIHNpZ25hbCBmaWxsOiNEQ0VBRjcsc3Ryb2tlOiM1MjYwNkQsY29sb3I6IzFFMjkzQlxuY2xhc3NEZWYga25vd2xlZGdlIGZpbGw6I0ZGRjBDMixzdHJva2U6IzhBNkQxRCxjb2xvcjojMUUyOTNCXG5jbGFzc0RlZiBhc3NldCBmaWxsOiNFOUUyRjQsc3Ryb2tlOiM3MDVBOEMsY29sb3I6IzFFMjkzQlxuY2xhc3NEZWYgb3V0cHV0IGZpbGw6I0RERUVEOCxzdHJva2U6IzVFN0E1Nixjb2xvcjojMUUyOTNCXG5jbGFzc0RlZiB1bmtub3duIGZpbGw6I0Y2RDlEQyxzdHJva2U6IzhBNTY2MCxjb2xvcjojMUUyOTNCXG4lJS1cbnN1YmdyYXBoIFNPVVJDRVNbXCLwn5OaIERpc2NvdmVyeSBzb3VyY2VzXCJdXG5kaXJlY3Rpb24gVEJcblBWW1wi8J-nrSBQcm9kdWN0IHZpc2lvblwiXTo6OnNpZ25hbFxuUk1bXCLwn5e677iPIFJvYWRtYXBcIl06OjpzaWduYWxcbkNJW1wi8J-OpCBDdXN0b21lciBpbnRlcnZpZXdzXCJdOjo6c2lnbmFsXG5TVFtcIvCfjqsgU3VwcG9ydCB0aWNrZXRzXCJdOjo6c2lnbmFsXG5BRFJbXCLwn5OQIEFEUnMgYW5kIGNvbnN0cmFpbnRzXCJdOjo6c2lnbmFsXG5lbmRcbiUlLVxuc3ViZ3JhcGggQ09OVEVYVFtcIvCfp6AgUHJvZHVjdCBjb250ZXh0XCJdXG5kaXJlY3Rpb24gVEJcblJBR1tcIvCfl4TvuI8gUHJvZHVjdCBrbm93bGVkZ2UgLyByZXRyaWV2YWxcIl06Ojprbm93bGVkZ2VcbklOU1tcIvCfk4QgSW5zdHJ1Y3Rpb25zXCJdOjo6YXNzZXRcblNLW1wi8J-TmCBEaXNjb3ZlcnkgU2tpbGxcIl06Ojphc3NldFxuQUdbXCLwn6SWIFByb2R1Y3QgRGlzY292ZXJ5IEFnZW50XCJdOjo6YXNzZXRcbk1DUFtcIvCflIwgTUNQIHdoZW4gZXh0ZXJuYWwgYWNjZXNzIGlzIG5lZWRlZFwiXTo6OmFzc2V0XG5lbmRcbiUlLVxuc3ViZ3JhcGggUkVTVUxUW1wi4pyFIERpc2NvdmVyeSByZXN1bHRcIl1cbmRpcmVjdGlvbiBUQlxuUFNbXCLwn46vIFByb2JsZW0gc3RhdGVtZW50XCJdOjo6b3V0cHV0XG5FVltcIvCflI0gT2JzZXJ2ZWQgZXZpZGVuY2VcIl06OjpvdXRwdXRcbklOW1wi8J-SoSBJbmZlcmVuY2VzXCJdOjo6YXNzZXRcblVOW1wi4p2TIFVua25vd25zXCJdOjo6dW5rbm93blxuTlhbXCLinqHvuI8gUmVjb21tZW5kZWQgbmV4dCBzdGVwXCJdOjo6b3V0cHV0XG5lbmRcbiUlLVxuU09VUkNFUyAtLT4gUkFHXG5SQUcgLS0-IElOU1xuSU5TIC0tPiBTS1xuU0sgLS0-IEFHXG5NQ1AgLS4gdG9vbHMvY29udGV4dCAuLT4gQUdcbkFHIC0tPiBQU1xuQUcgLS0-IEVWXG5BRyAtLT4gSU5cbkFHIC0tPiBVTlxuUFMgLS0-IE5YXG5FViAtLT4gTlhcbklOIC0tPiBOWFxuVU4gLS0-IE5YXG4lJS0iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ" /></p>
+
+</div>
+
+<p>The goal is not code. The goal is a <strong>discovery report</strong> that creates a reliable bridge to backlog shaping.</p>
+
+<h2 id="initialize-context">The first shift: initialize context only when needed</h2>
+
+<p>A practical pattern for this series is to introduce Copilot commands and shifts when they become useful.</p>
+
+<p>Discovery is one of those moments.</p>
+
+<p>Before asking the assistant to analyze a product request, it often helps to first improve its understanding of the repository and surrounding project context. In practice, that may mean using <strong><code class="language-plaintext highlighter-rouge">copilot init</code></strong> or an IDE-centered <strong><code class="language-plaintext highlighter-rouge">/init</code></strong> workflow if repository understanding still feels shallow or fragmented.</p>
+
+<p>The principle is straightforward:</p>
+
+<blockquote>
+  <p>Use initialization when context is incomplete, not as a ritual.</p>
+</blockquote>
+
+<p>In the CaseFlow example, repository context matters because discovery is not purely business-facing. The repository and support materials already contain clues about architecture, conventions, dependencies, constraints, and prior decisions.</p>
+
+<figure class="post-figure">
+  <img src="/assets/images/posts/ai-across-sdlc-part-01-discovery-product-planning/initialize-repository-context.webp" alt="Initialize the repository context for CaseFlow before product discovery." loading="lazy" style="width:100%;height:auto;object-fit:contain;" />
+  <figcaption>The first shift appears when it becomes necessary: teach Copilot how the repository works before asking it to reason about discovery.</figcaption>
+</figure>
+
+<p>A useful mental checklist after initialization is:</p>
+
+<ul>
+  <li>Does Copilot understand the repository structure?</li>
+  <li>Does it see the most relevant product and architecture documents?</li>
+  <li>Does it know the main conventions and recurring workflows?</li>
+  <li>Can it identify the parts of the product that matter to the current discovery topic?</li>
+</ul>
+
+<p>If the answer is still weak, discovery analysis will also be weak.</p>
+
+<div class="mermaid-diagram mermaid-diagram-wide">
+
+  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0OCwncmFua1NwYWNpbmcnOjU4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J3ByaW1hcnlUZXh0Q29sb3InOicjMUUyOTNCJywnbGluZUNvbG9yJzonIzUyNjA2RCcsJ2ZvbnRGYW1pbHknOidUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWYnLCdmb250U2l6ZSc6JzEzcHgnLCdjbHVzdGVyQmtnJzonI0Y0RjZGOCcsJ2NsdXN0ZXJCb3JkZXInOicjNTI2MDZEJ319fSUlXG5mbG93Y2hhcnQgTFJcbmNsYXNzRGVmIHN0ZXAgZmlsbDojRENFQUY3LHN0cm9rZTojNTI2MDZELGNvbG9yOiMxRTI5M0JcbmNsYXNzRGVmIGNvbnRleHQgZmlsbDojRkZGMEMyLHN0cm9rZTojOEE2RDFELGNvbG9yOiMxRTI5M0JcbmNsYXNzRGVmIHJldmlldyBmaWxsOiNFOUUyRjQsc3Ryb2tlOiM3MDVBOEMsY29sb3I6IzFFMjkzQlxuY2xhc3NEZWYgb3V0cHV0IGZpbGw6I0RERUVEOCxzdHJva2U6IzVFN0E1Nixjb2xvcjojMUUyOTNCXG5jbGFzc0RlZiBjYXV0aW9uIGZpbGw6I0Y2RDlEQyxzdHJva2U6IzhBNTY2MCxjb2xvcjojMUUyOTNCXG4lJS1cbkFbXCLwn5OlIEdhdGhlciBzaWduYWxzXCJdOjo6c3RlcFxuQltcIvCfp7EgSW5pdGlhbGl6ZSBjb250ZXh0IGlmIG5lZWRlZDxici8-PGNvZGU-Y29waWxvdCBpbml0PC9jb2RlPiBvciA8Y29kZT4vaW5pdDwvY29kZT5cIl06Ojpjb250ZXh0XG5DW1wi8J-UjSBBbmFseXplIHdpdGggaW5zdHJ1Y3Rpb25zIGFuZCB0aGUgRGlzY292ZXJ5IFNraWxsXCJdOjo6cmV2aWV3XG5EW1wi8J-ThCBEcmFmdCBkaXNjb3ZlcnkgcmVwb3J0XCJdOjo6b3V0cHV0XG5FW1wi8J-apiBOZXh0IG1vdmU6IGJhY2tsb2csIHNwaWtlLCBvciBtb3JlIGRpc2NvdmVyeVwiXTo6OmNhdXRpb25cbiUlLVxuQSAtLT4gQiAtLT4gQyAtLT4gRCAtLT4gRVxuJSUtIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0" /></p>
+
+</div>
+
+<h2 id="signals-to-intent">From signals to product intent</h2>
+
+<p>For this first post, the CaseFlow request is: <strong>add SLA-based escalation</strong>.</p>
+
+<p>At first glance, that sounds implementation-ready. But in discovery we are still answering questions like:</p>
+
+<ul>
+  <li>Is the underlying problem clearly stated?</li>
+  <li>What signals support the request?</li>
+  <li>Which product outcomes might it improve?</li>
+  <li>Which constraints or trade-offs already exist?</li>
+  <li>What should be clarified before backlog creation?</li>
+</ul>
+
+<p>That is why “signals” matter.</p>
+
+<p>Typical sources include:</p>
+
+<ul>
+  <li>customer interviews,</li>
+  <li>support tickets,</li>
+  <li>product vision,</li>
+  <li>roadmap notes,</li>
+  <li>existing documentation,</li>
+  <li>architecture decision records,</li>
+  <li>and current system context.</li>
+</ul>
+
+<p>The point of AI in this phase is to <strong>connect</strong> those sources, not simply summarize them in isolation.</p>
+
+<p>A useful output is <strong>product intent</strong> — a concise, evidence-based view of the problem, its context, and the most justified next step.</p>
+
+<figure class="post-figure">
+  <img src="/assets/images/posts/ai-across-sdlc-part-01-discovery-product-planning/cover.webp" alt="Discovery and Product Planning: from scattered signals to product intent." loading="lazy" style="width:100%;height:auto;object-fit:contain;" />
+  <figcaption>The cover concept is also the main thesis of the post: discovery turns scattered signals into product intent.</figcaption>
+</figure>
+
+<h2 id="evidence-inference-unknowns">Evidence, inference, and unknowns</h2>
+
+<p>This is the most important intellectual discipline in the whole article.</p>
+
+<p>Bad discovery often happens because conclusions are not labeled clearly enough. A team begins with vague signals, and then treats inference as fact.</p>
+
+<p>A useful discovery workflow should always distinguish:</p>
+
+<ul>
+  <li><strong>Observed / evidence</strong> — what the sources actually say;</li>
+  <li><strong>Inference</strong> — what appears likely, and why;</li>
+  <li><strong>Unknowns</strong> — what is still unclear and should block premature certainty.</li>
+</ul>
+
+<figure class="post-figure">
+  <img src="/assets/images/posts/ai-across-sdlc-part-01-discovery-product-planning/evidence-inference-unknowns.webp" alt="Evidence, inference, and unknowns flowing into a discovery report before backlog creation." loading="lazy" style="width:100%;height:auto;object-fit:contain;" />
+  <figcaption>One of the main habits of discovery work: separate evidence, inference, and unknowns before creating backlog items.</figcaption>
+</figure>
+
+<div class="mermaid-diagram mermaid-diagram-wide">
+
+  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0OCwncmFua1NwYWNpbmcnOjU4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J3ByaW1hcnlUZXh0Q29sb3InOicjMUUyOTNCJywnbGluZUNvbG9yJzonIzUyNjA2RCcsJ2ZvbnRGYW1pbHknOidUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWYnLCdmb250U2l6ZSc6JzEzcHgnLCdjbHVzdGVyQmtnJzonI0Y0RjZGOCcsJ2NsdXN0ZXJCb3JkZXInOicjNTI2MDZEJ319fSUlXG5mbG93Y2hhcnQgTFJcbmNsYXNzRGVmIG9ic2VydmVkIGZpbGw6I0RERUVEOCxzdHJva2U6IzVFN0E1Nixjb2xvcjojMUUyOTNCXG5jbGFzc0RlZiBpbmZlcnJlZCBmaWxsOiNFOUUyRjQsc3Ryb2tlOiM3MDVBOEMsY29sb3I6IzFFMjkzQlxuY2xhc3NEZWYgdW5rbm93biBmaWxsOiNGRkYwQzIsc3Ryb2tlOiM4QTZEMUQsY29sb3I6IzFFMjkzQlxuY2xhc3NEZWYgcmVwb3J0IGZpbGw6I0RDRUFGNyxzdHJva2U6IzUyNjA2RCxjb2xvcjojMUUyOTNCXG4lJS1cbnN1YmdyYXBoIENMQVNTSUZZW1wi8J-UjiBDbGFzc2lmeSB3aGF0IHlvdSBrbm93XCJdXG5kaXJlY3Rpb24gVEJcbk9bXCLinIUgT2JzZXJ2ZWQ8YnIvPlN1cHBvcnRlZCBkaXJlY3RseSBieSBzb3VyY2VzXCJdOjo6b2JzZXJ2ZWRcbklbXCLwn5KhIEluZmVycmVkPGJyLz5QbGF1c2libGUsIHdpdGggcmVhc29uaW5nXCJdOjo6aW5mZXJyZWRcblVbXCLinZMgVW5rbm93bjxici8-TmVlZHMgY2xhcmlmaWNhdGlvbiBvciBldmlkZW5jZVwiXTo6OnVua25vd25cbmVuZFxuJSUtXG5zdWJncmFwaCBSRVBPUlRbXCLwn5OEIFByb2R1Y2UgYSByZXZpZXdhYmxlIGRpc2NvdmVyeSBhcnRpZmFjdFwiXVxuZGlyZWN0aW9uIFRCXG5SW1wi8J-nviBEaXNjb3ZlcnkgcmVwb3J0XCJdOjo6cmVwb3J0XG5QW1wi8J-OryBQcm9ibGVtIHN0YXRlbWVudFwiXTo6OnJlcG9ydFxuUVtcIvCfp6AgUXVlc3Rpb25zIGJlZm9yZSBiYWNrbG9nIHNoYXBpbmdcIl06Ojp1bmtub3duXG5OW1wi4p6h77iPIFJlY29tbWVuZGVkIG5leHQgYWN0aW9uXCJdOjo6b2JzZXJ2ZWRcbmVuZFxuJSUtXG5PIC0tPiBSXG5JIC0tPiBSXG5VIC0tPiBSXG5SIC0tPiBQXG5SIC0tPiBRXG5QIC0tPiBOXG5RIC0tPiBOXG4lJS0iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ" /></p>
+
+</div>
+
+<p>This approach makes the discovery report far more trustworthy. It also makes later product and engineering conversations healthier, because assumptions remain visible instead of hiding inside apparently confident statements.</p>
+
+<h2 id="workflow-context">Discovery workflow in context</h2>
+
+<p>Once we step back, discovery becomes a coordination point between several layers:</p>
+
+<ul>
+  <li><strong>product knowledge sources</strong> on the left,</li>
+  <li><strong>GitHub Copilot products</strong> in the middle,</li>
+  <li><strong>AI assets</strong> below,</li>
+  <li>and a cleaner <strong>product intent</strong> output on the right.</li>
+</ul>
+
+<figure class="post-figure">
+  <img src="/assets/images/posts/ai-across-sdlc-part-01-discovery-product-planning/discovery-workflow-in-context.webp" alt="Discovery workflow in context showing product knowledge, GitHub Copilot products, AI assets, and product intent." loading="lazy" style="width:100%;height:auto;object-fit:contain;" />
+  <figcaption>Discovery becomes clearer when products, assets, and knowledge are seen as one workflow instead of isolated tools.</figcaption>
+</figure>
+
+<p>At this phase, GitHub Copilot can help through different surfaces:</p>
+
+<ul>
+  <li><strong>Copilot in the IDE</strong> for focused exploration inside the repository;</li>
+  <li><strong>Copilot Chat</strong> for questioning, reframing, and comparing findings;</li>
+  <li><strong>GitHub Copilot CLI</strong> for structured investigation in a local project context;</li>
+  <li><strong>GitHub Copilot App</strong> when broader workspace-level context helps discovery.</li>
+</ul>
+
+<p>The key is not to use every product at once. It is to use the right surface for the kind of reasoning the moment requires.</p>
+
+<h2 id="caseflow-lab">A simple lab with CaseFlow</h2>
+
+<p>This package includes a small support lab around CaseFlow.</p>
+
+<p>The discovery topic is <strong>SLA-based escalation</strong>. The support materials include:</p>
+
+<ul>
+  <li>product vision and roadmap,</li>
+  <li>personas,</li>
+  <li>synthetic customer interviews,</li>
+  <li>support tickets,</li>
+  <li>a feature request,</li>
+  <li>system overview,</li>
+  <li>ADRs,</li>
+  <li>discovery instructions,</li>
+  <li>a reusable Discovery Skill,</li>
+  <li>a Product Discovery Agent definition,</li>
+  <li>a discovery report template,</li>
+  <li>and a sample discovery report.</li>
+</ul>
+
+<p>A good exercise is:</p>
+
+<blockquote>
+  <p>Ask Copilot to analyze the CaseFlow discovery materials and produce a discovery report for SLA-based escalation. The report must explicitly distinguish observed evidence, inferred insights, and unknowns.</p>
+</blockquote>
+
+<p>A strong result should make it easy to answer:</p>
+
+<ul>
+  <li>Is the request justified?</li>
+  <li>What is already supported by evidence?</li>
+  <li>What remains unclear?</li>
+  <li>Should the next action be a user story, a spike, or a follow-up discovery step?</li>
+</ul>
+
+<h2 id="support-material">Support material included in this package</h2>
+
+<p>The complete companion lab is available as a downloadable package:</p>
+
+<ul>
+  <li><a href="/assets/downloads/ai-across-sdlc-part01-discovery-support.zip">Download the Part 01 Discovery support package</a></li>
+</ul>
+
+<p>It includes:</p>
+
+<ul>
+  <li>product vision, roadmap, and personas;</li>
+  <li>synthetic customer interviews, support tickets, and a feature request;</li>
+  <li>CaseFlow architecture notes and ADRs;</li>
+  <li>discovery instructions;</li>
+  <li>a reusable Discovery Skill;</li>
+  <li>a Product Discovery Agent;</li>
+  <li>exercises and suggested answers;</li>
+  <li>discovery-report template and sample answer.</li>
+</ul>
+
+<p>The lab is intentionally lightweight. Its purpose is not to simulate an entire enterprise system yet, but to establish a repeatable <strong>discovery discipline</strong> that later posts can build on.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>
+    <p><strong>GitHub Docs — Get started with GitHub Copilot</strong><br />
+<a href="https://docs.github.com/en/copilot/get-started">https://docs.github.com/en/copilot/get-started</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — Chat in the IDE with GitHub Copilot</strong><br />
+<a href="https://docs.github.com/en/copilot/how-tos/chat-with-copilot/chat-in-ide">https://docs.github.com/en/copilot/how-tos/chat-with-copilot/chat-in-ide</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — About GitHub Copilot CLI</strong><br />
+<a href="https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli">https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — Customize GitHub Copilot CLI</strong><br />
+<a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot">https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — About the GitHub Copilot app</strong><br />
+<a href="https://docs.github.com/en/copilot/concepts/agents/github-copilot-app">https://docs.github.com/en/copilot/concepts/agents/github-copilot-app</a></p>
+  </li>
+  <li>
+    <p><strong>GitHub Docs — Model Context Protocol</strong><br />
+<a href="https://modelcontextprotocol.io/">https://modelcontextprotocol.io/</a></p>
+  </li>
+  <li>
+    <p><strong>Series context — AI Across the SDLC with GitHub Copilot</strong><br />
+<a href="../2026-09-29-ai-across-the-sdlc-with-github-copilot.html">../2026-09-29-ai-across-the-sdlc-with-github-copilot.html</a></p>
+  </li>
+</ul>]]></content><author><name></name></author><category term="artificial-intelligence" /><category term="software-engineering" /><category term="github-copilot" /><category term="sdlc" /><category term="github-copilot" /><category term="product-discovery" /><category term="sdlc" /><category term="caseflow" /><category term="skills" /><category term="agents" /><category term="rag" /><category term="mcp" /><summary type="html"><![CDATA[How to use GitHub Copilot, repository context, product knowledge, and reusable AI assets to move from scattered signals to product intent in CaseFlow.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/ai-across-sdlc-part-01-discovery-product-planning/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/ai-across-sdlc-part-01-discovery-product-planning/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Pencils Down, Intent Up</title><link href="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html" rel="alternate" type="text/html" title="Pencils Down, Intent Up" /><published>2026-09-29T15:00:00+00:00</published><updated>2026-09-29T15:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/artificial-intelligence/software-engineering/2026/09/29/pencils-down-intent-up.html"><![CDATA[<figure class="post-figure" style="margin:1.5rem 0;">
   <img src="/assets/images/posts/pencils-down-intent-up/cover.webp" alt="Pencils Down, Intent Up — AI as the new abstraction above Ruby" loading="eager" style="width:100%;height:auto;display:block;object-fit:contain;" />
   <figcaption>The new abstraction boundary: from human intent to agents, then into programming languages and systems.</figcaption>
 </figure>
@@ -2009,165 +2290,4 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
   <li><a href="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/23/inside-github-copilot-agentic-engine.html">Inside GitHub Copilot’s Agentic Engine: CLI, SDK, and HydraFusion</a> — optional conceptual prologue; read before Part 01 for the broader Copilot architecture.</li>
   <li><a href="#references">CaseFlow app and local setup</a> in the download at <code class="language-plaintext highlighter-rouge">caseflow/README.md</code>; <a href="#references">series map and source boundaries</a> at <code class="language-plaintext highlighter-rouge">docs/series-map.md</code> and <code class="language-plaintext highlighter-rouge">docs/validation-status.md</code>.</li>
   <li><a href="https://docs.github.com/en/copilot">GitHub Copilot documentation</a>; <a href="https://docs.github.com/en/actions">GitHub Actions documentation</a>; <a href="https://guides.rubyonrails.org/">Ruby on Rails guides</a>.</li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="learning-map" /><category term="caseflow" /><category term="interview-preparation" /><summary type="html"><![CDATA[A navigable guide to all eight GitHub Copilot for Rails Engineers chapters, with learning objectives, the integrated CaseFlow lab, an interview route and a practical route.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/copilot-rails-learning-map/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/copilot-rails-learning-map/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Teach Copilot the Rails Context</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html" rel="alternate" type="text/html" title="Teach Copilot the Rails Context" /><published>2026-09-25T00:00:00+00:00</published><updated>2026-09-25T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html"><![CDATA[<p><img src="/assets/images/posts/teach-copilot-rails-context/cover.webp" alt="A digitized AI guide in side profile faces a conceptual CaseFlow Rails editor; layered context and a ruby-colored flow lead to an unresolved evidence question beneath the GitHub Copilot for Rails Engineers Part 02 series heading." style="width:100%;height:auto;" /></p>
-
-<p><em>GitHub Copilot for Rails Engineers · Part 02</em></p>
-
-<p>The first chapter left us with a CaseFlow architecture atlas and a client question: can a user transition a service request to <code class="language-plaintext highlighter-rouge">resolved</code>? The code lists <code class="language-plaintext highlighter-rouge">resolved</code> as an allowed stored status, but routes expose only <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">show</code> and <code class="language-plaintext highlighter-rouge">create</code>. A broad prompt such as “implement status changes” invites plausible Rails code and unsupported assumptions about authorization. This chapter narrows the <strong>context</strong> before asking Copilot for any change.</p>
-
-<p>We will add three different kinds of guidance to the <a href="/assets/downloads/teach-copilot-rails-context-support.zip">integrated CaseFlow lab</a>: a repository instruction, a model-path instruction and a single-use audit prompt. Then we will compare Copilot’s response with the code and a small evidence register. The exercise asks for a <strong>proposal only</strong>; we will implement and review a change in Part 03.</p>
-
-<h2 id="contents">Contents</h2>
-
-<ul>
-  <li><a href="#scopes">Three scopes, one engineering question</a></li>
-  <li><a href="#repository">Write the smallest useful repository guidance</a></li>
-  <li><a href="#models">Narrow guidance to a Rails model</a></li>
-  <li><a href="#prompt">Ask for a source-backed change proposal</a></li>
-  <li><a href="#audit">Audit context against evidence</a></li>
-  <li><a href="#lab">Your 25-minute lab</a></li>
-  <li><a href="#references">References and supporting materials</a></li>
-</ul>
-
-<h2 id="scopes">Three scopes, one engineering question</h2>
-
-<p>GitHub distinguishes repository-wide <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code>, path-specific <code class="language-plaintext highlighter-rouge">.github/instructions/*.instructions.md</code>, and agent-oriented <code class="language-plaintext highlighter-rouge">AGENTS.md</code>. Prompt files serve a particular interaction. Their availability varies by Copilot surface: consult the <a href="https://docs.github.com/en/copilot/reference/custom-instructions-support">official support matrix</a> for the feature and editor you actually use. These files <strong>guide responses</strong>; they are not Rails code, tests or access controls.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Context</th>
-      <th>CaseFlow file</th>
-      <th>Question it should answer</th>
-      <th>Avoid</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Repository</td>
-      <td><code class="language-plaintext highlighter-rouge">caseflow/.github/copilot-instructions.md</code></td>
-      <td>What kind of app is this, and what evidence is required?</td>
-      <td>A full copy of the codebase</td>
-    </tr>
-    <tr>
-      <td>Model path</td>
-      <td><code class="language-plaintext highlighter-rouge">caseflow/.github/instructions/models.instructions.md</code></td>
-      <td>What is special about model edits?</td>
-      <td>Global rules repeated at length</td>
-    </tr>
-    <tr>
-      <td>One task</td>
-      <td><code class="language-plaintext highlighter-rouge">caseflow/.github/prompts/02-context-audit.prompt.md</code></td>
-      <td>What should this investigation deliver now?</td>
-      <td>Unbounded “build everything” request</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The <code class="language-plaintext highlighter-rouge">caseflow/</code> directory should be opened as the <strong>VS Code workspace root</strong> for this exercise. Its <code class="language-plaintext highlighter-rouge">.github/</code> is then at the root of the Rails repository as Copilot expects. If you open the companion repository’s outer folder instead, check which workspace and instruction files your Copilot surface is actually using. Do not infer automatic loading from a good answer; open the citations and inspect the available session context.</p>
-
-<figure>
-  <img src="/assets/images/posts/teach-copilot-rails-context/context-boundary.webp" alt="A Ruby model and task prompt in a conceptual editor receive repository guidance; an amber evidence gate separates a cited proposal from an unresolved question." style="width:100%;height:auto;" />
-  <figcaption>Repository rules, model scope and the task prompt inform a cited proposal. The amber gate marks evidence to check; this conceptual editor is not a screenshot or a test run.</figcaption>
-</figure>
-
-<h2 id="repository">Write the smallest useful repository guidance</h2>
-
-<p>Place durable facts and review habits in <code class="language-plaintext highlighter-rouge">caseflow/.github/copilot-instructions.md</code>. The support package includes the complete file; its core contract is short:</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> Inspect the actual route, controller, model, migration, and request specs before describing behavior; do not infer a UI, authentication, jobs, or a status transition.
-<span class="p">-</span> Distinguish a source declaration, an existing spec assertion, and a command you actually ran. Quote the path for every behavioral claim and state unknowns explicitly.
-<span class="p">-</span> Keep proposed changes within the requested scope. Before editing, identify affected files and a focused verification step.
-</code></pre></div></div>
-
-<p>An instruction that says “tests always pass” would be false. An instruction that says “run a focused spec and report its exit status” is operationally useful. A repository file tells the assistant <strong>how to work</strong>; it cannot attest that a local database migrated or that a particular HTTP response was observed. Avoid copying a full README into instructions: link to existing files and keep the rules that change decisions.</p>
-
-<h2 id="models">Narrow guidance to a Rails model</h2>
-
-<p>A model change has a different failure mode than a README edit. The packaged <code class="language-plaintext highlighter-rouge">.github/instructions/models.instructions.md</code> starts with:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">applyTo</span><span class="pi">:</span> <span class="s2">"</span><span class="s">app/models/**/*.rb"</span>
-<span class="nn">---</span>
-</code></pre></div></div>
-
-<p>It asks for controller, model, migration and specs to be inspected together. CaseFlow validates <code class="language-plaintext highlighter-rouge">title</code> presence and maximum length in the model; the migration declares <code class="language-plaintext highlighter-rouge">title</code> non-null but no database length limit. <code class="language-plaintext highlighter-rouge">resolved</code> is an accepted status <strong>value</strong> in <code class="language-plaintext highlighter-rouge">ServiceRequest::STATUSES</code>; that does not provide an update route or establish who may use it. The path-specific rules keep those distinctions visible whenever a matching model file is in scope. They do not automatically govern every question about the project; verify actual file context and <a href="https://docs.github.com/en/copilot/reference/custom-instructions-support">support for your Copilot feature</a>.</p>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ25vZGVTcGFjaW5nJzo0MiwncmFua1NwYWNpbmcnOjUyLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTZweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggZ3VpZGFuY2VbXCLwn5OaIFNjb3BlIG9mIGd1aWRhbmNlXCJdXG5SW1wi8J-MkCBSZXBvc2l0b3J5IGd1aWRhbmNlXCJdXG5NW1wi8J-nsSBNb2RlbCBwYXRoIGd1aWRhbmNlXCJdXG5UW1wi8J-OryBPbmUgdGFzayBwcm9tcHRcIl1cbmVuZFxuc3ViZ3JhcGggYXVkaXRbXCLwn5SNIEV2aWRlbmNlIGJvdW5kYXJ5XCJdXG5TW1wi8J-TiyBTb3VyY2UgYW5kIHNwZWNzXCJdXG5DW1wi8J-TnSBDaXRlZCBwcm9wb3NhbFwiXVxuVVtcIuKdlCBVbmtub3duIHVudGlsIHJ1blwiXVxuZW5kXG5SIC0tPiBDXG5NIC0tPiBDXG5UIC0tPiBDXG5TIC0tPiBDXG5DIC0tPiBVXG5jbGFzc0RlZiBjb250ZXh0IGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgbW9kZWwgZmlsbDojRThEREY1LHN0cm9rZTojQTY4QkM0LGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiB0YXNrIGZpbGw6I0Y4REZDNCxzdHJva2U6I0M5OTg2RCxjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgZXZpZGVuY2UgZmlsbDojRkZGMUJGLHN0cm9rZTojQkE5QzQzLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiByZXN1bHQgZmlsbDojRENFRkQ2LHN0cm9rZTojODZBODc4LGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiB1bmtub3duIGZpbGw6I0Y1RDlEQyxzdHJva2U6I0JDODE5MSxjb2xvcjojM0UzNDJDO1xuY2xhc3MgUiBjb250ZXh0O1xuY2xhc3MgTSBtb2RlbDtcbmNsYXNzIFQgdGFzaztcbmNsYXNzIFMgZXZpZGVuY2U7XG5jbGFzcyBDIHJlc3VsdDtcbmNsYXNzIFUgdW5rbm93bjsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ" /></p>
-
-<p>Notice that the dotted, hypothetical “AI remembers everything” arrow is absent. The diagram shows <strong>inputs to an audited proposal</strong>, not a guarantee of which context a particular model session used. The evidence boundary still needs human review.</p>
-
-<h2 id="prompt">Ask for a source-backed change proposal</h2>
-
-<p>The <a href="/assets/downloads/teach-copilot-rails-context-support.zip">packaged task prompt</a> asks for four artifacts: an evidence table with paths, a list of applicable instructions, a minimal change surface with positive and negative tests, and unresolved authorization and runtime questions. Open <code class="language-plaintext highlighter-rouge">caseflow/</code> in VS Code; use the prompt file if your Copilot workflow supports it, or paste its body into chat with the relevant files explicitly referenced. The key instruction is <strong>“Do not edit files.”</strong> This is an investigation before Part 03, not agent implementation.</p>
-
-<p>A useful answer could say: <code class="language-plaintext highlighter-rouge">config/routes.rb</code> declares no update route; <code class="language-plaintext highlighter-rouge">app/models/service_request.rb</code> allows <code class="language-plaintext highlighter-rouge">resolved</code>; <code class="language-plaintext highlighter-rouge">app/controllers/api/requests_controller.rb</code> permits only <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">description</code> for creation; a future update should define its own authorization requirement. That last sentence is a <strong>design requirement to resolve</strong>, not proof an authorization system exists. Ask Copilot to label it accordingly.</p>
-
-<h2 id="audit">Audit context against evidence</h2>
-
-<p>Before accepting the response, fill in this table from the files, then compare Copilot’s exact paths. Supplied RSpec examples describe expectations for create, list and show; they have <strong>not</strong> been executed in this authoring environment.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Claim from an answer</th>
-      <th>Check</th>
-      <th>Evidence class</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">resolved</code> can be stored</td>
-      <td><code class="language-plaintext highlighter-rouge">caseflow/app/models/service_request.rb</code></td>
-      <td>Source: allowed value</td>
-    </tr>
-    <tr>
-      <td>A client can transition a request today</td>
-      <td><code class="language-plaintext highlighter-rouge">caseflow/config/routes.rb</code> and controller</td>
-      <td>Unsupported; no update action</td>
-    </tr>
-    <tr>
-      <td>A create payload can set <code class="language-plaintext highlighter-rouge">status</code></td>
-      <td><code class="language-plaintext highlighter-rouge">caseflow/app/controllers/api/requests_controller.rb</code></td>
-      <td>Unsupported; not permitted there</td>
-    </tr>
-    <tr>
-      <td>All current request specs passed</td>
-      <td>Actual <code class="language-plaintext highlighter-rouge">bundle exec rspec</code> output and exit code</td>
-      <td>Unknown until a real run</td>
-    </tr>
-    <tr>
-      <td>A user may perform a transition</td>
-      <td>Written product rule and implemented authorization</td>
-      <td>Unknown; must be designed</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>This is an <strong>instruction audit</strong> as well as a code audit: if the assistant claims to have seen instructions, ask it to name their paths and explain which file scope matched. If it invents an <code class="language-plaintext highlighter-rouge">ApplicationPolicy</code> or conflates the database default with an HTTP guarantee, correct the guidance or task prompt only after identifying the actual failure. Do not treat instruction text as a security control: enforce permissions in code and verify them with tests.</p>
-
-<h2 id="lab">Your 25-minute lab</h2>
-
-<ol>
-  <li>Open <code class="language-plaintext highlighter-rouge">caseflow/</code> as the VS Code workspace root. Read the <a href="/assets/downloads/teach-copilot-rails-context-support.zip">CaseFlow README</a>, instructions and the three code paths in the audit table.</li>
-  <li>Predict which statements in “A user can set any <code class="language-plaintext highlighter-rouge">ServiceRequest</code> status through the API” are unsupported. Write the paths before asking Copilot.</li>
-  <li>Run the packaged <code class="language-plaintext highlighter-rouge">02-context-audit.prompt.md</code> in your Copilot setup, or paste the prompt content. Save a <strong>redacted</strong> answer in your own notes; do not add secrets or customer data.</li>
-  <li>Compare paths, claims and unknowns with the <a href="/assets/downloads/teach-copilot-rails-context-support.zip">workbook and answer key</a>. For an optional controlled comparison, repeat the prompt with the model instruction excluded from your explicit context and record what changes; do not conclude which file was automatically loaded from output quality alone.</li>
-  <li>Hand the client a two-sentence finding: what the current API supports, and what must be decided before implementing transitions. Part 03 will start from that bounded issue.</li>
-</ol>
-
-<p><strong>Acceptance criterion:</strong> a reviewer can trace each present-tense behavior to source, distinguish tests that exist from tests that ran, and find at least one open authorization question before writing code.</p>
-
-<h2 id="references">References and supporting materials</h2>
-
-<p><strong>Finding the prompt after download:</strong> extract the support ZIP and open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/02-context-audit.md</code> to read the full prompt. For Copilot Chat, open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/caseflow/</code> as the VS Code workspace; the executable file is <code class="language-plaintext highlighter-rouge">.github/prompts/02-context-audit.prompt.md</code>. Invoke <code class="language-plaintext highlighter-rouge">/02-context-audit</code>. On macOS, Finder may hide the <code class="language-plaintext highlighter-rouge">.github</code> directory (press Command-Shift-Period to show hidden files). The companion also contains the complete three-prompt catalog in <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/</code>.</p>
-
-<ul>
-  <li><a href="/assets/downloads/02-context-audit.prompt.txt">Read or download the Part 02 Copilot prompt</a>: a standalone text copy. To run it as a VS Code prompt file, use the matching <code class="language-plaintext highlighter-rouge">.prompt.md</code> inside the support ZIP under <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/caseflow/.github/prompts/</code>.</li>
-  <li><a href="/assets/downloads/teach-copilot-rails-context-support.zip">Download the Part 02 companion package</a>: complete post Markdown, integrated CaseFlow Rails app, instruction files, prompt, editable Mermaid source, workbook with answers and validation record.</li>
-  <li><a href="/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html">Part 01: The First 30 Minutes in an Unfamiliar Rails Repository</a></li>
-  <li><a href="https://docs.github.com/en/copilot/how-tos/configure-custom-instructions-in-your-ide/add-repository-instructions-in-your-ide">GitHub Docs: repository instructions for Copilot in an IDE</a></li>
-  <li><a href="https://docs.github.com/en/copilot/reference/custom-instructions-support">GitHub Docs: custom instruction support by feature</a></li>
-  <li><a href="https://docs.github.com/en/copilot/concepts/prompting/response-customization">GitHub Docs: customizing Copilot responses</a></li>
-  <li><a href="https://guides.rubyonrails.org/active_record_validations.html">Rails Guides: Active Record Validations</a></li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="custom-instructions" /><category term="context-engineering" /><summary type="html"><![CDATA[Give Copilot scoped Rails guidance, then audit what its proposal knows, assumes and cannot yet prove.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/teach-copilot-rails-context/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/teach-copilot-rails-context/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="learning-map" /><category term="caseflow" /><category term="interview-preparation" /><summary type="html"><![CDATA[A navigable guide to all eight GitHub Copilot for Rails Engineers chapters, with learning objectives, the integrated CaseFlow lab, an interview route and a practical route.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/copilot-rails-learning-map/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/copilot-rails-learning-map/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
