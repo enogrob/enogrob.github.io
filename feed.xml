@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-01T20:01:13+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Below Intent: The Semantic Infrastructure of Agentic Software Engineering</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html" rel="alternate" type="text/html" title="Below Intent: The Semantic Infrastructure of Agentic Software Engineering" /><published>2026-10-01T08:00:00+00:00</published><updated>2026-10-01T08:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html"><![CDATA[<figure class="post-figure" style="margin:1.5rem 0;">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-01T20:08:29+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Below Intent: The Semantic Infrastructure of Agentic Software Engineering</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html" rel="alternate" type="text/html" title="Below Intent: The Semantic Infrastructure of Agentic Software Engineering" /><published>2026-10-01T08:00:00+00:00</published><updated>2026-10-01T08:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html"><![CDATA[<figure class="post-figure" style="margin:1.5rem 0;">
   <img src="/assets/images/posts/below-intent-semantic-infrastructure/cover.webp" alt="Below Intent — human intent flows into product intent, program semantics, runtime evidence, and the software development lifecycle" loading="eager" style="width:100%;height:auto;display:block;object-fit:contain;" />
   <figcaption>Below intent: the semantic infrastructure that lets agents move from product meaning to program structure, runtime evidence, and back again.</figcaption>
 </figure>
@@ -2840,641 +2840,6 @@ meaning
   <li><a href="https://content.edgarcayce.org/about-us/blog/blog-posts/our-research-into-cayce-s-hall-of-records/">Edgar Cayce’s A.R.E. — Research into Cayce’s “Hall of Records”</a></li>
   <li><a href="https://edgarcayce.org/wp-content/uploads/2025/07/Egypt-at-the-Time-of-Ra-Ta-FINAL.pdf">Edgar Cayce’s A.R.E. — Egypt 10,500 B.C. and the Hall of Records</a></li>
   <li><a href="https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/09/14/the-secret-of-the-sphinx.html">The Secret of the Sphinx — Cosmic Cycles and a Legacy for Future Humanity</a></li>
-</ul>]]></content><author><name></name></author><category term="knowledge-management" /><category term="symbolism" /><category term="visual-learning" /><category term="egypt" /><category term="pyramids" /><category term="sphinx" /><category term="osireion" /><category term="hawara" /><category term="megaliths" /><category term="deep-time" /><category term="archaeology" /><category term="symbolism" /><summary type="html"><![CDATA[A journey beneath the visible Egypt: from confirmed voids inside the Great Pyramid to the Osireion, Hawara's Labyrinth, deep time and the question of why monumental architecture was built to endure.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Beyond the Sphinx — Architecture for Deep Time</title><link href="https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/10/01/beyond-the-sphinx-architecture-for-deep-time.html" rel="alternate" type="text/html" title="Beyond the Sphinx — Architecture for Deep Time" /><published>2026-10-01T00:00:00+00:00</published><updated>2026-10-01T00:00:00+00:00</updated><id>https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/10/01/beyond-the-sphinx-architecture-for-deep-time</id><content type="html" xml:base="https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/10/01/beyond-the-sphinx-architecture-for-deep-time.html"><![CDATA[<p><img src="/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/cover.webp" alt="" /></p>
-
-<blockquote>
-  <p><strong>Shout out:</strong> To researchers, archaeologists, and independent thinkers who keep exploring Egypt with rigor and imagination — reminding us that the past is not a closed book, but a deeper conversation with time.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Perhaps the mystery is not what Egypt wanted to tell us, but why it built as if time itself were part of the audience.</strong></p>
-</blockquote>
-
-<p>Some monuments are made for a generation.</p>
-
-<p>Others are made for a dynasty.</p>
-
-<p>And then there are structures whose scale, material and mass seem to belong to a different category altogether: architecture that can survive the disappearance of the people who built it.</p>
-
-<p>The pyramids of Giza are still here after roughly four and a half millennia. The Osireion at Abydos still holds its monumental stone architecture below ground. At Hawara, little remains above the surface of the temple complex that ancient authors called the Labyrinth, yet archaeology and geophysics continue to recover traces of what once stood there.</p>
-
-<p>This article begins where <strong><a href="/knowledge-management/symbolism/visual-learning/2026/09/14/the-secret-of-the-sphinx.html">The Secret of the Sphinx</a></strong> ended.</p>
-
-<p>That earlier journey asked whether the Sphinx and pyramids could be read symbolically as a compass carried across civilizational cycles.</p>
-
-<p>Here the question is different.</p>
-
-<p><strong>Why build for deep time at all?</strong></p>
-
-<p>And if Egypt’s monumental architecture was deliberately made to endure, what are we still failing to understand about it?</p>
-
-<h2 id="at-a-glance">At a Glance</h2>
-
-<p>This article follows five layers:</p>
-
-<ol>
-  <li><strong>What is confirmed</strong> — spaces and structures established through archaeology or reproducible measurement.</li>
-  <li><strong>What remains unknown</strong> — features whose purpose or full extent is still unresolved.</li>
-  <li><strong>What is claimed</strong> — recent interpretations that have not yet received independent archaeological confirmation.</li>
-  <li><strong>What is remembered</strong> — ancient descriptions such as the Labyrinth at Hawara and Egypt’s own language of primordial order.</li>
-  <li><strong>What the architecture suggests philosophically</strong> — not a hidden message asserted as fact, but a question about permanence, memory and time.</li>
-</ol>
-
-<p>The distinction matters.</p>
-
-<p>A mystery becomes more interesting, not less, when we know exactly where the evidence ends.</p>
-
-<h2 id="contents">Contents</h2>
-
-<ul>
-  <li><a href="#from-legacy-to-permanence">From Legacy to Permanence</a></li>
-  <li><a href="#architecture-for-deep-time">Architecture for Deep Time</a></li>
-  <li><a href="#the-pyramid-is-still-not-fully-known">The Pyramid Is Still Not Fully Known</a></li>
-  <li><a href="#beneath-giza-signal-is-not-structure">Beneath Giza: Signal Is Not Structure</a></li>
-  <li><a href="#the-osireion-architecture-below-time">The Osireion: Architecture Below Time</a></li>
-  <li><a href="#hawara-and-the-memory-of-the-labyrinth">Hawara and the Memory of the Labyrinth</a></li>
-  <li><a href="#the-initiatory-geography-hypothesis">The Initiatory Geography Hypothesis</a></li>
-  <li><a href="#before-egypt-was-egypt">Before Egypt Was Egypt</a></li>
-  <li><a href="#atlantis-answer-or-archetype">Atlantis: Answer or Archetype?</a></li>
-  <li><a href="#built-to-cross-ages">Built to Cross Ages</a></li>
-  <li><a href="#time-as-the-audience">Time as the Audience</a></li>
-  <li><a href="#what-have-we-not-yet-learned-to-read">What Have We Not Yet Learned to Read?</a></li>
-  <li><a href="#references-and-further-reading">References and Further Reading</a></li>
-</ul>
-
-<h2 id="from-legacy-to-permanence">From Legacy to Permanence</h2>
-
-<p>The previous article explored the possibility of a legacy intended for future humanity.</p>
-
-<p>This time we do not begin with the message.</p>
-
-<p>We begin with the medium.</p>
-
-<p>Stone.</p>
-
-<p>Not a tablet that can be carried away. Not a manuscript dependent on language. Not an institution dependent on political continuity.</p>
-
-<p>A mountain of engineered stone.</p>
-
-<p>That changes the question.</p>
-
-<blockquote>
-  <p><strong>Why choose a medium whose useful lifetime exceeds the civilization that produced it?</strong></p>
-</blockquote>
-
-<p>The conventional archaeological answers remain essential. Egyptian monumental architecture expressed royal power, funerary belief, cult, cosmic order and the transformation of the king. None of that needs to be discarded.</p>
-
-<p>But permanence itself deserves attention.</p>
-
-<p>A monument may communicate through inscriptions.</p>
-
-<p>A megalithic monument also communicates through its continued existence.</p>
-
-<h2 id="architecture-for-deep-time">Architecture for Deep Time</h2>
-
-<p>“Deep time” is normally a geological idea: a scale so large that an individual human life becomes almost negligible.</p>
-
-<p>Megalithic architecture creates something analogous in culture.</p>
-
-<p>A person dies.</p>
-
-<p>A dynasty ends.</p>
-
-<p>A language changes.</p>
-
-<p>A religion transforms.</p>
-
-<p>The stone remains.</p>
-
-<div class="mermaid-diagram" style="max-width: 520px; width: 100%; margin: 1.5rem auto;">
-
-  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1xuXCJ0aGVtZVwiOiBcImJhc2VcIixcblwidGhlbWVWYXJpYWJsZXNcIjoge1xuXCJwcmltYXJ5VGV4dENvbG9yXCI6IFwiIzFFMjkzQlwiLFxuXCJsaW5lQ29sb3JcIjogXCIjNTI2MDZEXCIsXG5cImZvbnRGYW1pbHlcIjogXCJUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWZcIixcblwiZm9udFNpemVcIjogXCIxM3B4XCIsXG5cImNsdXN0ZXJCa2dcIjogXCIjRjRGNkY4XCIsXG5cImNsdXN0ZXJCb3JkZXJcIjogXCIjNTI2MDZEXCJcbn0sXG5cImZsb3djaGFydFwiOiB7XG5cInVzZU1heFdpZHRoXCI6IHRydWUsXG5cImh0bWxMYWJlbHNcIjogdHJ1ZSxcblwibm9kZVNwYWNpbmdcIjogMzYsXG5cInJhbmtTcGFjaW5nXCI6IDQ0LFxuXCJjdXJ2ZVwiOiBcImJhc2lzXCJcbn1cbn19JSVcbmZsb3djaGFydCBMUlxuc3ViZ3JhcGggVFtcIuKPsyBGcm9tIGEgbGlmZXRpbWUgdG8gZGVlcCB0aW1lXCJdXG5kaXJlY3Rpb24gTFJcbkFbXCLwn5GkIEh1bWFuIGxpZmU8YnIvPmRlY2FkZXNcIl06OjplZGdlIC0tPiBCW1wi8J-RkSBEeW5hc3R5PGJyLz5jZW50dXJpZXNcIl06OjppbnRlZ3JhdGlvblxuQiAtLT4gQ1tcIvCfj7ogQ2l2aWxpemF0aW9uPGJyLz5taWxsZW5uaWFcIl06Ojpkb21haW5cbkMgLS0-IERbXCLwn6qoIE1lZ2FsaXRoPGJyLz5zdGlsbCBwcmVzZW50XCJdOjo6ZGF0YVxuZW5kXG5EIC0tPiBFW1wi8J-UrSBGdXR1cmUgb2JzZXJ2ZXI8YnIvPmludGVycHJldHMgYWdhaW5cIl06Ojp3ZWJcbiUlLVxuJSUgPT09PT0gRmFjdG9yeS1ibG9nIHNlbWFudGljIHBhbGV0dGUgPT09PT1cbmNsYXNzRGVmIGVkZ2UgZmlsbDojRkRFQ0VDLHN0cm9rZTojQzc2RDZELGNvbG9yOiM3QTJFMkUsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgd2ViIGZpbGw6I0VBRjJGRixzdHJva2U6IzZCOEZDQixjb2xvcjojMjQ0NDZBLHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIGRvbWFpbiBmaWxsOiNGMEVBRkUsc3Ryb2tlOiM4Qjc4QjgsY29sb3I6IzQ1MzM2NixzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiBkYXRhIGZpbGw6I0VBRjZFQyxzdHJva2U6IzZGOUY3NCxjb2xvcjojMjg1MTMxLHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIGludGVncmF0aW9uIGZpbGw6I0ZGRjREOCxzdHJva2U6I0M2QTQ1QSxjb2xvcjojNUE0MzE3LHN0cm9rZS13aWR0aDoxLjVweDsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ" /></p>
-
-</div>
-
-<p>This does not prove that the builders intended to address people thousands of years in the future.</p>
-
-<p>But it establishes something simpler and observable:</p>
-
-<p><strong>the architecture was capable of doing so.</strong></p>
-
-<p>That capacity becomes part of the monument’s historical afterlife.</p>
-
-<p><img src="/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/what-survives-when-civilizations-fade.webp" alt="" /></p>
-
-<h2 id="the-pyramid-is-still-not-fully-known">The Pyramid Is Still Not Fully Known</h2>
-
-<p>The Great Pyramid is one of the most studied buildings on Earth.</p>
-
-<p>It still surprises us.</p>
-
-<p>In 2017, the ScanPyramids collaboration reported the detection of a previously unknown large void above the Grand Gallery using cosmic-ray muography. The signal was independently observed with three detector systems. The feature, known as the <strong>ScanPyramids Big Void</strong>, has a minimum length of about 30 metres. Its purpose remains unknown.</p>
-
-<p>That distinction is crucial:</p>
-
-<p><strong>existence: strongly supported.</strong></p>
-
-<p><strong>function: unknown.</strong></p>
-
-<p>In 2023 a corridor behind the chevron-shaped stones on the north face of the pyramid was directly imaged. In 2025, researchers published a multimodal confirmation using ground-penetrating radar, ultrasonic testing and electrical resistivity tomography.</p>
-
-<p>Four and a half millennia after construction, the architectural map is still being refined.</p>
-
-<p>That fact alone should make us cautious about statements beginning with “we already know exactly what the pyramid is.”</p>
-
-<div class="mermaid-diagram" style="max-width: 600px; width: 100%; margin: 1.5rem auto;">
-
-  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1xuXCJ0aGVtZVwiOiBcImJhc2VcIixcblwidGhlbWVWYXJpYWJsZXNcIjoge1xuXCJwcmltYXJ5VGV4dENvbG9yXCI6IFwiIzFFMjkzQlwiLFxuXCJsaW5lQ29sb3JcIjogXCIjNTI2MDZEXCIsXG5cImZvbnRGYW1pbHlcIjogXCJUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWZcIixcblwiZm9udFNpemVcIjogXCIxM3B4XCJcbn0sXG5cImZsb3djaGFydFwiOiB7XG5cInVzZU1heFdpZHRoXCI6IHRydWUsXG5cImh0bWxMYWJlbHNcIjogdHJ1ZSxcblwibm9kZVNwYWNpbmdcIjogMzQsXG5cInJhbmtTcGFjaW5nXCI6IDM4LFxuXCJjdXJ2ZVwiOiBcImJhc2lzXCJcbn1cbn19JSVcbmZsb3djaGFydCBMUlxuQVtcIvCfp7EgS25vd24gcGFzc2FnZXM8YnIvPmFuZCBjaGFtYmVyc1wiXTo6OmRhdGEgLS0-XG5CW1wi8J-aqiBDb25maXJtZWQgY29ycmlkb3I8YnIvPk5vcnRoIEZhY2UgQ29ycmlkb3JcIl06Ojp3ZWIgLS0-XG5DW1wi8J-ToSBDb25maXJtZWQgYW5vbWFseTxici8-QmlnIFZvaWRcIl06OjppbnRlZ3JhdGlvbiAtLT5cbkRbXCLinZMgVW5rbm93biBmdW5jdGlvblwiXTo6OmRvbWFpblxuJSUtXG5jbGFzc0RlZiB3ZWIgZmlsbDojRUFGMkZGLHN0cm9rZTojNkI4RkNCLGNvbG9yOiMyNDQ0NkEsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgZG9tYWluIGZpbGw6I0YwRUFGRSxzdHJva2U6IzhCNzhCOCxjb2xvcjojNDUzMzY2LHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIGRhdGEgZmlsbDojRUFGNkVDLHN0cm9rZTojNkY5Rjc0LGNvbG9yOiMyODUxMzEsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgaW50ZWdyYXRpb24gZmlsbDojRkZGNEQ4LHN0cm9rZTojQzZBNDVBLGNvbG9yOiM1QTQzMTcsc3Ryb2tlLXdpZHRoOjEuNXB4OyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-</div>
-
-<p>The important point is not that a dramatic secret must exist.</p>
-
-<p>It is almost the opposite.</p>
-
-<p><strong>The unknown can be real without our interpretation of it being correct.</strong></p>
-
-<h2 id="beneath-giza-signal-is-not-structure">Beneath Giza: Signal Is Not Structure</h2>
-
-<p><img src="/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/signal-is-not-structure.webp" alt="" /></p>
-
-<p>In 2025, dramatic claims spread internationally about enormous structures supposedly detected hundreds of metres beneath the Pyramid of Khafre using a satellite-based interpretation of synthetic aperture radar data.</p>
-
-<p>The published visualizations were extraordinary: deep shafts, cylindrical forms and enormous geometric structures beneath the plateau.</p>
-
-<p>They were also <strong>not an archaeological discovery in the established sense</strong>.</p>
-
-<p>Radar specialists and Egyptologists challenged the physical ability of the method to resolve structures at the claimed depths, and no excavation or independent geophysical survey has confirmed the proposed underground architecture.</p>
-
-<p>By 2026 the claim remained unverified.</p>
-
-<p>This makes it useful for the article — not as evidence of a lost city, but as a demonstration of how easily a signal can become a story.</p>
-
-<div class="mermaid-diagram" style="max-width: 600px; width: 100%; margin: 1.5rem auto;">
-
-  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1xuXCJ0aGVtZVwiOiBcImJhc2VcIixcblwidGhlbWVWYXJpYWJsZXNcIjoge1xuXCJwcmltYXJ5VGV4dENvbG9yXCI6IFwiIzFFMjkzQlwiLFxuXCJsaW5lQ29sb3JcIjogXCIjNTI2MDZEXCIsXG5cImZvbnRGYW1pbHlcIjogXCJUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWZcIixcblwiZm9udFNpemVcIjogXCIxM3B4XCIsXG5cImNsdXN0ZXJCa2dcIjogXCIjRjRGNkY4XCIsXG5cImNsdXN0ZXJCb3JkZXJcIjogXCIjNTI2MDZEXCJcbn0sXG5cImZsb3djaGFydFwiOiB7XG5cInVzZU1heFdpZHRoXCI6IHRydWUsXG5cImh0bWxMYWJlbHNcIjogdHJ1ZSxcblwibm9kZVNwYWNpbmdcIjogMzYsXG5cInJhbmtTcGFjaW5nXCI6IDQ0LFxuXCJjdXJ2ZVwiOiBcImJhc2lzXCJcbn1cbn19JSVcbmZsb3djaGFydCBMUlxuc3ViZ3JhcGggTVtcIvCfk6EgT2JzZXJ2YXRpb25cIl1cbmRpcmVjdGlvbiBMUlxuQVtcIvCfk7YgU2lnbmFsXCJdOjo6d2ViIC0tPiBCW1wi8J-UjiBBbm9tYWx5XCJdOjo6aW50ZWdyYXRpb25cbmVuZFxuJSUtXG5zdWJncmFwaCBJW1wi8J-noCBJbnRlcnByZXRhdGlvblwiXVxuZGlyZWN0aW9uIExSXG5DW1wi8J-nqSBJbnRlcnByZXRhdGlvblwiXTo6OmRvbWFpbiAtLT4gRFtcIvCflIEgSW5kZXBlbmRlbnQ8YnIvPnJlcGxpY2F0aW9uXCJdOjo6ZGF0YVxuZW5kXG4lJS1cbnN1YmdyYXBoIFZbXCLwn4-6IFZlcmlmaWNhdGlvbiAmIGNvbnRleHRcIl1cbmRpcmVjdGlvbiBMUlxuRVtcIvCfm6DvuI8gUGh5c2ljYWw8YnIvPnZlcmlmaWNhdGlvblwiXTo6OmRhdGEgLS0-IEZbXCLwn5OFIERhdGluZ1wiXTo6OmludGVncmF0aW9uIC0tPiBHW1wi8J-TnCBIaXN0b3JpY2FsPGJyLz5tZWFuaW5nXCJdOjo6ZG9tYWluXG5lbmRcbiUlLVxuQiAtLT4gQ1xuRCAtLT4gRVxuWFtcIuKaoO-4jyBBIGNsYWltIGNhbiBmYWlsPGJyLz5hdCBhbnkgdHJhbnNpdGlvblwiXTo6OmVkZ2UgLS4tPiBDXG5YIC0uLT4gRFxuWCAtLi0-IEVcbiUlLVxuJSUgPT09PT0gRmFjdG9yeS1ibG9nIHNlbWFudGljIHBhbGV0dGUgPT09PT1cbmNsYXNzRGVmIGVkZ2UgZmlsbDojRkRFQ0VDLHN0cm9rZTojQzc2RDZELGNvbG9yOiM3QTJFMkUsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgd2ViIGZpbGw6I0VBRjJGRixzdHJva2U6IzZCOEZDQixjb2xvcjojMjQ0NDZBLHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIGRvbWFpbiBmaWxsOiNGMEVBRkUsc3Ryb2tlOiM4Qjc4QjgsY29sb3I6IzQ1MzM2NixzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiBkYXRhIGZpbGw6I0VBRjZFQyxzdHJva2U6IzZGOUY3NCxjb2xvcjojMjg1MTMxLHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIGludGVncmF0aW9uIGZpbGw6I0ZGRjREOCxzdHJva2U6I0M2QTQ1QSxjb2xvcjojNUE0MzE3LHN0cm9rZS13aWR0aDoxLjVweDsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ" /></p>
-
-</div>
-
-<p>This sequence should become one of our rules for the entire investigation:</p>
-
-<blockquote>
-  <p><strong>Signal is not structure. Structure is not date. Date is not meaning.</strong></p>
-</blockquote>
-
-<p>The temptation is to jump from the first box to the last.</p>
-
-<p>Archaeology exists precisely because we should not.</p>
-
-<h2 id="the-osireion-architecture-below-time">The Osireion: Architecture Below Time</h2>
-
-<p>If Giza confronts us with spaces we are still discovering, Abydos confronts us with something different.</p>
-
-<p>The <strong>Osireion</strong>, behind the Temple of Seti I, is monumental, subterranean and visually austere. Massive granite elements surround a central architectural core associated with water. Its style feels radically different from the richly decorated temple nearby.</p>
-
-<p>That difference has encouraged modern claims that the structure might be vastly older than Seti I.</p>
-
-<p>The archaeological record does not currently support that conclusion.</p>
-
-<p>Early excavators were themselves struck by the structure. Later work by Henri Frankfort connected the monument structurally and epigraphically with Seti I’s complex. The Egypt Exploration Society describes the Osireion as the enigmatic structure behind Seti’s temple, and the standard interpretation treats it as a cenotaph or symbolic tomb associated with Osiris and the royal funerary program.</p>
-
-<p>The interesting question therefore is not:</p>
-
-<blockquote>
-  <p><strong>Was the Osireion built by Atlantis?</strong></p>
-</blockquote>
-
-<p>There is no archaeological basis for stating that.</p>
-
-<p>The better question is:</p>
-
-<blockquote>
-  <p><strong>Why did New Kingdom Egyptians deliberately build a structure that evokes an architecture of primordial permanence?</strong></p>
-</blockquote>
-
-<p>Its subterranean character matters.</p>
-
-<p>Its water symbolism matters.</p>
-
-<p>Its monumental stonework matters.</p>
-
-<p>And Abydos itself matters: by the Middle Kingdom it had become Egypt’s principal cult centre for Osiris.</p>
-
-<p>The structure appears almost designed to make the visitor descend out of ordinary historical time.</p>
-
-<p><img src="/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/the-osireion-architecture-below-time.webp" alt="" /></p>
-
-<h3 id="osiris-and-reconstruction">Osiris and Reconstruction</h3>
-
-<p>There is a philosophical correspondence here worth making explicit — as interpretation, not archaeology.</p>
-
-<p>Osiris is dismembered.</p>
-
-<p>The fragments are gathered.</p>
-
-<p>Order is reconstructed.</p>
-
-<p>Something returns in another form.</p>
-
-<p>The same pattern describes our relationship with ancient civilizations.</p>
-
-<div class="mermaid-diagram" style="max-width: 600px; width: 100%; margin: 1.5rem auto;">
-
-  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1xuXCJ0aGVtZVwiOiBcImJhc2VcIixcblwidGhlbWVWYXJpYWJsZXNcIjoge1xuXCJwcmltYXJ5VGV4dENvbG9yXCI6IFwiIzFFMjkzQlwiLFxuXCJsaW5lQ29sb3JcIjogXCIjNTI2MDZEXCIsXG5cImZvbnRGYW1pbHlcIjogXCJUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWZcIixcblwiZm9udFNpemVcIjogXCIxM3B4XCIsXG5cImNsdXN0ZXJCa2dcIjogXCIjRjRGNkY4XCIsXG5cImNsdXN0ZXJCb3JkZXJcIjogXCIjNTI2MDZEXCJcbn0sXG5cImZsb3djaGFydFwiOiB7XG5cInVzZU1heFdpZHRoXCI6IHRydWUsXG5cImh0bWxMYWJlbHNcIjogdHJ1ZSxcblwibm9kZVNwYWNpbmdcIjogMzYsXG5cInJhbmtTcGFjaW5nXCI6IDQ0LFxuXCJjdXJ2ZVwiOiBcImJhc2lzXCJcbn1cbn19JSVcbmZsb3djaGFydCBMUlxuc3ViZ3JhcGggTVtcIuKase-4jyBNeXRoaWMgcGF0dGVyblwiXVxuZGlyZWN0aW9uIExSXG5BW1wi4q2VIFdob2xlbmVzc1wiXTo6OmRhdGEgLS0-IEJbXCLwn5KlIEZyYWdtZW50YXRpb25cIl06OjplZGdlIC0tPiBDW1wi8J-nqSBSZWFzc2VtYmx5XCJdOjo6aW50ZWdyYXRpb24gLS0-IERbXCLwn4yxIFJlbmV3YWxcIl06Ojp3ZWJcbmVuZFxuJSUtXG5zdWJncmFwaCBLW1wi8J-TmiBLbm93bGVkZ2UgcGF0dGVyblwiXVxuZGlyZWN0aW9uIExSXG5FW1wi8J-Pm--4jyBMaXZpbmcgY3VsdHVyZVwiXTo6OmRhdGEgLS0-IEZbXCLwn4-a77iPIFJ1aW5zIC8gZnJhZ21lbnRzXCJdOjo6ZWRnZSAtLT4gR1tcIuKbj--4jyBBcmNoYWVvbG9neVwiXTo6OmludGVncmF0aW9uIC0tPiBIW1wi8J-noCBSZWNvbnN0cnVjdGlvblwiXTo6OndlYlxuZW5kXG4lJS1cbiUlID09PT09IEZhY3RvcnktYmxvZyBzZW1hbnRpYyBwYWxldHRlID09PT09XG5jbGFzc0RlZiBlZGdlIGZpbGw6I0ZERUNFQyxzdHJva2U6I0M3NkQ2RCxjb2xvcjojN0EyRTJFLHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIHdlYiBmaWxsOiNFQUYyRkYsc3Ryb2tlOiM2QjhGQ0IsY29sb3I6IzI0NDQ2QSxzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiBkb21haW4gZmlsbDojRjBFQUZFLHN0cm9rZTojOEI3OEI4LGNvbG9yOiM0NTMzNjYsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgZGF0YSBmaWxsOiNFQUY2RUMsc3Ryb2tlOiM2RjlGNzQsY29sb3I6IzI4NTEzMSxzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiBpbnRlZ3JhdGlvbiBmaWxsOiNGRkY0RDgsc3Ryb2tlOiNDNkE0NUEsY29sb3I6IzVBNDMxNyxzdHJva2Utd2lkdGg6MS41cHg7IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0" /></p>
-
-</div>
-
-<p>The monument survives.</p>
-
-<p>Meaning fragments.</p>
-
-<p>Every later civilization tries to assemble it again.</p>
-
-<h2 id="hawara-and-the-memory-of-the-labyrinth">Hawara and the Memory of the Labyrinth</h2>
-
-<p>At Hawara, south of the pyramid of Amenemhat III, the situation is almost reversed.</p>
-
-<p>Instead of an enormous monument surviving nearly intact, we have the memory of something extraordinary whose visible architecture was largely destroyed.</p>
-
-<p>Ancient Greek authors described an Egyptian Labyrinth of remarkable scale. Modern archaeology identifies the principal mortuary temple of Amenemhat III at Hawara with that tradition. Petrie excavated the site in the nineteenth century, but found that much of the monumental complex had already been destroyed and quarried.</p>
-
-<p>Yet the site did not become archaeologically empty.</p>
-
-<p>A 2000 survey recovered additional evidence associated with the temple complex. A peer-reviewed 2010 geophysical study reported shallow elongated and square anomalies whose spatial distribution significantly matched aspects of the historical description.</p>
-
-<p>A 2025 paper went further, interpreting satellite SAR imagery as possible evidence for a much larger buried structure.</p>
-
-<p>That latest interpretation should be treated cautiously. Space-based radar claims about deeply buried architecture require independent validation, especially after the controversy surrounding similar claims at Giza.</p>
-
-<p>But Hawara differs from the Khafre story in one important respect:</p>
-
-<p><strong>the Labyrinth is not invented by the modern scan.</strong></p>
-
-<p>Its historical and archaeological existence as Amenemhat III’s temple complex is already well established.</p>
-
-<p>The open questions concern its original form, extent, surviving subsurface remains and how much of the ancient descriptions should be read literally.</p>
-
-<p><img src="/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/hawara-and-the-labyrinth.webp" alt="" /></p>
-
-<h2 id="the-initiatory-geography-hypothesis">The Initiatory Geography Hypothesis</h2>
-
-<p>Herodotus places the Labyrinth near Lake Moeris, in the Fayum region, not beneath Giza. The historical Labyrinth and the controversial structures recently claimed beneath the Giza plateau are therefore <strong>not the same archaeological claim</strong>.</p>
-
-<p>Yet a later initiatory interpretation makes a different connection. In <em>La pirámide iniciática</em>, Joan Llarch asks whether a <strong>triple subterranean path</strong> could begin at the Sphinx, lead toward the three pyramids and continue toward the Labyrinth described by Herodotus.</p>
-
-<p>This is not established archaeology, and it should not be presented as a geographical reading of Herodotus. It is better understood as an <strong>initiatory geography</strong>: the possibility that the Sphinx, the pyramids and the Labyrinth belonged to a larger ritual or symbolic system, whether or not a continuous physical tunnel ever existed.</p>
-
-<p>That distinction allows three different kinds of connection to remain visible:</p>
-
-<div class="mermaid-diagram" style="max-width: 420px; width: 100%; margin: 1.25rem auto;">
-
-  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1xuXCJ0aGVtZVwiOiBcImJhc2VcIixcblwidGhlbWVWYXJpYWJsZXNcIjoge1xuXCJwcmltYXJ5VGV4dENvbG9yXCI6IFwiIzFFMjkzQlwiLFxuXCJsaW5lQ29sb3JcIjogXCIjNTI2MDZEXCIsXG5cImZvbnRGYW1pbHlcIjogXCJUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWZcIixcblwiZm9udFNpemVcIjogXCIxM3B4XCJcbn0sXG5cImZsb3djaGFydFwiOiB7XG5cInVzZU1heFdpZHRoXCI6IHRydWUsXG5cImh0bWxMYWJlbHNcIjogdHJ1ZSxcblwibm9kZVNwYWNpbmdcIjogMTgsXG5cInJhbmtTcGFjaW5nXCI6IDI0LFxuXCJjdXJ2ZVwiOiBcImJhc2lzXCJcbn1cbn19JSVcbmZsb3djaGFydCBUQlxuQVtcIvCfnIMgSW5pdGlhdG9yeSBnZW9ncmFwaHlcIl06OjppbnRlZ3JhdGlvblxuQltcIvCflbPvuI8gUGh5c2ljYWw8YnIvPnR1bm5lbD9cIl06OjplZGdlXG5DW1wi8J-atiBSaXR1YWw8YnIvPmpvdXJuZXlcIl06OjpkYXRhXG5EW1wi8JOCgCBTeW1ib2xpYzxici8-dGhyZXNob2xkXCJdOjo6ZG9tYWluXG5BIC0tPiBCXG5BIC0tPiBDXG5BIC0tPiBEXG4lJS1cbmNsYXNzRGVmIGVkZ2UgZmlsbDojRkRFQ0VDLHN0cm9rZTojQzc2RDZELGNvbG9yOiM3QTJFMkUsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgZG9tYWluIGZpbGw6I0YwRUFGRSxzdHJva2U6IzhCNzhCOCxjb2xvcjojNDUzMzY2LHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIGRhdGEgZmlsbDojRUFGNkVDLHN0cm9rZTojNkY5Rjc0LGNvbG9yOiMyODUxMzEsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgaW50ZWdyYXRpb24gZmlsbDojRkZGNEQ4LHN0cm9rZTojQzZBNDVBLGNvbG9yOiM1QTQzMTcsc3Ryb2tlLXdpZHRoOjEuNXB4OyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-</div>
-
-<p>The physical connection remains unverified. The ritual and symbolic connection, however, can still be examined as an interpretive model: <strong>Sphinx as threshold, pyramids as stages of transformation, Labyrinth as ordeal, disorientation and reconstruction</strong>.</p>
-
-<p>This does not collapse Hawara into Giza. It asks whether two geographically distinct places could have been understood, in later initiatory readings, as parts of the same sacred map.</p>
-
-<h2 id="before-egypt-was-egypt">Before Egypt Was Egypt</h2>
-
-<p>The pyramids did not emerge from a cultural vacuum.</p>
-
-<p>Predynastic Egypt extends thousands of years before the Fourth Dynasty, and archaeological material shows that the broader Giza area saw human activity before the construction of the great pyramids.</p>
-
-<p>This matters because it changes a misleading binary:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>either
-Egypt invented everything suddenly
-
-or
-a lost civilization built Egypt
-</code></pre></div></div>
-
-<p>History does not require either extreme.</p>
-
-<p>Knowledge can accumulate.</p>
-
-<p>Techniques can be inherited.</p>
-
-<p>Ritual forms can become monumental.</p>
-
-<p>Older landscapes can acquire new meanings.</p>
-
-<p>The more productive question is therefore:</p>
-
-<blockquote>
-  <p><strong>How much of monumental Egypt was invention, and how much was culmination?</strong></p>
-</blockquote>
-
-<p>That question leaves room for continuity without requiring an unknown civilization.</p>
-
-<p>It also leaves room for genuine surprise.</p>
-
-<p>Archaeology repeatedly shows that what appears sudden at one scale can reveal long development when the scale is widened.</p>
-
-<h2 id="atlantis-answer-or-archetype">Atlantis: Answer or Archetype?</h2>
-
-<p>Atlantis should enter this discussion carefully.</p>
-
-<p>Plato’s Atlantis is one of the most influential stories of a civilization destroyed by catastrophe. Through later interpretation it became a cultural container for a recurring human possibility:</p>
-
-<p><strong>a civilization before our civilization.</strong></p>
-
-<p>There is no accepted archaeological evidence showing that Atlantis built the Egyptian pyramids, the Osireion or the monuments of Giza.</p>
-
-<p>So Atlantis should not be used here as an answer.</p>
-
-<p>It is more useful as an archetype.</p>
-
-<p>It asks what happens when:</p>
-
-<ul>
-  <li>knowledge outlives its institutions;</li>
-  <li>memory becomes myth;</li>
-  <li>landscapes are transformed;</li>
-  <li>civilizations inherit fragments whose origins they no longer fully know.</li>
-</ul>
-
-<p>In that sense, the Atlantis question becomes larger than Atlantis itself.</p>
-
-<blockquote>
-  <p><strong>Can knowledge cross a civilizational rupture without preserving the civilization that produced it?</strong></p>
-</blockquote>
-
-<p>Now the megalith returns to the centre of the story.</p>
-
-<h2 id="built-to-cross-ages">Built to Cross Ages</h2>
-
-<p>Imagine designing information for an audience you will never meet.</p>
-
-<p>Language is unstable.</p>
-
-<p>Political institutions are unstable.</p>
-
-<p>Religions change.</p>
-
-<p>Organic media decay.</p>
-
-<p>Digital media, as our own civilization is beginning to discover, depend on extraordinarily fragile layers of infrastructure.</p>
-
-<p>Stone is different.</p>
-
-<p>Geometry is different.</p>
-
-<p>The sky is different.</p>
-
-<p>Together they form three unusually durable media.</p>
-
-<div class="mermaid-diagram" style="max-width: 480px; width: 100%; margin: 1.5rem auto;">
-
-  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1xuXCJ0aGVtZVwiOiBcImJhc2VcIixcblwidGhlbWVWYXJpYWJsZXNcIjoge1xuXCJwcmltYXJ5VGV4dENvbG9yXCI6IFwiIzFFMjkzQlwiLFxuXCJsaW5lQ29sb3JcIjogXCIjNTI2MDZEXCIsXG5cImZvbnRGYW1pbHlcIjogXCJUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWZcIixcblwiZm9udFNpemVcIjogXCIxM3B4XCIsXG5cImNsdXN0ZXJCa2dcIjogXCIjRjRGNkY4XCIsXG5cImNsdXN0ZXJCb3JkZXJcIjogXCIjNTI2MDZEXCJcbn0sXG5cImZsb3djaGFydFwiOiB7XG5cInVzZU1heFdpZHRoXCI6IHRydWUsXG5cImh0bWxMYWJlbHNcIjogdHJ1ZSxcblwibm9kZVNwYWNpbmdcIjogMjQsXG5cInJhbmtTcGFjaW5nXCI6IDMyLFxuXCJjdXJ2ZVwiOiBcImJhc2lzXCJcbn1cbn19JSVcbmZsb3djaGFydCBMUlxuc3ViZ3JhcGggRFtcIvCfp60gVGhyZWUgZHVyYWJsZSBtZWRpYVwiXVxuZGlyZWN0aW9uIFRCXG5TW1wi8J-qqCBTVE9ORTxici8-bWF0dGVyXCJdOjo6aW50ZWdyYXRpb25cbkdbXCLwn5OQIEdFT01FVFJZPGJyLz5yZWxhdGlvbnNoaXBcIl06OjpkYXRhXG5LW1wi8J-MjCBTS1k8YnIvPnJlY3VycmluZyBjeWNsZXNcIl06Ojp3ZWJcbmVuZFxuJSUtXG5TIC0tPiBGW1wi8J-Rge-4jyBGdXR1cmUgcmVhZGVyPGJyLz5yZWRpc2NvdmVycyB0aGUgcGF0dGVyblwiXTo6OmRvbWFpblxuRyAtLT4gRlxuSyAtLT4gRlxuJSUtXG4lJSA9PT09PSBGYWN0b3J5LWJsb2cgc2VtYW50aWMgcGFsZXR0ZSA9PT09PVxuY2xhc3NEZWYgZWRnZSBmaWxsOiNGREVDRUMsc3Ryb2tlOiNDNzZENkQsY29sb3I6IzdBMkUyRSxzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiB3ZWIgZmlsbDojRUFGMkZGLHN0cm9rZTojNkI4RkNCLGNvbG9yOiMyNDQ0NkEsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgZG9tYWluIGZpbGw6I0YwRUFGRSxzdHJva2U6IzhCNzhCOCxjb2xvcjojNDUzMzY2LHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIGRhdGEgZmlsbDojRUFGNkVDLHN0cm9rZTojNkY5Rjc0LGNvbG9yOiMyODUxMzEsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgaW50ZWdyYXRpb24gZmlsbDojRkZGNEQ4LHN0cm9rZTojQzZBNDVBLGNvbG9yOiM1QTQzMTcsc3Ryb2tlLXdpZHRoOjEuNXB4OyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-</div>
-
-<p>Again, this is not evidence that the pyramids were intentionally designed as messages to a post-catastrophe civilization.</p>
-
-<p>It is an observation about the medium.</p>
-
-<p>A geometric relationship remains measurable even after the language used to describe it has disappeared.</p>
-
-<p>A cardinal direction remains.</p>
-
-<p>A celestial cycle can be rediscovered.</p>
-
-<p>A stone can remain where it was placed.</p>
-
-<p>This may be one reason monumental architecture so easily becomes a vessel for memory.</p>
-
-<h3 id="the-monument-as-compressed-civilization">The monument as compressed civilization</h3>
-
-<p>A megalithic complex may contain, simultaneously:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>engineering
-geometry
-astronomy
-ritual
-politics
-labor organization
-myth
-landscape
-religion
-material science
-</code></pre></div></div>
-
-<p>The civilization disappears.</p>
-
-<p>The monument remains as a compressed object.</p>
-
-<p>Archaeology attempts to decompress it.</p>
-
-<p>That metaphor is particularly useful because decompression is never guaranteed to recover the original file perfectly.</p>
-
-<p>Some information survives.</p>
-
-<p>Some correlations survive without explanation.</p>
-
-<p>Some meaning is irretrievably lost.</p>
-
-<p>And some of what we reconstruct may belong more to us than to the builders.</p>
-
-<h2 id="time-as-the-audience">Time as the Audience</h2>
-
-<p>This leads to the question that separates this article from <em>The Secret of the Sphinx</em>.</p>
-
-<p>That article asked about a possible legacy.</p>
-
-<p>This one asks why the architecture itself seems so compatible with extreme duration.</p>
-
-<p>Maybe permanence was simply the natural result of religious and royal ambition.</p>
-
-<p>Maybe the purpose was to maintain cult, kingship and cosmic order indefinitely.</p>
-
-<p>Maybe the monument was intended for the gods rather than for distant human observers.</p>
-
-<p>These possibilities are historically grounded and should come first.</p>
-
-<p>But once a structure survives thousands of years, something strange happens.</p>
-
-<p>Its audience changes.</p>
-
-<p>The builders are gone.</p>
-
-<p>The ritual specialists are gone.</p>
-
-<p>The original spoken explanations are gone.</p>
-
-<p>The monument begins speaking to people who were never part of its culture.</p>
-
-<div class="mermaid-diagram" style="max-width: 600px; width: 100%; margin: 1.5rem auto;">
-
-  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1xuXCJ0aGVtZVwiOiBcImJhc2VcIixcblwidGhlbWVWYXJpYWJsZXNcIjoge1xuXCJwcmltYXJ5VGV4dENvbG9yXCI6IFwiIzFFMjkzQlwiLFxuXCJsaW5lQ29sb3JcIjogXCIjNTI2MDZEXCIsXG5cImZvbnRGYW1pbHlcIjogXCJUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWZcIixcblwiZm9udFNpemVcIjogXCIxM3B4XCIsXG5cImNsdXN0ZXJCa2dcIjogXCIjRjRGNkY4XCIsXG5cImNsdXN0ZXJCb3JkZXJcIjogXCIjNTI2MDZEXCJcbn0sXG5cImZsb3djaGFydFwiOiB7XG5cInVzZU1heFdpZHRoXCI6IHRydWUsXG5cImh0bWxMYWJlbHNcIjogdHJ1ZSxcblwibm9kZVNwYWNpbmdcIjogMzYsXG5cInJhbmtTcGFjaW5nXCI6IDQ0LFxuXCJjdXJ2ZVwiOiBcImJhc2lzXCJcbn1cbn19JSVcbmZsb3djaGFydCBMUlxuc3ViZ3JhcGggQVtcIuKMmyBBdWRpZW5jZXMgYWNyb3NzIHRpbWVcIl1cbmRpcmVjdGlvbiBMUlxuQjFbXCLwn6exIEJ1aWxkZXJzXCJdOjo6aW50ZWdyYXRpb24gLS0-IEIyW1wi8J-Vr--4jyBSaXR1YWw8YnIvPmNvbW11bml0eVwiXTo6OmRhdGFcbkIyIC0tPiBCM1tcIvCTgoAgTGF0ZXIgRWd5cHRpYW5zXCJdOjo6ZG9tYWluXG5CMyAtLT4gQjRbXCLwn4-b77iPIEdyZWVrIC8gUm9tYW48YnIvPm9ic2VydmVyc1wiXTo6OndlYlxuQjQgLS0-IEI1W1wi4puP77iPIEVhcmx5PGJyLz5hcmNoYWVvbG9naXN0c1wiXTo6OmludGVncmF0aW9uXG5CNSAtLT4gQjZbXCLwn5SsIE1vZGVybiBzY2llbmNlXCJdOjo6ZGF0YVxuQjYgLS0-IEI3W1wi8J-Rge-4jyBGdXR1cmUgcmVhZGVyc1wiXTo6OmRvbWFpblxuZW5kXG4lJS1cbkhbXCLwn6qoIFRoZSBtb251bWVudCByZW1haW5zXCJdOjo6ZWRnZSAtLi0-IEIxXG5IIC0uLT4gQjNcbkggLS4tPiBCNVxuSCAtLi0-IEI3XG4lJS1cbiUlID09PT09IEZhY3RvcnktYmxvZyBzZW1hbnRpYyBwYWxldHRlID09PT09XG5jbGFzc0RlZiBlZGdlIGZpbGw6I0ZERUNFQyxzdHJva2U6I0M3NkQ2RCxjb2xvcjojN0EyRTJFLHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIHdlYiBmaWxsOiNFQUYyRkYsc3Ryb2tlOiM2QjhGQ0IsY29sb3I6IzI0NDQ2QSxzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiBkb21haW4gZmlsbDojRjBFQUZFLHN0cm9rZTojOEI3OEI4LGNvbG9yOiM0NTMzNjYsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgZGF0YSBmaWxsOiNFQUY2RUMsc3Ryb2tlOiM2RjlGNzQsY29sb3I6IzI4NTEzMSxzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiBpbnRlZ3JhdGlvbiBmaWxsOiNGRkY0RDgsc3Ryb2tlOiNDNkE0NUEsY29sb3I6IzVBNDMxNyxzdHJva2Utd2lkdGg6MS41cHg7IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0" /></p>
-
-</div>
-
-<p>At that point, time itself becomes part of the monument’s meaning.</p>
-
-<p>Not necessarily because its builders consciously chose us.</p>
-
-<p>But because they chose a form capable of reaching us.</p>
-
-<p><img src="/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/as-before-so-after.webp" alt="" /></p>
-
-<h2 id="what-have-we-not-yet-learned-to-read">What Have We Not Yet Learned to Read?</h2>
-
-<p>Modern archaeology has extraordinary instruments.</p>
-
-<p>Muon detectors can reveal density anomalies through hundreds of metres of stone.</p>
-
-<p>Radar can image shallow subsurface contrasts.</p>
-
-<p>Electrical methods can infer resistivity.</p>
-
-<p>Ultrasound can reveal internal structure.</p>
-
-<p>Photogrammetry can preserve surfaces at extraordinary resolution.</p>
-
-<p>AI can correlate datasets at scales that were impractical only a generation ago.</p>
-
-<p>Yet better instruments do not automatically create better interpretation.</p>
-
-<p>The hardest part remains the transition:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>measurement
-      ↓
-structure
-      ↓
-date
-      ↓
-function
-      ↓
-meaning
-</code></pre></div></div>
-
-<p>The first stages increasingly belong to physics and engineering.</p>
-
-<p>The last stages still require history, archaeology, language, comparative evidence and intellectual restraint.</p>
-
-<p>Perhaps that is why Egypt remains so compelling.</p>
-
-<p>We possess technologies the builders could never have imagined, yet the monuments can still place us in the position of beginners.</p>
-
-<h3 id="the-message-may-not-be-hidden">The message may not be hidden</h3>
-
-<p>We often imagine that the great discovery must be behind a wall.</p>
-
-<p>Another chamber.</p>
-
-<p>Another shaft.</p>
-
-<p>Another room.</p>
-
-<p>Another text.</p>
-
-<p>Perhaps one day such a discovery will transform what we know.</p>
-
-<p>But there is another possibility.</p>
-
-<blockquote>
-  <p><strong>Perhaps the information is not hidden inside the monument. Perhaps the monument itself is the information.</strong></p>
-</blockquote>
-
-<p>Its material.</p>
-
-<p>Its orientation.</p>
-
-<p>Its relationship to landscape.</p>
-
-<p>Its scale.</p>
-
-<p>Its internal sequence.</p>
-
-<p>Its relationship to death and regeneration.</p>
-
-<p>Its resistance to time.</p>
-
-<p>Its continued ability to generate questions.</p>
-
-<p>The deepest unsolved problem may therefore not be another chamber beneath Egypt.</p>
-
-<p>It may be the reading system required to understand what has been visible all along.</p>
-
-<h2 id="as-before-so-after">As Before, So After</h2>
-
-<p>The previous article used the old symbolic movement:</p>
-
-<p><strong>As Above, So Below.</strong></p>
-
-<p>This investigation suggests another axis.</p>
-
-<p><strong>As Before, So After.</strong></p>
-
-<div class="mermaid-diagram" style="max-width: 340px; width: 100%; margin: 1rem auto;">
-
-  <p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1xuXCJ0aGVtZVwiOiBcImJhc2VcIixcblwidGhlbWVWYXJpYWJsZXNcIjoge1xuXCJwcmltYXJ5VGV4dENvbG9yXCI6IFwiIzFFMjkzQlwiLFxuXCJsaW5lQ29sb3JcIjogXCIjNTI2MDZEXCIsXG5cImZvbnRGYW1pbHlcIjogXCJUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWZcIixcblwiZm9udFNpemVcIjogXCIxM3B4XCJcbn0sXG5cImZsb3djaGFydFwiOiB7XG5cInVzZU1heFdpZHRoXCI6IHRydWUsXG5cImh0bWxMYWJlbHNcIjogdHJ1ZSxcblwibm9kZVNwYWNpbmdcIjogOCxcblwicmFua1NwYWNpbmdcIjogMTIsXG5cImN1cnZlXCI6IFwiYmFzaXNcIlxufVxufX0lJVxuZmxvd2NoYXJ0IFRCXG5BW1wi4pyoIEFCT1ZFPGJyLz5Ta3lcIl06Ojp3ZWJcbiUlLVxuc3ViZ3JhcGggVElNRVtcIiBcIl1cbmRpcmVjdGlvbiBMUlxuUFtcIvCfj7ogQkVGT1JFPGJyLz5EZWVwIFBhc3RcIl06OjplZGdlIC0tPiBTW1wi8J-XvyBNT05VTUVOVDxici8-VGhyZXNob2xkXCJdOjo6aW50ZWdyYXRpb24gLS0-IEZbXCLwn5StIEFGVEVSPGJyLz5GdXR1cmVcIl06OjpkYXRhXG5lbmRcbiUlLVxuQltcIvCflbPvuI8gQkVMT1c8YnIvPkJ1cmllZCBNZW1vcnlcIl06Ojpkb21haW5cbiUlLVxuQSAtLT4gU1xuUyAtLT4gQlxuJSUtXG5zdHlsZSBUSU1FIGZpbGw6bm9uZSxzdHJva2U6bm9uZVxuY2xhc3NEZWYgZWRnZSBmaWxsOiNGREVDRUMsc3Ryb2tlOiNDNzZENkQsY29sb3I6IzdBMkUyRSxzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiB3ZWIgZmlsbDojRUFGMkZGLHN0cm9rZTojNkI4RkNCLGNvbG9yOiMyNDQ0NkEsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgZG9tYWluIGZpbGw6I0YwRUFGRSxzdHJva2U6IzhCNzhCOCxjb2xvcjojNDUzMzY2LHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIGRhdGEgZmlsbDojRUFGNkVDLHN0cm9rZTojNkY5Rjc0LGNvbG9yOiMyODUxMzEsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgaW50ZWdyYXRpb24gZmlsbDojRkZGNEQ4LHN0cm9rZTojQzZBNDVBLGNvbG9yOiM1QTQzMTcsc3Ryb2tlLXdpZHRoOjEuNXB4OyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-</div>
-
-<p>The monument stands at the intersection.</p>
-
-<p>Above and below.</p>
-
-<p>Before and after.</p>
-
-<p>Material and meaning.</p>
-
-<p>Evidence and interpretation.</p>
-
-<p>It survives precisely where these opposites meet.</p>
-
-<p>And perhaps that is what makes megalithic Egypt so difficult to exhaust intellectually.</p>
-
-<p>We assume the mystery is how the stones were moved.</p>
-
-<p>That question matters.</p>
-
-<p>But the stones also force another one.</p>
-
-<blockquote>
-  <p><strong>Why choose a form that could remain after almost everything else was gone?</strong></p>
-</blockquote>
-
-<p>We may discover more chambers.</p>
-
-<p>We may reconstruct more of Hawara.</p>
-
-<p>We may understand the Osireion more completely.</p>
-
-<p>We may find that some spectacular modern claims disappear under better measurement while quieter discoveries transform the field.</p>
-
-<p>But the deepest question may survive all of them.</p>
-
-<p><strong>Why build as if time itself were part of the audience?</strong></p>
-
-<p>And perhaps the greatest discovery still waiting beneath Egypt is not another chamber.</p>
-
-<p><strong>It is learning how to read the monument.</strong></p>
-
-<hr />
-
-<h2 id="references-and-further-reading">References and Further Reading</h2>
-
-<ul>
-  <li><a href="https://www.nature.com/articles/nature24647">Morishima et al. — Discovery of a big void in Khufu’s Pyramid by observation of cosmic-ray muons, <em>Nature</em> (2017)</a></li>
-  <li><a href="https://www.nature.com/articles/s41598-025-91115-8">Schumacher et al. — Confirmation of the ScanPyramids North Face Corridor using multimodal image fusion, <em>Scientific Reports</em> (2025)</a></li>
-  <li><a href="https://www.nature.com/articles/s41598-025-29081-4">Investigation of the North Face Corridor using Electrical Resistivity Tomography, <em>Scientific Reports</em> (2025)</a></li>
-  <li><a href="https://factcheck.afp.com/doc.afp.com.42LQ7G3">AFP Fact Check — Scientists challenge claims of giant structures beneath the Egyptian pyramids (2025)</a></li>
-  <li><a href="https://www.nationalgeographic.com/history/article/is-there-a-secret-city-under-the-pyramids-">National Geographic — Is there really a secret city under Egypt’s Giza pyramids? (2025)</a></li>
-  <li><a href="https://www.ees.ac.uk/resource/the-cemeteries-and-temples-of-abydos.html">Egypt Exploration Society — The cemeteries and temples of Abydos</a></li>
-  <li><a href="https://www.petrieproject.com/book/the-osireion-at-abydos">The Petrie Project — <em>The Osireion at Abydos</em> (1904)</a></li>
-  <li><a href="https://www.ucl.ac.uk/museums-static/digitalegypt/abydos/mk/index.html">UCL Digital Egypt — Abydos in the Middle Kingdom</a></li>
-  <li><a href="https://www.ucl.ac.uk/museums-static/digitalegypt/hawara1/index.html">UCL Digital Egypt — Hawara</a></li>
-  <li><a href="https://www.ucl.ac.uk/3dpetriemuseum/stories/excavation-and-rediscovery/tour-of-the-nile/hawara-1.html">UCL Petrie Museum — Hawara excavation and rediscovery</a></li>
-  <li><a href="https://journals.sagepub.com/doi/10.1177/030751330208800108">Uytterhoeven &amp; Blom-Böer — New Light on the Egyptian Labyrinth: Evidence from a Survey at Hawara, <em>Journal of Egyptian Archaeology</em> (2002)</a></li>
-  <li><a href="https://onlinelibrary.wiley.com/doi/10.3997/1873-0604.2010004">Khalil et al. — VLF-EM study for archaeological investigation of the labyrinth mortuary temple complex at Hawara, <em>Near Surface Geophysics</em> (2010)</a></li>
-  <li><a href="https://journalofscientificexploration.org/index.php/jse/article/view/3579">Carlotto — Space-Based Ground Penetrating Radar Imaging of a Possible Underground Structure at Hawara (2025)</a></li>
-  <li><a href="https://www.joanllarch.com/v1/Llibres/LlibresDetalls.php?id=19">Joan Llarch — <em>La pirámide iniciática</em> (official book page)</a></li>
-  <li><a href="https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/09/14/the-secret-of-the-sphinx.html">The Secret of the Sphinx — Cosmic Cycles and a Legacy for Future Humanity</a></li>
 </ul>]]></content><author><name></name></author><category term="knowledge-management" /><category term="symbolism" /><category term="visual-learning" /><category term="egypt" /><category term="pyramids" /><category term="sphinx" /><category term="osireion" /><category term="hawara" /><category term="megaliths" /><category term="deep-time" /><category term="archaeology" /><category term="symbolism" /><summary type="html"><![CDATA[A journey beneath the visible Egypt: from confirmed voids inside the Great Pyramid to the Osireion, Hawara's Labyrinth, deep time and the question of why monumental architecture was built to endure.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Holoflux: A Semantic and Visual Language for Expressing the Whole in Motion</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/visual-learning/philosophy/2026/10/01/holoflux-a-semantic-and-visual-language.html" rel="alternate" type="text/html" title="Holoflux: A Semantic and Visual Language for Expressing the Whole in Motion" /><published>2026-10-01T00:00:00+00:00</published><updated>2026-10-01T00:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/visual-learning/philosophy/2026/10/01/holoflux-a-semantic-and-visual-language</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/visual-learning/philosophy/2026/10/01/holoflux-a-semantic-and-visual-language.html"><![CDATA[<p><img src="/assets/images/posts/holoflux-a-semantic-and-visual-language/cover.webp" alt="Holoflux — a semantic and visual language for expressing the whole in motion" /></p>
 
 <p>What if a domain could be expressed in a form that is <strong>human-readable, machine-interpretable, grounded in evidence, executable, and visual</strong>?</p>
@@ -5641,4 +5006,137 @@ validate · enforce · record · approve · measure
   <li>Prior chapters inside the same companion: <code class="language-plaintext highlighter-rouge">docs/posts/01-first-30-minutes/article.md</code>, <code class="language-plaintext highlighter-rouge">docs/posts/03-issue-to-pr/article.md</code>, <code class="language-plaintext highlighter-rouge">docs/posts/04-ci-and-devsecops/article.md</code>.</li>
   <li><a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success">GitHub Docs: measuring trial success</a>; <a href="https://docs.github.com/en/copilot/reference/copilot-usage-metrics">usage metrics</a>; <a href="https://docs.github.com/en/copilot/reference/copilot-usage-metrics/interpret-copilot-metrics">interpretation</a>; <a href="https://docs.github.com/rest/copilot/copilot-usage-metrics">REST usage metrics</a>.</li>
   <li><a href="https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion">GitHub Docs: content exclusion and its limitations</a>; <a href="https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies">organization policy settings</a>; <a href="https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent">cloud agent overview</a>.</li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="adoption" /><category term="governance" /><category term="engineering-metrics" /><summary type="html"><![CDATA[Design a small GitHub Copilot pilot for Rails teams with a baseline, consent and policy guardrails, usage and quality signals, and an honest expansion decision.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="adoption" /><category term="governance" /><category term="engineering-metrics" /><summary type="html"><![CDATA[Design a small GitHub Copilot pilot for Rails teams with a baseline, consent and policy guardrails, usage and quality signals, and an honest expansion decision.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">A Rails Change You Can Audit with Copilot CLI</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-rails-change-you-can-audit-with-copilot-cli.html" rel="alternate" type="text/html" title="A Rails Change You Can Audit with Copilot CLI" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-rails-change-you-can-audit-with-copilot-cli</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-rails-change-you-can-audit-with-copilot-cli.html"><![CDATA[<p><img src="/assets/images/posts/rails-change-copilot-cli/cover.webp" alt="GitHub Copilot for Rails Engineers Part 07: a digital guide faces a terminal connected to the CaseFlow Rails application, a proposed diff, an unrun test and a human reviewer." style="width:100%;height:auto;" /></p>
+
+<blockquote>
+  <p><strong>A useful agentic workflow leaves a trail you can inspect.</strong> Use Copilot CLI to plan one Rails change, approve each consequential action deliberately and report what the tests actually showed.</p>
+</blockquote>
+
+<p><em>GitHub Copilot for Rails Engineers · Part 07</em></p>
+
+<p>Part 06 ended with a hypothetical workshop and a request for one bounded experiment. Here is the developer’s next move: open the integrated CaseFlow Rails app on a Mac, ask <strong>GitHub Copilot CLI</strong> to plan a small status-resolution change, inspect what it wants to read or execute, and return a candidate diff with an evidence ledger. This post is a runnable teaching plan, <strong>not a transcript of a CLI session or a report of passing tests</strong>.</p>
+
+<p>The <a href="/assets/downloads/rails-change-copilot-cli-support.zip">cumulative companion package</a> includes all seven posts, the complete CaseFlow Rails app, a macOS runbook, two-stage prompt, Ruby source preflight, editable Mermaid diagram, exercises with answers and an empty evidence ledger. Open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/README.md</code> after download.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#why-cli">Why the terminal changes the task</a></li>
+  <li><a href="#scope">Trust the directory and bound the request</a></li>
+  <li><a href="#plan">Plan against the actual Rails baseline</a></li>
+  <li><a href="#permissions">Inspect every requested tool action</a></li>
+  <li><a href="#verify">Verify the candidate and report the outcome</a></li>
+  <li><a href="#lab">Try the guided lab</a></li>
+  <li><a href="#references">References and supporting material</a></li>
+</ul>
+
+<h2 id="why-cli">Why the terminal changes the task</h2>
+
+<p>In an editor, a developer often selects code, chats and accepts a suggestion. A terminal agent can navigate files and propose a sequence of operations, including commands that run tests or edit a branch. That can shorten the path from question to candidate diff, but a readable answer alone cannot establish that the patch works. <strong>The unit of progress is a verified artifact:</strong> source citation, plan, diff, command output, then human review.</p>
+
+<p>GitHub documents Copilot CLI as an interactive tool launched from a directory containing code. It can use an <code class="language-plaintext highlighter-rouge">@</code> file reference in a prompt, has a plan mode, accepts repository instructions, and asks for permission for tools that may modify or execute files. Those details may change, so follow the <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview">current usage guide</a> for your installed version. This lab does not require an MCP server, hook, SDK, cloud agent or GitHub Desktop. Those extensions solve different needs; start with the smallest sufficient surface.</p>
+
+<h2 id="scope">Trust the directory and bound the request</h2>
+
+<p>On macOS, GitHub currently documents a <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli">Homebrew installation</a> with <code class="language-plaintext highlighter-rouge">brew install --cask copilot-cli</code>. Check your Copilot entitlement and organization policy before starting. Do not use an organization’s private repository without approval, and do not put tokens or customer records into the example.</p>
+
+<p>From the companion repository root, the <strong>read-only Ruby preflight</strong> lists exact source paths and short SHA-256 fingerprints. It does not run Rails, install gems or contact GitHub:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby scripts/07_caseflow_cli_preflight.rb
+git status <span class="nt">--short</span>
+<span class="nb">cd </span>caseflow
+copilot
+</code></pre></div></div>
+
+<p>If the CLI asks you to trust the directory, check that it is <code class="language-plaintext highlighter-rouge">caseflow/</code> and that the starting Git tree contains no unrelated work. GitHub says the CLI may read, modify or execute files inside a trusted directory during a session; a request to use another directory requires separate access. Choose per-session trust if the workspace is disposable. Authenticate using the CLI’s <code class="language-plaintext highlighter-rouge">/login</code> flow if prompted; never paste a token into the article’s prompt.</p>
+
+<p>The <a href="#references">runbook</a> distinguishes commands typed into your regular shell from text typed into an interactive Copilot session. Use VS Code alongside the terminal to inspect the exact diff. The repo already has <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code> and path-specific Rails guidance from Part 02; these guide the agent but cannot enforce a security policy by themselves.</p>
+
+<h2 id="plan">Plan against the actual Rails baseline</h2>
+
+<p>The source file <code class="language-plaintext highlighter-rouge">caseflow/config/routes.rb</code> declares only <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">show</code> and <code class="language-plaintext highlighter-rouge">create</code> actions for <code class="language-plaintext highlighter-rouge">api/requests</code>. The model allows <code class="language-plaintext highlighter-rouge">resolved</code> as stored data, but the baseline has no route for a client to resolve a request. Part 03 supplies a <strong>separate candidate patch</strong> and synthetic issue for <code class="language-plaintext highlighter-rouge">PATCH /api/requests/:id/resolve</code>. Your CLI task is to <em>plan and inspect</em> a fresh, small candidate, then compare it with that issue. Do not tell the agent the endpoint already works.</p>
+
+<p>With <code class="language-plaintext highlighter-rouge">caseflow/</code> as your working directory, enable CLI plan mode using <code class="language-plaintext highlighter-rouge">Shift</code>+<code class="language-plaintext highlighter-rouge">Tab</code> if your installed version offers it. Paste <strong>stage 1</strong> of the <a href="#references">companion prompt</a>. The <code class="language-plaintext highlighter-rouge">@config/routes.rb</code> and <code class="language-plaintext highlighter-rouge">@app/models/service_request.rb</code> references direct Copilot to files; the prompt explicitly forbids edits and commands during planning. Demand a path citation for each baseline claim, an explicit list of files it would change, focused negative tests and unknowns needing runtime or security review.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Claim made during planning</th>
+      <th>What can establish it</th>
+      <th>What cannot establish it</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Baseline has create/list/show routes</td>
+      <td>Inspect <code class="language-plaintext highlighter-rouge">config/routes.rb</code></td>
+      <td>A confident agent answer without a file citation</td>
+    </tr>
+    <tr>
+      <td>Candidate patch proposes resolution</td>
+      <td>Inspect the candidate diff and issue</td>
+      <td>The baseline model’s allowed status value</td>
+    </tr>
+    <tr>
+      <td>New request specs assert auth failures</td>
+      <td>Inspect the proposed spec source</td>
+      <td>A claim that those specs passed</td>
+    </tr>
+    <tr>
+      <td>Change is ready for a client PR</td>
+      <td>Real runs, review and policy approval</td>
+      <td>Test generation alone</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If the plan adds a generic status-update API, exposes a token, or proposes a different service without evidence, stop and correct it before stage 2. A strong prompt narrows the task; it does not prove the answer.</p>
+
+<h2 id="permissions">Inspect every requested tool action</h2>
+
+<p>GitHub’s CLI <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview">usage documentation</a> says tools that could modify or execute files prompt for approval. That is a decision point, not a decorative dialog. Check the command, target files and working directory. Grant a narrowly scoped action only when you understand why it is needed. If the request would delete files, run a network installer or touch an external directory, reject it and request a safer plan. An approval for the rest of the session has a broader effect than approval once.</p>
+
+<p><img src="/assets/images/posts/rails-change-copilot-cli/permission-boundary.webp" alt="An illustrated Copilot CLI session reads the trusted CaseFlow workspace; a human permission gate separates a proposed edit and shell command from source reading, with unexecuted tests beyond it." style="width:100%;height:auto;" /></p>
+
+<p><em>A permission prompt is where intention becomes an operation.</em> Reading relevant source, proposing a diff and running a command are separate actions with separate evidence. The adjacent Mermaid source makes this sequence editable without treating the illustration as an executable policy.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCd0aGVtZVZhcmlhYmxlcyc6eydiYWNrZ3JvdW5kJzonI0ZGRkZGRicsJ3ByaW1hcnlUZXh0Q29sb3InOicjM0UzNDJDJywnbGluZUNvbG9yJzonIzZGNzM3Nyd9fX0lJVxuZmxvd2NoYXJ0IFRCXG5zdWJncmFwaCBzY29wZVtcIvCflJAgVHJ1c3RlZCBsb2NhbCBzY29wZVwiXVxuQVtcIvCfk4EgY2FzZWZsb3cvIHdvcmtzcGFjZVwiXSAtLT4gQltcIvCfp60gUmVhZCBzb3VyY2UgKyBpbnN0cnVjdGlvbnNcIl1cbmVuZFxuc3ViZ3JhcGggcHJvcG9zZVtcIvCfm6DvuI8gUHJvcG9zZSwgdGhlbiBpbnNwZWN0XCJdXG5CIC0tPiBDW1wi8J-TnSBQbGFuIG9ubHlcIl1cbkMgLS0-IERbXCLwn5SOIENhbmRpZGF0ZSBkaWZmXCJdXG5EIC0tPiBFW1wi8J-RpCBBcHByb3ZlIHJlcXVlc3RlZCB0b29sc1wiXVxuZW5kXG5zdWJncmFwaCB2ZXJpZnlbXCLwn6eqIEV2aWRlbmNlIGdhdGVcIl1cbkUgLS0-IEZbXCLwn6eqIFJ1biBsb2NhbCBzcGVjc1wiXVxuRiAtLT58XCJhY3R1YWwgb3V0cHV0XCJ8IEdbXCLwn5OLIEV2aWRlbmNlIGxlZGdlclwiXVxuRiAtLT58XCJibG9ja2VkXCJ8IEhbXCLinZQgUmVjb3JkIGJsb2NrZXJcIl1cbkcgLS0-IElbXCLwn5GlIEh1bWFuIFBSIHJldmlld1wiXVxuSCAtLT4gSVxuZW5kXG5jbGFzc0RlZiBzY29wZSBmaWxsOiNEOUVBRjcsc3Ryb2tlOiM3QUE2QzIsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIHByb3Bvc2FsIGZpbGw6I0U4RERGNSxzdHJva2U6I0E2OEJDNCxjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgYXBwcm92YWwgZmlsbDojRkZGMUJGLHN0cm9rZTojQkE5QzQzLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBldmlkZW5jZSBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIHVua25vd24gZmlsbDojRjhERkM0LHN0cm9rZTojQzk5ODZELGNvbG9yOiMzRTM0MkM7XG5jbGFzcyBBLEIgc2NvcGU7XG5jbGFzcyBDLEQgcHJvcG9zYWw7XG5jbGFzcyBFLEkgYXBwcm92YWw7XG5jbGFzcyBGLEcgZXZpZGVuY2U7XG5jbGFzcyBIIHVua25vd247IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0" /></p>
+
+<p>The diagram is a proposed workflow. No tool request, diff, RSpec output or approval has been observed in this package. Its editable source is <code class="language-plaintext highlighter-rouge">docs/diagrams/07-cli-evidence-gates.mmd</code>.</p>
+
+<h2 id="verify">Verify the candidate and report the outcome</h2>
+
+<p>Only after reviewing the plan and your branch should you paste <strong>stage 2</strong> of the prompt to request a local candidate. Compare any change with the synthetic <a href="#references">Part 03 issue</a>, particularly negative cases for wrong/missing/unconfigured operator tokens. This lab’s token mechanism is an exercise constraint, <strong>not production authorization guidance</strong>. Discuss real auth, secrets and repository policy with the client.</p>
+
+<p>In a separate terminal under <code class="language-plaintext highlighter-rouge">caseflow/</code>, review the diff and run the focused checks <strong>if dependencies are installed</strong>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff <span class="nt">--check</span>
+git diff <span class="nt">--</span> config/routes.rb app/controllers/api/requests_controller.rb app/models/service_request.rb spec/requests/api/requests_spec.rb
+bundle <span class="nb">install
+</span><span class="nv">RAILS_ENV</span><span class="o">=</span><span class="nb">test </span>bin/rails db:prepare
+bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
+</code></pre></div></div>
+
+<p>Record exactly what ran, its exit status and first failure in the <a href="#references">evidence ledger</a>. If Ruby, Bundler, SQLite or a resolved lockfile is missing, record the blocker. The existence of an RSpec file states expectations; it never stands in for a green test run. The Part 04 GitHub Actions sample remains staged under <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/</code>, so it supplies no CI result here.</p>
+
+<p>Close by showing the reviewer the actual diff, negative paths, test output or blocker, and remaining security questions. A rejected candidate with a precise diagnosis can be a better result than an unreviewed PR. That is what makes the CLI useful in a short consulting engagement: the team can inspect the path from a source-backed question to the next decision.</p>
+
+<h2 id="lab">Try the guided lab</h2>
+
+<ol>
+  <li><strong>Orient (10 min):</strong> read the baseline route, Part 03 issue and your <code class="language-plaintext highlighter-rouge">git status</code>; run the Ruby preflight if available.</li>
+  <li><strong>Plan (12 min):</strong> start CLI in <code class="language-plaintext highlighter-rouge">caseflow/</code>, use stage 1 of the prompt and mark any uncited or inaccurate statement.</li>
+  <li><strong>Approve (10 min):</strong> for a proposed write or shell command, state what it touches and approve only if it fits the lab. You may stop after planning.</li>
+  <li><strong>Verify (15 min):</strong> inspect the candidate diff, run focused checks when dependencies allow, and copy <em>actual</em> output or first blocker to the evidence ledger.</li>
+  <li><strong>Explain (8 min):</strong> summarize what is source fact, proposal, observed result and unresolved review. Compare your response to the <a href="#references">workbook’s answer key</a>.</li>
+</ol>
+
+<h2 id="references">References and supporting material</h2>
+
+<ul>
+  <li><a href="/assets/downloads/rails-change-copilot-cli-support.zip">Download the cumulative companion repository and Part 07 lab</a>. Begin at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/07-cli-rails-change/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/07-cli-rails-change/article.md</code>.</li>
+  <li>Companion paths: <code class="language-plaintext highlighter-rouge">parts/07-cli-rails-change/RUNBOOK.md</code>, <code class="language-plaintext highlighter-rouge">CLI-PROMPT.md</code>, <code class="language-plaintext highlighter-rouge">EVIDENCE-LEDGER.md</code>, <code class="language-plaintext highlighter-rouge">POST-BRIEF.md</code>; <code class="language-plaintext highlighter-rouge">scripts/07_caseflow_cli_preflight.rb</code>; <code class="language-plaintext highlighter-rouge">docs/labs/07-cli-workbook.md</code>; <code class="language-plaintext highlighter-rouge">docs/diagrams/07-cli-evidence-gates.mmd</code>; <code class="language-plaintext highlighter-rouge">docs/posts/07-cli-rails-change/post-manifest.md</code>.</li>
+  <li>Previous CaseFlow lab: <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/ISSUE.md</code> and <code class="language-plaintext highlighter-rouge">candidate.patch</code>; staged workflow: <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/rails-pr.yml</code>.</li>
+  <li><a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli">GitHub Docs: install Copilot CLI</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview">use Copilot CLI and approve tools</a>; <a href="https://docs.github.com/en/copilot/concepts/agents/copilot-cli/comparing-cli-features">compare instructions, skills, tools and hooks</a>.</li>
+  <li><a href="https://developer.microsoft.com/blog/get-started-with-github-copilot-cli-a-free-hands-on-course/">Microsoft’s free hands-on Copilot CLI course</a> for optional further practice.</li>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="copilot-cli" /><category term="agentic-workflows" /><category term="code-review" /><summary type="html"><![CDATA[Use GitHub Copilot CLI with a real Rails project to plan a bounded change, inspect tool permissions, gather test evidence and hand off a candidate diff for review.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/rails-change-copilot-cli/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/rails-change-copilot-cli/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
