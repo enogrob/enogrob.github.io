@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-01T01:39:33+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Ruby in the Age of AI</title><link href="https://enogrob.github.io/ruby/artificial-intelligence/software-engineering/architecture/2026/10/01/ruby-in-the-age-of-ai.html" rel="alternate" type="text/html" title="Ruby in the Age of AI" /><published>2026-10-01T01:00:00+00:00</published><updated>2026-10-01T01:00:00+00:00</updated><id>https://enogrob.github.io/ruby/artificial-intelligence/software-engineering/architecture/2026/10/01/ruby-in-the-age-of-ai</id><content type="html" xml:base="https://enogrob.github.io/ruby/artificial-intelligence/software-engineering/architecture/2026/10/01/ruby-in-the-age-of-ai.html"><![CDATA[<div class="post-visual post-cover">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-01T02:14:30+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Ruby in the Age of AI</title><link href="https://enogrob.github.io/ruby/artificial-intelligence/software-engineering/architecture/2026/10/01/ruby-in-the-age-of-ai.html" rel="alternate" type="text/html" title="Ruby in the Age of AI" /><published>2026-10-01T01:00:00+00:00</published><updated>2026-10-01T01:00:00+00:00</updated><id>https://enogrob.github.io/ruby/artificial-intelligence/software-engineering/architecture/2026/10/01/ruby-in-the-age-of-ai</id><content type="html" xml:base="https://enogrob.github.io/ruby/artificial-intelligence/software-engineering/architecture/2026/10/01/ruby-in-the-age-of-ai.html"><![CDATA[<div class="post-visual post-cover">
   <img src="/assets/images/posts/ruby-in-the-age-of-ai/cover.webp" alt="Ruby in the Age of AI — Ruby DSLs and metaprogramming bridging Rails and AI-native software" loading="eager" />
 </div>
 
@@ -1350,7 +1350,7 @@ Runtime / hardware
 
 <p>The useful unit is no longer only <strong>code generation</strong>. It is the <strong>software-delivery system</strong> around the code: discovery, planning, architecture, implementation, testing, review, release, production, incident response, learning, and the knowledge that connects one cycle to the next.</p>
 
-<p>This article is the introduction to a larger series. The companion infographic maps the lifecycle in ten pages: an overview followed by discovery, sprint planning, architecture, development, testing, review, release, production, and continuous improvement. <a href="/assets/downloads/ai-across-the-sdlc-with-github-copilot-a4.pdf">Download the source infographic</a>.</p>
+<p>This article is the introduction to a larger series. The first installment is <a href="../2026-09-30-ai-across-the-sdlc-part-01-discovery-product-planning.html">AI Across the SDLC · Part 01 — Discovery &amp; Product Planning</a>. The companion infographic maps the lifecycle in ten pages: an overview followed by discovery, sprint planning, architecture, development, testing, review, release, production, and continuous improvement. <a href="/assets/downloads/ai-across-the-sdlc-with-github-copilot-a4.pdf">Download the source infographic</a>.</p>
 
 <p>The central question is:</p>
 
@@ -1789,10 +1789,10 @@ validate · enforce · record · approve · measure
 
 <h2 id="roadmap">The series roadmap</h2>
 
-<p>The companion infographic is intentionally structured as a future series. This introductory post provides the map; the next posts can zoom into each phase.</p>
+<p>The companion infographic is intentionally structured as a future series. This introductory post provides the map; the next posts can zoom into each phase. The first chapter is <a href="../2026-09-30-ai-across-the-sdlc-part-01-discovery-product-planning.html">AI Across the SDLC · Part 01 — Discovery &amp; Product Planning</a>.</p>
 
 <ol>
-  <li><strong>Discovery &amp; Product Planning</strong></li>
+  <li><strong><a href="../2026-09-30-ai-across-the-sdlc-part-01-discovery-product-planning.html">Discovery &amp; Product Planning</a></strong></li>
   <li><strong>Sprint Planning &amp; Backlog Shaping</strong></li>
   <li><strong>Architecture &amp; Solution Design</strong></li>
   <li><strong>Development &amp; AI Pair Programming</strong></li>
