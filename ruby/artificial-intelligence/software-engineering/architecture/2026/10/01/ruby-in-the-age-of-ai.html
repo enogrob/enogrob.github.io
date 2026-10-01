@@ -102,6 +102,7 @@
   <li><a href="#agents-as-first-class-language-concepts">Agents as first-class language concepts</a></li>
   <li><a href="#from-dsl-to-a-real-system">From DSL to a real system</a></li>
   <li><a href="#a-tiny-executable-prototype">A tiny executable prototype</a></li>
+  <li><a href="#try-it-in-60-seconds">Try it in 60 seconds</a></li>
   <li><a href="#ruby-as-a-semantic-layer">Ruby as a semantic layer</a></li>
   <li><a href="#one-declaration-many-projections">One declaration, many projections</a></li>
   <li><a href="#what-comes-next">What comes next</a></li>
@@ -580,6 +581,25 @@ Mermaid        │ JSON         │ Other targets│
 └──────────────┴──────────────┴──────────────┘
 </code></pre></div></div>
 
+<h2 id="try-it-in-60-seconds">Try it in 60 seconds</h2>
+
+<p>The quickest way to evaluate the idea is to run the support project and inspect what one Ruby definition can generate.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unzip ruby-ai-dsl-support.zip
+<span class="nb">cd </span>ruby-ai-dsl-support
+ruby examples/generate.rb
+</code></pre></div></div>
+
+<p>The generator writes multiple projections from the same semantic model:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>generated/
+├── caseflow.json
+├── caseflow.md
+└── caseflow.mmd
+</code></pre></div></div>
+
+<p>The exact syntax is still experimental. The important part is that the <strong>same Ruby declaration becomes machine-readable data, human-readable documentation, and a visual model</strong>.</p>
+
 <h2 id="ruby-as-a-semantic-layer">Ruby as a semantic layer</h2>
 
 <p>Large models do not need Ruby in order to reason. That is not the claim.</p>
@@ -623,6 +643,20 @@ Workflows · Evaluation · Governance · Software delivery
 
 <blockquote>
   <p><strong>What kinds of languages become valuable when AI writes more of the implementation?</strong></p>
+</blockquote>
+
+<p>This post is not a proposal for a finished framework. It is an experiment around a more useful question:</p>
+
+<blockquote>
+  <p><strong>Can Ruby become a semantic language for AI-native software?</strong></p>
+</blockquote>
+
+<p>The next practical step is to push the prototype beyond JSON, Markdown, and Mermaid and generate real AI assets—agent profiles, skills, tool bindings, policies, and runtime configuration—from the same source language.</p>
+
+<p>A natural follow-up is:</p>
+
+<blockquote>
+  <p><strong>Building the First AI-Native DSL in Ruby</strong></p>
 </blockquote>
 
 <p>Abstraction tends to move upward:</p>
