@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-01T20:08:29+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Below Intent: The Semantic Infrastructure of Agentic Software Engineering</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html" rel="alternate" type="text/html" title="Below Intent: The Semantic Infrastructure of Agentic Software Engineering" /><published>2026-10-01T08:00:00+00:00</published><updated>2026-10-01T08:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html"><![CDATA[<figure class="post-figure" style="margin:1.5rem 0;">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-01T20:23:50+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Below Intent: The Semantic Infrastructure of Agentic Software Engineering</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html" rel="alternate" type="text/html" title="Below Intent: The Semantic Infrastructure of Agentic Software Engineering" /><published>2026-10-01T08:00:00+00:00</published><updated>2026-10-01T08:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html"><![CDATA[<figure class="post-figure" style="margin:1.5rem 0;">
   <img src="/assets/images/posts/below-intent-semantic-infrastructure/cover.webp" alt="Below Intent — human intent flows into product intent, program semantics, runtime evidence, and the software development lifecycle" loading="eager" style="width:100%;height:auto;display:block;object-fit:contain;" />
   <figcaption>Below intent: the semantic infrastructure that lets agents move from product meaning to program structure, runtime evidence, and back again.</figcaption>
 </figure>
@@ -2469,7 +2469,10 @@ Human intent
 
 <p>All three approaches meet at the same threshold, but they are making different kinds of claims.</p>
 
-<p><img src="/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/edgar-cayce-and-the-hall-of-records.webp" alt="" /></p>
+<figure class="post-figure">
+  <img src="/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/edgar-cayce-and-the-hall-of-records.webp" alt="Edgar Cayce and the Hall of Records — visionary tradition of preserved knowledge" loading="lazy" />
+  <figcaption>Edgar Cayce and the Hall of Records — an esoteric model of preserved knowledge associated with the Sphinx, Atlantis, Yucatán and Bimini/Poseidia.</figcaption>
+</figure>
 
 <p>The attached 1968 volume <em>Edgar Cayce on Atlantis</em>, written by Edgar Evans Cayce under the editorship of Hugh Lynn Cayce, organizes the Atlantis material from Cayce’s life readings into a narrative of repeated destructions, migration, reincarnation and civilizational memory. Within that framework, Atlantis is less useful here as a historical conclusion than as a model of <strong>knowledge surviving collapse</strong>.</p>
 
@@ -2559,7 +2562,10 @@ a lost civilization built Egypt
 
 <p>None of this establishes Atlantis archaeologically. But within the intellectual architecture of this post it adds a revealing motif: <strong>civilization can disappear while fragments of its knowledge, symbols and moral warnings continue elsewhere</strong>.</p>
 
-<p><img src="/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/edgar-cayce-on-atlantis.webp" alt="" /></p>
+<figure class="post-figure">
+  <img src="/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/edgar-cayce-on-atlantis.webp" alt="Edgar Cayce on Atlantis — cycles, migration and preserved memory" loading="lazy" />
+  <figcaption>Edgar Cayce on Atlantis — cycles, migration and preserved memory, presented as an esoteric tradition rather than archaeological evidence.</figcaption>
+</figure>
 
 <p>Read this way, Cayce does not provide the answer to Egypt’s origins. He provides another modern expression of the same deep-time anxiety that surrounds megalithic monuments: the possibility that a civilization could try to send something through a rupture larger than itself.</p>
 
