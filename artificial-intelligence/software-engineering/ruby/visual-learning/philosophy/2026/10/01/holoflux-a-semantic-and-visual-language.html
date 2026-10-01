@@ -49,7 +49,7 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <a href="_posts/2026-10-04-holoflux-a-semantic-and-visual-language.md" target="">Edit this page</a>
+        <a href="_posts/2026-10-01-holoflux-a-semantic-and-visual-language.md" target="">Edit this page</a>
 <br>
 <nav class="translation-controls" aria-label="Article language">
   <a class="translation-button" href="https://enogrob-github-io.translate.goog/artificial-intelligence/software-engineering/ruby/visual-learning/philosophy/2026/10/01/holoflux-a-semantic-and-visual-language.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
@@ -87,6 +87,7 @@
 <ul>
   <li><a href="#why-a-domain-language">Why a domain language?</a></li>
   <li><a href="#what-holoflux-is">What Holoflux is</a></li>
+  <li><a href="#the-holoflux-system">The Holoflux system</a></li>
   <li><a href="#holoflux-implicate-order-and-explicate-form">Holoflux, implicate order, and explicate form</a></li>
   <li><a href="#explicate-forms-how-holoflux-becomes-visible">Explicate forms: how Holoflux becomes visible</a></li>
   <li><a href="#the-holoflux-artifact-model">The Holoflux artifact model</a></li>
@@ -96,6 +97,7 @@
   <li><a href="#why-ruby-is-a-useful-first-runtime">Why Ruby is a useful first runtime</a></li>
   <li><a href="#krishnamurti-as-the-first-reference-domain">Krishnamurti as the first reference domain</a></li>
   <li><a href="#beyond-one-domain">Beyond one domain</a></li>
+  <li><a href="#traceability-and-provenance">Traceability and provenance</a></li>
   <li><a href="#where-rag-belongs">Where RAG belongs</a></li>
   <li><a href="#where-intent-oriented-programming-belongs">Where intent-oriented programming belongs</a></li>
   <li><a href="#from-semantic-language-to-visual-language">From semantic language to visual language</a></li>
@@ -186,7 +188,9 @@ but differs from B in Y.
 
 <h2 id="what-holoflux-is">What Holoflux is</h2>
 
-<p>Holoflux is best understood as a semantic movement with a stack of supporting components, not as one file format or one stored graph.</p>
+<p>Holoflux is best understood as a <strong>semantic system organized around continuous movement between meaning and form</strong>, not as one file format, one graph, or one programming language.</p>
+
+<p>The public shorthand may call it a semantic or visual language, but the architecture is broader: Holoflux contains a language, domain models, an explication mechanism, runtimes, evidence, and multiple artifacts.</p>
 
 <p>At the center is a semantic domain language. Around it are the components that make the language useful:</p>
 
@@ -216,6 +220,69 @@ but differs from B in Y.
 </blockquote>
 
 <p>This prevents the AI layer from quietly becoming the ontology.</p>
+
+<h2 id="the-holoflux-system">The Holoflux system</h2>
+
+<p>To avoid collapsing different responsibilities into one word, Holoflux can be divided into distinct architectural elements.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Responsibility</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Holoflux Language</strong></td>
+      <td>Defines semantic primitives and the rules by which they may be combined.</td>
+    </tr>
+    <tr>
+      <td><strong>Holoflux Domain</strong></td>
+      <td>Declares the vocabulary, relation types, constraints, contexts, and source policies of a specific domain.</td>
+    </tr>
+    <tr>
+      <td><strong>Holoflux Model</strong></td>
+      <td>A governed semantic instance of that domain: the concepts and relations currently accepted by the model.</td>
+    </tr>
+    <tr>
+      <td><strong>Holoflux Explication</strong></td>
+      <td>Specifies what part of the model should unfold, for what intent, audience, depth, and representation.</td>
+    </tr>
+    <tr>
+      <td><strong>Explicate Artifact</strong></td>
+      <td>A material form produced from an explication: Mermaid, prose, Ruby, JSON, SVG, infographic, interactive UI, or another representation.</td>
+    </tr>
+    <tr>
+      <td><strong>Runtime</strong></td>
+      <td>Executes validation, traversal, transformation, serialization, and rendering. Ruby is the first reference runtime.</td>
+    </tr>
+    <tr>
+      <td><strong>IOP layer</strong></td>
+      <td>Expresses the purpose or intention that motivates a traversal or explication.</td>
+    </tr>
+    <tr>
+      <td><strong>AI interpreter</strong></td>
+      <td>Interprets intent, proposes mappings, retrieves evidence, generates candidate structures, and explains results.</td>
+    </tr>
+    <tr>
+      <td><strong>RAG / evidence layer</strong></td>
+      <td>Grounds concepts and relations in retrievable sources and provenance.</td>
+    </tr>
+    <tr>
+      <td><strong>Human governance</strong></td>
+      <td>Reviews meaning and decides what becomes canonical.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1xuXCJ0aGVtZVwiOiBcImJhc2VcIixcblwidGhlbWVWYXJpYWJsZXNcIjoge1xuXCJiYWNrZ3JvdW5kXCI6IFwiI0ZGRjhFRlwiLFxuXCJwcmltYXJ5VGV4dENvbG9yXCI6IFwiIzNFMzQyQ1wiLFxuXCJsaW5lQ29sb3JcIjogXCIjNkY3Mzc3XCIsXG5cImZvbnRGYW1pbHlcIjogXCJUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWZcIixcblwiZm9udFNpemVcIjogXCIxMnB4XCIsXG5cImNsdXN0ZXJCa2dcIjogXCIjRkJGNEU3XCIsXG5cImNsdXN0ZXJCb3JkZXJcIjogXCIjQjhBMTdEXCJcbn0sXG5cImZsb3djaGFydFwiOiB7XG5cInVzZU1heFdpZHRoXCI6IHRydWUsXG5cImh0bWxMYWJlbHNcIjogdHJ1ZSxcblwibm9kZVNwYWNpbmdcIjogMjIsXG5cInJhbmtTcGFjaW5nXCI6IDI4LFxuXCJjdXJ2ZVwiOiBcImJhc2lzXCJcbn1cbn19JSVcbmZsb3djaGFydCBUQlxuY2xhc3NEZWYgaW50ZW50IGZpbGw6I0ZDRThFNixzdHJva2U6I0M5N0M3NSxjb2xvcjojNEEyQTI3XG5jbGFzc0RlZiBjb3JlIGZpbGw6I0RERjJFMixzdHJva2U6Izc5QTg3Rixjb2xvcjojMjQ0MjI4XG5jbGFzc0RlZiBleGVjdXRpb24gZmlsbDojRjhERkM0LHN0cm9rZTojQzk5ODZELGNvbG9yOiM0QTMyMUZcbmNsYXNzRGVmIGV2aWRlbmNlIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojMjAzNjUzXG5jbGFzc0RlZiBhcnRpZmFjdCBmaWxsOiNGRkYxQkYsc3Ryb2tlOiNDOUE4NEEsY29sb3I6IzRBM0ExNlxuJSUtXG5JW1wi8J-OryBJbnRlbnQgLyBJT1BcIl06OjppbnRlbnQgLS0-IEVbXCLihpcgRXhwbGljYXRpb25cIl06Ojpjb3JlXG5EW1wi8J-MiiBIb2xvZmx1eDxici8-TGFuZ3VhZ2UgwrcgRG9tYWluIMK3IE1vZGVsXCJdOjo6Y29yZSAtLT4gRVxuU1tcIvCfk5ogRXZpZGVuY2UgLyBSQUdcIl06OjpldmlkZW5jZSAtLT4gRFxuRSAtLT4gUltcIuKame-4jyBSdW50aW1lPGJyLz5SdWJ5IGZpcnN0XCJdOjo6ZXhlY3V0aW9uXG5SIC0tPiBBW1wi8J-Rge-4jyBFeHBsaWNhdGUgYXJ0aWZhY3RcIl06OjphcnRpZmFjdFxuQSAtLiBpbnNpZ2h0IC8gY29ycmVjdGlvbiAuLT4gRCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"></p>
+
+<p>This is the responsibility boundary to preserve:</p>
+
+<blockquote>
+  <p><strong>IOP expresses intention. Holoflux preserves meaning. Explication selects a form. A runtime executes the transformation. An artifact makes the result observable. Human review governs semantic change.</strong></p>
+</blockquote>
 
 <h2 id="holoflux-implicate-order-and-explicate-form">Holoflux, implicate order, and explicate form</h2>
 
@@ -247,6 +314,33 @@ Explicate Artifact       Mermaid · prose · DSL · infographic · UI
 </blockquote>
 
 <p>The model is therefore one state inside Holoflux, not the whole of Holoflux.</p>
+
+<h3 id="the-model-is-not-the-whole">The model is not the whole</h3>
+
+<p>The word <em>whole</em> needs discipline here.</p>
+
+<p>A Holoflux model does not contain the whole in any absolute sense. The moment a system names concepts, selects evidence, and defines relationships, it has already produced a partial representation.</p>
+
+<p>So:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>THE WHOLE
+   ≠
+Holoflux Model
+   ≠
+any single Explicate Artifact
+</code></pre></div></div>
+
+<p>The practical goal is not completeness. It is to reduce the danger of mistaking one projection for the domain itself.</p>
+
+<p>Holoflux therefore tries to preserve context, multiple relationships and viewpoints, uncertainty, provenance, revision history, and the possibility of alternative explications.</p>
+
+<p>This leads to a core principle:</p>
+
+<blockquote>
+  <p><strong>Every explicate form is partial. No single projection should be mistaken for the whole.</strong></p>
+</blockquote>
+
+<p>That principle is one reason the system supports multiple explications from the same model.</p>
 
 <h2 id="explicate-forms-how-holoflux-becomes-visible">Explicate forms: how Holoflux becomes visible</h2>
 
@@ -484,17 +578,22 @@ Explicate Artifact
 
 <h2 id="why-ruby-is-a-useful-first-runtime">Why Ruby is a useful first runtime</h2>
 
-<p>Ruby is not part of the definition of Holoflux.</p>
+<p>Ruby is important to the experiment, but it is <strong>not part of the definition of Holoflux</strong>.</p>
 
-<p>It is the first implementation language.</p>
+<p>The distinction is:</p>
 
-<p>That distinction matters:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Holoflux specification ≠ Ruby DSL
-Holoflux specification → Ruby reference implementation
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Holoflux specification
+        ↓
+Runtime interface
+   ┌────┼─────────┐
+ Ruby  future TS  other
+   ↓
+validators · queries · transformations · renderers
 </code></pre></div></div>
 
-<p>Ruby is attractive because blocks, symbols, metaprogramming, and contextual evaluation make it possible to prototype a readable internal DSL before committing to a separate parser.</p>
+<p>Ruby is therefore the <strong>first executable realization of Holoflux</strong>, not Holoflux itself.</p>
+
+<p>It is attractive as a reference runtime because blocks, symbols, metaprogramming, and contextual evaluation make it possible to prototype a readable internal DSL before committing to a separate parser.</p>
 
 <p>A small executable sketch is included in the support material:</p>
 
@@ -512,7 +611,19 @@ Holoflux specification → Ruby reference implementation
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>Ruby’s <code class="language-plaintext highlighter-rouge">instance_eval</code> can evaluate a block in the context of a receiver, which is one of the mechanisms that makes this internal-DSL style practical. The semantic specification, however, should remain implementation-independent so that a later TypeScript runtime, visual editor, or interchange format can share the same model.</p>
+<p>Ruby can provide the first implementation of operations such as:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">domain</span><span class="p">.</span><span class="nf">validate</span>
+<span class="n">domain</span><span class="p">.</span><span class="nf">trace</span><span class="p">(</span><span class="ss">:psychological_time</span><span class="p">)</span>
+<span class="n">domain</span><span class="p">.</span><span class="nf">explain</span><span class="p">(</span><span class="ss">:fear</span><span class="p">)</span>
+<span class="n">domain</span><span class="p">.</span><span class="nf">explicate</span><span class="p">(</span><span class="ss">:fear</span><span class="p">,</span> <span class="ss">as: :mermaid</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>But the semantic contract should remain implementation-independent. A future TypeScript runtime, visual editor, hosted service, or interchange format should be able to implement the same Holoflux specification.</p>
+
+<blockquote>
+  <p><strong>Ruby is to Holoflux what a reference interpreter is to a language specification: the first executable realization, not the language itself.</strong></p>
+</blockquote>
 
 <h2 id="krishnamurti-as-the-first-reference-domain">Krishnamurti as the first reference domain</h2>
 
@@ -597,6 +708,38 @@ representations
 
 <p>The core should not care.</p>
 
+<h2 id="traceability-and-provenance">Traceability and provenance</h2>
+
+<p>An explicate artifact should never become detached from the semantic elements that produced it.</p>
+
+<p>If a Mermaid diagram shows:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Thought ──creates──&gt; Observer
+</code></pre></div></div>
+
+<p>the user should be able to ask which Holoflux relation produced the edge, whether it is <code class="language-plaintext highlighter-rouge">candidate</code>, <code class="language-plaintext highlighter-rouge">reviewed</code>, or <code class="language-plaintext highlighter-rouge">canonical</code>, which evidence supports it, and which explication produced this particular visual form.</p>
+
+<p>This leads to another architectural rule:</p>
+
+<blockquote>
+  <p><strong>Every explicate artifact should remain traceable to the semantic elements and evidence from which it was derived.</strong></p>
+</blockquote>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1xuXCJ0aGVtZVwiOiBcImJhc2VcIixcblwidGhlbWVWYXJpYWJsZXNcIjoge1xuXCJiYWNrZ3JvdW5kXCI6IFwiI0ZGRjhFRlwiLFxuXCJwcmltYXJ5VGV4dENvbG9yXCI6IFwiIzNFMzQyQ1wiLFxuXCJsaW5lQ29sb3JcIjogXCIjNkY3Mzc3XCIsXG5cImZvbnRGYW1pbHlcIjogXCJUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWZcIixcblwiZm9udFNpemVcIjogXCIxMnB4XCJcbn0sXG5cImZsb3djaGFydFwiOiB7XG5cInVzZU1heFdpZHRoXCI6IHRydWUsXG5cImh0bWxMYWJlbHNcIjogdHJ1ZSxcblwibm9kZVNwYWNpbmdcIjogMjAsXG5cInJhbmtTcGFjaW5nXCI6IDI0LFxuXCJjdXJ2ZVwiOiBcImJhc2lzXCJcbn1cbn19JSVcbmZsb3djaGFydCBMUlxuY2xhc3NEZWYgc291cmNlIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojMjAzNjUzXG5jbGFzc0RlZiBtb2RlbCBmaWxsOiNEREYyRTIsc3Ryb2tlOiM3OUE4N0YsY29sb3I6IzI0NDIyOFxuY2xhc3NEZWYgdmlldyBmaWxsOiNGRkYxQkYsc3Ryb2tlOiNDOUE4NEEsY29sb3I6IzRBM0ExNlxuJSUtXG5TW1wi8J-TmiBTb3VyY2UgZXZpZGVuY2VcIl06Ojpzb3VyY2UgLS0-IFJbXCLwn5SXIFJldmlld2VkIHJlbGF0aW9uXCJdOjo6bW9kZWxcblIgLS0-IEVbXCLihpcgRXhwbGljYXRpb25cIl06Ojptb2RlbFxuRSAtLT4gQVtcIvCfkYHvuI8gQXJ0aWZhY3RcIl06Ojp2aWV3XG5BIC0uIHRyYWNlIGJhY2sgLi0-IFJcblIgLS4gdHJhY2UgYmFjayAuLT4gUyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"></p>
+
+<p>The artifact can carry stable semantic identifiers rather than only visible labels:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"edge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"thought creates observer"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"relation_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"krishnamurti.rel.0042"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reviewed"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"evidence"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"source:brockwood:1970:talk-01"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"explication"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fear-map-v3"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>That is what separates a pretty diagram from a governed semantic projection.</p>
+
 <h2 id="where-rag-belongs">Where RAG belongs</h2>
 
 <p>RAG is useful, but it is not the language.</p>
@@ -628,78 +771,46 @@ human governance → decides what becomes canonical
 
 <h2 id="where-intent-oriented-programming-belongs">Where intent-oriented programming belongs</h2>
 
-<p>Intent-Oriented Programming is not replaced by Holoflux.</p>
+<p>Intent-oriented programming remains highly relevant, but it solves a different problem from Holoflux.</p>
 
-<p>It becomes easier to place.</p>
-
-<p>Holoflux and IOP operate at different levels:</p>
-
-<blockquote>
-  <p><strong>Intent-Oriented Programming is the programming paradigm. Holoflux is the semantic substrate in which that paradigm operates.</strong></p>
-</blockquote>
-
-<p>IOP proposes <code class="language-plaintext highlighter-rouge">intent</code> as a first-class computational unit: something that can carry goals, constraints, evidence, policies, delegation, verification, observation, and revision.</p>
-
-<p>Holoflux provides the structured semantic environment that gives those intents meaning across time and across agents.</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intent-Oriented Programming
-        ↓
-organizes computation around intent
-
-Holoflux
-        ↓
-provides the semantic space in which
-that intent is interpreted and revised
-</code></pre></div></div>
-
-<p>This distinction matters because intent should not have to reconstruct the domain from scratch every time an agent receives a task.</p>
-
-<p>A durable intent can instead operate over a semantic space that already expresses:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>concepts
-relations
-constraints
-contexts
-evidence
-provenance
-fields
-movements
-correspondences
-</code></pre></div></div>
-
-<p>Holoflux therefore answers:</p>
+<p>Holoflux answers:</p>
 
 <blockquote>
   <p><strong>What does this domain mean, and how are its meanings related?</strong></p>
 </blockquote>
 
-<p>Intent-Oriented Programming answers:</p>
+<p>IOP answers:</p>
 
 <blockquote>
-  <p><strong>What do I want to understand, change, create, preserve, verify, or accomplish within that meaning?</strong></p>
+  <p><strong>What do I want to understand, transform, explain, or accomplish within that semantic space?</strong></p>
 </blockquote>
 
-<h3 id="epistemic-intent">Epistemic intent</h3>
+<p>After introducing Explication, the relationship becomes more precise:</p>
 
-<p>Some intents are primarily about understanding.</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>explain fear
-compare two concepts
-trace a relationship
-visualize a system
-surface supporting evidence
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Human
+  ↓
+Intent
+  ↓
+IOP
+  ↓
+Explication request
+  ↓
+Holoflux Model
+  ↓
+AI + Runtime
+  ↓
+Explicate Artifact
 </code></pre></div></div>
 
-<p>These intents lead mainly to <strong>explication</strong>:</p>
+<p>Or in three lines:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Holoflux semantic space
-        ↓
-semantic selection
-        ↓
-explication
-        ↓
-prose · Mermaid · infographic · visual language · DSL
-</code></pre></div></div>
+<blockquote>
+  <p><strong>IOP → intention</strong><br>
+<strong>Holoflux → meaning</strong><br>
+<strong>Explication → manifestation</strong></p>
+</blockquote>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1xuXCJ0aGVtZVwiOiBcImJhc2VcIixcblwidGhlbWVWYXJpYWJsZXNcIjoge1xuXCJiYWNrZ3JvdW5kXCI6IFwiI0ZGRjhFRlwiLFxuXCJwcmltYXJ5VGV4dENvbG9yXCI6IFwiIzNFMzQyQ1wiLFxuXCJsaW5lQ29sb3JcIjogXCIjNkY3Mzc3XCIsXG5cImZvbnRGYW1pbHlcIjogXCJUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWZcIixcblwiZm9udFNpemVcIjogXCIxMnB4XCJcbn0sXG5cImZsb3djaGFydFwiOiB7XG5cInVzZU1heFdpZHRoXCI6IHRydWUsXG5cImh0bWxMYWJlbHNcIjogdHJ1ZSxcblwibm9kZVNwYWNpbmdcIjogMjAsXG5cInJhbmtTcGFjaW5nXCI6IDI2LFxuXCJjdXJ2ZVwiOiBcImJhc2lzXCJcbn1cbn19JSVcbmZsb3djaGFydCBMUlxuY2xhc3NEZWYgaW50ZW50IGZpbGw6I0ZDRThFNixzdHJva2U6I0M5N0M3NSxjb2xvcjojNEEyQTI3XG5jbGFzc0RlZiBzZW1hbnRpYyBmaWxsOiNEREYyRTIsc3Ryb2tlOiM3OUE4N0YsY29sb3I6IzI0NDIyOFxuY2xhc3NEZWYgcHJvY2VzcyBmaWxsOiNFOERERjUsc3Ryb2tlOiNBNjhCQzQsY29sb3I6IzMzMjg0RFxuY2xhc3NEZWYgcmVzdWx0IGZpbGw6I0ZGRjFCRixzdHJva2U6I0M5QTg0QSxjb2xvcjojNEEzQTE2XG4lJS1cbklbXCLwn46vIEludGVudCAvIElPUFwiXTo6OmludGVudFxuSFtcIvCfjIogSG9sb2ZsdXggbW9kZWxcIl06OjpzZW1hbnRpY1xuRVtcIuKGlyBFeHBsaWNhdGlvblwiXTo6OnByb2Nlc3NcbkFbXCLwn5GB77iPIEFydGlmYWN0XCJdOjo6cmVzdWx0XG4lJS1cbkkgLS0-fHdoeSAvIHdoYXR8IEVcbkggLS0-fG1lYW5pbmd8IEVcbkUgLS0-fGhvdyBpdCB1bmZvbGRzfCBBIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0"></p>
 
 <p>For example:</p>
 
@@ -712,113 +823,19 @@ prose · Mermaid · infographic · visual language · DSL
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>The intent does not need to encode graph traversal, evidence lookup, diagram syntax, or layout. Those remain implementation concerns.</p>
+<p>The intent should not have to specify graph traversal, evidence selection, Mermaid syntax, or layout.</p>
 
-<h3 id="operational-intent">Operational intent</h3>
+<p>Those are implementation decisions made by the AI interpreter, the Holoflux model, the explication mechanism, and the chosen runtime.</p>
 
-<p>Other intents are meant to change the computational world.</p>
+<p>This makes IOP a paradigm <strong>above</strong> Holoflux rather than a competing language.</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reduce checkout latency
-migrate Rails 7 to Rails 8
-implement authentication
-refactor a subsystem
-deploy safely
-restore a degraded service
-</code></pre></div></div>
-
-<p>These intents lead to <strong>execution</strong> rather than explanation alone.</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intent
-  ↓
-Holoflux semantic space
-  ↓
-interpretation
-  ↓
-planning
-  ↓
-agents + tools
-  ↓
-code · infrastructure · runtime action
-  ↓
-observation
-  ↓
-evidence
-</code></pre></div></div>
-
-<p>A Ruby sketch might look like:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">intent</span> <span class="ss">:reduce_checkout_latency</span> <span class="k">do</span>
-  <span class="n">target</span> <span class="ss">p95: </span><span class="s2">"&lt; 200ms"</span>
-
-  <span class="n">constraints</span> <span class="k">do</span>
-    <span class="n">preserve</span> <span class="ss">:public_api</span>
-    <span class="n">preserve</span> <span class="ss">:payment_semantics</span>
-    <span class="nb">require</span> <span class="ss">:backward_compatibility</span>
-  <span class="k">end</span>
-
-  <span class="n">evidence</span> <span class="k">do</span>
-    <span class="nb">require</span> <span class="ss">:production_traces</span>
-    <span class="nb">require</span> <span class="ss">:benchmarks</span>
-  <span class="k">end</span>
-
-  <span class="n">verify</span> <span class="k">do</span>
-    <span class="n">specs</span> <span class="ss">:passing</span>
-    <span class="n">performance_regression</span> <span class="kp">false</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>This is where IOP remains a programming paradigm rather than becoming merely a query interface.</p>
-
-<h3 id="one-semantic-space-two-movements">One semantic space, two movements</h3>
-
-<p>Holoflux now exposes two complementary forms of unfolding:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Semantic whole
-     ↓
-epistemic intent
-     ↓
-explication
-     ↓
-representation
-</code></pre></div></div>
-
-<p>and:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Semantic whole
-     ↓
-operational intent
-     ↓
-execution
-     ↓
-changed world
-</code></pre></div></div>
-
-<p>Both movements return through observation and evidence.</p>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1xuXCJ0aGVtZVwiOiBcImJhc2VcIixcblwidGhlbWVWYXJpYWJsZXNcIjoge1xuXCJiYWNrZ3JvdW5kXCI6IFwiI0ZGRjhFRlwiLFxuXCJwcmltYXJ5VGV4dENvbG9yXCI6IFwiIzNFMzQyQ1wiLFxuXCJsaW5lQ29sb3JcIjogXCIjNkY3Mzc3XCIsXG5cImZvbnRGYW1pbHlcIjogXCJUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWZcIixcblwiZm9udFNpemVcIjogXCIxM3B4XCIsXG5cImNsdXN0ZXJCa2dcIjogXCIjRkJGNEU3XCIsXG5cImNsdXN0ZXJCb3JkZXJcIjogXCIjQjhBMTdEXCJcbn0sXG5cImZsb3djaGFydFwiOiB7XG5cInVzZU1heFdpZHRoXCI6IHRydWUsXG5cImh0bWxMYWJlbHNcIjogdHJ1ZSxcblwibm9kZVNwYWNpbmdcIjogMzAsXG5cInJhbmtTcGFjaW5nXCI6IDM2LFxuXCJjdXJ2ZVwiOiBcImJhc2lzXCJcbn1cbn19JSVcbmZsb3djaGFydCBUQlxuY2xhc3NEZWYgaW50ZW50IGZpbGw6I0ZDRThFNixzdHJva2U6I0M5N0M3NSxjb2xvcjojNEEyQTI3XG5jbGFzc0RlZiBzZW1hbnRpYyBmaWxsOiNEREYyRTIsc3Ryb2tlOiM3OUE4N0YsY29sb3I6IzI0NDIyOFxuY2xhc3NEZWYgYWN0aW9uIGZpbGw6I0Y4REZDNCxzdHJva2U6I0M5OTg2RCxjb2xvcjojNEEzMjFGXG5jbGFzc0RlZiByZXN1bHQgZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMyMDM2NTNcbmNsYXNzRGVmIGV2aWRlbmNlIGZpbGw6I0U4RERGNSxzdHJva2U6I0E2OEJDNCxjb2xvcjojM0UzNDJDXG4lJS1cbklbXCLwn46vIEludGVudCAvIElPUFwiXTo6OmludGVudCAtLT4gSFtcIvCfjIogSG9sb2ZsdXg8YnIvPnNlbWFudGljIHN1YnN0cmF0ZVwiXTo6OnNlbWFudGljXG5IIC0tPiBFUElbXCLwn5GB77iPIEVwaXN0ZW1pYyBpbnRlbnRcIl06OjppbnRlbnRcbkggLS0-IE9QSVtcIuKame-4jyBPcGVyYXRpb25hbCBpbnRlbnRcIl06OjppbnRlbnRcbkVQSSAtLT4gWFtcIvCfl7rvuI8gRXhwbGljYXRpb248YnIvPnByb3NlIMK3IGRpYWdyYW0gwrcgdmlzdWFsIGZvcm1cIl06OjpyZXN1bHRcbk9QSSAtLT4gQVtcIvCfpJYgRXhlY3V0aW9uPGJyLz5hZ2VudHMgwrcgdG9vbHMgwrcgY29kZVwiXTo6OmFjdGlvblxuWCAtLT4gVltcIvCfp74gT2JzZXJ2YXRpb24gKyBldmlkZW5jZVwiXTo6OmV2aWRlbmNlXG5BIC0tPiBWXG5WIC0uIFwicmV2aXNlcyBtZWFuaW5nXCIgLi0-IEhcblYgLS4gXCJyZXZpc2VzIGludGVudFwiIC4tPiBJIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0"></p>
-
-<p>The relationship can therefore be stated more precisely:</p>
-
-<blockquote>
-  <p><strong>Holoflux defines the semantic space. Intent-Oriented Programming organizes computation around intent within that space.</strong></p>
-</blockquote>
-
-<p>This preserves IOP as a candidate programming paradigm while placing it inside a broader semantic architecture.</p>
-
-<p>Holoflux is larger than IOP because the semantic domain can exist before any particular intent and can support many kinds of projection, retrieval, explanation, visualization, and execution.</p>
-
-<p>IOP is more specific because it defines how a computational system acts when a human or agent says:</p>
-
-<blockquote>
-  <p><strong>make this meaning real, while preserving these constraints and remaining accountable to this evidence.</strong></p>
-</blockquote>
+<p>Holoflux defines the semantic space. IOP declares why and where we want to move within it. Explication turns that movement into a concrete, inspectable form.</p>
 
 <h2 id="from-semantic-language-to-visual-language">From semantic language to visual language</h2>
 
 <p><img src="/assets/images/posts/holoflux-a-semantic-and-visual-language/visual-language.webp" alt="Holoflux transformed into a semantic graph and then into visual language"></p>
 
-<p>The semantic language is not the final destination.</p>
+<p>The semantic model is not the final destination, and visual language is only one family of explicate artifacts.</p>
 
 <p>The long-term idea is a <strong>visual language whose elements carry executable semantic meaning</strong>.</p>
 
@@ -874,7 +891,7 @@ changed world
   </tbody>
 </table>
 
-<p>The visual representation could also become bidirectional:</p>
+<p>The visual representation could also become bidirectional while preserving semantic identifiers and provenance:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Holoflux → semantic graph → visual language
 Holoflux ← semantic graph ← visual editing
@@ -890,7 +907,7 @@ Holoflux ← semantic graph ← visual editing
 
 <h2 id="what-would-make-the-experiment-useful">What would make the experiment useful?</h2>
 
-<p>The proposal is technically conceivable with existing components: DSL techniques, LLM extraction, knowledge graphs, RAG, graph retrieval, Ruby runtimes, Mermaid, SVG, and interactive web visualization.</p>
+<p>The proposal is technically conceivable with existing components: domain-language techniques, LLM extraction, knowledge graphs, RAG, graph retrieval, runtime interfaces, Ruby, Mermaid, SVG, and interactive web visualization.</p>
 
 <p>The unanswered question is not whether those components exist.</p>
 
@@ -955,8 +972,6 @@ Holoflux ← semantic graph ← visual editing
   <li><a href="https://github.com/microsoft/graphrag/blob/main/docs/index.md" target="_blank" rel="noopener noreferrer">Microsoft GraphRAG — documentation</a></li>
   <li><a href="https://github.com/microsoft/graphrag/blob/main/docs/index/architecture.md" target="_blank" rel="noopener noreferrer">Microsoft GraphRAG — indexing architecture</a></li>
   <li><a href="https://github.com/microsoft/graphrag/blob/main/docs/visualization_guide.md" target="_blank" rel="noopener noreferrer">Microsoft GraphRAG — visualization guide</a></li>
-  <li><a href="/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html">Below Intent: The Semantic Infrastructure of Agentic Software Engineering</a></li>
-  <li><a href="/artificial-intelligence/software-engineering/ruby/architecture/2026/10/01/intent-oriented-programming.html">Intent-Oriented Programming: Programming Above the Code</a></li>
 </ul>
 
 </article>
