@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Intent-Oriented Programming | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="Intent-Oriented Programming">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Intent as the organizing semantic center: human purpose unfolds through evidence, constraints, coordinated agency, implementation, verification, observation, and feedback.">
+<meta property="og:description" content="Intent as the organizing semantic center: human purpose unfolds through evidence, constraints, coordinated agency, implementation, verification, observation, and feedback.">
+<link rel="canonical" href="https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/architecture/2026/10/01/intent-oriented-programming.html">
+<meta property="og:url" content="https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/architecture/2026/10/01/intent-oriented-programming.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/intent-oriented-programming/cover.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-10-01T08:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/intent-oriented-programming/cover.webp">
+<meta property="twitter:title" content="Intent-Oriented Programming">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-10-01T08:00:00+00:00","datePublished":"2026-10-01T08:00:00+00:00","description":"Intent as the organizing semantic center: human purpose unfolds through evidence, constraints, coordinated agency, implementation, verification, observation, and feedback.","headline":"Intent-Oriented Programming","image":"https://enogrob.github.io/assets/images/posts/intent-oriented-programming/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/architecture/2026/10/01/intent-oriented-programming.html"},"url":"https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/architecture/2026/10/01/intent-oriented-programming.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <a href="_posts/2026-10-01-intent-oriented-programming.md" target="">Edit this page</a>
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/artificial-intelligence/software-engineering/ruby/architecture/2026/10/01/intent-oriented-programming.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/architecture/2026/10/01/intent-oriented-programming.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <figure class="post-figure" style="margin:1.5rem 0;">
+  <img src="/assets/images/posts/intent-oriented-programming/cover.webp" alt="Intent-Oriented Programming — a symbolic human form reaches toward a red holoflux of intent, connecting evidence, constraints, outcomes, policies, verification, observation, feedback, agents, architecture, code, tests, and runtime evidence" loading="eager" style="width:100%;height:auto;display:block;object-fit:contain;">
+  <figcaption>Intent as the organizing semantic center: human purpose unfolds through evidence, constraints, coordinated agency, implementation, verification, observation, and feedback.</figcaption>
+</figure>
+
+<blockquote>
+  <p><strong>If AI can increasingly generate the implementation, should programmers still organize software primarily around implementation structures?</strong></p>
+</blockquote>
+
+<p>Object-oriented programming gave us a powerful organizing idea: model a system as objects with state, identity, relationships, and behavior.</p>
+
+<p>That abstraction changed software because it changed the unit around which programmers thought.</p>
+
+<p>But AI introduces a strange inversion.</p>
+
+<p>A growing part of implementation can now be delegated. Agents can explore repositories, propose architecture, write code, generate tests, review changes, operate tools, and inspect runtime evidence.</p>
+
+<p>If implementation becomes cheaper to produce, perhaps the next important programming abstraction is not another way to organize implementation.</p>
+
+<p>Perhaps it is a way to organize <strong>intent</strong>.</p>
+
+<p>Not intent as a prompt.</p>
+
+<p>Not intent as a ticket.</p>
+
+<p>Not intent as a one-line requirement handed to an agent and forgotten.</p>
+
+<p>But intent as a <strong>living semantic structure</strong>:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intent
+Evidence
+Constraints
+Outcome
+Policy
+Verification
+Observation
+Feedback
+</code></pre></div></div>
+
+<p>This post explores that possibility.</p>
+
+<p>The philosophical figures used later are <strong>conceptual lenses, not authorities for the programming model</strong>. Bohm, Minsky, and Krishnamurti illuminate different aspects of the problem; the engineering proposal must stand on its own.</p>
+
+<p>I will call it <strong>Intent-Oriented Programming</strong>.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ol>
+  <li><a href="#from-objects-to-intent">From objects to intent</a></li>
+  <li><a href="#intent-is-not-a-prompt">Intent is not a prompt</a></li>
+  <li><a href="#a-programming-unit-for-the-agentic-age">A programming unit for the agentic age</a></li>
+  <li><a href="#bohm-from-implicate-meaning-to-explicate-form">Bohm: from implicate meaning to explicate form</a></li>
+  <li><a href="#minsky-intent-organizes-a-society">Minsky: intent organizes a society</a></li>
+  <li><a href="#krishnamurti-observation-before-interpretation">Krishnamurti: observation before interpretation</a></li>
+  <li><a href="#the-intent-loop">The intent loop</a></li>
+  <li><a href="#what-intent-oriented-programming-might-look-like">What Intent-Oriented Programming might look like</a></li>
+  <li><a href="#why-ruby-is-an-unusually-good-laboratory">Why Ruby is an unusually good laboratory</a></li>
+  <li><a href="#rails-after-convention-over-configuration">Rails after convention over configuration</a></li>
+  <li><a href="#intent-does-not-replace-objects">Intent does not replace objects</a></li>
+  <li><a href="#a-small-executable-experiment">A small executable experiment</a></li>
+  <li><a href="#the-deeper-responsibility">The deeper responsibility</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+  <li><a href="#references">References</a></li>
+</ol>
+
+<h2 id="from-objects-to-intent">From objects to intent</h2>
+
+<p>Object-oriented programming asks questions such as:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What objects exist?
+What state do they hold?
+What behavior do they expose?
+How do they collaborate?
+</code></pre></div></div>
+
+<p>Those remain useful questions.</p>
+
+<p>Intent-Oriented Programming begins one level earlier:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What are we trying to change?
+Why?
+What evidence supports that intention?
+What constraints must survive?
+What outcome would count as success?
+Who or what may act?
+How will the result be verified?
+What will reality tell us afterward?
+</code></pre></div></div>
+
+<figure class="post-figure" style="margin:1.5rem 0;">
+  <img src="/assets/images/posts/intent-oriented-programming/from-objects-to-intent.webp" alt="From Objects to Intent — implementation structures on one side and intent, evidence, constraints, outcome, policy, verification, observation and feedback on the other" loading="lazy" style="width:100%;height:auto;display:block;object-fit:contain;">
+  <figcaption>The proposal is not to discard implementation structures, but to place a semantic unit above them: intent with evidence, boundaries, outcomes, verification, and observation.</figcaption>
+</figure>
+
+<p>The shift can be summarized like this:</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzozNiwncmFua1NwYWNpbmcnOjQ0LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBMUlxuT1tcIvCfp7EgT2JqZWN0IC8gc2VydmljZSAvIG1vZHVsZVwiXSAtLT4gSVtcIvCfjq8gSW50ZW50XCJdXG5JIC0tPiBFW1wi8J-nviBFdmlkZW5jZVwiXVxuSSAtLT4gQ1tcIvCfm6HvuI8gQ29uc3RyYWludHNcIl1cbkkgLS0-IFVbXCLwn46vIE91dGNvbWVcIl1cbkkgLS0-IFZbXCLwn6eqIFZlcmlmaWNhdGlvblwiXVxuSSAtLT4gQltcIvCfk4ogT2JzZXJ2YXRpb25cIl1cbkIgLS0-IEZbXCLwn5SBIEZlZWRiYWNrXCJdXG5GIC0uIFwicmV2aXNlc1wiIC4tPiBJXG4lJS1cbmNsYXNzRGVmIGltcGxlbWVudGF0aW9uIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBpbnRlbnQgZmlsbDojRjVEOURDLHN0cm9rZTojQkM4MTkxLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjJweDtcbmNsYXNzRGVmIGV2aWRlbmNlIGZpbGw6I0RERjNFQSxzdHJva2U6IzVGOUQ4Nixjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBjb25zdHJhaW50IGZpbGw6I0ZGRjFCRixzdHJva2U6I0JBOUM0Myxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBvYnNlcnZlIGZpbGw6I0U4RERGNSxzdHJva2U6I0E2OEJDNCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzcyBPIGltcGxlbWVudGF0aW9uO1xuY2xhc3MgSSBpbnRlbnQ7XG5jbGFzcyBFLFUgZXZpZGVuY2U7XG5jbGFzcyBDLFYgY29uc3RyYWludDtcbmNsYXNzIEIsRiBvYnNlcnZlOyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"></p>
+
+<p>The object is an implementation abstraction.</p>
+
+<p>The intent is an engineering-semantic abstraction.</p>
+
+<p>That distinction matters once AI becomes capable of moving between the two.</p>
+
+<h2 id="intent-is-not-a-prompt">Intent is not a prompt</h2>
+
+<p>A prompt is an instruction given at a moment in time.</p>
+
+<p>An intent should survive the moment.</p>
+
+<p>For example:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Improve checkout reliability."
+</code></pre></div></div>
+
+<p>is not enough.</p>
+
+<p>A useful intent might carry:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intent
+  reduce checkout failures
+
+Evidence
+  support tickets
+  abandonment metrics
+  payment errors
+
+Outcome
+  higher successful-checkout rate
+
+Constraints
+  PCI boundaries
+  idempotency
+  no duplicate charges
+
+Verification
+  contract tests
+  failure-path tests
+  reconciliation checks
+
+Observation
+  payment latency
+  retry rate
+  failed-checkout rate
+
+Feedback
+  new incidents
+  customer reports
+  production behavior
+</code></pre></div></div>
+
+<p>The intent is therefore not only <em>what we want</em>.</p>
+
+<p>It also carries <strong>why we believe it matters, what must remain true, and how reality is allowed to disagree with us</strong>.</p>
+
+<p>That last part is crucial.</p>
+
+<h2 id="a-programming-unit-for-the-agentic-age">A programming unit for the agentic age</h2>
+
+<p>Traditional source code is full of implementation units:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class
+function
+object
+module
+service
+component
+</code></pre></div></div>
+
+<p>Intent-Oriented Programming adds another unit above them:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intent
+</code></pre></div></div>
+
+<p>But an intent cannot stand alone.</p>
+
+<p>A minimal structure might be:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intent
+├── Evidence
+├── Desired outcome
+├── Constraints
+├── Policies
+├── Delegation
+├── Verification
+├── Observation
+└── Feedback
+</code></pre></div></div>
+
+<p>This gives an AI agent something richer than a task description.</p>
+
+<p>It gives the agent an <strong>engineering contract</strong>.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzozNiwncmFua1NwYWNpbmcnOjQ0LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBUQlxuSVtcIvCfjq8gSW50ZW50XCJdXG5FW1wi8J-nviBFdmlkZW5jZVwiXVxuQ1tcIvCfm6HvuI8gQ29uc3RyYWludHNcIl1cbk9bXCLwn4-BIE91dGNvbWVcIl1cblBbXCLwn5OcIFBvbGljeVwiXVxuRFtcIvCfpJYgRGVsZWdhdGlvblwiXVxuVltcIvCfp6ogVmVyaWZpY2F0aW9uXCJdXG5SW1wi8J-TiiBPYnNlcnZhdGlvblwiXVxuRltcIvCflIEgRmVlZGJhY2tcIl1cbiUlLVxuRSAtLT4gSVxuQyAtLT4gSVxuTyAtLT4gSVxuUCAtLT4gSVxuSSAtLT4gRFxuRCAtLT4gVlxuViAtLT4gUlxuUiAtLT4gRlxuRiAtLiBcIm5ldyBldmlkZW5jZVwiIC4tPiBFXG4lJS1cbmNsYXNzRGVmIGNvcmUgZmlsbDojRjVEOURDLHN0cm9rZTojQkM4MTkxLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjJweDtcbmNsYXNzRGVmIGlucHV0IGZpbGw6I0RERjNFQSxzdHJva2U6IzVGOUQ4Nixjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBjb250cm9sIGZpbGw6I0ZGRjFCRixzdHJva2U6I0JBOUM0Myxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBhY3Rpb24gZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjJweDtcbmNsYXNzRGVmIGV2aWRlbmNlIGZpbGw6I0U4RERGNSxzdHJva2U6I0E2OEJDNCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzcyBJIGNvcmU7XG5jbGFzcyBFLE8gaW5wdXQ7XG5jbGFzcyBDLFAgY29udHJvbDtcbmNsYXNzIEQsViBhY3Rpb247XG5jbGFzcyBSLEYgZXZpZGVuY2U7IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0"></p>
+
+<p>The point is not that this exact vocabulary is final.</p>
+
+<p>The point is that we can make <strong>intent itself executable and inspectable</strong>.</p>
+
+<h2 id="bohm-from-implicate-meaning-to-explicate-form">Bohm: from implicate meaning to explicate form</h2>
+
+<p>David Bohm gives us a useful metaphor for this transition.</p>
+
+<p>In his discussion of the <strong>implicate</strong> and <strong>explicate</strong> orders, Bohm describes an order in which patterns may be enfolded and then unfolded into explicit form. His broader idea of the <strong>holomovement</strong> emphasizes movement and wholeness rather than isolated static parts.</p>
+
+<p>I am not claiming software engineering is Bohmian physics.</p>
+
+<p>The metaphor is useful because intent has a similar relationship to implementation.</p>
+
+<p>Intent contains more than a list of instructions.</p>
+
+<p>It can enfold:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>purpose
+constraints
+relationships
+trade-offs
+expectations
+possibilities
+</code></pre></div></div>
+
+<p>Implementation unfolds these into explicit structures:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>architecture
+code
+tests
+configuration
+deployment
+runtime behavior
+</code></pre></div></div>
+
+<figure class="post-figure" style="margin:1.5rem 0;">
+  <img src="/assets/images/posts/intent-oriented-programming/bohm-unfolding-intent.webp" alt="From Intent to Explicate Form — a conceptual portrait of David Bohm beside intent unfolding through agents into architecture, code, tests, deployment and runtime evidence" loading="lazy" style="width:100%;height:auto;display:block;object-fit:contain;">
+  <figcaption>Interpretive illustration: Bohm's implicate/explicate vocabulary is used here as a metaphor for meaning unfolding into software form and returning through evidence.</figcaption>
+</figure>
+
+<p>AI changes the economics of this unfolding.</p>
+
+<p>Instead of requiring a human to manually translate every layer:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intent
+  ↓
+design
+  ↓
+implementation
+</code></pre></div></div>
+
+<p>we increasingly have:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intent
+  ↓
+semantic model
+  ↓
+agents
+  ↓
+many possible implementations
+</code></pre></div></div>
+
+<p>And production creates the reverse pressure:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>runtime evidence
+  ↓
+incidents
+  ↓
+feedback
+  ↓
+new understanding
+  ↓
+revised intent
+</code></pre></div></div>
+
+<p>Intent-Oriented Programming is therefore not a one-way compiler.</p>
+
+<p>It is a <strong>continuous movement between meaning and form</strong>.</p>
+
+<h2 id="minsky-intent-organizes-a-society">Minsky: intent organizes a society</h2>
+
+<p>Marvin Minsky gives us another essential piece.</p>
+
+<p>In <em>The Society of Mind</em>, intelligence is not treated as one indivisible faculty. It is explained through the interaction of many relatively limited agents.</p>
+
+<p>That maps unusually well to modern agentic engineering.</p>
+
+<p>An intent probably should not be handed to one gigantic agent that is expected to understand the product, architecture, implementation, testing, security, deployment, and production equally well.</p>
+
+<p>A better structure is a <strong>society of specialized agents</strong>.</p>
+
+<figure class="post-figure" style="margin:1.5rem 0;">
+  <img src="/assets/images/posts/intent-oriented-programming/minsky-society-of-agents.webp" alt="Intent Organizes a Society — a conceptual portrait of Marvin Minsky with specialized discovery, architecture, development, testing, security and operations agents" loading="lazy" style="width:100%;height:auto;display:block;object-fit:contain;">
+  <figcaption>Interpretive illustration: intent coordinates specialized agents with bounded responsibilities rather than assuming one agent is the whole engineering system.</figcaption>
+</figure>
+
+<p>The programming model changes from:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intent
+  ↓
+one agent
+  ↓
+answer
+</code></pre></div></div>
+
+<p>to:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intent
+  ↓
+specialized society
+  ├── discovery
+  ├── architecture
+  ├── implementation
+  ├── testing
+  ├── security
+  └── operations
+</code></pre></div></div>
+
+<p>Each agent can have bounded:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>knowledge
+skills
+tools
+permissions
+responsibilities
+evidence requirements
+</code></pre></div></div>
+
+<p>The intent becomes the structure that coordinates them.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzozNiwncmFua1NwYWNpbmcnOjQ0LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBUQlxuSVtcIvCfjq8gSW50ZW50XCJdXG5JIC0tPiBEW1wi8J-nrSBEaXNjb3ZlcnlcIl1cbkkgLS0-IEFbXCLwn4-X77iPIEFyY2hpdGVjdHVyZVwiXVxuSSAtLT4gQ1tcIvCfkrsgRGV2ZWxvcG1lbnRcIl1cbkkgLS0-IFRbXCLwn6eqIFRlc3RpbmdcIl1cbkkgLS0-IFNbXCLwn5uh77iPIFNlY3VyaXR5XCJdXG5JIC0tPiBPW1wi8J-TiiBPcGVyYXRpb25zXCJdXG4lJS1cbkQgLS0-IFhbXCLwn6epIENvb3JkaW5hdGVkIGltcGxlbWVudGF0aW9uXCJdXG5BIC0tPiBYXG5DIC0tPiBYXG5UIC0tPiBYXG5TIC0tPiBYXG5PIC0tPiBYXG5YIC0tPiBFW1wi8J-nviBFdmlkZW5jZVwiXVxuRSAtLiBcImZlZWRiYWNrXCIgLi0-IElcbiUlLVxuY2xhc3NEZWYgaW50ZW50IGZpbGw6I0Y1RDlEQyxzdHJva2U6I0JDODE5MSxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBhZ2VudCBmaWxsOiNEOUVBRjcsc3Ryb2tlOiM3QUE2QzIsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgb3V0cHV0IGZpbGw6I0RERjNFQSxzdHJva2U6IzVGOUQ4Nixjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzcyBJIGludGVudDtcbmNsYXNzIEQsQSxDLFQsUyxPIGFnZW50O1xuY2xhc3MgWCxFIG91dHB1dDsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ"></p>
+
+<p>This is where Intent-Oriented Programming becomes more than a DSL.</p>
+
+<p>It becomes a model for <strong>organized agency</strong>.</p>
+
+<h2 id="krishnamurti-observation-before-interpretation">Krishnamurti: observation before interpretation</h2>
+
+<p>There is also an epistemological problem.</p>
+
+<p>An AI system can accumulate enormous amounts of knowledge:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>documentation
+ADRs
+tickets
+code
+tests
+incident history
+RAG
+memory
+previous agent conclusions
+</code></pre></div></div>
+
+<p>But accumulated knowledge is not identical to what is happening now.</p>
+
+<p>Krishnamurti repeatedly distinguished observation from the concepts, memories, and judgments through which we interpret what we see. In the language of engineering, that suggests a discipline that is surprisingly practical:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>what is happening
+      ≠
+what we know
+      ≠
+what we think it means
+      ≠
+what remains unknown
+</code></pre></div></div>
+
+<figure class="post-figure" style="margin:1.5rem 0;">
+  <img src="/assets/images/posts/intent-oriented-programming/krishnamurti-observation.webp" alt="Observation Before Interpretation — a conceptual portrait of J. Krishnamurti beside observation, knowledge, inference and unknowns" loading="lazy" style="width:100%;height:auto;display:block;object-fit:contain;">
+  <figcaption>Interpretive illustration: observation, accumulated knowledge, inference, and the unknown should remain distinguishable in an agentic engineering system.</figcaption>
+</figure>
+
+<p>This has direct consequences for AI systems.</p>
+
+<p>An agent looking at a failing production service should not collapse:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RAG result
+historical incident
+current trace
+model hypothesis
+</code></pre></div></div>
+
+<p>into one undifferentiated “understanding.”</p>
+
+<p>A better model keeps them distinct:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Observed evidence
+Historical knowledge
+Inference
+Unknowns
+</code></pre></div></div>
+
+<p>That gives us another principle for Intent-Oriented Programming:</p>
+
+<blockquote>
+  <p><strong>Intent must remain revisable in the presence of observation.</strong></p>
+</blockquote>
+
+<p>If reality contradicts the original assumption, the system should not merely optimize harder toward the original intent.</p>
+
+<p>It should be able to question it.</p>
+
+<h2 id="the-intent-loop">The intent loop</h2>
+
+<p>These three lenses now meet.</p>
+
+<p>Bohm gives us a metaphor for movement between implicit meaning and explicit form.</p>
+
+<p>Minsky gives us a model for coordinated specialized agency.</p>
+
+<p>Krishnamurti reminds us not to confuse accumulated representation with direct observation.</p>
+
+<p>Together they suggest a programming loop:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intent
+  ↓
+Semantic structure
+  ↓
+Society of agents
+  ↓
+Implementation
+  ↓
+Observation
+  ↓
+Evidence
+  ↓
+Learning
+  ↓
+Revised intent
+</code></pre></div></div>
+
+<p>The key difference from a conventional development pipeline is that <strong>intent is not immutable</strong>.</p>
+
+<p>It is a living part of the system.</p>
+
+<h2 id="what-intent-oriented-programming-might-look-like">What Intent-Oriented Programming might look like</h2>
+
+<p>Ruby makes the idea easy to experiment with.</p>
+
+<p>Imagine:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">intent</span> <span class="ss">:reduce_checkout_failure</span> <span class="k">do</span>
+  <span class="n">evidence</span> <span class="ss">:support_tickets</span><span class="p">,</span>
+           <span class="ss">:checkout_metrics</span><span class="p">,</span>
+           <span class="ss">:payment_errors</span>
+
+  <span class="n">outcome</span> <span class="ss">:successful_checkout</span>
+
+  <span class="n">constraints</span> <span class="k">do</span>
+    <span class="nb">require</span> <span class="ss">:pci_compliance</span>
+    <span class="n">preserve</span> <span class="ss">:idempotency</span>
+    <span class="n">prevent</span> <span class="ss">:duplicate_charge</span>
+  <span class="k">end</span>
+
+  <span class="n">delegate</span> <span class="ss">:architecture</span><span class="p">,</span>
+           <span class="ss">:implementation</span><span class="p">,</span>
+           <span class="ss">:verification</span>
+
+  <span class="n">verify</span> <span class="ss">:checkout_contract</span><span class="p">,</span>
+         <span class="ss">:payment_failure_paths</span><span class="p">,</span>
+         <span class="ss">:reconciliation</span>
+
+  <span class="n">observe</span> <span class="ss">:checkout_success_rate</span><span class="p">,</span>
+          <span class="ss">:payment_latency</span><span class="p">,</span>
+          <span class="ss">:retry_rate</span>
+
+  <span class="n">revise_from</span> <span class="ss">:incidents</span><span class="p">,</span>
+              <span class="ss">:customer_feedback</span><span class="p">,</span>
+              <span class="ss">:runtime_evidence</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>This is not meant to replace classes.</p>
+
+<p>It is meant to answer questions classes do not naturally answer:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Why does this behavior exist?
+Which evidence justified it?
+Which constraints must never be violated?
+What outcome are we optimizing?
+Who may act on it?
+How do we know the implementation is acceptable?
+Which runtime observations should challenge our assumptions?
+</code></pre></div></div>
+
+<p>The compiler—or framework—could project this one intent into many artifacts:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>agent tasks
+architecture prompts
+policy checks
+test plans
+observability configuration
+documentation
+semantic graph
+evaluation criteria
+review context
+</code></pre></div></div>
+
+<p>That is where the programming model becomes interesting.</p>
+
+<h2 id="why-ruby-is-an-unusually-good-laboratory">Why Ruby is an unusually good laboratory</h2>
+
+<p>Ruby has a long history of creating languages inside the language.</p>
+
+<p>Rails:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">has_many</span> <span class="ss">:orders</span>
+</code></pre></div></div>
+
+<p>RSpec:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">expect</span><span class="p">(</span><span class="n">order</span><span class="p">).</span><span class="nf">to</span> <span class="n">be_valid</span>
+</code></pre></div></div>
+
+<p>Rake:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">task</span> <span class="ss">deploy: :environment</span>
+</code></pre></div></div>
+
+<p>Bundler:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span> <span class="s2">"rails"</span>
+</code></pre></div></div>
+
+<p>These APIs do more than shorten code.</p>
+
+<p>They turn infrastructure into <strong>domain vocabulary</strong>.</p>
+
+<p>Intent-Oriented Programming needs exactly that ability.</p>
+
+<p>Its primitives are not primarily machine operations.</p>
+
+<p>They are engineering concepts:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intent
+evidence
+constraint
+outcome
+policy
+delegate
+verify
+observe
+revise
+</code></pre></div></div>
+
+<p>Ruby can make these executable without making them look like configuration plumbing.</p>
+
+<p>But the AI age adds a new requirement.</p>
+
+<p>The DSL must not hide meaning behind runtime magic.</p>
+
+<p>It should produce an explicit semantic representation that agents can inspect.</p>
+
+<p>So the design goal becomes:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Ruby expressiveness
+        +
+explicit semantic model
+        +
+machine inspectability
+</code></pre></div></div>
+
+<p>Not just beautiful syntax.</p>
+
+<h2 id="rails-after-convention-over-configuration">Rails after convention over configuration</h2>
+
+<p>Rails may have an equally interesting opportunity.</p>
+
+<p>Convention over configuration historically reduced human cognitive load.</p>
+
+<p>The agentic interpretation could be:</p>
+
+<blockquote>
+  <p><strong>Convention over configuration gives agents a more predictable semantic environment.</strong></p>
+</blockquote>
+
+<p>A Rails application already encodes a large amount of structure:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>routes
+controllers
+models
+associations
+validations
+jobs
+transactions
+migrations
+policies
+tests
+events
+deployment conventions
+</code></pre></div></div>
+
+<p>If Rails made these relationships more explicitly queryable, an agent could ask:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What can change an Order?
+
+Which business rule protects this transition?
+
+Which jobs can eventually modify this model?
+
+Which request specs verify this endpoint?
+
+Which migration introduced this field?
+
+Which runtime signal should reveal a failure here?
+</code></pre></div></div>
+
+<p>That is a larger opportunity than simply adding an AI assistant to Rails.</p>
+
+<p>It suggests <strong>Rails itself as a semantic environment for agents</strong>.</p>
+
+<h2 id="intent-does-not-replace-objects">Intent does not replace objects</h2>
+
+<p>A new abstraction does not need to destroy the previous one.</p>
+
+<p>SQL did not eliminate data structures.</p>
+
+<p>Rails did not eliminate HTTP.</p>
+
+<p>Objects did not eliminate functions.</p>
+
+<p>Intent does not eliminate objects.</p>
+
+<p>The layers can coexist:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intent
+   ↓
+Engineering semantics
+   ↓
+Architecture
+   ↓
+Objects / services / modules
+   ↓
+Functions / data
+   ↓
+Runtime
+</code></pre></div></div>
+
+<p>Intent-Oriented Programming would sit above implementation structures.</p>
+
+<p>Its purpose would be to preserve <strong>why</strong> those structures exist and connect them to evidence and observation.</p>
+
+<p>That is why the name matters.</p>
+
+<p>This is not “prompt-oriented programming.”</p>
+
+<p>The intent is durable.</p>
+
+<p>The prompt is transient.</p>
+
+<h2 id="a-small-executable-experiment">A small executable experiment</h2>
+
+<p>The companion package includes a small dependency-free Ruby prototype that tests this idea.</p>
+
+<p>The declaration:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">system</span> <span class="o">=</span> <span class="no">IntentSystem</span><span class="p">.</span><span class="nf">define</span> <span class="k">do</span>
+  <span class="n">intent</span> <span class="ss">:reduce_checkout_failure</span> <span class="k">do</span>
+    <span class="n">evidence</span> <span class="ss">:support_tickets</span><span class="p">,</span> <span class="ss">:checkout_metrics</span>
+    <span class="n">outcome</span> <span class="ss">:successful_checkout</span>
+
+    <span class="n">constraints</span> <span class="k">do</span>
+      <span class="nb">require</span> <span class="ss">:pci_compliance</span>
+      <span class="n">preserve</span> <span class="ss">:idempotency</span>
+    <span class="k">end</span>
+
+    <span class="n">delegate</span> <span class="ss">:architecture</span><span class="p">,</span> <span class="ss">:implementation</span><span class="p">,</span> <span class="ss">:verification</span>
+    <span class="n">verify</span> <span class="ss">:checkout_contract</span><span class="p">,</span> <span class="ss">:payment_failure_paths</span>
+    <span class="n">observe</span> <span class="ss">:success_rate</span><span class="p">,</span> <span class="ss">:latency</span>
+    <span class="n">revise_from</span> <span class="ss">:incidents</span><span class="p">,</span> <span class="ss">:customer_feedback</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>creates an explicit semantic model.</p>
+
+<p>The prototype can serialize that model to JSON and generate a Mermaid view of the intent lifecycle.</p>
+
+<p>The important experiment is not the syntax.</p>
+
+<p>It is the invariant:</p>
+
+<blockquote>
+  <p><strong>the executable declaration and the inspectable semantic model come from the same source.</strong></p>
+</blockquote>
+
+<p>The included tests were run against Ruby 3.3 in the authoring environment.</p>
+
+<p><strong><a href="/assets/downloads/intent-oriented-programming-support.zip">Download the Intent-Oriented Programming support package</a></strong></p>
+
+<h2 id="the-deeper-responsibility">The deeper responsibility</h2>
+
+<p>The AI age creates a temptation to focus entirely on generation:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>How much code can the agent write?
+How quickly?
+How autonomously?
+</code></pre></div></div>
+
+<p>Intent-Oriented Programming asks a different set of questions:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Does the system still know why this code exists?
+
+Can it distinguish evidence from inference?
+
+Can it preserve constraints across agent handoffs?
+
+Can runtime evidence challenge the original plan?
+
+Can humans inspect the semantic structure that guided the agents?
+
+Can a new agent inherit the intent without reconstructing it from fragments?
+</code></pre></div></div>
+
+<p>Those questions are less spectacular than autonomous code generation.</p>
+
+<p>They may be more important.</p>
+
+<p>Because the challenge of agentic software is not merely producing more implementation.</p>
+
+<p>It is preserving <strong>meaning while implementation becomes increasingly fluid</strong>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Object-oriented programming helped us organize implementation around objects.</p>
+
+<p>The agentic era gives us a reason to explore another organizing principle above implementation:</p>
+
+<blockquote>
+  <p><strong>intent.</strong></p>
+</blockquote>
+
+<p>Intent-Oriented Programming would treat intent as a first-class, executable, inspectable engineering structure.</p>
+
+<p>It would carry:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>evidence
+constraints
+outcomes
+policies
+delegation
+verification
+observation
+feedback
+</code></pre></div></div>
+
+<p>AI agents could then unfold that structure into implementations.</p>
+
+<p>A society of specialized agents could collaborate around it.</p>
+
+<p>Runtime evidence could challenge it.</p>
+
+<p>Humans could inspect it.</p>
+
+<p>And the intent itself could evolve.</p>
+
+<p>The result is not programming without code.</p>
+
+<p>It is programming where code is no longer the only—or even the highest—artifact that matters.</p>
+
+<p>Perhaps the next programming question is therefore not:</p>
+
+<blockquote>
+  <p>What objects should this system contain?</p>
+</blockquote>
+
+<p>But:</p>
+
+<blockquote>
+  <p><strong>What intention is this system trying to make real, what must remain true while it does so, and what evidence will tell us whether we were right?</strong></p>
+</blockquote>
+
+<p>That is a different starting point.</p>
+
+<p>And AI may finally make it practical.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>
+    <p>David Bohm — <em>The Implicate Order: A New Order for Physics</em><br>
+https://www.religion-online.org/article/the-implicate-order-a-new-order-for-physics/</p>
+  </li>
+  <li>
+    <p>Marvin Minsky — <em>The Society of Mind</em><br>
+https://mitpressbookstore.mit.edu/book/9780671657130</p>
+  </li>
+  <li>
+    <p>MIT Press — Marvin Minsky / <em>Perceptrons</em> and society theories of mind<br>
+https://mitpress.mit.edu/9780262534772/perceptrons/</p>
+  </li>
+  <li>
+    <p>Krishnamurti Foundation Trust — <em>The Core of Krishnamurti’s Teachings</em><br>
+https://kfoundation.org/core-of-the-teachings/</p>
+  </li>
+  <li>
+    <p>Krishnamurti Foundation Trust — <em>Thought and observation</em><br>
+https://kfoundation.org/media/thought-and-observation/</p>
+  </li>
+  <li>
+    <p>Previous post — <em>Below Intent: The Semantic Infrastructure of Agentic Software Engineering</em><br>
+/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html</p>
+  </li>
+  <li>
+    <p>Previous post — <em>Ruby in the Age of AI</em><br>
+/ruby/artificial-intelligence/software-engineering/architecture/2026/09/30/ruby-in-the-age-of-ai.html</p>
+  </li>
+</ul>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+
+<img class="mermaid" src="" alt="Mermaid diagram" loading="lazy" style="display:block; width:min(100%, 640px); height:auto; margin:1.25rem auto;">
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
