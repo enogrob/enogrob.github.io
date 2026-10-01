@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-01T08:21:14+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Ruby in the Age of AI</title><link href="https://enogrob.github.io/ruby/artificial-intelligence/software-engineering/architecture/2026/10/01/ruby-in-the-age-of-ai.html" rel="alternate" type="text/html" title="Ruby in the Age of AI" /><published>2026-10-01T01:00:00+00:00</published><updated>2026-10-01T01:00:00+00:00</updated><id>https://enogrob.github.io/ruby/artificial-intelligence/software-engineering/architecture/2026/10/01/ruby-in-the-age-of-ai</id><content type="html" xml:base="https://enogrob.github.io/ruby/artificial-intelligence/software-engineering/architecture/2026/10/01/ruby-in-the-age-of-ai.html"><![CDATA[<div class="post-visual post-cover">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-01T08:30:21+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Ruby in the Age of AI</title><link href="https://enogrob.github.io/ruby/artificial-intelligence/software-engineering/architecture/2026/10/01/ruby-in-the-age-of-ai.html" rel="alternate" type="text/html" title="Ruby in the Age of AI" /><published>2026-10-01T01:00:00+00:00</published><updated>2026-10-01T01:00:00+00:00</updated><id>https://enogrob.github.io/ruby/artificial-intelligence/software-engineering/architecture/2026/10/01/ruby-in-the-age-of-ai</id><content type="html" xml:base="https://enogrob.github.io/ruby/artificial-intelligence/software-engineering/architecture/2026/10/01/ruby-in-the-age-of-ai.html"><![CDATA[<div class="post-visual post-cover">
   <img src="/assets/images/posts/ruby-in-the-age-of-ai/cover.webp" alt="Ruby in the Age of AI — Ruby DSLs and metaprogramming bridging Rails and AI-native software" loading="eager" />
 </div>
 
@@ -1311,10 +1311,6 @@ Runtime / hardware
 
 <ul>
   <li>
-    <p><strong>José Valim — <em>Evolving programming languages in the AI era</em></strong><br />
-<a href="https://dashbit.co/blog/evolving-ai-era">https://dashbit.co/blog/evolving-ai-era</a></p>
-  </li>
-  <li>
     <p><strong>DHH — Rails World 2026 Opening Keynote</strong><br />
 <a href="https://www.youtube.com/watch?v=vDjW_dRyKXY">https://www.youtube.com/watch?v=vDjW_dRyKXY</a></p>
   </li>
@@ -1349,6 +1345,10 @@ Runtime / hardware
   <li>
     <p><strong>Elixir — official language site</strong><br />
 <a href="https://elixir-lang.org/">https://elixir-lang.org/</a></p>
+  </li>
+  <li>
+    <p><strong>José Valim — <em>Evolving programming languages in the AI era</em></strong><br />
+<a href="https://dashbit.co/blog/evolving-ai-era">https://dashbit.co/blog/evolving-ai-era</a></p>
   </li>
 </ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="artificial-intelligence" /><category term="software-engineering" /><category term="ruby" /><category term="ruby-on-rails" /><category term="ai" /><category term="agents" /><category term="dhh" /><category term="omarchy" /><category term="jruby" /><category term="spinel" /><category term="elixir" /><category term="software-engineering" /><summary type="html"><![CDATA[DHH's 'pencils down' moment at Rails World points to a deeper shift: AI is becoming the abstraction closest to human intent. What does that mean for Ruby, Rails, JRuby, Spinel, Elixir, and the future of programming?]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/pencils-down-intent-up/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/pencils-down-intent-up/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AI Across the SDLC with GitHub Copilot</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/29/ai-across-the-sdlc-with-github-copilot.html" rel="alternate" type="text/html" title="AI Across the SDLC with GitHub Copilot" /><published>2026-09-29T00:00:00+00:00</published><updated>2026-09-29T00:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/29/ai-across-the-sdlc-with-github-copilot</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/29/ai-across-the-sdlc-with-github-copilot.html"><![CDATA[<p><img src="/assets/images/posts/ai-across-sdlc-github-copilot/cover.webp" alt="AI Across the SDLC with GitHub Copilot: products, reusable AI assets, and a continuous software delivery lifecycle." style="width:100%;height:auto;object-fit:contain;" /></p>
 
