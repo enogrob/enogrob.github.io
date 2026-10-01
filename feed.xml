@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-01T19:32:38+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Below Intent: The Semantic Infrastructure of Agentic Software Engineering</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html" rel="alternate" type="text/html" title="Below Intent: The Semantic Infrastructure of Agentic Software Engineering" /><published>2026-10-01T08:00:00+00:00</published><updated>2026-10-01T08:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html"><![CDATA[<figure class="post-figure" style="margin:1.5rem 0;">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-01T20:01:13+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Below Intent: The Semantic Infrastructure of Agentic Software Engineering</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html" rel="alternate" type="text/html" title="Below Intent: The Semantic Infrastructure of Agentic Software Engineering" /><published>2026-10-01T08:00:00+00:00</published><updated>2026-10-01T08:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html"><![CDATA[<figure class="post-figure" style="margin:1.5rem 0;">
   <img src="/assets/images/posts/below-intent-semantic-infrastructure/cover.webp" alt="Below Intent — human intent flows into product intent, program semantics, runtime evidence, and the software development lifecycle" loading="eager" style="width:100%;height:auto;display:block;object-fit:contain;" />
   <figcaption>Below intent: the semantic infrastructure that lets agents move from product meaning to program structure, runtime evidence, and back again.</figcaption>
 </figure>
@@ -2204,6 +2204,7 @@ Human intent
   <li><a href="#the-osireion-architecture-below-time">The Osireion: Architecture Below Time</a></li>
   <li><a href="#hawara-and-the-memory-of-the-labyrinth">Hawara and the Memory of the Labyrinth</a></li>
   <li><a href="#the-initiatory-geography-hypothesis">The Initiatory Geography Hypothesis</a></li>
+  <li><a href="#edgar-cayce-and-the-hall-of-records">Edgar Cayce and the Hall of Records</a></li>
   <li><a href="#before-egypt-was-egypt">Before Egypt Was Egypt</a></li>
   <li><a href="#atlantis-answer-or-archetype">Atlantis: Answer or Archetype?</a></li>
   <li><a href="#built-to-cross-ages">Built to Cross Ages</a></li>
@@ -2448,6 +2449,44 @@ Human intent
 
 <p>This does not collapse Hawara into Giza. It asks whether two geographically distinct places could have been understood, in later initiatory readings, as parts of the same sacred map.</p>
 
+<h2 id="edgar-cayce-and-the-hall-of-records">Edgar Cayce and the Hall of Records</h2>
+
+<p>Joan Llarch imagines an <strong>initiatory geography</strong>. Edgar Cayce introduces a different kind of possibility: a <strong>repository of memory</strong>.</p>
+
+<p>The distinction matters. Cayce’s material belongs to a psychic and esoteric tradition, not to archaeology. It should therefore be read as a modern visionary layer in the history of ideas surrounding Giza, rather than as evidence for an undiscovered chamber.</p>
+
+<p>Yet the correspondence with the questions explored here is striking. In Cayce’s readings, the Sphinx becomes a sentinel associated with a sealed repository containing records of Atlantis and of the movements of its people. The Egyptian repository is described as connected with the Sphinx, while related records are also associated with <strong>Bimini/Poseidia</strong> and <strong>Yucatán</strong>.</p>
+
+<p>The central idea is not simply that something was hidden. It is that knowledge was supposedly <strong>preserved for a later cycle</strong> — deliberately placed beyond the lifetime of the civilization that produced it.</p>
+
+<p>That makes Cayce relevant to the theme of <em>architecture for deep time</em> even if his claims remain outside established archaeology:</p>
+
+<ul>
+  <li><strong>Llarch</strong> asks whether a path of initiation could connect the Sphinx, the pyramids and the Labyrinth.</li>
+  <li><strong>Cayce</strong> imagines the Sphinx as guardian of preserved records intended for a future rediscovery.</li>
+  <li><strong>Archaeology</strong> asks what structures, passages and chronological relationships can actually be demonstrated.</li>
+</ul>
+
+<p>All three approaches meet at the same threshold, but they are making different kinds of claims.</p>
+
+<p><img src="/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/edgar-cayce-and-the-hall-of-records.webp" alt="" /></p>
+
+<p>The attached 1968 volume <em>Edgar Cayce on Atlantis</em>, written by Edgar Evans Cayce under the editorship of Hugh Lynn Cayce, organizes the Atlantis material from Cayce’s life readings into a narrative of repeated destructions, migration, reincarnation and civilizational memory. Within that framework, Atlantis is less useful here as a historical conclusion than as a model of <strong>knowledge surviving collapse</strong>.</p>
+
+<p>This also creates a useful progression across the two posts:</p>
+
+<blockquote>
+  <p><strong>The Secret of the Sphinx</strong> — the Sphinx as threshold to a transformative journey.<br />
+<strong>Llarch</strong> — the threshold extended into an initiatory geography.<br />
+<strong>Cayce</strong> — the threshold extended into a repository of memory for another age.</p>
+</blockquote>
+
+<p>The question therefore becomes broader than whether a literal Hall of Records exists:</p>
+
+<blockquote>
+  <p><strong>What would a civilization choose to preserve if it believed its own world might not survive?</strong></p>
+</blockquote>
+
 <h2 id="before-egypt-was-egypt">Before Egypt Was Egypt</h2>
 
 <p>The pyramids did not emerge from a cultural vacuum.</p>
@@ -2513,6 +2552,16 @@ a lost civilization built Egypt
 <blockquote>
   <p><strong>Can knowledge cross a civilizational rupture without preserving the civilization that produced it?</strong></p>
 </blockquote>
+
+<h3 id="cayces-atlantis-cycles-migration-and-preserved-memory">Cayce’s Atlantis: cycles, migration and preserved memory</h3>
+
+<p>Cayce’s Atlantis material pushes that question to its extreme. In the readings as collected and interpreted by Edgar Evans Cayce, Atlantis passes through multiple periods of disruption before a final destruction, while groups disperse toward other regions. The material associates those migrations with Egypt and the Americas and repeatedly returns to a moral contrast between knowledge used for integration and knowledge used for domination.</p>
+
+<p>None of this establishes Atlantis archaeologically. But within the intellectual architecture of this post it adds a revealing motif: <strong>civilization can disappear while fragments of its knowledge, symbols and moral warnings continue elsewhere</strong>.</p>
+
+<p><img src="/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/edgar-cayce-on-atlantis.webp" alt="" /></p>
+
+<p>Read this way, Cayce does not provide the answer to Egypt’s origins. He provides another modern expression of the same deep-time anxiety that surrounds megalithic monuments: the possibility that a civilization could try to send something through a rupture larger than itself.</p>
 
 <p>Now the megalith returns to the centre of the story.</p>
 
@@ -2786,6 +2835,10 @@ meaning
   <li><a href="https://onlinelibrary.wiley.com/doi/10.3997/1873-0604.2010004">Khalil et al. — VLF-EM study for archaeological investigation of the labyrinth mortuary temple complex at Hawara, <em>Near Surface Geophysics</em> (2010)</a></li>
   <li><a href="https://journalofscientificexploration.org/index.php/jse/article/view/3579">Carlotto — Space-Based Ground Penetrating Radar Imaging of a Possible Underground Structure at Hawara (2025)</a></li>
   <li><a href="https://www.joanllarch.com/v1/Llibres/LlibresDetalls.php?id=19">Joan Llarch — <em>La pirámide iniciática</em> (official book page)</a></li>
+  <li>Edgar Evans Cayce — <em>Edgar Cayce on Atlantis</em>, under the editorship of Hugh Lynn Cayce, Paperback Library / Association for Research and Enlightenment (1968).</li>
+  <li><a href="https://edgarcayce.org/edgar-cayce/readings/ancient-mysteries/">Edgar Cayce’s A.R.E. — Ancient Mysteries: Atlantis and the Hall of Records</a></li>
+  <li><a href="https://content.edgarcayce.org/about-us/blog/blog-posts/our-research-into-cayce-s-hall-of-records/">Edgar Cayce’s A.R.E. — Research into Cayce’s “Hall of Records”</a></li>
+  <li><a href="https://edgarcayce.org/wp-content/uploads/2025/07/Egypt-at-the-Time-of-Ra-Ta-FINAL.pdf">Edgar Cayce’s A.R.E. — Egypt 10,500 B.C. and the Hall of Records</a></li>
   <li><a href="https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/09/14/the-secret-of-the-sphinx.html">The Secret of the Sphinx — Cosmic Cycles and a Legacy for Future Humanity</a></li>
 </ul>]]></content><author><name></name></author><category term="knowledge-management" /><category term="symbolism" /><category term="visual-learning" /><category term="egypt" /><category term="pyramids" /><category term="sphinx" /><category term="osireion" /><category term="hawara" /><category term="megaliths" /><category term="deep-time" /><category term="archaeology" /><category term="symbolism" /><summary type="html"><![CDATA[A journey beneath the visible Egypt: from confirmed voids inside the Great Pyramid to the Osireion, Hawara's Labyrinth, deep time and the question of why monumental architecture was built to endure.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Beyond the Sphinx — Architecture for Deep Time</title><link href="https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/10/01/beyond-the-sphinx-architecture-for-deep-time.html" rel="alternate" type="text/html" title="Beyond the Sphinx — Architecture for Deep Time" /><published>2026-10-01T00:00:00+00:00</published><updated>2026-10-01T00:00:00+00:00</updated><id>https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/10/01/beyond-the-sphinx-architecture-for-deep-time</id><content type="html" xml:base="https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/10/01/beyond-the-sphinx-architecture-for-deep-time.html"><![CDATA[<p><img src="/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/cover.webp" alt="" /></p>
 
