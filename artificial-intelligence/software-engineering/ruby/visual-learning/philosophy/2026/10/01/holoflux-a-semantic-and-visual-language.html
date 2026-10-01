@@ -101,6 +101,8 @@
   <li><a href="#where-rag-belongs">Where RAG belongs</a></li>
   <li><a href="#where-intent-oriented-programming-belongs">Where intent-oriented programming belongs</a></li>
   <li><a href="#from-semantic-language-to-visual-language">From semantic language to visual language</a></li>
+  <li><a href="#what-holoflux-is-not">What Holoflux is not</a></li>
+  <li><a href="#a-deliberately-small-holoflux-01">A deliberately small Holoflux 0.1</a></li>
   <li><a href="#what-would-make-the-experiment-useful">What would make the experiment useful?</a></li>
   <li><a href="#references">References</a></li>
 </ul>
@@ -276,7 +278,7 @@ but differs from B in Y.
   </tbody>
 </table>
 
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1xuXCJ0aGVtZVwiOiBcImJhc2VcIixcblwidGhlbWVWYXJpYWJsZXNcIjoge1xuXCJiYWNrZ3JvdW5kXCI6IFwiI0ZGRjhFRlwiLFxuXCJwcmltYXJ5VGV4dENvbG9yXCI6IFwiIzNFMzQyQ1wiLFxuXCJsaW5lQ29sb3JcIjogXCIjNkY3Mzc3XCIsXG5cImZvbnRGYW1pbHlcIjogXCJUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWZcIixcblwiZm9udFNpemVcIjogXCIxMnB4XCIsXG5cImNsdXN0ZXJCa2dcIjogXCIjRkJGNEU3XCIsXG5cImNsdXN0ZXJCb3JkZXJcIjogXCIjQjhBMTdEXCJcbn0sXG5cImZsb3djaGFydFwiOiB7XG5cInVzZU1heFdpZHRoXCI6IHRydWUsXG5cImh0bWxMYWJlbHNcIjogdHJ1ZSxcblwibm9kZVNwYWNpbmdcIjogMjIsXG5cInJhbmtTcGFjaW5nXCI6IDI4LFxuXCJjdXJ2ZVwiOiBcImJhc2lzXCJcbn1cbn19JSVcbmZsb3djaGFydCBUQlxuY2xhc3NEZWYgaW50ZW50IGZpbGw6I0ZDRThFNixzdHJva2U6I0M5N0M3NSxjb2xvcjojNEEyQTI3XG5jbGFzc0RlZiBjb3JlIGZpbGw6I0RERjJFMixzdHJva2U6Izc5QTg3Rixjb2xvcjojMjQ0MjI4XG5jbGFzc0RlZiBleGVjdXRpb24gZmlsbDojRjhERkM0LHN0cm9rZTojQzk5ODZELGNvbG9yOiM0QTMyMUZcbmNsYXNzRGVmIGV2aWRlbmNlIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojMjAzNjUzXG5jbGFzc0RlZiBhcnRpZmFjdCBmaWxsOiNGRkYxQkYsc3Ryb2tlOiNDOUE4NEEsY29sb3I6IzRBM0ExNlxuJSUtXG5JW1wi8J-OryBJbnRlbnQgLyBJT1BcIl06OjppbnRlbnQgLS0-IEVbXCLihpcgRXhwbGljYXRpb25cIl06Ojpjb3JlXG5EW1wi8J-MiiBIb2xvZmx1eDxici8-TGFuZ3VhZ2UgwrcgRG9tYWluIMK3IE1vZGVsXCJdOjo6Y29yZSAtLT4gRVxuU1tcIvCfk5ogRXZpZGVuY2UgLyBSQUdcIl06OjpldmlkZW5jZSAtLT4gRFxuRSAtLT4gUltcIuKame-4jyBSdW50aW1lPGJyLz5SdWJ5IGZpcnN0XCJdOjo6ZXhlY3V0aW9uXG5SIC0tPiBBW1wi8J-Rge-4jyBFeHBsaWNhdGUgYXJ0aWZhY3RcIl06OjphcnRpZmFjdFxuQSAtLiBpbnNpZ2h0IC8gY29ycmVjdGlvbiAuLT4gRCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"></p>
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDoge1xuXCJ0aGVtZVwiOiBcImJhc2VcIixcblwidGhlbWVWYXJpYWJsZXNcIjoge1xuXCJiYWNrZ3JvdW5kXCI6IFwiI0ZGRjhFRlwiLFxuXCJwcmltYXJ5VGV4dENvbG9yXCI6IFwiIzNFMzQyQ1wiLFxuXCJsaW5lQ29sb3JcIjogXCIjNkY3Mzc3XCIsXG5cImZvbnRGYW1pbHlcIjogXCJUcmVidWNoZXQgTVMsIFZlcmRhbmEsIHNhbnMtc2VyaWZcIixcblwiZm9udFNpemVcIjogXCIxMXB4XCJcbn0sXG5cImZsb3djaGFydFwiOiB7XG5cInVzZU1heFdpZHRoXCI6IHRydWUsXG5cImh0bWxMYWJlbHNcIjogdHJ1ZSxcblwibm9kZVNwYWNpbmdcIjogMTQsXG5cInJhbmtTcGFjaW5nXCI6IDE4LFxuXCJjdXJ2ZVwiOiBcImxpbmVhclwiXG59XG59fSUlXG5mbG93Y2hhcnQgVEJcbmNsYXNzRGVmIGludGVudCBmaWxsOiNGQ0U4RTYsc3Ryb2tlOiNDOTdDNzUsY29sb3I6IzRBMkEyN1xuY2xhc3NEZWYgY29yZSBmaWxsOiNEREYyRTIsc3Ryb2tlOiM3OUE4N0YsY29sb3I6IzI0NDIyOFxuY2xhc3NEZWYgZXhlY3V0aW9uIGZpbGw6I0Y4REZDNCxzdHJva2U6I0M5OTg2RCxjb2xvcjojNEEzMjFGXG5jbGFzc0RlZiBldmlkZW5jZSBmaWxsOiNEOUVBRjcsc3Ryb2tlOiM3QUE2QzIsY29sb3I6IzIwMzY1M1xuY2xhc3NEZWYgYXJ0aWZhY3QgZmlsbDojRkZGMUJGLHN0cm9rZTojQzlBODRBLGNvbG9yOiM0QTNBMTZcbiUlLVxuSVtcIkludGVudCAvIElPUFwiXTo6OmludGVudCAtLT4gRVtcIkV4cGxpY2F0aW9uXCJdOjo6Y29yZVxuRFtcIkhvbG9mbHV4PGJyLz5MYW5ndWFnZSDCtyBEb21haW4gwrcgTW9kZWxcIl06Ojpjb3JlIC0tPiBFXG5TW1wiRXZpZGVuY2UgLyBSQUdcIl06OjpldmlkZW5jZSAtLT4gRFxuRSAtLT4gUltcIlJ1bnRpbWU8YnIvPlJ1YnkgZmlyc3RcIl06OjpleGVjdXRpb25cblIgLS0-IEFbXCJFeHBsaWNhdGUgYXJ0aWZhY3RcIl06OjphcnRpZmFjdFxuQSAtLiByZXZpZXcgLi0-IEQiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ"></p>
 
 <p>This is the responsibility boundary to preserve:</p>
 
@@ -905,30 +907,118 @@ Holoflux ← semantic graph ← visual editing
   <p><strong>not a visual interface for AI, but a visual language shared by humans, software, and AI.</strong></p>
 </blockquote>
 
+<h2 id="what-holoflux-is-not">What Holoflux is not</h2>
+
+<p>As the architecture grows, it becomes increasingly important to define its boundaries.</p>
+
+<p>Holoflux is <strong>not</strong>:</p>
+
+<ul>
+  <li>a replacement for Mermaid — Mermaid is one possible explicate artifact;</li>
+  <li>merely a Ruby DSL — Ruby is the first reference authoring and runtime environment;</li>
+  <li>a specific knowledge-graph technology — graphs are one possible semantic representation;</li>
+  <li>RAG — retrieval provides evidence, while Holoflux structures meaning;</li>
+  <li>IOP — intent-oriented programming expresses why and where we want to move through the semantic space;</li>
+  <li>a literal implementation of Bohm’s implicate order;</li>
+  <li>a claim that software can capture <em>the whole</em>.</li>
+</ul>
+
+<p>The last point is especially important.</p>
+
+<p>Holoflux deliberately works with partial models and partial projections. Its purpose is not to eliminate perspective but to make perspective, provenance, and transformation more explicit.</p>
+
+<h2 id="a-deliberately-small-holoflux-01">A deliberately small Holoflux 0.1</h2>
+
+<p>The architecture described in this post is intentionally broader than the first implementation should be.</p>
+
+<p>The first executable experiment can be much smaller:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Holoflux 0.1
+    ↓
+Ruby DSL
+    ↓
+Concepts · Relations · Fields · Groups
+    ↓
+Semantic Model
+    ↓
+Explication
+    ↓
+Mermaid Renderer
+</code></pre></div></div>
+
+<p>A domain might begin as simply as:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">holoflux</span> <span class="ss">:sdlc</span> <span class="k">do</span>
+  <span class="n">concept</span> <span class="ss">:planning</span><span class="p">,</span> <span class="ss">kind: :phase</span>
+  <span class="n">concept</span> <span class="ss">:development</span><span class="p">,</span> <span class="ss">kind: :phase</span>
+  <span class="n">concept</span> <span class="ss">:testing</span><span class="p">,</span> <span class="ss">kind: :phase</span>
+  <span class="n">concept</span> <span class="ss">:deployment</span><span class="p">,</span> <span class="ss">kind: :phase</span>
+  <span class="n">concept</span> <span class="ss">:production</span><span class="p">,</span> <span class="ss">kind: :environment</span>
+
+  <span class="n">relation</span> <span class="ss">:planning</span><span class="p">,</span> <span class="ss">:leads_to</span><span class="p">,</span> <span class="ss">:development</span>
+  <span class="n">relation</span> <span class="ss">:development</span><span class="p">,</span> <span class="ss">:is_validated_by</span><span class="p">,</span> <span class="ss">:testing</span>
+  <span class="n">relation</span> <span class="ss">:testing</span><span class="p">,</span> <span class="ss">:enables</span><span class="p">,</span> <span class="ss">:deployment</span>
+  <span class="n">relation</span> <span class="ss">:deployment</span><span class="p">,</span> <span class="ss">:changes</span><span class="p">,</span> <span class="ss">:production</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>and then unfold through:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sdlc</span><span class="p">.</span><span class="nf">explicate</span> <span class="ss">as: :mermaid</span>
+</code></pre></div></div>
+
+<p>No database is required for that experiment.</p>
+
+<p>No Rails application is required.</p>
+
+<p>RDF, RAG, AI, governance workflows, collaborative editing, and richer provenance can be introduced later if the core abstraction proves useful.</p>
+
+<p>This gives the experiment a falsifiable first question:</p>
+
+<blockquote>
+  <p><strong>Can the same small semantic core describe two very different domains and unfold both into useful visual forms without domain-specific hacks?</strong></p>
+</blockquote>
+
+<p>Krishnamurti provides a demanding conceptual domain.</p>
+
+<p>SDLC provides a technical and organizational domain.</p>
+
+<p>If both can be represented coherently through the same primitives, Holoflux has earned the right to become more ambitious.</p>
+
 <h2 id="what-would-make-the-experiment-useful">What would make the experiment useful?</h2>
 
-<p>The proposal is technically conceivable with existing components: domain-language techniques, LLM extraction, knowledge graphs, RAG, graph retrieval, runtime interfaces, Ruby, Mermaid, SVG, and interactive web visualization.</p>
+<p>The proposal is technically conceivable with existing components: Ruby internal DSLs, semantic models, graph structures, Mermaid, JSON, provenance metadata, RAG, LLM extraction, and interactive visualization.</p>
 
-<p>The unanswered question is not whether those components exist.</p>
+<p>But the first question is much smaller:</p>
 
-<p>It is whether <strong>the semantic layer improves understanding enough to justify itself</strong>.</p>
+<blockquote>
+  <p><strong>Does an explicit semantic layer improve understanding enough to justify its existence?</strong></p>
+</blockquote>
 
-<p>A useful v0.1 should therefore stay small:</p>
+<p>A useful v0.1 therefore does not need to implement the whole architecture.</p>
+
+<p>It only needs to:</p>
 
 <ol>
-  <li>define a minimal Holoflux language;</li>
-  <li>implement the Ruby reference runtime;</li>
-  <li>model one difficult domain: Krishnamurti;</li>
-  <li>model one very different domain: telecom;</li>
-  <li>support <code class="language-plaintext highlighter-rouge">explain</code>, <code class="language-plaintext highlighter-rouge">trace</code>, and <code class="language-plaintext highlighter-rouge">visualize</code>;</li>
-  <li>attach evidence to non-trivial relations;</li>
-  <li>compare the results with unconstrained LLM answers;</li>
-  <li>measure whether the structured version is easier to inspect, challenge, reuse, and visualize.</li>
+  <li>define a very small set of semantic primitives;</li>
+  <li>provide a readable Ruby DSL;</li>
+  <li>construct an implementation-independent semantic model;</li>
+  <li>support basic validation and traversal;</li>
+  <li>introduce <code class="language-plaintext highlighter-rouge">explicate</code>;</li>
+  <li>generate at least one useful Mermaid representation;</li>
+  <li>model two very different domains — Krishnamurti and SDLC;</li>
+  <li>expose where the abstraction works and where it breaks.</li>
 </ol>
 
-<p>If that works, the next step is not a larger prompt.</p>
+<p>Only after that should the experiment expand toward evidence stores, richer provenance, RAG, AI-assisted authoring, IOP, multiple runtimes, and visual editing.</p>
 
-<p>It is a real language specification.</p>
+<p>The next step is therefore deliberately practical:</p>
+
+<blockquote>
+  <p><strong>build the smallest Holoflux that can turn a Ruby domain description into a meaningful Mermaid explication.</strong></p>
+</blockquote>
+
+<p>That implementation deserves its own article rather than another layer of theory here.</p>
 
 <h2 id="final-thought">Final thought</h2>
 
@@ -957,6 +1047,16 @@ Holoflux ← semantic graph ← visual editing
 <p>A visual language is a map.</p>
 
 <p>The value of Holoflux would be in making those maps explicit, grounded, revisable, and capable of leading us back to the territory.</p>
+
+<p>The conceptual work can stop here.</p>
+
+<p>The next question is executable:</p>
+
+<blockquote>
+  <p><strong>Can a small Ruby implementation describe a domain once and unfold it into useful explicate forms?</strong></p>
+</blockquote>
+
+<p>That is where the next post begins: <strong>building Holoflux 0.1 in Ruby, from domain DSL to Mermaid.</strong></p>
 
 <h2 id="references">References</h2>
 
