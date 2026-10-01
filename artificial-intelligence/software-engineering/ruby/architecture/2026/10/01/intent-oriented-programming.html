@@ -121,6 +121,7 @@ Feedback
   <li><a href="#why-ruby-is-an-unusually-good-laboratory">Why Ruby is an unusually good laboratory</a></li>
   <li><a href="#rails-after-convention-over-configuration">Rails after convention over configuration</a></li>
   <li><a href="#intent-does-not-replace-objects">Intent does not replace objects</a></li>
+  <li><a href="#where-holoflux-fits">Where Holoflux fits</a></li>
   <li><a href="#a-small-executable-experiment">A small executable experiment</a></li>
   <li><a href="#the-deeper-responsibility">The deeper responsibility</a></li>
   <li><a href="#conclusion">Conclusion</a></li>
@@ -707,6 +708,64 @@ Runtime
 
 <p>The prompt is transient.</p>
 
+<h2 id="where-holoflux-fits">Where Holoflux fits</h2>
+
+<p>A later development of this idea makes the semantic layer underneath intent more explicit.</p>
+
+<p><a href="/artificial-intelligence/software-engineering/ruby/visual-learning/philosophy/2026/10/01/holoflux-a-semantic-and-visual-language.html">Holoflux</a> does <strong>not</strong> replace Intent-Oriented Programming. The two ideas operate at different levels.</p>
+
+<p>Intent-Oriented Programming remains the <strong>programming paradigm</strong>: it proposes <code class="language-plaintext highlighter-rouge">intent</code> as a first-class computational unit that carries goals, constraints, evidence, delegation, verification, observation, and revision.</p>
+
+<p>Holoflux provides the <strong>semantic substrate</strong> in which that intent can be interpreted and acted upon. It makes explicit the concepts, relations, contexts, constraints, evidence, and movements that give an intent meaning beyond the latest prompt.</p>
+
+<p>The relationship can be summarized as:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OOP       → organizes computation around objects
+FP        → organizes computation around functions
+IOP       → organizes computation around intent
+Holoflux  → provides the semantic space in which intent operates
+</code></pre></div></div>
+
+<p>That distinction matters because an intent should not invent the meaning of the domain every time it executes. It should navigate a structured semantic environment, select relevant evidence, coordinate action, and remain open to correction by observation.</p>
+
+<p>There are at least two useful modes of intent:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Epistemic intent
+    ↓
+understand · explain · compare · visualize
+    ↓
+explication
+
+Operational intent
+    ↓
+change · create · migrate · optimize · deploy
+    ↓
+execution
+</code></pre></div></div>
+
+<p>The first produces explicate forms such as prose, diagrams, maps, or visual language. The second produces changes in the computational world through agents, tools, code, infrastructure, and runtime actions.</p>
+
+<p>Both return evidence to the semantic model.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Human intent
+    ↓
+Intent-Oriented Programming
+    ↓
+Holoflux semantic space
+    ↓
+Explication / Execution
+    ↓
+Artifact or changed world
+    ↓
+Observation + evidence
+    ↓
+Revised semantic model
+    ↓
+Revised intent
+</code></pre></div></div>
+
+<p>This strengthens the original proposal rather than narrowing it. IOP remains the paradigm that organizes computation around intent; Holoflux explains the semantic environment that makes such intent durable, inspectable, and revisable.</p>
+
 <h2 id="a-small-executable-experiment">A small executable experiment</h2>
 
 <p>The companion package includes a small dependency-free Ruby prototype that tests this idea.</p>
@@ -864,6 +923,10 @@ feedback
   <li>
     <p><strong>Previous post — <em>Below Intent: The Semantic Infrastructure of Agentic Software Engineering</em></strong><br>
 <a href="/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html">/artificial-intelligence/software-engineering/architecture/ruby/2026/10/01/below-intent-semantic-infrastructure.html</a></p>
+  </li>
+  <li>
+    <p><strong>Related post — <em>Holoflux: A Semantic and Visual Language</em></strong><br>
+<a href="/artificial-intelligence/software-engineering/ruby/visual-learning/philosophy/2026/10/01/holoflux-a-semantic-and-visual-language.html">/artificial-intelligence/software-engineering/ruby/visual-learning/philosophy/2026/10/01/holoflux-a-semantic-and-visual-language.html</a></p>
   </li>
   <li>
     <p><strong>Previous post — <em>Ruby in the Age of AI</em></strong><br>
