@@ -146,7 +146,7 @@ what we learned afterward
 
 <p>That is only partly true.</p>
 
-<p>Valim’s argument is more subtle. If agents are less sensitive to boilerplate and typing ergonomics, then optimizing a language primarily for the act of typing may become less strategically important. But languages still encode semantics, constraints, execution models, locality, and guarantees. Those properties may become <strong>more important</strong>, not less, when humans no longer inspect every generated line.</p>
+<p><a href="https://dashbit.co/blog/evolving-ai-era" target="_blank" rel="noopener noreferrer">José Valim argues</a> that AI may make typing ergonomics less strategically important. But languages still encode semantics, constraints, execution models, locality, and guarantees. Those properties may become <strong>more important</strong>, not less, when humans no longer inspect every generated line.</p>
 
 <p>The design question changes from:</p>
 
@@ -233,7 +233,7 @@ Which incident produced the feedback that changed the requirement?
 
 <h2 id="from-source-code-to-a-program-database">From source code to a program database</h2>
 
-<p>Valim proposes an important shift for agentic tooling.</p>
+<p>Agentic tooling invites an important shift.</p>
 
 <p>Traditional IDE interfaces are shaped around how humans browse software: files, lines, columns, symbols, “go to definition.” Language servers already know much more than the interface exposes: references, call graphs, types, and sometimes data-flow relationships.</p>
 
@@ -294,7 +294,7 @@ open classes
 dynamic dispatch
 </code></pre></div></div>
 
-<p>Valim explicitly calls out locality as important for agentic tooling. If behavior can be changed from far away, even a good program database has more work to do.</p>
+<p>Locality is important for agentic tooling. If behavior can be changed from far away, even a good program database has more work to do.</p>
 
 <p>So the opportunity for Ruby is not simply:</p>
 
@@ -478,7 +478,7 @@ hypothesis
 verification
 </code></pre></div></div>
 
-<p>Valim points to the BEAM as an example of a runtime already rich in introspectable concepts: processes, supervisors, sockets, ETS tables, applications, and message queues.</p>
+<p>The BEAM is an example of a runtime already rich in introspectable concepts: processes, supervisors, sockets, ETS tables, applications, and message queues.</p>
 
 <p>That does not make Elixir automatically “the AI language.”</p>
 
@@ -696,7 +696,7 @@ Which incidents changed our understanding of it?
 
 <p>We need systems that preserve what the implementation means.</p>
 
-<p>José Valim’s program database and runtime-observability ideas point toward better interfaces for coding agents.</p>
+<p>Program databases and runtime observability point toward better interfaces for coding agents.</p>
 
 <p>The SDLC expands the problem further: agents need product intent, architecture, code semantics, policy, verification evidence, deployment history, runtime state, incidents, and feedback to remain connected.</p>
 
@@ -740,14 +740,7 @@ Which incidents changed our understanding of it?
   <p><strong>It should produce both behavior and understanding.</strong></p>
 </blockquote>
 
-<p>Seen in retrospect, this post identifies the semantic layer before giving it a complete architecture. The next step is <a href="/artificial-intelligence/software-engineering/ruby/architecture/2026/10/01/intent-oriented-programming.html">Intent-Oriented Programming</a>, which treats intent as a first-class computational unit. <a href="/artificial-intelligence/software-engineering/ruby/visual-learning/philosophy/2026/10/01/holoflux-a-semantic-and-visual-language.html">Holoflux</a> then makes the underlying semantic substrate more explicit: a governed space of concepts, relations, constraints, contexts, evidence, and movement in which intent can be interpreted, executed, observed, and revised.</p>
-
-<p>The progression is therefore not a replacement of this proposal, but a refinement of it:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Below Intent                 → discovers the missing semantic layer
-Intent-Oriented Programming → defines intent as a computational unit
-Holoflux                     → defines the semantic substrate in which intent operates
-</code></pre></div></div>
+<p>Seen in retrospect, this post identifies the semantic layer before giving it a complete architecture.</p>
 
 <h2 id="support-material">Support material</h2>
 
