@@ -1,653 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-02T09:37:55+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Ruby in the Age of AI</title><link href="https://enogrob.github.io/ruby/artificial-intelligence/software-engineering/architecture/2026/10/01/ruby-in-the-age-of-ai.html" rel="alternate" type="text/html" title="Ruby in the Age of AI" /><published>2026-10-01T01:00:00+00:00</published><updated>2026-10-01T01:00:00+00:00</updated><id>https://enogrob.github.io/ruby/artificial-intelligence/software-engineering/architecture/2026/10/01/ruby-in-the-age-of-ai</id><content type="html" xml:base="https://enogrob.github.io/ruby/artificial-intelligence/software-engineering/architecture/2026/10/01/ruby-in-the-age-of-ai.html"><![CDATA[<div class="post-visual post-cover">
-  <img src="/assets/images/posts/ruby-in-the-age-of-ai/cover.webp" alt="Ruby in the Age of AI — Ruby DSLs and metaprogramming bridging Rails and AI-native software" loading="eager" />
-</div>
-
-<blockquote>
-  <p><strong>From Rails world to the age of AI.</strong> Ruby’s next opportunity may not be to become the language AI models are implemented in. It may be to become one of the best languages for creating the languages through which humans and AI describe, generate, and orchestrate software.</p>
-</blockquote>
-
-<p>Ruby has been here before.</p>
-
-<p>When Rails appeared, Ruby did not suddenly become closer to HTTP internals, SQL, sockets, or browser rendering. Something more interesting happened: Ruby made it possible to create a <strong>language closer to the Web domain</strong>.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resources</span> <span class="ss">:orders</span>
-
-<span class="k">class</span> <span class="nc">Customer</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
-  <span class="n">has_many</span> <span class="ss">:orders</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">has_many :orders</code> is technically a Ruby method call. But that is not how a Rails developer experiences it. It reads like a statement about the domain.</p>
-
-<p>Rails took infrastructure and transformed it into vocabulary.</p>
-
-<p>That ability—supported by blocks, symbols, closures, introspection, open classes, and metaprogramming—became one of Ruby’s defining strengths.</p>
-
-<p>And the age of AI may be creating another moment where that matters.</p>
-
-<h2 id="contents">Contents</h2>
-
-<ol>
-  <li><a href="#ruby-already-did-this-once">Ruby already did this once</a></li>
-  <li><a href="#ai-currently-exposes-too-much-infrastructure">AI currently exposes too much infrastructure</a></li>
-  <li><a href="#from-infrastructure-to-language">From infrastructure to language</a></li>
-  <li><a href="#why-ruby-dsls-are-different">Why Ruby DSLs are different</a></li>
-  <li><a href="#metaprogramming-turns-vocabulary-into-behavior">Metaprogramming turns vocabulary into behavior</a></li>
-  <li><a href="#what-an-ai-native-ruby-dsl-could-look-like">What an AI-native Ruby DSL could look like</a></li>
-  <li><a href="#the-sdlc-as-a-program">The SDLC as a program</a></li>
-  <li><a href="#agents-as-first-class-language-concepts">Agents as first-class language concepts</a></li>
-  <li><a href="#from-dsl-to-a-real-system">From DSL to a real system</a></li>
-  <li><a href="#a-tiny-executable-prototype">A tiny executable prototype</a></li>
-  <li><a href="#try-it-in-60-seconds">Try it in 60 seconds</a></li>
-  <li><a href="#ruby-as-a-semantic-layer">Ruby as a semantic layer</a></li>
-  <li><a href="#one-declaration-many-projections">One declaration, many projections</a></li>
-  <li><a href="#what-comes-next">What comes next</a></li>
-</ol>
-
-<h2 id="ruby-already-did-this-once">Ruby already did this once</h2>
-
-<p>The current Rails Guides still describe Active Record associations as <strong>macro-style calls</strong>: concise declarations such as <code class="language-plaintext highlighter-rouge">has_many :comments</code> that generate or modify behavior at runtime.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Author</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
-  <span class="n">has_many</span> <span class="ss">:books</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>Conceptually, Rails changes the level at which the developer works:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DOMAIN INTENT
-Author has many Books
-        ↓
-RUBY / RAILS DSL
-has_many :books
-        ↓
-FRAMEWORK
-associations · queries · methods · persistence behavior
-</code></pre></div></div>
-
-<p>The DSL does not merely save keystrokes. It changes <strong>what the program says</strong>.</p>
-
-<p>That leads to the question behind this post:</p>
-
-<blockquote>
-  <p><strong>If Rails made Ruby feel native to the Web, could DSLs make Ruby feel native to AI?</strong></p>
-</blockquote>
-
-<h3 id="rails-world--ai-native-ruby">Rails world → AI-native Ruby</h3>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IExSXG5zdWJncmFwaCBSV1tcIvCfjJAgUmFpbHMgd29ybGRcIl1cbmRpcmVjdGlvbiBMUlxuSTFbXCLwn5KhIERvbWFpbiBpbnRlbnRcIl06OjppbnRlbnQgLS0-IEQxW1wi8J-SjiBSdWJ5IERTTFwiXTo6OnJ1YnkgLS0-IE0xW1wi4pqZ77iPIE1ldGFwcm9ncmFtbWluZ1wiXTo6OmVuZ2luZSAtLT4gVzFbXCLwn5W477iPIFdlYiBiZWhhdmlvclwiXTo6OnJlc3VsdFxuZW5kXG4lJS1cbnN1YmdyYXBoIEFXW1wi8J-kliBBSS1uYXRpdmUgd29ybGRcIl1cbmRpcmVjdGlvbiBMUlxuSTJbXCLwn6egIEh1bWFuIGludGVudFwiXTo6OmludGVudCAtLT4gRDJbXCLwn5KOIFJ1YnkgRFNMXCJdOjo6cnVieSAtLT4gTTJbXCLimpnvuI8gTWV0YXByb2dyYW1taW5nXCJdOjo6ZW5naW5lIC0tPiBBMltcIvCfpJYgQWdlbnRzXFxu8J-TmiBLbm93bGVkZ2VcXG7wn5SnIFRvb2xzXFxu8J-boe-4jyBQb2xpY2llc1xcbuKWtu-4jyBSdW50aW1lXCJdOjo6cmVzdWx0XG5lbmRcbiUlLVxuY2xhc3NEZWYgaW50ZW50IGZpbGw6I0ZGRjFCRixzdHJva2U6I0M1OUIyMCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIHJ1YnkgZmlsbDojRjhERkM0LHN0cm9rZTojQzk3QTQwLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgZW5naW5lIGZpbGw6I0U4RERGNSxzdHJva2U6IzhCNkRCMSxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIHJlc3VsdCBmaWxsOiNEREYzRUEsc3Ryb2tlOiM1RjlEODYsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MS41cHg7XG5saW5rU3R5bGUgZGVmYXVsdCBzdHJva2U6IzZGNzM3NyxzdHJva2Utd2lkdGg6MS41cHg7IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0" /></p>
-
-<h2 id="ai-currently-exposes-too-much-infrastructure">AI currently exposes too much infrastructure</h2>
-
-<p>Building AI-native software today quickly introduces a growing vocabulary:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Prompts · Context · Tools · MCP · RAG · Memory
-Agents · Skills · Instructions · Guardrails
-Handoffs · Workflows · Tracing · Evaluation
-</code></pre></div></div>
-
-<p>These are valuable primitives, but applications often have to assemble them explicitly. We are still close to the infrastructure layer.</p>
-
-<p>Rails faced a related problem in another domain. Its answer was not to remove HTTP or SQL. It created a language closer to what developers were trying to express.</p>
-
-<figure class="post-visual">
-  <img src="/assets/images/posts/ruby-in-the-age-of-ai/infrastructure-to-language.webp" alt="From Infrastructure to Language — Ruby DSL compressing AI infrastructure into higher-level intent" loading="lazy" />
-  <figcaption>From Infrastructure to Language — a Ruby DSL turns AI building blocks into domain vocabulary.</figcaption>
-</figure>
-
-<h2 id="from-infrastructure-to-language">From infrastructure to language</h2>
-
-<p>Imagine expressing the domain directly:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="ss">:support_expert</span> <span class="k">do</span>
-  <span class="n">goal</span> <span class="s2">"Resolve customer issues"</span>
-
-  <span class="n">knows</span> <span class="ss">:product</span><span class="p">,</span>
-        <span class="ss">:support_history</span>
-
-  <span class="n">uses</span> <span class="ss">:github</span><span class="p">,</span>
-       <span class="ss">:ticketing</span><span class="p">,</span>
-       <span class="ss">:knowledge_base</span>
-
-  <span class="n">remembers</span> <span class="ss">:conversation</span>
-  <span class="n">follows</span> <span class="ss">:support_policy</span>
-
-  <span class="n">hands_off_to</span> <span class="ss">:human_support</span><span class="p">,</span>
-               <span class="ss">when: :confidence_is_low</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>The interesting part is not that the syntax is pleasant. The interesting part is what those words can mean.</p>
-
-<p><code class="language-plaintext highlighter-rouge">knows :product</code> could expand into retrieval, access policy, context assembly, observability, and provenance. <code class="language-plaintext highlighter-rouge">uses :github</code> could expand into tool registration, permission checks, schemas, and runtime bindings. <code class="language-plaintext highlighter-rouge">hands_off_to</code> could become orchestration behavior.</p>
-
-<p>The language expresses <strong>semantic intention</strong>. The framework decides how that intention becomes machinery.</p>
-
-<h2 id="why-ruby-dsls-are-different">Why Ruby DSLs are different</h2>
-
-<p>We could represent an agent with YAML:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">agent</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">discovery</span>
-  <span class="na">knowledge</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">product</span>
-  <span class="na">tools</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">github</span>
-  <span class="na">output</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">discovery_report</span>
-</code></pre></div></div>
-
-<p>That is structured and useful. Ruby can go further:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="ss">:discovery</span> <span class="k">do</span>
-  <span class="n">knows</span> <span class="ss">:product</span>
-  <span class="n">uses</span> <span class="ss">:github</span>
-  <span class="n">produces</span> <span class="ss">:discovery_report</span>
-
-  <span class="k">when</span> <span class="n">confidence</span> <span class="o">&lt;</span> <span class="mf">0.70</span> <span class="k">do</span>
-    <span class="n">request_more_evidence</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>The same artifact can be configuration, model, policy, specification, executable program, and extension point.</p>
-
-<p>That matters because the AI domain is not stable. Its vocabulary is still evolving. Ruby lets the language evolve with the domain.</p>
-
-<h2 id="metaprogramming-turns-vocabulary-into-behavior">Metaprogramming turns vocabulary into behavior</h2>
-
-<p>Consider again:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">has_many</span> <span class="ss">:orders</span>
-</code></pre></div></div>
-
-<p>Rails can make this tiny declaration create methods, queries, relationships, and conventions around an association.</p>
-
-<p>An AI-native DSL could do the same with a declaration such as:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="ss">:architect</span> <span class="k">do</span>
-  <span class="n">knows</span> <span class="ss">:architecture</span>
-  <span class="n">produces</span> <span class="ss">:adr</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>A framework could expand it into:</p>
-
-<ul>
-  <li>an agent definition;</li>
-  <li>input and output contracts;</li>
-  <li>knowledge bindings;</li>
-  <li>retrieval configuration;</li>
-  <li>tool permissions;</li>
-  <li>prompts and context;</li>
-  <li>observability and tracing;</li>
-  <li>documentation;</li>
-  <li>a node in an orchestration graph.</li>
-</ul>
-
-<p>That is the deeper role of metaprogramming here:</p>
-
-<blockquote>
-  <p><strong>Turning domain vocabulary into executable behavior.</strong></p>
-</blockquote>
-
-<figure class="post-visual">
-  <img src="/assets/images/posts/ruby-in-the-age-of-ai/metaprogramming-as-a-multiplier.webp" alt="Metaprogramming as a Multiplier — a small Ruby declaration expanding into runtime, knowledge, policies, tracing, orchestration, documentation, and graph behavior" loading="lazy" />
-  <figcaption>Metaprogramming as a Multiplier — a small declaration expands into executable system behavior.</figcaption>
-</figure>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IExSXG5zdWJncmFwaCBTMVtcIvCfjq8gRG9tYWluIGludGVudFwiXVxuSVtcIvCfp6AgSW50ZW50PGJyLz5hZ2VudCA6YXJjaGl0ZWN0XCJdOjo6aW50ZW50XG5lbmRcbiUlLVxuc3ViZ3JhcGggUzJbXCLwn5KOIFJ1YnkgbGFuZ3VhZ2UgbGF5ZXJcIl1cbkRbXCLwn5KOIFJ1YnkgRFNMXCJdOjo6cnVieVxuTVtcIuKame-4jyBNZXRhcHJvZ3JhbW1pbmdcIl06OjplbmdpbmVcbkQgLS0-IE1cbmVuZFxuJSUtXG5zdWJncmFwaCBTM1tcIvCfjJAgR2VuZXJhdGVkIHN5c3RlbVwiXVxuQVtcIvCfpJYgQWdlbnQgcnVudGltZVwiXTo6OmFnZW50XG5LW1wi8J-TmiBLbm93bGVkZ2UgYmluZGluZ1wiXTo6Omtub3dsZWRnZVxuVFtcIvCflKcgVG9vbCBiaW5kaW5nc1wiXTo6OnRvb2xcblBbXCLwn5uh77iPIFBvbGljaWVzXCJdOjo6cG9saWN5XG5PW1wi8J-UgCBPcmNoZXN0cmF0aW9uXCJdOjo6Zmxvd1xuWFtcIvCfk4QgR2VuZXJhdGVkIGFydGlmYWN0c1wiXTo6OmFydGlmYWN0XG5lbmRcbiUlLVxuSSAtLT4gRFxuTSAtLT4gQVxuTSAtLT4gS1xuTSAtLT4gVFxuTSAtLT4gUFxuTSAtLT4gT1xuTSAtLT4gWFxuJSUtXG5jbGFzc0RlZiBpbnRlbnQgZmlsbDojRkZGMUJGLHN0cm9rZTojQzU5QjIwLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgcnVieSBmaWxsOiNGOERGQzQsc3Ryb2tlOiNDOTdBNDAsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiBlbmdpbmUgZmlsbDojRThEREY1LHN0cm9rZTojOEI2REIxLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgYWdlbnQgZmlsbDojRDlFQUY3LHN0cm9rZTojNUU4RkI4LGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYga25vd2xlZGdlIGZpbGw6I0RERjNFQSxzdHJva2U6IzVGOUQ4Nixjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIHRvb2wgZmlsbDojRDlFQUY3LHN0cm9rZTojNUU4RkI4LGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgcG9saWN5IGZpbGw6I0RDRUZENixzdHJva2U6IzZEOUU2Myxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIGZsb3cgZmlsbDojRThEREY1LHN0cm9rZTojOEI2REIxLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgYXJ0aWZhY3QgZmlsbDojRkZGMUJGLHN0cm9rZTojQzU5QjIwLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xubGlua1N0eWxlIGRlZmF1bHQgc3Ryb2tlOiM2RjczNzcsc3Ryb2tlLXdpZHRoOjEuNXB4OyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-<p>The direction matters:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intent → vocabulary → Ruby DSL → metaprogramming → infrastructure
-</code></pre></div></div>
-
-<p>not the other way around.</p>
-
-<h2 id="what-an-ai-native-ruby-dsl-could-look-like">What an AI-native Ruby DSL could look like</h2>
-
-<p>A first vocabulary might be surprisingly small:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">AI</span><span class="p">.</span><span class="nf">define</span> <span class="k">do</span>
-  <span class="n">agent</span> <span class="ss">:discovery</span> <span class="k">do</span>
-    <span class="n">goal</span> <span class="s2">"Understand the problem before proposing solutions"</span>
-
-    <span class="n">observes</span> <span class="ss">:customer_interviews</span><span class="p">,</span>
-             <span class="ss">:support_tickets</span><span class="p">,</span>
-             <span class="ss">:roadmap</span>
-
-    <span class="n">knows</span> <span class="ss">:product</span><span class="p">,</span>
-          <span class="ss">:architecture</span>
-
-    <span class="n">distinguishes</span> <span class="ss">:evidence</span><span class="p">,</span>
-                  <span class="ss">:inference</span><span class="p">,</span>
-                  <span class="ss">:unknowns</span>
-
-    <span class="n">uses</span> <span class="ss">:github</span><span class="p">,</span>
-         <span class="ss">:rag</span>
-
-    <span class="n">produces</span> <span class="ss">:discovery_report</span>
-    <span class="n">hands_off_to</span> <span class="ss">:planning</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>Notice what is missing: embedding dimensions, vector-database details, HTTP schemas, token budgets, and low-level runtime configuration.</p>
-
-<p>Those concerns do not disappear. They move <strong>below the semantic layer</strong>, just as SQL does not disappear when Rails says <code class="language-plaintext highlighter-rouge">has_many :orders</code>.</p>
-
-<h2 id="the-sdlc-as-a-program">The SDLC as a program</h2>
-
-<p>This becomes more interesting when applied to the whole software lifecycle.</p>
-
-<p>The earlier <em>AI Across the SDLC</em> map already gives us the domain vocabulary: <a href="https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/29/ai-across-the-sdlc-with-github-copilot.html">AI Across the SDLC with GitHub Copilot</a>. We can now make that lifecycle explicit:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sdlc</span> <span class="s2">"CaseFlow"</span> <span class="k">do</span>
-  <span class="n">discovery</span> <span class="k">do</span>
-    <span class="n">sources</span> <span class="ss">:customer_interviews</span><span class="p">,</span>
-            <span class="ss">:support_tickets</span><span class="p">,</span>
-            <span class="ss">:roadmap</span><span class="p">,</span>
-            <span class="ss">:architecture_docs</span>
-
-    <span class="n">distinguish</span> <span class="ss">:evidence</span><span class="p">,</span>
-                <span class="ss">:inference</span><span class="p">,</span>
-                <span class="ss">:unknowns</span>
-
-    <span class="n">produce</span> <span class="ss">:discovery_report</span>
-  <span class="k">end</span>
-
-  <span class="n">planning</span> <span class="k">do</span>
-    <span class="n">consume</span> <span class="ss">:discovery_report</span>
-    <span class="n">produce</span> <span class="ss">:prioritized_backlog</span><span class="p">,</span>
-            <span class="ss">:acceptance_criteria</span>
-  <span class="k">end</span>
-
-  <span class="n">architecture</span> <span class="k">do</span>
-    <span class="n">consume</span> <span class="ss">:discovery_report</span>
-    <span class="n">produce</span> <span class="ss">:adr</span><span class="p">,</span>
-            <span class="ss">:component_map</span><span class="p">,</span>
-            <span class="ss">:api_contract</span>
-  <span class="k">end</span>
-
-  <span class="n">development</span> <span class="k">do</span>
-    <span class="n">implement</span> <span class="ss">:approved_architecture</span>
-  <span class="k">end</span>
-
-  <span class="n">testing</span> <span class="k">do</span>
-    <span class="n">verify</span> <span class="ss">:business_rules</span><span class="p">,</span>
-           <span class="ss">:integrations</span><span class="p">,</span>
-           <span class="ss">:critical_flows</span>
-  <span class="k">end</span>
-
-  <span class="n">review</span> <span class="k">do</span>
-    <span class="n">verify</span> <span class="ss">:quality</span><span class="p">,</span>
-           <span class="ss">:security</span><span class="p">,</span>
-           <span class="ss">:compliance</span>
-  <span class="k">end</span>
-
-  <span class="n">release</span> <span class="k">do</span>
-    <span class="n">require_all</span> <span class="ss">:passing_tests</span><span class="p">,</span>
-                <span class="ss">:approved_review</span>
-    <span class="n">deploy</span> <span class="ss">:production</span>
-  <span class="k">end</span>
-
-  <span class="n">production</span> <span class="k">do</span>
-    <span class="n">observe</span> <span class="ss">:metrics</span><span class="p">,</span>
-            <span class="ss">:logs</span><span class="p">,</span>
-            <span class="ss">:traces</span><span class="p">,</span>
-            <span class="ss">:events</span>
-  <span class="k">end</span>
-
-  <span class="n">feedback</span> <span class="k">do</span>
-    <span class="n">learn_from</span> <span class="ss">:customers</span><span class="p">,</span>
-               <span class="ss">:usage</span><span class="p">,</span>
-               <span class="ss">:incidents</span>
-    <span class="n">feed_into</span> <span class="ss">:discovery</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>Now the lifecycle is no longer only documentation. It is a model the machine can inspect, validate, transform, visualize, and potentially execute.</p>
-
-<figure class="post-visual">
-  <img src="/assets/images/posts/ruby-in-the-age-of-ai/sdlc-as-a-program.webp" alt="The SDLC as a Program — Discovery through Feedback expressed and orchestrated in Ruby" loading="lazy" />
-  <figcaption>The SDLC as a Program — describing, generating, and orchestrating the lifecycle in Ruby.</figcaption>
-</figure>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IFRCXG5zdWJncmFwaCBTSEFQRVtcIvCfp60gU2hhcGUgdGhlIHdvcmtcIl1cbmRpcmVjdGlvbiBMUlxuRFtcIvCflI4gRGlzY292ZXJ5XCJdOjo6ZGlzY292ZXIgLS0-IFBbXCLwn5OLIFBsYW5uaW5nXCJdOjo6cGxhbiAtLT4gQVtcIvCfj5fvuI8gQXJjaGl0ZWN0dXJlXCJdOjo6YXJjaGl0ZWN0dXJlXG5lbmRcbiUlLVxuc3ViZ3JhcGggQlVJTERbXCLwn5ug77iPIEJ1aWxkIGFuZCBhc3N1cmVcIl1cbmRpcmVjdGlvbiBMUlxuREVWW1wi8J-SuyBEZXZlbG9wbWVudFwiXTo6OmRldmVsb3BtZW50IC0tPiBUW1wi8J-nqiBUZXN0aW5nXCJdOjo6cXVhbGl0eSAtLT4gUltcIvCflI0gUmV2aWV3XCJdOjo6cXVhbGl0eVxuZW5kXG4lJS1cbnN1YmdyYXBoIE9QRVJBVEVbXCLwn4yQIERlbGl2ZXIgYW5kIGxlYXJuXCJdXG5kaXJlY3Rpb24gTFJcblJFTFtcIvCfmoAgUmVsZWFzZVwiXTo6OnJlbGVhc2UgLS0-IFBST0RbXCLwn5OKIFByb2R1Y3Rpb25cIl06Ojpwcm9kdWN0aW9uIC0tPiBGW1wi8J-UgSBGZWVkYmFja1wiXTo6OmZlZWRiYWNrXG5lbmRcbiUlLVxuQSAtLT4gREVWXG5SIC0tPiBSRUxcbkYgLS4gXCJjb250aW51b3VzIGxlYXJuaW5nXCIgLi0-IERcbiUlLVxuY2xhc3NEZWYgZGlzY292ZXIgZmlsbDojRDlFQUY3LHN0cm9rZTojNUU4RkI4LGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgcGxhbiBmaWxsOiNFOERERjUsc3Ryb2tlOiM4QjZEQjEsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiBhcmNoaXRlY3R1cmUgZmlsbDojRkZGMUJGLHN0cm9rZTojQzU5QjIwLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgZGV2ZWxvcG1lbnQgZmlsbDojRERGM0VBLHN0cm9rZTojNUY5RDg2LGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgcXVhbGl0eSBmaWxsOiNEOUVBRjcsc3Ryb2tlOiM1RThGQjgsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiByZWxlYXNlIGZpbGw6I0Y4REZDNCxzdHJva2U6I0M5N0E0MCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIHByb2R1Y3Rpb24gZmlsbDojRENFRkQ2LHN0cm9rZTojNkQ5RTYzLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgZmVlZGJhY2sgZmlsbDojRkZGMUJGLHN0cm9rZTojQzU5QjIwLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xubGlua1N0eWxlIGRlZmF1bHQgc3Ryb2tlOiM2RjczNzcsc3Ryb2tlLXdpZHRoOjEuNXB4OyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-<p>The DSL can express more than a sequence. It can encode conditions, concurrency, gates, and organizational policy.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">after</span> <span class="ss">:development</span> <span class="k">do</span>
-  <span class="n">parallel</span> <span class="k">do</span>
-    <span class="n">run</span> <span class="ss">:testing</span>
-    <span class="n">run</span> <span class="ss">:security_review</span>
-    <span class="n">run</span> <span class="ss">:documentation</span>
-  <span class="k">end</span>
-
-  <span class="n">converge_at</span> <span class="ss">:release_readiness</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">policy</span> <span class="ss">:production_change</span> <span class="k">do</span>
-  <span class="nb">require</span> <span class="ss">:tests</span>
-  <span class="nb">require</span> <span class="ss">:security_review</span>
-  <span class="n">require_human_approval</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<h2 id="agents-as-first-class-language-concepts">Agents as first-class language concepts</h2>
-
-<p>An agent can become a native concept rather than a pile of configuration:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="ss">:discovery</span> <span class="k">do</span>
-  <span class="n">phase</span> <span class="ss">:discovery</span>
-  <span class="n">knows</span> <span class="ss">:product</span><span class="p">,</span> <span class="ss">:customer_context</span>
-  <span class="n">skills</span> <span class="ss">:product_discovery</span>
-  <span class="n">uses</span> <span class="ss">:github</span>
-  <span class="n">produces</span> <span class="ss">:discovery_report</span>
-  <span class="n">hands_off_to</span> <span class="ss">:planning</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>GitHub Copilot already supports custom agents as Markdown-based agent profiles that can specify prompts, tools, and MCP servers. Agent Skills package instructions, scripts, and other resources in reusable skill directories that Copilot can load for specialized tasks.</p>
-
-<p>That makes Copilot a useful <strong>target platform</strong>, but the Ruby DSL should sit above any one provider.</p>
-
-<p>A declaration such as:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="ss">:discovery</span> <span class="k">do</span>
-  <span class="n">skills</span> <span class="ss">:product_discovery</span>
-  <span class="n">tools</span> <span class="ss">:github</span>
-  <span class="n">knowledge</span> <span class="ss">:product_docs</span>
-  <span class="n">produces</span> <span class="ss">:discovery_report</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>could be compiled into platform-specific artifacts:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.github/
-├── agents/
-│   └── discovery.agent.md
-├── skills/
-│   └── product-discovery/
-│       └── SKILL.md
-└── instructions/
-    └── discovery.instructions.md
-</code></pre></div></div>
-
-<p>And agents can form a graph:</p>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IFRCXG5zdWJncmFwaCBESVNDT1ZFUltcIvCfp60gVW5kZXJzdGFuZCBhbmQgZGVzaWduXCJdXG5kaXJlY3Rpb24gTFJcbkRBW1wi8J-kliBEaXNjb3ZlcnkgQWdlbnRcIl06OjphZ2VudCAtLT4gUEFbXCLwn6SWIFBsYW5uaW5nIEFnZW50XCJdOjo6YWdlbnQgLS0-IEFBW1wi8J-kliBBcmNoaXRlY3R1cmUgQWdlbnRcIl06OjphZ2VudFxuZW5kXG4lJS1cbnN1YmdyYXBoIEJVSUxEW1wi8J-boO-4jyBCdWlsZFwiXVxuREVWW1wi8J-kliBEZXZlbG9wbWVudCBBZ2VudFwiXTo6OmJ1aWxkXG5lbmRcbiUlLVxuc3ViZ3JhcGggQVNTVVJFW1wi4pyFIEFzc3VyZSBpbiBwYXJhbGxlbFwiXVxuZGlyZWN0aW9uIExSXG5RQVtcIvCfp6ogUXVhbGl0eSBBZ2VudFwiXTo6OnF1YWxpdHlcblNBW1wi8J-boe-4jyBTZWN1cml0eSBBZ2VudFwiXTo6OnNlY3VyaXR5XG5ET0NbXCLwn5OaIERvY3VtZW50YXRpb24gQWdlbnRcIl06Ojpkb2NzXG5lbmRcbiUlLVxuc3ViZ3JhcGggREVMSVZFUltcIvCfmoAgRGVsaXZlciBhbmQgbGVhcm5cIl1cbmRpcmVjdGlvbiBMUlxuR1tcIvCfmqYgUmVsZWFzZSBHYXRlXCJdOjo6Z2F0ZSAtLT4gUkFbXCLwn6SWIFJlbGVhc2UgQWdlbnRcIl06OjpyZWxlYXNlIC0tPiBPQVtcIvCfk4ogT3BlcmF0aW9ucyBBZ2VudFwiXTo6Om9wZXJhdGlvbnMgLS0-IEZBW1wi8J-UgSBGZWVkYmFjayBBZ2VudFwiXTo6OmZlZWRiYWNrXG5lbmRcbiUlLVxuQUEgLS0-IERFVlxuREVWIC0tPiBRQVxuREVWIC0tPiBTQVxuREVWIC0tPiBET0NcblFBIC0tPiBHXG5TQSAtLT4gR1xuRE9DIC0tPiBHXG5GQSAtLiBcIm5ldyBldmlkZW5jZVwiIC4tPiBEQVxuJSUtXG5jbGFzc0RlZiBhZ2VudCBmaWxsOiNEOUVBRjcsc3Ryb2tlOiM1RThGQjgsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiBidWlsZCBmaWxsOiNEREYzRUEsc3Ryb2tlOiM1RjlEODYsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiBxdWFsaXR5IGZpbGw6I0ZGRjFCRixzdHJva2U6I0M1OUIyMCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIHNlY3VyaXR5IGZpbGw6I0RDRUZENixzdHJva2U6IzZEOUU2Myxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIGRvY3MgZmlsbDojRThEREY1LHN0cm9rZTojOEI2REIxLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgZ2F0ZSBmaWxsOiNGOERGQzQsc3Ryb2tlOiNDOTdBNDAsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiByZWxlYXNlIGZpbGw6I0Y4REZDNCxzdHJva2U6I0M5N0E0MCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoxLjVweDtcbmNsYXNzRGVmIG9wZXJhdGlvbnMgZmlsbDojRENFRkQ2LHN0cm9rZTojNkQ5RTYzLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgZmVlZGJhY2sgZmlsbDojRkZGMUJGLHN0cm9rZTojQzU5QjIwLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xubGlua1N0eWxlIGRlZmF1bHQgc3Ryb2tlOiM2RjczNzcsc3Ryb2tlLXdpZHRoOjEuNXB4OyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
-
-<p>A useful language vocabulary starts to emerge:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🤖 Agent       who acts
-⚡ Skill       what it can do
-🔧 Tool        what it can use
-📚 Knowledge   what it can know
-🧠 Memory      what it can retain
-🛡️ Policy      what it may do
-📦 Artifact    what it produces
-🔔 Event       what triggers it
-🔀 Flow        how work moves
-</code></pre></div></div>
-
-<h2 id="from-dsl-to-a-real-system">From DSL to a real system</h2>
-
-<p>The DSL becomes interesting when a declaration creates multiple projections of the same intent.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="ss">:operations</span> <span class="k">do</span>
-  <span class="n">observes</span> <span class="ss">:metrics</span><span class="p">,</span>
-           <span class="ss">:logs</span><span class="p">,</span>
-           <span class="ss">:traces</span>
-
-  <span class="n">knows</span> <span class="ss">:runbooks</span>
-  <span class="n">uses</span> <span class="ss">:observability_platform</span>
-
-  <span class="n">on</span> <span class="ss">:incident</span> <span class="k">do</span>
-    <span class="n">investigate</span>
-    <span class="n">correlate_signals</span>
-    <span class="n">suggest_remediation</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>The same semantic model could produce agent definitions, skills, tool schemas, policies, knowledge configuration, diagrams, Markdown documentation, JSON representations, and runtime configuration.</p>
-
-<figure class="post-visual">
-  <img src="/assets/images/posts/ruby-in-the-age-of-ai/dsl-to-real-system.webp" alt="From DSL to Real System — agents, knowledge, tools, policies, diagrams, documentation and runtime generated from Ruby" loading="lazy" />
-  <figcaption>From DSL to Real System — one expressive language can project into agents, knowledge, tools, policies, documentation, diagrams, and runtime.</figcaption>
-</figure>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IFRCXG5EU0xbXCLwn5KOIFJ1YnkgQUkgRFNMXCJdOjo6cnVieVxuJSUtXG5zdWJncmFwaCBCRUhBVklPUltcIvCfpJYgQmVoYXZpb3JcIl1cbmRpcmVjdGlvbiBMUlxuQUdbXCLwn6SWIEFnZW50c1wiXTo6OmFnZW50XG5TS1tcIuKaoSBTa2lsbHNcIl06Ojpza2lsbFxuT1JbXCLwn5SAIE9yY2hlc3RyYXRpb25cIl06OjpmbG93XG5lbmRcbiUlLVxuc3ViZ3JhcGggQ09OVEVYVFtcIvCfk5ogQ29udGV4dCBhbmQgY29udHJvbFwiXVxuZGlyZWN0aW9uIExSXG5LTltcIvCfk5ogS25vd2xlZGdlIC8gUkFHXCJdOjo6a25vd2xlZGdlXG5UTFtcIvCflKcgVG9vbHMgLyBNQ1BcIl06Ojp0b29sXG5QT1tcIvCfm6HvuI8gUG9saWNpZXNcIl06Ojpwb2xpY3lcbmVuZFxuJSUtXG5zdWJncmFwaCBPVVRQVVRTW1wi8J-TpiBQcm9qZWN0aW9uc1wiXVxuZGlyZWN0aW9uIExSXG5ET1tcIvCfk4QgRG9jdW1lbnRhdGlvblwiXTo6OmFydGlmYWN0XG5ESVtcIvCfl7rvuI8gRGlhZ3JhbXNcIl06OjphcnRpZmFjdFxuUlRbXCLilrbvuI8gUnVudGltZVwiXTo6OnJ1bnRpbWVcbmVuZFxuJSUtXG5EU0wgLS0-IEFHXG5EU0wgLS0-IFNLXG5EU0wgLS0-IE9SXG5EU0wgLS0-IEtOXG5EU0wgLS0-IFRMXG5EU0wgLS0-IFBPXG5EU0wgLS0-IERPXG5EU0wgLS0-IERJXG5EU0wgLS0-IFJUXG4lJS1cbmNsYXNzRGVmIHJ1YnkgZmlsbDojRjhERkM0LHN0cm9rZTojQzk3QTQwLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgYWdlbnQgZmlsbDojRDlFQUY3LHN0cm9rZTojNUU4RkI4LGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgc2tpbGwgZmlsbDojRkZGMUJGLHN0cm9rZTojQzU5QjIwLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgZmxvdyBmaWxsOiNFOERERjUsc3Ryb2tlOiM4QjZEQjEsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiBrbm93bGVkZ2UgZmlsbDojRERGM0VBLHN0cm9rZTojNUY5RDg2LGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgdG9vbCBmaWxsOiNEOUVBRjcsc3Ryb2tlOiM1RThGQjgsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MS41cHg7XG5jbGFzc0RlZiBwb2xpY3kgZmlsbDojRENFRkQ2LHN0cm9rZTojNkQ5RTYzLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgYXJ0aWZhY3QgZmlsbDojRThEREY1LHN0cm9rZTojOEI2REIxLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjEuNXB4O1xuY2xhc3NEZWYgcnVudGltZSBmaWxsOiNGRkYxQkYsc3Ryb2tlOiNDNTlCMjAsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MS41cHg7XG5saW5rU3R5bGUgZGVmYXVsdCBzdHJva2U6IzZGNzM3NyxzdHJva2Utd2lkdGg6MS41cHg7IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifX0" /></p>
-
-<p>Ruby is no longer merely the runtime language. It becomes a <strong>semantic authoring layer</strong>.</p>
-
-<h2 id="one-declaration-many-projections">One declaration, many projections</h2>
-
-<p>The clearest way to feel the potential is to look at one declaration and several outputs.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="ss">:discovery</span> <span class="k">do</span>
-  <span class="n">goal</span> <span class="s2">"Understand the problem"</span>
-
-  <span class="n">knows</span> <span class="ss">:product</span>
-  <span class="n">uses</span> <span class="ss">:github</span>
-
-  <span class="n">produces</span> <span class="ss">:discovery_report</span>
-
-  <span class="n">policy</span> <span class="k">do</span>
-    <span class="n">distinguish</span> <span class="ss">:evidence</span><span class="p">,</span> <span class="ss">:inference</span><span class="p">,</span> <span class="ss">:unknowns</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>From that single semantic source, a framework can project into multiple artifacts:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>→ JSON model
-→ Mermaid diagram
-→ Markdown documentation
-→ Agent profile
-→ Skill package
-→ Runtime configuration
-</code></pre></div></div>
-
-<p>That is where the Ruby DSL stops being merely expressive and starts becoming architecturally useful.</p>
-
-<h2 id="a-tiny-executable-prototype">A tiny executable prototype</h2>
-
-<p>This post includes a small, dependency-free Ruby experiment. It deliberately avoids pretending to be a production framework. Its purpose is to test the central hypothesis: can a Ruby DSL become a semantic model that generates multiple useful artifacts?</p>
-
-<p>The core declaration looks like this:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">world</span> <span class="o">=</span> <span class="no">RubyAIDSL</span><span class="p">.</span><span class="nf">define</span> <span class="k">do</span>
-  <span class="n">agent</span> <span class="ss">:discovery</span> <span class="k">do</span>
-    <span class="n">goal</span> <span class="s2">"Understand the problem before proposing solutions"</span>
-    <span class="n">observes</span> <span class="ss">:customer_interviews</span><span class="p">,</span> <span class="ss">:support_tickets</span><span class="p">,</span> <span class="ss">:roadmap</span>
-    <span class="n">knows</span> <span class="ss">:product</span><span class="p">,</span> <span class="ss">:architecture</span>
-    <span class="n">distinguishes</span> <span class="ss">:evidence</span><span class="p">,</span> <span class="ss">:inference</span><span class="p">,</span> <span class="ss">:unknowns</span>
-    <span class="n">skills</span> <span class="ss">:product_discovery</span>
-    <span class="n">uses</span> <span class="ss">:github</span><span class="p">,</span> <span class="ss">:rag</span>
-    <span class="n">produces</span> <span class="ss">:discovery_report</span>
-    <span class="n">hands_off_to</span> <span class="ss">:planning</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>The same library can model a complete lifecycle:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">world</span> <span class="o">=</span> <span class="no">RubyAIDSL</span><span class="p">.</span><span class="nf">define</span> <span class="k">do</span>
-  <span class="n">sdlc</span> <span class="ss">:caseflow</span> <span class="k">do</span>
-    <span class="n">discovery</span> <span class="p">{</span> <span class="n">produce</span> <span class="ss">:discovery_report</span> <span class="p">}</span>
-    <span class="n">planning</span> <span class="p">{</span> <span class="n">consume</span> <span class="ss">:discovery_report</span><span class="p">;</span> <span class="n">produce</span> <span class="ss">:prioritized_backlog</span> <span class="p">}</span>
-    <span class="n">architecture</span> <span class="p">{</span> <span class="n">produce</span> <span class="ss">:adr</span><span class="p">,</span> <span class="ss">:component_map</span> <span class="p">}</span>
-    <span class="n">development</span> <span class="p">{</span> <span class="n">implement</span> <span class="ss">:approved_architecture</span> <span class="p">}</span>
-    <span class="n">testing</span> <span class="p">{</span> <span class="n">verify</span> <span class="ss">:critical_flows</span> <span class="p">}</span>
-    <span class="n">review</span> <span class="p">{</span> <span class="n">verify</span> <span class="ss">:quality</span><span class="p">,</span> <span class="ss">:security</span> <span class="p">}</span>
-    <span class="n">release</span> <span class="p">{</span> <span class="n">require_all</span> <span class="ss">:passing_tests</span><span class="p">;</span> <span class="n">deploy</span> <span class="ss">:production</span> <span class="p">}</span>
-    <span class="n">production</span> <span class="p">{</span> <span class="n">observe</span> <span class="ss">:metrics</span><span class="p">,</span> <span class="ss">:logs</span><span class="p">,</span> <span class="ss">:traces</span> <span class="p">}</span>
-    <span class="n">feedback</span> <span class="p">{</span> <span class="n">learn_from</span> <span class="ss">:production</span><span class="p">;</span> <span class="n">feed_into</span> <span class="ss">:discovery</span> <span class="p">}</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>Run it with ordinary Ruby:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby examples/agents.rb
-ruby examples/sdlc.rb
-ruby examples/generate.rb
-</code></pre></div></div>
-
-<p>The generator creates JSON, Markdown, and Mermaid projections from the same model.</p>
-
-<p><strong><a href="/assets/downloads/ruby-ai-dsl-support.zip">Download the Ruby AI DSL support package</a></strong></p>
-
-<p>The prototype is intentionally small because the important thing at this stage is not the API surface. It is the direction:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>human / AI intent
-       ↓
-Ruby DSL
-       ↓
-semantic model / AST
-       ↓
-┌──────────────┬──────────────┬──────────────┐
-GitHub Copilot │ Agent runtime│ Documentation│
-Mermaid        │ JSON         │ Other targets│
-└──────────────┴──────────────┴──────────────┘
-</code></pre></div></div>
-
-<h2 id="try-it-in-60-seconds">Try it in 60 seconds</h2>
-
-<p>The quickest way to evaluate the idea is to run the support project and inspect what one Ruby definition can generate.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unzip ruby-ai-dsl-support.zip
-<span class="nb">cd </span>ruby-ai-dsl-support
-ruby examples/generate.rb
-</code></pre></div></div>
-
-<p>The generator writes multiple projections from the same semantic model:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>generated/
-├── caseflow.json
-├── caseflow.md
-└── caseflow.mmd
-</code></pre></div></div>
-
-<p>The exact syntax is still experimental. The important part is that the <strong>same Ruby declaration becomes machine-readable data, human-readable documentation, and a visual model</strong>.</p>
-
-<h2 id="ruby-as-a-semantic-layer">Ruby as a semantic layer</h2>
-
-<p>Large models do not need Ruby in order to reason. That is not the claim.</p>
-
-<p>The opportunity is that natural language is expressive but ambiguous, while machine configuration is precise but often semantically poor. Ruby DSLs occupy an interesting middle ground:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Natural language      Ruby DSL            Machine config
-────────────────────────────────────────────────────────
-expressive             expressive          precise
-ambiguous              structured          rigid
-not inherently         executable          executable
-executable
-human-first            human + AI          machine-first
-</code></pre></div></div>
-
-<p>An AI can generate the DSL. A human can read and review it. Ruby can execute it. A compiler can transform it. Another agent can reason about its structure.</p>
-
-<p>That combination is valuable in an AI-native development environment.</p>
-
-<h2 id="what-comes-next">What comes next</h2>
-
-<p>Python dominates much of today’s AI implementation ecosystem. That does not mean every layer of an AI-native application must use the same language.</p>
-
-<p>Ruby has a different strength: it is unusually good at creating <strong>languages inside the language</strong>.</p>
-
-<p>Rails demonstrated it for Web development. RSpec did it for testing. Rake did it for tasks. Bundler did it for dependency declaration.</p>
-
-<p>An AI-native generation of Ruby libraries could do the same for:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Agents · Knowledge · Tools · Skills · Policies
-Workflows · Evaluation · Governance · Software delivery
-</code></pre></div></div>
-
-<p>So perhaps the interesting question is not:</p>
-
-<blockquote>
-  <p>Will AI bring Ruby back?</p>
-</blockquote>
-
-<p>It is:</p>
-
-<blockquote>
-  <p><strong>What kinds of languages become valuable when AI writes more of the implementation?</strong></p>
-</blockquote>
-
-<p>This post is not a proposal for a finished framework. It is an experiment around a more useful question:</p>
-
-<blockquote>
-  <p><strong>Can Ruby become a semantic language for AI-native software?</strong></p>
-</blockquote>
-
-<p>The next practical step is to push the prototype beyond JSON, Markdown, and Mermaid and generate real AI assets—agent profiles, skills, tool bindings, policies, and runtime configuration—from the same source language.</p>
-
-<p>A natural follow-up is:</p>
-
-<blockquote>
-  <p><strong>Building the First AI-Native DSL in Ruby</strong></p>
-</blockquote>
-
-<p>Abstraction tends to move upward:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Assembly
-   ↑
-Programming languages
-   ↑
-Frameworks
-   ↑
-DSLs
-   ↑
-AI
-   ↑
-Human intent
-</code></pre></div></div>
-
-<p>If AI increasingly handles implementation, the valuable artifact may become the thing that expresses the <strong>intent, constraints, semantics, and structure</strong> of the system.</p>
-
-<p>Ruby can help make that artifact executable.</p>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>Rails showed that programming becomes dramatically more powerful when the language moves closer to the problem domain.</p>
-
-<p>AI may now be creating another such domain.</p>
-
-<p>Agents, skills, tools, context, knowledge, policies, memory, evaluation, and orchestration are becoming important primitives of software engineering.</p>
-
-<p>Ruby already possesses one of the most powerful mechanisms for turning domain concepts into executable language: <strong>its tradition of DSLs, backed by metaprogramming</strong>.</p>
-
-<blockquote>
-  <p><strong>If Rails made Ruby feel native to the Web, perhaps DSLs can make Ruby feel native to AI.</strong></p>
-</blockquote>
-
-<p>And perhaps the next important Ruby framework will not primarily help us write more implementation.</p>
-
-<p>It may help humans and AI express <strong>what software should become</strong>.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">intent</span> <span class="k">do</span>
-  <span class="n">humans</span> <span class="ss">:define_meaning</span>
-  <span class="n">ai</span>     <span class="ss">:reason_and_create</span>
-  <span class="n">ruby</span>   <span class="ss">:make_it_a_language</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<h2 id="references">References</h2>
-
-<ul>
-  <li>Ruby on Rails Guides — <a href="https://guides.rubyonrails.org/association_basics.html">Active Record Associations</a></li>
-  <li>GitHub Docs — <a href="https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-custom-agents">About custom agents</a></li>
-  <li>GitHub Docs — <a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills">Adding agent skills for GitHub Copilot</a></li>
-  <li>Previous post — <a href="https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/29/ai-across-the-sdlc-with-github-copilot.html">AI Across the SDLC with GitHub Copilot</a></li>
-  <li>Previous post — <a href="https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/30/ai-across-the-sdlc-part-01-discovery-product-planning.html">AI Across the SDLC — Part 01: Discovery &amp; Product Planning</a></li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="artificial-intelligence" /><category term="software-engineering" /><category term="architecture" /><category term="ruby" /><category term="dsl" /><category term="metaprogramming" /><category term="ai-agents" /><category term="agentic-ai" /><category term="sdlc" /><category term="github-copilot" /><category term="rag" /><category term="mcp" /><summary type="html"><![CDATA[]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/ruby-in-the-age-of-ai/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/ruby-in-the-age-of-ai/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AI Across the SDLC · Part 01 — Discovery &amp;amp; Product Planning</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/30/ai-across-the-sdlc-part-01-discovery-product-planning.html" rel="alternate" type="text/html" title="AI Across the SDLC · Part 01 — Discovery &amp;amp; Product Planning" /><published>2026-09-30T00:00:00+00:00</published><updated>2026-09-30T00:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/30/ai-across-the-sdlc-part-01-discovery-product-planning</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/30/ai-across-the-sdlc-part-01-discovery-product-planning.html"><![CDATA[<p><img src="/assets/images/posts/ai-across-sdlc-part-01-discovery-product-planning/cover.webp" alt="AI Across the SDLC Part 01 cover showing Discovery and Product Planning for CaseFlow." style="width:100%;height:auto;object-fit:contain;" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-02T09:58:13+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">AI Across the SDLC · Part 01 — Discovery &amp;amp; Product Planning</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/30/ai-across-the-sdlc-part-01-discovery-product-planning.html" rel="alternate" type="text/html" title="AI Across the SDLC · Part 01 — Discovery &amp;amp; Product Planning" /><published>2026-09-30T00:00:00+00:00</published><updated>2026-09-30T00:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/30/ai-across-the-sdlc-part-01-discovery-product-planning</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/github-copilot/sdlc/2026/09/30/ai-across-the-sdlc-part-01-discovery-product-planning.html"><![CDATA[<p><img src="/assets/images/posts/ai-across-sdlc-part-01-discovery-product-planning/cover.webp" alt="AI Across the SDLC Part 01 cover showing Discovery and Product Planning for CaseFlow." style="width:100%;height:auto;object-fit:contain;" /></p>
 
 <blockquote>
   <p><strong>Before AI helps us build better software, it should help us understand what should be built — and why.</strong></p>
@@ -2819,4 +2170,132 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
   <li>Previous chapter artifacts: <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/candidate.patch</code>; <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/rails-pr.yml</code>; <code class="language-plaintext highlighter-rouge">parts/05-adoption-and-governance/PILOT-CHARTER.md</code> and <code class="language-plaintext highlighter-rouge">pilot-observations.csv</code>.</li>
   <li><a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale">GitHub Docs: rolling out Copilot at scale</a>; <a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success">measuring a trial</a>; <a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-copilot-impact">connecting adoption with engineering outcomes</a>.</li>
   <li><a href="https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies">GitHub Docs: organization Copilot policies</a>; <a href="https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent">Copilot cloud agent</a>; <a href="https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion">content exclusion limits</a>.</li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="consulting" /><category term="workshop" /><category term="engineering-roadmap" /><summary type="html"><![CDATA[Use a 90-minute client workshop to turn a Rails repository map, proposed PR, CI gates and Copilot pilot design into an evidence-backed roadmap with named owners.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/rails-evidence-client-roadmap/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/rails-evidence-client-roadmap/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="consulting" /><category term="workshop" /><category term="engineering-roadmap" /><summary type="html"><![CDATA[Use a 90-minute client workshop to turn a Rails repository map, proposed PR, CI gates and Copilot pilot design into an evidence-backed roadmap with named owners.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/rails-evidence-client-roadmap/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/rails-evidence-client-roadmap/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">The Eight-Part GitHub Copilot for Rails Learning Map</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/the-eight-part-github-copilot-for-rails-learning-map.html" rel="alternate" type="text/html" title="The Eight-Part GitHub Copilot for Rails Learning Map" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/the-eight-part-github-copilot-for-rails-learning-map</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/the-eight-part-github-copilot-for-rails-learning-map.html"><![CDATA[<p><img src="/assets/images/posts/copilot-rails-learning-map/cover.webp" alt="Eight illustrated learning stations surround an integrated CaseFlow Rails app as a digitized engineer follows a multicolored path toward human review." style="width:100%;height:auto;" /></p>
+
+<blockquote>
+  <p><strong>Start here: eight chapters, one Rails application, and a question at every step—what can we actually demonstrate?</strong> This map lets you choose a chapter, follow the whole engineering journey, or prepare a concise interview story.</p>
+</blockquote>
+
+<p><em>GitHub Copilot for Rails Engineers · Series guide · Eight chapters</em></p>
+
+<p>The same synthetic <strong>CaseFlow</strong> Rails API anchors all eight posts. This guide is an index, <strong>not a ninth chapter</strong>. Each chapter introduces a different kind of engineering decision: understand source, constrain AI context, review a proposed change, establish trustworthy gates, measure adoption, advise a client, work in Copilot CLI, then turn the process into a reusable procedure. Read the posts in order for the full story or follow the <a href="#routes">interview route</a> if time is short.</p>
+
+<p>The <a href="/assets/downloads/copilot-rails-learning-map-support.zip">cumulative companion download</a> provides the integrated Rails source, the complete Markdown of all eight articles, workbooks with answers, editable Mermaid diagrams, Ruby scripts and original visual assets. Some supplied artifacts are deliberately <strong>proposals or blank templates</strong>; they do not represent a tested deployment, an approved client engagement or measured results.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#bigger-picture">Begin with the bigger picture</a></li>
+  <li><a href="#chapters">Choose your chapter</a></li>
+  <li><a href="#connections">See how the decisions connect</a></li>
+  <li><a href="#routes">Take one of two learning routes</a></li>
+  <li><a href="#outcomes">Show what you learned</a></li>
+  <li><a href="#exercise">Try a synthesis exercise</a></li>
+  <li><a href="#references">References and supporting material</a></li>
+</ul>
+
+<h2 id="bigger-picture">Begin with the bigger picture</h2>
+
+<p>For a wider view before the Rails exercises, read <a href="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/23/inside-github-copilot-agentic-engine.html"><em>Inside GitHub Copilot’s Agentic Engine: CLI, SDK, and HydraFusion</em></a>. It connects Copilot’s development surfaces, agent tools, skills, MCP and SDK to the engineering responsibility of supervising and verifying agentic work. Then return to Part 01 and follow one concrete Rails application through source inspection, a proposed change and human decisions.</p>
+
+<p>That article is an <strong>optional conceptual prologue</strong>, not one of this series’ eight chapters. Its discussion of HydraFusion includes research-preview context; CaseFlow does not install it or depend on it. Likewise, the Rails labs do not implement the Copilot SDK. The distinction helps you move from the broader architecture to what the supplied CaseFlow artifacts can actually demonstrate.</p>
+
+<h2 id="chapters">Choose your chapter</h2>
+
+<p>Each link below points to the <strong>published article</strong>. Each outcome is an observable piece of work you can inspect or produce with the companion, rather than a claim that Copilot has already done it.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Part · read online</th>
+      <th>Learning objective</th>
+      <th>Make or review in CaseFlow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[01 · The First 30 Minutes in an Unfamiliar Rails Repository](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html)</td>
+      <td>Orient yourself in unfamiliar Rails source and distinguish declarations from observed behavior.</td>
+      <td>Architecture atlas, request path, source citations and unknowns.</td>
+    </tr>
+    <tr>
+      <td>[02 · Teach Copilot the Rails Context](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html)</td>
+      <td>Scope instructions and context so an answer can be traced to files and challenged.</td>
+      <td>Repository guidance, model-specific instructions and a citation audit.</td>
+    </tr>
+    <tr>
+      <td>[03 · From Issue to Reviewable PR](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/from-issue-to-reviewable-rails-pr.html)</td>
+      <td>Give an agent a bounded issue and review its proposed diff against behavior and policy.</td>
+      <td>A candidate resolve-status patch, request specs and a PR review worksheet.</td>
+    </tr>
+    <tr>
+      <td>[04 · Can the Patch Pass the Gates?](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/can-the-patch-pass-the-gates.html)</td>
+      <td>Design CI and security checks; tell a configured gate from a passing run.</td>
+      <td>Staged Rails Actions workflow, gate checklist and evidence questions.</td>
+    </tr>
+    <tr>
+      <td>[05 · A Copilot Pilot You Can Measure](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-copilot-pilot-you-can-measure.html)</td>
+      <td>Define an adoption pilot that separates tool use, engineering outcomes and privacy boundaries.</td>
+      <td>Pilot charter, empty observation template and a Ruby summarizer.</td>
+    </tr>
+    <tr>
+      <td>[06 · From Rails Evidence to Client Roadmap](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/from-rails-evidence-to-client-roadmap.html)</td>
+      <td>Facilitate a client decision using source, unresolved checks and named owners.</td>
+      <td>Workshop agenda, claim ledger, bounded roadmap and decision record.</td>
+    </tr>
+    <tr>
+      <td>[07 · A Rails Change You Can Audit with Copilot CLI](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-rails-change-you-can-audit-with-copilot-cli.html)</td>
+      <td>Control a local CLI task, inspect permissions and capture a reproducible handoff.</td>
+      <td>CLI runbook, two-stage prompt, Ruby preflight and blank evidence ledger.</td>
+    </tr>
+    <tr>
+      <td>[08 · A Repeatable Rails Copilot Workflow](https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-repeatable-rails-copilot-workflow.html)</td>
+      <td>Decide where instructions, skills, tools, hooks, MCP and human judgment belong.</td>
+      <td>Workflow blueprint, blank evidence JSON and Ruby structural check.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>One thread, three scales:</strong> Parts 01–04 follow a request and a proposed change; Parts 05–06 move from engineering evidence to an organizational decision; Parts 07–08 revisit the same problem in the CLI and turn the judgment calls into a teachable procedure. The Part 03 patch is a proposal, the Part 04 workflow is staged, and the Part 05 observations have no measurements. Carry those distinctions forward when telling the story.</p>
+
+<h2 id="connections">See how the decisions connect</h2>
+
+<p>The eight topics are related, but there is no automatic handoff from an agent’s code suggestion to a successful client outcome. The arrows show <strong>learning dependencies</strong>: a reviewable change needs a source map; a pilot needs defined gates and metrics; a repeatable procedure needs a human decision. They do not assert that the lab ran or that a client adopted it.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCd0aGVtZVZhcmlhYmxlcyc6eydiYWNrZ3JvdW5kJzonI0ZGRkZGRicsJ3ByaW1hcnlUZXh0Q29sb3InOicjM0UzNDJDJywnbGluZUNvbG9yJzonIzZGNzM3Nyd9fX0lJVxuZmxvd2NoYXJ0IFRCXG5zdWJncmFwaCB1bmRlcnN0YW5kW1wi8J-UjiBVbmRlcnN0YW5kXCJdXG5BW1wiMDEgwrcgTWFwIFJhaWxzIHNvdXJjZVwiXSAtLT4gQltcIjAyIMK3IEJvdW5kIEFJIGNvbnRleHRcIl1cbmVuZFxuc3ViZ3JhcGggZW5naW5lZXJbXCLwn5ug77iPIEVuZ2luZWVyXCJdXG5CIC0tPiBDW1wiMDMgwrcgUmV2aWV3IGNhbmRpZGF0ZSBQUlwiXSAtLT4gRFtcIjA0IMK3IERlZmluZSBDSSArIHNlY3VyaXR5IGdhdGVzXCJdXG5lbmRcbnN1YmdyYXBoIGFkdmlzZVtcIvCfkaUgQWR2aXNlXCJdXG5EIC0tPiBFW1wiMDUgwrcgRGVzaWduIG1lYXN1cmVkIHBpbG90XCJdIC0tPiBGW1wiMDYgwrcgRGVjaWRlIHdpdGggY2xpZW50XCJdXG5lbmRcbnN1YmdyYXBoIHJlcGVhdFtcIvCfp60gUmVwZWF0IGNhcmVmdWxseVwiXVxuRCAtLT4gR1tcIjA3IMK3IEF1ZGl0IENMSSB0YXNrXCJdIC0tPiBIW1wiMDggwrcgRGVzaWduIHJldXNhYmxlIHdvcmtmbG93XCJdXG5lbmRcbkYgLS0-IEhcbmNsYXNzRGVmIHNvdXJjZSBmaWxsOiNEOUVBRjcsc3Ryb2tlOiM3QUE2QzIsY29sb3I6IzNFMzQyQztcbmNsYXNzRGVmIGVuZ2luZWVyaW5nIGZpbGw6I0U4RERGNSxzdHJva2U6I0E2OEJDNCxjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgZGVjaXNpb24gZmlsbDojRkZGMUJGLHN0cm9rZTojQkE5QzQzLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBvdXRjb21lIGZpbGw6I0RDRUZENixzdHJva2U6Izg2QTg3OCxjb2xvcjojM0UzNDJDO1xuY2xhc3MgQSxCIHNvdXJjZTtcbmNsYXNzIEMsRCxHIGVuZ2luZWVyaW5nO1xuY2xhc3MgRSxGIGRlY2lzaW9uO1xuY2xhc3MgSCBvdXRjb21lOyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" /></p>
+
+<p>The editable source is <code class="language-plaintext highlighter-rouge">docs/diagrams/series-learning-map.mmd</code> in the download. For implementation details and runnable instructions use the relevant chapter and <code class="language-plaintext highlighter-rouge">caseflow/README.md</code>, rather than treating this diagram as code or as run evidence.</p>
+
+<h2 id="routes">Take one of two learning routes</h2>
+
+<p><img src="/assets/images/posts/copilot-rails-learning-map/two-routes.webp" alt="Two illuminated paths cross a Rails workbench: the interview route asks the reader to map, review and explain, while the hands-on route traces, changes, tests and decides with a reviewer." style="width:100%;height:auto;" /></p>
+
+<p><em>Both routes use the same CaseFlow source; the illustrated workbench is conceptual, and the exact commands and evidence belong in the chapter Markdown.</em></p>
+
+<p><strong>Interview route (about 2–3 hours of reading and rehearsal):</strong> read 01 → 02 → 03 → 04 → 06 → 08. For 01–04, prepare one sentence each on the source fact, the proposed behavior, the check you would run and the decision owner. Use 06 to give a two-minute client recommendation. Skim 05 if asked about adoption metrics, 07 if asked about CLI permissions. Explain why a proposed diff, a staged workflow and a blank pilot CSV cannot substantiate a success claim. These are suggested study times, not measured results.</p>
+
+<p>If the interview begins with Copilot’s product landscape, read the <a href="#bigger-picture">conceptual prologue</a> first. Keep its CLI/SDK/HydraFusion overview separate from the CaseFlow lab’s implemented files and recorded evidence.</p>
+
+<p><strong>Hands-on route (one or more sessions on your Mac):</strong> read 01 → 08 in order. Open <code class="language-plaintext highlighter-rouge">caseflow/</code> as the VS Code workspace, follow <code class="language-plaintext highlighter-rouge">caseflow/README.md</code> for Ruby, dependencies, SQLite and RSpec setup, and keep the baseline separate from the optional Part 03 patch. Attempt each chapter workbook <em>before</em> its answer key. Run commands only in your own environment, save the actual command, exit status and relevant output, and keep secrets and client data out of the synthetic case. Check a CI or CLI result only after running it; there is no supplied passing run.</p>
+
+<p>If you are beginning with Copilot itself, start with 01 and 02. If you already know Rails but need a consultative narrative, go to 05 and 06 after you have inspected the source and candidate patch. Chapter 08 is best read after 07 because its skill, hook and MCP choices build on a bounded CLI task. No official Ruby Copilot SDK integration is assumed in this series.</p>
+
+<h2 id="outcomes">Show what you learned</h2>
+
+<p>You should be able to give a reviewer five concrete things: (1) a path-cited explanation of one CaseFlow request; (2) a change request scoped tightly enough to reject an unsafe diff; (3) a distinction between a test assertion, an actual run and a human approval; (4) a privacy-conscious pilot question with separate adoption and quality measures; and (5) a two-minute recommendation with an owner, next check and stop rule. The <a href="#references">series guide workbook</a> gives a short exercise and answer key for that final synthesis.</p>
+
+<p>For a future ebook, the eight articles can become eight chapter candidates and this map can serve as front matter. A book edition still needs transitions, refreshed links and validation of technical claims; the post series is the current source of truth.</p>
+
+<h2 id="exercise">Try a synthesis exercise</h2>
+
+<p>A stakeholder says: “Copilot implemented status updates in CaseFlow, CI passed, and productivity improved. Can we roll it out to all Rails teams?” Write four lines: <em>what the supplied source establishes; what is merely proposed; which checks or measurements are missing; what next step you recommend</em>. Then use the workbook answer key to challenge your language. The useful skill here is moving from attractive artifacts to defensible engineering and client decisions.</p>
+
+<h2 id="references">References and supporting material</h2>
+
+<ul>
+  <li><a href="/assets/downloads/copilot-rails-learning-map-support.zip">Download the cumulative companion and series guide</a>: start at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/series-guide/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/series-guide/article.md</code>. The guide workbook with answers is <code class="language-plaintext highlighter-rouge">docs/labs/series-guide-workbook.md</code>; editable map: <code class="language-plaintext highlighter-rouge">docs/diagrams/series-learning-map.mmd</code>.</li>
+  <li><a href="#chapters">All eight published posts</a> above, with direct links, objectives and CaseFlow outputs. The companion includes each chapter’s own article Markdown, exercises, source images and diagram masters.</li>
+  <li><a href="https://enogrob.github.io/artificial-intelligence/software-engineering/agentic-ai/github-copilot/2026/09/23/inside-github-copilot-agentic-engine.html">Inside GitHub Copilot’s Agentic Engine: CLI, SDK, and HydraFusion</a> — optional conceptual prologue; read before Part 01 for the broader Copilot architecture.</li>
+  <li><a href="#references">CaseFlow app and local setup</a> in the download at <code class="language-plaintext highlighter-rouge">caseflow/README.md</code>; <a href="#references">series map and source boundaries</a> at <code class="language-plaintext highlighter-rouge">docs/series-map.md</code> and <code class="language-plaintext highlighter-rouge">docs/validation-status.md</code>.</li>
+  <li><a href="https://docs.github.com/en/copilot">GitHub Copilot documentation</a>; <a href="https://docs.github.com/en/actions">GitHub Actions documentation</a>; <a href="https://guides.rubyonrails.org/">Ruby on Rails guides</a>.</li>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="learning-map" /><category term="caseflow" /><category term="interview-preparation" /><summary type="html"><![CDATA[A navigable guide to all eight GitHub Copilot for Rails Engineers chapters, with learning objectives, the integrated CaseFlow lab, an interview route and a practical route.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/copilot-rails-learning-map/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/copilot-rails-learning-map/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
