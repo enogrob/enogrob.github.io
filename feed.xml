@@ -1,4 +1,367 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-04T20:01:21+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">Beyond the Sphinx — Architecture for Deep Time</title><link href="https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/10/02/beyond-the-sphinx-architecture-for-deep-time.html" rel="alternate" type="text/html" title="Beyond the Sphinx — Architecture for Deep Time" /><published>2026-10-02T00:00:00+00:00</published><updated>2026-10-02T00:00:00+00:00</updated><id>https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/10/02/beyond-the-sphinx-architecture-for-deep-time</id><content type="html" xml:base="https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/10/02/beyond-the-sphinx-architecture-for-deep-time.html"><![CDATA[<p><img src="/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/cover.webp" alt="" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-05T10:57:32+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">From Ericsson Use Cases to AI-Native Systems</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html" rel="alternate" type="text/html" title="From Ericsson Use Cases to AI-Native Systems" /><published>2026-10-05T08:00:00+00:00</published><updated>2026-10-05T08:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html"><![CDATA[<style>
+.mermaid-diagram img,
+.mermaid-diagram svg {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin: 1.1rem auto;
+}
+
+.mermaid-diagram--compact img,
+.mermaid-diagram--compact svg {
+  max-width: 480px;
+}
+
+.mermaid-diagram--large img,
+.mermaid-diagram--large svg {
+  max-width: 640px;
+}
+</style>
+
+<blockquote>
+  <p><strong>The use case is the boundary that transforms human intention into a distributed AI architecture.</strong></p>
+</blockquote>
+
+<p><img src="/assets/images/posts/from-ericsson-use-cases-to-ai-native-systems/use-case-ai-native-cover.webp" alt="From Ericsson Use Cases to AI-Native Systems" /></p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#the-ai-native-question">The AI-Native question</a></li>
+  <li><a href="#ivar-jacobson-and-ericsson">Ivar Jacobson and Ericsson</a></li>
+  <li><a href="#axe-plex-and-function-blocks">AXE, PLEX and Function Blocks</a></li>
+  <li><a href="#hlplex-processes-and-forlopp">HLPLEX, processes and FORLOPP</a></li>
+  <li><a href="#from-function-blocks-to-ai-building-blocks">From function blocks to AI building blocks</a></li>
+  <li><a href="#one-use-case-decomposed-end-to-end">One use case, decomposed end to end</a></li>
+  <li><a href="#the-use-case-as-an-ai-boundary">The use case as an AI boundary</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ul>
+
+<h2 id="the-ai-native-question">The AI-Native question</h2>
+
+<p>The AI industry often presents intention-driven systems as something entirely new. But an AI-Native system does not simply receive an intention and autonomously invent the entire solution.</p>
+
+<p>It must understand what the intention means, determine what the system is responsible for, identify the participating actors, decompose the business process and select the appropriate capabilities.</p>
+
+<p>The real starting point is not the agent.</p>
+
+<p>It is the use case.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Actor
+  → Intent
+    → Use Case
+      → Business Process
+        → Responsibilities
+          → AI Building Blocks
+            → Outcome
+</code></pre></div></div>
+
+<p>The use case turns an intention into a bounded responsibility. It tells the system who participates, what must happen, what is allowed, what is outside the boundary, what counts as success and what evidence must be produced.</p>
+
+<blockquote>
+  <p><strong>A requirement states what should happen. A use case defines the bounded process through which it can happen.</strong></p>
+</blockquote>
+
+<h2 id="ivar-jacobson-and-ericsson">Ivar Jacobson and Ericsson</h2>
+
+<p>Before use cases became widely associated with UML, Objectory and the Rational Unified Process, Ivar Jacobson was working at Ericsson on large, real-time telecom systems such as AKE and AXE, including PLEX.</p>
+
+<p>Jacobson is widely credited with introducing use cases in 1986 as a way to specify functional software requirements. The idea emerged from a practical problem: how to understand systems whose behaviour was distributed across software units, processes, signals and hardware.</p>
+
+<p>The historical connection matters because the use case was not created as a decorative documentation technique. It was a way to reason about responsibility:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Who interacts with the system?
+What does the actor need to accomplish?
+What functions are required?
+Where does each responsibility live?
+How do the units cooperate?
+</code></pre></div></div>
+
+<h2 id="axe-plex-and-function-blocks">AXE, PLEX and Function Blocks</h2>
+
+<p>The AXE system gives this history a concrete form. PLEX-C was used to produce software for the central processor of the AXE control system. Functional blocks could also involve hardware and regional software running in regional processors.</p>
+
+<p>This meant that a system function was not necessarily located in one place:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Central Software
+  + Regional Software
+    + Hardware
+      + Functional Blocks
+        + Signals
+</code></pre></div></div>
+
+<p>The conceptual decomposition was:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Actor
+  → Use Case
+    → System Function
+      → Function Block
+        → Software Unit
+          → Process
+            → Signal / Event
+</code></pre></div></div>
+
+<p>A Function Block was not simply a source-code file. It represented a function within a larger application system, potentially combining software, local data, signal interfaces, associated hardware and regional software.</p>
+
+<div class="mermaid-diagram mermaid-diagram--compact">
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzozMiwncmFua1NwYWNpbmcnOjQwLCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBMUlxuVShcIvCfk4sgVXNlIENhc2VcIikgLS0-IEIoXCLwn6exIEZ1bmN0aW9uIEJsb2NrXCIpXG5VIC0tPiBCMShcIvCfp7EgRnVuY3Rpb24gQmxvY2tcIilcblUgLS0-IEIyKFwi8J-nsSBGdW5jdGlvbiBCbG9ja1wiKVxuQiAtLSBcIvCfk6EgU2lnbmFsXCIgLS0-IEIyXG5jbGFzc0RlZiBwYXN0ZWxCbHVlIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBwYXN0ZWxQdXJwbGUgZmlsbDojRThEREY1LHN0cm9rZTojQTY4QkM0LGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjJweDtcbmNsYXNzIFUgcGFzdGVsQmx1ZTtcbmNsYXNzIEIsQjEsQjIgcGFzdGVsUHVycGxlOyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" />
+
+**Legend**: the use case gives the function its purpose; a Function Block realizes it; a signal connects it to another block as a message.
+
+</div>
+
+<p>The use case gave the function its reason for existing. The Function Block gave the function an architectural home.</p>
+
+<h2 id="hlplex-processes-and-forlopp">HLPLEX, processes and FORLOPP</h2>
+
+<p>HLPLEX made active execution and concurrency more explicit. Modules could contain processes; processes could execute concurrently, have multiple instances and communicate through event paths.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Function Block
+  └── Module
+       ├── Process A
+       ├── Process B
+       └── Process C
+</code></pre></div></div>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Process A
+  → Event
+    → Process B
+</code></pre></div></div>
+
+<p>The unit was no longer only a container of functionality. It became an active participant in a larger process.</p>
+
+<p>The AXE documentation also describes FORLOPP as a sequence of events. When multiple Function Blocks participated in the same call, records could be linked into a chain with a Forlopp Identity, or FID.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Call
+  → Record in Block A
+    → Record in Block B
+      → Record in Block C
+        → Record in Block D
+
+FID = identity of the distributed call
+</code></pre></div></div>
+
+<p>The FID allowed the system to identify and release a specific call in the event of a software failure. This is not identical to a modern trace ID or agent run ID, but the architectural question is related:</p>
+
+<blockquote>
+  <p><strong>How does one preserve the identity of an operation while it crosses multiple units?</strong></p>
+</blockquote>
+
+<h2 id="from-function-blocks-to-ai-building-blocks">From function blocks to AI building blocks</h2>
+
+<p>The history of software paradigms is also a history of changing answers to one question:</p>
+
+<blockquote>
+  <p><strong>What is the right unit for realizing a responsibility?</strong></p>
+</blockquote>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OOP
+  → Object = data + behaviour
+
+PLEX
+  → Function Block = function + software + hardware
+
+HLPLEX
+  → Process = state + behaviour + events
+
+Erlang / Elixir
+  → Process = isolation + messages + supervision
+
+Ruby / Ractors
+  → Unit = isolation + parallel execution
+
+AI-Native
+  → Agent = state + behaviour + intent + feedback
+</code></pre></div></div>
+
+<p>The paradigms are not identical and do not form a simple chain of direct inheritance. They respond to related pressures: decomposition, encapsulation, communication, concurrency, recovery, composition and responsibility.</p>
+
+<p><img src="/assets/images/posts/from-ericsson-use-cases-to-ai-native-systems/use-case-decomposition.webp" alt="From Use Case to AI Building Blocks" /></p>
+
+<p>An AI-Native system is not composed only of agents. It is composed of different building blocks, each with a distinct role:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Responsibility</th>
+      <th>Building block</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Specialized knowledge</td>
+      <td>Skill / RAG</td>
+    </tr>
+    <tr>
+      <td>Concrete execution</td>
+      <td>Tool</td>
+    </tr>
+    <tr>
+      <td>External integration</td>
+      <td>MCP</td>
+    </tr>
+    <tr>
+      <td>Known sequence</td>
+      <td>Workflow</td>
+    </tr>
+    <tr>
+      <td>Adaptive judgment</td>
+      <td>Agent</td>
+    </tr>
+    <tr>
+      <td>Persistent context</td>
+      <td>Memory</td>
+    </tr>
+    <tr>
+      <td>Lifecycle control</td>
+      <td>Hook</td>
+    </tr>
+    <tr>
+      <td>Sensitive authorization</td>
+      <td>Human actor</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The use case determines which of these are necessary.</p>
+
+<h2 id="one-use-case-decomposed-end-to-end">One use case, decomposed end to end</h2>
+
+<p>Consider this intention:</p>
+
+<blockquote>
+  <p><strong>Investigate a production incident and produce a verified report.</strong></p>
+</blockquote>
+
+<p>This is not yet an architecture. We first turn it into a bounded use case:</p>
+
+<blockquote>
+  <p>An authorized engineer requests an investigation. The system gathers relevant documentation and telemetry, forms and tests hypotheses, records evidence, produces a report and requests human approval before any risky production change.</p>
+</blockquote>
+
+<p>The distributed business process becomes visible:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Incident Investigation
+  ├── receive the request
+  ├── identify the affected service
+  ├── retrieve relevant documentation
+  ├── inspect logs and metrics
+  ├── form hypotheses
+  ├── run safe verification steps
+  ├── evaluate evidence
+  ├── produce a report
+  └── request approval for risky action
+</code></pre></div></div>
+
+<p>Each responsibility can now be assigned to an appropriate participant:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Receive and classify request       → Coordinator Agent
+Retrieve runbooks and documentation → RAG
+Apply incident procedure           → Skill
+Query logs and metrics             → Tool
+Connect to observability systems   → MCP
+Compare hypotheses                 → Investigation Agent
+Execute standard checks            → Workflow
+Preserve findings and context      → Memory
+Block unsafe operations            → Hook / Policy
+Approve production changes         → Human Actor
+</code></pre></div></div>
+
+<div class="mermaid-diagram mermaid-diagram--large">
+
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0OCwncmFua1NwYWNpbmcnOjU4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTNweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggSW50ZW50W1wi8J-OryBJbnRlbnRpb25cIl1cbkkoXCLwn46vIEluY2lkZW50IEludGVudFwiKSAtLT4gVShcIvCfk4sgQm91bmRlZCBVc2UgQ2FzZVwiKVxuZW5kXG5zdWJncmFwaCBDb250ZXh0W1wi8J-TmiBDb250ZXh0XCJdXG5DKFwi8J-kliBDb29yZGluYXRvciBBZ2VudFwiKSAtLT4gUihcIvCfk5YgUkFHIENvbnRleHRcIilcbkMgLS0-IFMoXCLwn5OaIERpYWdub3N0aWMgU2tpbGxcIilcbkMgLS0-IE0oXCLwn6egIFdvcmtpbmcgTWVtb3J5XCIpXG5lbmRcbnN1YmdyYXBoIEV4ZWN1dGlvbltcIuKame-4jyBFeGVjdXRpb25cIl1cblUgLS0-IENcbkMgLS0-IFQoXCLwn5ug77iPIFRvb2xzIHZpYSBNQ1BcIilcblQgLS0-IEEoXCLwn6SWIEludmVzdGlnYXRpb24gQWdlbnRcIilcbkEgLS0-IFcoXCLwn5SEIFZlcmlmaWNhdGlvbiBXb3JrZmxvd1wiKVxuZW5kXG5zdWJncmFwaCBHb3Zlcm5hbmNlW1wi8J-boe-4jyBHb3Zlcm5hbmNlXCJdXG5XIC0tPiBIKFwi8J-qnSBTYWZldHkgSG9va1wiKVxuSCAtLT4gRShcIvCflI4gRXZpZGVuY2VcIilcbkUgLS0-IFYoXCLwn5GkIEh1bWFuIEFwcHJvdmFsXCIpXG5WIC0tPiBPKFwi4pyFIFZlcmlmaWVkIFJlcG9ydFwiKVxuZW5kXG5jbGFzc0RlZiBwYXN0ZWxCbHVlIGZpbGw6I0Q5RUFGNyxzdHJva2U6IzdBQTZDMixjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBwYXN0ZWxQdXJwbGUgZmlsbDojRThEREY1LHN0cm9rZTojQTY4QkM0LGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjJweDtcbmNsYXNzRGVmIHBhc3RlbE9yYW5nZSBmaWxsOiNGOERGQzQsc3Ryb2tlOiNDOTk4NkQsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgcGFzdGVsWWVsbG93IGZpbGw6I0ZGRjFCRixzdHJva2U6I0M3QTc0QSxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBwYXN0ZWxSb3NlIGZpbGw6I0Y2RERFNSxzdHJva2U6I0I2NkE4Mixjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBwYXN0ZWxHcmVlbiBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3MgSSxVIHBhc3RlbEJsdWU7XG5jbGFzcyBDLFIsUyxNIHBhc3RlbFB1cnBsZTtcbmNsYXNzIFQsQSxXIHBhc3RlbE9yYW5nZTtcbmNsYXNzIEgsViBwYXN0ZWxSb3NlO1xuY2xhc3MgRSBwYXN0ZWxZZWxsb3c7XG5jbGFzcyBPIHBhc3RlbEdyZWVuOyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19" />
+
+**Legend:** the diagram separates context, execution and governance; the use case routes the intention through bounded capabilities toward evidence and human-verified completion.
+
+</div>
+
+<p>The diagram does not show one super-agent performing everything. It shows a distributed process in which each building block has a bounded responsibility.</p>
+
+<h2 id="the-use-case-as-an-ai-boundary">The use case as an AI boundary</h2>
+
+<p>The use case is the boundary that transforms intention into AI architecture:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Use Case
+  → defines purpose
+    → assigns responsibility
+      → restricts authority
+        → selects building blocks
+          → defines completion
+</code></pre></div></div>
+
+<p>For every agent, skill, tool or workflow, we should be able to ask:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Which use case requires this?
+Which responsibility does it realize?
+What authority does it have?
+What does it communicate?
+What evidence does it produce?
+When must it stop?
+</code></pre></div></div>
+
+<p>This prevents common category errors:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Agent ≠ Skill
+Skill ≠ Tool
+Tool ≠ MCP
+MCP ≠ RAG
+RAG ≠ Memory
+Hook ≠ Workflow
+</code></pre></div></div>
+
+<p>Not every responsibility needs to become an agent. Not every capability needs autonomy. Not every document needs to become memory. Not every integration needs to become an MCP server.</p>
+
+<p>The use case must decide.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><img src="/assets/images/posts/from-ericsson-use-cases-to-ai-native-systems/use-case-loop.webp" alt="The Use Case Loop" /></p>
+
+<p>The history of software composition can be read as a history of changing units:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Object
+  → Function Block
+    → Process
+      → Supervised Application
+        → Ractor
+          → Agent
+</code></pre></div></div>
+
+<p>Each unit addressed a different aspect of complexity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Object           → encapsulation
+Function Block   → functional composition
+Process          → active execution
+Message          → communication
+Supervision      → recovery
+Ractor           → isolation and parallelism
+Agent            → intention and adaptive action
+</code></pre></div></div>
+
+<p>But the unit alone is never enough. A system also needs purpose, responsibility, authority, context, constraints, evidence and completion.</p>
+
+<p>The use case provides that definition. It is where a human intention becomes a system responsibility, where a business process becomes an architectural boundary and where the system decides what belongs inside the solution and what must remain outside it.</p>
+
+<blockquote>
+  <p><strong>AI-Native systems do not begin with agents. They begin with intentions that become use cases, use cases that become responsibilities, and responsibilities that become carefully chosen building blocks.</strong></p>
+</blockquote>
+
+<p>The use case is where intention becomes architecture.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Ivar_Jacobson">Ivar Jacobson — biography and work</a></li>
+  <li><a href="https://www.ivarjacobson.com/">Ivar Jacobson International</a></li>
+  <li><a href="https://www.omg.org/uml/">Object Management Group — UML</a></li>
+  <li><a href="https://docs.ruby-lang.org/en/master/Ractor.html">Ruby Ractor documentation</a></li>
+  <li><a href="https://modelcontextprotocol.io/">Model Context Protocol</a></li>
+  <li><a href="https://docs.cloud.google.com/architecture/agentic-ai-orchestrate-security-ops-workflows">Google Cloud — Agentic AI security operations workflow</a></li>
+</ul>
+
+<p>The AXE, PLEX and HLPLEX historical details in this article were checked against Ericsson training manuals supplied as research material. The article paraphrases those materials and does not reproduce their proprietary diagrams or code.</p>]]></content><author><name></name></author><category term="artificial-intelligence" /><category term="software-engineering" /><category term="telecom" /><category term="architecture" /><category term="use-cases" /><category term="AI-native" /><category term="PLEX" /><category term="HLPLEX" /><category term="AXE" /><category term="Erlang" /><category term="Elixir" /><category term="Ruby" /><category term="Ractors" /><category term="MCP" /><category term="RAG" /><category term="agents" /><summary type="html"><![CDATA[]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/from-ericsson-use-cases-to-ai-native-systems/use-case-ai-native-cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/from-ericsson-use-cases-to-ai-native-systems/use-case-ai-native-cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Beyond the Sphinx — Architecture for Deep Time</title><link href="https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/10/02/beyond-the-sphinx-architecture-for-deep-time.html" rel="alternate" type="text/html" title="Beyond the Sphinx — Architecture for Deep Time" /><published>2026-10-02T00:00:00+00:00</published><updated>2026-10-02T00:00:00+00:00</updated><id>https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/10/02/beyond-the-sphinx-architecture-for-deep-time</id><content type="html" xml:base="https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/10/02/beyond-the-sphinx-architecture-for-deep-time.html"><![CDATA[<p><img src="/assets/images/posts/beyond-the-sphinx-architecture-for-deep-time/cover.webp" alt="" /></p>
 
 <blockquote>
   <p><strong>To researchers, archaeologists, and independent thinkers who keep exploring Egypt with rigor and imagination</strong> — reminding us that the past is not a closed book, but a deeper conversation with time.</p>
@@ -2762,128 +3125,4 @@ curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhos
   <li><a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/review-copilot-output">GitHub Docs: review Copilot output</a></li>
   <li><a href="https://docs.github.com/en/copilot/concepts/agents/code-review">GitHub Docs: Copilot code review</a></li>
   <li><a href="https://guides.rubyonrails.org/action_controller_advanced_topics.html#http-token-authentication">Rails Guides: HTTP token authentication</a></li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="coding-agent" /><category term="pull-requests" /><category term="code-review" /><summary type="html"><![CDATA[Turn a bounded CaseFlow status-transition issue into an auditable Rails patch: scope, agent task, negative tests, diff review and honest verification.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/issue-to-reviewable-rails-pr/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/issue-to-reviewable-rails-pr/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">From Rails Evidence to Client Roadmap</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/from-rails-evidence-to-client-roadmap.html" rel="alternate" type="text/html" title="From Rails Evidence to Client Roadmap" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/from-rails-evidence-to-client-roadmap</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/from-rails-evidence-to-client-roadmap.html"><![CDATA[<p><img src="/assets/images/posts/rails-evidence-client-roadmap/cover.webp" alt="GitHub Copilot for Rails Engineers Part 06: a digital profile follows CaseFlow from a route/controller/model/SQLite map into an engineering and security workshop; a decision compass shows try, revise and pause as possible next steps." style="width:100%;height:auto;" /></p>
-
-<blockquote>
-  <p><strong>A good Copilot workshop leaves the client with a decision they can defend.</strong> Bring source citations, proposed changes and honest unknowns; leave with a small next experiment, named owners and a stop rule.</p>
-</blockquote>
-
-<p><em>GitHub Copilot for Rails Engineers · Part 06</em></p>
-
-<p>This series started by mapping an unfamiliar Rails app. It then added repository instructions, a candidate agent-assisted change, a staged CI/security plan and a blank adoption pilot. These are useful teaching artifacts, but a consultant must not transform a proposed patch into a “successful rollout” by storytelling. This final chapter asks how to run a <strong>90-minute client workshop</strong> that turns those artifacts into a scoped, accountable next step. The client, meeting and roadmap here are hypothetical.</p>
-
-<p>The <a href="/assets/downloads/rails-evidence-client-roadmap-support.zip">cumulative companion download</a> includes the complete CaseFlow Rails app, Parts 01–06, a facilitator agenda, claim ledger, one-page roadmap, blank decision record, exercises and answers, and the editable Mermaid source. No enterprise settings, run results or customer telemetry were collected for this example.</p>
-
-<h2 id="contents">Contents</h2>
-
-<ul>
-  <li><a href="#decision-first">Begin with the client’s decision</a></li>
-  <li><a href="#evidence">Bring an evidence pack, not a promise</a></li>
-  <li><a href="#workshop">Run a workshop that surfaces disagreement</a></li>
-  <li><a href="#roadmap">Turn unknowns into a bounded roadmap</a></li>
-  <li><a href="#close">Close with an accountable decision</a></li>
-  <li><a href="#lab">Practice the facilitation</a></li>
-  <li><a href="#references">References and supporting material</a></li>
-</ul>
-
-<h2 id="decision-first">Begin with the client’s decision</h2>
-
-<p>The useful opening question is concrete: <em>Which Rails workflow should this team test with Copilot, under which data boundaries, and what evidence would justify another step?</em> Ask the engineering sponsor what costly friction they want to change, the maintainer what repository task is safely bounded, and the security reviewer what permissions and prompt inputs are allowed. If they disagree, record the disagreement. Agreement by the loudest participant is not governance.</p>
-
-<p>Choose a single example: understanding how <code class="language-plaintext highlighter-rouge">POST /api/requests</code> moves through CaseFlow and proposing a narrow status transition. The baseline app declares create/list/show endpoints but no status-update route. <a href="#references">Part 03’s patch</a> is a candidate, not a deployed endpoint; <a href="#references">Part 04’s workflow</a> is staged, not a passing CI run. The Part 05 CSV has only a header. Present those boundaries during the workshop, before anyone draws a roadmap from imagined performance gains.</p>
-
-<p>GitHub’s <a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale">rollout guidance</a> covers enablement, governance and measurement. Its <a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success">trial guide</a> calls for goals, adoption evidence, developer feedback and a later decision about expansion. These resources inform the agenda; the client still decides authorization, scope and success criteria.</p>
-
-<h2 id="evidence">Bring an evidence pack, not a promise</h2>
-
-<p>Before the meeting, make a short ledger with four different statuses. A file’s existence establishes what is written there; a test assertion states the expected behavior; a real test run gives environment-specific evidence; an approval belongs to the accountable reviewer. Keep the distinction visible on screen.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Artifact to show</th>
-      <th>Defensible statement</th>
-      <th>Unknown to resolve</th>
-      <th>Owner to ask</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>CaseFlow route, controller, model and migration</td>
-      <td>Source declares a request API and SQLite-backed model</td>
-      <td>Actual run and chosen deployment behavior</td>
-      <td>Rails maintainer</td>
-    </tr>
-    <tr>
-      <td>Part 03 candidate patch</td>
-      <td>Reviewable status-change proposal exists</td>
-      <td>Does it apply, pass focused specs and meet review policy?</td>
-      <td>Engineering reviewer</td>
-    </tr>
-    <tr>
-      <td>Part 04 staged Actions workflow</td>
-      <td>Planned Rails test gate with restricted permissions</td>
-      <td>Resolved lockfile, runner output, applicable security gates</td>
-      <td>CI/security owners</td>
-    </tr>
-    <tr>
-      <td>Part 05 charter and header-only CSV</td>
-      <td>Measurement and privacy questions have templates</td>
-      <td>Eligible cohort, baseline, approved surfaces, measured outcomes</td>
-      <td>Sponsor + pilot owner</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The companion <a href="#references">claim ledger</a> has file references, evidence statuses, checks and suggested roles. Replace role labels with real names only once the client appoints owners. Never copy secrets or customer code into the demonstration repo.</p>
-
-<h2 id="workshop">Run a workshop that surfaces disagreement</h2>
-
-<p>The <a href="#references">90-minute agenda</a> timeboxes the session: ten minutes for the decision question, fifteen for a source walk, twenty for candidate PR and CI review, fifteen for data and policy boundaries, twenty for the next experiment, and ten to replay the decision. Move security discussion earlier if the reviewer must leave early. A participant with authority to approve access should be identified before proposing activation.</p>
-
-<p>Use one source-backed claim to test the conversation: “The baseline has a status-update API.” Open <code class="language-plaintext highlighter-rouge">caseflow/config/routes.rb</code> and ask someone to locate it. When it is not there, move the claim into “proposed change” and inspect the Part 03 patch. Then ask: “Which request spec, CI result and reviewer sign-off would make this safe to try?” This turns a disagreement into a verification task, not a contest over confidence.</p>
-
-<p>Do the same for metrics. “Copilot was used” and “the work improved” answer different questions. The Part 05 template requires a cohort denominator and comparable engineering signals; the example contains no observed values. GitHub’s <a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-copilot-impact">measurement path</a> distinguishes adoption from engineering outcomes. A small workshop cannot create causal evidence by drawing a rising chart.</p>
-
-<p><img src="/assets/images/posts/rails-evidence-client-roadmap/roadmap-needs-evidence.webp" alt="An illustrated CaseFlow Rails source inspector shows only GET and POST request routes in the baseline; a separate proposed PATCH resolve route and an empty test log need verification by a reviewer." style="width:100%;height:auto;" /></p>
-
-<p><em>The illustration resolves a specific workshop dispute:</em> the baseline source declares index, show and create; the status transition belongs to the separate candidate patch and still needs a test run and human review. The editable Mermaid below carries the broader workshop decision model.</p>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCd0aGVtZVZhcmlhYmxlcyc6eydiYWNrZ3JvdW5kJzonI0ZGRkZGRicsJ3ByaW1hcnlUZXh0Q29sb3InOicjM0UzNDJDJywnbGluZUNvbG9yJzonIzZGNzM3Nyd9fX0lJVxuZmxvd2NoYXJ0IFRCXG5zdWJncmFwaCBpbnB1dHNbXCLwn5OaIEJyaW5nIGV2aWRlbmNlXCJdXG5BW1wi8J-nrSBSZXBvc2l0b3J5IG1hcFwiXSAtLT4gQ1tcIvCfl4LvuI8gQ2xhaW0gbGVkZ2VyXCJdXG5CW1wi8J-nqiBDYW5kaWRhdGUgUFIgKyBDSSBwbGFuXCJdIC0tPiBDXG5QW1wi8J-TiiBFbXB0eSBwaWxvdCB0ZW1wbGF0ZVwiXSAtLT4gQ1xuZW5kXG5zdWJncmFwaCB3b3Jrc2hvcFtcIvCfkaUgRGVjaWRlIHRvZ2V0aGVyXCJdXG5DIC0tPiBWW1wi8J-UjSBWZXJpZnkgb3IgbWFyayB1bmtub3duXCJdXG5WIC0tPiBPW1wi8J-RpCBPd25lciArIHN1Y2Nlc3MgY2hlY2tcIl1cbmVuZFxuc3ViZ3JhcGggbmV4dFtcIvCfp60gUmVjb3JkIG5leHQgc3RlcFwiXVxuTyAtLT58XCJib3VuZGVkLCBhcHByb3ZlZFwifCBUW1wi8J-nqiBUcnkgYSBzbGljZVwiXVxuTyAtLT58XCJpbnN1ZmZpY2llbnQgZXZpZGVuY2VcInwgUltcIvCflIEgUmV2aXNlIHNjb3BlXCJdXG5PIC0tPnxcImd1YXJkcmFpbCBicmVhY2hcInwgU1tcIuKblCBQYXVzZVwiXVxuZW5kXG5jbGFzc0RlZiBzb3VyY2UgZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiB1bmtub3duIGZpbGw6I0ZGRjFCRixzdHJva2U6I0JBOUM0Myxjb2xvcjojM0UzNDJDO1xuY2xhc3NEZWYgaHVtYW4gZmlsbDojRThEREY1LHN0cm9rZTojQTY4QkM0LGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiB0cnkgZmlsbDojRENFRkQ2LHN0cm9rZTojODZBODc4LGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiByZXZpc2UgZmlsbDojRjhERkM0LHN0cm9rZTojQzk5ODZELGNvbG9yOiMzRTM0MkM7XG5jbGFzc0RlZiBzdG9wIGZpbGw6I0Y1RDlEQyxzdHJva2U6I0JDODE5MSxjb2xvcjojM0UzNDJDO1xuY2xhc3MgQSxCLFAgc291cmNlO1xuY2xhc3MgQyxWIHVua25vd247XG5jbGFzcyBPIGh1bWFuO1xuY2xhc3MgVCB0cnk7XG5jbGFzcyBSIHJldmlzZTtcbmNsYXNzIFMgc3RvcDsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ" /></p>
-
-<p>This is a <strong>proposed</strong> workshop flow. No branch is selected in the supplied materials; the decision record is blank. The matching editable diagram lives in <code class="language-plaintext highlighter-rouge">docs/diagrams/06-workshop-decision.mmd</code> inside the download.</p>
-
-<h2 id="roadmap">Turn unknowns into a bounded roadmap</h2>
-
-<p>A useful roadmap is ordered by <em>evidence dependencies</em>, not optimistic dates. Validate the Rails source and record an actual RSpec result or blocker. Then review the candidate change with the human engineering owner and determine which CI/security controls apply. Only after the authorized team defines permissible Copilot surfaces and data should it consider a consenting trial with a baseline, comparison criteria and incident path. The <a href="#references">one-page roadmap</a> supplies these slices with deliberately unassigned names and no fabricated schedule.</p>
-
-<p>Avoid the tempting shortcut “roll out to everyone next sprint.” If an IDE agent, cloud agent and terminal workflow are all proposed, discuss them <strong>separately</strong>: permissions, repository access, data exposure and policy support can differ by surface. The <a href="https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent">Copilot cloud agent documentation</a> and <a href="https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies">organization policies</a> are starting points for checking current behavior and client settings. A role-specific approval and documented review gate remain client decisions.</p>
-
-<p>Show the client an example of a testable recommendation: “Authorize one consenting Rails cohort to try source orientation on one approved repository for a defined interval, after security checks the allowed surface and prompt data. Compare like-for-like PR rework and test outcomes with a stated baseline; pause on a serious boundary breach.” This is a <strong>proposal</strong>, not a statement that anyone authorized or completed that experiment. Define numerical criteria with the sponsor before data collection; do not invent thresholds in the article.</p>
-
-<h2 id="close">Close with an accountable decision</h2>
-
-<p>The final ten minutes produce a signed or explicitly pending <a href="#references">decision record</a>. It lists the chosen next step, the claims and observations behind it, who owns each unresolved check, the checkpoint, and what would force a pause. It is valid to end with “revise” or “pause” when the baseline, permission or security owner is missing. The engineering team still gets a clear next task and the sponsor can see exactly what is blocking approval.</p>
-
-<p>In an interview, a two-minute version is enough: “I would bring a source-backed CaseFlow map and a candidate PR, separate planned CI from observed results, let the security and engineering owners settle scope, and leave with one bounded experiment and a stop rule. I would not report adoption benefit from an empty CSV.” This demonstrates consultative architecture without inventing a client engagement.</p>
-
-<h2 id="lab">Practice the facilitation</h2>
-
-<ol>
-  <li><strong>Before (10 min):</strong> inspect the <a href="#references">agenda and claim ledger</a>. Classify one source fact, one proposed change and one missing run result.</li>
-  <li><strong>Live (15 min):</strong> pair with a reviewer; challenge the statement “the workflow passed” using the actual staged workflow and the absence of runner logs. Switch roles and repeat.</li>
-  <li><strong>Decision (15 min):</strong> fill the <a href="#references">roadmap and decision record</a> for a fictional client who has no approved prompt-data policy. Choose a next step, name the owner, and state what cannot launch.</li>
-  <li><strong>Debrief (10 min):</strong> deliver a two-minute recommendation, then compare it with the <a href="#references">workbook answers</a>. Rewrite any sentence that confuses a source declaration with an observed result.</li>
-</ol>
-
-<p>The <a href="#references">full workbook</a> includes a prediction, a misleading-claim challenge, an agenda repair exercise, a safety scenario and sample answers. The companion code is Ruby/Rails; this final workshop is a facilitation exercise and introduces no new runtime code.</p>
-
-<h2 id="references">References and supporting material</h2>
-
-<ul>
-  <li><a href="/assets/downloads/rails-evidence-client-roadmap-support.zip">Download the cumulative CaseFlow companion and Part 06 workshop materials</a>. Start at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/06-client-workshop/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/06-client-workshop/article.md</code>.</li>
-  <li>Companion files: <code class="language-plaintext highlighter-rouge">parts/06-client-workshop/WORKSHOP-AGENDA.md</code>, <code class="language-plaintext highlighter-rouge">CLAIM-LEDGER.md</code>, <code class="language-plaintext highlighter-rouge">ROADMAP.md</code>, <code class="language-plaintext highlighter-rouge">DECISION-RECORD.md</code>, <code class="language-plaintext highlighter-rouge">docs/labs/06-workshop-workbook.md</code>, <code class="language-plaintext highlighter-rouge">docs/diagrams/06-workshop-decision.mmd</code>, <code class="language-plaintext highlighter-rouge">docs/posts/06-client-workshop/post-manifest.md</code>.</li>
-  <li>Previous chapter artifacts: <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/candidate.patch</code>; <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/rails-pr.yml</code>; <code class="language-plaintext highlighter-rouge">parts/05-adoption-and-governance/PILOT-CHARTER.md</code> and <code class="language-plaintext highlighter-rouge">pilot-observations.csv</code>.</li>
-  <li><a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale">GitHub Docs: rolling out Copilot at scale</a>; <a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success">measuring a trial</a>; <a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-copilot-impact">connecting adoption with engineering outcomes</a>.</li>
-  <li><a href="https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies">GitHub Docs: organization Copilot policies</a>; <a href="https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent">Copilot cloud agent</a>; <a href="https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion">content exclusion limits</a>.</li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="consulting" /><category term="workshop" /><category term="engineering-roadmap" /><summary type="html"><![CDATA[Use a 90-minute client workshop to turn a Rails repository map, proposed PR, CI gates and Copilot pilot design into an evidence-backed roadmap with named owners.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/rails-evidence-client-roadmap/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/rails-evidence-client-roadmap/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="coding-agent" /><category term="pull-requests" /><category term="code-review" /><summary type="html"><![CDATA[Turn a bounded CaseFlow status-transition issue into an auditable Rails patch: scope, agent task, negative tests, diff review and honest verification.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/issue-to-reviewable-rails-pr/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/issue-to-reviewable-rails-pr/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
