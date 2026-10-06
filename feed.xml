@@ -1,876 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-06T16:43:28+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">From Agents to Understanding</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/ai-native/2026/10/05/from-agents-to-understanding.html" rel="alternate" type="text/html" title="From Agents to Understanding" /><published>2026-10-05T23:41:00+00:00</published><updated>2026-10-05T23:41:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/ai-native/2026/10/05/from-agents-to-understanding</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/ai-native/2026/10/05/from-agents-to-understanding.html"><![CDATA[<p><img src="/assets/images/posts/from-agents-to-understanding/cover.png" alt="From Agents to Understanding — COSMOS, HOLOFLUX, and IOP" /></p>
-
-<blockquote>
-  <p>What if an AI system could describe not only what it should <strong>do</strong>, but what it is trying to <strong>understand</strong>?</p>
-</blockquote>
-
-<p>AI agents are rapidly becoming capable of planning, calling tools, delegating work, maintaining state, inspecting results, and iterating until a task reaches a stopping point.</p>
-
-<p>A simplified agent loop looks like this:</p>
-
-<div class="mermaid-diagram mermaid-diagram--standard">
-
-  <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/af7a168eeea8be2c925a.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-</div>
-
-<p>That model is extraordinarily useful. But it is primarily organized around <strong>action</strong>.</p>
-
-<p>There is another question worth exploring:</p>
-
-<blockquote>
-  <p>What would an AI-native architecture look like if <strong>understanding itself became a first-class computational object</strong>?</p>
-</blockquote>
-
-<p>Not understanding hidden inside model weights. Not understanding implied by a final paragraph. But understanding that can be structured, traced, questioned, projected, revised, and acted upon.</p>
-
-<p>This is the territory explored by <strong>HOLOFLUX</strong>, <strong>IOP</strong>, and <strong>COSMOS</strong>.</p>
-
-<h2 id="1-from-execution-to-inquiry">1. From execution to inquiry</h2>
-
-<p>A conventional agent can be represented conceptually as:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="ss">:researcher</span> <span class="k">do</span>
-  <span class="n">goal</span> <span class="ss">:answer_question</span>
-
-  <span class="n">plan</span>
-  <span class="n">select_tool</span>
-  <span class="n">execute</span>
-  <span class="n">evaluate</span>
-  <span class="n">repeat</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>Its central question is:</p>
-
-<blockquote>
-  <p>What should I do next?</p>
-</blockquote>
-
-<p>An inquiry-oriented system introduces another question before action:</p>
-
-<blockquote>
-  <p>What is actually happening here?</p>
-</blockquote>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">intent</span> <span class="ss">:understand</span> <span class="k">do</span>
-  <span class="n">observe</span> <span class="ss">:what_is</span>
-
-  <span class="n">expose</span> <span class="ss">:assumptions</span>
-  <span class="n">expose</span> <span class="ss">:contradictions</span>
-
-  <span class="n">preserve</span> <span class="ss">:unknowns</span>
-  <span class="n">preserve</span> <span class="ss">:uncertainty</span>
-
-  <span class="n">allow</span> <span class="ss">:insight</span>
-
-  <span class="n">act_from</span> <span class="ss">:understanding</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>The movement becomes:</p>
-
-<div class="mermaid-diagram mermaid-diagram--standard">
-
-  <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/87e317af4de4845b1136.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-</div>
-
-<p>Action remains important. It is simply no longer the only organizing principle.</p>
-
-<h2 id="2-the-missing-epistemic-layer">2. The missing epistemic layer</h2>
-
-<p>Consider concepts that frequently become mixed together inside AI-generated answers:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Reference
-Source
-Source Passage
-Observation
-Claim
-Evidence
-Hypothesis
-Contradiction
-Uncertainty
-Understanding
-</code></pre></div></div>
-
-<p>They are related, but they are not interchangeable:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Citation ≠ Source
-Source ≠ Evidence
-Evidence ≠ Claim
-Claim ≠ Understanding
-Operational Success ≠ Epistemic Acceptance
-</code></pre></div></div>
-
-<p>A model successfully retrieving a document does not establish the claims contained in that document. A source asserting something does not automatically turn the assertion into evidence. A generated explanation does not automatically become understanding.</p>
-
-<p>What if those distinctions became part of the runtime?</p>
-
-<h2 id="3-a-practical-case-the-grebennikov-inquiry">3. A practical case: the Grebennikov inquiry</h2>
-
-<p>Viktor S. Grebennikov was an entomologist and naturalist whose book <em>My World</em> includes a chapter describing what he called the <strong>Cavity Structural Effect (CSE)</strong> and extraordinary claims involving antigravitational phenomena.</p>
-
-<p>The purpose of using this case is <strong>not</strong> to assert that antigravity was demonstrated. It is useful precisely because it forces an inquiry system to keep source, observation, interpretation, evidence, contradiction, and unknowns separate.</p>
-
-<p><img src="/assets/images/posts/from-agents-to-understanding/grebennikov-inquiry.png" alt="The Grebennikov Inquiry — source, claim, evidence, replication, contradiction and unknowns" /></p>
-
-<p>A weak summarization pipeline can collapse the semantic layers into something like:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Grebennikov discovered an antigravity effect associated with insect structures.
-</code></pre></div></div>
-
-<p>An inquiry-oriented representation keeps the distinctions visible:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Grebennikov reported observation X.
-Grebennikov interpreted X as effect Y.
-He proposed mechanism Z.
-Independent confirmation is a separate question.
-Alternative explanations remain possible.
-The claim cannot be treated as established merely because it appears in the primary source.
-</code></pre></div></div>
-
-<h2 id="4-starting-with-intent">4. Starting with intent</h2>
-
-<p>Instead of beginning with:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">task</span> <span class="ss">:summarize_grebennikov</span>
-</code></pre></div></div>
-
-<p>we can begin with:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">intent</span> <span class="ss">:understand_antigravity_claim</span>
-</code></pre></div></div>
-
-<p>A task such as <code class="language-plaintext highlighter-rouge">summarize</code> already specifies an output. An intent such as <code class="language-plaintext highlighter-rouge">understand</code> defines a purpose while leaving the conclusion open.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">intent</span> <span class="ss">:understand_antigravity_claim</span> <span class="k">do</span>
-  <span class="n">preserve</span> <span class="ss">:unknown</span>
-  <span class="n">avoid</span> <span class="ss">:premature_conclusion</span>
-  <span class="n">avoid</span> <span class="ss">:confusing_claim_with_evidence</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>The system has not been asked to prove Grebennikov correct or wrong. It has been asked to understand what can actually be concluded.</p>
-
-<h2 id="5-context-is-more-than-a-prompt">5. Context is more than a prompt</h2>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">context</span> <span class="k">do</span>
-  <span class="kp">include</span> <span class="ss">:grebennikov_primary_source</span>
-  <span class="kp">include</span> <span class="ss">:reported_observations</span>
-  <span class="kp">include</span> <span class="ss">:known_physics</span>
-  <span class="kp">include</span> <span class="ss">:independent_sources</span>
-  <span class="kp">include</span> <span class="ss">:replication_history</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>Context can itself have structure:</p>
-
-<div class="mermaid-diagram mermaid-diagram--standard">
-
-  <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/1341b203a527ea134072.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-</div>
-
-<p>The primary source can become an explicit object:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">reference</span> <span class="ss">:grebennikov_primary_source</span> <span class="k">do</span>
-  <span class="n">author</span> <span class="s2">"Viktor S. Grebennikov"</span>
-  <span class="n">work</span> <span class="s2">"My World"</span>
-  <span class="n">chapter</span> <span class="mi">5</span>
-  <span class="n">title</span> <span class="s2">"The Natural Phenomena of AntiGravitation and Invisibility in Insects due to the Grebennikov Cavity Structure Effect"</span>
-  <span class="n">source_type</span> <span class="ss">:book_chapter</span>
-  <span class="n">language</span> <span class="ss">:english_translation</span>
-  <span class="n">url</span> <span class="s2">"https://geomagnetics.org/sitebuildercontent/sitebuilderfiles/myworldbyviktorgrebennikovfinpdf.pdf"</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>The reference is now part of the semantic model rather than merely an item in a bibliography.</p>
-
-<h2 id="6-epistemic-policies">6. Epistemic policies</h2>
-
-<p>Before asking the system to investigate anything, we can describe the rules under which knowledge may be constructed:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">policies</span> <span class="k">do</span>
-  <span class="n">distinguish</span> <span class="ss">:observation</span><span class="p">,</span> <span class="ss">:claim</span>
-  <span class="n">distinguish</span> <span class="ss">:claim</span><span class="p">,</span> <span class="ss">:evidence</span>
-  <span class="n">distinguish</span> <span class="ss">:source</span><span class="p">,</span> <span class="ss">:evidence</span>
-  <span class="n">distinguish</span> <span class="ss">:hypothesis</span><span class="p">,</span> <span class="ss">:demonstrated_mechanism</span>
-
-  <span class="n">preserve</span> <span class="ss">:provenance</span>
-  <span class="n">preserve</span> <span class="ss">:contradiction</span>
-  <span class="n">preserve</span> <span class="ss">:uncertainty</span>
-  <span class="n">preserve</span> <span class="ss">:unknown</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>These are not merely security guardrails. They are <strong>epistemic guardrails</strong>.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">policy</span> <span class="ss">:claim_acceptance</span> <span class="k">do</span>
-  <span class="nb">require</span> <span class="ss">:supporting_evidence</span>
-  <span class="n">preserve</span> <span class="ss">:contradictory_evidence</span>
-  <span class="n">preserve</span> <span class="ss">:source_identity</span>
-  <span class="n">prohibit</span> <span class="ss">:source_as_evidence_by_default</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<h2 id="7-holoflux-making-the-semantic-field-explicit">7. HOLOFLUX: making the semantic field explicit</h2>
-
-<p>A compact formulation is:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HOLOFLUX = Meaning + Explication
-</code></pre></div></div>
-
-<p>Applied to the Grebennikov case:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">holoflux</span> <span class="ss">:grebennikov_field</span> <span class="k">do</span>
-
-  <span class="n">source</span> <span class="ss">:grebennikov_my_world</span> <span class="k">do</span>
-    <span class="n">reference</span> <span class="ss">:grebennikov_primary_source</span>
-    <span class="n">author</span> <span class="s2">"Viktor S. Grebennikov"</span>
-    <span class="n">chapter</span> <span class="mi">5</span>
-  <span class="k">end</span>
-
-  <span class="n">observation</span> <span class="ss">:o1</span> <span class="k">do</span>
-    <span class="n">statement</span> <span class="s2">"Certain insect structures were reported as having unusual microscopic geometries."</span>
-    <span class="n">provenance</span> <span class="k">do</span>
-      <span class="n">source</span> <span class="ss">:grebennikov_my_world</span>
-      <span class="n">location</span> <span class="ss">:chapter_5</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="n">claim</span> <span class="ss">:c1</span> <span class="k">do</span>
-    <span class="n">statement</span> <span class="s2">"Cavity structures produce a distinct physical effect."</span>
-    <span class="n">asserted_by</span> <span class="ss">:grebennikov</span>
-    <span class="n">provenance</span> <span class="k">do</span>
-      <span class="n">source</span> <span class="ss">:grebennikov_my_world</span>
-      <span class="n">location</span> <span class="ss">:chapter_5</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="n">claim</span> <span class="ss">:c2</span> <span class="k">do</span>
-    <span class="n">statement</span> <span class="s2">"The proposed effect can produce antigravitational behavior."</span>
-    <span class="n">asserted_by</span> <span class="ss">:grebennikov</span>
-    <span class="n">depends_on</span> <span class="ss">:c1</span>
-    <span class="n">provenance</span> <span class="k">do</span>
-      <span class="n">source</span> <span class="ss">:grebennikov_my_world</span>
-      <span class="n">location</span> <span class="ss">:chapter_5</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="n">evidence</span> <span class="ss">:e1</span> <span class="k">do</span>
-    <span class="n">supports</span> <span class="ss">:c2</span>
-    <span class="n">status</span> <span class="ss">:insufficient</span>
-    <span class="n">provenance</span> <span class="k">do</span>
-      <span class="n">source</span> <span class="ss">:grebennikov_my_world</span>
-      <span class="n">kind</span> <span class="ss">:reported_experience</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="n">unknown</span> <span class="ss">:u1</span> <span class="k">do</span>
-    <span class="n">asks</span> <span class="s2">"Is there an independently reproducible anomalous force?"</span>
-  <span class="k">end</span>
-
-  <span class="n">unknown</span> <span class="ss">:u2</span> <span class="k">do</span>
-    <span class="n">asks</span> <span class="s2">"Can the reported phenomenon be experimentally distinguished from known physical effects?"</span>
-  <span class="k">end</span>
-
-  <span class="n">uncertainty</span> <span class="ss">:high</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>The prose has become a <strong>semantic field</strong> that can be inspected without collapsing observation, claim, evidence, unknown, and uncertainty into one statement.</p>
-
-<h2 id="8-iop-inquiry-without-a-predetermined-conclusion">8. IOP: inquiry without a predetermined conclusion</h2>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IOP = Intent + Understanding
-</code></pre></div></div>
-
-<p>Intent here does not mean <code class="language-plaintext highlighter-rouge">produce answer X</code>. It defines the mode of inquiry.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">inquiry</span> <span class="ss">:antigravity_claim</span> <span class="k">do</span>
-  <span class="n">observe</span> <span class="ss">:reported_phenomena</span>
-  <span class="n">observe</span> <span class="ss">:measurement_quality</span>
-  <span class="n">observe</span> <span class="ss">:replication_status</span>
-  <span class="n">observe</span> <span class="ss">:alternative_explanations</span>
-
-  <span class="n">preserve</span> <span class="ss">:unknown</span>
-
-  <span class="n">do_not_assume</span> <span class="ss">:claim_is_true</span>
-  <span class="n">do_not_assume</span> <span class="ss">:claim_is_false</span>
-
-  <span class="n">ask</span> <span class="s2">"What is actually demonstrated?"</span>
-  <span class="n">ask</span> <span class="s2">"What remains interpretation?"</span>
-  <span class="n">ask</span> <span class="s2">"What observation could discriminate between competing explanations?"</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>The conclusion does not need to be forced.</p>
-
-<h2 id="9-allow-not-produce">9. <code class="language-plaintext highlighter-rouge">allow</code>, not <code class="language-plaintext highlighter-rouge">produce</code></h2>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">produce</span> <span class="ss">:insight</span>
-</code></pre></div></div>
-
-<p>implies that insight is mechanically generated from a command. An inquiry-oriented DSL can instead say:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">emergence</span> <span class="ss">:insight</span> <span class="k">do</span>
-  <span class="n">conditions</span> <span class="ss">:attention</span><span class="p">,</span>
-             <span class="ss">:observation</span><span class="p">,</span>
-             <span class="ss">:sufficient_context</span>
-  <span class="n">commanded</span> <span class="kp">false</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>or:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">inquiry</span> <span class="ss">:understand</span> <span class="k">do</span>
-  <span class="n">observe</span> <span class="ss">:what_is</span>
-  <span class="n">preserve</span> <span class="ss">:contradiction</span>
-  <span class="n">preserve</span> <span class="ss">:unknown</span>
-  <span class="n">remain_with</span> <span class="ss">:question</span>
-  <span class="n">allow</span> <span class="ss">:insight</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>This introduces an important distinction:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cause ≠ condition ≠ emergence
-</code></pre></div></div>
-
-<h2 id="10-understanding-is-not-the-output">10. Understanding is not the output</h2>
-
-<p>Suppose the inquiry reaches this state:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The primary source reports an antigravity interpretation of an alleged phenomenon.
-The existence of the source establishes that the claim was made.
-It does not by itself establish that the proposed physical mechanism is valid.
-Independent reproducibility therefore remains a central unresolved question.
-</code></pre></div></div>
-
-<p>That understanding can produce several outputs.</p>
-
-<p><img src="/assets/images/posts/from-agents-to-understanding/understanding-projections.png" alt="Understanding is not the output — one semantic field, multiple projections" /></p>
-
-<div class="mermaid-diagram mermaid-diagram--standard">
-
-  <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/9e74fca1f1304bebee9d.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-</div>
-
-<p>The outputs are <strong>projections</strong>. They are not the understanding itself.</p>
-
-<h2 id="11-cosmos-as-the-orchestration-layer">11. COSMOS as the orchestration layer</h2>
-
-<p>COSMOS coordinates the whole:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>COSMOS = Orchestration of the Whole
-</code></pre></div></div>
-
-<p><img src="/assets/images/posts/from-agents-to-understanding/cosmos-orchestration.png" alt="COSMOS orchestrates the whole — intent-driven AI-native architecture" /></p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cosmos</span> <span class="ss">:grebennikov_inquiry</span> <span class="k">do</span>
-
-  <span class="n">reference</span> <span class="ss">:primary_source</span> <span class="k">do</span>
-    <span class="n">author</span> <span class="s2">"Viktor S. Grebennikov"</span>
-    <span class="n">work</span> <span class="s2">"My World"</span>
-    <span class="n">chapter</span> <span class="mi">5</span>
-    <span class="n">title</span> <span class="s2">"The Natural Phenomena of AntiGravitation and Invisibility in Insects due to the Grebennikov Cavity Structure Effect"</span>
-    <span class="n">source_type</span> <span class="ss">:book_chapter</span>
-    <span class="n">language</span> <span class="ss">:english_translation</span>
-    <span class="n">url</span> <span class="s2">"https://geomagnetics.org/sitebuildercontent/sitebuilderfiles/myworldbyviktorgrebennikovfinpdf.pdf"</span>
-  <span class="k">end</span>
-
-  <span class="n">intent</span> <span class="ss">:understand_antigravity_claim</span> <span class="k">do</span>
-    <span class="n">preserve</span> <span class="ss">:unknown</span>
-    <span class="n">avoid</span> <span class="ss">:premature_conclusion</span>
-    <span class="n">avoid</span> <span class="ss">:confusing_claim_with_evidence</span>
-  <span class="k">end</span>
-
-  <span class="n">context</span> <span class="k">do</span>
-    <span class="kp">include</span> <span class="n">reference</span><span class="p">(</span><span class="ss">:primary_source</span><span class="p">)</span>
-    <span class="kp">include</span> <span class="ss">:reported_observations</span>
-    <span class="kp">include</span> <span class="ss">:known_physics</span>
-    <span class="kp">include</span> <span class="ss">:independent_sources</span>
-    <span class="kp">include</span> <span class="ss">:replication_history</span>
-  <span class="k">end</span>
-
-  <span class="n">policies</span> <span class="k">do</span>
-    <span class="n">distinguish</span> <span class="ss">:observation</span><span class="p">,</span> <span class="ss">:claim</span>
-    <span class="n">distinguish</span> <span class="ss">:claim</span><span class="p">,</span> <span class="ss">:evidence</span>
-    <span class="n">distinguish</span> <span class="ss">:source</span><span class="p">,</span> <span class="ss">:evidence</span>
-    <span class="n">distinguish</span> <span class="ss">:hypothesis</span><span class="p">,</span> <span class="ss">:demonstrated_mechanism</span>
-
-    <span class="n">preserve</span> <span class="ss">:provenance</span>
-    <span class="n">preserve</span> <span class="ss">:contradiction</span>
-    <span class="n">preserve</span> <span class="ss">:uncertainty</span>
-  <span class="k">end</span>
-
-  <span class="n">capabilities</span> <span class="k">do</span>
-    <span class="n">use</span> <span class="ss">:retrieval</span>
-    <span class="n">use</span> <span class="ss">:source_validation</span>
-    <span class="n">use</span> <span class="ss">:holoflux</span>
-    <span class="n">use</span> <span class="ss">:iop</span>
-    <span class="n">use</span> <span class="ss">:diagram_generation</span>
-  <span class="k">end</span>
-
-  <span class="n">orchestrate</span> <span class="k">do</span>
-    <span class="n">acquire</span> <span class="ss">:sources</span>
-
-    <span class="n">delegate</span> <span class="ss">:semantic_explication</span><span class="p">,</span>
-             <span class="ss">to: :holoflux</span>
-
-    <span class="n">delegate</span> <span class="ss">:inquiry</span><span class="p">,</span>
-             <span class="ss">to: :iop</span>
-
-    <span class="n">integrate</span> <span class="ss">:understanding</span>
-  <span class="k">end</span>
-
-  <span class="n">project</span> <span class="k">do</span>
-    <span class="n">as</span> <span class="ss">:dsl</span>
-    <span class="n">as</span> <span class="ss">:mermaid</span>
-    <span class="n">as</span> <span class="ss">:epistemic_report</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>The DSL describes:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intent
-Context
-Policies
-Capabilities
-Orchestration
-Understanding
-Projection
-</code></pre></div></div>
-
-<p>It describes the <strong>epistemic architecture of the system</strong>.</p>
-
-<h2 id="12-from-dsl-to-mermaid">12. From DSL to Mermaid</h2>
-
-<p>Because the semantic model is explicit, it can also be projected as a diagram:</p>
-
-<div class="mermaid-diagram mermaid-diagram--standard">
-
-  <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/a08a095a2929383f085a.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-</div>
-
-<p>The important part is not the visual alone. The diagram and the textual explanation come from the same semantic structure.</p>
-
-<h2 id="13-implicate-and-explicate">13. Implicate and explicate</h2>
-
-<p>The architecture suggests an analogy with David Bohm’s distinction between <strong>implicate</strong> and <strong>explicate</strong> order. This is a conceptual analogy, not a claim that the runtime implements Bohm’s physical theory.</p>
-
-<p>A text contains more possible meaning than any one representation of it. Relationships, tensions, assumptions, interpretations, perspectives, and unanswered questions remain partially <strong>enfolded</strong>.</p>
-
-<div class="mermaid-diagram mermaid-diagram--standard">
-
-  <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/58107d715e2c07b2f667.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-</div>
-
-<p>A DSL can then be seen as one explicit projection:</p>
-
-<p>The resulting semantic field can then be projected as a DSL, diagram, narrative, or behavior without confusing any one projection with the whole.</p>
-
-<p>The DSL is therefore not the implicate order itself. It is an <strong>explication</strong> of part of it.</p>
-
-<h2 id="14-from-documentation-to-executable-architecture">14. From documentation to executable architecture</h2>
-
-<p>At first, this DSL can serve as architectural documentation. The more interesting possibility is that it eventually becomes executable.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cosmos</span> <span class="ss">:research_system</span> <span class="k">do</span>
-  <span class="n">intent</span> <span class="ss">:understand_article</span>
-
-  <span class="n">policies</span> <span class="k">do</span>
-    <span class="n">preserve</span> <span class="ss">:unknown</span>
-    <span class="n">preserve</span> <span class="ss">:provenance</span>
-  <span class="k">end</span>
-
-  <span class="n">capabilities</span> <span class="k">do</span>
-    <span class="n">use</span> <span class="ss">:retrieval</span>
-    <span class="n">use</span> <span class="ss">:holoflux</span>
-    <span class="n">use</span> <span class="ss">:iop</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>A runtime could resolve <code class="language-plaintext highlighter-rouge">use :retrieval</code> into search, RAG, vector storage, an MCP server, a knowledge graph, or an agent. COSMOS deals with <strong>capabilities</strong>; the runtime deals with implementation.</p>
-
-<h2 id="15-agent-behavior-can-become-part-of-the-dsl">15. Agent behavior can become part of the DSL</h2>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="ss">:researcher</span> <span class="k">do</span>
-  <span class="n">behavior</span> <span class="ss">:investigate_claim</span> <span class="k">do</span>
-    <span class="n">receive</span> <span class="ss">:claim</span>
-    <span class="n">retrieve</span> <span class="ss">:sources</span>
-    <span class="n">preserve</span> <span class="ss">:provenance</span>
-
-    <span class="n">distinguish</span> <span class="ss">:source</span><span class="p">,</span>
-                <span class="ss">:evidence</span><span class="p">,</span>
-                <span class="ss">:claim</span>
-
-    <span class="n">detect</span> <span class="ss">:contradictions</span>
-    <span class="n">assess</span> <span class="ss">:uncertainty</span>
-
-    <span class="nb">open</span> <span class="ss">:inquiry</span><span class="p">,</span>
-         <span class="ss">when: :unknown_remains</span>
-
-    <span class="n">emit</span> <span class="ss">:understanding</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>That leads to a richer model of computation:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Entity
-= Meaning
-+ State
-+ Behavior
-+ Relations
-+ Transitions
-+ Constraints
-+ Emergence
-</code></pre></div></div>
-
-<p>and a richer AI-native system:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intent
-+ Context
-+ Semantic Field
-+ Behavior
-+ Inquiry
-+ Understanding
-+ Projection
-</code></pre></div></div>
-
-<h2 id="16-from-agentic-systems-to-inquiry-oriented-systems">16. From agentic systems to inquiry-oriented systems</h2>
-
-<h3 id="chatbot">Chatbot</h3>
-
-<div class="mermaid-diagram mermaid-diagram--standard">
-
-  <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/88ddb3466dbdeed1acce.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-</div>
-
-<h3 id="agent">Agent</h3>
-
-<div class="mermaid-diagram mermaid-diagram--standard">
-
-  <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/0d0bf2d273a9feb295d3.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-</div>
-
-<h3 id="inquiry-oriented-ai-native-system">Inquiry-Oriented AI-Native System</h3>
-
-<div class="mermaid-diagram mermaid-diagram--standard">
-
-  <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/87e317af4de4845b1136.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-</div>
-
-<p>This does not make conventional agents obsolete. It adds another layer.</p>
-
-<p>The agent asks:</p>
-
-<blockquote>
-  <p>What should I do next?</p>
-</blockquote>
-
-<p>The epistemic runtime can also ask:</p>
-
-<blockquote>
-  <p>What do we actually know?</p>
-</blockquote>
-
-<blockquote>
-  <p>Why do we think we know it?</p>
-</blockquote>
-
-<blockquote>
-  <p>What contradicts it?</p>
-</blockquote>
-
-<blockquote>
-  <p>What remains unknown?</p>
-</blockquote>
-
-<blockquote>
-  <p>What conclusion is justified?</p>
-</blockquote>
-
-<h2 id="17-a-krishnamurti-inspired-semantics-of-inquiry">17. A Krishnamurti-inspired semantics of inquiry</h2>
-
-<p>The language of IOP draws inspiration from concepts often explored by J. Krishnamurti:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>observation
-conditioning
-conflict
-attention
-ending
-insight
-intelligence
-</code></pre></div></div>
-
-<p>The purpose is not to turn those concepts into a deterministic algorithm. Instead, they suggest another vocabulary for computational inquiry:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">intent</span> <span class="ss">:understand</span> <span class="k">do</span>
-  <span class="ow">not</span> <span class="ss">:control</span>
-  <span class="ow">not</span> <span class="ss">:premature_conclusion</span>
-
-  <span class="n">observe</span> <span class="ss">:what_is</span>
-  <span class="n">preserve</span> <span class="ss">:unknown</span>
-  <span class="n">remain_with</span> <span class="ss">:question</span>
-
-  <span class="n">allow</span> <span class="ss">:insight</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>The distinction between <code class="language-plaintext highlighter-rouge">produce :insight</code> and <code class="language-plaintext highlighter-rouge">allow :insight</code> is intentional. The first describes command. The second describes conditions under which something may emerge.</p>
-
-<h2 id="18-what-the-grebennikov-example-reveals">18. What the Grebennikov example reveals</h2>
-
-<p>The antigravity case is useful precisely because it prevents the system from taking an easy path.</p>
-
-<p>An AI could simply say:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Grebennikov discovered antigravity.
-</code></pre></div></div>
-
-<p>or jump to the opposite shortcut:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The claim is false.
-</code></pre></div></div>
-
-<p>An inquiry-oriented architecture should resist both shortcuts when the available semantic field does not justify them.</p>
-
-<div class="mermaid-diagram mermaid-diagram--standard">
-
-  <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/f469a02885eab068edbb.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-</div>
-
-<p>Its strength is not that it produces a stronger opinion. Its strength is that it preserves the difference between:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>known
-claimed
-supported
-contradicted
-uncertain
-unknown
-</code></pre></div></div>
-
-<h2 id="19-cosmos-holoflux-and-iop">19. COSMOS, HOLOFLUX, and IOP</h2>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HOLOFLUX
-Meaning + Explication
-
-IOP
-Intent + Understanding
-
-COSMOS
-Orchestration of the Whole
-</code></pre></div></div>
-
-<p>Together:</p>
-
-<div class="mermaid-diagram mermaid-diagram--standard">
-
-  <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/342e55b2f7a0831a5bc4.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-</div>
-
-<h2 id="20-toward-an-executable-cosmos-dsl">20. Toward an executable COSMOS DSL</h2>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cosmos</span> <span class="ss">:research_system</span> <span class="k">do</span>
-  <span class="n">intent</span> <span class="ss">:understand</span>
-
-  <span class="n">context</span> <span class="k">do</span>
-    <span class="n">source</span> <span class="ss">:primary_document</span>
-  <span class="k">end</span>
-
-  <span class="n">policies</span> <span class="k">do</span>
-    <span class="n">preserve</span> <span class="ss">:provenance</span>
-    <span class="n">preserve</span> <span class="ss">:unknown</span>
-    <span class="n">preserve</span> <span class="ss">:contradiction</span>
-  <span class="k">end</span>
-
-  <span class="n">capabilities</span> <span class="k">do</span>
-    <span class="n">use</span> <span class="ss">:retrieval</span>
-    <span class="n">use</span> <span class="ss">:holoflux</span>
-    <span class="n">use</span> <span class="ss">:iop</span>
-  <span class="k">end</span>
-
-  <span class="n">orchestrate</span> <span class="k">do</span>
-    <span class="n">integrate</span> <span class="ss">:understanding</span>
-  <span class="k">end</span>
-
-  <span class="n">project</span> <span class="k">do</span>
-    <span class="n">as</span> <span class="ss">:article</span>
-    <span class="n">as</span> <span class="ss">:diagram</span>
-    <span class="n">as</span> <span class="ss">:agent_behavior</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>The DSL would no longer merely describe a workflow. It would describe <strong>what kind of cognitive system should exist</strong>. The runtime would determine how to instantiate it.</p>
-
-<h2 id="21-the-larger-shift">21. The larger shift</h2>
-
-<p>Software abstractions have repeatedly moved upward:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Machine Instructions
-       ↓
-Procedural Programming
-       ↓
-Object-Oriented Programming
-       ↓
-Distributed Systems
-       ↓
-Cloud-Native Systems
-       ↓
-Agentic Systems
-</code></pre></div></div>
-
-<p>AI-native software may require another set of first-class concepts:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intent
-Meaning
-Context
-Evidence
-Uncertainty
-Inquiry
-Understanding
-</code></pre></div></div>
-
-<p>Perhaps the important transition is not merely:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>software → agents
-</code></pre></div></div>
-
-<p>but:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>execution → inquiry
-</code></pre></div></div>
-
-<p>and eventually:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>opaque reasoning → explicit understanding
-</code></pre></div></div>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>AI agents already know how to act. Increasingly, they know how to choose tools, delegate work, maintain context, inspect results, and continue autonomously.</p>
-
-<p>The next architectural question may be different.</p>
-
-<p>Can an AI-native system make explicit:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>what was observed
-what was claimed
-where it came from
-what supports it
-what contradicts it
-what remains uncertain
-what remains unknown
-what can actually be understood
-</code></pre></div></div>
-
-<p>If so, the fundamental loop changes:</p>
-
-<div class="mermaid-diagram mermaid-diagram--standard">
-
-  <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/5e0336de87951dd642dd.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-</div>
-
-<p>becomes:</p>
-
-<p>The system no longer asks only:</p>
-
-<blockquote>
-  <p>What should I do next?</p>
-</blockquote>
-
-<p>It can also ask:</p>
-
-<blockquote>
-  <p>What is actually happening?</p>
-</blockquote>
-
-<blockquote>
-  <p>What do I know?</p>
-</blockquote>
-
-<blockquote>
-  <p>What don’t I know?</p>
-</blockquote>
-
-<blockquote>
-  <p>And what do I truly understand?</p>
-</blockquote>
-
-<p>That is where <strong>HOLOFLUX</strong>, <strong>IOP</strong>, and <strong>COSMOS</strong> begin to converge — not merely into another agent framework, but into an architecture for <strong>AI-native understanding</strong>.</p>
-
-<h2 id="core-formulas">Core formulas</h2>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HOLOFLUX = Meaning + Explication
-IOP = Intent + Understanding
-COSMOS = Orchestration of the Whole
-</code></pre></div></div>
-
-<div class="mermaid-diagram mermaid-diagram--standard">
-
-  <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/49118dfdf5f63b0e779a.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-</div>
-
-<h2 id="references">References</h2>
-
-<ul>
-  <li><strong>Grebennikov, Viktor S. — <em>My World</em>, Chapter 5.</strong> English translation of “The Natural Phenomena of AntiGravitation and Invisibility in Insects due to the Grebennikov Cavity Structure Effect (CSE).” Used here as a primary source for Grebennikov’s claims, not as independent confirmation. <a href="https://geomagnetics.org/sitebuildercontent/sitebuilderfiles/myworldbyviktorgrebennikovfinpdf.pdf">https://geomagnetics.org/sitebuildercontent/sitebuilderfiles/myworldbyviktorgrebennikovfinpdf.pdf</a></li>
-  <li><strong>OpenAI — Agents documentation.</strong> Contemporary reference for agent loops, tools, handoffs, guardrails, state, and orchestration. <a href="https://developers.openai.com/api/docs/guides/agents">https://developers.openai.com/api/docs/guides/agents</a></li>
-  <li><strong>David Bohm.</strong> The implicate/explicate order is used here as a conceptual analogy, not as a claim that HOLOFLUX implements Bohm’s physical theory. <a href="https://www.davidbohm.net/">https://www.davidbohm.net/</a></li>
-  <li><strong>J. Krishnamurti.</strong> Observation, conditioning, attention, conflict, ending, and insight inform the inquiry vocabulary used here as conceptual inspiration rather than deterministic formalization. <a href="https://www.jkrishnamurti.org/">https://www.jkrishnamurti.org/</a></li>
-</ul>
-
-<h2 id="related-concepts">Related concepts</h2>
-
-<ul>
-  <li><strong>HOLOFLUX</strong> — Meaning + Explication</li>
-  <li><strong>IOP</strong> — Intent + Understanding</li>
-  <li><strong>COSMOS</strong> — Intent-driven orchestration of knowledge, meaning, intelligence, and creation</li>
-  <li><strong>IMPLICATE</strong> — Enfolded semantic order from which explicit representations can emerge</li>
-  <li><strong>FACTORIES</strong> — Engines of explication that transform structured meaning and intent into explicit, communicable digital media</li>
-</ul>]]></content><author><name></name></author><category term="artificial-intelligence" /><category term="software-engineering" /><category term="ai-native" /><category term="COSMOS" /><category term="HOLOFLUX" /><category term="IOP" /><category term="DSL" /><category term="agents" /><category term="inquiry" /><category term="epistemic-runtime" /><category term="Grebennikov" /><category term="AI-native" /><summary type="html"><![CDATA[]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/from-agents-to-understanding/cover.png" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/from-agents-to-understanding/cover.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">From Ericsson Use Cases to AI-Native Systems</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html" rel="alternate" type="text/html" title="From Ericsson Use Cases to AI-Native Systems" /><published>2026-10-05T15:00:00+00:00</published><updated>2026-10-05T15:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html"><![CDATA[<style>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-06T16:57:47+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">From Ericsson Use Cases to AI-Native Systems</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html" rel="alternate" type="text/html" title="From Ericsson Use Cases to AI-Native Systems" /><published>2026-10-05T15:00:00+00:00</published><updated>2026-10-05T15:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html"><![CDATA[<style>
 .mermaid-diagram img,
 .mermaid-diagram svg {
   display: block;
@@ -981,7 +109,7 @@ How do the units cooperate?
 <div class="mermaid-diagram mermaid-diagram--compact">
 
   <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/59e9db05bd735b6e27fd.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
+  <img src="/assets/generated/mermaid/f985c4e2765ac5e37fad.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
 </figure>
 
   <p><strong>Legend:</strong> the Function Block is the unit of composition within the application system; it brings together software, data, interfaces and physical or regional resources.</p>
@@ -1156,7 +284,7 @@ AI-Native
 <div class="mermaid-diagram mermaid-diagram--compact">
 
   <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/5ff38e9953a1575dc473.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
+  <img src="/assets/generated/mermaid/1810bef5c68cddd6c27d.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
 </figure>
 
   <p><strong>Legend:</strong> the use case diagram identifies the actor, the system boundary, the goal and the controlled extension requiring authorization.</p>
@@ -1212,7 +340,7 @@ Approve production changes         → Human Actor
 <div class="mermaid-diagram mermaid-diagram--large">
 
   <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/b1853246db374280e104.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
+  <img src="/assets/generated/mermaid/649a4af1613549a9e5a6.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
 </figure>
 
   <p><strong>Legend:</strong> the diagram separates context, execution and governance; the use case routes the intention through bounded capabilities toward evidence and human-verified completion.</p>
@@ -4753,4 +3881,189 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
   <li><a href="https://docs.github.com/en/copilot/concepts/agents/copilot-cli/comparing-cli-features">GitHub Docs: Copilot CLI customization comparison</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills">agent skills</a>; <a href="https://docs.github.com/en/copilot/reference/hooks-reference">hooks reference</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview">Copilot CLI use</a>.</li>
   <li><a href="https://docs.github.com/en/copilot/concepts/agents/github-copilot-app">GitHub Docs: Copilot desktop app</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-sdk">Copilot SDK</a>.</li>
   <li>Previous chapters: <a href="#references">Part 07’s CLI lab</a> at <code class="language-plaintext highlighter-rouge">parts/07-cli-rails-change/RUNBOOK.md</code> and <a href="#references">Part 06 workshop</a> at <code class="language-plaintext highlighter-rouge">parts/06-client-workshop/WORKSHOP-AGENDA.md</code> in the same download.</li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="agentic-workflows" /><category term="agent-skills" /><category term="hooks" /><category term="mcp" /><summary type="html"><![CDATA[Complete the Rails/Copilot series with a repeatable evidence workflow: choose between instructions, skills, tools, hooks and MCP, validate a local record in Ruby and keep a human decision gate.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/repeatable-rails-copilot-workflow/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/repeatable-rails-copilot-workflow/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="agentic-workflows" /><category term="agent-skills" /><category term="hooks" /><category term="mcp" /><summary type="html"><![CDATA[Complete the Rails/Copilot series with a repeatable evidence workflow: choose between instructions, skills, tools, hooks and MCP, validate a local record in Ruby and keep a human decision gate.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/repeatable-rails-copilot-workflow/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/repeatable-rails-copilot-workflow/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Can the Patch Pass the Gates?</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/can-the-patch-pass-the-gates.html" rel="alternate" type="text/html" title="Can the Patch Pass the Gates?" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/can-the-patch-pass-the-gates</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/can-the-patch-pass-the-gates.html"><![CDATA[<p><img src="/assets/images/posts/rails-ci-security-human-review/cover.webp" alt="Part 04: a digitized Copilot-inspired character in profile examines a proposed Rails CI workflow, source diff, unrun RSpec draft and an open policy question, linked by flowing Holoflux." style="width:100%;height:auto;" /></p>
+
+<blockquote>
+  <p><strong>A fast patch still needs evidence.</strong> Build a Rails CI path that exposes failures, checks security assumptions and leaves the approval decision with a human reviewer.</p>
+</blockquote>
+
+<p><em>GitHub Copilot for Rails Engineers · Part 04</em></p>
+
+<p>In <a href="/ruby/rails/software-engineering/github-copilot/2026/09/26/from-issue-to-reviewable-rails-pr.html">Part 03</a>, we gave an agent a narrow CaseFlow status-transition issue and produced a local candidate patch. An agent can propose a route, controller and request specs. Those files tell us what <em>might</em> happen; they do not tell us what actually happened on a runner, whether dependencies are known or who may authorize the change. Here we design a chain of checks that produces inspectable evidence while preserving the human decision.</p>
+
+<p>The <a href="/assets/downloads/rails-ci-security-human-review-support.zip">companion repository</a> contains the integrated Rails API, the Part 03 patch, a staged GitHub Actions workflow, Mermaid source, a lab workbook with answers and a review worksheet. This educational workflow has <strong>not run in GitHub Actions</strong>. There is no <code class="language-plaintext highlighter-rouge">Gemfile.lock</code> in the supplied baseline, and no successful RSpec, security scan or PR run is claimed. The illustration shows <strong>conceptual review artifacts</strong>, not a GitHub screenshot or observed CI result.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#boundary">Start with a truthful evidence boundary</a></li>
+  <li><a href="#test-gate">Make the Rails test gate reproducible</a></li>
+  <li><a href="#security">Add a security layer that says what it covers</a></li>
+  <li><a href="#failure">Read failures as evidence</a></li>
+  <li><a href="#review">Keep the merge decision human</a></li>
+  <li><a href="#lab">Run the 45-minute lab</a></li>
+  <li><a href="#references">References and supporting material</a></li>
+</ul>
+
+<h2 id="boundary">Start with a truthful evidence boundary</h2>
+
+<p>A PR has different kinds of claims. A spec file contains <strong>assertions</strong>. A workflow file contains <strong>planned commands</strong>. A job log shows <strong>observed execution</strong> on a given commit and environment. A reviewer decides whether those observations and the product policy justify the change. None substitutes for the others.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Layer</th>
+      <th>CaseFlow artifact</th>
+      <th>What it can establish</th>
+      <th>What it cannot establish</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Intent</td>
+      <td>Part 03 <code class="language-plaintext highlighter-rouge">ISSUE.md</code> in the companion repository</td>
+      <td>Proposed transition and exercise assumptions</td>
+      <td>Actual customer authorization</td>
+    </tr>
+    <tr>
+      <td>Source</td>
+      <td><code class="language-plaintext highlighter-rouge">candidate.patch</code></td>
+      <td>Exact proposed route, action and request specs</td>
+      <td>Test pass or deployability</td>
+    </tr>
+    <tr>
+      <td>Runner</td>
+      <td>Proposed <code class="language-plaintext highlighter-rouge">rails-pr.yml</code></td>
+      <td>Commands that *would* run after setup</td>
+      <td>An observed green status until it runs</td>
+    </tr>
+    <tr>
+      <td>Human</td>
+      <td>Review worksheet</td>
+      <td>Explicit disposition and residual risk</td>
+      <td>Guarantee that no defect exists</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The link to the companion <code class="language-plaintext highlighter-rouge">ISSUE.md</code> appears in the <a href="#references">support materials</a>. GitHub’s <a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/review-copilot-output">Copilot review guidance</a> calls for human review of agent-produced changes. In the CaseFlow exercise, approving a policy for <em>who</em> can resolve a request remains outside the authority of an automated test.</p>
+
+<figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/3f04e3a10d716f3797d3.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
+</figure>
+
+<p>The arrow into review carries <strong>observed results</strong>, including failures. Green in this diagram identifies the <em>type of evidence</em>, not a passing CaseFlow run. The matching Mermaid source is included as a local <code class="language-plaintext highlighter-rouge">.mmd</code> file in the package.</p>
+
+<h2 id="test-gate">Make the Rails test gate reproducible</h2>
+
+<p>CaseFlow’s baseline <code class="language-plaintext highlighter-rouge">Gemfile</code> declares Rails <code class="language-plaintext highlighter-rouge">~&gt; 8.0.0</code>, SQLite, Puma and RSpec. It has no <code class="language-plaintext highlighter-rouge">Gemfile.lock</code>. Installing from that Gemfile could resolve different compatible versions on different days. Before requiring a CI check, on a Mac with Ruby installed, resolve and commit a lockfile in the <strong>companion repository’s</strong> <code class="language-plaintext highlighter-rouge">caseflow/</code> directory, review the resolved gems, then run the app locally:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>caseflow
+bundle <span class="nb">install
+</span><span class="nv">RAILS_ENV</span><span class="o">=</span><span class="nb">test </span>bin/rails db:prepare
+bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
+</code></pre></div></div>
+
+<p>Do not paste an invented lockfile into the project. If <code class="language-plaintext highlighter-rouge">bundle install</code> fails, record the Ruby version, command and first actionable error; a failed setup is evidence, not a passed test. Apply <a href="#lab">Part 03’s candidate patch</a> <strong>before</strong> expecting its four proposed transition cases in RSpec. The unpatched baseline runs only its original request specs.</p>
+
+<p>The supplied <a href="#references">staged workflow</a> illustrates the first useful GitHub Actions job. It is stored outside <code class="language-plaintext highlighter-rouge">.github/workflows/</code> so this package does not silently activate a check in any repository. The central excerpt is:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">permissions</span><span class="pi">:</span>
+  <span class="na">contents</span><span class="pi">:</span> <span class="s">read</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">rails_specs</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">defaults</span><span class="pi">:</span>
+      <span class="na">run</span><span class="pi">:</span>
+        <span class="na">working-directory</span><span class="pi">:</span> <span class="s">caseflow</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v6</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">ruby/setup-ruby@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">ruby-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.3'</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">bundle config set frozen </span><span class="kc">true</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">bundle install</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">RAILS_ENV=test bin/rails db:prepare</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">bundle exec rspec spec/requests/api/requests_spec.rb</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">bundle config set frozen true</code> makes a missing or inconsistent lockfile fail early. The sample targets Ubuntu and a Ruby 3.3 interpreter; verify that version against your local app and choose pinned action SHAs under your organization’s policy before production. GitHub’s <a href="https://docs.github.com/en/actions/tutorials/build-and-test-code/ruby">Ruby Actions guide</a> documents <code class="language-plaintext highlighter-rouge">ruby/setup-ruby</code>, Bundler and caching. After a checked-in lockfile and first reliable run, <code class="language-plaintext highlighter-rouge">bundler-cache: true</code> can shorten future jobs; it does not prove the code is secure.</p>
+
+<h2 id="security">Add a security layer that says what it covers</h2>
+
+<p>“DevSecOps passed” is too vague for review. Match each proposed gate to a known question:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Candidate check</th>
+      <th>Important limit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Do request specs catch this transition?</td>
+      <td>RSpec positive **and** negative cases</td>
+      <td>Assertions are only observed after a run; specs can miss policy defects.</td>
+    </tr>
+    <tr>
+      <td>Did a new dependency introduce known risks?</td>
+      <td>GitHub dependency review on PRs; review <code class="language-plaintext highlighter-rouge">Gemfile.lock</code> diff</td>
+      <td>Requires repository support and correctly configured workflow; no new gem means little differential signal.</td>
+    </tr>
+    <tr>
+      <td>Does Rails source contain recognizable risky patterns?</td>
+      <td>Brakeman after adding it to the reviewed Gemfile and lockfile</td>
+      <td>Static analysis can miss domain authorization errors.</td>
+    </tr>
+    <tr>
+      <td>Are code paths flagged by code scanning?</td>
+      <td>CodeQL default setup where available</td>
+      <td>Configuration/eligibility and findings need review; do not claim it ran here.</td>
+    </tr>
+    <tr>
+      <td>Can this actor resolve that request?</td>
+      <td>Product decision + auth design + negative tests</td>
+      <td>A shared operator token in the lab is **not** production identity policy.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>GitHub describes <a href="https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/configure-dependency-review-action">dependency review</a> as a PR dependency-diff check, and <a href="https://docs.github.com/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning">CodeQL default setup</a> as repository code scanning configuration. Their availability and billing can vary with repository settings; inspect the target repository before making either a required check. The <a href="#references">security worksheet</a> lists the exact decision and evidence fields, rather than assuming a green badge.</p>
+
+<p>Keep the sample workflow on <code class="language-plaintext highlighter-rouge">pull_request</code> with <code class="language-plaintext highlighter-rouge">contents: read</code>; it does not request secrets or a write token. GitHub’s <a href="https://docs.github.com/en/actions/reference/security/secure-use">secure use reference</a> discusses risks of untrusted PR code and least privilege. Do not change it to <code class="language-plaintext highlighter-rouge">pull_request_target</code> while checking out and running a contributor’s untrusted code.</p>
+
+<h2 id="failure">Read failures as evidence</h2>
+
+<p><img src="/assets/images/posts/rails-ci-security-human-review/read-the-failure.webp" alt="Conceptual evidence desk with CaseFlow Gemfile, an empty Gemfile.lock position, unrun request specs and a human policy question, connected by Holoflux; no test result is depicted." style="width:100%;height:auto;" /></p>
+
+<p><em>The empty lockfile position is a teaching cue. There is no recorded failing CaseFlow CI run in this package.</em> A missing <code class="language-plaintext highlighter-rouge">Gemfile.lock</code>, failing <code class="language-plaintext highlighter-rouge">bundle install</code>, an RSpec assertion failure and a security finding mean different things. Capture <strong>which command failed, on which commit, in which environment</strong>, then triage the smallest cause. Do not mark a spec “fixed” merely because the agent changed the expectation to fit its implementation.</p>
+
+<p>A practical failure record uses four fields: <code class="language-plaintext highlighter-rouge">commit SHA</code>, <code class="language-plaintext highlighter-rouge">command</code>, <code class="language-plaintext highlighter-rouge">observed exit status or blocker</code>, and <code class="language-plaintext highlighter-rouge">next owner/action</code>. When setup fails, downstream scans are <strong>not run</strong>, not “passed”. If RSpec fails for an unauthorized request, inspect the proposed token guard and the request spec; if the product policy is unclear, return to the issue instead of weakening the test. The <a href="#references">worksheet</a> includes examples labeled <em>illustrative</em> rather than fabricated logs.</p>
+
+<h2 id="review">Keep the merge decision human</h2>
+
+<p>Require the reviewer to read the three changed files from Part 03 and decide whether <code class="language-plaintext highlighter-rouge">open → resolved</code> and the shared operator token model the intended business rule. Even a real green RSpec and static scan would answer only their defined checks. Attach the run URL and commit SHA to the review note, describe unchecked cases (concurrency, token rotation, actor identity, auditing), then approve the lab proposal, request changes or escalate policy. Do not turn the synthetic review into a real customer release decision.</p>
+
+<h2 id="lab">Run the 45-minute lab</h2>
+
+<ol>
+  <li><strong>Predict (5 min):</strong> before opening the workflow, name two ways a job can fail without running any specs.</li>
+  <li><strong>Prepare (12 min):</strong> in a clean checkout, apply <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/candidate.patch</code>; generate and inspect <code class="language-plaintext highlighter-rouge">caseflow/Gemfile.lock</code> on your Mac; never commit secrets.</li>
+  <li><strong>Observe (12 min):</strong> run the focused RSpec command and record the exact outcome or first blocker. Read the staged <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/rails-pr.yml</code>; compare each command with what your machine actually ran.</li>
+  <li><strong>Decide (10 min):</strong> fill the <a href="#references">review worksheet</a>. Which missing decision prevents calling the token guard production authorization?</li>
+  <li><strong>Transfer (6 min):</strong> choose a separate Rails PR from your experience and identify one missing negative case and one security check with a clear limitation.</li>
+</ol>
+
+<p>The <a href="#references">workbook with worked answers</a> supplies prediction questions, a failure triage exercise and an answer key. If Ruby is unavailable, complete the source review and write “not run: no Ruby”; that is a valid, honest lab result.</p>
+
+<h2 id="references">References and supporting material</h2>
+
+<ul>
+  <li><a href="/assets/downloads/rails-ci-security-human-review-support.zip">Download complete companion repository and Part 04 materials</a>. Start at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/04-ci-and-devsecops/article.md</code>.</li>
+  <li>Companion paths: <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/ISSUE.md</code>, <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/candidate.patch</code>, <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/rails-pr.yml</code>, <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/REVIEW-GATES.md</code>, <code class="language-plaintext highlighter-rouge">docs/labs/04-ci-and-devsecops-workbook.md</code>, <code class="language-plaintext highlighter-rouge">docs/diagrams/04-ci-evidence.mmd</code>, and <code class="language-plaintext highlighter-rouge">docs/posts/04-ci-and-devsecops/post-manifest.md</code>.</li>
+  <li><a href="https://docs.github.com/en/actions/tutorials/build-and-test-code/ruby">GitHub Docs: Building and testing Ruby</a>; <a href="https://github.com/ruby/setup-ruby/blob/master/README.md">ruby/setup-ruby README</a>.</li>
+  <li><a href="https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/configure-dependency-review-action">GitHub Docs: Configuring the dependency review action</a>; <a href="https://docs.github.com/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning">CodeQL default setup</a>.</li>
+  <li><a href="https://docs.github.com/en/actions/reference/security/secure-use">GitHub Docs: Secure use of Actions</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/review-copilot-output">Review Copilot output</a>.</li>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="github-actions" /><category term="devsecops" /><category term="rspec" /><summary type="html"><![CDATA[Turn a Copilot-assisted Rails change into an evidence-led review: tests, dependency controls, static analysis and explicit human decisions.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/rails-ci-security-human-review/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/rails-ci-security-human-review/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
