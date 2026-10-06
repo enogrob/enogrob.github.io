@@ -1,0 +1,19 @@
+.mermaid-static {
+  max-width: 100%;
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+.mermaid-static img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Legacy wrapper compatibility while posts migrate to static Mermaid. */
+.mermaid-diagram {
+  max-width: 100%;
+  margin: 1.5rem auto;
+}

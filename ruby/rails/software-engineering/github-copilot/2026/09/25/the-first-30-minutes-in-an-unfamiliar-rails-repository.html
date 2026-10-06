@@ -49,7 +49,11 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <a href="_posts/2026-09-25-the-first-30-minutes-in-an-unfamiliar-rails-repository.md" target="">Edit this page</a>
+        
+<link rel="stylesheet" href="/assets/css/static-mermaid.css">
+
+<a href="_posts/2026-09-25-the-first-30-minutes-in-an-unfamiliar-rails-repository.md" target="_blank">Edit this page</a>
+
 <br>
 <nav class="translation-controls" aria-label="Article language">
   <a class="translation-button" href="https://enogrob-github-io.translate.goog/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
@@ -152,7 +156,9 @@ diff <span class="nt">-u</span> caseflow/.github/copilot-instructions.md <span c
 
 <p>The migration declares a <code class="language-plaintext highlighter-rouge">service_requests</code> table with <code class="language-plaintext highlighter-rouge">status</code> defaulting to <code class="language-plaintext highlighter-rouge">open</code>. A migration describes a schema change applied during setup; it is <strong>not</strong> another method called for each POST. In a correctly migrated database, the default is a reasonable expectation for a new record created without an explicit status, but we still have to run the application before claiming to have observed it. See the <a href="https://guides.rubyonrails.org/active_record_migrations.html" target="_blank" rel="noopener noreferrer">Rails migration guide</a> for the schema role of migrations.</p>
 
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJSV7aW5pdDogeyd0aGVtZSc6J2Jhc2UnLCdmbG93Y2hhcnQnOnsndXNlTWF4V2lkdGgnOnRydWUsJ2h0bWxMYWJlbHMnOnRydWUsJ25vZGVTcGFjaW5nJzo0OCwncmFua1NwYWNpbmcnOjU4LCdjdXJ2ZSc6J2Jhc2lzJ30sJ3RoZW1lVmFyaWFibGVzJzp7J2JhY2tncm91bmQnOicjRkZGOEVGJywncHJpbWFyeVRleHRDb2xvcic6JyMzRTM0MkMnLCdsaW5lQ29sb3InOicjNkY3Mzc3JywnZm9udEZhbWlseSc6J1RyZWJ1Y2hldCBNUywgVmVyZGFuYSwgc2Fucy1zZXJpZicsJ2ZvbnRTaXplJzonMTdweCcsJ2NsdXN0ZXJCa2cnOicjRkJGNEU3JywnY2x1c3RlckJvcmRlcic6JyNCOEExN0QnfX19JSVcbmZsb3djaGFydCBURFxuc3ViZ3JhcGggcmVxdWVzdFtcIvCfjJAgUmVxdWVzdCBwYXRoXCJdXG5BW1wi8J-OryBQT1NUIC9hcGkvcmVxdWVzdHNcIl0gLS0-IEJbXCLwn6etIFJvdXRlOiBjcmVhdGVcIl1cbkIgLS0-IENbXCLimpnvuI8gQ29udHJvbGxlcjogcGVybWl0IGZpZWxkc1wiXVxuQyAtLT4gRFtcIvCfp7EgTW9kZWw6IHZhbGlkYXRlIGFuZCBzYXZlXCJdXG5lbmRcbnN1YmdyYXBoIG91dGNvbWVzW1wi8J-UjSBFeHBlY3RlZCBicmFuY2hlczsgcnVuIHBlbmRpbmdcIl1cbkQgLS0-fFwic2F2ZSBzdWNjZWVkc1wifCBFW1wi4pyFIDIwMSArIHNlbGVjdGVkIEpTT05cIl1cbkQgLS0-fFwic2F2ZSBmYWlsc1wifCBGW1wi4pqg77iPIDQyMiArIGVycm9yc1wiXVxuZW5kXG5HW1wi8J-TpiBNaWdyYXRpb246IHNjaGVtYSArIG9wZW4gZGVmYXVsdFwiXSAtLi0-IERcbmNsYXNzRGVmIHBhc3RlbEJsdWUgZmlsbDojRDlFQUY3LHN0cm9rZTojN0FBNkMyLGNvbG9yOiMzRTM0MkMsc3Ryb2tlLXdpZHRoOjJweDtcbmNsYXNzRGVmIHBhc3RlbE9yYW5nZSBmaWxsOiNGOERGQzQsc3Ryb2tlOiNDOTk4NkQsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgcGFzdGVsUHVycGxlIGZpbGw6I0U4RERGNSxzdHJva2U6I0E2OEJDNCxjb2xvcjojM0UzNDJDLHN0cm9rZS13aWR0aDoycHg7XG5jbGFzc0RlZiBwYXN0ZWxHcmVlbiBmaWxsOiNEQ0VGRDYsc3Ryb2tlOiM4NkE4NzgsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgcGFzdGVsUm9zZSBmaWxsOiNGNUQ5REMsc3Ryb2tlOiNCQzgxOTEsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3NEZWYgcGFzdGVsU2FuZCBmaWxsOiNGQkY0RTcsc3Ryb2tlOiNCOEExN0QsY29sb3I6IzNFMzQyQyxzdHJva2Utd2lkdGg6MnB4O1xuY2xhc3MgQSxCIHBhc3RlbEJsdWU7XG5jbGFzcyBDIHBhc3RlbE9yYW5nZTtcbmNsYXNzIEQgcGFzdGVsUHVycGxlO1xuY2xhc3MgRSBwYXN0ZWxHcmVlbjtcbmNsYXNzIEYgcGFzdGVsUm9zZTtcbmNsYXNzIEcgcGFzdGVsU2FuZDsiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ"></p>
+<figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/0099f479739d8560f4ac.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
+</figure>
 
 <p><em>The dotted link marks schema context, not an extra runtime step. The status labels describe the supplied controller branches; they are not a report of executed responses.</em></p>
 
@@ -360,9 +366,6 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
 </script>
-
-
-<img class="mermaid" src="" alt="Mermaid diagram" loading="lazy" style="display:block; width:min(100%, 640px); height:auto; margin:1.25rem auto;">
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {

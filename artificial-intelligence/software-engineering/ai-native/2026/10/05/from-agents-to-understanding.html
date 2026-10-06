@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>From Agents to Understanding | enogrob - Roberto Nogueira’s blog</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="From Agents to Understanding">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Software/Telecommunications Engineer">
+<meta property="og:description" content="Software/Telecommunications Engineer">
+<link rel="canonical" href="https://enogrob.github.io/artificial-intelligence/software-engineering/ai-native/2026/10/05/from-agents-to-understanding.html">
+<meta property="og:url" content="https://enogrob.github.io/artificial-intelligence/software-engineering/ai-native/2026/10/05/from-agents-to-understanding.html">
+<meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/from-agents-to-understanding/cover.png">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-10-05T23:41:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/from-agents-to-understanding/cover.png">
+<meta property="twitter:title" content="From Agents to Understanding">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-10-05T23:41:00+00:00","datePublished":"2026-10-05T23:41:00+00:00","description":"Software/Telecommunications Engineer","headline":"From Agents to Understanding","image":"https://enogrob.github.io/assets/images/posts/from-agents-to-understanding/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/artificial-intelligence/software-engineering/ai-native/2026/10/05/from-agents-to-understanding.html"},"url":"https://enogrob.github.io/artificial-intelligence/software-engineering/ai-native/2026/10/05/from-agents-to-understanding.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">enogrob - Roberto Nogueira's blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/newsletter/">Newsletter</a><a class="page-link" href="/projects/">Projects</a><a class="page-link" href="/about/">About</a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+<link rel="stylesheet" href="/assets/css/static-mermaid.css">
+
+<a href="_posts/2026-10-05-from-agents-to-understanding.md" target="_blank">Edit this page</a>
+
+<br>
+<nav class="translation-controls" aria-label="Article language">
+  <a class="translation-button" href="https://enogrob-github-io.translate.goog/artificial-intelligence/software-engineering/ai-native/2026/10/05/from-agents-to-understanding.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=en&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer noopener noreferrer" title="Ler este post em português" aria-label="Ler este post em português">
+    <span aria-hidden="true">🇧🇷</span>
+  </a>
+  <a id="english-button" class="translation-button" href="https://enogrob.github.io/artificial-intelligence/software-engineering/ai-native/2026/10/05/from-agents-to-understanding.html" title="Read this post in English" aria-label="Read this post in English">
+    <span aria-hidden="true">🇺🇸</span>
+  </a>
+</nav>
+<br>
+<br>
+<article class="post">
+  <p><img src="/assets/images/posts/from-agents-to-understanding/cover.png" alt="From Agents to Understanding — COSMOS, HOLOFLUX, and IOP"></p>
+
+<blockquote>
+  <p>What if an AI system could describe not only what it should <strong>do</strong>, but what it is trying to <strong>understand</strong>?</p>
+</blockquote>
+
+<p>AI agents are rapidly becoming capable of planning, calling tools, delegating work, maintaining state, inspecting results, and iterating until a task reaches a stopping point.</p>
+
+<p>A simplified agent loop looks like this:</p>
+
+<div class="mermaid-diagram mermaid-diagram--standard">
+
+  <figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/af7a168eeea8be2c925a.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
+</figure>
+
+</div>
+
+<p>That model is extraordinarily useful. But it is primarily organized around <strong>action</strong>.</p>
+
+<p>There is another question worth exploring:</p>
+
+<blockquote>
+  <p>What would an AI-native architecture look like if <strong>understanding itself became a first-class computational object</strong>?</p>
+</blockquote>
+
+<p>Not understanding hidden inside model weights. Not understanding implied by a final paragraph. But understanding that can be structured, traced, questioned, projected, revised, and acted upon.</p>
+
+<p>This is the territory explored by <strong>HOLOFLUX</strong>, <strong>IOP</strong>, and <strong>COSMOS</strong>.</p>
+
+<h2 id="1-from-execution-to-inquiry">1. From execution to inquiry</h2>
+
+<p>A conventional agent can be represented conceptually as:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="ss">:researcher</span> <span class="k">do</span>
+  <span class="n">goal</span> <span class="ss">:answer_question</span>
+
+  <span class="n">plan</span>
+  <span class="n">select_tool</span>
+  <span class="n">execute</span>
+  <span class="n">evaluate</span>
+  <span class="n">repeat</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Its central question is:</p>
+
+<blockquote>
+  <p>What should I do next?</p>
+</blockquote>
+
+<p>An inquiry-oriented system introduces another question before action:</p>
+
+<blockquote>
+  <p>What is actually happening here?</p>
+</blockquote>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">intent</span> <span class="ss">:understand</span> <span class="k">do</span>
+  <span class="n">observe</span> <span class="ss">:what_is</span>
+
+  <span class="n">expose</span> <span class="ss">:assumptions</span>
+  <span class="n">expose</span> <span class="ss">:contradictions</span>
+
+  <span class="n">preserve</span> <span class="ss">:unknowns</span>
+  <span class="n">preserve</span> <span class="ss">:uncertainty</span>
+
+  <span class="n">allow</span> <span class="ss">:insight</span>
+
+  <span class="n">act_from</span> <span class="ss">:understanding</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The movement becomes:</p>
+
+<div class="mermaid-diagram mermaid-diagram--standard">
+
+  <figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/87e317af4de4845b1136.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
+</figure>
+
+</div>
+
+<p>Action remains important. It is simply no longer the only organizing principle.</p>
+
+<h2 id="2-the-missing-epistemic-layer">2. The missing epistemic layer</h2>
+
+<p>Consider concepts that frequently become mixed together inside AI-generated answers:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Reference
+Source
+Source Passage
+Observation
+Claim
+Evidence
+Hypothesis
+Contradiction
+Uncertainty
+Understanding
+</code></pre></div></div>
+
+<p>They are related, but they are not interchangeable:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Citation ≠ Source
+Source ≠ Evidence
+Evidence ≠ Claim
+Claim ≠ Understanding
+Operational Success ≠ Epistemic Acceptance
+</code></pre></div></div>
+
+<p>A model successfully retrieving a document does not establish the claims contained in that document. A source asserting something does not automatically turn the assertion into evidence. A generated explanation does not automatically become understanding.</p>
+
+<p>What if those distinctions became part of the runtime?</p>
+
+<h2 id="3-a-practical-case-the-grebennikov-inquiry">3. A practical case: the Grebennikov inquiry</h2>
+
+<p>Viktor S. Grebennikov was an entomologist and naturalist whose book <em>My World</em> includes a chapter describing what he called the <strong>Cavity Structural Effect (CSE)</strong> and extraordinary claims involving antigravitational phenomena.</p>
+
+<p>The purpose of using this case is <strong>not</strong> to assert that antigravity was demonstrated. It is useful precisely because it forces an inquiry system to keep source, observation, interpretation, evidence, contradiction, and unknowns separate.</p>
+
+<p><img src="/assets/images/posts/from-agents-to-understanding/grebennikov-inquiry.png" alt="The Grebennikov Inquiry — source, claim, evidence, replication, contradiction and unknowns"></p>
+
+<p>A weak summarization pipeline can collapse the semantic layers into something like:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Grebennikov discovered an antigravity effect associated with insect structures.
+</code></pre></div></div>
+
+<p>An inquiry-oriented representation keeps the distinctions visible:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Grebennikov reported observation X.
+Grebennikov interpreted X as effect Y.
+He proposed mechanism Z.
+Independent confirmation is a separate question.
+Alternative explanations remain possible.
+The claim cannot be treated as established merely because it appears in the primary source.
+</code></pre></div></div>
+
+<h2 id="4-starting-with-intent">4. Starting with intent</h2>
+
+<p>Instead of beginning with:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">task</span> <span class="ss">:summarize_grebennikov</span>
+</code></pre></div></div>
+
+<p>we can begin with:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">intent</span> <span class="ss">:understand_antigravity_claim</span>
+</code></pre></div></div>
+
+<p>A task such as <code class="language-plaintext highlighter-rouge">summarize</code> already specifies an output. An intent such as <code class="language-plaintext highlighter-rouge">understand</code> defines a purpose while leaving the conclusion open.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">intent</span> <span class="ss">:understand_antigravity_claim</span> <span class="k">do</span>
+  <span class="n">preserve</span> <span class="ss">:unknown</span>
+  <span class="n">avoid</span> <span class="ss">:premature_conclusion</span>
+  <span class="n">avoid</span> <span class="ss">:confusing_claim_with_evidence</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The system has not been asked to prove Grebennikov correct or wrong. It has been asked to understand what can actually be concluded.</p>
+
+<h2 id="5-context-is-more-than-a-prompt">5. Context is more than a prompt</h2>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">context</span> <span class="k">do</span>
+  <span class="kp">include</span> <span class="ss">:grebennikov_primary_source</span>
+  <span class="kp">include</span> <span class="ss">:reported_observations</span>
+  <span class="kp">include</span> <span class="ss">:known_physics</span>
+  <span class="kp">include</span> <span class="ss">:independent_sources</span>
+  <span class="kp">include</span> <span class="ss">:replication_history</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Context can itself have structure:</p>
+
+<div class="mermaid-diagram mermaid-diagram--standard">
+
+  <figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/3b47efd43ea90c22d490.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
+</figure>
+
+</div>
+
+<p>The primary source can become an explicit object:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">reference</span> <span class="ss">:grebennikov_primary_source</span> <span class="k">do</span>
+  <span class="n">author</span> <span class="s2">"Viktor S. Grebennikov"</span>
+  <span class="n">work</span> <span class="s2">"My World"</span>
+  <span class="n">chapter</span> <span class="mi">5</span>
+  <span class="n">title</span> <span class="s2">"The Natural Phenomena of AntiGravitation and Invisibility in Insects due to the Grebennikov Cavity Structure Effect"</span>
+  <span class="n">source_type</span> <span class="ss">:book_chapter</span>
+  <span class="n">language</span> <span class="ss">:english_translation</span>
+  <span class="n">url</span> <span class="s2">"https://geomagnetics.org/sitebuildercontent/sitebuilderfiles/myworldbyviktorgrebennikovfinpdf.pdf"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The reference is now part of the semantic model rather than merely an item in a bibliography.</p>
+
+<h2 id="6-epistemic-policies">6. Epistemic policies</h2>
+
+<p>Before asking the system to investigate anything, we can describe the rules under which knowledge may be constructed:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">policies</span> <span class="k">do</span>
+  <span class="n">distinguish</span> <span class="ss">:observation</span><span class="p">,</span> <span class="ss">:claim</span>
+  <span class="n">distinguish</span> <span class="ss">:claim</span><span class="p">,</span> <span class="ss">:evidence</span>
+  <span class="n">distinguish</span> <span class="ss">:source</span><span class="p">,</span> <span class="ss">:evidence</span>
+  <span class="n">distinguish</span> <span class="ss">:hypothesis</span><span class="p">,</span> <span class="ss">:demonstrated_mechanism</span>
+
+  <span class="n">preserve</span> <span class="ss">:provenance</span>
+  <span class="n">preserve</span> <span class="ss">:contradiction</span>
+  <span class="n">preserve</span> <span class="ss">:uncertainty</span>
+  <span class="n">preserve</span> <span class="ss">:unknown</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>These are not merely security guardrails. They are <strong>epistemic guardrails</strong>.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">policy</span> <span class="ss">:claim_acceptance</span> <span class="k">do</span>
+  <span class="nb">require</span> <span class="ss">:supporting_evidence</span>
+  <span class="n">preserve</span> <span class="ss">:contradictory_evidence</span>
+  <span class="n">preserve</span> <span class="ss">:source_identity</span>
+  <span class="n">prohibit</span> <span class="ss">:source_as_evidence_by_default</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h2 id="7-holoflux-making-the-semantic-field-explicit">7. HOLOFLUX: making the semantic field explicit</h2>
+
+<p>A compact formulation is:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HOLOFLUX = Meaning + Explication
+</code></pre></div></div>
+
+<p>Applied to the Grebennikov case:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">holoflux</span> <span class="ss">:grebennikov_field</span> <span class="k">do</span>
+
+  <span class="n">source</span> <span class="ss">:grebennikov_my_world</span> <span class="k">do</span>
+    <span class="n">reference</span> <span class="ss">:grebennikov_primary_source</span>
+    <span class="n">author</span> <span class="s2">"Viktor S. Grebennikov"</span>
+    <span class="n">chapter</span> <span class="mi">5</span>
+  <span class="k">end</span>
+
+  <span class="n">observation</span> <span class="ss">:o1</span> <span class="k">do</span>
+    <span class="n">statement</span> <span class="s2">"Certain insect structures were reported as having unusual microscopic geometries."</span>
+    <span class="n">provenance</span> <span class="k">do</span>
+      <span class="n">source</span> <span class="ss">:grebennikov_my_world</span>
+      <span class="n">location</span> <span class="ss">:chapter_5</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="n">claim</span> <span class="ss">:c1</span> <span class="k">do</span>
+    <span class="n">statement</span> <span class="s2">"Cavity structures produce a distinct physical effect."</span>
+    <span class="n">asserted_by</span> <span class="ss">:grebennikov</span>
+    <span class="n">provenance</span> <span class="k">do</span>
+      <span class="n">source</span> <span class="ss">:grebennikov_my_world</span>
+      <span class="n">location</span> <span class="ss">:chapter_5</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="n">claim</span> <span class="ss">:c2</span> <span class="k">do</span>
+    <span class="n">statement</span> <span class="s2">"The proposed effect can produce antigravitational behavior."</span>
+    <span class="n">asserted_by</span> <span class="ss">:grebennikov</span>
+    <span class="n">depends_on</span> <span class="ss">:c1</span>
+    <span class="n">provenance</span> <span class="k">do</span>
+      <span class="n">source</span> <span class="ss">:grebennikov_my_world</span>
+      <span class="n">location</span> <span class="ss">:chapter_5</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="n">evidence</span> <span class="ss">:e1</span> <span class="k">do</span>
+    <span class="n">supports</span> <span class="ss">:c2</span>
+    <span class="n">status</span> <span class="ss">:insufficient</span>
+    <span class="n">provenance</span> <span class="k">do</span>
+      <span class="n">source</span> <span class="ss">:grebennikov_my_world</span>
+      <span class="n">kind</span> <span class="ss">:reported_experience</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="n">unknown</span> <span class="ss">:u1</span> <span class="k">do</span>
+    <span class="n">asks</span> <span class="s2">"Is there an independently reproducible anomalous force?"</span>
+  <span class="k">end</span>
+
+  <span class="n">unknown</span> <span class="ss">:u2</span> <span class="k">do</span>
+    <span class="n">asks</span> <span class="s2">"Can the reported phenomenon be experimentally distinguished from known physical effects?"</span>
+  <span class="k">end</span>
+
+  <span class="n">uncertainty</span> <span class="ss">:high</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The prose has become a <strong>semantic field</strong> that can be inspected without collapsing observation, claim, evidence, unknown, and uncertainty into one statement.</p>
+
+<h2 id="8-iop-inquiry-without-a-predetermined-conclusion">8. IOP: inquiry without a predetermined conclusion</h2>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IOP = Intent + Understanding
+</code></pre></div></div>
+
+<p>Intent here does not mean <code class="language-plaintext highlighter-rouge">produce answer X</code>. It defines the mode of inquiry.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">inquiry</span> <span class="ss">:antigravity_claim</span> <span class="k">do</span>
+  <span class="n">observe</span> <span class="ss">:reported_phenomena</span>
+  <span class="n">observe</span> <span class="ss">:measurement_quality</span>
+  <span class="n">observe</span> <span class="ss">:replication_status</span>
+  <span class="n">observe</span> <span class="ss">:alternative_explanations</span>
+
+  <span class="n">preserve</span> <span class="ss">:unknown</span>
+
+  <span class="n">do_not_assume</span> <span class="ss">:claim_is_true</span>
+  <span class="n">do_not_assume</span> <span class="ss">:claim_is_false</span>
+
+  <span class="n">ask</span> <span class="s2">"What is actually demonstrated?"</span>
+  <span class="n">ask</span> <span class="s2">"What remains interpretation?"</span>
+  <span class="n">ask</span> <span class="s2">"What observation could discriminate between competing explanations?"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The conclusion does not need to be forced.</p>
+
+<h2 id="9-allow-not-produce">9. <code class="language-plaintext highlighter-rouge">allow</code>, not <code class="language-plaintext highlighter-rouge">produce</code>
+</h2>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">produce</span> <span class="ss">:insight</span>
+</code></pre></div></div>
+
+<p>implies that insight is mechanically generated from a command. An inquiry-oriented DSL can instead say:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">emergence</span> <span class="ss">:insight</span> <span class="k">do</span>
+  <span class="n">conditions</span> <span class="ss">:attention</span><span class="p">,</span>
+             <span class="ss">:observation</span><span class="p">,</span>
+             <span class="ss">:sufficient_context</span>
+  <span class="n">commanded</span> <span class="kp">false</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>or:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">inquiry</span> <span class="ss">:understand</span> <span class="k">do</span>
+  <span class="n">observe</span> <span class="ss">:what_is</span>
+  <span class="n">preserve</span> <span class="ss">:contradiction</span>
+  <span class="n">preserve</span> <span class="ss">:unknown</span>
+  <span class="n">remain_with</span> <span class="ss">:question</span>
+  <span class="n">allow</span> <span class="ss">:insight</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>This introduces an important distinction:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cause ≠ condition ≠ emergence
+</code></pre></div></div>
+
+<h2 id="10-understanding-is-not-the-output">10. Understanding is not the output</h2>
+
+<p>Suppose the inquiry reaches this state:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The primary source reports an antigravity interpretation of an alleged phenomenon.
+The existence of the source establishes that the claim was made.
+It does not by itself establish that the proposed physical mechanism is valid.
+Independent reproducibility therefore remains a central unresolved question.
+</code></pre></div></div>
+
+<p>That understanding can produce several outputs.</p>
+
+<p><img src="/assets/images/posts/from-agents-to-understanding/understanding-projections.png" alt="Understanding is not the output — one semantic field, multiple projections"></p>
+
+<div class="mermaid-diagram mermaid-diagram--standard">
+
+  <figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/9e74fca1f1304bebee9d.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
+</figure>
+
+</div>
+
+<p>The outputs are <strong>projections</strong>. They are not the understanding itself.</p>
+
+<h2 id="11-cosmos-as-the-orchestration-layer">11. COSMOS as the orchestration layer</h2>
+
+<p>COSMOS coordinates the whole:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>COSMOS = Orchestration of the Whole
+</code></pre></div></div>
+
+<p><img src="/assets/images/posts/from-agents-to-understanding/cosmos-orchestration.png" alt="COSMOS orchestrates the whole — intent-driven AI-native architecture"></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cosmos</span> <span class="ss">:grebennikov_inquiry</span> <span class="k">do</span>
+
+  <span class="n">reference</span> <span class="ss">:primary_source</span> <span class="k">do</span>
+    <span class="n">author</span> <span class="s2">"Viktor S. Grebennikov"</span>
+    <span class="n">work</span> <span class="s2">"My World"</span>
+    <span class="n">chapter</span> <span class="mi">5</span>
+    <span class="n">title</span> <span class="s2">"The Natural Phenomena of AntiGravitation and Invisibility in Insects due to the Grebennikov Cavity Structure Effect"</span>
+    <span class="n">source_type</span> <span class="ss">:book_chapter</span>
+    <span class="n">language</span> <span class="ss">:english_translation</span>
+    <span class="n">url</span> <span class="s2">"https://geomagnetics.org/sitebuildercontent/sitebuilderfiles/myworldbyviktorgrebennikovfinpdf.pdf"</span>
+  <span class="k">end</span>
+
+  <span class="n">intent</span> <span class="ss">:understand_antigravity_claim</span> <span class="k">do</span>
+    <span class="n">preserve</span> <span class="ss">:unknown</span>
+    <span class="n">avoid</span> <span class="ss">:premature_conclusion</span>
+    <span class="n">avoid</span> <span class="ss">:confusing_claim_with_evidence</span>
+  <span class="k">end</span>
+
+  <span class="n">context</span> <span class="k">do</span>
+    <span class="kp">include</span> <span class="n">reference</span><span class="p">(</span><span class="ss">:primary_source</span><span class="p">)</span>
+    <span class="kp">include</span> <span class="ss">:reported_observations</span>
+    <span class="kp">include</span> <span class="ss">:known_physics</span>
+    <span class="kp">include</span> <span class="ss">:independent_sources</span>
+    <span class="kp">include</span> <span class="ss">:replication_history</span>
+  <span class="k">end</span>
+
+  <span class="n">policies</span> <span class="k">do</span>
+    <span class="n">distinguish</span> <span class="ss">:observation</span><span class="p">,</span> <span class="ss">:claim</span>
+    <span class="n">distinguish</span> <span class="ss">:claim</span><span class="p">,</span> <span class="ss">:evidence</span>
+    <span class="n">distinguish</span> <span class="ss">:source</span><span class="p">,</span> <span class="ss">:evidence</span>
+    <span class="n">distinguish</span> <span class="ss">:hypothesis</span><span class="p">,</span> <span class="ss">:demonstrated_mechanism</span>
+
+    <span class="n">preserve</span> <span class="ss">:provenance</span>
+    <span class="n">preserve</span> <span class="ss">:contradiction</span>
+    <span class="n">preserve</span> <span class="ss">:uncertainty</span>
+  <span class="k">end</span>
+
+  <span class="n">capabilities</span> <span class="k">do</span>
+    <span class="n">use</span> <span class="ss">:retrieval</span>
+    <span class="n">use</span> <span class="ss">:source_validation</span>
+    <span class="n">use</span> <span class="ss">:holoflux</span>
+    <span class="n">use</span> <span class="ss">:iop</span>
+    <span class="n">use</span> <span class="ss">:diagram_generation</span>
+  <span class="k">end</span>
+
+  <span class="n">orchestrate</span> <span class="k">do</span>
+    <span class="n">acquire</span> <span class="ss">:sources</span>
+
+    <span class="n">delegate</span> <span class="ss">:semantic_explication</span><span class="p">,</span>
+             <span class="ss">to: :holoflux</span>
+
+    <span class="n">delegate</span> <span class="ss">:inquiry</span><span class="p">,</span>
+             <span class="ss">to: :iop</span>
+
+    <span class="n">integrate</span> <span class="ss">:understanding</span>
+  <span class="k">end</span>
+
+  <span class="n">project</span> <span class="k">do</span>
+    <span class="n">as</span> <span class="ss">:dsl</span>
+    <span class="n">as</span> <span class="ss">:mermaid</span>
+    <span class="n">as</span> <span class="ss">:epistemic_report</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The DSL describes:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intent
+Context
+Policies
+Capabilities
+Orchestration
+Understanding
+Projection
+</code></pre></div></div>
+
+<p>It describes the <strong>epistemic architecture of the system</strong>.</p>
+
+<h2 id="12-from-dsl-to-mermaid">12. From DSL to Mermaid</h2>
+
+<p>Because the semantic model is explicit, it can also be projected as a diagram:</p>
+
+<div class="mermaid-diagram mermaid-diagram--standard">
+
+  <figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/22da8cb0562014c71bb7.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
+</figure>
+
+</div>
+
+<p>The important part is not the visual alone. The diagram and the textual explanation come from the same semantic structure.</p>
+
+<h2 id="13-implicate-and-explicate">13. Implicate and explicate</h2>
+
+<p>The architecture suggests an analogy with David Bohm’s distinction between <strong>implicate</strong> and <strong>explicate</strong> order. This is a conceptual analogy, not a claim that the runtime implements Bohm’s physical theory.</p>
+
+<p>A text contains more possible meaning than any one representation of it. Relationships, tensions, assumptions, interpretations, perspectives, and unanswered questions remain partially <strong>enfolded</strong>.</p>
+
+<div class="mermaid-diagram mermaid-diagram--standard">
+
+  <figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/58107d715e2c07b2f667.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
+</figure>
+
+</div>
+
+<p>A DSL can then be seen as one explicit projection:</p>
+
+<p>The resulting semantic field can then be projected as a DSL, diagram, narrative, or behavior without confusing any one projection with the whole.</p>
+
+<p>The DSL is therefore not the implicate order itself. It is an <strong>explication</strong> of part of it.</p>
+
+<h2 id="14-from-documentation-to-executable-architecture">14. From documentation to executable architecture</h2>
+
+<p>At first, this DSL can serve as architectural documentation. The more interesting possibility is that it eventually becomes executable.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cosmos</span> <span class="ss">:research_system</span> <span class="k">do</span>
+  <span class="n">intent</span> <span class="ss">:understand_article</span>
+
+  <span class="n">policies</span> <span class="k">do</span>
+    <span class="n">preserve</span> <span class="ss">:unknown</span>
+    <span class="n">preserve</span> <span class="ss">:provenance</span>
+  <span class="k">end</span>
+
+  <span class="n">capabilities</span> <span class="k">do</span>
+    <span class="n">use</span> <span class="ss">:retrieval</span>
+    <span class="n">use</span> <span class="ss">:holoflux</span>
+    <span class="n">use</span> <span class="ss">:iop</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>A runtime could resolve <code class="language-plaintext highlighter-rouge">use :retrieval</code> into search, RAG, vector storage, an MCP server, a knowledge graph, or an agent. COSMOS deals with <strong>capabilities</strong>; the runtime deals with implementation.</p>
+
+<h2 id="15-agent-behavior-can-become-part-of-the-dsl">15. Agent behavior can become part of the DSL</h2>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="ss">:researcher</span> <span class="k">do</span>
+  <span class="n">behavior</span> <span class="ss">:investigate_claim</span> <span class="k">do</span>
+    <span class="n">receive</span> <span class="ss">:claim</span>
+    <span class="n">retrieve</span> <span class="ss">:sources</span>
+    <span class="n">preserve</span> <span class="ss">:provenance</span>
+
+    <span class="n">distinguish</span> <span class="ss">:source</span><span class="p">,</span>
+                <span class="ss">:evidence</span><span class="p">,</span>
+                <span class="ss">:claim</span>
+
+    <span class="n">detect</span> <span class="ss">:contradictions</span>
+    <span class="n">assess</span> <span class="ss">:uncertainty</span>
+
+    <span class="nb">open</span> <span class="ss">:inquiry</span><span class="p">,</span>
+         <span class="ss">when: :unknown_remains</span>
+
+    <span class="n">emit</span> <span class="ss">:understanding</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>That leads to a richer model of computation:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Entity
+= Meaning
++ State
++ Behavior
++ Relations
++ Transitions
++ Constraints
++ Emergence
+</code></pre></div></div>
+
+<p>and a richer AI-native system:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intent
++ Context
++ Semantic Field
++ Behavior
++ Inquiry
++ Understanding
++ Projection
+</code></pre></div></div>
+
+<h2 id="16-from-agentic-systems-to-inquiry-oriented-systems">16. From agentic systems to inquiry-oriented systems</h2>
+
+<h3 id="chatbot">Chatbot</h3>
+
+<div class="mermaid-diagram mermaid-diagram--standard">
+
+  <figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/88ddb3466dbdeed1acce.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
+</figure>
+
+</div>
+
+<h3 id="agent">Agent</h3>
+
+<div class="mermaid-diagram mermaid-diagram--standard">
+
+  <figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/0d0bf2d273a9feb295d3.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
+</figure>
+
+</div>
+
+<h3 id="inquiry-oriented-ai-native-system">Inquiry-Oriented AI-Native System</h3>
+
+<div class="mermaid-diagram mermaid-diagram--standard">
+
+  <figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/87e317af4de4845b1136.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
+</figure>
+
+</div>
+
+<p>This does not make conventional agents obsolete. It adds another layer.</p>
+
+<p>The agent asks:</p>
+
+<blockquote>
+  <p>What should I do next?</p>
+</blockquote>
+
+<p>The epistemic runtime can also ask:</p>
+
+<blockquote>
+  <p>What do we actually know?</p>
+</blockquote>
+
+<blockquote>
+  <p>Why do we think we know it?</p>
+</blockquote>
+
+<blockquote>
+  <p>What contradicts it?</p>
+</blockquote>
+
+<blockquote>
+  <p>What remains unknown?</p>
+</blockquote>
+
+<blockquote>
+  <p>What conclusion is justified?</p>
+</blockquote>
+
+<h2 id="17-a-krishnamurti-inspired-semantics-of-inquiry">17. A Krishnamurti-inspired semantics of inquiry</h2>
+
+<p>The language of IOP draws inspiration from concepts often explored by J. Krishnamurti:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>observation
+conditioning
+conflict
+attention
+ending
+insight
+intelligence
+</code></pre></div></div>
+
+<p>The purpose is not to turn those concepts into a deterministic algorithm. Instead, they suggest another vocabulary for computational inquiry:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">intent</span> <span class="ss">:understand</span> <span class="k">do</span>
+  <span class="ow">not</span> <span class="ss">:control</span>
+  <span class="ow">not</span> <span class="ss">:premature_conclusion</span>
+
+  <span class="n">observe</span> <span class="ss">:what_is</span>
+  <span class="n">preserve</span> <span class="ss">:unknown</span>
+  <span class="n">remain_with</span> <span class="ss">:question</span>
+
+  <span class="n">allow</span> <span class="ss">:insight</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The distinction between <code class="language-plaintext highlighter-rouge">produce :insight</code> and <code class="language-plaintext highlighter-rouge">allow :insight</code> is intentional. The first describes command. The second describes conditions under which something may emerge.</p>
+
+<h2 id="18-what-the-grebennikov-example-reveals">18. What the Grebennikov example reveals</h2>
+
+<p>The antigravity case is useful precisely because it prevents the system from taking an easy path.</p>
+
+<p>An AI could simply say:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Grebennikov discovered antigravity.
+</code></pre></div></div>
+
+<p>or jump to the opposite shortcut:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The claim is false.
+</code></pre></div></div>
+
+<p>An inquiry-oriented architecture should resist both shortcuts when the available semantic field does not justify them.</p>
+
+<div class="mermaid-diagram mermaid-diagram--standard">
+
+  <figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/d1c86153f62c85cd4e78.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
+</figure>
+
+</div>
+
+<p>Its strength is not that it produces a stronger opinion. Its strength is that it preserves the difference between:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>known
+claimed
+supported
+contradicted
+uncertain
+unknown
+</code></pre></div></div>
+
+<h2 id="19-cosmos-holoflux-and-iop">19. COSMOS, HOLOFLUX, and IOP</h2>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HOLOFLUX
+Meaning + Explication
+
+IOP
+Intent + Understanding
+
+COSMOS
+Orchestration of the Whole
+</code></pre></div></div>
+
+<p>Together:</p>
+
+<div class="mermaid-diagram mermaid-diagram--standard">
+
+  <figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/342e55b2f7a0831a5bc4.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
+</figure>
+
+</div>
+
+<h2 id="20-toward-an-executable-cosmos-dsl">20. Toward an executable COSMOS DSL</h2>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cosmos</span> <span class="ss">:research_system</span> <span class="k">do</span>
+  <span class="n">intent</span> <span class="ss">:understand</span>
+
+  <span class="n">context</span> <span class="k">do</span>
+    <span class="n">source</span> <span class="ss">:primary_document</span>
+  <span class="k">end</span>
+
+  <span class="n">policies</span> <span class="k">do</span>
+    <span class="n">preserve</span> <span class="ss">:provenance</span>
+    <span class="n">preserve</span> <span class="ss">:unknown</span>
+    <span class="n">preserve</span> <span class="ss">:contradiction</span>
+  <span class="k">end</span>
+
+  <span class="n">capabilities</span> <span class="k">do</span>
+    <span class="n">use</span> <span class="ss">:retrieval</span>
+    <span class="n">use</span> <span class="ss">:holoflux</span>
+    <span class="n">use</span> <span class="ss">:iop</span>
+  <span class="k">end</span>
+
+  <span class="n">orchestrate</span> <span class="k">do</span>
+    <span class="n">integrate</span> <span class="ss">:understanding</span>
+  <span class="k">end</span>
+
+  <span class="n">project</span> <span class="k">do</span>
+    <span class="n">as</span> <span class="ss">:article</span>
+    <span class="n">as</span> <span class="ss">:diagram</span>
+    <span class="n">as</span> <span class="ss">:agent_behavior</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The DSL would no longer merely describe a workflow. It would describe <strong>what kind of cognitive system should exist</strong>. The runtime would determine how to instantiate it.</p>
+
+<h2 id="21-the-larger-shift">21. The larger shift</h2>
+
+<p>Software abstractions have repeatedly moved upward:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Machine Instructions
+       ↓
+Procedural Programming
+       ↓
+Object-Oriented Programming
+       ↓
+Distributed Systems
+       ↓
+Cloud-Native Systems
+       ↓
+Agentic Systems
+</code></pre></div></div>
+
+<p>AI-native software may require another set of first-class concepts:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Intent
+Meaning
+Context
+Evidence
+Uncertainty
+Inquiry
+Understanding
+</code></pre></div></div>
+
+<p>Perhaps the important transition is not merely:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>software → agents
+</code></pre></div></div>
+
+<p>but:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>execution → inquiry
+</code></pre></div></div>
+
+<p>and eventually:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>opaque reasoning → explicit understanding
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>AI agents already know how to act. Increasingly, they know how to choose tools, delegate work, maintain context, inspect results, and continue autonomously.</p>
+
+<p>The next architectural question may be different.</p>
+
+<p>Can an AI-native system make explicit:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>what was observed
+what was claimed
+where it came from
+what supports it
+what contradicts it
+what remains uncertain
+what remains unknown
+what can actually be understood
+</code></pre></div></div>
+
+<p>If so, the fundamental loop changes:</p>
+
+<div class="mermaid-diagram mermaid-diagram--standard">
+
+  <figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/5e0336de87951dd642dd.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
+</figure>
+
+</div>
+
+<p>becomes:</p>
+
+<p>The system no longer asks only:</p>
+
+<blockquote>
+  <p>What should I do next?</p>
+</blockquote>
+
+<p>It can also ask:</p>
+
+<blockquote>
+  <p>What is actually happening?</p>
+</blockquote>
+
+<blockquote>
+  <p>What do I know?</p>
+</blockquote>
+
+<blockquote>
+  <p>What don’t I know?</p>
+</blockquote>
+
+<blockquote>
+  <p>And what do I truly understand?</p>
+</blockquote>
+
+<p>That is where <strong>HOLOFLUX</strong>, <strong>IOP</strong>, and <strong>COSMOS</strong> begin to converge — not merely into another agent framework, but into an architecture for <strong>AI-native understanding</strong>.</p>
+
+<h2 id="core-formulas">Core formulas</h2>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HOLOFLUX = Meaning + Explication
+IOP = Intent + Understanding
+COSMOS = Orchestration of the Whole
+</code></pre></div></div>
+
+<div class="mermaid-diagram mermaid-diagram--standard">
+
+  <figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/49118dfdf5f63b0e779a.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
+</figure>
+
+</div>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>
+<strong>Grebennikov, Viktor S. — <em>My World</em>, Chapter 5.</strong> English translation of “The Natural Phenomena of AntiGravitation and Invisibility in Insects due to the Grebennikov Cavity Structure Effect (CSE).” Used here as a primary source for Grebennikov’s claims, not as independent confirmation. <a href="https://geomagnetics.org/sitebuildercontent/sitebuilderfiles/myworldbyviktorgrebennikovfinpdf.pdf" target="_blank" rel="noopener noreferrer">https://geomagnetics.org/sitebuildercontent/sitebuilderfiles/myworldbyviktorgrebennikovfinpdf.pdf</a>
+</li>
+  <li>
+<strong>OpenAI — Agents documentation.</strong> Contemporary reference for agent loops, tools, handoffs, guardrails, state, and orchestration. <a href="https://developers.openai.com/api/docs/guides/agents" target="_blank" rel="noopener noreferrer">https://developers.openai.com/api/docs/guides/agents</a>
+</li>
+  <li>
+<strong>David Bohm.</strong> The implicate/explicate order is used here as a conceptual analogy, not as a claim that HOLOFLUX implements Bohm’s physical theory. <a href="https://www.davidbohm.net/" target="_blank" rel="noopener noreferrer">https://www.davidbohm.net/</a>
+</li>
+  <li>
+<strong>J. Krishnamurti.</strong> Observation, conditioning, attention, conflict, ending, and insight inform the inquiry vocabulary used here as conceptual inspiration rather than deterministic formalization. <a href="https://www.jkrishnamurti.org/" target="_blank" rel="noopener noreferrer">https://www.jkrishnamurti.org/</a>
+</li>
+</ul>
+
+<h2 id="related-concepts">Related concepts</h2>
+
+<ul>
+  <li>
+<strong>HOLOFLUX</strong> — Meaning + Explication</li>
+  <li>
+<strong>IOP</strong> — Intent + Understanding</li>
+  <li>
+<strong>COSMOS</strong> — Intent-driven orchestration of knowledge, meaning, intelligence, and creation</li>
+  <li>
+<strong>IMPLICATE</strong> — Enfolded semantic order from which explicit representations can emerge</li>
+  <li>
+<strong>FACTORIES</strong> — Engines of explication that transform structured meaning and intent into explicit, communicable digital media</li>
+</ul>
+
+</article>
+
+<style>
+  .translation-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid #16803c;
+    border-radius: 4px;
+    color: #0b5d29;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .translation-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .translation-button:hover,
+  .translation-button:focus-visible {
+    background-color: #e8f5e9;
+    color: #073d1b;
+  }
+</style>
+
+<script>
+  if (window.location.hostname === 'enogrob-github-io.translate.goog') {
+    const englishButton = document.getElementById('english-button');
+    const originalUrl = 'https://enogrob.github.io' + window.location.pathname;
+
+    englishButton.href = originalUrl;
+  }
+</script>
+
+<script src="https://giscus.app/client.js" data-repo="enogrob/enogrob.github.io" data-repo-id="R_kgDONhUXxA" data-category="General" data-category-id="DIC_kwDONhUXxM4Copi9" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("pre").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerText = "Copy";
+      button.className = "copy-button";
+      pre.style.position = "relative";
+      pre.appendChild(button);
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText)
+          .then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => button.innerText = "Copy", 2000);
+          })
+          .catch((err) => console.error("Failed to copy code:", err));
+      });
+    });
+  });
+</script>
+<style>
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post img, .featured-project-image, .home-featured-image").forEach((img) => {
+      img.classList.add("zoomable-image");
+      img.style.setProperty("--zoom-scale", img.dataset.zoomScale || "1.8");
+      img.addEventListener("click", (event) => {
+        if (img.closest("a") && !event.metaKey && !event.ctrlKey) {
+          event.preventDefault();
+        }
+        img.classList.toggle("zoomed-image");
+      });
+    });
+  });
+</script>
+<style>
+  .zoomable-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .zoomable-image.zoomed-image {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 1000;
+    transform: scale(var(--zoom-scale));
+  }
+</style>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">enogrob - Roberto Nogueira's blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">enogrob - Roberto Nogueira's blog</li>
+<li><a class="u-email" href="mailto:enogrob@gmail.com">enogrob@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list">
+<li><a href="https://github.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">enogrob</span></a></li>
+<li><a href="https://www.twitter.com/enogrob" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">enogrob</span></a></li>
+</ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software/Telecommunications Engineer</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
