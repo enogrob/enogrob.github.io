@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-06T16:06:38+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">From Agents to Understanding</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/ai-native/2026/10/05/from-agents-to-understanding.html" rel="alternate" type="text/html" title="From Agents to Understanding" /><published>2026-10-05T23:41:00+00:00</published><updated>2026-10-05T23:41:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/ai-native/2026/10/05/from-agents-to-understanding</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/ai-native/2026/10/05/from-agents-to-understanding.html"><![CDATA[<p><img src="/assets/images/posts/from-agents-to-understanding/cover.png" alt="From Agents to Understanding — COSMOS, HOLOFLUX, and IOP" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-06T16:43:28+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">From Agents to Understanding</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/ai-native/2026/10/05/from-agents-to-understanding.html" rel="alternate" type="text/html" title="From Agents to Understanding" /><published>2026-10-05T23:41:00+00:00</published><updated>2026-10-05T23:41:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/ai-native/2026/10/05/from-agents-to-understanding</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/ai-native/2026/10/05/from-agents-to-understanding.html"><![CDATA[<p><img src="/assets/images/posts/from-agents-to-understanding/cover.png" alt="From Agents to Understanding — COSMOS, HOLOFLUX, and IOP" /></p>
 
 <blockquote>
   <p>What if an AI system could describe not only what it should <strong>do</strong>, but what it is trying to <strong>understand</strong>?</p>
@@ -173,7 +173,7 @@ The claim cannot be treated as established merely because it appears in the prim
 <div class="mermaid-diagram mermaid-diagram--standard">
 
   <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/3b47efd43ea90c22d490.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
+  <img src="/assets/generated/mermaid/1341b203a527ea134072.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
 </figure>
 
 </div>
@@ -462,7 +462,7 @@ Projection
 <div class="mermaid-diagram mermaid-diagram--standard">
 
   <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/22da8cb0562014c71bb7.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
+  <img src="/assets/generated/mermaid/a08a095a2929383f085a.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
 </figure>
 
 </div>
@@ -667,7 +667,7 @@ intelligence
 <div class="mermaid-diagram mermaid-diagram--standard">
 
   <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/d1c86153f62c85cd4e78.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
+  <img src="/assets/generated/mermaid/f469a02885eab068edbb.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
 </figure>
 
 </div>
