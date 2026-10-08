@@ -1,0 +1,9 @@
+/* Semantic visual standard — additive stylesheet for Jekyll.
+   Integrate once into your theme; source remains understandable without CSS. */
+.semantic-block { --semantic-tone:#D9EAF7; --semantic-line:#7AA6C2; margin:1.35rem 0; padding:1rem 1.25rem; border-inline-start:4px solid var(--semantic-line); border-radius:0.45rem; background:var(--semantic-tone); color:#3E342C; }
+.semantic-block p { margin:.5rem 0 0; }
+.semantic-block--insight,.semantic-block--understanding { --semantic-tone:#DCEFD6; --semantic-line:#86A878; }
+.semantic-block--unknown { --semantic-tone:#F6D6DD; --semantic-line:#BF7C89; }
+.semantic-block--hypothesis { --semantic-tone:#F8DFC4; --semantic-line:#C9986D; }
+.semantic-block--context { --semantic-tone:#D9EAF7; --semantic-line:#7AA6C2; }
+@media(prefers-color-scheme:dark){.semantic-block{color:#2e2924;}}
