@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-08T23:40:21+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">From Ericsson Use Cases to AI-Native Systems</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html" rel="alternate" type="text/html" title="From Ericsson Use Cases to AI-Native Systems" /><published>2026-10-05T15:00:00+00:00</published><updated>2026-10-05T15:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html"><![CDATA[<style>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-08T23:47:14+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">From Ericsson Use Cases to AI-Native Systems</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html" rel="alternate" type="text/html" title="From Ericsson Use Cases to AI-Native Systems" /><published>2026-10-05T15:00:00+00:00</published><updated>2026-10-05T15:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html"><![CDATA[<style>
 .mermaid-diagram img,
 .mermaid-diagram svg {
   display: block;
@@ -273,10 +273,12 @@ AI-Native
 
 <h2 id="one-use-case-decomposed-end-to-end">One use case, decomposed end to end</h2>
 
-<p>Consider this intention:</p>
+<p>Begin with a bounded objective:</p>
 
 <blockquote>
-  <p><strong>Investigate a production incident and produce a verified report.</strong></p>
+  <p><strong>🧭 INTENT</strong></p>
+
+  <p>Investigate a production incident and produce a verified report.</p>
 </blockquote>
 
 <p>Before decomposing this intention into AI building blocks, we can express it as a classic use case: an authorized engineer interacts with an incident-investigation system to obtain a verified report and, when necessary, approve a risky change.</p>
@@ -488,7 +490,9 @@ Agent            → intention and adaptive action
 <p>The use case provides that definition. It is where a human intention becomes a system responsibility, where a business process becomes an architectural boundary and where the system decides what belongs inside the solution and what must remain outside it.</p>
 
 <blockquote>
-  <p><strong>AI-Native systems do not begin with agents. They begin with intentions that become use cases, use cases that become responsibilities, and responsibilities that become carefully chosen building blocks.</strong></p>
+  <p><strong>📄 TAKEAWAY</strong></p>
+
+  <p>AI-Native systems do not begin with agents. They begin with intentions that become use cases, use cases that become responsibilities, and responsibilities that become carefully chosen building blocks.</p>
 </blockquote>
 
 <p>The use case is where intention becomes architecture. It does not remove the need for system modeling; it gives system modeling a more direct starting point.</p>
@@ -772,7 +776,9 @@ Agent            → intention and adaptive action
 <p>This sequence should become one of our rules for the entire investigation:</p>
 
 <blockquote>
-  <p><strong>Signal is not structure. Structure is not date. Date is not meaning.</strong></p>
+  <p><strong>💡 KEY IDEA</strong></p>
+
+  <p>Signal is not structure. Structure is not date. Date is not meaning.</p>
 </blockquote>
 
 <p>The temptation is to jump from the first box to the last.</p>
@@ -898,7 +904,9 @@ Agent            → intention and adaptive action
 <h2 id="edgar-cayce-and-the-hall-of-records">Edgar Cayce and the Hall of Records</h2>
 
 <blockquote>
-  <p><strong>A change of lens:</strong> from this point, the article moves from an <strong>interpretive initiatory hypothesis</strong> into a <strong>visionary / esoteric tradition</strong>. The material that follows is historically important to modern Sphinx and Atlantis lore, but it is not archaeological evidence.</p>
+  <p><strong>📚 CONTEXT</strong></p>
+
+  <p>From this point, the article moves from an <strong>interpretive initiatory hypothesis</strong> into a <strong>visionary / esoteric tradition</strong>. The material that follows is historically important to modern Sphinx and Atlantis lore, but it is not archaeological evidence.</p>
 </blockquote>
 
 <p>Joan Llarch imagines an <strong>initiatory geography</strong>. Edgar Cayce introduces a different kind of possibility: a <strong>repository of memory</strong>.</p>
@@ -2031,9 +2039,11 @@ Runtime / hardware
   <p><strong>a language for humans.</strong></p>
 </blockquote>
 
-<p><strong>Pencils down does not mean Ruby down.</strong></p>
+<blockquote>
+  <p><strong>📄 TAKEAWAY</strong></p>
 
-<p>It may mean the field around Ruby just became much larger.</p>
+  <p>Pencils down does not mean Ruby down. It may mean the field around Ruby just became much larger.</p>
+</blockquote>
 
 <h2 id="references">References</h2>
 
