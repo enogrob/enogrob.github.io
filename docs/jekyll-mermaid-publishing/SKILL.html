@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1 id="jekyll-mermaid-publishing">Jekyll Mermaid Publishing</h1>
+
+<h2 id="critical-separation">Critical separation</h2>
+
+<p>This skill does <strong>not</strong> visually refactor Mermaid.</p>
+
+<p>If the user asks to:</p>
+
+<ul>
+  <li>improve Mermaid appearance;</li>
+  <li>normalize Mermaid;</li>
+  <li>apply Mermaid visual standards;</li>
+  <li>make diagrams consistent;</li>
+</ul>
+
+<p>first apply:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mermaid-visual-standard
+</code></pre></div></div>
+
+<p>Then use this skill only for Jekyll packaging.</p>
+
+<h2 id="purpose">Purpose</h2>
+
+<p>Author locally with a <code class="language-plaintext highlighter-rouge">mermaid</code> code fence containing a complete Mermaid diagram.</p>
+
+<p>Publish to Jekyll by changing only the opening fence language to <code class="language-plaintext highlighter-rouge">mermaid!</code>. Do not place placeholder Mermaid fences inside Jekyll-processed documentation.</p>
+
+<p>Only the opening fence changes.</p>
+
+<h2 id="front-matter">Front matter</h2>
+
+<p>If Mermaid blocks exist, require:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">mermaid</span><span class="pi">:</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<h2 id="conversion-contract">Conversion contract</h2>
+
+<p>At publication time:</p>
+
+<ol>
+  <li>find plain ` ```mermaid ` opening fences;</li>
+  <li>convert them to ` ```mermaid! `;</li>
+  <li>preserve Mermaid body exactly;</li>
+  <li>preserve closing fence exactly;</li>
+  <li>preserve wrappers;</li>
+  <li>preserve colors;</li>
+  <li>preserve emoji;</li>
+  <li>preserve graph topology;</li>
+  <li>preserve natural height;</li>
+  <li>preserve node labels and classes.</li>
+</ol>
+
+<h2 id="references">References</h2>
+
+<p>In a Jekyll post References section:</p>
+
+<ul>
+  <li>use explicit Markdown links;</li>
+  <li>make URLs clickable;</li>
+  <li>keep source title and author readable.</li>
+</ul>
+
+<p>Example:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> Viktor S. Grebennikov, <span class="ge">*My World*</span>, Chapter 5:
+  <span class="p">[</span><span class="nv">English translation PDF</span><span class="p">](</span><span class="sx">https://example.org/source.pdf</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="publication-validation">Publication validation</h2>
+
+<p>Check:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">mermaid: true</code> exists;</li>
+  <li>no plain <code class="language-plaintext highlighter-rouge">mermaid</code> fence remains in publication output;</li>
+  <li>Mermaid body was not modified;</li>
+  <li>wrappers remain intact;</li>
+  <li>reference URLs are clickable.</li>
+</ul>
+
+<h2 id="do-not">Do not</h2>
+
+<ul>
+  <li>redesign diagrams;</li>
+  <li>add or remove colors;</li>
+  <li>add or remove emoji;</li>
+  <li>change direction;</li>
+  <li>normalize height;</li>
+  <li>change node shapes;</li>
+  <li>change edge semantics.</li>
+</ul>
+</body></html>

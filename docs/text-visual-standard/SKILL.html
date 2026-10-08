@@ -1,0 +1,1392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1 id="text-visual-standard">Text Visual Standard</h1>
+
+<h2 id="purpose">Purpose</h2>
+
+<p>Text-based visual components are a semantic language, not decoration.</p>
+
+<p>The primary goal is to make meaning visible inside prose without breaking the
+reading flow or reducing complex distinctions to generic colored boxes.</p>
+
+<p>The canonical model is:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>BLOCK TYPE
+→ editorial / structural role
+
+COLOR
+→ semantic / epistemic status
+
+EMOJI
+→ concept identity
+
+EMPHASIS
+→ force / importance / state
+
+GROUPING
+→ context / perspective / section
+</code></pre></div></div>
+
+<p>A component must remain understandable even when color, border styling, or emoji
+is ignored.</p>
+
+<h2 id="core-principles">Core principles</h2>
+
+<ol>
+  <li><strong>Semantics first.</strong></li>
+  <li><strong>Meaning before decoration.</strong></li>
+  <li><strong>Small, stable visual vocabulary.</strong></li>
+  <li><strong>Consistent meanings across documents and media.</strong></li>
+  <li><strong>Progressive enhancement.</strong></li>
+  <li><strong>Readable without CSS or JavaScript.</strong></li>
+  <li><strong>Preserve epistemic distinctions.</strong></li>
+  <li><strong>Do not turn every paragraph into a callout.</strong></li>
+  <li><strong>Publication layer owns presentation; source owns semantics.</strong></li>
+  <li><strong>Use the least visually forceful component that communicates the meaning.</strong></li>
+</ol>
+
+<h2 id="scope">Scope</h2>
+
+<p>This skill applies to text-oriented visual components such as:</p>
+
+<ul>
+  <li>shoutouts;</li>
+  <li>callouts;</li>
+  <li>insight blocks;</li>
+  <li>key ideas;</li>
+  <li>context blocks;</li>
+  <li>intent blocks;</li>
+  <li>observations;</li>
+  <li>claims;</li>
+  <li>evidence;</li>
+  <li>hypotheses;</li>
+  <li>unknowns;</li>
+  <li>contradictions;</li>
+  <li>validation blocks;</li>
+  <li>understanding blocks;</li>
+  <li>projections;</li>
+  <li>warnings;</li>
+  <li>examples;</li>
+  <li>definitions;</li>
+  <li>references;</li>
+  <li>quotes;</li>
+  <li>takeaways;</li>
+  <li>“try this” blocks;</li>
+  <li>connections;</li>
+  <li>notes;</li>
+  <li>checkpoints;</li>
+  <li>implementation tips;</li>
+  <li>prompts for reflection;</li>
+  <li>glossary cards;</li>
+  <li>compact comparison blocks.</li>
+</ul>
+
+<p>It does <strong>not</strong> replace <code class="language-plaintext highlighter-rouge">mermaid-visual-standard</code>.</p>
+
+<p>Use <code class="language-plaintext highlighter-rouge">mermaid-visual-standard</code> when meaning depends primarily on:</p>
+
+<ul>
+  <li>relations;</li>
+  <li>flows;</li>
+  <li>sequence;</li>
+  <li>dependency;</li>
+  <li>topology;</li>
+  <li>architecture;</li>
+  <li>state transitions;</li>
+  <li>graph structure;</li>
+  <li>chronology best expressed diagrammatically.</li>
+</ul>
+
+<p>Use this skill when meaning can remain primarily textual but benefits from
+visual semantic emphasis.</p>
+
+<h2 id="semantic-fidelity">Semantic fidelity</h2>
+
+<p>Every visual text component must represent the actual role of the content.</p>
+
+<p>Do not choose a component because it is visually attractive.</p>
+
+<p>Examples:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Evidence
+≠ interesting fact
+
+Warning
+≠ important paragraph
+
+Insight
+≠ summary
+
+Claim
+≠ evidence
+
+Question
+≠ uncertainty
+
+Takeaway
+≠ understanding
+</code></pre></div></div>
+
+<p>A component label must preserve the conceptual distinction present in the source.</p>
+
+<h2 id="canonical-visual-grammar">Canonical visual grammar</h2>
+
+<h3 id="block-type--editorial--structural-role">Block type = editorial / structural role</h3>
+
+<p>The block type answers:</p>
+
+<blockquote>
+  <p>What kind of communicative act is this?</p>
+</blockquote>
+
+<p>Recommended structural families:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Structural role</th>
+      <th>Preferred component</th>
+      <th>Typical content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>framing</td>
+      <td>Context / Background</td>
+      <td>environment, source framing, provenance</td>
+    </tr>
+    <tr>
+      <td>orientation</td>
+      <td>Intent / Goal</td>
+      <td>objective, direction, purpose</td>
+    </tr>
+    <tr>
+      <td>observation</td>
+      <td>Observation</td>
+      <td>reported or measured state</td>
+    </tr>
+    <tr>
+      <td>assertion</td>
+      <td>Claim</td>
+      <td>statement requiring support</td>
+    </tr>
+    <tr>
+      <td>support</td>
+      <td>Evidence</td>
+      <td>measurement, corroboration, source-backed support</td>
+    </tr>
+    <tr>
+      <td>provisional explanation</td>
+      <td>Hypothesis</td>
+      <td>possible mechanism or explanation</td>
+    </tr>
+    <tr>
+      <td>unresolved state</td>
+      <td>Unknown / Open Question</td>
+      <td>missing information, unresolved inquiry</td>
+    </tr>
+    <tr>
+      <td>conflict</td>
+      <td>Contradiction / Tension</td>
+      <td>incompatible evidence or interpretations</td>
+    </tr>
+    <tr>
+      <td>synthesis</td>
+      <td>Understanding / Insight</td>
+      <td>integrated meaning or accepted synthesis</td>
+    </tr>
+    <tr>
+      <td>explicit output</td>
+      <td>Projection / Takeaway</td>
+      <td>consequence, artifact, explicit conclusion</td>
+    </tr>
+    <tr>
+      <td>operation</td>
+      <td>Action / Try This</td>
+      <td>next step, exercise, practical action</td>
+    </tr>
+    <tr>
+      <td>caution</td>
+      <td>Warning</td>
+      <td>risk, caveat, misuse, failure mode</td>
+    </tr>
+    <tr>
+      <td>illustration</td>
+      <td>Example</td>
+      <td>concrete instance</td>
+    </tr>
+    <tr>
+      <td>terminology</td>
+      <td>Definition</td>
+      <td>term and meaning</td>
+    </tr>
+    <tr>
+      <td>source orientation</td>
+      <td>Reference</td>
+      <td>external or internal source</td>
+    </tr>
+    <tr>
+      <td>conceptual bridge</td>
+      <td>Connection</td>
+      <td>relation to another concept</td>
+    </tr>
+    <tr>
+      <td>completion</td>
+      <td>Checkpoint / Result</td>
+      <td>accepted state, completion criterion</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Do not create one unique component for every concept.</p>
+
+<p>Reuse the same component type whenever the communicative role is the same.</p>
+
+<h2 id="semantic--epistemic-visual-vocabulary">Semantic + Epistemic Visual Vocabulary</h2>
+
+<p>This skill shares the semantic vocabulary of <code class="language-plaintext highlighter-rouge">mermaid-visual-standard</code>.</p>
+
+<h3 id="color--semantic-or-epistemic-status">Color = semantic or epistemic status</h3>
+
+<p>Canonical semantic palette:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>context        fill #D9EAF7   stroke #7AA6C2
+observation    fill #DDF3E8   stroke #78AA91
+claim          fill #FFF1BF   stroke #C8A84E
+evidence       fill #E8DDF5   stroke #A68BC4
+hypothesis     fill #F8DFC4   stroke #C9986D
+uncertainty    fill #F6D6DD   stroke #BF7C89
+contradiction  fill #F4CFC8   stroke #B96B5D
+understanding  fill #DCEFD6   stroke #86A878
+projection     fill #ECEBE8   stroke #9C9992
+orchestration  fill #DDE3F4   stroke #8998C8
+</code></pre></div></div>
+
+<p>Recommended meanings:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">context</code> — source, framing, provenance, environment;</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">observation</code> — observed or reported state;</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">claim</code> — assertion requiring support;</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">evidence</code> — support, measurement, corroboration;</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">hypothesis</code> — provisional explanation or mechanism;</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">uncertainty</code> — unresolved, incomplete, unknown;</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">contradiction</code> — conflict or incompatible support;</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">understanding</code> — synthesized accepted understanding;</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">projection</code> — explicit representation or action derived from understanding;</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">orchestration</code> — coordination, capability, system-level control.</li>
+</ul>
+
+<p>Color communicates role, not decoration.</p>
+
+<p>Do not recolor a block merely to create visual variety.</p>
+
+<h3 id="emoji--concept-identity">Emoji = concept identity</h3>
+
+<p>Recommended vocabulary:</p>
+
+<ul>
+  <li>📚 Source / Reference / Context</li>
+  <li>👁 Observation</li>
+  <li>🧭 Intent / Orientation</li>
+  <li>🔎 Inquiry / Evidence</li>
+  <li>🧪 Validation / Experiment / Replication</li>
+  <li>🔗 Relation / Connection</li>
+  <li>🧩 Hypothesis / Mechanism / Structure</li>
+  <li>⚠️ Claim / Contradiction / Warning when context disambiguates</li>
+  <li>❓ Unknown / unresolved question</li>
+  <li>🧠 Understanding / Insight</li>
+  <li>🌀 HOLOFLUX / semantic movement when explicitly relevant</li>
+  <li>⚙️ COSMOS / orchestration / capability when explicitly relevant</li>
+  <li>📄 Projection / Artifact / Explicit Form</li>
+  <li>▶️ Action / Try This</li>
+  <li>✅ Accepted Result / Checkpoint</li>
+</ul>
+
+<p>Use at most one functional emoji in a component heading unless there is a strong
+semantic reason otherwise.</p>
+
+<p>The same concept should keep the same emoji across one document or product family.</p>
+
+<p>Emoji is functional, not decorative.</p>
+
+<p>Do not add emoji to:</p>
+
+<ul>
+  <li>exact identifiers;</li>
+  <li>code;</li>
+  <li>commands;</li>
+  <li>URLs;</li>
+  <li>requirement IDs;</li>
+  <li>data values;</li>
+  <li>quotations where exact text must be preserved.</li>
+</ul>
+
+<h3 id="emphasis--force--importance--state">Emphasis = force / importance / state</h3>
+
+<p>Use visual emphasis conservatively.</p>
+
+<p>Recommended levels:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>neutral
+→ ordinary explanatory component
+
+accented
+→ relevant semantic distinction
+
+strong
+→ warning, contradiction, accepted result, explicit decision
+
+critical
+→ only for genuine risk, invalid state, or severe warning
+</code></pre></div></div>
+
+<p>Do not use maximum emphasis simply because a paragraph is important.</p>
+
+<p>Importance and epistemic status are different dimensions.</p>
+
+<h3 id="grouping--context--perspective--section">Grouping = context / perspective / section</h3>
+
+<p>Group multiple blocks only when they share a real:</p>
+
+<ul>
+  <li>context;</li>
+  <li>perspective;</li>
+  <li>phase;</li>
+  <li>responsibility;</li>
+  <li>source;</li>
+  <li>inquiry;</li>
+  <li>conceptual layer;</li>
+  <li>learning objective.</li>
+</ul>
+
+<p>Do not use container-within-container layouts purely for decoration.</p>
+
+<h2 id="semantic-components">Semantic components</h2>
+
+<h3 id="context">Context</h3>
+
+<p>Use for framing, provenance, environment, assumptions, or surrounding conditions.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>📚 CONTEXT
+</code></pre></div></div>
+
+<p>Do not use Context as a generic introduction box.</p>
+
+<h3 id="intent">Intent</h3>
+
+<p>Use when stating purpose, direction, desired outcome, or explicit orientation.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🧭 INTENT
+</code></pre></div></div>
+
+<p>Intent is not the same as a task description.</p>
+
+<h3 id="observation">Observation</h3>
+
+<p>Use for what was seen, measured, reported, or externally observed.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>👁 OBSERVATION
+</code></pre></div></div>
+
+<p>Observation is not automatically Evidence.</p>
+
+<h3 id="claim">Claim</h3>
+
+<p>Use for an assertion that may require support or validation.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>⚠️ CLAIM
+</code></pre></div></div>
+
+<p>A claim should not visually imply that it is already accepted.</p>
+
+<h3 id="evidence">Evidence</h3>
+
+<p>Use for data, corroboration, source-backed support, measurements, or observations
+that actually bear on a claim.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🔎 EVIDENCE
+</code></pre></div></div>
+
+<p>A source is not evidence merely because it contains a relevant sentence.</p>
+
+<h3 id="hypothesis">Hypothesis</h3>
+
+<p>Use for provisional explanations or mechanisms under inquiry.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🧩 HYPOTHESIS
+</code></pre></div></div>
+
+<p>Do not render a hypothesis as accepted understanding.</p>
+
+<h3 id="unknown">Unknown</h3>
+
+<p>Use for genuine unresolved information.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>❓ UNKNOWN
+</code></pre></div></div>
+
+<p>An unknown is not an error state.</p>
+
+<h3 id="open-question">Open Question</h3>
+
+<p>Use when inquiry remains active and can be expressed as a question.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>❓ OPEN QUESTION
+</code></pre></div></div>
+
+<p>An open question may arise from an unknown but is not identical to it.</p>
+
+<h3 id="contradiction">Contradiction</h3>
+
+<p>Use when support, observations, sources, or interpretations conflict.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>⚠️ CONTRADICTION
+</code></pre></div></div>
+
+<p>A contradiction is not automatically falsification.</p>
+
+<h3 id="validation">Validation</h3>
+
+<p>Use for an experiment, check, verification, or acceptance step.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🧪 VALIDATION
+</code></pre></div></div>
+
+<p>Operational success is not epistemic acceptance.</p>
+
+<h3 id="understanding">Understanding</h3>
+
+<p>Use for synthesized meaning that integrates relevant context, evidence,
+constraints, and inquiry.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🧠 UNDERSTANDING
+</code></pre></div></div>
+
+<p>Do not use Understanding as a visually upgraded Summary.</p>
+
+<h3 id="projection">Projection</h3>
+
+<p>Use when understanding is transformed into an explicit artifact, representation,
+decision, specification, or communicated form.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>📄 PROJECTION
+</code></pre></div></div>
+
+<h3 id="action">Action</h3>
+
+<p>Use for an actual next step or operation.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>▶️ ACTION
+</code></pre></div></div>
+
+<h3 id="checkpoint--accepted-result">Checkpoint / Accepted Result</h3>
+
+<p>Use when a state has actually met defined acceptance conditions.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>✅ CHECKPOINT
+</code></pre></div></div>
+
+<p>Do not use success styling merely because a section is complete.</p>
+
+<h2 id="editorial-components">Editorial components</h2>
+
+<p>Editorial components are useful, but they must not be confused with epistemic roles.</p>
+
+<h3 id="key-idea">Key Idea</h3>
+
+<p>Use for a concept the reader should retain.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>💡 KEY IDEA
+</code></pre></div></div>
+
+<p>A Key Idea may contain a claim, but does not itself mean the claim is validated.</p>
+
+<h3 id="insight">Insight</h3>
+
+<p>Use for a compact conceptual synthesis that helps the reader see a pattern,
+connection, implication, or deeper interpretation.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🧠 INSIGHT
+</code></pre></div></div>
+
+<p>When the content represents accepted epistemic synthesis, prefer <code class="language-plaintext highlighter-rouge">Understanding</code>.</p>
+
+<h3 id="warning">Warning</h3>
+
+<p>Use for real risk, caveat, misuse, security concern, data-loss risk, misleading
+interpretation, or important constraint.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>⚠️ WARNING
+</code></pre></div></div>
+
+<p>Do not use Warning for ordinary advice.</p>
+
+<h3 id="note">Note</h3>
+
+<p>Use for secondary information that helps but is not central.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>📝 NOTE
+</code></pre></div></div>
+
+<p>Avoid excessive notes.</p>
+
+<h3 id="example">Example</h3>
+
+<p>Use for a concrete illustration of a concept.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>📝 EXAMPLE
+</code></pre></div></div>
+
+<p>Examples do not prove a general claim by themselves.</p>
+
+<h3 id="definition">Definition</h3>
+
+<p>Use for explicit terminology.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>📖 DEFINITION
+</code></pre></div></div>
+
+<p>Keep definitions concise.</p>
+
+<h3 id="reference">Reference</h3>
+
+<p>Use to orient the reader toward a source, document, standard, post, section,
+book, paper, or repository.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>📚 REFERENCE
+</code></pre></div></div>
+
+<p>A reference is not evidence by default.</p>
+
+<h3 id="connection">Connection</h3>
+
+<p>Use to expose a meaningful relation to another concept, post, system, pattern,
+or part of the publication.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🔗 CONNECTION
+</code></pre></div></div>
+
+<h3 id="try-this">Try This</h3>
+
+<p>Use for an exercise, experiment, prompt, implementation suggestion, or practical
+reader action.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>▶️ TRY THIS
+</code></pre></div></div>
+
+<h3 id="takeaway">Takeaway</h3>
+
+<p>Use for the concise explicit point the reader should carry forward.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>📄 TAKEAWAY
+</code></pre></div></div>
+
+<p>A Takeaway summarizes projected meaning. It is not necessarily Understanding.</p>
+
+<h3 id="quote">Quote</h3>
+
+<p>Use only for actual quotations.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>“ … ”
+— Source
+</code></pre></div></div>
+
+<p>Do not reformat paraphrases as quotes.</p>
+
+<h3 id="related-concept">Related Concept</h3>
+
+<p>Use for internal conceptual navigation.</p>
+
+<p>Preferred identity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🔗 RELATED CONCEPT
+</code></pre></div></div>
+
+<p>Prefer direct links when the publication format supports them.</p>
+
+<h2 id="epistemic-integrity">Epistemic integrity</h2>
+
+<p>Whenever text visual components represent knowledge, preserve these distinctions:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Citation ≠ Source
+Source ≠ Evidence
+Evidence ≠ Claim
+Claim ≠ Understanding
+Operational success ≠ Epistemic acceptance
+Retrieval ≠ Semantic extraction
+Generated citation span ≠ Source passage
+</code></pre></div></div>
+
+<p>Additional rules:</p>
+
+<ul>
+  <li>a source is not evidence merely because it is authoritative;</li>
+  <li>a citation indicates provenance, not correctness;</li>
+  <li>evidence may support or challenge a claim;</li>
+  <li>evidence is not itself the claim;</li>
+  <li>repetition does not convert a claim into understanding;</li>
+  <li>an unknown is not a failure state;</li>
+  <li>contradiction is not automatically falsification;</li>
+  <li>successful execution is not proof of semantic validity;</li>
+  <li>retrieval success does not imply correct interpretation;</li>
+  <li>summary is not automatically understanding;</li>
+  <li>a visually prominent block is not epistemically stronger.</li>
+</ul>
+
+<h2 id="when-to-use-a-visual-text-component">When to use a visual text component</h2>
+
+<p>Create a component only when it materially improves at least one of:</p>
+
+<ul>
+  <li>scanning;</li>
+  <li>distinction;</li>
+  <li>retention;</li>
+  <li>navigation;</li>
+  <li>caution;</li>
+  <li>conceptual separation;</li>
+  <li>epistemic clarity;</li>
+  <li>reader action;</li>
+  <li>source orientation.</li>
+</ul>
+
+<p>Do not create a component when ordinary prose is clearer.</p>
+
+<h3 id="density-guideline">Density guideline</h3>
+
+<p>Prefer:</p>
+
+<ul>
+  <li>no more than 1 strong callout every few paragraphs;</li>
+  <li>one primary semantic role per block;</li>
+  <li>short headings;</li>
+  <li>concise body text;</li>
+  <li>one visual purpose at a time.</li>
+</ul>
+
+<p>If a page becomes a sequence of boxes, the visual hierarchy has failed.</p>
+
+<h2 id="composition-guidance">Composition guidance</h2>
+
+<p>Prefer:</p>
+
+<ul>
+  <li>normal prose as the default;</li>
+  <li>visual blocks at semantic transitions;</li>
+  <li>short block headings;</li>
+  <li>1–3 short paragraphs per block;</li>
+  <li>bullets only when they improve scanning;</li>
+  <li>consistent internal padding;</li>
+  <li>one semantic color per block;</li>
+  <li>restrained borders;</li>
+  <li>no ornamental shadows required for meaning;</li>
+  <li>one functional emoji in the heading where suitable;</li>
+  <li>whitespace between adjacent blocks;</li>
+  <li>nested components only when the nested relationship is real.</li>
+</ul>
+
+<p>Avoid:</p>
+
+<ul>
+  <li>rainbow pages;</li>
+  <li>decorative emoji;</li>
+  <li>arbitrary icon changes;</li>
+  <li>long essays inside callouts;</li>
+  <li>callout inside callout inside callout;</li>
+  <li>turning headings into banners without semantic reason;</li>
+  <li>using Warning for emphasis;</li>
+  <li>using Insight for every interesting sentence;</li>
+  <li>using Evidence without actual support;</li>
+  <li>using Understanding as a synonym for Summary;</li>
+  <li>using color alone to distinguish meaning;</li>
+  <li>using block type to imply certainty that the content does not possess.</li>
+</ul>
+
+<h2 id="cross-media-model">Cross-media model</h2>
+
+<p>The semantic component is independent of the rendering technology.</p>
+
+<p>Canonical pipeline:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Semantic role
+→ component declaration
+→ publication adapter
+→ visual rendering
+</code></pre></div></div>
+
+<p>Example:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Understanding
+→ semantic component
+→ Jekyll / HTML / EPUB / Markdown adapter
+→ rendered block
+</code></pre></div></div>
+
+<p>Do not encode publication-specific visual hacks into semantic source unless the
+target platform requires it.</p>
+
+<h2 id="markdown-baseline">Markdown baseline</h2>
+
+<p>Markdown must have a readable fallback.</p>
+
+<p>Generic fallback:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; **🧠 Insight**</span>
+<span class="gt">&gt;</span>
+<span class="gt">&gt; Understanding emerges from the relation between evidence, context, and inquiry.</span>
+</code></pre></div></div>
+
+<p>Evidence:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; **🔎 Evidence**</span>
+<span class="gt">&gt;</span>
+<span class="gt">&gt; The benchmark shows a measurable change under the observed conditions.</span>
+</code></pre></div></div>
+
+<p>Open question:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; **❓ Open Question**</span>
+<span class="gt">&gt;</span>
+<span class="gt">&gt; What remains unknown after this evidence?</span>
+</code></pre></div></div>
+
+<p>Warning:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; **⚠️ Warning**</span>
+<span class="gt">&gt;</span>
+<span class="gt">&gt; Do not treat successful tool execution as epistemic validation.</span>
+</code></pre></div></div>
+
+<p>GitHub-compatible Markdown may use this form when appropriate:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!NOTE]</span>
+<span class="gt">&gt; Supporting information.</span>
+<span class="gt">
+&gt; [!TIP]</span>
+<span class="gt">&gt; Practical suggestion.</span>
+<span class="gt">
+&gt; [!IMPORTANT]</span>
+<span class="gt">&gt; Important constraint.</span>
+<span class="gt">
+&gt; [!WARNING]</span>
+<span class="gt">&gt; Significant risk.</span>
+<span class="gt">
+&gt; [!CAUTION]</span>
+<span class="gt">&gt; High-risk consequence.</span>
+</code></pre></div></div>
+
+<p>Do not force all semantic components into GitHub’s limited native taxonomy.
+Use a plain blockquote with explicit semantic heading when the native alert type
+would change the meaning.</p>
+
+<h2 id="suggested-semantic-source-syntax">Suggested semantic source syntax</h2>
+
+<p>When a FACTORY controls preprocessing, prefer a semantic source form such as:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:::context
+Source framing or environment.
+:::
+
+:::intent
+What this section is trying to achieve.
+:::
+
+:::evidence
+Support for a specific claim.
+:::
+
+:::unknown
+What remains unresolved.
+:::
+
+:::understanding
+Synthesized accepted meaning.
+:::
+</code></pre></div></div>
+
+<p>Alternative compact syntax:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[context]
+...
+[/context]
+
+[evidence]
+...
+[/evidence]
+
+[understanding]
+...
+[/understanding]
+</code></pre></div></div>
+
+<p>The exact source syntax is implementation-specific.</p>
+
+<p>The semantic names are canonical.</p>
+
+<h2 id="html-semantic-rendering">HTML semantic rendering</h2>
+
+<p>Prefer semantic HTML.</p>
+
+<p>Example:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;aside</span> <span class="na">class=</span><span class="s">"semantic-block semantic-block--understanding"</span>
+       <span class="na">data-semantic-role=</span><span class="s">"understanding"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"semantic-block__title"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>🧠<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;span&gt;</span>Understanding<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"semantic-block__body"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Meaning emerges through synthesis, not repetition.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/aside&gt;</span>
+</code></pre></div></div>
+
+<p>Recommended principles:</p>
+
+<ul>
+  <li>use <code class="language-plaintext highlighter-rouge">aside</code> for supplementary semantic blocks;</li>
+  <li>use <code class="language-plaintext highlighter-rouge">section</code> when the block is a true document section;</li>
+  <li>preserve heading hierarchy;</li>
+  <li>do not put critical meaning only in <code class="language-plaintext highlighter-rouge">data-*</code> attributes;</li>
+  <li>emoji may be <code class="language-plaintext highlighter-rouge">aria-hidden</code> when the adjacent text names the role;</li>
+  <li>maintain adequate contrast;</li>
+  <li>support keyboard and screen-reader navigation;</li>
+  <li>do not require hover for essential meaning.</li>
+</ul>
+
+<h2 id="css-guidance">CSS guidance</h2>
+
+<p>Publication adapters may map the canonical palette to CSS variables.</p>
+
+<p>Example:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">:root</span> <span class="p">{</span>
+  <span class="py">--semantic-context-bg</span><span class="p">:</span> <span class="m">#D9EAF7</span><span class="p">;</span>
+  <span class="py">--semantic-context-border</span><span class="p">:</span> <span class="m">#7AA6C2</span><span class="p">;</span>
+
+  <span class="py">--semantic-observation-bg</span><span class="p">:</span> <span class="m">#DDF3E8</span><span class="p">;</span>
+  <span class="py">--semantic-observation-border</span><span class="p">:</span> <span class="m">#78AA91</span><span class="p">;</span>
+
+  <span class="py">--semantic-claim-bg</span><span class="p">:</span> <span class="m">#FFF1BF</span><span class="p">;</span>
+  <span class="py">--semantic-claim-border</span><span class="p">:</span> <span class="m">#C8A84E</span><span class="p">;</span>
+
+  <span class="py">--semantic-evidence-bg</span><span class="p">:</span> <span class="m">#E8DDF5</span><span class="p">;</span>
+  <span class="py">--semantic-evidence-border</span><span class="p">:</span> <span class="m">#A68BC4</span><span class="p">;</span>
+
+  <span class="py">--semantic-hypothesis-bg</span><span class="p">:</span> <span class="m">#F8DFC4</span><span class="p">;</span>
+  <span class="py">--semantic-hypothesis-border</span><span class="p">:</span> <span class="m">#C9986D</span><span class="p">;</span>
+
+  <span class="py">--semantic-uncertainty-bg</span><span class="p">:</span> <span class="m">#F6D6DD</span><span class="p">;</span>
+  <span class="py">--semantic-uncertainty-border</span><span class="p">:</span> <span class="m">#BF7C89</span><span class="p">;</span>
+
+  <span class="py">--semantic-contradiction-bg</span><span class="p">:</span> <span class="m">#F4CFC8</span><span class="p">;</span>
+  <span class="py">--semantic-contradiction-border</span><span class="p">:</span> <span class="m">#B96B5D</span><span class="p">;</span>
+
+  <span class="py">--semantic-understanding-bg</span><span class="p">:</span> <span class="m">#DCEFD6</span><span class="p">;</span>
+  <span class="py">--semantic-understanding-border</span><span class="p">:</span> <span class="m">#86A878</span><span class="p">;</span>
+
+  <span class="py">--semantic-projection-bg</span><span class="p">:</span> <span class="m">#ECEBE8</span><span class="p">;</span>
+  <span class="py">--semantic-projection-border</span><span class="p">:</span> <span class="m">#9C9992</span><span class="p">;</span>
+
+  <span class="py">--semantic-orchestration-bg</span><span class="p">:</span> <span class="m">#DDE3F4</span><span class="p">;</span>
+  <span class="py">--semantic-orchestration-border</span><span class="p">:</span> <span class="m">#8998C8</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Example base component:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.semantic-block</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">1.4rem</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span> <span class="m">1.1rem</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span><span class="p">;</span>
+  <span class="nl">border-left-width</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">0.65rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.semantic-block__title</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="py">gap</span><span class="p">:</span> <span class="m">0.45rem</span><span class="p">;</span>
+  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">0.55rem</span><span class="p">;</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="m">700</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.semantic-block__body</span> <span class="o">&gt;</span> <span class="nd">:first-child</span> <span class="p">{</span>
+  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.semantic-block__body</span> <span class="o">&gt;</span> <span class="nd">:last-child</span> <span class="p">{</span>
+  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Use CSS as presentation.</p>
+
+<p>Do not let CSS invent semantic meaning that is absent from the source.</p>
+
+<h2 id="jekyll--factories-guidance">Jekyll / FACTORIES guidance</h2>
+
+<p>For Jekyll-based FACTORIES, prefer a semantic include or plugin abstraction.</p>
+
+<p>Example source:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>semantic-block.html<span class="w">
+   </span><span class="na">type</span><span class="o">=</span><span class="s2">"understanding"</span><span class="w">
+   </span><span class="na">title</span><span class="o">=</span><span class="s2">"Understanding"</span><span class="w">
+   </span><span class="na">content</span><span class="o">=</span><span class="s2">"Meaning emerges through synthesis, not repetition."</span><span class="w">
+</span><span class="cp">%}</span>
+</code></pre></div></div>
+
+<p>Or a Markdown extension transformed during build:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:::understanding
+Meaning emerges through synthesis, not repetition.
+:::
+</code></pre></div></div>
+
+<p>The build layer should map semantic role to:</p>
+
+<ul>
+  <li>canonical emoji;</li>
+  <li>canonical palette;</li>
+  <li>canonical class;</li>
+  <li>accessibility label;</li>
+  <li>consistent HTML structure.</li>
+</ul>
+
+<p>Do not copy inline styles into every post.</p>
+
+<h2 id="readme-guidance">README guidance</h2>
+
+<p>README files often have limited styling.</p>
+
+<p>Priority order:</p>
+
+<ol>
+  <li>preserve semantic label;</li>
+  <li>preserve emoji;</li>
+  <li>preserve readable hierarchy;</li>
+  <li>use native GitHub alerts when semantically appropriate;</li>
+  <li>use plain blockquotes otherwise.</li>
+</ol>
+
+<p>Do not sacrifice semantic precision merely to obtain a colored GitHub alert.</p>
+
+<h2 id="ebook-guidance">Ebook guidance</h2>
+
+<p>In EPUB/PDF/book layouts:</p>
+
+<ul>
+  <li>keep the same semantic roles;</li>
+  <li>keep the same functional emoji when supported;</li>
+  <li>preserve the canonical color meanings where print/display allows;</li>
+  <li>ensure grayscale output remains understandable;</li>
+  <li>avoid splitting a short block across pages when possible;</li>
+  <li>do not rely on background color alone;</li>
+  <li>preserve headings and border cues;</li>
+  <li>keep blocks compact enough not to interrupt the reading rhythm.</li>
+</ul>
+
+<h2 id="accessibility">Accessibility</h2>
+
+<p>A semantic block must remain understandable:</p>
+
+<ul>
+  <li>without color;</li>
+  <li>without emoji;</li>
+  <li>in grayscale;</li>
+  <li>with a screen reader;</li>
+  <li>when CSS is missing;</li>
+  <li>in narrow layouts.</li>
+</ul>
+
+<p>Required practices:</p>
+
+<ul>
+  <li>role name appears in text;</li>
+  <li>color is never the sole signal;</li>
+  <li>sufficient contrast;</li>
+  <li>semantic heading precedes content;</li>
+  <li>emoji is supplemental;</li>
+  <li>do not encode meaning only through border style;</li>
+  <li>avoid overly dense blocks;</li>
+  <li>preserve source reading order.</li>
+</ul>
+
+<h2 id="refactor-mode">Refactor mode</h2>
+
+<p>When applying this skill to existing content:</p>
+
+<ol>
+  <li>read the surrounding section;</li>
+  <li>identify the communicative purpose of the highlighted passage;</li>
+  <li>determine whether a visual component is necessary;</li>
+  <li>classify the content as editorial, semantic, epistemic, operational, or navigational;</li>
+  <li>preserve Source, Observation, Claim, Evidence, Hypothesis, Unknown,
+Contradiction, Understanding, and Projection distinctions where relevant;</li>
+  <li>choose the least forceful component that preserves meaning;</li>
+  <li>apply the canonical semantic color only when useful;</li>
+  <li>add the canonical functional emoji where suitable;</li>
+  <li>keep exact quotes, identifiers, code, commands, and values unchanged;</li>
+  <li>preserve the publication format’s accessibility requirements;</li>
+  <li>avoid converting ordinary prose into blocks unnecessarily;</li>
+  <li>inspect the final page, not only the source markup.</li>
+</ol>
+
+<p>Rebuild only when semantic clarity or reading flow requires it.</p>
+
+<h2 id="conversion-examples">Conversion examples</h2>
+
+<h3 id="plain-paragraph--insight">Plain paragraph → Insight</h3>
+
+<p>Before:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The important point is that intent changes the unit of organization.
+</code></pre></div></div>
+
+<p>After:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; **🧠 Insight**</span>
+<span class="gt">&gt;</span>
+<span class="gt">&gt; Intent changes the unit of organization.</span>
+</code></pre></div></div>
+
+<p>Use only if this is genuinely a conceptual synthesis.</p>
+
+<h3 id="plain-paragraph--evidence">Plain paragraph → Evidence</h3>
+
+<p>Before:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The benchmark recorded lower latency in all three measured scenarios.
+</code></pre></div></div>
+
+<p>After:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; **🔎 Evidence**</span>
+<span class="gt">&gt;</span>
+<span class="gt">&gt; The benchmark recorded lower latency in all three measured scenarios.</span>
+</code></pre></div></div>
+
+<p>Use only when the measurement actually supports a relevant claim.</p>
+
+<h3 id="plain-paragraph--warning">Plain paragraph → Warning</h3>
+
+<p>Before:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Do not assume a successful API call means the returned information is correct.
+</code></pre></div></div>
+
+<p>After:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; **⚠️ Warning**</span>
+<span class="gt">&gt;</span>
+<span class="gt">&gt; Do not assume a successful API call means the returned information is correct.</span>
+</code></pre></div></div>
+
+<h3 id="plain-paragraph--unknown">Plain paragraph → Unknown</h3>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; **❓ Unknown**</span>
+<span class="gt">&gt;</span>
+<span class="gt">&gt; The available evidence does not yet establish whether the behavior generalizes</span>
+<span class="gt">&gt; beyond the observed environment.</span>
+</code></pre></div></div>
+
+<h3 id="plain-paragraph--understanding">Plain paragraph → Understanding</h3>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; **🧠 Understanding**</span>
+<span class="gt">&gt;</span>
+<span class="gt">&gt; Retrieval and understanding are separate stages: obtaining a passage does not</span>
+<span class="gt">&gt; establish that its meaning was extracted correctly.</span>
+</code></pre></div></div>
+
+<h2 id="component-selection-guide">Component selection guide</h2>
+
+<p>Ask these questions in order:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Is this ordinary explanation?
+→ keep prose
+
+Is it framing?
+→ Context
+
+Is it a purpose or orientation?
+→ Intent
+
+Is it something observed?
+→ Observation
+
+Is it an assertion needing support?
+→ Claim
+
+Does it actually support/challenge a claim?
+→ Evidence
+
+Is it a provisional mechanism?
+→ Hypothesis
+
+Is something genuinely unresolved?
+→ Unknown / Open Question
+
+Is there a conflict?
+→ Contradiction
+
+Is this a verification step?
+→ Validation
+
+Is this synthesized meaning?
+→ Understanding / Insight
+
+Is this an explicit consequence or concise output?
+→ Projection / Takeaway
+
+Is it a practical next step?
+→ Action / Try This
+
+Is there a real risk?
+→ Warning
+
+Is it only illustrating?
+→ Example
+
+Is it defining terminology?
+→ Definition
+
+Is it pointing elsewhere?
+→ Reference / Connection
+</code></pre></div></div>
+
+<h2 id="relationship-to-mermaid">Relationship to Mermaid</h2>
+
+<p>The two standards share semantics but use different visual channels.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MERMAID
+shape
+color
+emoji
+edge
+subgraph
+
+TEXT VISUALS
+block type
+color
+emoji
+emphasis
+grouping
+</code></pre></div></div>
+
+<p>Canonical correspondence:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shared semantic dimension</th>
+      <th>Mermaid</th>
+      <th>Text visual</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>structural role</td>
+      <td>node shape / native construct</td>
+      <td>component type</td>
+    </tr>
+    <tr>
+      <td>semantic status</td>
+      <td>node/element color</td>
+      <td>block color</td>
+    </tr>
+    <tr>
+      <td>concept identity</td>
+      <td>emoji in label</td>
+      <td>emoji in heading</td>
+    </tr>
+    <tr>
+      <td>relation force</td>
+      <td>edge style / label</td>
+      <td>wording, reference, emphasis</td>
+    </tr>
+    <tr>
+      <td>context</td>
+      <td>subgraph / grouping</td>
+      <td>section / grouped components</td>
+    </tr>
+    <tr>
+      <td>reading order</td>
+      <td>graph topology</td>
+      <td>document flow</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Do not force text into Mermaid when prose is clearer.</p>
+
+<p>Do not force relations into prose when a diagram is clearer.</p>
+
+<h2 id="document-wide-consistency">Document-wide consistency</h2>
+
+<p>Across one document or product family:</p>
+
+<ul>
+  <li>same semantic role → same component type;</li>
+  <li>same semantic status → same color;</li>
+  <li>same concept → same emoji;</li>
+  <li>same warning level → same emphasis;</li>
+  <li>same terminology → same heading label;</li>
+  <li>same conceptual distinction → same visual treatment;</li>
+  <li>same publication adapter → same HTML structure.</li>
+</ul>
+
+<p>Consistency means semantic consistency, not identical box sizes.</p>
+
+<h2 id="avoid">Avoid</h2>
+
+<ul>
+  <li>decorative shoutouts;</li>
+  <li>arbitrary emoji;</li>
+  <li>arbitrary colors;</li>
+  <li>every paragraph becoming a card;</li>
+  <li>callout nesting without semantic need;</li>
+  <li>Warning used as “very important”;</li>
+  <li>Evidence used for unsupported opinions;</li>
+  <li>Insight used for summaries;</li>
+  <li>Understanding used for anything merely explanatory;</li>
+  <li>Quote used for paraphrase;</li>
+  <li>Reference confused with Evidence;</li>
+  <li>large blocks that interrupt reading;</li>
+  <li>color-only semantics;</li>
+  <li>CSS-only labels;</li>
+  <li>inaccessible contrast;</li>
+  <li>visual components whose headings do not match their content;</li>
+  <li>forcing GitHub alert types onto concepts they do not represent;</li>
+  <li>using editorial prominence to imply epistemic confidence.</li>
+</ul>
+
+<h2 id="quality-gate">Quality gate</h2>
+
+<p>Before accepting a text visual component, verify:</p>
+
+<ul>
+  <li>Is a visual component actually necessary?</li>
+  <li>Is its semantic purpose clear?</li>
+  <li>Does the component type match the content?</li>
+  <li>Is the role editorial, semantic, or epistemic correctly identified?</li>
+  <li>Are Source, Observation, Claim, Evidence, Hypothesis, Unknown,
+Contradiction, Understanding, and Projection kept distinct where relevant?</li>
+  <li>Is operational success separate from epistemic acceptance?</li>
+  <li>Is the color semantic rather than decorative?</li>
+  <li>Is the emoji functional and consistent?</li>
+  <li>Would the content still make sense without color?</li>
+  <li>Would it still make sense without emoji?</li>
+  <li>Is the heading explicit?</li>
+  <li>Is the body concise?</li>
+  <li>Is the component stronger than necessary?</li>
+  <li>Is the surrounding reading flow preserved?</li>
+  <li>Is native platform syntax used only when semantically compatible?</li>
+  <li>Are exact identifiers, code, commands, URLs, and quotes preserved?</li>
+  <li>Is the block accessible?</li>
+  <li>Is the same role rendered consistently across the document?</li>
+  <li>Has visual density remained under control?</li>
+</ul>
+
+<h2 id="guiding-principles">Guiding principles</h2>
+
+<blockquote>
+  <p>Preserve semantic meaning, not visual novelty.</p>
+</blockquote>
+
+<blockquote>
+  <p>Block type expresses what kind of communicative act it is.</p>
+</blockquote>
+
+<blockquote>
+  <p>Color expresses semantic or epistemic status.</p>
+</blockquote>
+
+<blockquote>
+  <p>Emoji identifies the concept.</p>
+</blockquote>
+
+<blockquote>
+  <p>Emphasis expresses force, not truth.</p>
+</blockquote>
+
+<blockquote>
+  <p>Grouping expresses context or perspective.</p>
+</blockquote>
+
+<blockquote>
+  <p>Ordinary prose remains the default.</p>
+</blockquote>
+
+<blockquote>
+  <p>A source is not evidence merely because it is cited.</p>
+</blockquote>
+
+<blockquote>
+  <p>A visually stronger block is not epistemically stronger.</p>
+</blockquote>
+
+<blockquote>
+  <p>Use the smallest visual vocabulary that makes meaning clearer.</p>
+</blockquote>
+</body></html>
