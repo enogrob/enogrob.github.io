@@ -127,32 +127,60 @@
 
 <p>The era’s experiments show both the reach and the limits of the excitement.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Experiment</th>
-      <th>What was real</th>
-      <th>What it signaled</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Ruby on Symbian</strong></td>
-      <td>A <a href="https://sourceforge.net/projects/ruby4s/">Ruby for Symbian OS project</a> offered a port; an <a href="https://www.thecodingforums.com/threads/ann-ruby-for-symbian-preview-release.833270/">early preview announcement</a> described substantial limitations.</td>
-      <td>Developers imagined Ruby outside the server, even on constrained phones. This was an experiment, not evidence of mass mobile adoption.</td>
-    </tr>
-    <tr>
-      <td><strong>CodeGear 3rdRail</strong></td>
-      <td>CodeGear released a <a href="https://visualstudiomagazine.com/articles/2007/09/18/codegear-touches-3rdrail-with-new-ide.aspx">Rails IDE in September 2007</a>; a <a href="https://blog.marcocantu.com/blog/milan_codegear_3rdrails_delphi.html">contemporary developer account</a> describes its introduction.</td>
-      <td>An established tools vendor saw Rails as a market worth serving. The IDE challenged the idea that Ruby’s rise meant the end of IDEs.</td>
-    </tr>
-    <tr>
-      <td><strong>Microsoft IronRuby</strong></td>
-      <td>Microsoft explored Ruby on the .NET runtime through the Dynamic Language Runtime; <a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/net-interop-getting-started-with-ironruby-and-rspec-part-1">Microsoft’s 2009 account</a> explains the implementation and .NET interoperability.</td>
-      <td>Dynamic language design had become relevant even inside an ecosystem identified with statically typed languages. It did not mean that .NET switched to Ruby.</td>
-    </tr>
-  </tbody>
-</table>
+<style>
+.ruby-era-experiments {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  --rv-surface: #f7f6f3;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 1.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.ruby-era-experiments li {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--rv-border);
+  border-top: 3px solid var(--rv-accent);
+  background: var(--rv-surface);
+}
+
+.ruby-era-experiments h3 {
+  margin: 0 0 .65rem;
+  font-size: 1.05rem;
+}
+
+.ruby-era-experiments p {
+  margin: .5rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .ruby-era-experiments {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<ul class="ruby-era-experiments" aria-label="Three Ruby-era experiments and their historical significance">
+  <li>
+    <h3>Ruby on Symbian</h3>
+    <p><strong>What was real:</strong> A <a href="https://sourceforge.net/projects/ruby4s/" target="_blank" rel="noopener noreferrer">Ruby for Symbian OS project</a> offered a port; an <a href="https://www.thecodingforums.com/threads/ann-ruby-for-symbian-preview-release.833270/" target="_blank" rel="noopener noreferrer">early preview announcement</a> described substantial limitations.</p>
+    <p><strong>What it signaled:</strong> Developers imagined Ruby outside the server, even on constrained phones. This was an experiment, not evidence of mass mobile adoption.</p>
+  </li>
+  <li>
+    <h3>CodeGear 3rdRail</h3>
+    <p><strong>What was real:</strong> CodeGear released a <a href="https://visualstudiomagazine.com/articles/2007/09/18/codegear-touches-3rdrail-with-new-ide.aspx" target="_blank" rel="noopener noreferrer">Rails IDE in September 2007</a>; a <a href="https://blog.marcocantu.com/blog/milan_codegear_3rdrails_delphi.html" target="_blank" rel="noopener noreferrer">contemporary developer account</a> describes its introduction.</p>
+    <p><strong>What it signaled:</strong> An established tools vendor saw Rails as a market worth serving. The IDE challenged the idea that Ruby's rise meant the end of IDEs.</p>
+  </li>
+  <li>
+    <h3>Microsoft IronRuby</h3>
+    <p><strong>What was real:</strong> Microsoft explored Ruby on the .NET runtime through the Dynamic Language Runtime; <a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/net-interop-getting-started-with-ironruby-and-rspec-part-1" target="_blank" rel="noopener noreferrer">Microsoft's 2009 account</a> explains the implementation and .NET interoperability.</p>
+    <p><strong>What it signaled:</strong> Dynamic language design had become relevant even inside an ecosystem identified with statically typed languages. It did not mean that .NET switched to Ruby.</p>
+  </li>
+</ul>
 
 <p>These stories should be read as evidence of attention and experimentation. A preview, a commercial IDE, and a runtime implementation are not the same kind of success. The historical signal is that phone developers, tooling companies, and Microsoft each believed Ruby was important enough to investigate on their own terrain.</p>
 

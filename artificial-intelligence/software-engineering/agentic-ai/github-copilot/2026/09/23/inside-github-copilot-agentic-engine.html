@@ -371,14 +371,57 @@
 
 <p>Run the same maintenance objective in three configurations:</p>
 
-<ol>
+<style>
+.copilot-experiment-configurations {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  --rv-surface: #f7f6f3;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 1.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.copilot-experiment-configurations li {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--rv-border);
+  border-top: 3px solid var(--rv-accent);
+  background: var(--rv-surface);
+}
+
+.copilot-experiment-configurations h3 {
+  margin: 0 0 .6rem;
+  font-size: 1.05rem;
+}
+
+.copilot-experiment-configurations p {
+  margin: .4rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .copilot-experiment-configurations {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<ul class="copilot-experiment-configurations" aria-label="Three configurations in the proposed Rails experiment">
   <li>
-<strong>Single Copilot session</strong> — one agent, one selected model, repository tools.</li>
+    <h3>Single Copilot session</h3>
+    <p>One agent, one selected model, and repository tools.</p>
+  </li>
   <li>
-<strong>Specialized workflow</strong> — planner, Rails maintainer, security reviewer, reusable upgrade skill, documentation through MCP, and deterministic gates.</li>
+    <h3>Specialized workflow</h3>
+    <p>A planner, Rails maintainer, and security reviewer work with a reusable upgrade skill, documentation through MCP, and deterministic gates.</p>
+  </li>
   <li>
-<strong>HydraFusion workflow</strong> — the same tools and gates, but with runtime multi-model orchestration enabled.</li>
-</ol>
+    <h3>HydraFusion workflow</h3>
+    <p>The same tools and gates as the specialized workflow, with runtime multi-model orchestration enabled.</p>
+  </li>
+</ul>
 
 <p>The task is not “make the code better.” It is bounded:</p>
 

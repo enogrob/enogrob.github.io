@@ -97,21 +97,70 @@
 
 <h2 id="explore-the-architecture-maps">Explore the architecture maps</h2>
 
-<p>The cover introduces the central movement in a simple visual form. The two detailed maps below can be opened when you want to inspect the complete conceptual and Ruby-oriented architectures.</p>
+<p>The cover introduces the central movement in a simple visual form. Choose a perspective below to inspect the same proposed architecture as a conceptual map or as a Ruby analogy. The images remain available as ordinary HTML when JavaScript is disabled.</p>
 
-<div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-start;">
-  <figure style="flex:1 1 320px;margin:0;">
-    <a href="/assets/images/posts/krishnamurti-mind-architecture/mind-architecture-reference.webp">
-      <img src="/assets/images/posts/krishnamurti-mind-architecture/mind-architecture-reference.webp" alt="Detailed illustrated relational architecture of the mind" data-zoom-scale="2.4" style="width:100%;height:auto;border-radius:8px;">
-    </a>
-    <figcaption style="text-align:center;"><em>Conceptual architecture — click to enlarge</em></figcaption>
-  </figure>
-  <figure style="flex:1 1 320px;margin:0;">
-    <a href="/assets/images/posts/krishnamurti-mind-architecture/ruby-architecture.webp">
-      <img src="/assets/images/posts/krishnamurti-mind-architecture/ruby-architecture.webp" alt="Detailed Ruby OOP and metaprogramming architecture of the mind" data-zoom-scale="2.4" style="width:100%;height:auto;border-radius:8px;">
-    </a>
-    <figcaption style="text-align:center;"><em>Ruby architecture — click to enlarge</em></figcaption>
-  </figure>
+<style>
+.mind-architecture-views {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.mind-architecture-views details {
+  margin: .75rem 0;
+  border: 1px solid var(--rv-border);
+  background: #f7f6f3;
+}
+
+.mind-architecture-views summary {
+  padding: .85rem 1rem;
+  border-left: 3px solid var(--rv-accent);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.mind-architecture-views summary:focus-visible {
+  outline: 2px solid var(--rv-accent);
+  outline-offset: 2px;
+}
+
+.mind-architecture-views figure {
+  margin: 0;
+  padding: 0 1rem 1rem;
+}
+
+.mind-architecture-views img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.mind-architecture-views figcaption {
+  margin-top: .5rem;
+  text-align: center;
+}
+</style>
+
+<div class="mind-architecture-views">
+  <details name="mind-architecture-view" open="">
+    <summary>Conceptual architecture</summary>
+    <figure>
+      <a href="/assets/images/posts/krishnamurti-mind-architecture/mind-architecture-reference.webp">
+        <img src="/assets/images/posts/krishnamurti-mind-architecture/mind-architecture-reference.webp" alt="Detailed illustrated relational architecture of the mind" data-zoom-scale="2.4">
+      </a>
+      <figcaption><em>Conceptual architecture — click the image to enlarge</em></figcaption>
+    </figure>
+  </details>
+  <details name="mind-architecture-view">
+    <summary>Ruby architecture analogy</summary>
+    <figure>
+      <a href="/assets/images/posts/krishnamurti-mind-architecture/ruby-architecture.webp">
+        <img src="/assets/images/posts/krishnamurti-mind-architecture/ruby-architecture.webp" alt="Detailed Ruby OOP and metaprogramming architecture of the mind" data-zoom-scale="2.4">
+      </a>
+      <figcaption><em>Ruby architecture — click the image to enlarge</em></figcaption>
+    </figure>
+  </details>
 </div>
 
 <h3 id="reading-the-diagrams">Reading the diagrams</h3>

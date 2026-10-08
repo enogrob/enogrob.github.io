@@ -186,17 +186,70 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <h2 id="lab">Try the guided lab</h2>
 
-<ol>
+<style>
+.copilot-cli-lab-timeline {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.copilot-cli-lab-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: .75rem;
+  min-width: 0;
+  padding: 0 0 .9rem 1.25rem;
+  border-left: 2px solid var(--rv-border);
+}
+
+.copilot-cli-lab-timeline li::before {
+  position: absolute;
+  top: .35rem;
+  left: -.4rem;
+  width: .55rem;
+  height: .55rem;
+  border: 2px solid var(--rv-accent);
+  border-radius: 50%;
+  background: #fff;
+  content: "";
+}
+
+.copilot-cli-lab-timeline li:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.copilot-cli-lab-timeline__duration {
+  color: var(--rv-accent);
+}
+
+@media (max-width: 420px) {
+  .copilot-cli-lab-timeline li {
+    grid-template-columns: 1fr;
+    gap: .1rem;
+  }
+}
+</style>
+
+<ol class="copilot-cli-lab-timeline" aria-label="Five steps in the guided Copilot CLI lab">
   <li>
-<strong>Orient (10 min):</strong> read the baseline route, Part 03 issue and your <code class="language-plaintext highlighter-rouge">git status</code>; run the Ruby preflight if available.</li>
+<strong class="copilot-cli-lab-timeline__duration">10 min</strong><span><strong>Orient:</strong> read the baseline route, Part 03 issue and your <code>git status</code>; run the Ruby preflight if available.</span>
+</li>
   <li>
-<strong>Plan (12 min):</strong> start CLI in <code class="language-plaintext highlighter-rouge">caseflow/</code>, use stage 1 of the prompt and mark any uncited or inaccurate statement.</li>
+<strong class="copilot-cli-lab-timeline__duration">12 min</strong><span><strong>Plan:</strong> start CLI in <code>caseflow/</code>, use stage 1 of the prompt and mark any uncited or inaccurate statement.</span>
+</li>
   <li>
-<strong>Approve (10 min):</strong> for a proposed write or shell command, state what it touches and approve only if it fits the lab. You may stop after planning.</li>
+<strong class="copilot-cli-lab-timeline__duration">10 min</strong><span><strong>Approve:</strong> for a proposed write or shell command, state what it touches and approve only if it fits the lab. You may stop after planning.</span>
+</li>
   <li>
-<strong>Verify (15 min):</strong> inspect the candidate diff, run focused checks when dependencies allow, and copy <em>actual</em> output or first blocker to the evidence ledger.</li>
+<strong class="copilot-cli-lab-timeline__duration">15 min</strong><span><strong>Verify:</strong> inspect the candidate diff, run focused checks when dependencies allow, and copy <em>actual</em> output or first blocker to the evidence ledger.</span>
+</li>
   <li>
-<strong>Explain (8 min):</strong> summarize what is source fact, proposal, observed result and unresolved review. Compare your response to the <a href="#references">workbook’s answer key</a>.</li>
+<strong class="copilot-cli-lab-timeline__duration">8 min</strong><span><strong>Explain:</strong> summarize what is source fact, proposal, observed result and unresolved review. Compare your response to the <a href="#references">workbook's answer key</a>.</span>
+</li>
 </ol>
 
 <h2 id="references">References and supporting material</h2>

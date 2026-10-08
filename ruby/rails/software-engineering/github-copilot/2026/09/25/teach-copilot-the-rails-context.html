@@ -90,36 +90,67 @@
 
 <p>GitHub distinguishes repository-wide <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code>, path-specific <code class="language-plaintext highlighter-rouge">.github/instructions/*.instructions.md</code>, and agent-oriented <code class="language-plaintext highlighter-rouge">AGENTS.md</code>. Prompt files serve a particular interaction. Their availability varies by Copilot surface: consult the <a href="https://docs.github.com/en/copilot/reference/custom-instructions-support" target="_blank" rel="noopener noreferrer">official support matrix</a> for the feature and editor you actually use. These files <strong>guide responses</strong>; they are not Rails code, tests or access controls.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Context</th>
-      <th>CaseFlow file</th>
-      <th>Question it should answer</th>
-      <th>Avoid</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Repository</td>
-      <td><code class="language-plaintext highlighter-rouge">caseflow/.github/copilot-instructions.md</code></td>
-      <td>What kind of app is this, and what evidence is required?</td>
-      <td>A full copy of the codebase</td>
-    </tr>
-    <tr>
-      <td>Model path</td>
-      <td><code class="language-plaintext highlighter-rouge">caseflow/.github/instructions/models.instructions.md</code></td>
-      <td>What is special about model edits?</td>
-      <td>Global rules repeated at length</td>
-    </tr>
-    <tr>
-      <td>One task</td>
-      <td><code class="language-plaintext highlighter-rouge">caseflow/.github/prompts/02-context-audit.prompt.md</code></td>
-      <td>What should this investigation deliver now?</td>
-      <td>Unbounded “build everything” request</td>
-    </tr>
-  </tbody>
-</table>
+<style>
+.rails-context-scopes {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  --rv-surface: #f7f6f3;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 1.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.rails-context-scopes li {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--rv-border);
+  border-top: 3px solid var(--rv-accent);
+  background: var(--rv-surface);
+}
+
+.rails-context-scopes h3 {
+  margin: 0 0 .6rem;
+  font-size: 1.05rem;
+}
+
+.rails-context-scopes p {
+  margin: .45rem 0 0;
+}
+
+.rails-context-scopes code {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .rails-context-scopes {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<ul class="rails-context-scopes" aria-label="Three scopes for Copilot guidance">
+  <li>
+    <h3>Repository context</h3>
+    <p><strong>File:</strong> <code>caseflow/.github/copilot-instructions.md</code></p>
+    <p><strong>Question:</strong> What kind of app is this, and what evidence is required?</p>
+    <p><strong>Avoid:</strong> A full copy of the codebase.</p>
+  </li>
+  <li>
+    <h3>Model-path guidance</h3>
+    <p><strong>File:</strong> <code>caseflow/.github/instructions/models.instructions.md</code></p>
+    <p><strong>Question:</strong> What is special about model edits?</p>
+    <p><strong>Avoid:</strong> Global rules repeated at length.</p>
+  </li>
+  <li>
+    <h3>One-task prompt</h3>
+    <p><strong>File:</strong> <code>caseflow/.github/prompts/02-context-audit.prompt.md</code></p>
+    <p><strong>Question:</strong> What should this investigation deliver now?</p>
+    <p><strong>Avoid:</strong> An unbounded “build everything” request.</p>
+  </li>
+</ul>
 
 <p>The <code class="language-plaintext highlighter-rouge">caseflow/</code> directory should be opened as the <strong>VS Code workspace root</strong> for this exercise. Its <code class="language-plaintext highlighter-rouge">.github/</code> is then at the root of the Rails repository as Copilot expects. If you open the companion repository’s outer folder instead, check which workspace and instruction files your Copilot surface is actually using. Do not infer automatic loading from a good answer; open the citations and inspect the available session context.</p>
 

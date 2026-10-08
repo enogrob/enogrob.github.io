@@ -215,17 +215,70 @@
 
 <h2 id="lab">Try the 50-minute lab</h2>
 
-<ol>
+<style>
+.copilot-pilot-lab-timeline {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.copilot-pilot-lab-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: .75rem;
+  min-width: 0;
+  padding: 0 0 .9rem 1.25rem;
+  border-left: 2px solid var(--rv-border);
+}
+
+.copilot-pilot-lab-timeline li::before {
+  position: absolute;
+  top: .35rem;
+  left: -.4rem;
+  width: .55rem;
+  height: .55rem;
+  border: 2px solid var(--rv-accent);
+  border-radius: 50%;
+  background: #fff;
+  content: "";
+}
+
+.copilot-pilot-lab-timeline li:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.copilot-pilot-lab-timeline__duration {
+  color: var(--rv-accent);
+}
+
+@media (max-width: 420px) {
+  .copilot-pilot-lab-timeline li {
+    grid-template-columns: 1fr;
+    gap: .1rem;
+  }
+}
+</style>
+
+<ol class="copilot-pilot-lab-timeline" aria-label="Five steps in the 50-minute pilot lab">
   <li>
-<strong>Scope (10 min):</strong> pick two CaseFlow tasks and write the pilot hypothesis, cohort and one exclusion criterion.</li>
+<strong class="copilot-pilot-lab-timeline__duration">10 min</strong><span><strong>Scope:</strong> pick two CaseFlow tasks and write the pilot hypothesis, cohort and one exclusion criterion.</span>
+</li>
   <li>
-<strong>Threat review (10 min):</strong> list three sources of sensitive context and identify one Copilot surface where exclusion coverage needs verification.</li>
+<strong class="copilot-pilot-lab-timeline__duration">10 min</strong><span><strong>Threat review:</strong> list three sources of sensitive context and identify one Copilot surface where exclusion coverage needs verification.</span>
+</li>
   <li>
-<strong>Measure (12 min):</strong> distinguish usage, quality and safety signals; label the source and denominator for each. Inspect the empty CSV and Ruby summarizer; do not fabricate a report.</li>
+<strong class="copilot-pilot-lab-timeline__duration">12 min</strong><span><strong>Measure:</strong> distinguish usage, quality and safety signals; label the source and denominator for each. Inspect the empty CSV and Ruby summarizer; do not fabricate a report.</span>
+</li>
   <li>
-<strong>Decision (10 min):</strong> complete a <em>hypothetical</em> pause/expand decision using the worked case in the workbook, clearly labeling it hypothetical.</li>
+<strong class="copilot-pilot-lab-timeline__duration">10 min</strong><span><strong>Decision:</strong> complete a <em>hypothetical</em> pause/expand decision using the worked case in the <a href="#references">workbook</a>, clearly labeling it hypothetical.</span>
+</li>
   <li>
-<strong>Transfer (8 min):</strong> describe your 2-minute pilot recommendation to a Rails engineering lead and security stakeholder.</li>
+<strong class="copilot-pilot-lab-timeline__duration">8 min</strong><span><strong>Transfer:</strong> describe your 2-minute pilot recommendation to a Rails engineering lead and security stakeholder.</span>
+</li>
 </ol>
 
 <p>The <a href="#references">workbook with answers</a> contains a prediction exercise, a misleading-metric challenge, a safety scenario and sample interview wording.</p>

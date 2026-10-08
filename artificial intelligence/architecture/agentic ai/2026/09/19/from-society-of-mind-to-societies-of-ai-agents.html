@@ -296,9 +296,53 @@
 
 <p>This distinction matters enormously for software engineering.</p>
 
-<p>Ten agents independently searching ten unrelated areas can be a straightforward parallelization problem.</p>
+<style>
+.agent-society-comparison {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  --rv-surface: #f7f6f3;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 1.75rem;
+  padding: 0;
+  list-style: none;
+}
 
-<p>Ten agents simultaneously modifying an evolving software architecture are participating in a distributed coordination problem.</p>
+.agent-society-comparison li {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--rv-border);
+  border-top: 3px solid var(--rv-accent);
+  background: var(--rv-surface);
+}
+
+.agent-society-comparison h3 {
+  margin: 0 0 .6rem;
+  font-size: 1.05rem;
+}
+
+.agent-society-comparison p {
+  margin: .4rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .agent-society-comparison {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<ul class="agent-society-comparison" aria-label="Comparison of independent and interdependent multi-agent work">
+  <li>
+    <h3>Independent work</h3>
+    <p>Agents search unrelated areas with bounded tasks. This can be a straightforward parallelization problem.</p>
+  </li>
+  <li>
+    <h3>Interdependent work</h3>
+    <p>Agents modify an evolving architecture. They must coordinate changing assumptions and shared state, creating a distributed coordination problem.</p>
+  </li>
+</ul>
 
 <p>They can duplicate work.</p>
 

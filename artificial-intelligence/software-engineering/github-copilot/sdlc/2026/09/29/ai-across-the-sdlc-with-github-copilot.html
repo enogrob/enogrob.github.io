@@ -244,47 +244,60 @@ GitHub Copilot CLI  = the local agentic Copilot terminal experience
 
 <p>They are related, but they are not the same thing.</p>
 
-<h3 id="1-product-surfaces">1. Product surfaces</h3>
+<style>
+.copilot-ecosystem-categories {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  --rv-surface: #f7f6f3;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 1.75rem;
+  padding: 0;
+  list-style: none;
+}
 
-<p>These are places where people or systems interact with Copilot: IDE, GitHub Copilot CLI, GitHub CLI entry points to the cloud agent, GitHub Copilot app, GitHub.com, cloud-agent APIs, code review, and custom experiences built with the Copilot SDK.</p>
+.copilot-ecosystem-categories li {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--rv-border);
+  border-top: 3px solid var(--rv-accent);
+  background: var(--rv-surface);
+}
 
-<p>A surface answers: <strong>Where does the interaction or execution happen?</strong></p>
+.copilot-ecosystem-categories h3 {
+  margin: 0 0 .6rem;
+  font-size: 1.05rem;
+}
 
-<h3 id="2-ai-assets">2. AI assets</h3>
+.copilot-ecosystem-categories p {
+  margin: .45rem 0 0;
+}
 
-<p>These are reusable pieces of behavior, capability, or control:</p>
+@media (max-width: 680px) {
+  .copilot-ecosystem-categories {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 
-<ul>
-  <li>custom instructions;</li>
-  <li>skills;</li>
-  <li>custom agents;</li>
-  <li>hooks;</li>
-  <li>MCP configurations;</li>
-  <li>plugins;</li>
-  <li>prompts and prompt files;</li>
-  <li>reusable policies and evaluation routines.</li>
+<ul class="copilot-ecosystem-categories" aria-label="Three distinct parts of the Copilot ecosystem">
+  <li>
+    <h3>Product surfaces</h3>
+    <p><strong>Question:</strong> Where does interaction or execution happen?</p>
+    <p><strong>Examples:</strong> IDE, Copilot CLI, GitHub CLI entry points, Copilot app, GitHub.com, cloud-agent APIs, code review, and custom Copilot SDK experiences.</p>
+  </li>
+  <li>
+    <h3>AI assets</h3>
+    <p><strong>Question:</strong> What behavior, capability, or constraint should be reusable?</p>
+    <p><strong>Examples:</strong> Custom instructions, skills, custom agents, hooks, MCP configurations, plugins, prompts, policies, and evaluation routines.</p>
+  </li>
+  <li>
+    <h3>Knowledge and context</h3>
+    <p><strong>Question:</strong> What should the AI know for this task?</p>
+    <p><strong>Examples:</strong> Repository source, architecture documents, ADRs, runbooks, tickets, standards, product and organizational knowledge, Copilot Memory where supported, and retrieved context through RAG.</p>
+  </li>
 </ul>
-
-<p>An asset answers: <strong>What behavior, capability, or constraint should be reusable?</strong></p>
-
-<h3 id="3-knowledge-and-context">3. Knowledge and context</h3>
-
-<p>This includes:</p>
-
-<ul>
-  <li>repository source;</li>
-  <li>architecture documentation;</li>
-  <li>ADRs;</li>
-  <li>runbooks;</li>
-  <li>tickets;</li>
-  <li>standards;</li>
-  <li>product documentation;</li>
-  <li>organizational knowledge bases;</li>
-  <li>Copilot Memory where supported;</li>
-  <li>retrieved context through RAG-style systems.</li>
-</ul>
-
-<p>Knowledge answers: <strong>What should the AI know for this task?</strong></p>
 
 <figure class="mermaid-static">
   <img src="/assets/generated/mermaid/9a7b77121ab79b6e6c6a.svg" alt="Mermaid diagram" loading="lazy" decoding="async">

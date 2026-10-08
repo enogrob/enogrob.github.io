@@ -234,17 +234,70 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <h2 id="lab">Run the 45-minute lab</h2>
 
-<ol>
+<style>
+.gate-lab-timeline {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.gate-lab-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: .75rem;
+  min-width: 0;
+  padding: 0 0 .9rem 1.25rem;
+  border-left: 2px solid var(--rv-border);
+}
+
+.gate-lab-timeline li::before {
+  position: absolute;
+  top: .35rem;
+  left: -.4rem;
+  width: .55rem;
+  height: .55rem;
+  border: 2px solid var(--rv-accent);
+  border-radius: 50%;
+  background: #fff;
+  content: "";
+}
+
+.gate-lab-timeline li:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.gate-lab-timeline__duration {
+  color: var(--rv-accent);
+}
+
+@media (max-width: 420px) {
+  .gate-lab-timeline li {
+    grid-template-columns: 1fr;
+    gap: .1rem;
+  }
+}
+</style>
+
+<ol class="gate-lab-timeline" aria-label="Five steps in the 45-minute lab">
   <li>
-<strong>Predict (5 min):</strong> before opening the workflow, name two ways a job can fail without running any specs.</li>
+<strong class="gate-lab-timeline__duration">5 min</strong><span><strong>Predict:</strong> before opening the workflow, name two ways a job can fail without running any specs.</span>
+</li>
   <li>
-<strong>Prepare (12 min):</strong> in a clean checkout, apply <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/candidate.patch</code>; generate and inspect <code class="language-plaintext highlighter-rouge">caseflow/Gemfile.lock</code> on your Mac; never commit secrets.</li>
+<strong class="gate-lab-timeline__duration">12 min</strong><span><strong>Prepare:</strong> in a clean checkout, apply <code>parts/03-issue-to-pr/candidate.patch</code>; generate and inspect <code>caseflow/Gemfile.lock</code> on your Mac; never commit secrets.</span>
+</li>
   <li>
-<strong>Observe (12 min):</strong> run the focused RSpec command and record the exact outcome or first blocker. Read the staged <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/rails-pr.yml</code>; compare each command with what your machine actually ran.</li>
+<strong class="gate-lab-timeline__duration">12 min</strong><span><strong>Observe:</strong> run the focused RSpec command and record the exact outcome or first blocker. Read the staged <code>parts/04-ci-and-devsecops/rails-pr.yml</code>; compare each command with what your machine actually ran.</span>
+</li>
   <li>
-<strong>Decide (10 min):</strong> fill the <a href="#references">review worksheet</a>. Which missing decision prevents calling the token guard production authorization?</li>
+<strong class="gate-lab-timeline__duration">10 min</strong><span><strong>Decide:</strong> fill the <a href="#references">review worksheet</a>. Which missing decision prevents calling the token guard production authorization?</span>
+</li>
   <li>
-<strong>Transfer (6 min):</strong> choose a separate Rails PR from your experience and identify one missing negative case and one security check with a clear limitation.</li>
+<strong class="gate-lab-timeline__duration">6 min</strong><span><strong>Transfer:</strong> choose a separate Rails PR from your experience and identify one missing negative case and one security check with a clear limitation.</span>
+</li>
 </ol>
 
 <p>The <a href="#references">workbook with worked answers</a> supplies prediction questions, a failure triage exercise and an answer key. If Ruby is unavailable, complete the source review and write “not run: no Ruby”; that is a valid, honest lab result.</p>

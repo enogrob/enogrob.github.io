@@ -78,6 +78,85 @@
 
 <p>We will use <strong>CaseFlow</strong>, a synthetic integrated Rails API source app. It is deliberately small enough to inspect and incomplete enough to expose an important habit: distinguish what source says, what a test asserts, and what a running system actually did. The <a href="/assets/downloads/first-30-minutes-rails-repository-support.zip">companion materials</a> contain the integrated app, the finished atlas under <code class="language-plaintext highlighter-rouge">docs/architecture/</code>, a deterministic declaration inventory, the Copilot prompt, Mermaid source and a workbook with answers. The atlas is a reviewed source map, not an observed production trace.</p>
 
+<style>
+.rails-discovery-route {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  max-width: 38rem;
+  margin: 1.5rem auto;
+}
+
+.rails-discovery-route figcaption {
+  margin-bottom: .9rem;
+  font-weight: 600;
+}
+
+.rails-discovery-route ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rails-discovery-route li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: .75rem;
+  min-width: 0;
+  padding: 0 0 .8rem 1.25rem;
+  border-left: 2px solid var(--rv-border);
+}
+
+.rails-discovery-route li::before {
+  position: absolute;
+  top: .3rem;
+  left: -.4rem;
+  width: .55rem;
+  height: .55rem;
+  border: 2px solid var(--rv-accent);
+  border-radius: 50%;
+  background: #fff;
+  content: "";
+}
+
+.rails-discovery-route li:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.rails-discovery-route__time {
+  color: var(--rv-accent);
+}
+
+@media (max-width: 420px) {
+  .rails-discovery-route li {
+    grid-template-columns: 1fr;
+    gap: .1rem;
+  }
+}
+</style>
+
+<figure class="rails-discovery-route">
+  <figcaption>Core 30-minute route through the repository investigation</figcaption>
+  <ol aria-label="Five timed stages of the core investigation">
+    <li>
+<strong class="rails-discovery-route__time">0-5 min</strong><a href="#predict">Predict before you inspect</a>
+</li>
+    <li>
+<strong class="rails-discovery-route__time">5-12 min</strong><a href="#trace">Generate an inventory and trace one path</a>
+</li>
+    <li>
+<strong class="rails-discovery-route__time">12-20 min</strong><a href="#ask">Build an architecture atlas with Copilot</a>
+</li>
+    <li>
+<strong class="rails-discovery-route__time">20-27 min</strong><a href="#observe">Audit the atlas and run one check</a>
+</li>
+    <li>
+<strong class="rails-discovery-route__time">27-30 min</strong><a href="#client">Give the client one bounded answer</a>
+</li>
+  </ol>
+</figure>
+
 <h2 id="contents">Contents</h2>
 
 <ul>

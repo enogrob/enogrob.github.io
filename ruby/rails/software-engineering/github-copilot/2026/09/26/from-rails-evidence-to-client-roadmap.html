@@ -143,7 +143,65 @@
 
 <h2 id="workshop">Run a workshop that surfaces disagreement</h2>
 
-<p>The <a href="#references">90-minute agenda</a> timeboxes the session: ten minutes for the decision question, fifteen for a source walk, twenty for candidate PR and CI review, fifteen for data and policy boundaries, twenty for the next experiment, and ten to replay the decision. Move security discussion earlier if the reviewer must leave early. A participant with authority to approve access should be identified before proposing activation.</p>
+<p>The <a href="#references">90-minute agenda</a> timeboxes the session into six decision stages:</p>
+
+<style>
+.client-workshop-timeline {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.client-workshop-timeline li {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: .75rem;
+  min-width: 0;
+  padding: 0 0 .9rem 1.25rem;
+  border-left: 2px solid var(--rv-border);
+}
+
+.client-workshop-timeline li:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.client-workshop-timeline li strong {
+  color: var(--rv-accent);
+}
+
+@media (max-width: 420px) {
+  .client-workshop-timeline li {
+    grid-template-columns: 1fr;
+    gap: .1rem;
+  }
+}
+</style>
+
+<ol class="client-workshop-timeline" aria-label="Six stages of the 90-minute client workshop">
+  <li>
+<strong>10 min</strong><span>Agree on the decision question.</span>
+</li>
+  <li>
+<strong>15 min</strong><span>Walk through the source evidence.</span>
+</li>
+  <li>
+<strong>20 min</strong><span>Review the candidate pull request and CI plan.</span>
+</li>
+  <li>
+<strong>15 min</strong><span>Set data and policy boundaries.</span>
+</li>
+  <li>
+<strong>20 min</strong><span>Define the next bounded experiment.</span>
+</li>
+  <li>
+<strong>10 min</strong><span>Replay and record the decision.</span>
+</li>
+</ol>
+
+<p>Move security discussion earlier if the reviewer must leave early. A participant with authority to approve access should be identified before proposing activation.</p>
 
 <p>Use one source-backed claim to test the conversation: “The baseline has a status-update API.” Open <code class="language-plaintext highlighter-rouge">caseflow/config/routes.rb</code> and ask someone to locate it. When it is not there, move the claim into “proposed change” and inspect the Part 03 patch. Then ask: “Which request spec, CI result and reviewer sign-off would make this safe to try?” This turns a disagreement into a verification task, not a contest over confidence.</p>
 

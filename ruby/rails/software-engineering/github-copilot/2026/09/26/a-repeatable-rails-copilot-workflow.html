@@ -193,17 +193,70 @@
 
 <h2 id="lab">Try the final lab</h2>
 
-<ol>
+<style>
+.rails-workflow-lab-timeline {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.rails-workflow-lab-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: .75rem;
+  min-width: 0;
+  padding: 0 0 .9rem 1.25rem;
+  border-left: 2px solid var(--rv-border);
+}
+
+.rails-workflow-lab-timeline li::before {
+  position: absolute;
+  top: .35rem;
+  left: -.4rem;
+  width: .55rem;
+  height: .55rem;
+  border: 2px solid var(--rv-accent);
+  border-radius: 50%;
+  background: #fff;
+  content: "";
+}
+
+.rails-workflow-lab-timeline li:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.rails-workflow-lab-timeline__duration {
+  color: var(--rv-accent);
+}
+
+@media (max-width: 420px) {
+  .rails-workflow-lab-timeline li {
+    grid-template-columns: 1fr;
+    gap: .1rem;
+  }
+}
+</style>
+
+<ol class="rails-workflow-lab-timeline" aria-label="Five stages of the final lab">
   <li>
-<strong>Map (10 min):</strong> point to the CaseFlow route, Part 03 candidate patch and Part 07 prompt. Label source, proposal and unknown.</li>
+<strong class="rails-workflow-lab-timeline__duration">10 min</strong><span><strong>Map:</strong> point to the CaseFlow route, Part 03 candidate patch and Part 07 prompt. Label source, proposal and unknown.</span>
+</li>
   <li>
-<strong>Choose (10 min):</strong> use the <a href="#mechanisms">mechanism table</a> and <a href="#references">workflow blueprint</a> to say which customizations you would actually enable for this task.</li>
+<strong class="rails-workflow-lab-timeline__duration">10 min</strong><span><strong>Choose:</strong> use the <a href="#mechanisms">mechanism table</a> and <a href="#references">workflow blueprint</a> to say which customizations you would actually enable for this task.</span>
+</li>
   <li>
-<strong>Check (10 min):</strong> run the Ruby structural validator on the intentionally blank JSON on your Mac; record its <em>actual</em> exit and findings. Do not fill invented results just to get green.</li>
+<strong class="rails-workflow-lab-timeline__duration">10 min</strong><span><strong>Check:</strong> run the Ruby structural validator on the intentionally blank JSON on your Mac; record its <em>actual</em> exit and findings. Do not fill invented results just to get green.</span>
+</li>
   <li>
-<strong>Rehearse (15 min):</strong> imagine a real focused RSpec run and describe where its authentic log, branch, command and review decision would go. Then try the <a href="#references">workbook</a> before reading its answer key.</li>
+<strong class="rails-workflow-lab-timeline__duration">15 min</strong><span><strong>Rehearse:</strong> imagine a real focused RSpec run and describe where its authentic log, branch, command and review decision would go. Then try the <a href="#references">workbook</a> before reading its answer key.</span>
+</li>
   <li>
-<strong>Transfer (5 min):</strong> deliver a two-minute client explanation of what you would reuse, what still needs permission, and what would make you stop.</li>
+<strong class="rails-workflow-lab-timeline__duration">5 min</strong><span><strong>Transfer:</strong> deliver a two-minute client explanation of what you would reuse, what still needs permission, and what would make you stop.</span>
+</li>
 </ol>
 
 <h2 id="references">References and supporting material</h2>

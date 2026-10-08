@@ -128,6 +128,72 @@
 
 <p>The same monument may appear in more than one layer. The label tells us <strong>what kind of claim is being made</strong>, not whether the subject is worth exploring.</p>
 
+<style>
+.deep-time-cases {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  --rv-surface: #f7f6f3;
+  margin: 1.5rem 0 2rem;
+}
+
+.deep-time-cases__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.deep-time-cases__item {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--rv-border);
+  border-top: 3px solid var(--rv-accent);
+  background: var(--rv-surface);
+}
+
+.deep-time-cases__item h4 {
+  margin: 0 0 .75rem;
+  font-size: 1.1rem;
+}
+
+.deep-time-cases__item p {
+  margin: .35rem 0 0;
+}
+
+.deep-time-cases__item strong {
+  color: var(--rv-accent);
+}
+
+@media (max-width: 640px) {
+  .deep-time-cases__list {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<section class="deep-time-cases" aria-labelledby="deep-time-cases-title">
+  <h3 id="deep-time-cases-title">Three sites, three open questions</h3>
+  <ul class="deep-time-cases__list">
+    <li class="deep-time-cases__item">
+      <h4>Great Pyramid</h4>
+      <p><strong>Established:</strong> internal spaces, including a muon-detected void and an imaged corridor.</p>
+      <p><strong>Open question:</strong> the purpose of these features.</p>
+    </li>
+    <li class="deep-time-cases__item">
+      <h4>Osireion</h4>
+      <p><strong>Established:</strong> a monumental subterranean structure associated archaeologically with Seti I's complex.</p>
+      <p><strong>Open question:</strong> how to understand its unusual form and symbolism.</p>
+    </li>
+    <li class="deep-time-cases__item">
+      <h4>Hawara</h4>
+      <p><strong>Established:</strong> Amenemhat III's temple complex is identified with the Labyrinth tradition.</p>
+      <p><strong>Open question:</strong> the complex's original form, extent and surviving remains.</p>
+    </li>
+  </ul>
+</section>
+
 <h2 id="contents">Contents</h2>
 
 <ul>

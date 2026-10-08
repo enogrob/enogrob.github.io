@@ -87,16 +87,58 @@
 
 <p>The Fizzy repository is the case study used to demonstrate this process. The general method comes first; Fizzy-specific examples begin in the repository overview pass and become more detailed in the card-closure-to-webhook investigation.</p>
 
-<p>The final artifact is not a generated README. It is a small, reviewable documentation package containing:</p>
+<p>The final artifact is not a generated README. It is a small, reviewable documentation package:</p>
 
-<ul>
-  <li>a repository overview and stack profile;</li>
-  <li>architecture, dependency, and integration maps;</li>
-  <li>an unknowns and risks register;</li>
-  <li>one or more feature or bug dossiers;</li>
-  <li>evidence references for every material claim;</li>
-  <li>observed, inferred, and unknown labels;</li>
-  <li>a pinned commit, reviewer, approval date, and refresh triggers.</li>
+<style>
+.rails-ai-docs-package {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  --rv-surface: #f7f6f3;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 1.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.rails-ai-docs-package li {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--rv-border);
+  border-top: 3px solid var(--rv-accent);
+  background: var(--rv-surface);
+}
+
+.rails-ai-docs-package h3 {
+  margin: 0 0 .6rem;
+  font-size: 1.05rem;
+}
+
+.rails-ai-docs-package p {
+  margin: .4rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .rails-ai-docs-package {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<ul class="rails-ai-docs-package" aria-label="Three parts of the reviewable Rails documentation package">
+  <li>
+    <h3>Repository maps</h3>
+    <p>A repository overview and stack profile, plus architecture, dependency, and integration maps.</p>
+  </li>
+  <li>
+    <h3>Scoped investigations</h3>
+    <p>An unknowns and risks register, with feature or bug dossiers for bounded questions.</p>
+  </li>
+  <li>
+    <h3>Evidence and maintenance</h3>
+    <p>Evidence references and observed, inferred, or unknown labels for each material claim, plus a pinned commit, reviewer, approval date, and refresh triggers.</p>
+  </li>
 </ul>
 
 <h2 id="contents">Contents</h2>

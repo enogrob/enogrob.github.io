@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-08T18:45:23+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">From Ericsson Use Cases to AI-Native Systems</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html" rel="alternate" type="text/html" title="From Ericsson Use Cases to AI-Native Systems" /><published>2026-10-05T15:00:00+00:00</published><updated>2026-10-05T15:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html"><![CDATA[<style>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-08T23:40:21+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">From Ericsson Use Cases to AI-Native Systems</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html" rel="alternate" type="text/html" title="From Ericsson Use Cases to AI-Native Systems" /><published>2026-10-05T15:00:00+00:00</published><updated>2026-10-05T15:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html"><![CDATA[<style>
 .mermaid-diagram img,
 .mermaid-diagram svg {
   display: block;
@@ -560,6 +560,72 @@ Agent            → intention and adaptive action
 </div>
 
 <p>The same monument may appear in more than one layer. The label tells us <strong>what kind of claim is being made</strong>, not whether the subject is worth exploring.</p>
+
+<style>
+.deep-time-cases {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  --rv-surface: #f7f6f3;
+  margin: 1.5rem 0 2rem;
+}
+
+.deep-time-cases__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.deep-time-cases__item {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--rv-border);
+  border-top: 3px solid var(--rv-accent);
+  background: var(--rv-surface);
+}
+
+.deep-time-cases__item h4 {
+  margin: 0 0 .75rem;
+  font-size: 1.1rem;
+}
+
+.deep-time-cases__item p {
+  margin: .35rem 0 0;
+}
+
+.deep-time-cases__item strong {
+  color: var(--rv-accent);
+}
+
+@media (max-width: 640px) {
+  .deep-time-cases__list {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<section class="deep-time-cases" aria-labelledby="deep-time-cases-title">
+  <h3 id="deep-time-cases-title">Three sites, three open questions</h3>
+  <ul class="deep-time-cases__list">
+    <li class="deep-time-cases__item">
+      <h4>Great Pyramid</h4>
+      <p><strong>Established:</strong> internal spaces, including a muon-detected void and an imaged corridor.</p>
+      <p><strong>Open question:</strong> the purpose of these features.</p>
+    </li>
+    <li class="deep-time-cases__item">
+      <h4>Osireion</h4>
+      <p><strong>Established:</strong> a monumental subterranean structure associated archaeologically with Seti I's complex.</p>
+      <p><strong>Open question:</strong> how to understand its unusual form and symbolism.</p>
+    </li>
+    <li class="deep-time-cases__item">
+      <h4>Hawara</h4>
+      <p><strong>Established:</strong> Amenemhat III's temple complex is identified with the Labyrinth tradition.</p>
+      <p><strong>Open question:</strong> the complex's original form, extent and surviving remains.</p>
+    </li>
+  </ul>
+</section>
 
 <h2 id="contents">Contents</h2>
 
@@ -1464,6 +1530,65 @@ meaning
   <li>Should the next action be a user story, a spike, or a follow-up discovery step?</li>
 </ul>
 
+<style>
+.discovery-next-steps {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  --rv-surface: #f7f6f3;
+  margin: 1.5rem 0 2rem;
+}
+
+.discovery-next-steps__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.discovery-next-steps__item {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--rv-border);
+  border-top: 3px solid var(--rv-accent);
+  background: var(--rv-surface);
+}
+
+.discovery-next-steps__item h4 {
+  margin: 0 0 .5rem;
+  font-size: 1.05rem;
+}
+
+.discovery-next-steps__item p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .discovery-next-steps__list {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<section class="discovery-next-steps" aria-labelledby="discovery-next-steps-title">
+  <h3 id="discovery-next-steps-title">Choose the next move by the uncertainty left</h3>
+  <ul class="discovery-next-steps__list">
+    <li class="discovery-next-steps__item">
+      <h4>User story</h4>
+      <p>Shape the request into backlog work when the problem and intended outcome are clear enough to act on.</p>
+    </li>
+    <li class="discovery-next-steps__item">
+      <h4>Spike</h4>
+      <p>Investigate a consequential technical or product question that prevents reliable scope.</p>
+    </li>
+    <li class="discovery-next-steps__item">
+      <h4>More discovery</h4>
+      <p>Gather or clarify evidence when the problem, its impact, or the product intent is still uncertain.</p>
+    </li>
+  </ul>
+</section>
+
 <h2 id="support-material">Support material included in this package</h2>
 
 <p>The complete companion lab is available as a downloadable package:</p>
@@ -2127,47 +2252,60 @@ GitHub Copilot CLI  = the local agentic Copilot terminal experience
 
 <p>They are related, but they are not the same thing.</p>
 
-<h3 id="1-product-surfaces">1. Product surfaces</h3>
+<style>
+.copilot-ecosystem-categories {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  --rv-surface: #f7f6f3;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 1.75rem;
+  padding: 0;
+  list-style: none;
+}
 
-<p>These are places where people or systems interact with Copilot: IDE, GitHub Copilot CLI, GitHub CLI entry points to the cloud agent, GitHub Copilot app, GitHub.com, cloud-agent APIs, code review, and custom experiences built with the Copilot SDK.</p>
+.copilot-ecosystem-categories li {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--rv-border);
+  border-top: 3px solid var(--rv-accent);
+  background: var(--rv-surface);
+}
 
-<p>A surface answers: <strong>Where does the interaction or execution happen?</strong></p>
+.copilot-ecosystem-categories h3 {
+  margin: 0 0 .6rem;
+  font-size: 1.05rem;
+}
 
-<h3 id="2-ai-assets">2. AI assets</h3>
+.copilot-ecosystem-categories p {
+  margin: .45rem 0 0;
+}
 
-<p>These are reusable pieces of behavior, capability, or control:</p>
+@media (max-width: 680px) {
+  .copilot-ecosystem-categories {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 
-<ul>
-  <li>custom instructions;</li>
-  <li>skills;</li>
-  <li>custom agents;</li>
-  <li>hooks;</li>
-  <li>MCP configurations;</li>
-  <li>plugins;</li>
-  <li>prompts and prompt files;</li>
-  <li>reusable policies and evaluation routines.</li>
+<ul class="copilot-ecosystem-categories" aria-label="Three distinct parts of the Copilot ecosystem">
+  <li>
+    <h3>Product surfaces</h3>
+    <p><strong>Question:</strong> Where does interaction or execution happen?</p>
+    <p><strong>Examples:</strong> IDE, Copilot CLI, GitHub CLI entry points, Copilot app, GitHub.com, cloud-agent APIs, code review, and custom Copilot SDK experiences.</p>
+  </li>
+  <li>
+    <h3>AI assets</h3>
+    <p><strong>Question:</strong> What behavior, capability, or constraint should be reusable?</p>
+    <p><strong>Examples:</strong> Custom instructions, skills, custom agents, hooks, MCP configurations, plugins, prompts, policies, and evaluation routines.</p>
+  </li>
+  <li>
+    <h3>Knowledge and context</h3>
+    <p><strong>Question:</strong> What should the AI know for this task?</p>
+    <p><strong>Examples:</strong> Repository source, architecture documents, ADRs, runbooks, tickets, standards, product and organizational knowledge, Copilot Memory where supported, and retrieved context through RAG.</p>
+  </li>
 </ul>
-
-<p>An asset answers: <strong>What behavior, capability, or constraint should be reusable?</strong></p>
-
-<h3 id="3-knowledge-and-context">3. Knowledge and context</h3>
-
-<p>This includes:</p>
-
-<ul>
-  <li>repository source;</li>
-  <li>architecture documentation;</li>
-  <li>ADRs;</li>
-  <li>runbooks;</li>
-  <li>tickets;</li>
-  <li>standards;</li>
-  <li>product documentation;</li>
-  <li>organizational knowledge bases;</li>
-  <li>Copilot Memory where supported;</li>
-  <li>retrieved context through RAG-style systems.</li>
-</ul>
-
-<p>Knowledge answers: <strong>What should the AI know for this task?</strong></p>
 
 <figure class="mermaid-static">
   <img src="/assets/generated/mermaid/9a7b77121ab79b6e6c6a.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
@@ -2682,12 +2820,60 @@ validate · enforce · record · approve · measure
 
 <h2 id="lab">Try the 50-minute lab</h2>
 
-<ol>
-  <li><strong>Scope (10 min):</strong> pick two CaseFlow tasks and write the pilot hypothesis, cohort and one exclusion criterion.</li>
-  <li><strong>Threat review (10 min):</strong> list three sources of sensitive context and identify one Copilot surface where exclusion coverage needs verification.</li>
-  <li><strong>Measure (12 min):</strong> distinguish usage, quality and safety signals; label the source and denominator for each. Inspect the empty CSV and Ruby summarizer; do not fabricate a report.</li>
-  <li><strong>Decision (10 min):</strong> complete a <em>hypothetical</em> pause/expand decision using the worked case in the workbook, clearly labeling it hypothetical.</li>
-  <li><strong>Transfer (8 min):</strong> describe your 2-minute pilot recommendation to a Rails engineering lead and security stakeholder.</li>
+<style>
+.copilot-pilot-lab-timeline {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.copilot-pilot-lab-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: .75rem;
+  min-width: 0;
+  padding: 0 0 .9rem 1.25rem;
+  border-left: 2px solid var(--rv-border);
+}
+
+.copilot-pilot-lab-timeline li::before {
+  position: absolute;
+  top: .35rem;
+  left: -.4rem;
+  width: .55rem;
+  height: .55rem;
+  border: 2px solid var(--rv-accent);
+  border-radius: 50%;
+  background: #fff;
+  content: "";
+}
+
+.copilot-pilot-lab-timeline li:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.copilot-pilot-lab-timeline__duration {
+  color: var(--rv-accent);
+}
+
+@media (max-width: 420px) {
+  .copilot-pilot-lab-timeline li {
+    grid-template-columns: 1fr;
+    gap: .1rem;
+  }
+}
+</style>
+
+<ol class="copilot-pilot-lab-timeline" aria-label="Five steps in the 50-minute pilot lab">
+  <li><strong class="copilot-pilot-lab-timeline__duration">10 min</strong><span><strong>Scope:</strong> pick two CaseFlow tasks and write the pilot hypothesis, cohort and one exclusion criterion.</span></li>
+  <li><strong class="copilot-pilot-lab-timeline__duration">10 min</strong><span><strong>Threat review:</strong> list three sources of sensitive context and identify one Copilot surface where exclusion coverage needs verification.</span></li>
+  <li><strong class="copilot-pilot-lab-timeline__duration">12 min</strong><span><strong>Measure:</strong> distinguish usage, quality and safety signals; label the source and denominator for each. Inspect the empty CSV and Ruby summarizer; do not fabricate a report.</span></li>
+  <li><strong class="copilot-pilot-lab-timeline__duration">10 min</strong><span><strong>Decision:</strong> complete a <em>hypothetical</em> pause/expand decision using the worked case in the <a href="#references">workbook</a>, clearly labeling it hypothetical.</span></li>
+  <li><strong class="copilot-pilot-lab-timeline__duration">8 min</strong><span><strong>Transfer:</strong> describe your 2-minute pilot recommendation to a Rails engineering lead and security stakeholder.</span></li>
 </ol>
 
 <p>The <a href="#references">workbook with answers</a> contains a prediction exercise, a misleading-metric challenge, a safety scenario and sample interview wording.</p>
@@ -2819,12 +3005,60 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <h2 id="lab">Try the guided lab</h2>
 
-<ol>
-  <li><strong>Orient (10 min):</strong> read the baseline route, Part 03 issue and your <code class="language-plaintext highlighter-rouge">git status</code>; run the Ruby preflight if available.</li>
-  <li><strong>Plan (12 min):</strong> start CLI in <code class="language-plaintext highlighter-rouge">caseflow/</code>, use stage 1 of the prompt and mark any uncited or inaccurate statement.</li>
-  <li><strong>Approve (10 min):</strong> for a proposed write or shell command, state what it touches and approve only if it fits the lab. You may stop after planning.</li>
-  <li><strong>Verify (15 min):</strong> inspect the candidate diff, run focused checks when dependencies allow, and copy <em>actual</em> output or first blocker to the evidence ledger.</li>
-  <li><strong>Explain (8 min):</strong> summarize what is source fact, proposal, observed result and unresolved review. Compare your response to the <a href="#references">workbook’s answer key</a>.</li>
+<style>
+.copilot-cli-lab-timeline {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.copilot-cli-lab-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: .75rem;
+  min-width: 0;
+  padding: 0 0 .9rem 1.25rem;
+  border-left: 2px solid var(--rv-border);
+}
+
+.copilot-cli-lab-timeline li::before {
+  position: absolute;
+  top: .35rem;
+  left: -.4rem;
+  width: .55rem;
+  height: .55rem;
+  border: 2px solid var(--rv-accent);
+  border-radius: 50%;
+  background: #fff;
+  content: "";
+}
+
+.copilot-cli-lab-timeline li:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.copilot-cli-lab-timeline__duration {
+  color: var(--rv-accent);
+}
+
+@media (max-width: 420px) {
+  .copilot-cli-lab-timeline li {
+    grid-template-columns: 1fr;
+    gap: .1rem;
+  }
+}
+</style>
+
+<ol class="copilot-cli-lab-timeline" aria-label="Five steps in the guided Copilot CLI lab">
+  <li><strong class="copilot-cli-lab-timeline__duration">10 min</strong><span><strong>Orient:</strong> read the baseline route, Part 03 issue and your <code>git status</code>; run the Ruby preflight if available.</span></li>
+  <li><strong class="copilot-cli-lab-timeline__duration">12 min</strong><span><strong>Plan:</strong> start CLI in <code>caseflow/</code>, use stage 1 of the prompt and mark any uncited or inaccurate statement.</span></li>
+  <li><strong class="copilot-cli-lab-timeline__duration">10 min</strong><span><strong>Approve:</strong> for a proposed write or shell command, state what it touches and approve only if it fits the lab. You may stop after planning.</span></li>
+  <li><strong class="copilot-cli-lab-timeline__duration">15 min</strong><span><strong>Verify:</strong> inspect the candidate diff, run focused checks when dependencies allow, and copy <em>actual</em> output or first blocker to the evidence ledger.</span></li>
+  <li><strong class="copilot-cli-lab-timeline__duration">8 min</strong><span><strong>Explain:</strong> summarize what is source fact, proposal, observed result and unresolved review. Compare your response to the <a href="#references">workbook's answer key</a>.</span></li>
 </ol>
 
 <h2 id="references">References and supporting material</h2>
@@ -2958,12 +3192,60 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <h2 id="lab">Try the final lab</h2>
 
-<ol>
-  <li><strong>Map (10 min):</strong> point to the CaseFlow route, Part 03 candidate patch and Part 07 prompt. Label source, proposal and unknown.</li>
-  <li><strong>Choose (10 min):</strong> use the <a href="#mechanisms">mechanism table</a> and <a href="#references">workflow blueprint</a> to say which customizations you would actually enable for this task.</li>
-  <li><strong>Check (10 min):</strong> run the Ruby structural validator on the intentionally blank JSON on your Mac; record its <em>actual</em> exit and findings. Do not fill invented results just to get green.</li>
-  <li><strong>Rehearse (15 min):</strong> imagine a real focused RSpec run and describe where its authentic log, branch, command and review decision would go. Then try the <a href="#references">workbook</a> before reading its answer key.</li>
-  <li><strong>Transfer (5 min):</strong> deliver a two-minute client explanation of what you would reuse, what still needs permission, and what would make you stop.</li>
+<style>
+.rails-workflow-lab-timeline {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.rails-workflow-lab-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: .75rem;
+  min-width: 0;
+  padding: 0 0 .9rem 1.25rem;
+  border-left: 2px solid var(--rv-border);
+}
+
+.rails-workflow-lab-timeline li::before {
+  position: absolute;
+  top: .35rem;
+  left: -.4rem;
+  width: .55rem;
+  height: .55rem;
+  border: 2px solid var(--rv-accent);
+  border-radius: 50%;
+  background: #fff;
+  content: "";
+}
+
+.rails-workflow-lab-timeline li:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.rails-workflow-lab-timeline__duration {
+  color: var(--rv-accent);
+}
+
+@media (max-width: 420px) {
+  .rails-workflow-lab-timeline li {
+    grid-template-columns: 1fr;
+    gap: .1rem;
+  }
+}
+</style>
+
+<ol class="rails-workflow-lab-timeline" aria-label="Five stages of the final lab">
+  <li><strong class="rails-workflow-lab-timeline__duration">10 min</strong><span><strong>Map:</strong> point to the CaseFlow route, Part 03 candidate patch and Part 07 prompt. Label source, proposal and unknown.</span></li>
+  <li><strong class="rails-workflow-lab-timeline__duration">10 min</strong><span><strong>Choose:</strong> use the <a href="#mechanisms">mechanism table</a> and <a href="#references">workflow blueprint</a> to say which customizations you would actually enable for this task.</span></li>
+  <li><strong class="rails-workflow-lab-timeline__duration">10 min</strong><span><strong>Check:</strong> run the Ruby structural validator on the intentionally blank JSON on your Mac; record its <em>actual</em> exit and findings. Do not fill invented results just to get green.</span></li>
+  <li><strong class="rails-workflow-lab-timeline__duration">15 min</strong><span><strong>Rehearse:</strong> imagine a real focused RSpec run and describe where its authentic log, branch, command and review decision would go. Then try the <a href="#references">workbook</a> before reading its answer key.</span></li>
+  <li><strong class="rails-workflow-lab-timeline__duration">5 min</strong><span><strong>Transfer:</strong> deliver a two-minute client explanation of what you would reuse, what still needs permission, and what would make you stop.</span></li>
 </ol>
 
 <h2 id="references">References and supporting material</h2>
@@ -3141,12 +3423,60 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
 
 <h2 id="lab">Run the 45-minute lab</h2>
 
-<ol>
-  <li><strong>Predict (5 min):</strong> before opening the workflow, name two ways a job can fail without running any specs.</li>
-  <li><strong>Prepare (12 min):</strong> in a clean checkout, apply <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/candidate.patch</code>; generate and inspect <code class="language-plaintext highlighter-rouge">caseflow/Gemfile.lock</code> on your Mac; never commit secrets.</li>
-  <li><strong>Observe (12 min):</strong> run the focused RSpec command and record the exact outcome or first blocker. Read the staged <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/rails-pr.yml</code>; compare each command with what your machine actually ran.</li>
-  <li><strong>Decide (10 min):</strong> fill the <a href="#references">review worksheet</a>. Which missing decision prevents calling the token guard production authorization?</li>
-  <li><strong>Transfer (6 min):</strong> choose a separate Rails PR from your experience and identify one missing negative case and one security check with a clear limitation.</li>
+<style>
+.gate-lab-timeline {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.gate-lab-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: .75rem;
+  min-width: 0;
+  padding: 0 0 .9rem 1.25rem;
+  border-left: 2px solid var(--rv-border);
+}
+
+.gate-lab-timeline li::before {
+  position: absolute;
+  top: .35rem;
+  left: -.4rem;
+  width: .55rem;
+  height: .55rem;
+  border: 2px solid var(--rv-accent);
+  border-radius: 50%;
+  background: #fff;
+  content: "";
+}
+
+.gate-lab-timeline li:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.gate-lab-timeline__duration {
+  color: var(--rv-accent);
+}
+
+@media (max-width: 420px) {
+  .gate-lab-timeline li {
+    grid-template-columns: 1fr;
+    gap: .1rem;
+  }
+}
+</style>
+
+<ol class="gate-lab-timeline" aria-label="Five steps in the 45-minute lab">
+  <li><strong class="gate-lab-timeline__duration">5 min</strong><span><strong>Predict:</strong> before opening the workflow, name two ways a job can fail without running any specs.</span></li>
+  <li><strong class="gate-lab-timeline__duration">12 min</strong><span><strong>Prepare:</strong> in a clean checkout, apply <code>parts/03-issue-to-pr/candidate.patch</code>; generate and inspect <code>caseflow/Gemfile.lock</code> on your Mac; never commit secrets.</span></li>
+  <li><strong class="gate-lab-timeline__duration">12 min</strong><span><strong>Observe:</strong> run the focused RSpec command and record the exact outcome or first blocker. Read the staged <code>parts/04-ci-and-devsecops/rails-pr.yml</code>; compare each command with what your machine actually ran.</span></li>
+  <li><strong class="gate-lab-timeline__duration">10 min</strong><span><strong>Decide:</strong> fill the <a href="#references">review worksheet</a>. Which missing decision prevents calling the token guard production authorization?</span></li>
+  <li><strong class="gate-lab-timeline__duration">6 min</strong><span><strong>Transfer:</strong> choose a separate Rails PR from your experience and identify one missing negative case and one security check with a clear limitation.</span></li>
 </ol>
 
 <p>The <a href="#references">workbook with worked answers</a> supplies prediction questions, a failure triage exercise and an answer key. If Ruby is unavailable, complete the source review and write “not run: no Ruby”; that is a valid, honest lab result.</p>

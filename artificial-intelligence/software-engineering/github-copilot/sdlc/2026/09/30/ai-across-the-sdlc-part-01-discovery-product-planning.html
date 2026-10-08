@@ -309,6 +309,65 @@
   <li>Should the next action be a user story, a spike, or a follow-up discovery step?</li>
 </ul>
 
+<style>
+.discovery-next-steps {
+  --rv-accent: #a7443e;
+  --rv-border: #d8d5d0;
+  --rv-surface: #f7f6f3;
+  margin: 1.5rem 0 2rem;
+}
+
+.discovery-next-steps__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.discovery-next-steps__item {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--rv-border);
+  border-top: 3px solid var(--rv-accent);
+  background: var(--rv-surface);
+}
+
+.discovery-next-steps__item h4 {
+  margin: 0 0 .5rem;
+  font-size: 1.05rem;
+}
+
+.discovery-next-steps__item p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .discovery-next-steps__list {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<section class="discovery-next-steps" aria-labelledby="discovery-next-steps-title">
+  <h3 id="discovery-next-steps-title">Choose the next move by the uncertainty left</h3>
+  <ul class="discovery-next-steps__list">
+    <li class="discovery-next-steps__item">
+      <h4>User story</h4>
+      <p>Shape the request into backlog work when the problem and intended outcome are clear enough to act on.</p>
+    </li>
+    <li class="discovery-next-steps__item">
+      <h4>Spike</h4>
+      <p>Investigate a consequential technical or product question that prevents reliable scope.</p>
+    </li>
+    <li class="discovery-next-steps__item">
+      <h4>More discovery</h4>
+      <p>Gather or clarify evidence when the problem, its impact, or the product intent is still uncertain.</p>
+    </li>
+  </ul>
+</section>
+
 <h2 id="support-material">Support material included in this package</h2>
 
 <p>The complete companion lab is available as a downloadable package:</p>
