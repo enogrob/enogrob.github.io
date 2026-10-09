@@ -1,4 +1,828 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-08T23:47:14+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">From Ericsson Use Cases to AI-Native Systems</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html" rel="alternate" type="text/html" title="From Ericsson Use Cases to AI-Native Systems" /><published>2026-10-05T15:00:00+00:00</published><updated>2026-10-05T15:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html"><![CDATA[<style>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-09T03:28:01+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">The Developer’s AI Journey: From Prompts to AI-Native Engineering</title><link href="https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey.html" rel="alternate" type="text/html" title="The Developer’s AI Journey: From Prompts to AI-Native Engineering" /><published>2026-10-08T00:00:00+00:00</published><updated>2026-10-08T00:00:00+00:00</updated><id>https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey</id><content type="html" xml:base="https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey.html"><![CDATA[<link rel="stylesheet" href="/assets/css/developer-ai-journey.css?v=fold-mermaid-standard-3" />
+
+<figure class="journey-art journey-cover">
+  <img src="/assets/images/posts/developers-ai-journey/cover.webp" alt="Illustrated infographic showing a developer's evolving understanding across prompting, workflows, agents, skills and AI-native engineering" fetchpriority="high" />
+  <figcaption>The map is not a ladder of technologies. It is a record of changing questions.</figcaption>
+</figure>
+
+<div class="journey-lead">
+  <p class="journey-eyebrow">OPEN MIND · INQUIRY · ENGINEERING · XXI → 0</p>
+  <p><strong>There has never been so much AI within a developer's reach—and perhaps never so much uncertainty about where to begin.</strong></p>
+  <p>One day we are discovering autocomplete. Soon we are debating prompts, vibe coding, context windows, agentic workflows, MCP, Skills, AI-driven delivery, and AI-native systems. Every week offers another tool, another framework, another claim that everything has changed.</p>
+  <p>What does a developer actually need to learn? And more importantly, <em>what is changing in the way we understand and build software?</em></p>
+</div>
+
+<blockquote>
+  <p><strong>The journey is not about mastering AI. It is about transforming understanding.</strong></p>
+</blockquote>
+
+<!--more-->
+
+<h2 class="journey-toc-heading" id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#a-map-not-a-maturity-ladder">A map, not a maturity ladder</a></li>
+  <li><a href="#three-paths-through-the-journey">Three paths through the journey</a></li>
+  <li><a href="#act-i--the-awakening">Act I — The Awakening</a></li>
+  <li><a href="#act-ii--the-turning-point">Act II — The Turning Point</a></li>
+  <li><a href="#act-iii--integration-and-return">Act III — Integration and Return</a></li>
+  <li><a href="#the-22-major-arcana-as-three-interwoven-paths">The 22 Major Arcana as three interwoven paths</a></li>
+  <li><a href="#a-practical-engineering-example">A practical engineering example</a></li>
+  <li><a href="#where-are-you-in-the-journey">Where are you in the journey?</a></li>
+  <li><a href="#xxi--0-the-return">XXI → 0: the return</a></li>
+  <li><a href="#the-journey-as-a-semantic-model">The Journey as a Semantic Model</a></li>
+  <li><a href="#references-and-further-reading">References and further reading</a></li>
+</ul>
+
+<h2 id="a-map-not-a-maturity-ladder">A map, not a maturity ladder</h2>
+
+<p>The <em>Fool’s Journey</em>, a popular narrative interpretation of the 22 Major Arcana, gives us an intriguing metaphor. <strong>The Fool (0)</strong> represents openness: the willingness to step forward without possessing every answer. <strong>The World (XXI)</strong> represents integration: seeing connections that were invisible at the beginning. But the story does not end there. <strong>XXI returns to 0.</strong> Experience changes the traveler; uncertainty remains.</p>
+
+<p>This is a <strong>literary and educational metaphor</strong>, not a claim that tarot predicts technological progress. Nor is it a prescription that every developer must encounter every tool in the same order. Different capabilities overlap; they are not badges on a universal career ladder.</p>
+
+<div class="journey-callout">
+  <strong>The central question</strong>
+  <p>Instead of asking <em>“Which tool comes after prompts?”</em>, ask <em>“What problem am I trying to understand, and what capability would help me investigate it responsibly?”</em></p>
+</div>
+
+<div class="journey-mermaid">
+<script type="text/plain" class="journey-mermaid-source">
+flowchart TD
+  F(["🧭 0 · Open mind"]):::context --> E["🔎 Explore AI"]:::observation
+  E --> B["🧪 Build and verify"]:::evidence
+  B --> W(["🧠 XXI · Integration"]):::understanding
+  W -. "new inquiry" .-> F
+
+  classDef context fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
+  classDef observation fill:#DDF3E8,stroke:#78AA91,color:#3E342C,stroke-width:2px;
+  classDef claim fill:#FFF1BF,stroke:#C8A84E,color:#3E342C,stroke-width:2px;
+  classDef evidence fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
+  classDef hypothesis fill:#F8DFC4,stroke:#C9986D,color:#3E342C,stroke-width:2px;
+  classDef uncertainty fill:#F6D6DD,stroke:#BF7C89,color:#3E342C,stroke-width:2px;
+  classDef understanding fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
+  classDef projection fill:#ECEBE8,stroke:#9C9992,color:#3E342C,stroke-width:2px;
+  classDef orchestration fill:#DDE3F4,stroke:#8998C8,color:#3E342C,stroke-width:2px;
+</script>
+<div class="journey-mermaid-render" role="img" aria-label="Software engineering process diagram"><img class="journey-mermaid-fallback" src="/assets/images/posts/developers-ai-journey/journey-diagram-1-fallback.svg" alt="Static fallback for diagram 1: 0 · Open mind / Explore capabilities / Build and verify / XXI · Integrate understanding" loading="lazy" /></div>
+</div>
+
+<p class="journey-image-credit"><small>Major Arcana imagery: <a href="https://commons.wikimedia.org/wiki/Category:Rider-Waite-Smith_tarot_deck_(TaionWC)">Rider–Waite–Smith (Pam-A) collection</a>, illustrated by Pamela Colman Smith (1909–1910), via Wikimedia Commons. Original artwork is public domain; card images load from Wikimedia Commons and require an internet connection unless downloaded locally.</small></p>
+
+<h2 id="three-paths-through-the-journey">Three paths through the journey</h2>
+
+<p>The <a href="/knowledge-management/symbolism/visual-learning/2026/09/14/the-secret-of-the-sphinx.html"><em>Secret of the Sphinx</em></a> explores a symbolic reading of three paths: <strong>Osiris, Thoth–Sopdet, and Horus</strong>. We can borrow that interpretive lens for software engineering without suggesting that it is an established historical taxonomy of tarot or a mandated order of technological progress.</p>
+
+<p>These are <strong>three interwoven paths with specific Arcana sequences</strong>, not three compulsory levels. Transformation challenges assumptions; awakening deepens observation and understanding; experience tests understanding through action. Their symbolic lessons can overlap in practice, but the card sequences shown below retain their defined order.</p>
+
+<section class="journey-three-paths" aria-label="Three complementary dimensions of the developer's journey">
+  <div class="journey-path-card journey-path-osiris">
+    <span class="journey-path-index">PATH I</span>
+    <img class="journey-path-portrait" src="/assets/images/posts/developers-ai-journey/path-osiris.webp" alt="Illustrated portrait of Osiris representing transformation" width="78" height="118" loading="lazy" />
+    <h3>Osiris · Transformation</h3>
+    <p class="journey-path-question">What must I reconsider or leave behind?</p>
+    <p>From the assumption that productivity means typing code, to questioning premature trust, obsolete habits, and fragile automation.</p>
+    <p class="journey-path-action"><strong>Developer practice:</strong> review assumptions, recognize failure modes, and redesign the process.</p>
+  </div>
+  <div class="journey-path-card journey-path-thoth">
+    <span class="journey-path-index">PATH II</span>
+    <img class="journey-path-portrait" src="/assets/images/posts/developers-ai-journey/path-thoth-sopdet.webp" alt="Illustrated portrait of Thoth representing awakening and understanding" width="78" height="118" loading="lazy" />
+    <h3>Thoth–Sopdet · Awakening</h3>
+    <p class="journey-path-question">What am I beginning to understand?</p>
+    <p>Prompts, context, tools, MCP, agents, and Skills expand what can be explored—but do not automatically establish what is true.</p>
+    <p class="journey-path-action"><strong>Developer practice:</strong> investigate, ask better questions, and make uncertainty explicit.</p>
+  </div>
+  <div class="journey-path-card journey-path-horus">
+    <span class="journey-path-index">PATH III</span>
+    <img class="journey-path-portrait" src="/assets/images/posts/developers-ai-journey/path-horus.webp" alt="Illustrated portrait of Horus representing experience and validation" width="78" height="118" loading="lazy" />
+    <h3>Horus · Experience</h3>
+    <p class="journey-path-question">How can I apply and validate what I understand?</p>
+    <p>Turn hypotheses into bounded workflows, useful software, tests, reviews, evaluations, and accountable AI-native design.</p>
+    <p class="journey-path-action"><strong>Developer practice:</strong> build, measure, verify, and learn from consequences.</p>
+  </div>
+</section>
+
+<div class="journey-path-loop" role="group" aria-label="Three paths of evolving understanding">
+  <span>0 · Open mind</span><span aria-hidden="true">→</span>
+  <span>Transformation · Awakening · Experience</span><span aria-hidden="true">→</span>
+  <span>XXI · Integration</span><span aria-hidden="true">↻</span>
+  <span>0 · Renewed inquiry</span>
+</div>
+
+<blockquote>
+  <p><strong>Three paths, one evolving understanding.</strong> Transformation changes our assumptions. Awakening changes what we notice. Experience tests what we build. None of them removes the need for the others.</p>
+</blockquote>
+
+<p>The arcana remain the <strong>symbolic encounters</strong> of the story; these paths describe <strong>different ways to interpret what happens during those encounters</strong>. For example, the Hanged Man (XII) belongs to the Path of Horus, the Tower (XVI) to the Path of Osiris, and Justice (XI) to the Path of Thoth–Sopdet. These correspondences are editorial interpretations rather than fixed tarot rules.</p>
+
+<h2 id="act-i--the-awakening">Act I — The Awakening</h2>
+
+<figure class="journey-art">
+  <img src="/assets/images/posts/developers-ai-journey/act-i-awakening.webp" alt="Contextual illustrated infographic: open mindset, autocomplete, prompts, workflows and vibe coding" loading="lazy" />
+  <figcaption>Act I: A small suggestion becomes a larger question about what is possible.</figcaption>
+</figure>
+
+<details class="journey-act-fold">
+  <summary><span><strong>Explore Arcana 0–IV</strong><small>Open mind, code completion, prompts, creativity and workflows</small></span><span class="journey-fold-toggle" aria-hidden="true"></span></summary>
+  <div class="journey-act-fold-body">
+
+    <section class="journey-reading-card" id="reading-arcana-0" aria-labelledby="reading-title-0">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2000%20Fool.jpg?width=420" alt="Rider–Waite–Smith Major Arcana 0, The Fool" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM 0</span>
+    <h3 id="reading-title-0">The Fool — An open mind</h3>
+    <p>Imagine a developer in a familiar environment: editor, terminal, tests, pull requests, deadlines. A new assistant appears in the IDE. Curiosity competes with skepticism: <em>Will this help? Will I lose my skills? Should I trust it?</em></p>
+<p>An open mind is not unconditional enthusiasm. It is the willingness to experiment <strong>without surrendering judgment</strong>. The first change is not in the stack; it is in the posture toward the unknown.</p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-1" aria-labelledby="reading-title-1">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2001%20Magician.jpg?width=420" alt="Rider–Waite–Smith Major Arcana I, The Magician" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM I</span>
+    <h3 id="reading-title-1">The Magician — Code completion</h3>
+    <p>An intelligently suggested line, a function, a test scaffold: the developer still chooses the direction, while AI reduces friction at the keyboard.</p>
+<p>The small convenience raises a much larger question: <em>If AI can complete code, what else could it help me do?</em></p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-2" aria-labelledby="reading-title-2">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2002%20High%20Priestess.jpg?width=420" alt="Rider–Waite–Smith Major Arcana II, The High Priestess" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM II</span>
+    <h3 id="reading-title-2">The High Priestess — Prompts and context</h3>
+    <p>Conversation expands beyond completion: explain an unfamiliar Rails service, surface trade-offs, compare approaches, or challenge an assumption.</p>
+<p>Strong prompting depends on <strong>context, constraints, examples, and iterative inquiry</strong>—not magical wording or presumed correctness.</p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-3" aria-labelledby="reading-title-3">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2003%20Empress.jpg?width=420" alt="Rider–Waite–Smith Major Arcana III, The Empress" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM III</span>
+    <h3 id="reading-title-3">The Empress — Vibe coding and creation</h3>
+    <p>Natural-language generation accelerates prototypes. An idea becomes an interface or small product quickly enough to discover what the developer actually wants.</p>
+<p>But <strong>vibe coding</strong>, especially without serious code inspection, is not the same as production-grade engineering. Demonstrating possibility is not proving reliability.</p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-4" aria-labelledby="reading-title-4">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2004%20Emperor.jpg?width=420" alt="Rider–Waite–Smith Major Arcana IV, The Emperor" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM IV</span>
+    <h3 id="reading-title-4">The Emperor — Workflows and structure</h3>
+    <p>Instead of collecting disconnected answers, turn work into a reproducible sequence: research, design, implement, test, review, publish. Make inputs, checks, and outputs explicit.</p>
+<p>The emphasis shifts from <strong>one useful answer</strong> to <strong>a dependable way of working</strong>.</p>
+  </div>
+</section>
+
+    <div class="journey-contrast">
+  <div><span class="journey-kicker">WEAK REQUEST</span><p>“Refactor this job.”</p></div>
+  <div><span class="journey-kicker">ENGINEERING REQUEST</span><p>“Identify failure modes in this Sidekiq job, preserve idempotency, propose alternatives, and show which assumptions require tests.”</p></div>
+</div>
+
+    <div class="journey-mermaid">
+<script type="text/plain" class="journey-mermaid-source">
+flowchart TD
+  I(["🧭 Intent"]):::context --> R["🔎 Inspect repository"]:::observation
+  R --> P["🧩 Propose change"]:::hypothesis
+  P --> T["🧪 Run checks"]:::evidence
+  T --> V{"❓ Verified?"}:::uncertainty
+  V -->|No| P
+  V -->|Yes| H\[\"👁 Human review\"]:::observation
+
+  classDef context fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
+  classDef observation fill:#DDF3E8,stroke:#78AA91,color:#3E342C,stroke-width:2px;
+  classDef claim fill:#FFF1BF,stroke:#C8A84E,color:#3E342C,stroke-width:2px;
+  classDef evidence fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
+  classDef hypothesis fill:#F8DFC4,stroke:#C9986D,color:#3E342C,stroke-width:2px;
+  classDef uncertainty fill:#F6D6DD,stroke:#BF7C89,color:#3E342C,stroke-width:2px;
+  classDef understanding fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
+  classDef projection fill:#ECEBE8,stroke:#9C9992,color:#3E342C,stroke-width:2px;
+  classDef orchestration fill:#DDE3F4,stroke:#8998C8,color:#3E342C,stroke-width:2px;
+</script>
+<div class="journey-mermaid-render" role="img" aria-label="Software engineering process diagram"><img class="journey-mermaid-fallback" src="/assets/images/posts/developers-ai-journey/journey-diagram-2-fallback.svg" alt="Static fallback for diagram 2: Intent and constraints / Explore repository / Propose change / Run tests and checks / Human review / Verified?" loading="lazy" /></div>
+</div>
+
+  </div>
+</details>
+
+<h2 id="act-ii--the-turning-point">Act II — The Turning Point</h2>
+
+<figure class="journey-art">
+  <img src="/assets/images/posts/developers-ai-journey/act-ii-turning-point.webp" alt="Contextual illustrated infographic about MCP, agents, Skills and verification; a developer faces the choice between generating code and understanding what to build" loading="lazy" />
+  <figcaption>Act II: Capability expands, but the developer must discover the value of verification and perspective.</figcaption>
+</figure>
+
+<details class="journey-act-fold">
+  <summary><span><strong>Explore Arcana V–XVI</strong><small>Skills, tools, agency, verification, perspective and risks</small></span><span class="journey-fold-toggle" aria-hidden="true"></span></summary>
+  <div class="journey-act-fold-body">
+
+    <section class="journey-reading-card" id="reading-arcana-5" aria-labelledby="reading-title-5">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2005%20Hierophant.jpg?width=420" alt="Rider–Waite–Smith Major Arcana V, The Hierophant" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM V</span>
+    <h3 id="reading-title-5">The Hierophant — Skills and tradition</h3>
+    <p>Expertise can be captured in reusable <strong>Skills</strong>: procedures, project conventions, examples, review criteria, and domain knowledge.</p>
+<p>The question changes from <em>What should I prompt?</em> to <em>Which practice can my team repeat and inspect?</em></p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-6" aria-labelledby="reading-title-6">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2006%20Lovers.jpg?width=420" alt="Rider–Waite–Smith Major Arcana VI, The Lovers" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM VI</span>
+    <h3 id="reading-title-6">The Lovers — Human–AI collaboration</h3>
+    <p>AI can propose and execute. The developer still frames intent, defines boundaries, evaluates trade-offs, and accepts responsibility.</p>
+<p>Good collaboration is neither total delegation nor refusal to delegate; it is a deliberate division of work.</p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-7" aria-labelledby="reading-title-7">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2007%20Chariot.jpg?width=420" alt="Rider–Waite–Smith Major Arcana VII, The Chariot" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM VII</span>
+    <h3 id="reading-title-7">The Chariot — Tools and MCP</h3>
+    <p>Tools expose concrete actions; <strong>MCP</strong> provides a protocol for connecting approved capabilities and context. An assistant can reach repositories, APIs, documentation, and tests.</p>
+<p>Access expands what can be done, but permissions and provenance must remain explicit.</p>
+  </div>
+</section>
+
+    <div class="journey-capabilities">
+  <div><strong>Tools / MCP</strong><small>Access to systems and actions</small></div>
+  <div><strong>Agents</strong><small>Planning and multistep execution</small></div>
+  <div><strong>Skills</strong><small>Reusable ways of doing work</small></div>
+  <div><strong>Verification</strong><small>Evidence that results meet expectations</small></div>
+</div>
+
+    <section class="journey-reading-card" id="reading-arcana-8" aria-labelledby="reading-title-8">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2008%20Strength.jpg?width=420" alt="Rider–Waite–Smith Major Arcana VIII, Strength" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM VIII</span>
+    <h3 id="reading-title-8">Strength — Controlled autonomy</h3>
+    <p>Agents can plan and perform multistep work, including editing files, running checks, and proposing a pull request.</p>
+<p>Controlled autonomy requires bounded goals, permissions, traceability, checkpoints, and human approval where warranted.</p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-9" aria-labelledby="reading-title-9">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2009%20Hermit.jpg?width=420" alt="Rider–Waite–Smith Major Arcana IX, The Hermit" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM IX</span>
+    <h3 id="reading-title-9">The Hermit — Reflection and discernment</h3>
+    <p>When a result looks convincing, the developer must still ask: <em>How do I know?</em></p>
+<p>Reflection means examining assumptions, reading the code, reviewing generated explanations, and seeking evidence beyond fluent output.</p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-10" aria-labelledby="reading-title-10">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2010%20Wheel%20of%20Fortune.jpg?width=420" alt="Rider–Waite–Smith Major Arcana X, Wheel of Fortune" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM X</span>
+    <h3 id="reading-title-10">Wheel of Fortune — A changing landscape</h3>
+    <p>Models, products, and workflows evolve. What works today may change with the next release or context window.</p>
+<p>Keep the engineering principles portable: explicit requirements, reproducible tests, observability, and the ability to recover safely.</p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-11" aria-labelledby="reading-title-11">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2011%20Justice.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XI, Justice" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM XI</span>
+    <h3 id="reading-title-11">Justice — Verification and accountability</h3>
+    <p>A passing test does not necessarily prove the right behavior was tested. A link does not automatically supply evidence. A successful tool call is not a validated business outcome.</p>
+<p>Verification joins correctness, security, provenance, and accountable review. <strong>Capability is not correctness.</strong></p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-12" aria-labelledby="reading-title-12">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2012%20Hanged%20Man.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XII, The Hanged Man" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM XII</span>
+    <h3 id="reading-title-12">The Hanged Man — A change in perspective</h3>
+    <p>This is the turning point: producing more code faster is not the same as knowing <strong>what should be built, why, and how to determine whether it fulfills the intent</strong>.</p>
+<p>Code becomes an expression of understanding, never its substitute.</p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-13" aria-labelledby="reading-title-13">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2013%20Death.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XIII, Death" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM XIII</span>
+    <h3 id="reading-title-13">Death — Letting go of assumptions</h3>
+    <p>Some assumptions must be released: that professional value is measured by lines typed, that every task needs an agent, or that a demo proves readiness.</p>
+<p>Leaving those assumptions behind makes more room for domain understanding and sound engineering choices.</p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-14" aria-labelledby="reading-title-14">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2014%20Temperance.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XIV, Temperance" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM XIV</span>
+    <h3 id="reading-title-14">Temperance — Human–AI integration</h3>
+    <p>Balance automation with tests, architecture, observability, human communication, and operational constraints.</p>
+<p>The goal is not to choose human or machine, but to design a process in which each contributes what can be justified and verified.</p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-15" aria-labelledby="reading-title-15">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2015%20Devil.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XV, The Devil" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM XV</span>
+    <h3 id="reading-title-15">The Devil — The dependency trap</h3>
+    <p>Convenience can become dependence: unfamiliar code is accepted, investigation is skipped, and authority is delegated without safeguards.</p>
+<p>The danger is less the presence of AI than the disappearance of independent judgment.</p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-16" aria-labelledby="reading-title-16">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2016%20Tower.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XVI, The Tower" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM XVI</span>
+    <h3 id="reading-title-16">The Tower — Failure reveals the architecture</h3>
+    <p>Reality intervenes: a payment job retries twice, a data migration violates invariants, or an agent changes the wrong files.</p>
+<p>Failure asks a sharper question: <strong>What did our process fail to understand?</strong></p>
+  </div>
+</section>
+
+    <div class="journey-callout journey-warning">
+  <strong>Capability is not correctness.</strong>
+  <p>AI can generate options. Engineering judgment evaluates constraints, evidence, risks, and consequences.</p>
+</div>
+
+  </div>
+</details>
+
+<h2 id="act-iii--integration-and-return">Act III — Integration and Return</h2>
+
+<figure class="journey-art">
+  <img src="/assets/images/posts/developers-ai-journey/act-iii-integration.webp" alt="Contextual illustrated infographic: AI-driven practices and AI-native architectures lead to integration, responsibility and renewed inquiry XXI to 0" loading="lazy" />
+  <figcaption>Act III: The perspective broadens from individual coding tasks to coherent systems—and back to new questions.</figcaption>
+</figure>
+
+<details class="journey-act-fold">
+  <summary><span><strong>Explore Arcana XVII–XXI</strong><small>New perspectives, uncertainty, clarity and AI-native integration</small></span><span class="journey-fold-toggle" aria-hidden="true"></span></summary>
+  <div class="journey-act-fold-body">
+
+    <section class="journey-reading-card" id="reading-arcana-17" aria-labelledby="reading-title-17">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2017%20Star.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XVII, The Star" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM XVII</span>
+    <h3 id="reading-title-17">The Star — Renewed vision</h3>
+    <p>A renewed engineering vision sees relationships among people, knowledge, tools, models, policies, and evaluations.</p>
+<p>We can pursue better outcomes rather than simply more generated output.</p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-18" aria-labelledby="reading-title-18">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2018%20Moon.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XVIII, The Moon" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM XVIII</span>
+    <h3 id="reading-title-18">The Moon — Uncertainty and evidence</h3>
+    <p>Models generate claims; systems retrieve sources; neither operation proves understanding. Uncertainty must be represented rather than concealed.</p>
+<p>Distinguish <strong>output, source, evidence, claim, and understanding</strong>, and keep unresolved questions visible.</p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-19" aria-labelledby="reading-title-19">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2019%20Sun.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XIX, The Sun" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM XIX</span>
+    <h3 id="reading-title-19">The Sun — Clarity through inquiry</h3>
+    <p>Clarity grows when intent is explicit and observations can be tested against expectations.</p>
+<p>The objective is not certainty about everything. It is an honest, revisable account of what the system does and why.</p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-20" aria-labelledby="reading-title-20">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2020%20Judgement.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XX, Judgement" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM XX</span>
+    <h3 id="reading-title-20">Judgement — Reimagining architecture</h3>
+    <p>The architectural question emerges: when should AI participate in a running product rather than only in the development workflow?</p>
+<p>Think about model inference, tools, context, evaluation, governed actions, and feedback as designed capabilities—not magic defaults.</p>
+  </div>
+</section>
+
+    <section class="journey-reading-card" id="reading-arcana-21" aria-labelledby="reading-title-21">
+  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2021%20World.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XXI, The World" loading="lazy" width="80" height="120" />
+  <div class="journey-reading-copy">
+    <span class="journey-reading-number">ARCANUM XXI</span>
+    <h3 id="reading-title-21">The World — Integration, not completion</h3>
+    <p>A wider picture comes into view. Prompts, Skills, agents, workflows, and models become design choices in service of people and real constraints.</p>
+<p>The World is <strong>integration, not final mastery</strong>. From XXI the developer returns to 0—with fresh questions and a wider perspective.</p>
+  </div>
+</section>
+
+    <div class="journey-ai-comparison" role="group" aria-label="Comparison of AI-Assisted, AI-Driven, and AI-Native engineering approaches">
+  <article class="journey-ai-mode">
+    <span class="journey-ai-mode-kicker">DEVELOPMENT ASSISTANCE</span>
+    <h4>AI-Assisted</h4>
+    <p><strong>AI helps developers build.</strong></p>
+    <p><strong>Example:</strong> GitHub Copilot suggests Rails code, explains a service, or drafts a test for human review.</p>
+  </article>
+  <article class="journey-ai-mode">
+    <span class="journey-ai-mode-kicker">ENGINEERING WORKFLOW</span>
+    <h4>AI-Driven</h4>
+    <p><strong>AI drives bounded parts of the process.</strong></p>
+    <p><strong>Example:</strong> An agent proposes a change, runs tests, and prepares a pull request for human approval.</p>
+  </article>
+  <article class="journey-ai-mode">
+    <span class="journey-ai-mode-kicker">PRODUCT ARCHITECTURE</span>
+    <h4>AI-Native</h4>
+    <p><strong>AI participates in the running system.</strong></p>
+    <p><strong>Example:</strong> A product integrates model inference, tools, context, evaluation, and governed actions.</p>
+  </article>
+</div>
+
+    <p>These are <strong>working distinctions</strong>, not an official certification ladder. An AI-native product can still be developed with traditional tooling; an AI-assisted team can ship entirely deterministic software.</p>
+
+    <div class="journey-mermaid">
+<script type="text/plain" class="journey-mermaid-source">
+flowchart TD
+  I(["🧭 Human intent"]):::context --> O["⚙️ Orchestration"]:::orchestration
+  O --> C[("📚 Context")]:::context
+  O --> M["🧩 Models"]:::hypothesis
+  M --> T["▶️ Tools"]:::orchestration
+  C --> X["👁 Outputs"]:::observation
+  T --> X
+  X --> V["🧪 Evaluation"]:::evidence
+  V --> D{"❓ Accepted?"}:::uncertainty
+  D -->|Revise| O
+  D -->|Yes| A\[\"▶️ Action\"]:::projection
+  A --> F(["🧠 Feedback"]):::understanding
+  F -. "new context" .-> I
+
+  classDef context fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
+  classDef observation fill:#DDF3E8,stroke:#78AA91,color:#3E342C,stroke-width:2px;
+  classDef claim fill:#FFF1BF,stroke:#C8A84E,color:#3E342C,stroke-width:2px;
+  classDef evidence fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
+  classDef hypothesis fill:#F8DFC4,stroke:#C9986D,color:#3E342C,stroke-width:2px;
+  classDef uncertainty fill:#F6D6DD,stroke:#BF7C89,color:#3E342C,stroke-width:2px;
+  classDef understanding fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
+  classDef projection fill:#ECEBE8,stroke:#9C9992,color:#3E342C,stroke-width:2px;
+  classDef orchestration fill:#DDE3F4,stroke:#8998C8,color:#3E342C,stroke-width:2px;
+</script>
+<div class="journey-mermaid-render" role="img" aria-label="Software engineering process diagram"><img class="journey-mermaid-fallback" src="/assets/images/posts/developers-ai-journey/journey-diagram-3-fallback.svg" alt="Static fallback for diagram 3: Human intent / Application / orchestration / Context and knowledge / Models and reasoning / Approved tools / Observations and results / Evaluation and" loading="lazy" /></div>
+</div>
+
+  </div>
+</details>
+
+<h2 id="the-22-major-arcana-as-three-interwoven-paths">The 22 Major Arcana as three interwoven paths</h2>
+
+<p>The card associations below are <strong>interpretive, not technological milestones</strong>. Begin with <strong>0 — The Fool</strong> above, then expand any of the three paths to explore its seven-card sequence as illustrated cards with engineering context. The final card, <strong>XXI — The World</strong>, returns to <strong>0</strong>. We use the common Rider–Waite–Smith numbering, where Strength is VIII and Justice is XI.</p>
+
+<p class="journey-card-credit">Card artwork: Pamela Colman Smith, Rider–Waite–Smith tarot (1909). Public-domain originals. Images are currently served from an external archive; use the included download script to self-host them before publishing.</p>
+<p class="journey-arcana-nav">Follow each path in its own order: <a href="#path-osiris">Osiris</a> · <a href="#path-thoth">Thoth–Sopdet</a> · <a href="#path-horus">Horus</a>. The cards are deliberately interwoven, not consecutive phases.</p>
+<div class="journey-arcana-pathways" aria-label="Three interwoven paths through the authentic Major Arcana">
+<details class="journey-arcana-path journey-arcana-path-osiris journey-arcana-fold" id="path-osiris">
+<summary class="journey-arcana-summary"><span class="journey-arcana-summary-text"><strong>The Path of Osiris — Transformation</strong><small>I → IV → VII → X → XIII → XVI → XIX</small><em class="journey-arcana-question">What must I reconsider or leave behind?</em></span><span class="journey-fold-toggle" aria-hidden="true"></span></summary>
+<div class="journey-arcana-fold-body">
+<div class="journey-arcana-sequence">
+<article id="arcana-1" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2001%20Magician.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana I, The Magician" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA I</span><h4>The Magician</h4><strong>AI-Assisted / Code Completion</strong><p>Discovering the capability to turn intent into code</p></div></article>
+<article id="arcana-4" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2004%20Emperor.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana IV, The Emperor" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA IV</span><h4>The Emperor</h4><strong>Structured Workflows</strong><p>Giving experimentation repeatable structure and constraints</p></div></article>
+<article id="arcana-7" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2007%20Chariot.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana VII, The Chariot" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA VII</span><h4>The Chariot</h4><strong>Tools and MCP</strong><p>Connecting tools, APIs and repositories with direction</p></div></article>
+<article id="arcana-10" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2010%20Wheel%20of%20Fortune.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana X, Wheel of Fortune" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA X</span><h4>Wheel of Fortune</h4><strong>Technology Change</strong><p>Adapting to shifting models and capabilities</p></div></article>
+<article id="arcana-13" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2013%20Death.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana XIII, Death" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA XIII</span><h4>Death</h4><strong>Letting Go</strong><p>Revising assumptions about what developer value means</p></div></article>
+<article id="arcana-16" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2016%20Tower.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana XVI, The Tower" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA XVI</span><h4>The Tower</h4><strong>Failure and Reality</strong><p>Facing architectural limits and failed assumptions</p></div></article>
+<article id="arcana-19" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2019%20Sun.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana XIX, The Sun" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA XIX</span><h4>The Sun</h4><strong>Clarity</strong><p>Making intent, architecture and consequences more visible</p></div></article>
+</div>
+</div>
+</details>
+<details class="journey-arcana-path journey-arcana-path-thoth journey-arcana-fold" id="path-thoth">
+<summary class="journey-arcana-summary"><span class="journey-arcana-summary-text"><strong>The Path of Thoth–Sopdet — Awakening</strong><small>II → V → VIII → XI → XIV → XVII → XX</small><em class="journey-arcana-question">What am I beginning to understand?</em></span><span class="journey-fold-toggle" aria-hidden="true"></span></summary>
+<div class="journey-arcana-fold-body">
+<div class="journey-arcana-sequence">
+<article id="arcana-2" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2002%20High%20Priestess.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana II, The High Priestess" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA II</span><h4>The High Priestess</h4><strong>Prompts and Context</strong><p>Looking beneath answers; asking better questions</p></div></article>
+<article id="arcana-5" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2005%20Hierophant.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana V, The Hierophant" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA V</span><h4>The Hierophant</h4><strong>Knowledge and Skills</strong><p>Encoding shared knowledge into reusable practice</p></div></article>
+<article id="arcana-8" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2008%20Strength.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana VIII, Strength" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA VIII</span><h4>Strength</h4><strong>Controlled Autonomy</strong><p>Exercising restraint and oversight with agents</p></div></article>
+<article id="arcana-11" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2011%20Justice.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana XI, Justice" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA XI</span><h4>Justice</h4><strong>Verification and Accountability</strong><p>Testing claims, risks, correctness and consequences</p></div></article>
+<article id="arcana-14" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2014%20Temperance.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana XIV, Temperance" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA XIV</span><h4>Temperance</h4><strong>Integration</strong><p>Balancing craft, automation and judgment</p></div></article>
+<article id="arcana-17" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2017%20Star.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana XVII, The Star" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA XVII</span><h4>The Star</h4><strong>Renewed Vision</strong><p>Imagining better engineering outcomes</p></div></article>
+<article id="arcana-20" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2020%20Judgement.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana XX, Judgement" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA XX</span><h4>Judgement</h4><strong>AI-Native Reorientation</strong><p>Rethinking software architecture around AI capabilities</p></div></article>
+</div>
+</div>
+</details>
+<details class="journey-arcana-path journey-arcana-path-horus journey-arcana-fold" id="path-horus">
+<summary class="journey-arcana-summary"><span class="journey-arcana-summary-text"><strong>The Path of Horus — Experience</strong><small>III → VI → IX → XII → XV → XVIII → XXI</small><em class="journey-arcana-question">How can I apply and validate what I understand?</em></span><span class="journey-fold-toggle" aria-hidden="true"></span></summary>
+<div class="journey-arcana-fold-body">
+<div class="journey-arcana-sequence">
+<article id="arcana-3" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2003%20Empress.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana III, The Empress" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA III</span><h4>The Empress</h4><strong>Vibe Coding / Creation</strong><p>Rapid prototyping and creative exploration</p></div></article>
+<article id="arcana-6" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2006%20Lovers.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana VI, The Lovers" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA VI</span><h4>The Lovers</h4><strong>Human–AI Collaboration</strong><p>Choosing what to delegate and what to decide</p></div></article>
+<article id="arcana-9" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2009%20Hermit.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana IX, The Hermit" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA IX</span><h4>The Hermit</h4><strong>Reflection</strong><p>Questioning outputs and seeking real understanding</p></div></article>
+<article id="arcana-12" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2012%20Hanged%20Man.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana XII, The Hanged Man" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA XII</span><h4>The Hanged Man</h4><strong>Perspective Shift</strong><p>Moving from code output to problem understanding</p></div></article>
+<article id="arcana-15" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2015%20Devil.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana XV, The Devil" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA XV</span><h4>The Devil</h4><strong>Dependency Trap</strong><p>Recognizing overreliance and false productivity</p></div></article>
+<article id="arcana-18" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2018%20Moon.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana XVIII, The Moon" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA XVIII</span><h4>The Moon</h4><strong>Uncertainty</strong><p>Separating model output, claims, evidence and understanding</p></div></article>
+<article id="arcana-21" class="journey-arcana-card journey-path-thumbnail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2021%20World.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana XXI, The World" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA XXI</span><h4>The World</h4><strong>Integrated Engineering</strong><p>Connecting the whole and returning to renewed inquiry</p></div></article>
+</div>
+</div>
+</details>
+</div>
+
+<h2 id="a-practical-engineering-example">A practical engineering example</h2>
+
+<p>Suppose you are asked to <strong>improve the reliability of payment processing in a Rails application</strong>.</p>
+
+<p>An autocomplete-only approach helps write another retry method. A prompt-first approach asks for recommendations. A workflow-driven approach inspects the code, develops a failure model, implements changes, runs checks, and requires review. With tools and agents, much of that work can be coordinated across repository, CI, and documentation. With Skills, project-specific conventions can become repeatable.</p>
+
+<p>But none of those capabilities can replace the critical questions: <em>Is the operation idempotent? What happens under duplicate delivery? Which side effects can be reversed? Which invariant proves business correctness? Who approves the change?</em></p>
+
+<div class="journey-contrast">
+<div><span class="journey-kicker">OUTPUT-CENTRIC</span><p>“The AI wrote a retry policy.”</p></div>
+<div><span class="journey-kicker">UNDERSTANDING-CENTRIC</span><p>“We identified the failure modes, tested the invariants, and can explain why the recovery policy is appropriate.”</p></div>
+</div>
+
+<p>The <strong>deepest gain is not the number of generated lines</strong>. It is the ability to discover, test, and preserve a more accurate account of the system.</p>
+
+<h2 id="where-are-you-in-the-journey">Where are you in the journey?</h2>
+
+<p>Do not measure your progress by how many new products you have installed. Ask which questions you can now answer:</p>
+
+<ul>
+  <li><strong>Exploring?</strong> Can you explain what you want AI to help you discover?</li>
+  <li><strong>Prompting?</strong> Can you supply context, constraints, and verification criteria?</li>
+  <li><strong>Automating?</strong> Can your workflow fail visibly and recover safely?</li>
+  <li><strong>Connecting tools?</strong> Can you describe what the system is permitted to access and change?</li>
+  <li><strong>Delegating to agents?</strong> Can you tell the difference between execution success and task correctness?</li>
+  <li><strong>Designing AI-native systems?</strong> Can you represent uncertainty, audit decisions, and evaluate outcomes?</li>
+</ul>
+
+<div class="journey-callout">
+<strong>Compass, not checklist</strong>
+<p>Find your current question. Choose the smallest capability that helps answer it. Verify what you learned. Repeat.</p>
+</div>
+
+<div class="journey-arcana-return" role="group" aria-label="The World returns to The Fool: a new understanding, a new beginning">
+<article class="journey-arcana-card journey-arcana-mini"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2021%20World.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana XXI, The World" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA XXI</span><h4>The World</h4><strong>Integrated Engineering</strong><p>Connecting the whole and returning to renewed inquiry</p></div></article><span aria-hidden="true" class="journey-cycle-arrow">→</span><article class="journey-arcana-card journey-arcana-mini"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2000%20Fool.jpg?width=420" alt="Original Rider–Waite–Smith card for Arcana 0, The Fool" loading="lazy" width="100" height="150" /><div><span class="journey-arcana-number">ARCANA 0</span><h4>The Fool</h4><strong>Open Mind</strong><p>Curiosity and willingness to explore the unknown</p></div></article>
+<p class="journey-arcana-return-caption">A New Understanding. A New Beginning.</p>
+</div>
+
+<h2 id="xxi--0-the-return">XXI → 0: the return</h2>
+
+<p>The Fool begins without knowing. The World arrives with a wider understanding. But <strong>wisdom is not the absence of uncertainty</strong>. It is the ability to return to uncertainty with better questions, stronger methods, and greater responsibility.</p>
+
+<p>The engineer who first discovered intelligent autocomplete is not quite the same engineer who now considers agent orchestration, Skills, evidence, or AI-native architecture. Yet the most important capability remains recognizable: an open mind prepared to investigate what is actually happening.</p>
+
+<blockquote>
+  <p><strong>Every new tool expands what a developer can do. Every new understanding transforms what a developer can become.</strong></p>
+</blockquote>
+
+<p><strong>The World is not the end of the journey. It is the moment the Fool discovers a new beginning.</strong></p>
+
+<h2 id="the-journey-as-a-semantic-model">The Journey as a Semantic Model</h2>
+
+<p>The twenty-two Arcana can be described once as a set of contextual meanings, then related through three interwoven paths. In this interpretation, <strong>Context</strong> situates each card in AI engineering, <strong>Light</strong> expresses its constructive possibility, <strong>Shadow</strong> explores its limitations, and <strong>Insight</strong> captures a question or understanding that may emerge. These are interpretive perspectives, not proven properties of the cards or evidence about AI systems.</p>
+
+<p>The Mermaid diagram presents the overall relationships. Expand the Ruby DSL below to explore the full model of the 22 Arcana, their AI contexts, three paths, and the return XXI → 0. This is an illustrative Ruby DSL, not a working parser or executable implementation.</p>
+
+<div class="journey-mermaid">
+<script type="text/plain" class="journey-mermaid-source">
+flowchart TD
+  A[("📚 22 Arcana")]:::context --> F(["🧭 0 · The Fool"]):::context
+  F --> O["🧩 Osiris"]:::hypothesis
+  F --> T["🔎 Thoth–Sopdet"]:::observation
+  F --> H["▶️ Horus"]:::projection
+  O --> U(["🧠 Understanding"]):::understanding
+  T --> U
+  H --> U
+  U --> R(["🔗 XXI → 0"]):::understanding
+  R -. "renewed inquiry" .-> F
+
+  classDef context fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
+  classDef observation fill:#DDF3E8,stroke:#78AA91,color:#3E342C,stroke-width:2px;
+  classDef claim fill:#FFF1BF,stroke:#C8A84E,color:#3E342C,stroke-width:2px;
+  classDef evidence fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
+  classDef hypothesis fill:#F8DFC4,stroke:#C9986D,color:#3E342C,stroke-width:2px;
+  classDef uncertainty fill:#F6D6DD,stroke:#BF7C89,color:#3E342C,stroke-width:2px;
+  classDef understanding fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
+  classDef projection fill:#ECEBE8,stroke:#9C9992,color:#3E342C,stroke-width:2px;
+  classDef orchestration fill:#DDE3F4,stroke:#8998C8,color:#3E342C,stroke-width:2px;
+</script>
+<div class="journey-mermaid-render" role="img" aria-label="Illustrative journey model: 22 Arcana, three interwoven paths, evolving understanding and return from XXI to zero"><img class="journey-mermaid-fallback" src="/assets/images/posts/developers-ai-journey/journey-diagram-4-fallback.svg" alt="Static fallback for diagram 4: 🃏 22 Arcana / 🌱 0 · The Fool / 🔄 Osiris / 🔎 Thoth–Sopdet / 🧭 Horus / 💡 Evolving Understanding / ♻️ XXI → 0 · Renewed Inquiry" loading="lazy" /></div>
+</div>
+
+<details class="journey-dsl-details">
+<summary><span><strong>Explore the complete Ruby DSL</strong><small>22 Arcana · Context / Light / Shadow / Insight · Three paths · XXI → 0</small></span><span aria-hidden="true">⌄</span></summary>
+<div class="journey-dsl-body">
+<p class="journey-dsl-note">Illustrative Ruby DSL for understanding the article’s structure; this example is not an executable implementation.</p>
+<pre class="journey-dsl-code" aria-label="Illustrative Ruby DSL with syntax highlighting"><code class="language-ruby"><span class="hf-n">journey</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Developer&#39;s AI Journey&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">  </span><span class="hf-n">inquiry</span><span class="hf-w"> </span><span class="hf-s2">&quot;How does AI transform software engineering?&quot;</span>
+
+<span class="hf-w">  </span><span class="hf-c1"># I. Arcana: meaning definitions</span>
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">0</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Fool&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Open-minded AI exploration&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Curiosity and experimentation&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Naivety and blind trust&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Explore without surrendering judgment&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">1</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Magician&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;AI code completion&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Augmented development&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Illusion of mastery&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Capability is not understanding&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">2</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The High Priestess&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Prompts and context&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Deeper inquiry&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Superficial prompting&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Context changes understanding&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">3</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Empress&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Vibe coding&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Creative experimentation&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Unexamined code generation&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Prototypes are not products&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">4</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Emperor&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Structured AI workflows&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Repeatability and control&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Excessive rigidity&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Structure supports intent&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">5</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Hierophant&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Knowledge and reusable Skills&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Codified engineering expertise&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Dogmatic procedures&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Knowledge must remain revisable&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">6</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Lovers&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Human-AI collaboration&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Complementary capabilities&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Abdication of responsibility&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Delegation requires discernment&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">7</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Chariot&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Tools, MCP and execution&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Connected capabilities&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Uncontrolled execution&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Direction matters more than reach&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">8</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;Strength&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Agent autonomy and governance&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Responsible delegation&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Excessive autonomy&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Power requires restraint&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">9</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Hermit&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Independent technical inquiry&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Reflection and critical thinking&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Isolation and analysis paralysis&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Question outputs before accepting them&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">10</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;Wheel of Fortune&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Rapid evolution of AI technologies&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Adaptability&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Trend chasing&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Principles outlast tools&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">11</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;Justice&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Testing, verification and evaluation&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Evidence-based engineering&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;False confidence in passing tests&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Success is not proof of correctness&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">12</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Hanged Man&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Perspective shift&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Reframing the problem&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Mistaking activity for progress&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Understand before building&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">13</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;Death&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Transformation of developer roles&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Renewal and adaptation&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Fear of obsolescence&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Let go of obsolete assumptions&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">14</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;Temperance&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Human-AI systems integration&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Balanced collaboration&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Misaligned automation&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Integrate without losing judgment&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">15</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Devil&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Dependency on AI-generated solutions&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Awareness of limitations&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Cognitive dependence&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Convenience must not replace thought&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">16</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Tower&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Failures in AI-assisted systems&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Architectural learning&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Fragile automation&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Failure exposes hidden assumptions&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">17</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Star&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;New possibilities for AI engineering&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Renewed technological vision&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Technological idealization&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Vision requires grounded inquiry&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">18</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Moon&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Uncertainty and hallucinations&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Epistemic humility&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;False certainty&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Distinguish claims from evidence&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">19</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Sun&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Engineering clarity and observability&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Transparency and verification&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Overconfidence&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Make understanding verifiable&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">20</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;Judgement&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;AI-native architectural reorientation&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Intent-centered system design&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Reinvention without purpose&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;Design around meaningful intent&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">21</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The World&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">context</span><span class="hf-w"> </span><span class="hf-s2">&quot;Integrated AI-native engineering&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">light</span><span class="hf-w">   </span><span class="hf-s2">&quot;Coherent systems thinking&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">shadow</span><span class="hf-w">  </span><span class="hf-s2">&quot;Illusion of completion&quot;</span>
+<span class="hf-w">    </span><span class="hf-n">insight</span><span class="hf-w"> </span><span class="hf-s2">&quot;The whole remains open to revision&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-c1"># II. Paths: relationships, without redefining Arcana</span>
+<span class="hf-w">  </span><span class="hf-n">origin</span><span class="hf-w"> </span><span class="hf-ss">:the_fool</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">arcana</span><span class="hf-p">:</span><span class="hf-w"> </span><span class="hf-mi">0</span>
+
+<span class="hf-w">  </span><span class="hf-n">path</span><span class="hf-w"> </span><span class="hf-ss">:osiris</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">meaning</span><span class="hf-w"> </span><span class="hf-ss">:transformation</span>
+<span class="hf-w">    </span><span class="hf-n">traverse</span><span class="hf-w"> </span><span class="hf-mi">1</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">4</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">7</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">10</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">13</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">16</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">19</span>
+<span class="hf-w">    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;What must I reconsider?&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">path</span><span class="hf-w"> </span><span class="hf-ss">:thoth_sopdet</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">meaning</span><span class="hf-w"> </span><span class="hf-ss">:awakening</span>
+<span class="hf-w">    </span><span class="hf-n">traverse</span><span class="hf-w"> </span><span class="hf-mi">2</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">5</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">8</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">11</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">14</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">17</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">20</span>
+<span class="hf-w">    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;What am I beginning to understand?&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">path</span><span class="hf-w"> </span><span class="hf-ss">:horus</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">meaning</span><span class="hf-w"> </span><span class="hf-ss">:experience</span>
+<span class="hf-w">    </span><span class="hf-n">traverse</span><span class="hf-w"> </span><span class="hf-mi">3</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">6</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">9</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">12</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">15</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">18</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">21</span>
+<span class="hf-w">    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;How can I apply and validate it?&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-n">interweave</span><span class="hf-w"> </span><span class="hf-ss">:osiris</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:thoth_sopdet</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:horus</span>
+
+<span class="hf-w">  </span><span class="hf-c1"># III. Evolving understanding and return</span>
+<span class="hf-w">  </span><span class="hf-n">understanding</span><span class="hf-w"> </span><span class="hf-ss">:evolving</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">consider</span><span class="hf-w"> </span><span class="hf-ss">:light</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:shadow</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:insight</span>
+<span class="hf-w">    </span><span class="hf-n">integrate</span><span class="hf-w"> </span><span class="hf-ss">:experiences</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:perspectives</span>
+<span class="hf-w">    </span><span class="hf-n">examine</span><span class="hf-w"> </span><span class="hf-ss">:contradictions</span>
+<span class="hf-w">    </span><span class="hf-n">preserve</span><span class="hf-w"> </span><span class="hf-ss">:evidence</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:provenance</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:uncertainty</span>
+<span class="hf-w">    </span><span class="hf-n">remain_open_to</span><span class="hf-w"> </span><span class="hf-ss">:revision</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+
+<span class="hf-w">  </span><span class="hf-k">return</span><span class="hf-w"> </span><span class="hf-ss">from</span><span class="hf-p">:</span><span class="hf-w"> </span><span class="hf-mi">21</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">to</span><span class="hf-p">:</span><span class="hf-w"> </span><span class="hf-mi">0</span><span class="hf-w"> </span><span class="hf-k">do</span>
+<span class="hf-w">    </span><span class="hf-n">carry</span><span class="hf-w"> </span><span class="hf-ss">:evolving_understanding</span>
+<span class="hf-w">    </span><span class="hf-n">transform</span><span class="hf-w"> </span><span class="hf-ss">:perspective</span>
+<span class="hf-w">    </span><span class="hf-n">renew</span><span class="hf-w"> </span><span class="hf-ss">:inquiry</span>
+<span class="hf-w">    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;What can now be seen differently?&quot;</span>
+<span class="hf-w">  </span><span class="hf-k">end</span>
+<span class="hf-k">end</span></code></pre>
+<p class="journey-dsl-note">The semantic definitions and the three paths are distinct: the paths reference the Arcana rather than duplicating them. The return preserves evolving understanding without suggesting that uncertainty has disappeared.</p>
+</div>
+</details>
+
+<p><em>The journey does not repeat itself. It unfolds again from a different understanding.</em></p>
+
+<h2 id="references-and-further-reading">References and further reading</h2>
+
+<ul>
+  <li><a href="https://modelcontextprotocol.io/introduction">Model Context Protocol — Introduction</a> — tools, resources, and interoperable connections.</li>
+  <li><a href="https://docs.github.com/en/copilot/concepts/agents/about-agent-skills">GitHub Docs — About Agent Skills</a> — reusable agent guidance.</li>
+  <li><a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">Anthropic — Equipping Agents for the Real World with Agent Skills</a> — practical skill packaging.</li>
+  <li><a href="https://martinfowler.com/ai/">Martin Fowler — AI</a> — engineering considerations for AI-assisted development.</li>
+  <li><a href="https://dora.dev/research/">DORA Research</a> — evidence on AI and software delivery.</li>
+  <li><a href="https://x.com/karpathy/status/1886192184808149383">Andrej Karpathy’s original vibe-coding discussion (February 2025)</a> — historical framing of the term.</li>
+  <li><a href="https://www.jcf.org/works/titles/the-hero-with-a-thousand-faces">Joseph Campbell, <em>The Hero with a Thousand Faces</em></a> and <a href="https://mwp.com/product/the-writers-journey-25th-anniversary-edition-mythic-structure-for-writers/">Christopher Vogler, <em>The Writer’s Journey</em></a> — narrative frameworks used only as literary inspiration.</li>
+</ul>
+
+<p><em>Editorial note: The Fool’s Journey and the associations between the Major Arcana and software engineering are original interpretive metaphors. The article does not present AI-Assisted, AI-Driven, and AI-Native as standardized maturity levels.</em></p>
+
+<script type="module" src="/assets/js/developer-ai-journey-mermaid.js?v=fold-mermaid-standard-3"></script>]]></content><author><name></name></author><category term="software-engineering" /><category term="ai-native" /><category term="ai-assisted" /><category term="prompting" /><category term="vibe-coding" /><category term="workflows" /><category term="mcp" /><category term="agents" /><category term="skills" /><category term="ai-native" /><category term="evolving-understanding" /><summary type="html"><![CDATA[A developer's map through AI-assisted coding, prompts, vibe coding, tools, agents, skills, and AI-native engineering—told through the Fool's Journey and the evolving nature of understanding.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/developers-ai-journey/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/developers-ai-journey/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">From Ericsson Use Cases to AI-Native Systems</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html" rel="alternate" type="text/html" title="From Ericsson Use Cases to AI-Native Systems" /><published>2026-10-05T15:00:00+00:00</published><updated>2026-10-05T15:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html"><![CDATA[<style>
 .mermaid-diagram img,
 .mermaid-diagram svg {
   display: block;
@@ -3499,164 +4323,4 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
   <li><a href="https://docs.github.com/en/actions/tutorials/build-and-test-code/ruby">GitHub Docs: Building and testing Ruby</a>; <a href="https://github.com/ruby/setup-ruby/blob/master/README.md">ruby/setup-ruby README</a>.</li>
   <li><a href="https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/configure-dependency-review-action">GitHub Docs: Configuring the dependency review action</a>; <a href="https://docs.github.com/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning">CodeQL default setup</a>.</li>
   <li><a href="https://docs.github.com/en/actions/reference/security/secure-use">GitHub Docs: Secure use of Actions</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/review-copilot-output">Review Copilot output</a>.</li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="github-actions" /><category term="devsecops" /><category term="rspec" /><summary type="html"><![CDATA[Turn a Copilot-assisted Rails change into an evidence-led review: tests, dependency controls, static analysis and explicit human decisions.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/rails-ci-security-human-review/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/rails-ci-security-human-review/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">From Issue to Reviewable PR</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/from-issue-to-reviewable-rails-pr.html" rel="alternate" type="text/html" title="From Issue to Reviewable PR" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/from-issue-to-reviewable-rails-pr</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/from-issue-to-reviewable-rails-pr.html"><![CDATA[<p><img src="/assets/images/posts/issue-to-reviewable-rails-pr/cover.webp" alt="GitHub Copilot for Rails Engineers Part 03 cover: a digitized Copilot-inspired character in profile examines a central CaseFlow patch dossier with route, action, specs and an unresolved policy question, amid colorful Holoflux." style="width:100%;height:auto;" /></p>
-
-<blockquote>
-  <p><strong>An agent’s patch is a proposal, not proof.</strong> Give Copilot a bounded Rails task, then inspect the diff, negative tests and unresolved policy before approving the change.</p>
-</blockquote>
-
-<p><em>GitHub Copilot for Rails Engineers · Part 03</em></p>
-
-<p>A Rails agent can edit a route and controller in minutes. The hard part is deciding which behavior it was authorized to add, how a reviewer can verify it, and what remains unknown. In <a href="/ruby/rails/software-engineering/github-copilot/2026/09/25/the-first-30-minutes-in-an-unfamiliar-rails-repository.html">Part 01</a>, we mapped CaseFlow: <code class="language-plaintext highlighter-rouge">resolved</code> is a legal model value, but there is no update endpoint. In <a href="/ruby/rails/software-engineering/github-copilot/2026/09/25/teach-copilot-the-rails-context.html">Part 02</a>, we taught Copilot to cite that boundary. Here we turn the question into <strong>an issue, a candidate diff and a review worksheet</strong>.</p>
-
-<p>The <a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">companion package</a> includes the full baseline Rails API, the issue, an agent prompt, an applicable patch, four proposed request specs, the review worksheet and a study workbook with answers. No GitHub issue or PR has been opened in this educational repository. The patch is a <strong>local review artifact</strong>; Ruby/RSpec and HTTP calls have not been executed in this authoring environment.</p>
-
-<h2 id="contents">Contents</h2>
-
-<ul>
-  <li><a href="#issue">First, make the issue decidable</a></li>
-  <li><a href="#agent">Give the agent a bounded task</a></li>
-  <li><a href="#diff">Inspect the patch as a reviewer</a></li>
-  <li><a href="#verify">Separate test assertions from results</a></li>
-  <li><a href="#review">Turn review into a PR decision</a></li>
-  <li><a href="#lab">Your 35-minute lab</a></li>
-  <li><a href="#references">References and supporting materials</a></li>
-</ul>
-
-<h2 id="issue">First, make the issue decidable</h2>
-
-<p>“Let users update status” hides unanswered questions: which user, which transitions, what happens on an invalid state, and which unrelated fields can change? A good issue turns that uncertainty into acceptance criteria. For this <strong>synthetic exercise</strong>, we propose <code class="language-plaintext highlighter-rouge">PATCH /api/requests/:id/resolve</code>, accepting only <code class="language-plaintext highlighter-rouge">open → resolved</code> and requiring an operator token stored server-side in <code class="language-plaintext highlighter-rouge">CASEFLOW_OPERATOR_TOKEN</code>. This token models an operator capability for the lab; it is <strong>not</strong> a customer-approved production identity system. Missing configuration or missing/incorrect credentials should fail closed. A real engagement would settle actors, authorization, rotation, audit trail and concurrent requests before deployment.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Requested case</th>
-      <th>Expected from candidate source and proposed specs</th>
-      <th>What remains unobserved</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Open + valid token</td>
-      <td><code class="language-plaintext highlighter-rouge">200</code>, serialized <code class="language-plaintext highlighter-rouge">resolved</code>, persisted change</td>
-      <td>Focused RSpec and manual response</td>
-    </tr>
-    <tr>
-      <td>Missing/wrong token</td>
-      <td><code class="language-plaintext highlighter-rouge">401</code>, original state retained</td>
-      <td>Focused negative spec run</td>
-    </tr>
-    <tr>
-      <td>Already <code class="language-plaintext highlighter-rouge">in_progress</code></td>
-      <td><code class="language-plaintext highlighter-rouge">409</code>, clear error, state retained</td>
-      <td>Focused negative spec run</td>
-    </tr>
-    <tr>
-      <td>Client tries arbitrary status</td>
-      <td>No generic update action; resolve never accepts status from payload</td>
-      <td>Route audit and unexpected-input probe</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The full <a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">issue in the package</a> distinguishes the lab decision from unknown production policy. Keep that distinction in a client conversation: a reviewer can evaluate the code against <strong>this issue</strong>, while still withholding deployment approval.</p>
-
-<h2 id="agent">Give the agent a bounded task</h2>
-
-<p>GitHub’s <a href="https://docs.github.com/en/copilot/get-started/quickstart-for-using-github-copilot-on-github-com">Copilot cloud agent quickstart</a> describes assigning an issue and reviewing the resulting pull request. On your Mac, you can also use VS Code agent mode with the packaged <a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">task prompt</a>. Both routes depend on repository access and feature availability. This package has no GitHub remote for the CaseFlow lab, so nothing here claims the cloud agent opened a PR.</p>
-
-<p>Ask for <strong>plan → change → focused tests → diff summary → review</strong>, in that order. Give the agent exact context: the issue, <code class="language-plaintext highlighter-rouge">config/routes.rb</code>, <code class="language-plaintext highlighter-rouge">app/controllers/api/requests_controller.rb</code>, <code class="language-plaintext highlighter-rouge">app/models/service_request.rb</code>, and <code class="language-plaintext highlighter-rouge">spec/requests/api/requests_spec.rb</code>. Open <code class="language-plaintext highlighter-rouge">caseflow/</code> as the workspace root so its <code class="language-plaintext highlighter-rouge">.github/</code> instructions are in scope. One useful instruction from the packaged prompt is:</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Implement only the issue's scope. Report the exact files changed,
-negative cases, tests you actually ran, and any blocker.
-Do not invent a passing CI run or treat the lab token as a production policy.
-</code></pre></div></div>
-
-<p>The review stage cannot be delegated away. GitHub’s <a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/review-copilot-output">guide to reviewing agent output</a> tells reviewers to inspect changes and test results before merging. It also documents conditions under which workflows for agent-authored PRs need explicit approval; check the actual Actions state instead of assuming that a badge ran automatically.</p>
-
-<figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/d65b7245d970b8b3ea6a.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-<p>The green PR node means <strong>a document with recorded evidence</strong>, not a merged or production-safe feature. The test branch can land in a blocker. That branch is as important as the happy path.</p>
-
-<h2 id="diff">Inspect the patch as a reviewer</h2>
-
-<p>A local candidate patch in <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/candidate.patch</code> proposes exactly three changed files: route, controller and request spec. From the <strong>companion root</strong>, inspect before applying:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git apply <span class="nt">--check</span> parts/03-issue-to-pr/candidate.patch
-git apply <span class="nt">--stat</span> parts/03-issue-to-pr/candidate.patch
-git apply parts/03-issue-to-pr/candidate.patch
-</code></pre></div></div>
-
-<p>The support ZIP contains the complete baseline <code class="language-plaintext highlighter-rouge">caseflow/</code> Rails app. The patch is an optional change to that app; keep a clean copy if you want to repeat the exercise. <code class="language-plaintext highlighter-rouge">git apply --check</code> passed on the packaged baseline at authoring time; that check says only that the patch fits, not that the Rails feature works.</p>
-
-<p>The route patch declares a single member action, without exposing general update:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resources</span> <span class="ss">:requests</span><span class="p">,</span> <span class="ss">only: </span><span class="sx">%i[index show create]</span> <span class="k">do</span>
-  <span class="n">patch</span> <span class="ss">:resolve</span><span class="p">,</span> <span class="ss">on: :member</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>The controller’s proposed guard reads the token from the environment, refuses empty configuration, and compares supplied credentials using Rails’ secure comparison utility. Its <code class="language-plaintext highlighter-rouge">resolve</code> action looks up the request, rejects non-<code class="language-plaintext highlighter-rouge">open</code> state, then writes <code class="language-plaintext highlighter-rouge">resolved</code> explicitly. It does <strong>not</strong> permit <code class="language-plaintext highlighter-rouge">params[:status]</code>. Rails documents <a href="https://guides.rubyonrails.org/action_controller_advanced_topics.html#http-token-authentication">HTTP token authentication</a>; the candidate uses that mechanism as an educational boundary, not as a finished authorization design.</p>
-
-<figure>
-  <img src="/assets/images/posts/issue-to-reviewable-rails-pr/review-diff.webp" alt="A central cutaway of an operator-token authorization guard is surrounded by valid-token, no-token and wrong-state specimens; an amber tag says run pending." style="width:100%;height:auto;" />
-  <figcaption>The proposed guard and three request cases sit at the center of this conceptual cross-section. The colored streams express alternatives; “run pending” remains until an actual result is captured.</figcaption>
-</figure>
-
-<p>Review questions are concrete. Does the token guard run <strong>before</strong> the database lookup? If the environment variable is unset, could the endpoint become public? Can a client transition <code class="language-plaintext highlighter-rouge">in_progress</code>? Could a second concurrent request race between the state check and the write? What does a missing ID return on your actual Rails configuration? The candidate handles the first three in source, but lacks a focused unset-token spec and does not settle concurrency, audit or missing-ID behavior. Those are findings, not silent assumptions.</p>
-
-<h2 id="verify">Separate test assertions from results</h2>
-
-<p>The candidate adds four request examples: valid token and open request, no token, wrong token, and valid token with <code class="language-plaintext highlighter-rouge">in_progress</code>. Each asserts the expected status and persistence. Apply the patch, then from <code class="language-plaintext highlighter-rouge">caseflow/</code> run:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install
-</span><span class="nv">RAILS_ENV</span><span class="o">=</span><span class="nb">test </span>bin/rails db:prepare
-bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
-</code></pre></div></div>
-
-<p>Log the versions, command, exit code and output in your private <code class="language-plaintext highlighter-rouge">ENVIRONMENT.md</code>; the <a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">app README</a> explains initial setup. A green output in one local environment would support this specific candidate, not a production guarantee. If Bundler or SQLite blocks setup, record the first error. The verified baseline still contains only the original route and specs until you apply the patch.</p>
-
-<p>For an optional manual probe, start the patched server with a <strong>synthetic, locally set</strong> value, then use an existing request ID returned by <code class="language-plaintext highlighter-rouge">POST</code>. Do not commit the token or paste a real secret into the issue:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">CASEFLOW_OPERATOR_TOKEN</span><span class="o">=</span>synthetic-operator-token bin/rails server
-
-curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhost:3000/api/requests/1/resolve <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s1">'Authorization: Bearer synthetic-operator-token'</span>
-
-curl <span class="nt">-i</span> <span class="nt">-X</span> PATCH http://localhost:3000/api/requests/1/resolve
-</code></pre></div></div>
-
-<p>Replace <code class="language-plaintext highlighter-rouge">1</code> with the actual created ID. Expected source branches are a successful transition and a <code class="language-plaintext highlighter-rouge">401</code> for a missing token. They are <strong>not captured responses</strong>. Confirm whether your Rails version accepts the chosen token header and inspect the actual JSON and database state. For a real service, use HTTPS and a reviewed credential and authorization design.</p>
-
-<h2 id="review">Turn review into a PR decision</h2>
-
-<p>The packaged <code class="language-plaintext highlighter-rouge">PR-REVIEW.md</code> is a review worksheet, <strong>not a fabricated PR</strong>. It requests exact results, highlights the single shared operator token as a production decision, and asks for an unset-token case and concurrency discussion. A useful draft PR description states the scope, links the issue, gives the focused command and its actual result, lists remaining unknowns and asks for a reviewer decision. If tests have not run, “pending due to environment blocker” is the correct entry.</p>
-
-<p>In a consultative engagement, the client receives a bounded answer: “We have a candidate patch with a narrow endpoint and explicit rejection cases. We cannot recommend deployment until your authorization rule is defined and we have real test and review evidence.” The agent accelerated the diff; the review made it accountable.</p>
-
-<h2 id="lab">Your 35-minute lab</h2>
-
-<ol>
-  <li>Read <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/ISSUE.md</code>. Mark the synthetic operator-token assumption and write one different production authorization question.</li>
-  <li>Ask Copilot to plan and propose the change from <code class="language-plaintext highlighter-rouge">.github/prompts/03-agent-issue-to-pr.prompt.md</code> after opening <code class="language-plaintext highlighter-rouge">caseflow/</code> in VS Code (invoke <code class="language-plaintext highlighter-rouge">/03-agent-issue-to-pr</code>). Record paths and tests it proposes before seeing the packaged candidate patch.</li>
-  <li>Inspect <code class="language-plaintext highlighter-rouge">candidate.patch</code>; apply it to a clean copy with <code class="language-plaintext highlighter-rouge">git apply --check</code>, then compare your agent’s diff to the candidate. Flag extra migrations, mass-assigned status or invented policy classes.</li>
-  <li>Run focused RSpec where possible, record its exact output, then inspect the positive and negative branches. Do not call a static <code class="language-plaintext highlighter-rouge">git apply</code> result a passed test.</li>
-  <li>Complete <code class="language-plaintext highlighter-rouge">PR-REVIEW.md</code> and the <a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">study workbook</a>. Make one explicit <strong>review decision</strong>: change requested, evidence pending or acceptable for this lab; distinguish each from production approval.</li>
-</ol>
-
-<p><strong>Acceptance criterion:</strong> a reviewer can inspect every changed path, tie each acceptance case to an assertion or observed run, and identify the unresolved customer authorization decision.</p>
-
-<h2 id="references">References and supporting materials</h2>
-
-<p><strong>Finding the prompt after download:</strong> extract the support ZIP and open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/03-agent-issue-to-pr.md</code> to read the full prompt. For Copilot Chat, open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/caseflow/</code> as the VS Code workspace; the executable file is <code class="language-plaintext highlighter-rouge">.github/prompts/03-agent-issue-to-pr.prompt.md</code>. Invoke <code class="language-plaintext highlighter-rouge">/03-agent-issue-to-pr</code>. On macOS, Finder may hide the <code class="language-plaintext highlighter-rouge">.github</code> directory (press Command-Shift-Period to show hidden files). The companion also contains the complete three-prompt catalog in <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/prompts/</code>.</p>
-
-<ul>
-  <li><a href="/assets/downloads/03-agent-issue-to-pr.prompt.txt">Read or download the Part 03 Copilot prompt</a>: a standalone text copy. To run it as a VS Code prompt file, use the matching <code class="language-plaintext highlighter-rouge">.prompt.md</code> inside the support ZIP under <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/caseflow/.github/prompts/</code>.</li>
-  <li><a href="/assets/downloads/issue-to-reviewable-rails-pr-support.zip">Download Part 03 package</a>: this article’s Markdown, integrated baseline Rails app, candidate patch, issue, agent prompt, review worksheet, workbook with answers, editable Mermaid and visual masters.</li>
-  <li><a href="https://docs.github.com/en/copilot/get-started/quickstart-for-using-github-copilot-on-github-com">GitHub Docs: Copilot on GitHub quickstart</a></li>
-  <li><a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/review-copilot-output">GitHub Docs: review Copilot output</a></li>
-  <li><a href="https://docs.github.com/en/copilot/concepts/agents/code-review">GitHub Docs: Copilot code review</a></li>
-  <li><a href="https://guides.rubyonrails.org/action_controller_advanced_topics.html#http-token-authentication">Rails Guides: HTTP token authentication</a></li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="coding-agent" /><category term="pull-requests" /><category term="code-review" /><summary type="html"><![CDATA[Turn a bounded CaseFlow status-transition issue into an auditable Rails patch: scope, agent task, negative tests, diff review and honest verification.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/issue-to-reviewable-rails-pr/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/issue-to-reviewable-rails-pr/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="github-actions" /><category term="devsecops" /><category term="rspec" /><summary type="html"><![CDATA[Turn a Copilot-assisted Rails change into an evidence-led review: tests, dependency controls, static analysis and explicit human decisions.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/rails-ci-security-human-review/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/rails-ci-security-human-review/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
