@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-09T03:28:01+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">The Developer’s AI Journey: From Prompts to AI-Native Engineering</title><link href="https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey.html" rel="alternate" type="text/html" title="The Developer’s AI Journey: From Prompts to AI-Native Engineering" /><published>2026-10-08T00:00:00+00:00</published><updated>2026-10-08T00:00:00+00:00</updated><id>https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey</id><content type="html" xml:base="https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey.html"><![CDATA[<link rel="stylesheet" href="/assets/css/developer-ai-journey.css?v=fold-mermaid-standard-3" />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-09T04:06:38+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">The Developer’s AI Journey: From Prompts to AI-Native Engineering</title><link href="https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey.html" rel="alternate" type="text/html" title="The Developer’s AI Journey: From Prompts to AI-Native Engineering" /><published>2026-10-08T00:00:00+00:00</published><updated>2026-10-08T00:00:00+00:00</updated><id>https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey</id><content type="html" xml:base="https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey.html"><![CDATA[<link rel="stylesheet" href="/assets/css/developer-ai-journey.css?v=publication-final-1?v=publication-final-1" />
 
 <figure class="journey-art journey-cover">
   <img src="/assets/images/posts/developers-ai-journey/cover.webp" alt="Illustrated infographic showing a developer's evolving understanding across prompting, workflows, agents, skills and AI-native engineering" fetchpriority="high" />
@@ -48,10 +48,14 @@
 <div class="journey-mermaid">
 <script type="text/plain" class="journey-mermaid-source">
 flowchart TD
-  F(["🧭 0 · Open mind"]):::context --> E["🔎 Explore AI"]:::observation
-  E --> B["🧪 Build and verify"]:::evidence
-  B --> W(["🧠 XXI · Integration"]):::understanding
-  W -. "new inquiry" .-> F
+  I(["🧭 0 · Open mind"]):::context
+  Q["🔎 Explore AI capabilities"]:::observation
+  P["🧩 Prompting · tools · workflows"]:::hypothesis
+  V["🧪 Build, test, verify"]:::evidence
+  U(["🧠 XXI · Integrated understanding"]):::understanding
+  R["🔗 Renewed inquiry"]:::projection
+  I --> Q --> P --> V --> U --> R
+  R -.-> I
 
   classDef context fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
   classDef observation fill:#DDF3E8,stroke:#78AA91,color:#3E342C,stroke-width:2px;
@@ -59,11 +63,12 @@ flowchart TD
   classDef evidence fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
   classDef hypothesis fill:#F8DFC4,stroke:#C9986D,color:#3E342C,stroke-width:2px;
   classDef uncertainty fill:#F6D6DD,stroke:#BF7C89,color:#3E342C,stroke-width:2px;
+  classDef contradiction fill:#F4CFC8,stroke:#B96B5D,color:#3E342C,stroke-width:2px;
   classDef understanding fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
   classDef projection fill:#ECEBE8,stroke:#9C9992,color:#3E342C,stroke-width:2px;
   classDef orchestration fill:#DDE3F4,stroke:#8998C8,color:#3E342C,stroke-width:2px;
 </script>
-<div class="journey-mermaid-render" role="img" aria-label="Software engineering process diagram"><img class="journey-mermaid-fallback" src="/assets/images/posts/developers-ai-journey/journey-diagram-1-fallback.svg" alt="Static fallback for diagram 1: 0 · Open mind / Explore capabilities / Build and verify / XXI · Integrate understanding" loading="lazy" /></div>
+<div class="journey-mermaid-render" role="img" aria-label="Diagram showing the developer journey and its engineering relationships"><img class="journey-mermaid-fallback" src="/assets/images/posts/developers-ai-journey/journey-diagram-1-fallback.svg" alt="Static fallback for diagram 1: 0 · Open mind / Explore capabilities / Build and verify / XXI · Integrate understanding" loading="lazy" /></div>
 </div>
 
 <p class="journey-image-credit"><small>Major Arcana imagery: <a href="https://commons.wikimedia.org/wiki/Category:Rider-Waite-Smith_tarot_deck_(TaionWC)">Rider–Waite–Smith (Pam-A) collection</a>, illustrated by Pamela Colman Smith (1909–1910), via Wikimedia Commons. Original artwork is public domain; card images load from Wikimedia Commons and require an internet connection unless downloaded locally.</small></p>
@@ -114,6 +119,49 @@ flowchart TD
 
 <p>The arcana remain the <strong>symbolic encounters</strong> of the story; these paths describe <strong>different ways to interpret what happens during those encounters</strong>. For example, the Hanged Man (XII) belongs to the Path of Horus, the Tower (XVI) to the Path of Osiris, and Justice (XI) to the Path of Thoth–Sopdet. These correspondences are editorial interpretations rather than fixed tarot rules.</p>
 
+<section class="journey-arcana-explorer" aria-label="Explore the 22 Major Arcana">
+  <div class="journey-explorer-heading"><h3>Explore the 22 Major Arcana</h3><p>Choose a card without leaving this view. The reading below continues in three expandable acts.</p></div>
+  <div class="journey-explorer-tabs" role="tablist" aria-label="Select a Major Arcana" aria-orientation="horizontal">
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="0" aria-label="Arcana 0, The Fool" aria-selected="true" tabindex="0">0</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="1" aria-label="Arcana I, The Magician" aria-selected="false" tabindex="-1">I</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="2" aria-label="Arcana II, The High Priestess" aria-selected="false" tabindex="-1">II</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="3" aria-label="Arcana III, The Empress" aria-selected="false" tabindex="-1">III</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="4" aria-label="Arcana IV, The Emperor" aria-selected="false" tabindex="-1">IV</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="5" aria-label="Arcana V, The Hierophant" aria-selected="false" tabindex="-1">V</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="6" aria-label="Arcana VI, The Lovers" aria-selected="false" tabindex="-1">VI</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="7" aria-label="Arcana VII, The Chariot" aria-selected="false" tabindex="-1">VII</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="8" aria-label="Arcana VIII, Strength" aria-selected="false" tabindex="-1">VIII</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="9" aria-label="Arcana IX, The Hermit" aria-selected="false" tabindex="-1">IX</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="10" aria-label="Arcana X, Wheel of Fortune" aria-selected="false" tabindex="-1">X</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="11" aria-label="Arcana XI, Justice" aria-selected="false" tabindex="-1">XI</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="12" aria-label="Arcana XII, The Hanged Man" aria-selected="false" tabindex="-1">XII</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="13" aria-label="Arcana XIII, Death" aria-selected="false" tabindex="-1">XIII</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="14" aria-label="Arcana XIV, Temperance" aria-selected="false" tabindex="-1">XIV</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="15" aria-label="Arcana XV, The Devil" aria-selected="false" tabindex="-1">XV</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="16" aria-label="Arcana XVI, The Tower" aria-selected="false" tabindex="-1">XVI</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="17" aria-label="Arcana XVII, The Star" aria-selected="false" tabindex="-1">XVII</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="18" aria-label="Arcana XVIII, The Moon" aria-selected="false" tabindex="-1">XVIII</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="19" aria-label="Arcana XIX, The Sun" aria-selected="false" tabindex="-1">XIX</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="20" aria-label="Arcana XX, Judgement" aria-selected="false" tabindex="-1">XX</button>
+    <button type="button" class="journey-explorer-tab" role="tab" data-arcana="21" aria-label="Arcana XXI, The World" aria-selected="false" tabindex="-1">XXI</button>
+  </div>
+  <div class="journey-explorer-viewport" id="journey-explorer-panel" role="tabpanel" aria-label="Selected Arcana" tabindex="0">
+    <div class="journey-explorer-art"><img class="journey-explorer-image" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2000%20Fool.jpg?width=420" alt="The Fool, authentic Rider–Waite–Smith tarot card" width="112" height="168" loading="lazy" /></div>
+    <div class="journey-explorer-content">
+      <div class="journey-explorer-kicker"><span data-field="number">ARCANA 0</span> · <span data-field="path">Origin</span></div>
+      <h4 data-field="name">The Fool</h4>
+      <dl class="journey-explorer-definitions">
+        <div><dt>Context</dt><dd data-field="context">Open-minded AI exploration</dd></div>
+        <div><dt>Light</dt><dd data-field="light">Curiosity and experimentation</dd></div>
+        <div><dt>Shadow</dt><dd data-field="shadow">Naivety and blind trust</dd></div>
+        <div><dt>Insight</dt><dd data-field="insight">Explore without surrendering judgment</dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="journey-explorer-footer"><span class="journey-explorer-counter" aria-live="polite">1 of 22</span><div class="journey-explorer-actions"><button type="button" data-step="-1" disabled="">Previous</button><button type="button" data-step="1">Next</button></div></div>
+  <noscript><p>JavaScript is required for this interactive viewer. All 22 cards are also available in the expandable reading below.</p></noscript>
+</section>
+
 <h2 id="act-i--the-awakening">Act I — The Awakening</h2>
 
 <figure class="journey-art">
@@ -126,7 +174,7 @@ flowchart TD
   <div class="journey-act-fold-body">
 
     <section class="journey-reading-card" id="reading-arcana-0" aria-labelledby="reading-title-0">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2000%20Fool.jpg?width=420" alt="Rider–Waite–Smith Major Arcana 0, The Fool" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2000%20Fool.jpg?width=420" alt="Rider–Waite–Smith Major Arcana 0, The Fool" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM 0</span>
     <h3 id="reading-title-0">The Fool — An open mind</h3>
@@ -136,7 +184,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-1" aria-labelledby="reading-title-1">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2001%20Magician.jpg?width=420" alt="Rider–Waite–Smith Major Arcana I, The Magician" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2001%20Magician.jpg?width=420" alt="Rider–Waite–Smith Major Arcana I, The Magician" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM I</span>
     <h3 id="reading-title-1">The Magician — Code completion</h3>
@@ -146,7 +194,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-2" aria-labelledby="reading-title-2">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2002%20High%20Priestess.jpg?width=420" alt="Rider–Waite–Smith Major Arcana II, The High Priestess" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2002%20High%20Priestess.jpg?width=420" alt="Rider–Waite–Smith Major Arcana II, The High Priestess" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM II</span>
     <h3 id="reading-title-2">The High Priestess — Prompts and context</h3>
@@ -156,7 +204,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-3" aria-labelledby="reading-title-3">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2003%20Empress.jpg?width=420" alt="Rider–Waite–Smith Major Arcana III, The Empress" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2003%20Empress.jpg?width=420" alt="Rider–Waite–Smith Major Arcana III, The Empress" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM III</span>
     <h3 id="reading-title-3">The Empress — Vibe coding and creation</h3>
@@ -166,7 +214,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-4" aria-labelledby="reading-title-4">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2004%20Emperor.jpg?width=420" alt="Rider–Waite–Smith Major Arcana IV, The Emperor" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2004%20Emperor.jpg?width=420" alt="Rider–Waite–Smith Major Arcana IV, The Emperor" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM IV</span>
     <h3 id="reading-title-4">The Emperor — Workflows and structure</h3>
@@ -183,12 +231,17 @@ flowchart TD
     <div class="journey-mermaid">
 <script type="text/plain" class="journey-mermaid-source">
 flowchart TD
-  I(["🧭 Intent"]):::context --> R["🔎 Inspect repository"]:::observation
-  R --> P["🧩 Propose change"]:::hypothesis
-  P --> T["🧪 Run checks"]:::evidence
-  T --> V{"❓ Verified?"}:::uncertainty
-  V -->|No| P
-  V -->|Yes| H\[\"👁 Human review\"]:::observation
+  G(["🧭 Intent and constraints"]):::context
+  E["👁 Inspect repository"]:::observation
+  H["🧩 Propose change"]:::hypothesis
+  C["🧪 Run checks"]:::evidence
+  D{"❓ Verified?"}:::uncertainty
+  A["📄 Update implementation"]:::projection
+  R["👁 Human review"]:::observation
+  U(["🧠 Accepted change"]):::understanding
+  G --> E --> H --> C --> D
+  D -->|No| H
+  D -->|Yes| A --> R --> U
 
   classDef context fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
   classDef observation fill:#DDF3E8,stroke:#78AA91,color:#3E342C,stroke-width:2px;
@@ -196,11 +249,12 @@ flowchart TD
   classDef evidence fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
   classDef hypothesis fill:#F8DFC4,stroke:#C9986D,color:#3E342C,stroke-width:2px;
   classDef uncertainty fill:#F6D6DD,stroke:#BF7C89,color:#3E342C,stroke-width:2px;
+  classDef contradiction fill:#F4CFC8,stroke:#B96B5D,color:#3E342C,stroke-width:2px;
   classDef understanding fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
   classDef projection fill:#ECEBE8,stroke:#9C9992,color:#3E342C,stroke-width:2px;
   classDef orchestration fill:#DDE3F4,stroke:#8998C8,color:#3E342C,stroke-width:2px;
 </script>
-<div class="journey-mermaid-render" role="img" aria-label="Software engineering process diagram"><img class="journey-mermaid-fallback" src="/assets/images/posts/developers-ai-journey/journey-diagram-2-fallback.svg" alt="Static fallback for diagram 2: Intent and constraints / Explore repository / Propose change / Run tests and checks / Human review / Verified?" loading="lazy" /></div>
+<div class="journey-mermaid-render" role="img" aria-label="Diagram showing the developer journey and its engineering relationships"><img class="journey-mermaid-fallback" src="/assets/images/posts/developers-ai-journey/journey-diagram-2-fallback.svg" alt="Static fallback for diagram 2: Intent and constraints / Explore repository / Propose change / Run tests and checks / Human review / Verified?" loading="lazy" /></div>
 </div>
 
   </div>
@@ -218,7 +272,7 @@ flowchart TD
   <div class="journey-act-fold-body">
 
     <section class="journey-reading-card" id="reading-arcana-5" aria-labelledby="reading-title-5">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2005%20Hierophant.jpg?width=420" alt="Rider–Waite–Smith Major Arcana V, The Hierophant" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2005%20Hierophant.jpg?width=420" alt="Rider–Waite–Smith Major Arcana V, The Hierophant" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM V</span>
     <h3 id="reading-title-5">The Hierophant — Skills and tradition</h3>
@@ -228,7 +282,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-6" aria-labelledby="reading-title-6">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2006%20Lovers.jpg?width=420" alt="Rider–Waite–Smith Major Arcana VI, The Lovers" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2006%20Lovers.jpg?width=420" alt="Rider–Waite–Smith Major Arcana VI, The Lovers" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM VI</span>
     <h3 id="reading-title-6">The Lovers — Human–AI collaboration</h3>
@@ -238,7 +292,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-7" aria-labelledby="reading-title-7">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2007%20Chariot.jpg?width=420" alt="Rider–Waite–Smith Major Arcana VII, The Chariot" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2007%20Chariot.jpg?width=420" alt="Rider–Waite–Smith Major Arcana VII, The Chariot" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM VII</span>
     <h3 id="reading-title-7">The Chariot — Tools and MCP</h3>
@@ -255,7 +309,7 @@ flowchart TD
 </div>
 
     <section class="journey-reading-card" id="reading-arcana-8" aria-labelledby="reading-title-8">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2008%20Strength.jpg?width=420" alt="Rider–Waite–Smith Major Arcana VIII, Strength" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2008%20Strength.jpg?width=420" alt="Rider–Waite–Smith Major Arcana VIII, Strength" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM VIII</span>
     <h3 id="reading-title-8">Strength — Controlled autonomy</h3>
@@ -265,7 +319,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-9" aria-labelledby="reading-title-9">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2009%20Hermit.jpg?width=420" alt="Rider–Waite–Smith Major Arcana IX, The Hermit" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2009%20Hermit.jpg?width=420" alt="Rider–Waite–Smith Major Arcana IX, The Hermit" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM IX</span>
     <h3 id="reading-title-9">The Hermit — Reflection and discernment</h3>
@@ -275,7 +329,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-10" aria-labelledby="reading-title-10">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2010%20Wheel%20of%20Fortune.jpg?width=420" alt="Rider–Waite–Smith Major Arcana X, Wheel of Fortune" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2010%20Wheel%20of%20Fortune.jpg?width=420" alt="Rider–Waite–Smith Major Arcana X, Wheel of Fortune" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM X</span>
     <h3 id="reading-title-10">Wheel of Fortune — A changing landscape</h3>
@@ -285,7 +339,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-11" aria-labelledby="reading-title-11">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2011%20Justice.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XI, Justice" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2011%20Justice.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XI, Justice" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM XI</span>
     <h3 id="reading-title-11">Justice — Verification and accountability</h3>
@@ -295,7 +349,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-12" aria-labelledby="reading-title-12">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2012%20Hanged%20Man.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XII, The Hanged Man" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2012%20Hanged%20Man.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XII, The Hanged Man" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM XII</span>
     <h3 id="reading-title-12">The Hanged Man — A change in perspective</h3>
@@ -305,7 +359,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-13" aria-labelledby="reading-title-13">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2013%20Death.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XIII, Death" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2013%20Death.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XIII, Death" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM XIII</span>
     <h3 id="reading-title-13">Death — Letting go of assumptions</h3>
@@ -315,7 +369,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-14" aria-labelledby="reading-title-14">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2014%20Temperance.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XIV, Temperance" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2014%20Temperance.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XIV, Temperance" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM XIV</span>
     <h3 id="reading-title-14">Temperance — Human–AI integration</h3>
@@ -325,7 +379,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-15" aria-labelledby="reading-title-15">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2015%20Devil.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XV, The Devil" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2015%20Devil.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XV, The Devil" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM XV</span>
     <h3 id="reading-title-15">The Devil — The dependency trap</h3>
@@ -335,7 +389,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-16" aria-labelledby="reading-title-16">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2016%20Tower.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XVI, The Tower" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2016%20Tower.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XVI, The Tower" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM XVI</span>
     <h3 id="reading-title-16">The Tower — Failure reveals the architecture</h3>
@@ -364,7 +418,7 @@ flowchart TD
   <div class="journey-act-fold-body">
 
     <section class="journey-reading-card" id="reading-arcana-17" aria-labelledby="reading-title-17">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2017%20Star.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XVII, The Star" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2017%20Star.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XVII, The Star" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM XVII</span>
     <h3 id="reading-title-17">The Star — Renewed vision</h3>
@@ -374,7 +428,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-18" aria-labelledby="reading-title-18">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2018%20Moon.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XVIII, The Moon" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2018%20Moon.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XVIII, The Moon" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM XVIII</span>
     <h3 id="reading-title-18">The Moon — Uncertainty and evidence</h3>
@@ -384,7 +438,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-19" aria-labelledby="reading-title-19">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2019%20Sun.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XIX, The Sun" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2019%20Sun.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XIX, The Sun" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM XIX</span>
     <h3 id="reading-title-19">The Sun — Clarity through inquiry</h3>
@@ -394,7 +448,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-20" aria-labelledby="reading-title-20">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2020%20Judgement.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XX, Judgement" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2020%20Judgement.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XX, Judgement" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM XX</span>
     <h3 id="reading-title-20">Judgement — Reimagining architecture</h3>
@@ -404,7 +458,7 @@ flowchart TD
 </section>
 
     <section class="journey-reading-card" id="reading-arcana-21" aria-labelledby="reading-title-21">
-  <img class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2021%20World.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XXI, The World" loading="lazy" width="80" height="120" />
+  <img decoding="async" class="journey-reading-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/RWS%20Tarot%2021%20World.jpg?width=420" alt="Rider–Waite–Smith Major Arcana XXI, The World" loading="lazy" width="80" height="120" />
   <div class="journey-reading-copy">
     <span class="journey-reading-number">ARCANUM XXI</span>
     <h3 id="reading-title-21">The World — Integration, not completion</h3>
@@ -439,18 +493,26 @@ flowchart TD
     <div class="journey-mermaid">
 <script type="text/plain" class="journey-mermaid-source">
 flowchart TD
-  I(["🧭 Human intent"]):::context --> O["⚙️ Orchestration"]:::orchestration
-  O --> C[("📚 Context")]:::context
-  O --> M["🧩 Models"]:::hypothesis
-  M --> T["▶️ Tools"]:::orchestration
-  C --> X["👁 Outputs"]:::observation
+  H(["🧭 Human intent"]):::context
+  O["⚙️ Orchestration layer"]:::orchestration
+  K(["📚 Context and knowledge"]):::context
+  M["🧩 Models and reasoning"]:::hypothesis
+  T["▶️ Approved tools"]:::orchestration
+  X["👁 Outputs and observations"]:::observation
+  V["🧪 Evaluation"]:::evidence
+  D{"❓ Accepted?"}:::uncertainty
+  A["📄 Action / artifact"]:::projection
+  U(["🧠 Feedback and understanding"]):::understanding
+  H --> O
+  O --> K
+  O --> M
+  M --> T
+  K --> X
   T --> X
-  X --> V["🧪 Evaluation"]:::evidence
-  V --> D{"❓ Accepted?"}:::uncertainty
+  X --> V --> D
   D -->|Revise| O
-  D -->|Yes| A\[\"▶️ Action\"]:::projection
-  A --> F(["🧠 Feedback"]):::understanding
-  F -. "new context" .-> I
+  D -->|Yes| A --> U
+  U -.-> H
 
   classDef context fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
   classDef observation fill:#DDF3E8,stroke:#78AA91,color:#3E342C,stroke-width:2px;
@@ -458,11 +520,12 @@ flowchart TD
   classDef evidence fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
   classDef hypothesis fill:#F8DFC4,stroke:#C9986D,color:#3E342C,stroke-width:2px;
   classDef uncertainty fill:#F6D6DD,stroke:#BF7C89,color:#3E342C,stroke-width:2px;
+  classDef contradiction fill:#F4CFC8,stroke:#B96B5D,color:#3E342C,stroke-width:2px;
   classDef understanding fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
   classDef projection fill:#ECEBE8,stroke:#9C9992,color:#3E342C,stroke-width:2px;
   classDef orchestration fill:#DDE3F4,stroke:#8998C8,color:#3E342C,stroke-width:2px;
 </script>
-<div class="journey-mermaid-render" role="img" aria-label="Software engineering process diagram"><img class="journey-mermaid-fallback" src="/assets/images/posts/developers-ai-journey/journey-diagram-3-fallback.svg" alt="Static fallback for diagram 3: Human intent / Application / orchestration / Context and knowledge / Models and reasoning / Approved tools / Observations and results / Evaluation and" loading="lazy" /></div>
+<div class="journey-mermaid-render" role="img" aria-label="Diagram showing the developer journey and its engineering relationships"><img class="journey-mermaid-fallback" src="/assets/images/posts/developers-ai-journey/journey-diagram-3-fallback.svg" alt="Static fallback for diagram 3: Human intent / Application / orchestration / Context and knowledge / Models and reasoning / Approved tools / Observations and results / Evaluation and" loading="lazy" /></div>
 </div>
 
   </div>
@@ -578,15 +641,25 @@ flowchart TD
 <div class="journey-mermaid">
 <script type="text/plain" class="journey-mermaid-source">
 flowchart TD
-  A[("📚 22 Arcana")]:::context --> F(["🧭 0 · The Fool"]):::context
-  F --> O["🧩 Osiris"]:::hypothesis
-  F --> T["🔎 Thoth–Sopdet"]:::observation
-  F --> H["▶️ Horus"]:::projection
-  O --> U(["🧠 Understanding"]):::understanding
+  A(["📚 22 Major Arcana"]):::context
+  F(["🧭 0 · The Fool"]):::context
+  subgraph S["🔗 Three interwoven paths"]
+    direction TB
+    O["🧩 Osiris · Transformation"]:::hypothesis
+    T["👁 Thoth–Sopdet · Awakening"]:::observation
+    H["📄 Horus · Experience"]:::projection
+  end
+  U(["🧠 Evolving understanding"]):::understanding
+  R(["🔗 XXI → 0 · Renewed inquiry"]):::projection
+  A --> F
+  F --> O
+  F --> T
+  F --> H
+  O --> U
   T --> U
   H --> U
-  U --> R(["🔗 XXI → 0"]):::understanding
-  R -. "renewed inquiry" .-> F
+  U --> R
+  R -.-> F
 
   classDef context fill:#D9EAF7,stroke:#7AA6C2,color:#3E342C,stroke-width:2px;
   classDef observation fill:#DDF3E8,stroke:#78AA91,color:#3E342C,stroke-width:2px;
@@ -594,6 +667,7 @@ flowchart TD
   classDef evidence fill:#E8DDF5,stroke:#A68BC4,color:#3E342C,stroke-width:2px;
   classDef hypothesis fill:#F8DFC4,stroke:#C9986D,color:#3E342C,stroke-width:2px;
   classDef uncertainty fill:#F6D6DD,stroke:#BF7C89,color:#3E342C,stroke-width:2px;
+  classDef contradiction fill:#F4CFC8,stroke:#B96B5D,color:#3E342C,stroke-width:2px;
   classDef understanding fill:#DCEFD6,stroke:#86A878,color:#3E342C,stroke-width:2px;
   classDef projection fill:#ECEBE8,stroke:#9C9992,color:#3E342C,stroke-width:2px;
   classDef orchestration fill:#DDE3F4,stroke:#8998C8,color:#3E342C,stroke-width:2px;
@@ -822,7 +896,9 @@ flowchart TD
 
 <p><em>Editorial note: The Fool’s Journey and the associations between the Major Arcana and software engineering are original interpretive metaphors. The article does not present AI-Assisted, AI-Driven, and AI-Native as standardized maturity levels.</em></p>
 
-<script type="module" src="/assets/js/developer-ai-journey-mermaid.js?v=fold-mermaid-standard-3"></script>]]></content><author><name></name></author><category term="software-engineering" /><category term="ai-native" /><category term="ai-assisted" /><category term="prompting" /><category term="vibe-coding" /><category term="workflows" /><category term="mcp" /><category term="agents" /><category term="skills" /><category term="ai-native" /><category term="evolving-understanding" /><summary type="html"><![CDATA[A developer's map through AI-assisted coding, prompts, vibe coding, tools, agents, skills, and AI-native engineering—told through the Fool's Journey and the evolving nature of understanding.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/developers-ai-journey/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/developers-ai-journey/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">From Ericsson Use Cases to AI-Native Systems</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html" rel="alternate" type="text/html" title="From Ericsson Use Cases to AI-Native Systems" /><published>2026-10-05T15:00:00+00:00</published><updated>2026-10-05T15:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html"><![CDATA[<style>
+<script defer="" src="/assets/js/developer-ai-journey-explorer.js?v=explorer-fix-2"></script>
+
+<script type="module" src="/assets/js/developer-ai-journey-mermaid.js?v=explorer-fix-2"></script>]]></content><author><name></name></author><category term="software-engineering" /><category term="ai-native" /><category term="ai-assisted" /><category term="prompting" /><category term="vibe-coding" /><category term="workflows" /><category term="mcp" /><category term="agents" /><category term="skills" /><category term="ai-native" /><category term="evolving-understanding" /><summary type="html"><![CDATA[A developer's map through AI-assisted coding, prompts, vibe coding, tools, agents, skills, and AI-native engineering—told through the Fool's Journey and the evolving nature of understanding.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/developers-ai-journey/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/developers-ai-journey/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">From Ericsson Use Cases to AI-Native Systems</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html" rel="alternate" type="text/html" title="From Ericsson Use Cases to AI-Native Systems" /><published>2026-10-05T15:00:00+00:00</published><updated>2026-10-05T15:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/telecom/architecture/2026/10/05/from-ericsson-use-cases-to-ai-native-systems.html"><![CDATA[<style>
 .mermaid-diagram img,
 .mermaid-diagram svg {
   display: block;
