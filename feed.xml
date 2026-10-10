@@ -1,4 +1,363 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-09T04:06:38+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">The Developer’s AI Journey: From Prompts to AI-Native Engineering</title><link href="https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey.html" rel="alternate" type="text/html" title="The Developer’s AI Journey: From Prompts to AI-Native Engineering" /><published>2026-10-08T00:00:00+00:00</published><updated>2026-10-08T00:00:00+00:00</updated><id>https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey</id><content type="html" xml:base="https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey.html"><![CDATA[<link rel="stylesheet" href="/assets/css/developer-ai-journey.css?v=publication-final-1?v=publication-final-1" />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-10T19:19:00+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry><title type="html">The AI-Native Engineering Journey: From Understanding to Evidence-Driven Software Evolution</title><link href="https://enogrob.github.io/software-engineering/ai-native/2026/10/10/the-ai-native-engineering-journey.html" rel="alternate" type="text/html" title="The AI-Native Engineering Journey: From Understanding to Evidence-Driven Software Evolution" /><published>2026-10-10T00:00:00+00:00</published><updated>2026-10-10T00:00:00+00:00</updated><id>https://enogrob.github.io/software-engineering/ai-native/2026/10/10/the-ai-native-engineering-journey</id><content type="html" xml:base="https://enogrob.github.io/software-engineering/ai-native/2026/10/10/the-ai-native-engineering-journey.html"><![CDATA[<figure>
+  <img src="/assets/images/posts/the-ai-native-engineering-journey/cover.webp" alt="Zoat and Nina Rosa beside a multicolored network of understanding, agentic engineering, evidence and continuous software evolution." style="width:100%;height:auto;" />
+  <figcaption>A conceptual synthesis of understanding, bounded action, evidence and evolution—not an executed system or verified production outcome.</figcaption>
+</figure>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#introduction">From understanding to accountable engineering</a></li>
+  <li><a href="#chapter-1">1. Engineering Judgment Beyond Prompts</a></li>
+  <li><a href="#chapter-2">2. Context, Architecture and Understanding</a></li>
+  <li><a href="#chapter-3">3. AI Assets and Bounded Agentic Workflows</a></li>
+  <li><a href="#chapter-4">4. Evidence, Verification and Engineering Risk</a></li>
+  <li><a href="#chapter-5">5. Evolving Existing Software Through Integrated Workflows</a></li>
+  <li><a href="#chapter-6">6. AI-Native Products Versus AI-Native Engineering</a></li>
+  <li><a href="#transfer">Transfer</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+  <li><a href="#related-reading">Related reading</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+<h2 id="introduction">From understanding to accountable engineering</h2>
+
+<p><strong>AI-Native Engineering is not merely about building software with AI. It is about transforming software engineering itself into an intent-driven, understanding-centered, and evidence-grounded process.</strong> Engineers increasingly coordinate agents, tools, and integrated workflows to investigate, plan, implement, test, and evolve systems while retaining responsibility for judgment, governance, and outcomes.</p>
+
+<p>This changes the <em>interface to engineering work</em>: beyond editing code directly, the engineer can express intent, supply context, authorize bounded actions, inspect evidence, and revise understanding. The code remains essential, and direct programming remains appropriate whenever it is safer, simpler, or more precise. The shift is in how capabilities are orchestrated, not in handing accountability to a model.</p>
+
+<p>The engineering environment can span ChatGPT, GitHub, IDEs, CI/CD, Skills, Hooks, MCP integrations, and SDKs, depending on the actual tools and permissions available. These are examples of potential components—not proof that a single platform supports every capability, nor a mandatory architecture. This standalone article develops the engineering practice without reproducing the symbolic narrative of <em>The Developer’s AI Journey</em>.</p>
+
+<blockquote>
+  <p><strong>🧭 Reader question — role, process, or product?</strong></p>
+
+  <p>Before choosing a label, ask what it describes: the developer’s role, the engineering workflow, or the capabilities of the software being built.</p>
+</blockquote>
+
+<p><strong>Predict before reading:</strong> If a team builds an LLM-powered support assistant using conventional pull requests, while another team uses coding agents to maintain an ordinary Rails app, which team is practicing “AI-Native Engineering”? The answer depends on what the phrase describes: <strong>the product</strong> or <strong>the way the product is engineered</strong>. We will separate these dimensions before the end.</p>
+
+<p>For now, focus on a less fashionable and more useful question: <strong>What do we need to know before we allow an intelligent tool to change a working system?</strong></p>
+
+<p>We will follow a fictional Rails application that processes payment events in Sidekiq. A worker occasionally receives the same logical event twice. The business requirement is not “make the job run once”; it is “prevent duplicate financial effects while preserving legitimate retries and an audit trail.”</p>
+
+<p>This is a deliberate choice. The safest solution to this problem might be deterministic code and a database constraint, not an LLM in production. AI can still help investigate, propose and review the change. The difference between <em>using AI</em> and <em>depending on AI for correctness</em> is the heart of this journey.</p>
+
+<h2 id="chapter-1">1. Engineering Judgment Beyond Prompts</h2>
+<p><em>The suggestion looks good. Would you ship it?</em></p>
+
+<p>Imagine a coding assistant proposing the following change to a payment job:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Illustrative pseudocode — not production-ready or executed.</span>
+<span class="k">def</span> <span class="nf">perform</span><span class="p">(</span><span class="n">event_id</span><span class="p">)</span>
+  <span class="k">return</span> <span class="k">if</span> <span class="no">PaymentEvent</span><span class="p">.</span><span class="nf">exists?</span><span class="p">(</span><span class="ss">external_id: </span><span class="n">event_id</span><span class="p">)</span>
+  <span class="no">PaymentEvent</span><span class="p">.</span><span class="nf">create!</span><span class="p">(</span><span class="ss">external_id: </span><span class="n">event_id</span><span class="p">)</span>
+  <span class="c1"># Apply the payment effect...</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>It looks reasonable. But two workers could check <code class="language-plaintext highlighter-rouge">exists?</code> before either creates the record. Depending on the effect’s location and persistence guarantees, both could perform it. The method’s readability says little about its concurrency behavior.</p>
+
+<p><strong>Predict:</strong> Does a passing unit test with one invocation establish the “no duplicate effect” requirement? No. The test has not explored simultaneous calls, crash/retry windows, or partial external effects.</p>
+
+<p>The engineering work is to specify the invariant, locate its authoritative enforcement boundary, identify failure paths and design evidence. Generated code is a <em>candidate</em>. Your review must answer whether the candidate protects the real business rule.</p>
+
+<p>This matters beyond payment systems. AI-assisted development can make an initial solution easier to obtain without eliminating review cost. Research on AI and productivity is mixed and context-sensitive. For example, the <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR study of experienced open-source developers in early 2025</a> examined a particular set of tasks, developers and tools; its findings should not be generalized to every developer or present-day model. <a href="https://dora.dev/research/2025/dora-report/">DORA 2025</a> examines AI adoption in a broader organizational context, not the same experimental question. Verify exact numerical statements against their original methods before inserting them here.</p>
+
+<p><strong>Try this:</strong> Take a generated refactor from a test-backed Rails method. List one assumption about domain behavior, one untested failure path, and one observation that would change your assessment.</p>
+
+<p><strong>Checkpoint:</strong> Can you name a claim made by the suggested implementation and the evidence still missing to accept it?</p>
+
+<h2 id="chapter-2">2. Context, Architecture and Understanding</h2>
+<p><em>Why did the model miss the invariant?</em></p>
+
+<p>“Fix duplicate payments” is an instruction. It is not yet sufficient context. An investigation needs to ask what counts as the same logical event, whether duplicate deliveries are expected, how events are persisted, when external calls occur, and what must remain observable when a retry fails.</p>
+
+<p><a href="https://github.com/sidekiq/sidekiq/wiki/Best-Practices">Sidekiq’s official best-practices guidance</a> explains why jobs should be idempotent: job execution is at least once, not an exactly-once guarantee. That property is easy to say but demanding to implement at the correct business boundary.</p>
+
+<p>Write down the Use Case:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Hypothetical payment scenario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Actor / trigger</td>
+      <td>Event delivery or job retry</td>
+    </tr>
+    <tr>
+      <td>Goal</td>
+      <td>Apply one legitimate business effect per event</td>
+    </tr>
+    <tr>
+      <td>Exception flow</td>
+      <td>Duplicate delivery, concurrent processing, timeout or crash</td>
+    </tr>
+    <tr>
+      <td>Constraint</td>
+      <td>Audit the decision without discarding legitimate work</td>
+    </tr>
+    <tr>
+      <td>Evidence needed</td>
+      <td>Persistence invariant, concurrency test, trace of side-effect boundaries</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The Use Case describes a situation and its outcomes. <strong>Intent</strong> says what must hold. <strong>Inquiry</strong> uncovers unknowns. <strong>Engineering</strong> tests and implements bounded changes. Evidence supports specific claims; understanding may change as new observations arrive. These are complementary roles, not synonyms.</p>
+
+<p><strong>Context map — a model needs more than the job body</strong></p>
+
+<figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/57b5e7a37b22f8c6d43b.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
+</figure>
+
+<p><em>Conceptual investigation map, not a diagram of executed tool calls. Files and logs provide candidate evidence; they do not certify a business invariant by themselves.</em></p>
+
+<p><strong>Try this:</strong> Compare the prompts “fix retry duplicates” and “inspect the job, database uniqueness rules, transaction boundary and tests in read-only mode; report unknowns before recommending changes.” What new questions become visible?</p>
+
+<p><strong>Checkpoint:</strong> Repository files and logs are useful sources. Which of their contents are actual observations, and which are interpretations not yet verified?</p>
+
+<h2 id="chapter-3">3. AI Assets and Bounded Agentic Workflows</h2>
+<p><em>It can run commands. Should we let it?</em></p>
+
+<p>An assistant that drafts code and an agent that can invoke tools are not the same engineering capability. Permission to read, write, execute, publish or spend resources requires deliberate boundaries.</p>
+
+<p>A useful mental model groups the supporting assets into three complementary lenses:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Understanding</th>
+      <th>Execution</th>
+      <th>Trust</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Repository instructions, documented conventions, reusable Skills and domain context</td>
+      <td>Agents, tool workflows, MCP connections and orchestration SDKs</td>
+      <td>Permissions, Hooks where supported, tests, Evals, CI, auditability and observability</td>
+    </tr>
+    <tr>
+      <td>What does the assistant need to know?</td>
+      <td>What bounded action may it perform?</td>
+      <td>What has actually been checked, and who decides what happens next?</td>
+    </tr>
+  </tbody>
+</table>
+
+<figure>
+  <img src="/assets/images/posts/the-ai-native-engineering-journey/03-understanding-execution-trust.webp" alt="Three complementary lenses of understanding, bounded execution and trust, connected by contextual and evidence relationships." loading="lazy" style="width:100%;height:auto;" />
+  <figcaption>Understanding, Execution and Trust are complementary lenses, not mandatory execution stages or proof that a system is safe.</figcaption>
+</figure>
+
+<p>These are <strong>editorial categories</strong>, not a formal vendor specification. <a href="https://modelcontextprotocol.io/specification/2026-07-28">MCP</a> concerns integration and protocol contracts, not automatic authorization or correctness. <a href="https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/use-agent-mode">GitHub Copilot agent mode documentation</a> describes product capabilities; exact availability and controls depend on versions and settings and must be rechecked for the target host before publication.</p>
+
+<p>For the Rails scenario, start narrow:</p>
+
+<blockquote>
+  <p>Inspect the worker, relevant models, migrations and specs. Do not edit files or run deployment commands. Identify the business idempotency key, possible duplicate side effects and unverified assumptions. Return a proposed change and tests for human review.</p>
+</blockquote>
+
+<p>Once the inquiry is reviewed, a separate, explicitly authorized step may produce a diff. A test runner’s exit code is one observation, not evidence that <em>every relevant</em> case was covered.</p>
+
+<blockquote>
+  <p><strong>🧰 Try this — permission boundary</strong></p>
+
+  <p><strong>Read:</strong> inspect jobs, migrations, specs and logs. <strong>Propose:</strong> report hypotheses and a reviewable plan. <strong>Write:</strong> only after approval. <strong>Release:</strong> a distinct human-authorized decision. The boundaries are examples to adapt to your actual environment.</p>
+</blockquote>
+
+<p><strong>Try this:</strong> Design one read-only task, one write-capable task and a separate human release gate. Which tool calls would be refused in each state?</p>
+
+<p><strong>Checkpoint:</strong> A tool call completed successfully. Which additional checks would establish whether the action was appropriate and the output reliable?</p>
+
+<h2 id="chapter-4">4. Evidence, Verification and Engineering Risk</h2>
+<p><em>The tests passed. What exactly do we know?</em></p>
+
+<p>Rails transactions can make a group of <strong>database</strong> operations atomic within the transaction’s scope. They cannot reverse an already delivered HTTP request or other external effect simply because the database rolls back. See the <a href="https://api.rubyonrails.org/classes/ActiveRecord/Transactions/ClassMethods.html">Active Record transaction documentation</a>.</p>
+
+<p>Consider a proposed remedy: define a stable business idempotency key and enforce its uniqueness at the authoritative persistence boundary. Review how an external payment call, a database commit and the Sidekiq acknowledgment interact. An outbox-style design might help a particular integration, but it should be presented as a <strong>candidate architecture</strong>, not a solution established by this article.</p>
+
+<blockquote>
+  <p><strong>🔎 Claim ≠ Evidence ≠ Understanding</strong></p>
+
+  <p><strong>Claim:</strong> “Retries cannot duplicate the business effect.”<br />
+<strong>Evidence required:</strong> database guarantees plus executed failure-seeking tests in the relevant environment.<br />
+<strong>Unknown:</strong> external service semantics, crash windows, concurrency assumptions.<br />
+<strong>Understanding:</strong> the provisional interpretation that can be revised when observations disagree.</p>
+</blockquote>
+
+<p>A useful evidence ledger distinguishes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Claim</th>
+      <th>Possible evidence</th>
+      <th>Still unknown</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Two simultaneous jobs cannot create duplicate ledger entries</td>
+      <td>A verified database constraint and a successfully executed concurrent test</td>
+      <td>Real transaction isolation, production schema and external effects</td>
+    </tr>
+    <tr>
+      <td>Failed work can be retried safely</td>
+      <td>Executed retry and recovery scenarios</td>
+      <td>Every crash window and downstream response</td>
+    </tr>
+    <tr>
+      <td>The change is safe to release</td>
+      <td>Reviewed PR, CI results and rollout plan</td>
+      <td>Real production behavior after deployment</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>No tests have been executed for this illustrative case in this manuscript. Any future RSpec snippet should be run in a reproducible fixture and accompanied by the actual versions, commands and results.</p>
+
+<p><strong>Try this:</strong> Specify a test that starts two workers with the same event key. What should be asserted about database records <em>and</em> actual business effects? Which assertion would fail if the implementation used check-then-create without atomic protection?</p>
+
+<p><strong>Checkpoint:</strong> Identify one verified observation, one claim it supports and one risk that still requires investigation.</p>
+
+<h2 id="chapter-5">5. Evolving Existing Software Through Integrated Workflows</h2>
+<p><em>What changes when AI joins the engineering workflow?</em></p>
+
+<p>Nothing about the Rails product itself needs to become “an AI application” for its engineering workflow to incorporate useful AI capabilities. The consequential change is the engineer’s role in <em>directing the workflow</em>: from mainly implementing a requested change by hand toward shaping the intent, orchestrating authorized capabilities, testing their results, and integrating what has been learned. The engineer may still write the critical code or reject automation altogether.</p>
+
+<p>A practical environment might combine IDE or ChatGPT-based inquiry, GitHub repository and PR workflows, project instructions and Skills for conventions, MCP-connected tools for scoped system access, Hooks where supported for checks, SDKs for specialized orchestration, and CI/CD for reproducible verification. These elements are not inherently trusted or universally compatible. Permissions and evidence are separate from tool connectivity; each configuration must be reviewed in its real environment.</p>
+
+<p>For the hypothetical payment-retry problem, a disciplined flow could connect:</p>
+
+<ol>
+  <li><strong>Intent:</strong> report the duplicate-effect risk and acceptance criteria.</li>
+  <li><strong>Inquiry:</strong> inspect repository state and relevant evidence with read-only tools.</li>
+  <li><strong>Plan:</strong> propose one bounded design change, negative tests and failure handling.</li>
+  <li><strong>Implementation:</strong> create a reviewable diff under approved permissions.</li>
+  <li><strong>Verification:</strong> run appropriate tests, review CI findings and record unknowns.</li>
+  <li><strong>Human decision:</strong> approve or reject the PR and a controlled release.</li>
+  <li><strong>Feedback:</strong> observe retry rates and unexpected effects, then revise the understanding.</li>
+</ol>
+
+<p>This sequence is a <strong>proposed workflow</strong>, not a report of a completed deployment. The actions may form loops; a failed test or unexpected production observation should return the investigation to an earlier decision. <a href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/">NIST’s AI Risk Management Framework</a> offers relevant Govern, Map, Measure and Manage perspectives, but it does not mandate the workflow above.</p>
+
+<p><strong>Proposed interaction sequence — not an executed deployment</strong></p>
+
+<figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/fb2b669a266a786c1667.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
+</figure>
+
+<p><em>The sequence shows intended authority and evidence handoffs. It does not assert that any agent, CI job, or release ran for the hypothetical payment example.</em></p>
+
+<figure>
+  <img src="/assets/images/posts/the-ai-native-engineering-journey/05-evolving-existing-software.webp" alt="Conceptual evolution of an existing codebase through inquiry, agent-assisted proposals, CI, human review and feedback." loading="lazy" style="width:100%;height:auto;" />
+  <figcaption>A proposed evolution workflow for an existing codebase, not evidence of an executed deployment.</figcaption>
+</figure>
+
+<p>An agent could prepare the investigation and propose tests; CI could execute predetermined checks; the engineer still owns the decision about coverage, business impact and release authority. Integrating tools does not eliminate system boundaries or responsibility.</p>
+
+<p><strong>Try this:</strong> Sketch the developer–agent–repository–CI–reviewer sequence. Mark where read-only access becomes write access, where evidence is produced, and where a human must approve a consequential change.</p>
+
+<p><strong>Checkpoint:</strong> Which parts of this workflow are automated actions, and which are engineering judgments that cannot be inferred from an agent’s self-report?</p>
+
+<h2 id="chapter-6">6. AI-Native Products Versus AI-Native Engineering</h2>
+<p><em>Are we building an AI-Native product, or practicing AI-Native engineering?</em></p>
+
+<p>It helps to ask two independent questions:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**What are we building?**</td>
+      <td>An application where model-backed reasoning is a core product capability</td>
+    </tr>
+    <tr>
+      <td>**How are we building and evolving it?**</td>
+      <td>A conventional Rails service maintained through integrated, reviewable AI-assisted workflows</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Two-axis thought experiment</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Conventional engineering workflow</th>
+      <th>AI-integrated engineering workflow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Non-AI product**</td>
+      <td>Rails service developed conventionally</td>
+      <td>Rails service evolved with bounded agents, tests and review</td>
+    </tr>
+    <tr>
+      <td>**Model-powered product**</td>
+      <td>LLM feature built with ordinary development processes</td>
+      <td>LLM feature built with integrated and governed agentic workflows</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>This matrix is an editorial distinction, not a maturity ranking or a standardized taxonomy.</em></p>
+
+<p>These dimensions can intersect, but neither implies the other. A product may rely on an LLM while its development process remains conventional. A deterministic application may be built through agent-supported workflows without adopting any model in production.</p>
+
+<p><strong>AI-Native Engineering</strong> is our working editorial framing for a process that connects human intent, system context, bounded agentic work, verification, operational feedback and revisable understanding throughout software’s evolution. Public usage varies; it is <strong>not</strong> a single industry-wide standard or a badge awarded once an agent can run commands.</p>
+
+<p>Nor does every problem benefit from an LLM. An explicit idempotency invariant is generally a deterministic engineering problem. Contrast it with ambiguous natural-language support-ticket classification: a probabilistic model might be useful there, but only after comparison with simpler baselines, error evaluation, human escalation and an operating plan. This second case is a thought experiment, not a measured result.</p>
+
+<p><strong>Try this:</strong> Classify these two axes for your team’s most recent feature. Which parts need intelligence, and which need straightforward, testable behavior?</p>
+
+<p><strong>Checkpoint:</strong> Can you explain why AI-enabled development does not automatically turn the resulting software into an AI-Native product?</p>
+
+<h2 id="transfer">Transfer — What would you do differently on Monday?</h2>
+
+<p>Choose one existing repository and a low-risk change. Write down its Use Case, desired outcome, known constraints, unknowns and source-of-truth files. Delegate only read-only inquiry first. Request a proposed diff and targeted tests. Record the evidence, note what remains unverified, and keep normal human review and deployment permissions.</p>
+
+<p>Do this for a traditional software feature before choosing more complex multi-agent arrangements. The goal is not to install the largest toolkit: it is to make one engineering decision more informed and one change more verifiable.</p>
+
+<h2 id="conclusion">Conclusion — Understanding in action</h2>
+
+<p>AI-Native Engineering, as framed here, is a change in the <strong>operating model of engineering</strong>, not merely a faster code-generation technique or a property of an AI-powered product. Intent defines what matters; inquiry and context establish what is understood and unknown; appropriately bounded tools and agents help carry out work; tests, reviews, and operational observations provide evidence; and the resulting understanding remains revisable.</p>
+
+<p>The engineer increasingly acts as an <strong>orchestrator of engineering processes</strong>—connecting IDEs, ChatGPT, GitHub, Skills, Hooks, MCP, SDKs, and CI/CD where suitable—without surrendering direct coding skills, release authority, or accountability. Success means more than an agent completing a task: it means knowing why the change is warranted, what the evidence actually supports, what remains uncertain, and who is responsible for the next decision.</p>
+
+<p>The approach applies both to new model-powered products and to established deterministic software, including systems already in production. <strong>The essential movement is from isolated prompts and implementations toward continuously informed, governed, and verifiable software evolution.</strong></p>
+
+<p><strong>Next practical article (proposed):</strong> <em>Building an AI-Native Engineering Environment with GitHub Copilot — From an Existing Rails Repository to Integrated Agentic Workflows.</em> That practical tutorial can cover IDE setup, Instructions, Skills, MCP, permissions, PR/CI and release gates with executable examples. This article intentionally establishes the conceptual model first.</p>
+
+<h2 id="related-reading">Related reading</h2>
+
+<p>For a separate, symbolic exploration of the developer’s changing relationship with AI and evolving understanding, see <a href="/software-engineering/ai-native/2026/10/08/the-developers-ai-journey.html"><em>The Developer’s AI Journey: From Prompts to AI-Native Engineering</em></a>.</p>
+
+<h2 id="references">References and status</h2>
+
+<ul>
+  <li><a href="https://github.com/sidekiq/sidekiq/wiki/Best-Practices">Sidekiq — Best Practices</a></li>
+  <li><a href="https://api.rubyonrails.org/classes/ActiveRecord/Transactions/ClassMethods.html">Ruby on Rails — Active Record Transactions</a></li>
+  <li><a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR — Early-2025 AI and experienced open-source developers</a></li>
+  <li><a href="https://dora.dev/research/2025/dora-report/">DORA — 2025 State of AI-assisted Software Development</a></li>
+  <li><a href="https://modelcontextprotocol.io/specification/2026-07-28">Model Context Protocol — specification (2026-07-28)</a></li>
+  <li><a href="https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/use-agent-mode">GitHub Docs — Copilot agent mode</a></li>
+  <li><a href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/">NIST — AI Risk Management Framework Core</a></li>
+</ul>
+
+<p><strong>Editorial verification still pending:</strong> precise statistics if added, host-specific GitHub Copilot support, independent Sidekiq/RSpec test execution, claim-level reference review, Jekyll assembly and image QA. No claim in this manuscript should be mistaken for an executed lab result.</p>]]></content><author><name></name></author><category term="software-engineering" /><category term="ai-native" /><category term="ai-native" /><category term="agentic-workflows" /><category term="rails" /><category term="sidekiq" /><category term="evidence" /><category term="governance" /><summary type="html"><![CDATA[A practical engineering perspective on understanding, bounded agents, evidence, and evolving existing software responsibly.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/the-ai-native-engineering-journey/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/the-ai-native-engineering-journey/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">The Developer’s AI Journey: From Prompts to AI-Native Engineering</title><link href="https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey.html" rel="alternate" type="text/html" title="The Developer’s AI Journey: From Prompts to AI-Native Engineering" /><published>2026-10-08T00:00:00+00:00</published><updated>2026-10-08T00:00:00+00:00</updated><id>https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey</id><content type="html" xml:base="https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey.html"><![CDATA[<link rel="stylesheet" href="/assets/css/developer-ai-journey.css?v=publication-final-1?v=publication-final-1" />
 
 <figure class="journey-art journey-cover">
   <img src="/assets/images/posts/developers-ai-journey/cover.webp" alt="Illustrated infographic showing a developer's evolving understanding across prompting, workflows, agents, skills and AI-native engineering" fetchpriority="high" />
@@ -4166,237 +4525,4 @@ bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
   <li><a href="https://docs.github.com/en/copilot/concepts/agents/copilot-cli/comparing-cli-features">GitHub Docs: Copilot CLI customization comparison</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills">agent skills</a>; <a href="https://docs.github.com/en/copilot/reference/hooks-reference">hooks reference</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview">Copilot CLI use</a>.</li>
   <li><a href="https://docs.github.com/en/copilot/concepts/agents/github-copilot-app">GitHub Docs: Copilot desktop app</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-sdk">Copilot SDK</a>.</li>
   <li>Previous chapters: <a href="#references">Part 07’s CLI lab</a> at <code class="language-plaintext highlighter-rouge">parts/07-cli-rails-change/RUNBOOK.md</code> and <a href="#references">Part 06 workshop</a> at <code class="language-plaintext highlighter-rouge">parts/06-client-workshop/WORKSHOP-AGENDA.md</code> in the same download.</li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="agentic-workflows" /><category term="agent-skills" /><category term="hooks" /><category term="mcp" /><summary type="html"><![CDATA[Complete the Rails/Copilot series with a repeatable evidence workflow: choose between instructions, skills, tools, hooks and MCP, validate a local record in Ruby and keep a human decision gate.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/repeatable-rails-copilot-workflow/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/repeatable-rails-copilot-workflow/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Can the Patch Pass the Gates?</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/can-the-patch-pass-the-gates.html" rel="alternate" type="text/html" title="Can the Patch Pass the Gates?" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/can-the-patch-pass-the-gates</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/can-the-patch-pass-the-gates.html"><![CDATA[<p><img src="/assets/images/posts/rails-ci-security-human-review/cover.webp" alt="Part 04: a digitized Copilot-inspired character in profile examines a proposed Rails CI workflow, source diff, unrun RSpec draft and an open policy question, linked by flowing Holoflux." style="width:100%;height:auto;" /></p>
-
-<blockquote>
-  <p><strong>A fast patch still needs evidence.</strong> Build a Rails CI path that exposes failures, checks security assumptions and leaves the approval decision with a human reviewer.</p>
-</blockquote>
-
-<p><em>GitHub Copilot for Rails Engineers · Part 04</em></p>
-
-<p>In <a href="/ruby/rails/software-engineering/github-copilot/2026/09/26/from-issue-to-reviewable-rails-pr.html">Part 03</a>, we gave an agent a narrow CaseFlow status-transition issue and produced a local candidate patch. An agent can propose a route, controller and request specs. Those files tell us what <em>might</em> happen; they do not tell us what actually happened on a runner, whether dependencies are known or who may authorize the change. Here we design a chain of checks that produces inspectable evidence while preserving the human decision.</p>
-
-<p>The <a href="/assets/downloads/rails-ci-security-human-review-support.zip">companion repository</a> contains the integrated Rails API, the Part 03 patch, a staged GitHub Actions workflow, Mermaid source, a lab workbook with answers and a review worksheet. This educational workflow has <strong>not run in GitHub Actions</strong>. There is no <code class="language-plaintext highlighter-rouge">Gemfile.lock</code> in the supplied baseline, and no successful RSpec, security scan or PR run is claimed. The illustration shows <strong>conceptual review artifacts</strong>, not a GitHub screenshot or observed CI result.</p>
-
-<h2 id="contents">Contents</h2>
-
-<ul>
-  <li><a href="#boundary">Start with a truthful evidence boundary</a></li>
-  <li><a href="#test-gate">Make the Rails test gate reproducible</a></li>
-  <li><a href="#security">Add a security layer that says what it covers</a></li>
-  <li><a href="#failure">Read failures as evidence</a></li>
-  <li><a href="#review">Keep the merge decision human</a></li>
-  <li><a href="#lab">Run the 45-minute lab</a></li>
-  <li><a href="#references">References and supporting material</a></li>
-</ul>
-
-<h2 id="boundary">Start with a truthful evidence boundary</h2>
-
-<p>A PR has different kinds of claims. A spec file contains <strong>assertions</strong>. A workflow file contains <strong>planned commands</strong>. A job log shows <strong>observed execution</strong> on a given commit and environment. A reviewer decides whether those observations and the product policy justify the change. None substitutes for the others.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Layer</th>
-      <th>CaseFlow artifact</th>
-      <th>What it can establish</th>
-      <th>What it cannot establish</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Intent</td>
-      <td>Part 03 <code class="language-plaintext highlighter-rouge">ISSUE.md</code> in the companion repository</td>
-      <td>Proposed transition and exercise assumptions</td>
-      <td>Actual customer authorization</td>
-    </tr>
-    <tr>
-      <td>Source</td>
-      <td><code class="language-plaintext highlighter-rouge">candidate.patch</code></td>
-      <td>Exact proposed route, action and request specs</td>
-      <td>Test pass or deployability</td>
-    </tr>
-    <tr>
-      <td>Runner</td>
-      <td>Proposed <code class="language-plaintext highlighter-rouge">rails-pr.yml</code></td>
-      <td>Commands that *would* run after setup</td>
-      <td>An observed green status until it runs</td>
-    </tr>
-    <tr>
-      <td>Human</td>
-      <td>Review worksheet</td>
-      <td>Explicit disposition and residual risk</td>
-      <td>Guarantee that no defect exists</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The link to the companion <code class="language-plaintext highlighter-rouge">ISSUE.md</code> appears in the <a href="#references">support materials</a>. GitHub’s <a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/review-copilot-output">Copilot review guidance</a> calls for human review of agent-produced changes. In the CaseFlow exercise, approving a policy for <em>who</em> can resolve a request remains outside the authority of an automated test.</p>
-
-<figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/3f04e3a10d716f3797d3.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-<p>The arrow into review carries <strong>observed results</strong>, including failures. Green in this diagram identifies the <em>type of evidence</em>, not a passing CaseFlow run. The matching Mermaid source is included as a local <code class="language-plaintext highlighter-rouge">.mmd</code> file in the package.</p>
-
-<h2 id="test-gate">Make the Rails test gate reproducible</h2>
-
-<p>CaseFlow’s baseline <code class="language-plaintext highlighter-rouge">Gemfile</code> declares Rails <code class="language-plaintext highlighter-rouge">~&gt; 8.0.0</code>, SQLite, Puma and RSpec. It has no <code class="language-plaintext highlighter-rouge">Gemfile.lock</code>. Installing from that Gemfile could resolve different compatible versions on different days. Before requiring a CI check, on a Mac with Ruby installed, resolve and commit a lockfile in the <strong>companion repository’s</strong> <code class="language-plaintext highlighter-rouge">caseflow/</code> directory, review the resolved gems, then run the app locally:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>caseflow
-bundle <span class="nb">install
-</span><span class="nv">RAILS_ENV</span><span class="o">=</span><span class="nb">test </span>bin/rails db:prepare
-bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
-</code></pre></div></div>
-
-<p>Do not paste an invented lockfile into the project. If <code class="language-plaintext highlighter-rouge">bundle install</code> fails, record the Ruby version, command and first actionable error; a failed setup is evidence, not a passed test. Apply <a href="#lab">Part 03’s candidate patch</a> <strong>before</strong> expecting its four proposed transition cases in RSpec. The unpatched baseline runs only its original request specs.</p>
-
-<p>The supplied <a href="#references">staged workflow</a> illustrates the first useful GitHub Actions job. It is stored outside <code class="language-plaintext highlighter-rouge">.github/workflows/</code> so this package does not silently activate a check in any repository. The central excerpt is:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">permissions</span><span class="pi">:</span>
-  <span class="na">contents</span><span class="pi">:</span> <span class="s">read</span>
-<span class="na">jobs</span><span class="pi">:</span>
-  <span class="na">rails_specs</span><span class="pi">:</span>
-    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
-    <span class="na">defaults</span><span class="pi">:</span>
-      <span class="na">run</span><span class="pi">:</span>
-        <span class="na">working-directory</span><span class="pi">:</span> <span class="s">caseflow</span>
-    <span class="na">steps</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v6</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">ruby/setup-ruby@v1</span>
-        <span class="na">with</span><span class="pi">:</span>
-          <span class="na">ruby-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.3'</span>
-      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">bundle config set frozen </span><span class="kc">true</span>
-      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">bundle install</span>
-      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">RAILS_ENV=test bin/rails db:prepare</span>
-      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">bundle exec rspec spec/requests/api/requests_spec.rb</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">bundle config set frozen true</code> makes a missing or inconsistent lockfile fail early. The sample targets Ubuntu and a Ruby 3.3 interpreter; verify that version against your local app and choose pinned action SHAs under your organization’s policy before production. GitHub’s <a href="https://docs.github.com/en/actions/tutorials/build-and-test-code/ruby">Ruby Actions guide</a> documents <code class="language-plaintext highlighter-rouge">ruby/setup-ruby</code>, Bundler and caching. After a checked-in lockfile and first reliable run, <code class="language-plaintext highlighter-rouge">bundler-cache: true</code> can shorten future jobs; it does not prove the code is secure.</p>
-
-<h2 id="security">Add a security layer that says what it covers</h2>
-
-<p>“DevSecOps passed” is too vague for review. Match each proposed gate to a known question:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Question</th>
-      <th>Candidate check</th>
-      <th>Important limit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Do request specs catch this transition?</td>
-      <td>RSpec positive **and** negative cases</td>
-      <td>Assertions are only observed after a run; specs can miss policy defects.</td>
-    </tr>
-    <tr>
-      <td>Did a new dependency introduce known risks?</td>
-      <td>GitHub dependency review on PRs; review <code class="language-plaintext highlighter-rouge">Gemfile.lock</code> diff</td>
-      <td>Requires repository support and correctly configured workflow; no new gem means little differential signal.</td>
-    </tr>
-    <tr>
-      <td>Does Rails source contain recognizable risky patterns?</td>
-      <td>Brakeman after adding it to the reviewed Gemfile and lockfile</td>
-      <td>Static analysis can miss domain authorization errors.</td>
-    </tr>
-    <tr>
-      <td>Are code paths flagged by code scanning?</td>
-      <td>CodeQL default setup where available</td>
-      <td>Configuration/eligibility and findings need review; do not claim it ran here.</td>
-    </tr>
-    <tr>
-      <td>Can this actor resolve that request?</td>
-      <td>Product decision + auth design + negative tests</td>
-      <td>A shared operator token in the lab is **not** production identity policy.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>GitHub describes <a href="https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/configure-dependency-review-action">dependency review</a> as a PR dependency-diff check, and <a href="https://docs.github.com/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning">CodeQL default setup</a> as repository code scanning configuration. Their availability and billing can vary with repository settings; inspect the target repository before making either a required check. The <a href="#references">security worksheet</a> lists the exact decision and evidence fields, rather than assuming a green badge.</p>
-
-<p>Keep the sample workflow on <code class="language-plaintext highlighter-rouge">pull_request</code> with <code class="language-plaintext highlighter-rouge">contents: read</code>; it does not request secrets or a write token. GitHub’s <a href="https://docs.github.com/en/actions/reference/security/secure-use">secure use reference</a> discusses risks of untrusted PR code and least privilege. Do not change it to <code class="language-plaintext highlighter-rouge">pull_request_target</code> while checking out and running a contributor’s untrusted code.</p>
-
-<h2 id="failure">Read failures as evidence</h2>
-
-<p><img src="/assets/images/posts/rails-ci-security-human-review/read-the-failure.webp" alt="Conceptual evidence desk with CaseFlow Gemfile, an empty Gemfile.lock position, unrun request specs and a human policy question, connected by Holoflux; no test result is depicted." style="width:100%;height:auto;" /></p>
-
-<p><em>The empty lockfile position is a teaching cue. There is no recorded failing CaseFlow CI run in this package.</em> A missing <code class="language-plaintext highlighter-rouge">Gemfile.lock</code>, failing <code class="language-plaintext highlighter-rouge">bundle install</code>, an RSpec assertion failure and a security finding mean different things. Capture <strong>which command failed, on which commit, in which environment</strong>, then triage the smallest cause. Do not mark a spec “fixed” merely because the agent changed the expectation to fit its implementation.</p>
-
-<p>A practical failure record uses four fields: <code class="language-plaintext highlighter-rouge">commit SHA</code>, <code class="language-plaintext highlighter-rouge">command</code>, <code class="language-plaintext highlighter-rouge">observed exit status or blocker</code>, and <code class="language-plaintext highlighter-rouge">next owner/action</code>. When setup fails, downstream scans are <strong>not run</strong>, not “passed”. If RSpec fails for an unauthorized request, inspect the proposed token guard and the request spec; if the product policy is unclear, return to the issue instead of weakening the test. The <a href="#references">worksheet</a> includes examples labeled <em>illustrative</em> rather than fabricated logs.</p>
-
-<h2 id="review">Keep the merge decision human</h2>
-
-<p>Require the reviewer to read the three changed files from Part 03 and decide whether <code class="language-plaintext highlighter-rouge">open → resolved</code> and the shared operator token model the intended business rule. Even a real green RSpec and static scan would answer only their defined checks. Attach the run URL and commit SHA to the review note, describe unchecked cases (concurrency, token rotation, actor identity, auditing), then approve the lab proposal, request changes or escalate policy. Do not turn the synthetic review into a real customer release decision.</p>
-
-<h2 id="lab">Run the 45-minute lab</h2>
-
-<style>
-.gate-lab-timeline {
-  --rv-accent: #a7443e;
-  --rv-border: #d8d5d0;
-  margin: 1.25rem 0 1.5rem;
-  padding: 0;
-  list-style: none;
-}
-
-.gate-lab-timeline li {
-  position: relative;
-  display: grid;
-  grid-template-columns: 5rem minmax(0, 1fr);
-  gap: .75rem;
-  min-width: 0;
-  padding: 0 0 .9rem 1.25rem;
-  border-left: 2px solid var(--rv-border);
-}
-
-.gate-lab-timeline li::before {
-  position: absolute;
-  top: .35rem;
-  left: -.4rem;
-  width: .55rem;
-  height: .55rem;
-  border: 2px solid var(--rv-accent);
-  border-radius: 50%;
-  background: #fff;
-  content: "";
-}
-
-.gate-lab-timeline li:last-child {
-  padding-bottom: 0;
-  border-left-color: transparent;
-}
-
-.gate-lab-timeline__duration {
-  color: var(--rv-accent);
-}
-
-@media (max-width: 420px) {
-  .gate-lab-timeline li {
-    grid-template-columns: 1fr;
-    gap: .1rem;
-  }
-}
-</style>
-
-<ol class="gate-lab-timeline" aria-label="Five steps in the 45-minute lab">
-  <li><strong class="gate-lab-timeline__duration">5 min</strong><span><strong>Predict:</strong> before opening the workflow, name two ways a job can fail without running any specs.</span></li>
-  <li><strong class="gate-lab-timeline__duration">12 min</strong><span><strong>Prepare:</strong> in a clean checkout, apply <code>parts/03-issue-to-pr/candidate.patch</code>; generate and inspect <code>caseflow/Gemfile.lock</code> on your Mac; never commit secrets.</span></li>
-  <li><strong class="gate-lab-timeline__duration">12 min</strong><span><strong>Observe:</strong> run the focused RSpec command and record the exact outcome or first blocker. Read the staged <code>parts/04-ci-and-devsecops/rails-pr.yml</code>; compare each command with what your machine actually ran.</span></li>
-  <li><strong class="gate-lab-timeline__duration">10 min</strong><span><strong>Decide:</strong> fill the <a href="#references">review worksheet</a>. Which missing decision prevents calling the token guard production authorization?</span></li>
-  <li><strong class="gate-lab-timeline__duration">6 min</strong><span><strong>Transfer:</strong> choose a separate Rails PR from your experience and identify one missing negative case and one security check with a clear limitation.</span></li>
-</ol>
-
-<p>The <a href="#references">workbook with worked answers</a> supplies prediction questions, a failure triage exercise and an answer key. If Ruby is unavailable, complete the source review and write “not run: no Ruby”; that is a valid, honest lab result.</p>
-
-<h2 id="references">References and supporting material</h2>
-
-<ul>
-  <li><a href="/assets/downloads/rails-ci-security-human-review-support.zip">Download complete companion repository and Part 04 materials</a>. Start at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/04-ci-and-devsecops/article.md</code>.</li>
-  <li>Companion paths: <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/ISSUE.md</code>, <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/candidate.patch</code>, <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/rails-pr.yml</code>, <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/REVIEW-GATES.md</code>, <code class="language-plaintext highlighter-rouge">docs/labs/04-ci-and-devsecops-workbook.md</code>, <code class="language-plaintext highlighter-rouge">docs/diagrams/04-ci-evidence.mmd</code>, and <code class="language-plaintext highlighter-rouge">docs/posts/04-ci-and-devsecops/post-manifest.md</code>.</li>
-  <li><a href="https://docs.github.com/en/actions/tutorials/build-and-test-code/ruby">GitHub Docs: Building and testing Ruby</a>; <a href="https://github.com/ruby/setup-ruby/blob/master/README.md">ruby/setup-ruby README</a>.</li>
-  <li><a href="https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/configure-dependency-review-action">GitHub Docs: Configuring the dependency review action</a>; <a href="https://docs.github.com/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning">CodeQL default setup</a>.</li>
-  <li><a href="https://docs.github.com/en/actions/reference/security/secure-use">GitHub Docs: Secure use of Actions</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/review-copilot-output">Review Copilot output</a>.</li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="github-actions" /><category term="devsecops" /><category term="rspec" /><summary type="html"><![CDATA[Turn a Copilot-assisted Rails change into an evidence-led review: tests, dependency controls, static analysis and explicit human decisions.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/rails-ci-security-human-review/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/rails-ci-security-human-review/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="agentic-workflows" /><category term="agent-skills" /><category term="hooks" /><category term="mcp" /><summary type="html"><![CDATA[Complete the Rails/Copilot series with a repeatable evidence workflow: choose between instructions, skills, tools, hooks and MCP, validate a local record in Ruby and keep a human decision gate.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/repeatable-rails-copilot-workflow/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/repeatable-rails-copilot-workflow/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
