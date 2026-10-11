@@ -1,0 +1,26 @@
+/* Rich Visual Standard 1.0 — scoped; no frameworks or CDNs */
+:root { --rv-accent:#a32b35; --rv-bg:#fff; --rv-soft:#f7f7f7; --rv-ink:#21252b; --rv-muted:#4f5965; --rv-line:#d7dce2; }
+.rv { color:var(--rv-ink); margin:1.5rem 0; font:inherit; }
+.rv * { box-sizing:border-box; }
+.rv__heading { font-weight:700; margin:0 0 .75rem; font-size:1rem; }
+.rv-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:.8rem; }
+.rv-card { background:var(--rv-bg); border:1px solid var(--rv-line); border-radius:12px; padding:1rem; min-width:0; }
+.rv-card__title { font-weight:700; margin:0 0 .4rem; font-size:1rem; }
+.rv-card__body { color:var(--rv-muted); margin:0; line-height:1.5; }
+.rv-perspective__controls { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:.8rem; }
+.rv-perspective__tab { border:1px solid var(--rv-line); color:var(--rv-ink); background:var(--rv-bg); border-radius:8px; padding:.45rem .7rem; font:inherit; cursor:pointer; }
+.rv-perspective__tab[aria-selected="true"] { background:var(--rv-accent); color:#fff; border-color:var(--rv-accent); }
+.rv-perspective__panel { border:1px solid var(--rv-line); background:var(--rv-soft); border-radius:10px; padding:1rem; margin:.5rem 0; }
+.rv-perspective[data-rv-ready="true"] .rv-perspective__panel[hidden] { display:none; }
+.rv-perspective__panel h4 { font-size:1rem; margin:0 0 .4rem; }
+.rv-perspective__panel p { margin:0; }
+.rv-timeline { list-style:none; margin:0; padding:0 0 0 1rem; border-left:2px solid var(--rv-line); }
+.rv-timeline li { position:relative; padding:0 0 1rem 1rem; }
+.rv-timeline li:before { content:""; position:absolute; left:-1.42rem; top:.35rem; background:var(--rv-accent); height:.7rem; width:.7rem; border-radius:50%; }
+.rv-timeline strong { display:block; }
+.rv-progress__track { height:.55rem; background:var(--rv-line); border-radius:999px; overflow:hidden; }
+.rv-progress__fill { height:100%; background:var(--rv-accent); border-radius:999px; }
+.rv-progress__label { display:flex; justify-content:space-between; gap:1rem; margin-bottom:.4rem; }
+.rv :focus-visible { outline:3px solid var(--rv-accent); outline-offset:3px; }
+@media (prefers-color-scheme:dark) { .rv { --rv-bg:#20242a; --rv-soft:#252a30; --rv-ink:#f3f4f6; --rv-muted:#ccd1d6; --rv-line:#59616b; --rv-accent:#cb4855; } }
+@media (max-width:480px) { .rv-card,.rv-perspective__panel { padding:.8rem; } }
