@@ -771,44 +771,123 @@
 
 <p>This view makes stopping and returning as visible as progress. Insufficient evidence calls for further investigation. An unavailable capability may call for narrower scope. A completed artifact can reveal a new problem when its outcome is examined. These changes move the inquiry among persistent responsibilities.</p>
 
-<h2 id="an-intention-moving-through-the-architecture">An intention moving through the architecture</h2>
+<h2 id="from-human-intent-to-multi-agent-orchestration">From human intent to multi-agent orchestration</h2>
 
-<p>Consider a concrete intention: <strong>“Help us turn what we observe in a garden into an interactive learning experience about form, relationship, and growth—one that lets visitors distinguish observation, explanation, and symbolic interpretation.”</strong></p>
+<p>Consider a real-world kind of request, presented here as a <strong>design scenario rather than an implemented or user-tested system</strong>:</p>
 
-<p>This brings the post’s central movement into a practical setting: <strong>something encountered outside becomes a question, acquires meaning, takes form in a creation, and returns to the world for others to encounter.</strong> The human brings curiosity and purpose. AI components help organize the investigation and develop the experience.</p>
+<blockquote>
+  <p><strong>Human intent:</strong> “Build a learning companion that uses educational materials we are authorized to access, helps identify where a student is struggling, and offers appropriate, reviewable practice.”</p>
+</blockquote>
 
-<p>At <strong>0 — Openness</strong>, the inquiry starts with photographs, sketches, and questions about leaves, flowers, and branching stems. We do not yet know which relationships will be useful or whether an apparent pattern survives closer examination. AI can help articulate questions without turning resemblance into a finding.</p>
+<p>This is not yet a software specification. What counts as a learning difficulty? Which materials may the system process? Who reviews educational judgments? How do we know the activities help rather than merely look convincing? These unknowns are part of the work—not defects to conceal with confident answers.</p>
 
-<p>At <strong>1 — Unity and direction</strong>, the human gives the inquiry a center: help visitors learn how to observe and compare forms. Success means that a visitor can distinguish what was seen, what was inferred, and what was imagined. The coordinator records that intention, the audience, and the limits of the project.</p>
+<p>The garden example earlier illustrated encounter, interpretation, and expression. This example asks a sharper architectural question: <strong>how can people, agents, deterministic components, memory, and tools collaborate from discovery through realization while keeping the inquiry revisable?</strong></p>
 
-<p>At <strong>2 — Relation and context</strong>, a research agent brings together the garden records, relevant botanical sources, and examples of geometric representation. Retrieval and memory preserve where each item came from. The inquiry also records what the photographs leave out: scale, viewpoint, and variation between specimens.</p>
+<h3 id="one-orchestration-different-responsibilities">One orchestration, different responsibilities</h3>
 
-<p>At <strong>3 — Meaning</strong>, an interpretation agent proposes ways to understand and present the material: a branching structure, a recurring arrangement, or a visual metaphor for growth. A flower’s appearance, a mathematical model, and a symbolic reading receive distinct labels. A resemblance suggests a question; it does not establish a universal law.</p>
+<p>An <strong>inquiry orchestrator</strong> tracks goals, dependencies, permissions, limits, and pending decisions. It routes work to participants according to capability and scope. The orchestrator is <strong>not an eleventh numbered responsibility</strong>, and the following role names are <strong>illustrative contributions, not ten mandatory agents</strong>. A small system may combine roles; another may use several specialized agents alongside ordinary services.</p>
 
-<p>At <strong>4 — Structure</strong>, a planner turns those distinctions into a small experience: visitors inspect a specimen, compare it with a drawing, explore a model, and compose their own interpretation. Components receive concrete tasks—organize sources, build the comparison interface, check claims, and review the result. The numbers describe responsibilities; they do not require ten separate agents.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Responsibility</th>
+      <th>Possible participant</th>
+      <th>Concrete contribution</th>
+      <th>What remains inspectable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>0 — Openness</strong></td>
+      <td>Explorer, human</td>
+      <td>Identify missing student context, material access and alternative approaches</td>
+      <td>Unknowns, constraints and possible paths</td>
+    </tr>
+    <tr>
+      <td><strong>1 — Unity and direction</strong></td>
+      <td>Human, clarifier</td>
+      <td>Agree on audience, learning objective, safety boundaries and success criteria</td>
+      <td>Revisable intent and authorization</td>
+    </tr>
+    <tr>
+      <td><strong>2 — Relation and context</strong></td>
+      <td>Researcher, retriever</td>
+      <td>Locate licensed material, teaching objectives and relevant observations</td>
+      <td>Source locations, permissions, provenance</td>
+    </tr>
+    <tr>
+      <td><strong>3 — Meaning</strong></td>
+      <td>Interpreter</td>
+      <td>Distinguish an observed wrong answer from competing explanations of the difficulty</td>
+      <td>Candidate interpretations and uncertainty</td>
+    </tr>
+    <tr>
+      <td><strong>4 — Structure</strong></td>
+      <td>Planner</td>
+      <td>Design learning steps, evaluation criteria, component contracts and task dependencies</td>
+      <td>Plan, assumptions and acceptance criteria</td>
+    </tr>
+    <tr>
+      <td><strong>5 — Transformation</strong></td>
+      <td>Executor, tools</td>
+      <td>Generate a bounded exercise set or implement a prototype through permitted APIs</td>
+      <td>Tool trace, produced changes and failures</td>
+    </tr>
+    <tr>
+      <td><strong>6 — Organization and integration</strong></td>
+      <td>Coordinator, synthesizer</td>
+      <td>Link explanations, exercise versions, sources and participant contributions</td>
+      <td>Integrated state without erased disagreement</td>
+    </tr>
+    <tr>
+      <td><strong>7 — Discernment</strong></td>
+      <td>Verifier, educator</td>
+      <td>Check curriculum alignment, factual support, accessibility and observable behavior</td>
+      <td>Tests, review outcomes, gaps and limitations</td>
+    </tr>
+    <tr>
+      <td><strong>8 — Realization and renewal</strong></td>
+      <td>Producer, authorized publisher</td>
+      <td>Present a reviewed learning activity; collect use feedback within consent boundaries</td>
+      <td>Artifact, release authorization and observations</td>
+    </tr>
+    <tr>
+      <td><strong>9 — Synthesis and horizon</strong></td>
+      <td>Reviewer, human</td>
+      <td>Record what worked, what is unproven and what should be investigated next</td>
+      <td>Qualified completion and open questions</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>At <strong>5 — Transformation</strong>, authorized tools produce a working prototype from the plan: an annotated photograph, an interactive branching model, and a space for a visitor’s interpretation. Skills guide the work; tool interfaces provide the required capabilities. The mathematical model is identified as a model, and the symbolic composition as an interpretation.</p>
+<p>The numbered responsibilities are <strong>persistent contracts</strong>. They are not successive departments. For instance, source permission matters in 2, but must also constrain 5 and 8; evidential support matters in 7, but belongs to the entire inquiry.</p>
 
-<p>At <strong>6 — Organization and integration</strong>, an integration component connects each visual element to its explanation, source, and question. The evolving inquiry state now links the original intention, observations, candidate meanings, design decisions, and prototype. What belongs together becomes navigable without erasing their differences.</p>
+<h3 id="discovery-before-execution">Discovery before execution</h3>
 
-<p>At <strong>7 — Discernment</strong>, reviewers check whether the explanatory claims have support and whether the experience communicates its distinctions. People try the prototype. If they mistake a generated pattern for a measured property of the specimen, that observation sends the inquiry back to meaning, structure, or creation. Attractive output alone does not satisfy the intention.</p>
+<p>The first useful output need not be code. The explorer notices that the request does not specify whether the student needs help understanding a concept or simply more practice. A researcher locates material that is actually accessible under the available permissions. An interpreter records several plausible accounts of a student’s difficulty as <strong>hypotheses</strong>, not diagnoses or established facts.</p>
 
-<p>At <strong>8 — Realization and renewal</strong>, the reviewed experience is made available for its intended audience. Visitors encounter the creation and contribute new questions and interpretations. Their responses become observations for a further inquiry: realization changes the world the project next encounters.</p>
+<p>The clarifier can now return to the human with a better question: <em>Should we first test a narrow lesson on fractions, with reviewed exercises and explicit feedback, rather than build a general learning platform?</em> If the human approves, the intention becomes more specific. <strong>Discovery has changed the plan before execution began.</strong></p>
 
-<p>At <strong>9 — Synthesis and horizon</strong>, memory preserves the sources, decisions, supported explanations, feedback, and unresolved questions. The team can ask which distinctions helped people learn and what needs another investigation. A new specimen or a visitor’s unexpected question can reopen <strong>0</strong>, while the responsibilities remain available.</p>
+<h3 id="coordinating-realization">Coordinating realization</h3>
 
-<p>The movement is reciprocal. A difficulty at <strong>7</strong> can revise <strong>3</strong>; a missing source can return the inquiry to <strong>2</strong>; a response at <strong>8</strong> can reshape the intention at <strong>1</strong>. <strong>What moves is the inquiry state, not the architectural layers.</strong></p>
+<p>The planner proposes a small, inspectable slice: import permitted lesson material, record learning objectives and source metadata, generate a few candidate exercises, let an educator review them, and present approved exercises through a simple interface. A coordinator may delegate research and interface prototyping concurrently <strong>only after their inputs and boundaries are defined</strong>. A verifier can independently check the factual content; deterministic tests check software behavior. Neither kind of check alone establishes pedagogical effectiveness.</p>
 
 <details>
-  <summary>Explore the garden-to-learning inquiry sequence</summary>
+  <summary>Explore the multi-agent inquiry orchestration</summary>
 
   <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/f16d1ecde583f48ecd9b.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
+  <img src="/assets/generated/mermaid/c4518220c4f24a4f2bbf.svg" alt="Mermaid diagram" loading="lazy" decoding="async">
 </figure>
 
 </details>
 
-<p><em>Illustrative garden-to-learning inquiry: numbered contributions can recur. The verifier assists review; the human decides readiness. This diagram describes a proposed interaction, not an observed implementation.</em></p>
+<p><em>Illustrative orchestration, not an observed execution trace. Research, planning, verification and tool use can be combined, repeated or paused. A human authorizes external effects; successful calls do not by themselves validate learning outcomes.</em></p>
+
+<h3 id="when-evidence-changes-the-plan">When evidence changes the plan</h3>
+
+<p>Imagine the generated fraction exercises pass software tests, but the educator notices that some questions demand reading skills beyond the stated learning objective. This would be a <strong>scenario observation</strong>, not evidence that the student’s mathematical understanding is weak. The verifier marks a mismatch; the interpreter revisits what “appropriate practice” means; the planner narrows the design; the executor regenerates only affected material. The revised questions must be reviewed again.</p>
+
+<p>This is where the model becomes more than task delegation. <strong>The orchestrator coordinates the evolving inquiry, not merely the next agent call.</strong> A failure at <strong>7</strong> can reopen <strong>3</strong> and <strong>4</strong>. Missing permissions can halt <strong>5</strong> and return to <strong>1</strong> or <strong>2</strong>. Feedback at <strong>8</strong> can generate a new question for <strong>0</strong> and change what a later iteration should attempt.</p>
 
 <h3 id="what-changed-in-the-inquiry">What changed in the inquiry?</h3>
 
@@ -816,52 +895,55 @@
   <thead>
     <tr>
       <th>Moment</th>
-      <th>State update</th>
-      <th>Consequence for the next contribution</th>
+      <th>Inquiry-state update</th>
+      <th>Consequence</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Curiosity given direction</td>
-      <td>Audience, learning intention, and review criteria become explicit</td>
-      <td>Research can focus on what visitors should learn to distinguish</td>
+      <td>Need expressed</td>
+      <td>Broad learning intention and unknowns recorded</td>
+      <td>Discovery is required before a build plan</td>
     </tr>
     <tr>
-      <td>Garden records examined</td>
-      <td>Images and sources acquire provenance and limits</td>
-      <td>Interpretations remain connected to what was actually observed</td>
+      <td>Materials investigated</td>
+      <td>Authorized source scope, provenance and gaps captured</td>
+      <td>Research output can constrain generated content</td>
     </tr>
     <tr>
-      <td>Meanings proposed</td>
-      <td>Observation, explanation, model, and metaphor receive distinct labels</td>
-      <td>Planning can give each an appropriate place in the experience</td>
+      <td>Difficulty interpreted</td>
+      <td>Competing explanations kept provisional</td>
+      <td>System avoids treating an answer as a diagnosis</td>
     </tr>
     <tr>
-      <td>Prototype assembled</td>
-      <td>Design decisions become an experience people can try</td>
-      <td>Review can examine both claims and visitor understanding</td>
+      <td>Pilot approved</td>
+      <td>Learning goal, criteria, permissions and budget bounded</td>
+      <td>Planner can assign scoped work</td>
     </tr>
     <tr>
-      <td>Feedback considered</td>
-      <td>Confusion, useful comparisons, and open questions enter the account</td>
-      <td>Meaning, structure, or sources can be revisited</td>
+      <td>Prototype constructed</td>
+      <td>Artifact versions linked to tool observations and sources</td>
+      <td>Verifier can inspect claims and behavior</td>
     </tr>
     <tr>
-      <td>Experience made available</td>
-      <td>The creation becomes part of what others encounter</td>
-      <td>New observations and questions can reshape the inquiry</td>
+      <td>Mismatch identified</td>
+      <td>Review finding challenges an exercise-design assumption</td>
+      <td>Meaning and plan are revised, not merely retried</td>
     </tr>
     <tr>
-      <td>Learning consolidated</td>
-      <td>Sources, decisions, feedback, and limitations persist</td>
-      <td>A subsequent inquiry can build on the work while reconsidering its assumptions</td>
+      <td>Release authorized</td>
+      <td>Human reviews qualified outcome and remaining limits</td>
+      <td>Only the approved version is made available</td>
+    </tr>
+    <tr>
+      <td>Feedback reviewed</td>
+      <td>Observations and unanswered questions retained</td>
+      <td>A new inquiry may open without erasing the old one</td>
     </tr>
   </tbody>
 </table>
 
-<p>These are proposed state changes, not reported findings or visitor-test results. The team may discover that a specimen does not support the chosen model, or that a different presentation better serves the intention. AI helps make those revisions possible; human interpretation, judgment, and experience remain part of the inquiry.</p>
-
-<p>The ten numbers organize our reading. The runtime needs suitable transitions, capabilities, and checks for the case at hand. It does not need to march through every number exactly once.</p>
+<p>These are <strong>proposed state transitions</strong>, not measured educational results. Learning improvement would require appropriate evaluation, informed participation and care with student information. The same inquiry may proceed on some tasks while pausing others; permissions, observability and budgets apply throughout.</p>
 
 <h3 id="evidence-is-a-relationship-not-a-decoration">Evidence is a relationship, not a decoration</h3>
 
@@ -882,9 +964,9 @@
 
 <h2 id="the-macro-reflected-in-the-micro">The macro reflected in the micro</h2>
 
-<p>A project can contain smaller investigations with related responsibilities. Creating the garden learning experience may require a smaller inquiry into whether a particular specimen supports a chosen geometric model. That inquiry has its own goal, context, candidate interpretations, observations, evaluation, and result. Its conclusion informs the larger experience; it does not determine the meaning of the whole project.</p>
+<p>A project can contain smaller investigations with related responsibilities. The learning-companion inquiry may open a <strong>sub-inquiry</strong>: <em>Does the authorized lesson support this explanation of fractions?</em> That smaller investigation has its own question, source context, candidate interpretation, observations, review criteria and qualified result. Another sub-inquiry may examine whether the prototype presents the explanation accessibly. The larger project may incorporate both outcomes while retaining their separate evidence and limits.</p>
 
-<p>This is a concrete architectural use of the macro–micro analogy: <strong>a similar responsibility pattern may recur at different scopes</strong>. The smaller result should remain connected to its evidence and to the larger question it helps answer. Whether every inquiry needs all ten distinctions is itself testable.</p>
+<p>This is a concrete architectural use of the macro–micro analogy: <strong>the same responsibility pattern can recur at project, task or individual-agent scope, without demanding ten agents at each level</strong>. Recursion needs stop conditions, depth and cost limits, explicit parent–child links and authorization boundaries. A sub-inquiry’s conclusion informs the larger work; it does not automatically settle the larger intention.</p>
 
 <p>Memory is continuity here. Preserving observations, decisions, and unresolved questions can help future work. Recording feedback does not automatically retrain a model, and agreement among several agents does not independently validate their shared conclusion.</p>
 
