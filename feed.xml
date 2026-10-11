@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-11T20:51:01+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry xml:lang="en"><title type="html">AI: A Guide to Constructing a Universe — A Journey from 0 to 9</title><link href="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html" rel="alternate" type="text/html" title="AI: A Guide to Constructing a Universe — A Journey from 0 to 9" /><published>2026-10-11T15:40:00+00:00</published><updated>2026-10-11T15:40:00+00:00</updated><id>https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements</id><content type="html" xml:base="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html"><![CDATA[<link rel="stylesheet" href="/assets/css/rich-visual.css" />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-11T21:01:10+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry xml:lang="en"><title type="html">AI: A Guide to Constructing a Universe — A Journey from 0 to 9</title><link href="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html" rel="alternate" type="text/html" title="AI: A Guide to Constructing a Universe — A Journey from 0 to 9" /><published>2026-10-11T15:40:00+00:00</published><updated>2026-10-11T15:40:00+00:00</updated><id>https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements</id><content type="html" xml:base="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html"><![CDATA[<link rel="stylesheet" href="/assets/css/rich-visual.css" />
 
 <link rel="stylesheet" href="/assets/css/ai-a-universe-in-ten-movements.css" />
 
@@ -1208,6 +1208,7 @@
   <li><a href="#xxi--0-the-return">XXI → 0: the return</a></li>
   <li><a href="#the-journey-as-a-semantic-model">The Journey as a Semantic Model</a></li>
   <li><a href="#references-and-further-reading">References and further reading</a></li>
+  <li><a href="#freedom-and-the-movement-of-inquiry">Freedom and the movement of inquiry</a></li>
 </ul>
 
 <h2 id="a-map-not-a-maturity-ladder">A map, not a maturity ladder</h2>
@@ -2056,10 +2057,6 @@ flowchart TD
 </div>
 </details>
 
-<ul>
-  <li><a href="#freedom-and-the-movement-of-inquiry">Freedom and the movement of inquiry</a></li>
-</ul>
-
 <p><em>The journey does not repeat itself. It unfolds again from a different understanding.</em></p>
 
 <h2 id="references-and-further-reading">References and further reading</h2>
@@ -2075,6 +2072,284 @@ flowchart TD
 </ul>
 
 <p><em>Editorial note: The Fool’s Journey and the associations between the Major Arcana and software engineering are original interpretive metaphors. The article does not present AI-Assisted, AI-Driven, and AI-Native as standardized maturity levels.</em></p>
+
+<section aria-labelledby="freedom-and-the-movement-of-inquiry">
+  <h2 id="freedom-and-the-movement-of-inquiry">Freedom and the movement of inquiry</h2>
+
+  <p>The developer's journey also invites a question about the person using the tools: <strong>what shapes the way we look, decide, and act?</strong> A new capability can change our work while leaving our dependence on authority, approval, or familiar explanations unexamined.</p>
+
+  <p>Krishnamurti places freedom from conditioning at the heart of inquiry. Yet freedom is not merely a reward at the end of a prescribed path: he connects it with observation in daily life, including the images, motives, and divisions that shape perception. His <a href="https://kfoundation.org/core-of-the-teachings/">Core of the Teachings</a> questions both psychological techniques and the separation between observer and observed.</p>
+
+  <p>The negative approach here means examining what obstructs perception, rather than prescribing an ideal image of a liberated person. Even the wish to become free can carry fear, reward, or a projected identity. Negation does not mean suppressing feelings or rejecting practical knowledge; his <a href="https://kfoundation.org/transcript/public-talk-5-amsterdam-14-may-1969/">Amsterdam talk of 14 May 1969</a> distinguishes the need for technical knowledge from observing oneself through accumulated psychological conclusions.</p>
+
+  <blockquote><p><strong>Interpretive scope.</strong> These associations are our symbolic reading inspired by Krishnamurti. He did not teach a Tarot system or a 22-stage method. The cards name persistent perspectives; attention can question any of them, including this map.</p></blockquote>
+
+  <h3>One vocabulary, another inquiry</h3>
+  <p>The Ruby DSL below retains the article's <code>journey</code>, <code>arcana</code>, <code>context</code>, <code>light</code>, <code>shadow</code>, and <code>insight</code> vocabulary. Here, <code>light</code> names a possibility to examine, <code>shadow</code> a possible interference, and <code>insight</code> an editorial proposition. These fields neither rank people nor certify an experience of insight.</p>
+
+  <p>The same three paths reference the same ordered cards as the earlier model. Their sequences support a symbolic reading; the inquiry itself may branch, return, or pause. For example, observing an attachment at XV may reopen the motive at I, while a question about authority at V may change how we approach a relationship at VI.</p>
+
+  <p><strong>XXI returns to 0.</strong> We call that renewal <code>event: 22</code>: an event, not a twenty-third card. The record remains available, but its conclusions need not determine every new encounter. This example uses <code>cycle</code> for the return declaration because <code>return</code> is a Ruby keyword.</p>
+
+  <details class="journey-dsl-details">
+    <summary><span><strong>Explore the Krishnamurti-inspired Ruby DSL</strong><small>22 Arcana · Conditioning / Attention / Freedom · XXI → 0</small></span><span aria-hidden="true">⌄</span></summary>
+    <div class="journey-dsl-body">
+      <p class="journey-dsl-note">Illustrative Ruby DSL, matching the semantic example above. This file is a declaration model, not an executable implementation of consciousness, agents, or liberation.</p>
+
+<pre class="journey-dsl-code" aria-label="Illustrative Krishnamurti-inspired Ruby DSL with syntax highlighting"><code class="language-ruby"><span class="hf-c1"># Original symbolic reading inspired by J. Krishnamurti.</span><span class="hf-w">
+</span><span class="hf-c1"># These associations are not his teaching or a historical Tarot doctrine.</span><span class="hf-w">
+</span><span class="hf-c1"># Illustrative Ruby DSL: declarations, not an implemented inquiry runtime.</span><span class="hf-w">
+</span><span class="hf-c1"># light = possibility to examine; shadow = possible interference.</span><span class="hf-w">
+</span><span class="hf-c1"># insight = editorial proposition, not a claim of experienced insight.</span><span class="hf-w">
+
+</span><span class="hf-n">journey</span><span class="hf-w"> </span><span class="hf-s2">&quot;Freedom and the Movement of Inquiry&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+  </span><span class="hf-n">inquiry</span><span class="hf-w"> </span><span class="hf-s2">&quot;What sustains conditioning, including my wish to become free?&quot;</span><span class="hf-w">
+  </span><span class="hf-n">horizon</span><span class="hf-w"> </span><span class="hf-ss">:freedom_from_conditioning</span><span class="hf-w">
+  </span><span class="hf-n">approach</span><span class="hf-w"> </span><span class="hf-ss">:via_negativa</span><span class="hf-w">
+  </span><span class="hf-n">numbering</span><span class="hf-w"> </span><span class="hf-ss">:rider_waite_smith</span><span class="hf-w">
+
+  </span><span class="hf-c1"># I. Persistent perspectives; no required order or spiritual score.</span><span class="hf-w">
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">0</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Fool&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Meeting the unknown&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Openness to what is present&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;A conclusion arriving before observation&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;Not knowing need not become another identity&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Can I begin without prescribing what I must discover?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">1</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Magician&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Intention and the desire to act&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Examining the motive of inquiry&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;The wish to master or become someone&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;The intention itself belongs within the inquiry&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Do I seek understanding, approval, security, or control?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">2</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The High Priestess&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Listening and what remains unarticulated&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Sensitivity to what was overlooked&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Turning intuition into inner authority&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;Silence does not certify hidden knowledge&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Can I listen without my explanation arriving first?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">3</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Empress&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Sensation, affection, and expression&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Sensitivity in the encounter with life&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Identification with what I create&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;Expression can reveal the movement of identification&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;What do my creations reveal about my expectations and attachments?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">4</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Emperor&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Order, structure, and conditioning&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Distinguishing practical organization from psychological control&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Rigid images of how life must be&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;Practical structure need not become psychological authority&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Which rules serve the task, and which protect my self-image?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">5</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Hierophant&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Knowledge, tradition, and authority&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Questioning dependence on a teaching&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Belief accepted as a substitute for seeing&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;Technical knowledge and psychological dependence are different&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Do I see this for myself, or accept it because an authority says so?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">6</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Lovers&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Relationship as a mirror&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Seeing expectations in relationship&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Possession and images of oneself and another&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;An image of a person can stand between us&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Am I meeting this person or my representation of them?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">7</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Chariot&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Direction, effort, and the controller&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Noticing the impulse to dominate a reaction&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Division between controller and controlled&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;The controller may belong to the movement it tries to control&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Who is trying to direct this reaction, and from what memory?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">8</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;Strength&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Resistance and suppression&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Observing conflict without making it an enemy&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Force used against what one feels&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;Suppression and understanding are different&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Does my effort to conquer the reaction sustain the conflict?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">9</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Hermit&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Self-knowing in everyday life&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Inquiry without dependence on approval&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Isolation mistaken for freedom&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;Self-knowing can be encountered in relationship&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Am I observing myself or retreating into an image of independence?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">10</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;Wheel of Fortune&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Repetition and psychological continuity&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Recognizing a familiar response in a new encounter&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Habit treated as fate&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;Repetition can become a question rather than a destiny&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;What from the past is repeating in this apparently new situation?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">11</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;Justice&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Judgment, comparison, and factual evaluation&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Distinguishing a fact from condemnation&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Measurement of psychological worth&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;Responsibility does not require condemning an identity&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Does this judgment clarify the situation or defend an image?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">12</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Hanged Man&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;The impulse to respond&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Seeing reaction and the wish to interrupt it&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;A prescribed pause treated as a route to insight&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;A pause can be examined without becoming a technique&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Can I notice the impulse without immediately obeying or suppressing it?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">13</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;Death&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Ending and attachment to continuity&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Examining the maintenance of a self-image&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Fear of losing the story of oneself&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;Psychological ending is not erasing practical memory&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;What am I protecting by carrying this image of myself forward?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">14</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;Temperance&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Relations within the whole movement&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Noticing thought, sensation, memory, and action together&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;An imposed ideal of balance&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;Adjusting fragments differs from perceiving their relationship&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;How are these aspects participating in the same reaction?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">15</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Devil&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Attachment, desire, and dependence&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Seeing attachment and fear together&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Security sought through possession&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;Condemning desire differs from understanding its movement&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;What do I depend on that I am afraid to lose?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">16</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Tower&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;A challenged image of security&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Examining what contradiction exposes&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Replacing a broken certainty with another&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;A crisis is not a required path to freedom&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Is a fact being threatened, or my representation of it?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">17</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Star&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Possibility and projected hope&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Openness without a promised destination&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Future salvation replacing present observation&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;Hope is not evidence of freedom&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Can I remain open without demanding a reassuring future?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">18</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Moon&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Fear, interpretation, and projection&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Distinguishing what happens from what is anticipated&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Past experience projected as inevitable future&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;Psychological projection and concrete danger are different&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;What is present, and what am I imagining will happen?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">19</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The Sun&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Clarity and the limits of description&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Examining whether words help observation&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Confidence mistaken for direct perception&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;The description does not replace the encounter&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Is this explanation helping me see, or standing in for seeing?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">20</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;Judgement&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;Awakening to the movement of relationship&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Questioning the division between observer and observed&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;Condemnation disguised as awakening&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;The observer is also open to investigation&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Is the observer of this reaction separate from its thought and memory?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">arcana</span><span class="hf-w"> </span><span class="hf-mi">21</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-s2">&quot;The World&quot;</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">context</span><span class="hf-w">  </span><span class="hf-s2">&quot;The whole and renewed openness&quot;</span><span class="hf-w">
+    </span><span class="hf-n">light</span><span class="hf-w">    </span><span class="hf-s2">&quot;Seeing relationships without claiming finality&quot;</span><span class="hf-w">
+    </span><span class="hf-n">shadow</span><span class="hf-w">   </span><span class="hf-s2">&quot;The identity of one who has arrived&quot;</span><span class="hf-w">
+    </span><span class="hf-n">insight</span><span class="hf-w">  </span><span class="hf-s2">&quot;An account of the whole can still become a limiting image&quot;</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Can understanding remain open without becoming a new authority?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-c1"># II. Reference the same three paths as the article.</span><span class="hf-w">
+  </span><span class="hf-c1"># These lists preserve the editorial sequences; they do not prescribe</span><span class="hf-w">
+  </span><span class="hf-c1"># psychological progression or methods of liberation.</span><span class="hf-w">
+  </span><span class="hf-n">origin</span><span class="hf-w"> </span><span class="hf-ss">:the_fool</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-n">arcana</span><span class="hf-p">:</span><span class="hf-w"> </span><span class="hf-mi">0</span><span class="hf-w">
+
+  </span><span class="hf-n">path</span><span class="hf-w"> </span><span class="hf-ss">:osiris</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">meaning</span><span class="hf-w"> </span><span class="hf-ss">:transformation</span><span class="hf-w">
+    </span><span class="hf-n">traverse</span><span class="hf-w"> </span><span class="hf-mi">1</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">4</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">7</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">10</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">13</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">16</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">19</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;What maintains the structure I am trying to change?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">path</span><span class="hf-w"> </span><span class="hf-ss">:thoth_sopdet</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">meaning</span><span class="hf-w"> </span><span class="hf-ss">:awakening</span><span class="hf-w">
+    </span><span class="hf-n">traverse</span><span class="hf-w"> </span><span class="hf-mi">2</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">5</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">8</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">11</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">14</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">17</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">20</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;What becomes visible when authority and judgment are examined?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">path</span><span class="hf-w"> </span><span class="hf-ss">:horus</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">meaning</span><span class="hf-w"> </span><span class="hf-ss">:experience</span><span class="hf-w">
+    </span><span class="hf-n">traverse</span><span class="hf-w"> </span><span class="hf-mi">3</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">6</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">9</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">12</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">15</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">18</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-mi">21</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;What does relationship reveal about the movement of my mind?&quot;</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">interweave</span><span class="hf-w"> </span><span class="hf-ss">:osiris</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:thoth_sopdet</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:horus</span><span class="hf-w">
+
+  </span><span class="hf-c1"># III. Attention is a question throughout, not a numbered achievement.</span><span class="hf-w">
+  </span><span class="hf-n">attention</span><span class="hf-w"> </span><span class="hf-ss">:throughout</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">observe</span><span class="hf-w"> </span><span class="hf-ss">:what_is</span><span class="hf-w">
+    </span><span class="hf-n">include</span><span class="hf-w"> </span><span class="hf-ss">:motive</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:memory</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:image</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:reaction</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:observer</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Can this be observed without justification or condemnation?&quot;</span><span class="hf-w">
+    </span><span class="hf-n">distinguish</span><span class="hf-w"> </span><span class="hf-ss">:practical_knowledge</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:psychological_authority</span><span class="hf-w">
+    </span><span class="hf-n">remain_open_to</span><span class="hf-w"> </span><span class="hf-ss">:questioning_the_map_itself</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-n">inquiry_movement</span><span class="hf-w"> </span><span class="hf-ss">:non_linear</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">revisit</span><span class="hf-w"> </span><span class="hf-ss">:any_arcana</span><span class="hf-w">
+    </span><span class="hf-n">examine</span><span class="hf-w"> </span><span class="hf-ss">:the_intention_itself</span><span class="hf-w">
+    </span><span class="hf-n">allow</span><span class="hf-w"> </span><span class="hf-ss">:pause</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:unresolved_questions</span><span class="hf-w">
+    </span><span class="hf-n">preserve</span><span class="hf-w"> </span><span class="hf-ss">:accounts</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:sources</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:limitations</span><span class="hf-w">
+    </span><span class="hf-n">distinguish</span><span class="hf-w"> </span><span class="hf-ss">:recorded_account</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:living_perception</span><span class="hf-w">
+    </span><span class="hf-n">promise_no</span><span class="hf-w"> </span><span class="hf-ss">:programmed_insight</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:guaranteed_freedom</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+
+  </span><span class="hf-c1"># IV. 22 is the symbolic return event, not another card.</span><span class="hf-w">
+  </span><span class="hf-c1"># Use cycle: return is a Ruby keyword, not a suitable DSL method name.</span><span class="hf-w">
+  </span><span class="hf-n">cycle</span><span class="hf-w"> </span><span class="hf-n">from</span><span class="hf-p">:</span><span class="hf-w"> </span><span class="hf-mi">21</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-n">to</span><span class="hf-p">:</span><span class="hf-w"> </span><span class="hf-mi">0</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-n">event</span><span class="hf-p">:</span><span class="hf-w"> </span><span class="hf-mi">22</span><span class="hf-w"> </span><span class="hf-k">do</span><span class="hf-w">
+    </span><span class="hf-n">carry</span><span class="hf-w"> </span><span class="hf-ss">:the_record_with_its_limits</span><span class="hf-w">
+    </span><span class="hf-n">question</span><span class="hf-w"> </span><span class="hf-s2">&quot;Has this understanding become another conditioning image?&quot;</span><span class="hf-w">
+    </span><span class="hf-n">renew</span><span class="hf-w"> </span><span class="hf-ss">:inquiry</span><span class="hf-w">
+    </span><span class="hf-n">impose_no</span><span class="hf-w"> </span><span class="hf-ss">:required_sequence</span><span class="hf-p">,</span><span class="hf-w"> </span><span class="hf-ss">:final_identity</span><span class="hf-w">
+  </span><span class="hf-k">end</span><span class="hf-w">
+</span><span class="hf-k">end</span><span class="hf-w">
+</span></code></pre>
+      <p class="journey-dsl-note">The cards persist as perspectives. What changes is the account of the inquiry: its questions, observations, interpretations, and unresolved issues.</p>
+    </div>
+  </details>
+
+
+  <h3>What this adds to the AI journey</h3>
+  <p>Alongside “What capability helps me realize this intention?”, we can ask <strong>“What assumptions shape the intention, and what am I overlooking?”</strong> An AI system can help organize questions, retrieve sources, and preserve conflicting accounts. Producing those records does not establish the freedom, attention, or insight Krishnamurti describes; computational attention and his use of attention remain distinct.</p>
+
+  <blockquote><p><strong>Open question.</strong> Does this inquiry reveal conditioning—or merely reorganize it into a more convincing explanation?</p></blockquote>
+
+  <p><em>A renewed inquiry can question the tool, the explanation, the intention, and the map through which it began.</em></p>
+</section>
 
 <script defer="" src="/assets/js/developer-ai-journey-explorer.js?v=explorer-fix-2"></script>
 
