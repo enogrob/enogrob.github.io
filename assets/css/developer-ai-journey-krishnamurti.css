@@ -1,0 +1,17 @@
+.journey-krishnamurti { margin-block: 2.5rem; }
+.journey-krishnamurti .semantic-block { margin: 1.4rem 0; padding: 1rem 1.1rem; border: 1px solid; border-left-width: 4px; border-radius: .65rem; color: #3e342c; }
+.journey-krishnamurti .semantic-block--context { background: #d9eaf7; border-color: #7aa6c2; }
+.journey-krishnamurti .semantic-block--uncertainty { background: #f6d6dd; border-color: #bf7c89; }
+.journey-krishnamurti .semantic-block__title { margin-bottom: .55rem; }
+.journey-krishnamurti .semantic-block__body > :first-child { margin-top: 0; }
+.journey-krishnamurti .semantic-block__body > :last-child { margin-bottom: 0; }
+.journey-krishnamurti .journey-dsl-details { border: 1px solid #8998c8; border-radius: .65rem; margin-block: 1.5rem; }
+.journey-krishnamurti summary { cursor: pointer; padding: .9rem 1rem; font-weight: 600; }
+.journey-krishnamurti summary:focus-visible { outline: 3px solid #b52232; outline-offset: 3px; }
+.journey-krishnamurti .journey-dsl-body { padding: 0 1rem 1rem; min-width: 0; }
+.journey-krishnamurti .journey-dsl-note { font-size: .9em; }
+.journey-krishnamurti .highlight { max-width: 100%; overflow-x: auto; }
+.journey-krishnamurti pre { max-width: 100%; overflow-x: auto; font-size: .85em; line-height: 1.55; tab-size: 2; }
+.journey-krishnamurti pre code { white-space: pre; }
+@media (max-width: 420px) { .journey-krishnamurti .journey-dsl-body { padding-inline: .6rem; } }
+@media print { .journey-krishnamurti pre code { white-space: pre-wrap; overflow-wrap: anywhere; } }
