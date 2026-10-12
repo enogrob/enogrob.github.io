@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-11T23:40:53+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry xml:lang="en"><title type="html">AI: A Guide to Constructing a Universe — A Journey from 0 to 9</title><link href="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html" rel="alternate" type="text/html" title="AI: A Guide to Constructing a Universe — A Journey from 0 to 9" /><published>2026-10-11T15:40:00+00:00</published><updated>2026-10-11T15:40:00+00:00</updated><id>https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements</id><content type="html" xml:base="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html"><![CDATA[<link rel="stylesheet" href="/assets/css/rich-visual.css" />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-12T09:05:45+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry xml:lang="en"><title type="html">AI: A Guide to Constructing a Universe — A Journey from 0 to 9</title><link href="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html" rel="alternate" type="text/html" title="AI: A Guide to Constructing a Universe — A Journey from 0 to 9" /><published>2026-10-11T15:40:00+00:00</published><updated>2026-10-11T15:40:00+00:00</updated><id>https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements</id><content type="html" xml:base="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html"><![CDATA[<link rel="stylesheet" href="/assets/css/rich-visual.css" />
 
 <link rel="stylesheet" href="/assets/css/ai-a-universe-in-ten-movements.css" />
 
@@ -8,7 +8,9 @@
   </a>
 </figure>
 
-<p><em>From open possibility to meaningful, grounded, and revisable creations.</em></p>
+<blockquote>
+  <p><em>From open possibility to meaningful, grounded, and revisable creations.</em></p>
+</blockquote>
 
 <p>Human beings encounter a world they did not make, experience it inwardly, and give that experience outward form. Across cultures, this effort becomes number, geometry, myth, philosophy, science, art, and technology. Could a journey from 0 to 9 help us understand that movement—and the AI systems we now build to participate in it?</p>
 
@@ -74,6 +76,17 @@
 </figure>
 
 <h2 id="why-number-can-become-a-language-of-qualities">Why number can become a language of qualities</h2>
+
+<aside class="ai-universe-callout ai-universe-callout--context ai-universe-book" aria-label="Book reference">
+  <a class="ai-universe-book__cover" href="https://books.google.com/books/about/A_Beginner_s_Guide_to_Constructing_the_U.html?id=3JwMAwAAQBAJ">
+    <img src="/assets/images/posts/ai-a-universe-in-ten-movements/schneider-book-cover.jpg" alt="Cover of A Beginner’s Guide to Constructing the Universe by Michael S. Schneider" width="128" height="165" loading="lazy" />
+  </a>
+  <div class="ai-universe-book__text">
+    <header class="semantic-block__title"><span aria-hidden="true">📚</span> <strong>Book reference · Number as quality</strong></header>
+    <p><em>A Beginner’s Guide to Constructing the Universe</em> invites us to read number through geometric patterns in nature, art, and science. Its cover introduces that visual language; here, it frames an inquiry into relationships rather than proof of an AI architecture.</p>
+    <p class="ai-universe-book__credit">Michael S. Schneider · Cover thumbnail via <a href="https://books.google.com/books/about/A_Beginner_s_Guide_to_Constructing_the_U.html?id=3JwMAwAAQBAJ">Google Books</a>.</p>
+  </div>
+</aside>
 
 <p>Michael S. Schneider’s <em>A Beginner’s Guide to Constructing the Universe</em> provides a particularly useful bridge. His illustrated exploration moves through numbers 1–10 and their geometric expressions in nature, art, and science. He presents number as carrying recognizable qualities, including unity, polarity, structure, balance, and growth, alongside its quantitative use. See the <a href="https://www.constructingtheuniverse.com/bookinfo.htm">author’s introduction</a> and the <a href="https://books.google.com/books/about/A_Beginner_s_Guide_to_Constructing_the_U.html?id=3JwMAwAAQBAJ">book preview</a>.</p>
 
@@ -1258,10 +1271,19 @@
 
 <p><strong>Editorial verification still pending:</strong> precise statistics if added, host-specific GitHub Copilot support, independent Sidekiq/RSpec test execution, claim-level reference review, Jekyll assembly and image QA. No claim in this manuscript should be mistaken for an executed lab result.</p>]]></content><author><name></name></author><category term="software-engineering" /><category term="ai-native" /><category term="ai-native" /><category term="agentic-workflows" /><category term="rails" /><category term="sidekiq" /><category term="evidence" /><category term="governance" /><summary type="html"><![CDATA[A practical engineering perspective on understanding, bounded agents, evidence, and evolving existing software responsibly.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/the-ai-native-engineering-journey/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/the-ai-native-engineering-journey/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">The Developer’s AI Journey: From Prompts to AI-Native Engineering</title><link href="https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey.html" rel="alternate" type="text/html" title="The Developer’s AI Journey: From Prompts to AI-Native Engineering" /><published>2026-10-08T00:00:00+00:00</published><updated>2026-10-08T00:00:00+00:00</updated><id>https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey</id><content type="html" xml:base="https://enogrob.github.io/software-engineering/ai-native/2026/10/08/the-developers-ai-journey.html"><![CDATA[<link rel="stylesheet" href="/assets/css/developer-ai-journey.css?v=publication-final-1?v=publication-final-1" />
 
+<link rel="stylesheet" href="/assets/css/semantic-blocks.css" />
+
 <figure class="journey-art journey-cover">
   <img src="/assets/images/posts/developers-ai-journey/cover.webp" alt="Illustrated infographic showing a developer's evolving understanding across prompting, workflows, agents, skills and AI-native engineering" fetchpriority="high" />
   <figcaption>The map is not a ladder of technologies. It is a record of changing questions.</figcaption>
 </figure>
+
+<aside class="semantic-block semantic-block--insight" data-semantic-role="insight" aria-label="Insight">
+  <header class="semantic-block__title"><span aria-hidden="true">🧠</span> <strong>Insight</strong></header>
+  <div class="semantic-block__body">
+    <p>The journey is not about mastering AI. It is about transforming understanding.</p>
+  </div>
+</aside>
 
 <div class="journey-lead">
   <p class="journey-eyebrow">OPEN MIND · INQUIRY · ENGINEERING · XXI → 0</p>
@@ -1269,10 +1291,6 @@
   <p>One day we are discovering autocomplete. Soon we are debating prompts, vibe coding, context windows, agentic workflows, MCP, Skills, AI-driven delivery, and AI-native systems. Every week offers another tool, another framework, another claim that everything has changed.</p>
   <p>What does a developer actually need to learn? And more importantly, <em>what is changing in the way we understand and build software?</em></p>
 </div>
-
-<blockquote>
-  <p><strong>The journey is not about mastering AI. It is about transforming understanding.</strong></p>
-</blockquote>
 
 <!--more-->
 
