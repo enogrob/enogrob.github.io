@@ -12,9 +12,11 @@
 @media print{.rv-perspective__controls{display:none}.rv-perspective .rv-perspective__panel[hidden]{display:block!important}}
 
 /* Book reference: authentic cover at left, readable text at right. */
-.ai-universe-book{display:grid;grid-template-columns:128px minmax(0,1fr);gap:1.1rem;align-items:start}
+.ai-universe-callout.ai-universe-book{display:grid;grid-template-columns:128px minmax(0,1fr);gap:1.1rem;align-items:start}
+.ai-universe-book__cover{display:block;grid-column:1;margin:0}
+.ai-universe-book__text{grid-column:2}
 .ai-universe-book__cover img{display:block;width:128px;max-width:100%;height:auto}
 .ai-universe-book__cover:focus-visible{outline:3px solid #185c9b;outline-offset:4px}
 .ai-universe-book__text{min-width:0;overflow-wrap:anywhere}
 .ai-universe-book__credit{font-size:.85em}
-@media(max-width:480px){.ai-universe-book{grid-template-columns:minmax(0,1fr)}.ai-universe-book__cover{justify-self:start}}
+@media(max-width:480px){.ai-universe-callout.ai-universe-book{grid-template-columns:minmax(0,1fr)}.ai-universe-book__cover{justify-self:start}.ai-universe-book__text{grid-column:1}}
