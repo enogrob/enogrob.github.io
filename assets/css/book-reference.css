@@ -1,0 +1,13 @@
+/* Shared book references: source framing, cover left, text right. */
+.ai-universe-callout.ai-universe-book{display:grid;grid-template-columns:128px minmax(0,1fr);gap:1.1rem;align-items:start;margin:1.5rem 0;padding:1rem 1.1rem;border:1px solid #7AA6C2;border-left-width:4px;border-radius:.5rem;background:#D9EAF7;color:#3E342C}
+.ai-universe-book__cover{display:block;grid-column:1;margin:0}
+.ai-universe-book__cover img{display:block;width:128px;max-width:100%;height:auto}
+.ai-universe-book__text{grid-column:2;min-width:0;overflow-wrap:anywhere}
+.ai-universe-book .semantic-block__title{display:flex;align-items:center;gap:.45rem;margin:0 0 .55rem;font:inherit;font-weight:700}
+.ai-universe-book .semantic-block__body p{margin:.6rem 0 0}
+.ai-universe-book .semantic-block__body>:first-child{margin-top:0}
+.ai-universe-book__credit{font-size:.85em}
+.ai-universe-book a{color:#16578b;text-decoration:underline}
+.ai-universe-book a:focus-visible{outline:3px solid #185c9b;outline-offset:4px}
+@media(max-width:480px){.ai-universe-callout.ai-universe-book{grid-template-columns:minmax(0,1fr)}.ai-universe-book__text{grid-column:1}}
+@media print{.ai-universe-book{break-inside:avoid}}
