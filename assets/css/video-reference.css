@@ -1,7 +1,0 @@
-/* Static video reference; no embedded player or external runtime. */
-.rv-video-reference{box-sizing:border-box;width:100%;max-width:480px;margin:1.25rem auto;padding:.75rem;border:1px solid #d8d2cc;border-radius:.5rem;background:#faf8f5;color:#3e342c}
-.rv-video-reference__cover{display:block;color:#fff;text-decoration:none}
-.rv-video-reference__cover img{display:block;width:100%;max-width:100%;height:auto;border-radius:.25rem .25rem 0 0}
-.rv-video-reference__watch{display:block;padding:.65rem .8rem;background:#9b2929;text-align:center;font-weight:700;border-radius:0 0 .25rem .25rem}
-.rv-video-reference__cover:focus-visible{outline:3px solid #9b2929;outline-offset:4px}
-.rv-video-reference figcaption{margin-top:.65rem;font-size:.85em;line-height:1.5;overflow-wrap:anywhere}
