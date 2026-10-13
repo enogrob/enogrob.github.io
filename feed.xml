@@ -1,6 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-13T00:33:46+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry xml:lang="en"><title type="html">AI: A Guide to Constructing a Universe — A Journey from 0 to 9</title><link href="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html" rel="alternate" type="text/html" title="AI: A Guide to Constructing a Universe — A Journey from 0 to 9" /><published>2026-10-11T15:40:00+00:00</published><updated>2026-10-11T15:40:00+00:00</updated><id>https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements</id><content type="html" xml:base="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html"><![CDATA[<link rel="stylesheet" href="/assets/css/rich-visual.css" />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-13T01:13:37+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry xml:lang="en"><title type="html">AI: A Guide to Constructing a Universe — A Journey from 0 to 9</title><link href="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html" rel="alternate" type="text/html" title="AI: A Guide to Constructing a Universe — A Journey from 0 to 9" /><published>2026-10-11T15:40:00+00:00</published><updated>2026-10-11T15:40:00+00:00</updated><id>https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements</id><content type="html" xml:base="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html"><![CDATA[<link rel="stylesheet" href="/assets/css/rich-visual.css" />
 
 <link rel="stylesheet" href="/assets/css/ai-a-universe-in-ten-movements.css?v=folded-inquiry-3" />
+
+<figure class="ai-universe-illustration">
+  <a href="/assets/images/posts/ai-a-universe-in-ten-movements/cover.webp">
+    <img src="/assets/images/posts/ai-a-universe-in-ten-movements/cover.webp" alt="Human and digital hands shape an open world of ideas and creations surrounded by ten numbered responsibilities and a revisable inquiry." width="1600" height="900" loading="eager" decoding="async" />
+  </a>
+</figure>
 
 <h2 id="what-can-a-flower-teach-you-about-building-a-universe">What can a flower teach you about building a universe?</h2>
 
@@ -9,12 +15,6 @@
 <p>Start with something you can see: <strong>parts arranged into a whole</strong>. Petals have an arrangement. A drawing gives relationships a shape. Software brings separate contributions into something people can use.</p>
 
 <p>Michael S. Schneider’s <em>A Beginner’s Guide to Constructing the Universe</em> invites a journey through number and geometry in nature, art, and science. We’ll borrow that spirit of exploration to ask: <strong>how do we turn a world we encounter into a world we understand—and then into something we create?</strong></p>
-
-<figure class="ai-universe-illustration">
-  <a href="/assets/images/posts/ai-a-universe-in-ten-movements/cover.webp">
-    <img src="/assets/images/posts/ai-a-universe-in-ten-movements/cover.webp" alt="Human and digital hands shape an open world of ideas and creations surrounded by ten numbered responsibilities and a revisable inquiry." width="1600" height="900" loading="eager" decoding="async" />
-  </a>
-</figure>
 
 <p>The cover’s human and digital hands surround a world of ideas and creations. Imagine the numbers around it as invitations to look again: at unity, relationships, structure, change, and renewal.</p>
 
