@@ -1,6 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-12T23:11:31+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry xml:lang="en"><title type="html">AI: A Guide to Constructing a Universe — A Journey from 0 to 9</title><link href="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html" rel="alternate" type="text/html" title="AI: A Guide to Constructing a Universe — A Journey from 0 to 9" /><published>2026-10-11T15:40:00+00:00</published><updated>2026-10-11T15:40:00+00:00</updated><id>https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements</id><content type="html" xml:base="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html"><![CDATA[<link rel="stylesheet" href="/assets/css/rich-visual.css" />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-13T00:04:05+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry xml:lang="en"><title type="html">AI: A Guide to Constructing a Universe — A Journey from 0 to 9</title><link href="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html" rel="alternate" type="text/html" title="AI: A Guide to Constructing a Universe — A Journey from 0 to 9" /><published>2026-10-11T15:40:00+00:00</published><updated>2026-10-11T15:40:00+00:00</updated><id>https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements</id><content type="html" xml:base="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html"><![CDATA[<link rel="stylesheet" href="/assets/css/rich-visual.css" />
 
-<link rel="stylesheet" href="/assets/css/ai-a-universe-in-ten-movements.css?v=book-layout-2" />
+<link rel="stylesheet" href="/assets/css/ai-a-universe-in-ten-movements.css?v=folded-inquiry-3" />
+
+<h2 id="a-learning-companion-sounds-simple-where-do-you-start">A learning companion sounds simple. Where do you start?</h2>
+
+<p>Someone asks: <strong>“Build a learning companion that helps a student practice where they’re struggling.”</strong></p>
+
+<p>Before generating exercises, you need to know what’s difficult, which materials you may use, and who will review the result. This essay offers <strong>ten responsibilities, numbered 0–9</strong>, to help organize that inquiry.</p>
 
 <figure class="ai-universe-illustration">
   <a href="/assets/images/posts/ai-a-universe-in-ten-movements/cover.webp">
@@ -8,65 +14,26 @@
   </a>
 </figure>
 
-<blockquote>
-  <p>Exploring AI as a living movement from inquiry and understanding to intelligence, orchestration, and action. A visual journey beyond models and agents, toward truly AI-native systems.</p>
-</blockquote>
+<p>The hands represent human–AI collaboration. “Universe” means the ideas and creations we can examine together. <strong>This is our proposed map, not ten built-in AI modules or evidence of AI consciousness.</strong> Responsibilities can overlap, repeat, or pause.</p>
 
-<p>Human beings encounter a world they did not make, experience it inwardly, and give that experience outward form. Across cultures, this effort becomes number, geometry, myth, philosophy, science, art, and technology. Could a journey from 0 to 9 help us understand that movement—and the AI systems we now build to participate in it?</p>
-
-<h2 id="reading-the-cover">Reading the cover</h2>
-
-<p>The premise of this essay is that humanity repeatedly attempts to understand three related fields: the reality observed outside, the reality experienced within, and the reality projected outward through action and creation. Nature supplies recurring forms and relationships. Cultures interpret them, preserve them, and sometimes exchange them. AI becomes another creation through which this movement continues.</p>
-
-<p>Our proposal is a visual language of <strong>ten persistent responsibilities, numbered 0–9</strong>, through which an inquiry can move. It is an architectural and educational interpretation, inspired by symbolic and philosophical sources. Its usefulness depends on whether it clarifies actual work.</p>
-
-<p>The cover compresses the argument into one scene. A human hand and a digital hand surround a world of books, software, buildings, and living forms. They represent collaboration in giving an idea an inspectable form. The luminous connections show an inquiry moving among responsibilities. Ten numbered stations make the responsibilities visible without filling the cover with implementation detail. The deck below expands their meanings, questions and resources.</p>
-
-<p><strong>“Universe” means a world of ideas, models, and realizations. “Ten steps” names a reading journey through that world.</strong> In operation, the responsibilities persist: an inquiry can return, branch, pause, or proceed concurrently. The center holds the evolving inquiry, rather than a claim that AI possesses human inner experience.</p>
-
-<aside class="ai-universe-callout ai-universe-callout--hypothesis semantic-block" data-semantic-role="hypothesis" aria-label="Hypothesis">
-  <header class="semantic-block__title"><span aria-hidden="true">🧩</span> <strong>Hypothesis</strong></header>
-  <div class="semantic-block__body"><p>A qualitative 0–9 map may help people understand and coordinate AI inquiry. Its value should be tested in concrete cases, and the mapping remains revisable.</p></div>
-</aside>
-
-<h2 id="in-this-post">In this post</h2>
-
-<ul>
-  <li><a href="#outside-within-and-outward-again">Outside, within, and outward again</a></li>
-  <li><a href="#why-number-can-become-a-language-of-qualities">Why number can become a language of qualities</a></li>
-  <li><a href="#inspiration-and-scope">Inspiration and scope</a></li>
-  <li><a href="#from-human-inquiry-to-ai-architecture">From human inquiry to AI architecture</a></li>
-  <li><a href="#a-universe-in-ten-movements">A universe in ten movements</a></li>
-  <li><a href="#what-moves-and-what-persists">What moves, and what persists</a></li>
-  <li><a href="#support-across-all-ten-responsibilities">Support across all ten responsibilities</a></li>
-  <li><a href="#the-inquiry-lifecycle">The inquiry lifecycle</a></li>
-  <li><a href="#an-intention-moving-through-the-architecture">An intention moving through the architecture</a></li>
-  <li><a href="#the-macro-reflected-in-the-micro">The macro reflected in the micro</a></li>
-  <li><a href="#what-this-map-can-help-us-understand">What this map can help us understand</a></li>
-  <li><a href="#references-and-further-reading">References and further reading</a></li>
-</ul>
+<p><em>Read the main story first. Open the details for diagrams, resources, and implementation questions.</em></p>
 
 <h2 id="outside-within-and-outward-again">Outside, within, and outward again</h2>
 
-<p>A seed grows. A river returns to flood. Day gives way to night. A flower displays an arrangement that can be recognized, drawn, compared, and measured.</p>
+<p>You notice a river’s yearly flood, remember the pattern, and make a calendar. That calendar changes how you observe and prepare next time.</p>
 
-<p>Human beings observe these events. Observation becomes memory, interpretation, anticipation, and feeling. What was encountered outside acquires significance within. That significance can then become an image, a story, a calendar, a building, an experiment, or a tool. The creation changes what people subsequently encounter and interpret.</p>
+<p><strong>Encounter → interpretation → expression → renewed encounter.</strong> What you already believe can also shape what you notice.</p>
 
-<p>This is the movement we want to make visible:</p>
+<details class="ai-universe-source">
+  <summary>See how encounter, interpretation, and expression connect</summary>
 
-<p><strong>Encounter → interpretation → expression → renewed encounter.</strong></p>
-
-<figure class="mermaid-static">
+  <figure class="mermaid-static">
   <img src="/assets/generated/mermaid/120ba5c31286a28b45c6.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
 </figure>
 
-<p><em>Editorial premise: observation, inner interpretation, and outward creation affect one another. These arrows express our relational model, not a demonstrated mechanism of consciousness.</em></p>
+  <p><em>An editorial relationship model, not a mechanism of consciousness.</em></p>
 
-<p>It is an editorial model, not a complete account of perception. Inner experience also shapes what we notice in the first place. The movement is already reciprocal.</p>
-
-<p>The recurrence of themes across cultures invites investigation. Shared natural conditions and shared human capacities can produce related questions. Cultural transmission can carry an image or practice between communities. Later interpreters can also emphasize resemblance and overlook difference. A circle in two traditions is a starting point for comparison; establishing what it meant in each requires evidence.</p>
-
-<p>Our central question is therefore practical: <strong>can the forms through which humanity has understood reality help us make our newest creations more intelligible?</strong></p>
+</details>
 
 <figure class="ai-universe-illustration">
   <a href="/assets/images/posts/ai-a-universe-in-ten-movements/01-outside-within-outward.webp">
@@ -75,7 +42,9 @@
   <figcaption>An editorial metaphor for encounter, interpretation, expression and renewed encounter. The profile represents inward interpretation; it is not a model of neural anatomy or AI consciousness.</figcaption>
 </figure>
 
-<h2 id="why-number-can-become-a-language-of-qualities">Why number can become a language of qualities</h2>
+<h2 id="why-use-numbers-and-shapes">Why use numbers and shapes?</h2>
+
+<p>A point can suggest focus; two points, a relationship. Shapes give abstract ideas something memorable to hold onto.</p>
 
 <aside class="ai-universe-callout ai-universe-callout--context ai-universe-book" data-semantic-role="reference" aria-labelledby="schneider-book-reference">
   <a class="ai-universe-book__cover" href="https://books.google.com/books/about/A_Beginner_s_Guide_to_Constructing_the_U.html?id=3JwMAwAAQBAJ">
@@ -90,184 +59,20 @@
   </div>
 </aside>
 
-<p>Michael S. Schneider’s <em>A Beginner’s Guide to Constructing the Universe</em> provides a particularly useful bridge. His illustrated exploration moves through numbers 1–10 and their geometric expressions in nature, art, and science. He presents number as carrying recognizable qualities, including unity, polarity, structure, balance, and growth, alongside its quantitative use. See the <a href="https://www.constructingtheuniverse.com/bookinfo.htm">author’s introduction</a> and the <a href="https://books.google.com/books/about/A_Beginner_s_Guide_to_Constructing_the_U.html?id=3JwMAwAAQBAJ">book preview</a>.</p>
+<p>Schneider explores <strong>1–10</strong>; our map uses <strong>0–9</strong>, adding openness before the question is formed. We aren’t shifting his chapter meanings or equating 10 with 0. These are visual associations, not laws of algorithms or consciousness.</p>
 
-<p>For our inquiry, geometry becomes a way to think about relationships. A point can suggest a focus. Two points introduce a relationship. A triangle can help us consider mediation. A square can suggest a bounded structure. Repeating forms make coordination visible.</p>
+<h3 id="where-the-inspiration-comes-from">Where the inspiration comes from</h3>
 
-<p>These are proposed visual meanings. Their value lies in helping a reader remember and examine distinctions. A geometric association does not, by itself, explain an algorithm or establish a law of consciousness.</p>
-
-<p>Schneider’s journey also exposes a choice we must keep explicit: his book explores <strong>1–10</strong>, while our architecture uses <strong>0–9</strong>. We add 0 as openness to what has not yet been formulated. We retain ten responsibilities without shifting his chapter meanings wholesale or treating 10 as equivalent to 0. The interpretation can change when a better distinction emerges.</p>
-
-<h2 id="inspiration-and-scope">Inspiration and scope</h2>
-
-<aside class="ai-universe-callout ai-universe-callout--context ai-universe-book" data-semantic-role="reference" aria-labelledby="wisdom-book-reference">
-  <a class="ai-universe-book__cover" href="https://revivalofwisdom.com/">
-    <img src="/assets/images/posts/ai-a-universe-in-ten-movements/book-of-wisdom-cover.webp" alt="Official cover mockup of The Book of Wisdom by Harry B. Joseph" width="256" height="192" loading="lazy" decoding="async" />
-  </a>
-  <div class="ai-universe-book__text">
-    <header class="semantic-block__title" id="wisdom-book-reference"><span aria-hidden="true">📚</span> <strong>Reference · The Book of Wisdom</strong></header>
-    <div class="semantic-block__body">
-      <p>This book was the starting point for our exploration of number, geometry, and symbolism. Its imagery provides a recognizable reference for that inspiration; the AI responsibility map remains our own architectural interpretation.</p>
-      <p class="ai-universe-book__credit">Harry B. Joseph · Cover thumbnail via <a href="https://revivalofwisdom.com/">Revival of Wisdom</a>.</p>
-    </div>
-  </div>
-</aside>
-
-<p>Our discussion began with Harry B. Joseph’s <em>The Book of Wisdom</em> and expanded into number, geometry, Hermetic correspondence, Tarot, and Egyptian imagery. These perspectives supplied questions and metaphors for the proposal. The <strong>0–9 responsibility map is our architectural interpretation</strong>, inspired especially by Schneider’s exploration of numerical qualities; it is not a shared doctrine attributed to these sources.</p>
-
-<aside class="ai-universe-callout ai-universe-callout--context ai-universe-book" data-semantic-role="reference" aria-labelledby="dialogue-book-reference">
-  <a class="ai-universe-book__cover" href="https://books.google.com/books?id=awdBUNUTgN8C">
-    <img src="/assets/images/posts/ai-a-universe-in-ten-movements/on-dialogue-cover.webp" alt="Cover of On Dialogue by David Bohm, with a circular teal design" width="128" height="196" loading="lazy" decoding="async" />
-  </a>
-  <div class="ai-universe-book__text">
-    <header class="semantic-block__title" id="dialogue-book-reference"><span aria-hidden="true">📚</span> <strong>Reference · On Dialogue</strong></header>
-    <div class="semantic-block__body">
-      <p>On Dialogue inspires this chapter’s attention to shared meaning, relationships, and alternative interpretations. The cover identifies the source; our application to AI context, coordination, and revision is an engineering interpretation.</p>
-      <p class="ai-universe-book__credit">David Bohm · Cover thumbnail via <a href="https://books.google.com/books?id=awdBUNUTgN8C">Google Books</a>.</p>
-    </div>
-  </div>
-</aside>
-
-<p>Krishnamurti’s emphasis on <a href="https://kfoundation.org/core-of-the-teachings/">observation and conditioning</a> encourages us to examine the assumptions behind a map. Bohm’s <a href="https://www.davidbohmsociety.org/library/on-dialogue/">On Dialogue</a> inspires attention to relationships, shared meaning, and alternative interpretations. For AI, these become practical questions about context, evidence, coordination, and revision. Functional parallels do not establish subjective consciousness; human attention, task focus, and neural attention remain distinct concepts.</p>
-
-<p>The map should help us inspect an inquiry and remain open to change when it obscures the work.</p>
-
-<h3 id="three-complementary-questions">Three complementary questions</h3>
-
-<p>The earlier <a href="https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/09/14/the-secret-of-the-sphinx.html">Secret of the Sphinx</a> offered a contemporary symbolic reading of Osiris, Thoth–Sopdet, and Horus. We retain its three questions as lenses across the architecture:</p>
-
-<ul>
-  <li><strong>Transformation:</strong> what assumption or arrangement needs to change?</li>
-  <li><strong>Awakening:</strong> what has become visible or was overlooked?</li>
-  <li><strong>Experience:</strong> what happens when understanding meets action and consequences?</li>
-</ul>
-
-<p>These lenses can intersect at any responsibility. They add ways to examine the inquiry, rather than additional runtime layers.</p>
-
-<h2 id="from-human-inquiry-to-ai-architecture">From human inquiry to AI architecture</h2>
-
-<p>AI is a human creation that participates in interpreting and expressing a world. In systems built to assist inquiry, relevant functions include maintaining context, relating information, selecting actions, inspecting results, and updating a working account.</p>
-
-<p>The premise that AI must “have this movement to imitate us” becomes a design hypothesis: <strong>which functions are needed for the particular human activity we want to support?</strong> A system helping diagnose a failure needs access to observations, ways to test alternatives, and grounds for a conclusion. A small classifier may need no agent loop at all. Useful imitation of a task does not establish identical inner experience.</p>
-
-<p>Technical work already supplies architectural material for this proposal. <a href="https://arxiv.org/abs/2309.02427">Cognitive Architectures for Language Agents</a>, the CoALA paper, organizes language agents around memory, action spaces, and decision-making. Anthropic’s <a href="https://www.anthropic.com/engineering/building-effective-agents">Building Effective Agents</a> distinguishes predefined workflows from agents that dynamically direct their use of tools and describes the combination of models with retrieval, tools, and memory.</p>
-
-<p>Our ten-part map organizes the responsibilities these components may serve. It is not a claim that every AI contains ten native modules.</p>
-
-<h3 id="a-component-view-of-the-proposal">A component view of the proposal</h3>
-
-<p>This overview separates persistent contracts, participating components, and evolving state. The detailed views below unfold the ten responsibilities.</p>
-
-<details>
-  <summary>Explore the proposed inquiry architecture</summary>
-
-  <figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/d43f7bd0089049e04adf.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-</details>
-
-<p><em>Proposed architecture: responsibility contracts guide agents and components; their work updates inquiry state. Memory and trace preserve continuity. The diagram does not prescribe a centralized store.</em></p>
+<p><a href="https://revivalofwisdom.com/"><em>The Book of Wisdom</em></a> sparked the symbolic exploration; Krishnamurti’s <a href="https://kfoundation.org/core-of-the-teachings/">observation and conditioning</a> invites questioning assumptions; Bohm’s <a href="https://www.davidbohmsociety.org/library/on-dialogue/"><em>On Dialogue</em></a> encourages shared meaning. They inspire our interpretation. From <a href="https://enogrob.github.io/knowledge-management/symbolism/visual-learning/2026/09/14/the-secret-of-the-sphinx.html"><em>Secret of the Sphinx</em></a>, keep three questions: <strong>what needs to change, what did we overlook, and what happens when we act?</strong> Human attention, task focus, and neural attention remain distinct.</p>
 
 <h2 id="a-universe-in-ten-movements">A universe in ten movements</h2>
 
-<p>Here, a universe is a coherent world of ideas, models, relationships, and realizations that human beings and AI can construct and examine together.</p>
+<p>Read these as <strong>questions to revisit</strong>, not ten steps to execute once. One agent can serve several responsibilities; ordinary code can handle some checks. Open the deck to browse all ten illustrated cards, then expand any card for its resources, actors, and limits.</p>
 
-<details>
-  <summary>Compare the ten responsibilities</summary>
+<details class="ai-universe-source">
+  <summary>Explore the ten illustrated responsibilities · 0–9</summary>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Number</th>
-        <th>Persistent responsibility</th>
-        <th>Guiding question</th>
-        <th>Possible resources</th>
-        <th>Actors or roles</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>**0**</td>
-        <td>Openness</td>
-        <td>What is unknown or possible?</td>
-        <td>Open questions, capability registry, limits</td>
-        <td>Human, explorer</td>
-      </tr>
-      <tr>
-        <td>**1**</td>
-        <td>Unity and direction</td>
-        <td>What are we trying to create?</td>
-        <td>Goals, instructions, scope, success criteria</td>
-        <td>Human, clarifier</td>
-      </tr>
-      <tr>
-        <td>**2**</td>
-        <td>Relation and context</td>
-        <td>What does this depend on?</td>
-        <td>Retrieval, RAG, search, sources, provenance</td>
-        <td>Researcher</td>
-      </tr>
-      <tr>
-        <td>**3**</td>
-        <td>Meaning</td>
-        <td>How do the ideas connect?</td>
-        <td>LLM, embeddings, semantic graph, structured representations</td>
-        <td>Interpreter</td>
-      </tr>
-      <tr>
-        <td>**4**</td>
-        <td>Structure</td>
-        <td>What form and plan will support it?</td>
-        <td>Schemas, contracts, state machines, workflow plans</td>
-        <td>Planner</td>
-      </tr>
-      <tr>
-        <td>**5**</td>
-        <td>Transformation</td>
-        <td>What happens when we act?</td>
-        <td>Tools, APIs, MCP integrations, sandbox, observations</td>
-        <td>Executor</td>
-      </tr>
-      <tr>
-        <td>**6**</td>
-        <td>Organization and integration</td>
-        <td>How do the parts work together?</td>
-        <td>Orchestration, evidence links, synthesis, alternative accounts</td>
-        <td>Coordinator, synthesizer</td>
-      </tr>
-      <tr>
-        <td>**7**</td>
-        <td>Discernment</td>
-        <td>What is supported, uncertain, or missing?</td>
-        <td>Validators, tests, evaluations, human review</td>
-        <td>Verifier</td>
-      </tr>
-      <tr>
-        <td>**8**</td>
-        <td>Realization and renewal</td>
-        <td>What can we deliver and improve?</td>
-        <td>Artifacts, authorized actions, outcome feedback</td>
-        <td>Producer</td>
-      </tr>
-      <tr>
-        <td>**9**</td>
-        <td>Synthesis and horizon</td>
-        <td>What have we learned; what remains open?</td>
-        <td>Completion review, revision, next inquiry</td>
-        <td>Reviewer, human</td>
-      </tr>
-    </tbody>
-  </table>
-
-</details>
-
-<h3 id="ai-inquiry-deck--ten-persistent-responsibilities">AI Inquiry Deck — Ten Persistent Responsibilities</h3>
-
-<p>The <strong>AI Inquiry Deck</strong> expands the ten numbered responsibilities shown on the cover. Each card adds its guiding question, resource vocabulary and actor contribution while retaining a related visual motif. Each list item places its illustrated thumbnail beside the guiding question. Expand the account to explore its function. The numbers identify persistent responsibilities; they are not a required execution order. The role names describe contributions, not ten mandatory agents.</p>
-
-<p class="ai-inquiry-deck-hint">Read the ten responsibilities below; expand any item for resources, actors and limits.</p>
-<ol class="ai-inquiry-deck" start="0" aria-label="Ten persistent inquiry responsibilities">
+  <ol class="ai-inquiry-deck" start="0" aria-label="Ten persistent inquiry responsibilities">
 <li>
 <article class="ai-inquiry-card" id="inquiry-card-0" style="--card-accent:#1276c5" aria-labelledby="inquiry-card-title-0">
   <div class="ai-inquiry-card-art"><img src="/assets/images/posts/ai-a-universe-in-ten-movements/deck/00-openness.webp" alt="Conceptual illustration of openness, responsibility 0" width="100" height="150" loading="lazy" decoding="async" /></div>
@@ -277,14 +82,12 @@
   <details class="ai-inquiry-card-detail">
     <summary>Explore details</summary>
     <div class="ai-inquiry-card-body">
-      <p>Before answering, make room for the question. An explorer can identify missing information, propose alternative starting points, and inspect which capabilities are available. Its contribution is a useful account of what could be investigated, including what cannot yet be established. In human experience, this recalls curiosity and the willingness to notice a gap in understanding.</p>
+      <p>List unknowns, possible starting points, and available capabilities.</p>
       <dl>
         <dt>Resources</dt><dd>Questions · Capability registry · Limits</dd>
         <dt>Actors</dt><dd>Explorer</dd>
-        <dt>Human aspect</dt><dd>Curiosity and openness to the unknown</dd>
-        <dt>Contribution to the inquiry</dt><dd>An explicit account of possibilities and unknowns</dd>
       </dl>
-      <p><strong>Limits and revision.</strong> A capability registry can list accessible tools; it cannot guarantee that a tool is appropriate or that its output will be true. Openness should preserve uncertainty rather than fill every gap with a plausible story.</p>
+      <p><strong>Limit.</strong> An available tool may be unsuitable or wrong. Preserve uncertainty.</p>
     </div>
   </details>
   </div>
@@ -299,14 +102,12 @@
   <details class="ai-inquiry-card-detail">
     <summary>Explore details</summary>
     <div class="ai-inquiry-card-body">
-      <p>The human and a clarifier turn an initial wish into an intent with scope, constraints, and success criteria. This gives several participants a shared reference for their work. The output might be a brief, an investigation question, or an acceptance contract. The human counterpart is purpose: choosing what matters and accepting responsibility for the choice.</p>
+      <p>Agree on the goal, scope, constraints, and success criteria.</p>
       <dl>
         <dt>Resources</dt><dd>Goals · Instructions · Success criteria</dd>
         <dt>Actors</dt><dd>Human + Clarifier</dd>
-        <dt>Human aspect</dt><dd>Purpose, values, and responsibility</dd>
-        <dt>Contribution to the inquiry</dt><dd>A revisable intent with scope and success criteria</dd>
       </dl>
-      <p><strong>Limits and revision.</strong> Direction remains revisable. Discovering that the requested solution addresses the wrong problem can require a new intent, not merely a better implementation of the original one.</p>
+      <p><strong>Limit.</strong> Revise the goal if you discover you chose the wrong problem.</p>
     </div>
   </details>
   </div>
@@ -321,14 +122,12 @@
   <details class="ai-inquiry-card-detail">
     <summary>Explore details</summary>
     <div class="ai-inquiry-card-body">
-      <p>A researcher gathers relevant sources, project history, observations, and environmental constraints. Search and retrieval bring material into view; RAG can supply retrieved material to a model&#x27;s generation context. Provenance records where it came from and, when relevant, when it was observed. The contribution is a situated question rather than an isolated prompt.</p>
+      <p>Gather relevant sources and history. RAG supplies retrieved context; provenance records its origin.</p>
       <dl>
         <dt>Resources</dt><dd>RAG · Search · Sources · Provenance</dd>
         <dt>Actors</dt><dd>Researcher</dd>
-        <dt>Human aspect</dt><dd>Relationship, circumstance, and remembered experience</dd>
-        <dt>Contribution to the inquiry</dt><dd>Relevant context with provenance</dd>
       </dl>
-      <p><strong>Limits and revision.</strong> For a person, meaning changes with relationship, circumstances, and remembered experience. In an AI system, context selection is an engineering approximation to part of that function. Retrieved material still needs to be assessed for relevance, freshness, and reliability.</p>
+      <p><strong>Limit.</strong> Check relevance, freshness, and reliability.</p>
     </div>
   </details>
   </div>
@@ -343,14 +142,12 @@
   <details class="ai-inquiry-card-detail">
     <summary>Explore details</summary>
     <div class="ai-inquiry-card-body">
-      <p>An interpreter identifies entities, relationships, ambiguities, and candidate explanations. LLMs can propose interpretations; embeddings can support similarity-based retrieval; a semantic graph can record explicit relationships. These components contribute different operations. Similarity alone does not establish meaning or truth.</p>
+      <p>Propose interpretations. Embeddings find similar material; semantic graphs record explicit relationships.</p>
       <dl>
         <dt>Resources</dt><dd>LLM · Embeddings · Semantic graph</dd>
         <dt>Actors</dt><dd>Interpreter</dd>
-        <dt>Human aspect</dt><dd>Making sense of experience</dd>
-        <dt>Contribution to the inquiry</dt><dd>Candidate interpretations and explicit relationships</dd>
       </dl>
-      <p><strong>Limits and revision.</strong> This is the semantic emphasis of the map: what does the request mean, which concepts matter, and how might observations relate? The output is an explicit, revisable interpretation. Its human analogue is making sense of experience, with the possibility of misunderstanding still present.</p>
+      <p><strong>Limit.</strong> Similarity does not establish meaning or truth.</p>
     </div>
   </details>
   </div>
@@ -365,14 +162,12 @@
   <details class="ai-inquiry-card-detail">
     <summary>Explore details</summary>
     <div class="ai-inquiry-card-body">
-      <p>A planner converts an interpretation into a bounded arrangement of work. Schemas define data shape; contracts define expectations; workflow plans describe steps; state machines represent allowed transitions. A schema can check that a result has a required field without establishing that the field is correct.</p>
+      <p>Define data shapes, expectations, work steps, and allowed transitions.</p>
       <dl>
         <dt>Resources</dt><dd>Schemas · State machines · Workflow plans</dd>
         <dt>Actors</dt><dd>Planner</dd>
-        <dt>Human aspect</dt><dd>Planning and organizing possibilities</dd>
-        <dt>Contribution to the inquiry</dt><dd>A bounded plan with inspectable contracts</dd>
       </dl>
-      <p><strong>Limits and revision.</strong> The contribution is a plan that can be examined and adjusted. Human planning similarly organizes possibilities into a course of action. Structure supports inquiry when it exposes assumptions and permits revision.</p>
+      <p><strong>Limit.</strong> A required field can contain a wrong answer. Review the plan.</p>
     </div>
   </details>
   </div>
@@ -387,14 +182,12 @@
   <details class="ai-inquiry-card-detail">
     <summary>Explore details</summary>
     <div class="ai-inquiry-card-body">
-      <p>An executor uses tools, APIs, or an MCP connection to inspect or change an environment within granted permissions. A sandbox can bound an experiment. The inquiry gains observations from an action: a command result, a measurement, a changed file, or a failure.</p>
+      <p>Use authorized tools to act and observe; a sandbox bounds the experiment.</p>
       <dl>
         <dt>Resources</dt><dd>Tools · APIs · MCP · Sandbox</dd>
         <dt>Actors</dt><dd>Executor</dd>
-        <dt>Human aspect</dt><dd>Learning through action and consequences</dd>
-        <dt>Contribution to the inquiry</dt><dd>Observations from permitted operations</dd>
       </dl>
-      <p><strong>Limits and revision.</strong> This is where a proposed explanation meets consequences. Human experience also changes through action, but a successful API call establishes only that an operation succeeded under its reported conditions. Its relevance to the original intent still needs evaluation.</p>
+      <p><strong>Limit.</strong> A successful call does not prove the problem was solved.</p>
     </div>
   </details>
   </div>
@@ -409,14 +202,12 @@
   <details class="ai-inquiry-card-detail">
     <summary>Explore details</summary>
     <div class="ai-inquiry-card-body">
-      <p>A coordinator assigns work and manages dependencies. A synthesizer relates the contributions, their sources, and their disagreements. Orchestration can combine deterministic services and agents without making every component autonomous.</p>
+      <p>Coordinate dependencies and connect contributions into a working account.</p>
       <dl>
         <dt>Resources</dt><dd>Orchestration · Evidence links · Synthesis</dd>
         <dt>Actors</dt><dd>Coordinator + Synthesizer</dd>
-        <dt>Human aspect</dt><dd>Integrating perspectives without erasing disagreement</dd>
-        <dt>Contribution to the inquiry</dt><dd>A coherent account with evidence and alternatives</dd>
       </dl>
-      <p><strong>Limits and revision.</strong> The output is a coherent working account that retains evidence links and alternative explanations. This recalls the human effort to integrate different experiences into a wider picture. Integration should make disagreements inspectable; voting among agents is not a substitute for independent support.</p>
+      <p><strong>Limit.</strong> Keep disagreements visible. Agent agreement is not independent evidence.</p>
     </div>
   </details>
   </div>
@@ -431,14 +222,12 @@
   <details class="ai-inquiry-card-detail">
     <summary>Explore details</summary>
     <div class="ai-inquiry-card-body">
-      <p>A verifier checks whether claims and proposed actions meet the inquiry&#x27;s criteria. Tests, validators, evaluations, and human review contribute different kinds of checks. A test can establish a particular behavior under particular conditions; an evaluation can assess performance on selected cases. Their coverage and limits matter.</p>
+      <p>Assess claims against criteria with tests, evaluations, and human review.</p>
       <dl>
         <dt>Resources</dt><dd>Validators · Tests · Evals · Human review</dd>
         <dt>Actors</dt><dd>Verifier</dd>
-        <dt>Human aspect</dt><dd>Judgment about support and uncertainty</dd>
-        <dt>Contribution to the inquiry</dt><dd>A qualified decision about support, gaps, or revision</dd>
       </dl>
-      <p><strong>Limits and revision.</strong> This is the epistemic emphasis: how do we know, and how far does the support extend? Its contribution may be acceptance, rejection, a request for more evidence, or a qualified conclusion. Human discernment likewise includes recognizing when an attractive interpretation exceeds what experience supports.</p>
+      <p><strong>Limit.</strong> Checks have limits. More investigation or a pause may be appropriate.</p>
     </div>
   </details>
   </div>
@@ -453,14 +242,12 @@
   <details class="ai-inquiry-card-detail">
     <summary>Explore details</summary>
     <div class="ai-inquiry-card-body">
-      <p>A producer gives the supported proposal an explicit form: a report, a patch, a diagram, or another artifact. Actions that change a live environment must respect the authorization for that inquiry. Feedback from use supplies new observations and may reveal a mismatch between the artifact and the intent.</p>
+      <p>Deliver an inspectable artifact and observe feedback from use.</p>
       <dl>
         <dt>Resources</dt><dd>Artifacts · Authorized actions · Feedback</dd>
         <dt>Actors</dt><dd>Producer</dd>
-        <dt>Human aspect</dt><dd>Expression, practical realization, and adjustment</dd>
-        <dt>Contribution to the inquiry</dt><dd>An inspectable artifact and outcome feedback</dd>
       </dl>
-      <p><strong>Limits and revision.</strong> This responsibility makes the result available for inspection and use. Its human analogue is expression and practical realization. Completing an artifact and achieving its intended outcome remain separate questions.</p>
+      <p><strong>Limit.</strong> Live changes need authorization. An artifact is not the intended outcome.</p>
     </div>
   </details>
   </div>
@@ -475,14 +262,12 @@
   <details class="ai-inquiry-card-detail">
     <summary>Explore details</summary>
     <div class="ai-inquiry-card-body">
-      <p>A reviewer consolidates the account: results, evidence, decisions, limitations, and unresolved questions. Completion review decides whether the inquiry&#x27;s criteria have been met or whether a bounded stopping point should be recorded.</p>
+      <p>Record findings, limits, and open questions for the next inquiry.</p>
       <dl>
         <dt>Resources</dt><dd>Completion review · Revision · Next inquiry</dd>
         <dt>Actors</dt><dd>Reviewer</dd>
-        <dt>Human aspect</dt><dd>Reflection, continuity, and a new question</dd>
-        <dt>Contribution to the inquiry</dt><dd>A consolidated account with limitations and open questions</dd>
       </dl>
-      <p><strong>Limits and revision.</strong> This gives future work a grounded starting point. Human reflection can similarly preserve experience while changing the next question. The horizon remains open: 9 can return to 0 with a better question. Recorded feedback provides continuity; it does not automatically retrain the underlying model.</p>
+      <p><strong>Limit.</strong> Recorded feedback does not automatically retrain a model.</p>
     </div>
   </details>
   </div>
@@ -490,45 +275,15 @@
 </li>
 </ol>
 
-<p><em>The deck is a conceptual reading aid derived from the cover. Illustrations express responsibilities; they do not report implemented systems or verified results. Every card remains readable without JavaScript, and the same responsibility can be revisited throughout an inquiry.</em></p>
+</details>
 
-<h3 id="the-responsibilities-in-two-connected-views">The responsibilities in two connected views</h3>
+<p><em>The illustrations are conceptual aids, not implemented systems or verified results.</em></p>
 
-<p>The two maps share one logical inquiry state. Their relations show possible contributions to that record, rather than a mandatory sequence. A dotted interpretation link indicates that its meaning remains open to examination.</p>
+<p><strong>Pause and try it:</strong> an agent finds a relevant lesson. Which responsibility retrieves it? Which checks whether it supports the proposed exercise?</p>
 
-<figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/eea908d9c2239c27ce21.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
+<h2 id="responsibilities-records-and-tools">Responsibilities, records, and tools</h2>
 
-<p><em>One possible exchange among responsibilities 0–4: orientation and context inform a provisional interpretation and plan. The inquiry record can reopen scope or request context. Responsibilities persist throughout this movement; the path is not mandatory.</em></p>
-
-<figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/31d5c6796873939ac5ea.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-<p><em>One possible interaction among persistent responsibilities 5–9. These edges do not require every investigation to follow this route. Review and consequences can update the inquiry state.</em></p>
-
-<p>The numeric associations are our interpretation. In particular, assigning discernment to 7 is a design choice, not a claim that Schneider’s chapter establishes an epistemology for AI.</p>
-
-<aside class="ai-universe-callout ai-universe-callout--context semantic-block" data-semantic-role="definition" aria-label="Definition — architecture and movement">
-  <header class="semantic-block__title"><span aria-hidden="true">📖</span> <strong>Definition — architecture and movement</strong></header>
-  <div class="semantic-block__body"><p>Responsibilities persist. Inquiry state changes. An agent is a participant across responsibilities, rather than a layer in itself.</p></div>
-</aside>
-
-<h2 id="what-moves-and-what-persists">What moves, and what persists</h2>
-
-<p>The cover’s central phrase, <strong>“the evolving inquiry,”</strong> identifies the unit of movement. Responsibilities remain available while the contents and status of that inquiry change.</p>
-
-<section class="rv" aria-label="Three distinct architectural roles">
-  <h3 class="rv__heading">Three distinct architectural roles</h3>
-  <div class="rv-grid">
-    <article class="rv-card"><h4 class="rv-card__title">Responsibility</h4><p class="rv-card__body">A persistent obligation, such as checking support for a conclusion. It remains available when an inquiry returns or branches.</p></article><article class="rv-card"><h4 class="rv-card__title">Participant</h4><p class="rv-card__body">A human, agent or component contributes within a scope. One agent can serve several responsibilities; a number does not require a separate agent.</p></article><article class="rv-card"><h4 class="rv-card__title">Inquiry state</h4><p class="rv-card__body">The evolving account of intention, context, questions, interpretations, evidence, decisions and results.</p></article>
-  </div>
-</section>
-
-<p>A <strong>component</strong> is a concrete mechanism serving a responsibility: a retriever, test runner or schema validator. A <strong>transition</strong> changes the investigation’s condition when an event or decision justifies it; more evidence may make an account reviewable.</p>
-
-<p>The roles named in the deck are a way to explain contributions. They need not become ten separate agents. One agent may clarify, research, and synthesize; a workflow may use a model for interpretation and deterministic code for validation. Components should be chosen for the inquiry they actually support.</p>
+<p>Think of a workshop: <strong>the jobs stay available while the work on the bench changes</strong>. Components—retrievers, agents, test runners—do the jobs. An inquiry record keeps the goal, observations, decisions, and remaining questions.</p>
 
 <figure class="ai-universe-illustration">
   <a href="/assets/images/posts/ai-a-universe-in-ten-movements/02-persistent-responsibilities.webp">
@@ -537,54 +292,93 @@
   <figcaption>The workbench remains available while the inquiry changes. Sources, tools, memory and review contribute at different moments; the scene illustrates responsibilities, not a runtime topology or ten mandatory agents.</figcaption>
 </figure>
 
-<h3 id="the-state-carried-between-responsibilities">The state carried between responsibilities</h3>
+<p><strong>Semantics asks what the account means; epistemic responsibility asks what supports it.</strong> Humans provide intention and judgment. Tools supply operations, memory supplies continuity, and permissions and budgets bound the work.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Part of the inquiry</th>
-      <th>What it should preserve</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Intention</td>
-      <td>Desired outcome, scope, constraints, and success criteria</td>
-    </tr>
-    <tr>
-      <td>Context</td>
-      <td>Relevant sources, circumstances, and provenance</td>
-    </tr>
-    <tr>
-      <td>Questions</td>
-      <td>What needs resolution and what remains unknown</td>
-    </tr>
-    <tr>
-      <td>Interpretations</td>
-      <td>Candidate meanings, explanations, and alternatives</td>
-    </tr>
-    <tr>
-      <td>Evidence</td>
-      <td>Observations linked to the claims they support or challenge</td>
-    </tr>
-    <tr>
-      <td>Decisions</td>
-      <td>Chosen actions, reasons, permissions, and review outcomes</td>
-    </tr>
-    <tr>
-      <td>Results</td>
-      <td>Artifacts, consequences, limits, and follow-up questions</td>
-    </tr>
-  </tbody>
-</table>
+<details class="ai-universe-source">
+  <summary>Explore the inquiry record, tools, and three perspectives</summary>
 
-<p>This is a logical view. An implementation can distribute the record among repositories, services, and event logs. A central diagram does not require a single database or sending the entire history to every model call.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Part of the record</th>
+        <th>What to keep</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Intent</td>
+        <td>Goal, scope, constraints, success criteria</td>
+      </tr>
+      <tr>
+        <td>Context</td>
+        <td>Sources, provenance, relevant history</td>
+      </tr>
+      <tr>
+        <td>Questions</td>
+        <td>Known gaps and remaining unknowns</td>
+      </tr>
+      <tr>
+        <td>Interpretations</td>
+        <td>Candidate meanings and explanations</td>
+      </tr>
+      <tr>
+        <td>Evidence</td>
+        <td>Observations linked to claims they support or challenge</td>
+      </tr>
+      <tr>
+        <td>Decisions</td>
+        <td>Actions, reasons, permissions, reviews</td>
+      </tr>
+      <tr>
+        <td>Results</td>
+        <td>Artifacts, consequences, limits, follow-up questions</td>
+      </tr>
+    </tbody>
+  </table>
 
-<p>Semantics and epistemic responsibility extend across the record. Semantics asks what an account means; epistemic responsibility asks what supports it. Memory supplies continuity, and new experience supplies observations. The numbers emphasize these functions at particular points without giving any one responsibility exclusive ownership.</p>
+  <p>The record can span repositories, services, and logs; every model call need not receive its whole history.</p>
 
-<p>These are complementary views of the same inquiry, rather than additional numbered layers.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Useful role and limit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Memory</td>
+        <td>Keeps history; check for stale or mistaken records</td>
+      </tr>
+      <tr>
+        <td>Skills, SDKs, hooks</td>
+        <td>Reuse procedures and connect components; define task fit and scope</td>
+      </tr>
+      <tr>
+        <td>Security</td>
+        <td>Bounds actions; tool access does not grant authorization</td>
+      </tr>
+      <tr>
+        <td>Observability</td>
+        <td>Exposes behavior; traces do not prove conclusions</td>
+      </tr>
+      <tr>
+        <td>Budgets</td>
+        <td>Bounds resources; limits may require a pause</td>
+      </tr>
+    </tbody>
+  </table>
 
-<section class="rv rv-perspective" data-rv-perspective="" data-rv-label="One inquiry, three perspectives">
+  <p><a href="https://modelcontextprotocol.io/introduction">MCP</a> connects external capabilities; tools and APIs perform operations, while RAG supplies retrieved context.</p>
+
+  <section class="rv" aria-label="Three distinct architectural roles">
+  <h3 class="rv__heading">Three distinct architectural roles</h3>
+  <div class="rv-grid">
+    <article class="rv-card"><h4 class="rv-card__title">Responsibility</h4><p class="rv-card__body">A persistent obligation, such as checking support for a conclusion. It remains available when an inquiry returns or branches.</p></article><article class="rv-card"><h4 class="rv-card__title">Participant</h4><p class="rv-card__body">A human, agent or component contributes within a scope. One agent can serve several responsibilities; a number does not require a separate agent.</p></article><article class="rv-card"><h4 class="rv-card__title">Inquiry state</h4><p class="rv-card__body">The evolving account of intention, context, questions, interpretations, evidence, decisions and results.</p></article>
+  </div>
+</section>
+
+  <section class="rv rv-perspective" data-rv-perspective="" data-rv-label="One inquiry, three perspectives">
   <h3 class="rv__heading">One inquiry, three perspectives</h3>
   
     <section class="rv-perspective__panel" data-rv-panel="" data-rv-title="Semantic view" id="rv-ai-universe-inquiry-views-1">
@@ -601,257 +395,114 @@
   
 </section>
 
-<h2 id="support-across-all-ten-responsibilities">Support across all ten responsibilities</h2>
+</details>
 
-<p>These resources support the entire journey because they sustain more than one responsibility.</p>
+<details class="ai-universe-source">
+  <summary>Explore the proposed inquiry architecture</summary>
 
-<table>
-  <thead>
-    <tr>
-      <th>Resource</th>
-      <th>Contribution across the architecture</th>
-      <th>Practical limit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Memory</td>
-      <td>Retains relevant history, decisions, and unresolved questions</td>
-      <td>Stored content may be stale or mistaken; retrieval needs context</td>
-    </tr>
-    <tr>
-      <td>Skills</td>
-      <td>Supplies reusable procedures, conventions, and review criteria</td>
-      <td>Procedures need a matching task and remain revisable</td>
-    </tr>
-    <tr>
-      <td>SDK</td>
-      <td>Provides APIs for building and coordinating the runtime</td>
-      <td>Integration does not establish sound reasoning</td>
-    </tr>
-    <tr>
-      <td>Hooks</td>
-      <td>Reacts to lifecycle events with checks or other configured behavior</td>
-      <td>Events and handlers need explicit scope</td>
-    </tr>
-    <tr>
-      <td>Security</td>
-      <td>Constrains access, data handling, and permitted actions</td>
-      <td>Tool availability does not grant authority for every use</td>
-    </tr>
-    <tr>
-      <td>Observability</td>
-      <td>Records operations, state changes, costs, and failures</td>
-      <td>A trace exposes behavior; it does not certify a conclusion</td>
-    </tr>
-    <tr>
-      <td>Budgets</td>
-      <td>Bounds time, tokens, cost, retries, and other resources</td>
-      <td>A budget limit may require a partial result or a pause</td>
-    </tr>
-  </tbody>
-</table>
+  <p><a href="https://arxiv.org/abs/2309.02427">CoALA</a> describes memory, action spaces, and decision-making. <a href="https://www.anthropic.com/engineering/building-effective-agents">Building Effective Agents</a> distinguishes workflows from agents directing tool use. Choose components for the actual task; a classifier may need no agent loop.</p>
 
-<p>MCP serves the connection between AI applications and external capabilities, as described in the <a href="https://modelcontextprotocol.io/introduction">official introduction</a>. Tools and APIs perform concrete operations. RAG supplies retrieved context to generation. The architecture makes their contributions visible instead of treating them as interchangeable forms of intelligence.</p>
+  <figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/d43f7bd0089049e04adf.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
+</figure>
 
-<p>The human contributes intention, values, domain judgment, and review. Agents contribute bounded interpretation, coordination, and execution. The hand-to-hand scene on the cover represents this collaboration; responsibility for the system’s design and consequences remains a human concern.</p>
+  <p><em>Components update the inquiry; memory and traces preserve continuity. A central drawing does not require a central database.</em></p>
 
-<h2 id="the-inquiry-lifecycle">The inquiry lifecycle</h2>
+</details>
 
-<p>An architecture view tells us what responsibilities exist. A state diagram asks a different question: <strong>what is the current condition of the investigation, and what would justify changing it?</strong></p>
+<p>A responsibility asks <strong>“What needs attention?”</strong> A state asks <strong>“Where does the investigation stand?”</strong> Missing evidence can reopen investigation; missing access can require a pause.</p>
 
-<p>The numbers on the transitions identify responsibilities commonly mobilized for that movement. They are not state identifiers and do not require each responsibility to execute exactly once.</p>
-
-<details>
-  <summary>Explore the inquiry lifecycle and numbered responsibilities</summary>
+<details class="ai-universe-source">
+  <summary>Explore the inquiry lifecycle</summary>
 
   <figure class="mermaid-static">
   <img src="/assets/generated/mermaid/9c03772fbe9374c8207f.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
 </figure>
 
+  <p><em>States describe the investigation’s condition; numbers on transitions identify contributing responsibilities, not a mandatory order. Preserve the reason for a pause.</em></p>
+
 </details>
 
-<p><em>Proposed lifecycle: states describe the inquiry’s condition; numbered transitions name contributing responsibilities. Consolidation preserves limitations and open questions. A pause records why work cannot currently continue.</em></p>
+<h2 id="try-it-with-a-learning-companion">Try it with a learning companion</h2>
 
-<p>This view makes stopping and returning as visible as progress. Insufficient evidence calls for further investigation. An unavailable capability may call for narrower scope. A completed artifact can reveal a new problem when its outcome is examined. These changes move the inquiry among persistent responsibilities.</p>
+<p>This is a <strong>design scenario</strong>, not a tested educational system. Start small: a lesson on fractions, authorized materials, a few candidate exercises, educator review, and a simple interface.</p>
 
-<h2 id="from-human-intent-to-multi-agent-orchestration">From human intent to multi-agent orchestration</h2>
+<p>An <strong>orchestrator</strong> tracks dependencies, permissions, and pending decisions. It routes work to suitable participants; it isn’t an eleventh responsibility or a requirement for ten separate agents. Software tests check behavior; educator review checks content. Neither alone proves improved learning.</p>
 
-<p>Consider a real-world kind of request, presented here as a <strong>design scenario rather than an implemented or user-tested system</strong>:</p>
+<details class="ai-universe-source">
+  <summary>Follow the responsibilities through discovery and delivery</summary>
 
-<blockquote>
-  <p><strong>Human intent:</strong> “Build a learning companion that uses educational materials we are authorized to access, helps identify where a student is struggling, and offers appropriate, reviewable practice.”</p>
-</blockquote>
+  <table>
+    <thead>
+      <tr>
+        <th>Responsibility</th>
+        <th>Example contribution</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>**0 · Openness**</td>
+        <td>List unknowns about the student, materials, and possible approaches</td>
+      </tr>
+      <tr>
+        <td>**1 · Direction**</td>
+        <td>Agree on the learning objective, scope, boundaries, and success criteria</td>
+      </tr>
+      <tr>
+        <td>**2 · Context**</td>
+        <td>Find authorized materials and record sources and permissions</td>
+      </tr>
+      <tr>
+        <td>**3 · Meaning**</td>
+        <td>Consider competing explanations of an observed wrong answer</td>
+      </tr>
+      <tr>
+        <td>**4 · Structure**</td>
+        <td>Plan a small lesson, component contracts, and review criteria</td>
+      </tr>
+      <tr>
+        <td>**5 · Transformation**</td>
+        <td>Build a bounded prototype and candidate exercises with permitted tools</td>
+      </tr>
+      <tr>
+        <td>**6 · Integration**</td>
+        <td>Connect sources, versions, contributions, and disagreements</td>
+      </tr>
+      <tr>
+        <td>**7 · Discernment**</td>
+        <td>Check factual support, curriculum alignment, accessibility, and behavior</td>
+      </tr>
+      <tr>
+        <td>**8 · Realization**</td>
+        <td>Present a reviewed activity after release authorization; gather consented feedback</td>
+      </tr>
+      <tr>
+        <td>**9 · Horizon**</td>
+        <td>Record findings, unproven assumptions, and the next question</td>
+      </tr>
+    </tbody>
+  </table>
 
-<p>This is not yet a software specification. What counts as a learning difficulty? Which materials may the system process? Who reviews educational judgments? How do we know the activities help rather than merely look convincing? These unknowns are part of the work—not defects to conceal with confident answers.</p>
+  <p>Before building, check accessible materials and keep explanations of difficulty provisional. Ask the human to review a narrow scope. A planner defines inputs, contracts, and review criteria before concurrent work begins. Link versions to observations and decisions; publication needs authorization and feedback needs appropriate consent.</p>
 
-<p>The garden example earlier illustrated encounter, interpretation, and expression. This example asks a sharper architectural question: <strong>how can people, agents, deterministic components, memory, and tools collaborate from discovery through realization while keeping the inquiry revisable?</strong></p>
+</details>
 
-<h3 id="one-orchestration-different-responsibilities">One orchestration, different responsibilities</h3>
-
-<p>An <strong>inquiry orchestrator</strong> tracks goals, dependencies, permissions, limits, and pending decisions. It routes work to participants according to capability and scope. The orchestrator is <strong>not an eleventh numbered responsibility</strong>, and the following role names are <strong>illustrative contributions, not ten mandatory agents</strong>. A small system may combine roles; another may use several specialized agents alongside ordinary services.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Responsibility</th>
-      <th>Possible participant</th>
-      <th>Concrete contribution</th>
-      <th>What remains inspectable</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>**0 — Openness**</td>
-      <td>Explorer, human</td>
-      <td>Identify missing student context, material access and alternative approaches</td>
-      <td>Unknowns, constraints and possible paths</td>
-    </tr>
-    <tr>
-      <td>**1 — Unity and direction**</td>
-      <td>Human, clarifier</td>
-      <td>Agree on audience, learning objective, safety boundaries and success criteria</td>
-      <td>Revisable intent and authorization</td>
-    </tr>
-    <tr>
-      <td>**2 — Relation and context**</td>
-      <td>Researcher, retriever</td>
-      <td>Locate licensed material, teaching objectives and relevant observations</td>
-      <td>Source locations, permissions, provenance</td>
-    </tr>
-    <tr>
-      <td>**3 — Meaning**</td>
-      <td>Interpreter</td>
-      <td>Distinguish an observed wrong answer from competing explanations of the difficulty</td>
-      <td>Candidate interpretations and uncertainty</td>
-    </tr>
-    <tr>
-      <td>**4 — Structure**</td>
-      <td>Planner</td>
-      <td>Design learning steps, evaluation criteria, component contracts and task dependencies</td>
-      <td>Plan, assumptions and acceptance criteria</td>
-    </tr>
-    <tr>
-      <td>**5 — Transformation**</td>
-      <td>Executor, tools</td>
-      <td>Generate a bounded exercise set or implement a prototype through permitted APIs</td>
-      <td>Tool trace, produced changes and failures</td>
-    </tr>
-    <tr>
-      <td>**6 — Organization and integration**</td>
-      <td>Coordinator, synthesizer</td>
-      <td>Link explanations, exercise versions, sources and participant contributions</td>
-      <td>Integrated state without erased disagreement</td>
-    </tr>
-    <tr>
-      <td>**7 — Discernment**</td>
-      <td>Verifier, educator</td>
-      <td>Check curriculum alignment, factual support, accessibility and observable behavior</td>
-      <td>Tests, review outcomes, gaps and limitations</td>
-    </tr>
-    <tr>
-      <td>**8 — Realization and renewal**</td>
-      <td>Producer, authorized publisher</td>
-      <td>Present a reviewed learning activity; collect use feedback within consent boundaries</td>
-      <td>Artifact, release authorization and observations</td>
-    </tr>
-    <tr>
-      <td>**9 — Synthesis and horizon**</td>
-      <td>Reviewer, human</td>
-      <td>Record what worked, what is unproven and what should be investigated next</td>
-      <td>Qualified completion and open questions</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The numbered responsibilities are <strong>persistent contracts</strong>. They are not successive departments. For instance, source permission matters in 2, but must also constrain 5 and 8; evidential support matters in 7, but belongs to the entire inquiry.</p>
-
-<h3 id="discovery-before-execution">Discovery before execution</h3>
-
-<p>The first useful output need not be code. The explorer notices that the request does not specify whether the student needs help understanding a concept or simply more practice. A researcher locates material that is actually accessible under the available permissions. An interpreter records several plausible accounts of a student’s difficulty as <strong>hypotheses</strong>, not diagnoses or established facts.</p>
-
-<p>The clarifier can now return to the human with a better question: <em>Should we first test a narrow lesson on fractions, with reviewed exercises and explicit feedback, rather than build a general learning platform?</em> If the human approves, the intention becomes more specific. <strong>Discovery has changed the plan before execution began.</strong></p>
-
-<h3 id="coordinating-realization">Coordinating realization</h3>
-
-<p>The planner proposes a small, inspectable slice: import permitted lesson material, record learning objectives and source metadata, generate a few candidate exercises, let an educator review them, and present approved exercises through a simple interface. A coordinator may delegate research and interface prototyping concurrently <strong>only after their inputs and boundaries are defined</strong>. A verifier can independently check the factual content; deterministic tests check software behavior. Neither kind of check alone establishes pedagogical effectiveness.</p>
-
-<details>
-  <summary>Explore the multi-agent inquiry orchestration</summary>
+<details class="ai-universe-source">
+  <summary>Explore the multi-agent orchestration</summary>
 
   <figure class="mermaid-static">
   <img src="/assets/generated/mermaid/c4518220c4f24a4f2bbf.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
 </figure>
 
+  <p><em>Illustrative exchange, not an execution trace. The orchestrator follows a changing inquiry, not just the next agent call.</em></p>
+
 </details>
 
-<p><em>Illustrative orchestration, not an observed execution trace. Research, planning, verification and tool use can be combined, repeated or paused. A human authorizes external effects; successful calls do not by themselves validate learning outcomes.</em></p>
+<h3 id="let-evidence-change-the-plan">Let evidence change the plan</h3>
 
-<h3 id="when-evidence-changes-the-plan">When evidence changes the plan</h3>
+<p>Suppose the software tests pass, but an educator finds that the exercises require advanced reading skills. That suggests a design mismatch, not necessarily weak mathematical understanding. Review at <strong>7</strong> reopens interpretation at <strong>3</strong> and planning at <strong>4</strong>; the affected exercises are revised and reviewed again.</p>
 
-<p>Imagine the generated fraction exercises pass software tests, but the educator notices that some questions demand reading skills beyond the stated learning objective. This would be a <strong>scenario observation</strong>, not evidence that the student’s mathematical understanding is weak. The verifier marks a mismatch; the interpreter revisits what “appropriate practice” means; the planner narrows the design; the executor regenerates only affected material. The revised questions must be reviewed again.</p>
-
-<p>This is where the model becomes more than task delegation. <strong>The orchestrator coordinates the evolving inquiry, not merely the next agent call.</strong> A failure at <strong>7</strong> can reopen <strong>3</strong> and <strong>4</strong>. Missing permissions can halt <strong>5</strong> and return to <strong>1</strong> or <strong>2</strong>. Feedback at <strong>8</strong> can generate a new question for <strong>0</strong> and change what a later iteration should attempt.</p>
-
-<h3 id="what-changed-in-the-inquiry">What changed in the inquiry?</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Moment</th>
-      <th>Inquiry-state update</th>
-      <th>Consequence</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Need expressed</td>
-      <td>Broad learning intention and unknowns recorded</td>
-      <td>Discovery is required before a build plan</td>
-    </tr>
-    <tr>
-      <td>Materials investigated</td>
-      <td>Authorized source scope, provenance and gaps captured</td>
-      <td>Research output can constrain generated content</td>
-    </tr>
-    <tr>
-      <td>Difficulty interpreted</td>
-      <td>Competing explanations kept provisional</td>
-      <td>System avoids treating an answer as a diagnosis</td>
-    </tr>
-    <tr>
-      <td>Pilot approved</td>
-      <td>Learning goal, criteria, permissions and budget bounded</td>
-      <td>Planner can assign scoped work</td>
-    </tr>
-    <tr>
-      <td>Prototype constructed</td>
-      <td>Artifact versions linked to tool observations and sources</td>
-      <td>Verifier can inspect claims and behavior</td>
-    </tr>
-    <tr>
-      <td>Mismatch identified</td>
-      <td>Review finding challenges an exercise-design assumption</td>
-      <td>Meaning and plan are revised, not merely retried</td>
-    </tr>
-    <tr>
-      <td>Release authorized</td>
-      <td>Human reviews qualified outcome and remaining limits</td>
-      <td>Only the approved version is made available</td>
-    </tr>
-    <tr>
-      <td>Feedback reviewed</td>
-      <td>Observations and unanswered questions retained</td>
-      <td>A new inquiry may open without erasing the old one</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>These are <strong>proposed state transitions</strong>, not measured educational results. Learning improvement would require appropriate evaluation, informed participation and care with student information. The same inquiry may proceed on some tasks while pausing others; permissions, observability and budgets apply throughout.</p>
-
-<h3 id="evidence-is-a-relationship-not-a-decoration">Evidence is a relationship, not a decoration</h3>
-
-<p>A measured result becomes evidence when it bears on a particular claim. This smaller map makes the epistemic distinction explicit.</p>
+<p><strong>A wrong answer is an observation. “The student doesn’t understand fractions” is a claim that needs support.</strong></p>
 
 <figure class="ai-universe-illustration">
   <a href="/assets/images/posts/ai-a-universe-in-ten-movements/03-evidence-and-open-questions.webp">
@@ -860,26 +511,22 @@
   <figcaption>A claim and its supporting observations must be examined together. The unfinished account keeps limits and open questions visible. This is an epistemic illustration, not an observed test result.</figcaption>
 </figure>
 
-<figure class="mermaid-static">
+<details class="ai-universe-source">
+  <summary>See how observations support or challenge a claim</summary>
+
+  <figure class="mermaid-static">
   <img src="/assets/generated/mermaid/46e65eebd01ac74cbcb1.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
 </figure>
 
-<p><em>Epistemic distinction: a source yields observations; relevant observations may serve as evidence for or against a claim. Incomplete support keeps inquiry open. Solid arrows show modeled relations; the dotted edge marks unresolved inquiry.</em></p>
+  <p><em>Relevant observations bear on a claim; incomplete or conflicting support keeps the question open. Agent agreement alone does not validate it.</em></p>
+
+</details>
+
+<p><strong>Try it:</strong> what would help distinguish a mathematical difficulty from a confusingly worded question? Educational effectiveness still needs appropriate evaluation, informed participation, and care with student information.</p>
 
 <h2 id="the-macro-reflected-in-the-micro">The macro reflected in the micro</h2>
 
-<p>A project can contain smaller investigations with related responsibilities. The learning-companion inquiry may open a <strong>sub-inquiry</strong>: <em>Does the authorized lesson support this explanation of fractions?</em> That smaller investigation has its own question, source context, candidate interpretation, observations, review criteria and qualified result. Another sub-inquiry may examine whether the prototype presents the explanation accessibly. The larger project may incorporate both outcomes while retaining their separate evidence and limits.</p>
-
-<p>This is a concrete architectural use of the macro–micro analogy: <strong>the same responsibility pattern can recur at project, task or individual-agent scope, without demanding ten agents at each level</strong>. Recursion needs stop conditions, depth and cost limits, explicit parent–child links and authorization boundaries. A sub-inquiry’s conclusion informs the larger work; it does not automatically settle the larger intention.</p>
-
-<p>Memory is continuity here. Preserving observations, decisions, and unresolved questions can help future work. Recording feedback does not automatically retrain a model, and agreement among several agents does not independently validate their shared conclusion.</p>
-
-<p>Semantics concerns what an account means: the entities, relations, concepts, and intended outcome. Epistemic responsibility concerns what supports that account: sources, uncertainty, contradictions, tests, and limits. Both extend across the inquiry.</p>
-
-<aside class="ai-universe-callout ai-universe-callout--uncertainty semantic-block" data-semantic-role="open-question" aria-label="Open question">
-  <header class="semantic-block__title"><span aria-hidden="true">❓</span> <strong>Open question</strong></header>
-  <div class="semantic-block__body"><p>Does the same responsibility map remain useful at project, task, and individual-agent scope—or do some scopes need different distinctions?</p></div>
-</aside>
+<p>Building the companion can contain a smaller inquiry into one exercise. Its result should carry evidence back to the larger question. Whether every scope benefits from all ten distinctions remains open.</p>
 
 <figure class="ai-universe-illustration">
   <a href="/assets/images/posts/ai-a-universe-in-ten-movements/04-macro-and-micro.webp">
@@ -888,22 +535,9 @@
   <figcaption>A larger inquiry can contain smaller investigations. Their results remain connected to the larger question through evidence and memory. Recurring scopes are a proposed architectural analogy, not proof of a universal law.</figcaption>
 </figure>
 
-<h2 id="what-this-map-can-help-us-understand">What this map can help us understand</h2>
+<h2 id="put-the-map-to-work">Put the map to work</h2>
 
-<p>The proposal can serve three purposes: teach how AI components contribute to a whole, guide the allocation of responsibilities, and expose the movement of an investigation in an interface or trace.</p>
-
-<p>It can also prompt human reflection. What shaped my interpretation? What evidence am I missing? Am I defending a conclusion because I prefer it? What did the consequences reveal? These questions remain open to experience; assigning them a number does not exhaust them.</p>
-
-<aside class="ai-universe-callout ai-universe-callout--projection semantic-block" data-semantic-role="action" aria-label="Try this">
-  <header class="semantic-block__title"><span aria-hidden="true">▶️</span> <strong>Try this</strong></header>
-  <div class="semantic-block__body"><p>Choose a real inquiry. Record its goal, available context, candidate claims, observations, review decisions, and remaining unknowns. Compare the record with the ten responsibilities: where does the map clarify the work, and where does it obscure it?</p></div>
-</aside>
-
-<p>The practical test is whether the map helps people distinguish a retrieved source from a claim, a proposed action from an authorized action, an executed tool call from a supported conclusion, and a completed artifact from a completed inquiry.</p>
-
-<p>A useful architecture can represent missing context, uncertainty, contradiction, failure, and a decision to stop. If the ten-step image makes every journey look successful, it needs revision.</p>
-
-<p>Humanity looks outward, feels and interprets inwardly, and gives outward form to what it understands. AI participates in that continuing effort as a creation we can shape, inspect, and revise. The value of our map lies in making that participation more intelligible—and in leaving room for what the map has not yet helped us see.</p>
+<p>Choose a real question and record its goal, context, possible explanations, observations, decisions, and unknowns. <strong>Does the map clarify the work?</strong> Keep sources distinct from claims, proposals from permissions, and artifacts from outcomes. Leave room for uncertainty and stopping; revise the map when it gets in the way.</p>
 
 <h2 id="references-and-further-reading">References and further reading</h2>
 
