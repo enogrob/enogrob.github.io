@@ -1,4 +1,200 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-13T09:56:27+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry xml:lang="en"><title type="html">AI: A Guide to Constructing a Universe — A Journey from 0 to 9</title><link href="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html" rel="alternate" type="text/html" title="AI: A Guide to Constructing a Universe — A Journey from 0 to 9" /><published>2026-10-11T15:40:00+00:00</published><updated>2026-10-11T15:40:00+00:00</updated><id>https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements</id><content type="html" xml:base="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html"><![CDATA[<link rel="stylesheet" href="/assets/css/rich-visual.css" />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-10-14T09:46:52+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry xml:lang="en"><title type="html">AI — The Illusion of Infinite Creation</title><link href="https://enogrob.github.io/philosophy/ai-native/society/2026/10/14/ai-the-illusion-of-infinite-creation.html" rel="alternate" type="text/html" title="AI — The Illusion of Infinite Creation" /><published>2026-10-14T09:00:00+00:00</published><updated>2026-10-14T09:00:00+00:00</updated><id>https://enogrob.github.io/philosophy/ai-native/society/2026/10/14/ai-the-illusion-of-infinite-creation</id><content type="html" xml:base="https://enogrob.github.io/philosophy/ai-native/society/2026/10/14/ai-the-illusion-of-infinite-creation.html"><![CDATA[<link rel="stylesheet" href="/assets/css/rich-visual.css" />
+
+<link rel="stylesheet" href="/assets/css/semantic-blocks.css" />
+
+<figure>
+  <a href="/assets/images/posts/ai-the-illusion-of-infinite-creation/cover.webp">
+    <img src="/assets/images/posts/ai-the-illusion-of-infinite-creation/cover.webp" alt="Illustrated overview: AI expands human creation while automation raises questions about jobs, income, wealth and consumers." width="1672" height="941" loading="eager" decoding="async" style="width:100%;height:auto;" />
+  </a>
+  <figcaption>An editorial thought experiment: the promise of infinite creation meets the limits of employment, demand and purchasing power. The visual illustrates possible outcomes, not a measured forecast.</figcaption>
+</figure>
+
+<p><strong>What happens when everyone can create more—but fewer people can earn a living from creating?</strong></p>
+
+<p>AI can help one person build software, write a book, launch a course or automate a workflow. That’s extraordinary. But productivity and prosperity are not synonyms. And being able to <em>make</em> something is not the same as someone <em>needing</em> it.</p>
+
+<p>Perhaps the AI bubble is not only about prices or investment. Perhaps it is also about a story we tell ourselves: <strong>if everyone can become a producer, everyone can become successful.</strong></p>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><a href="#everyone-can-create">Everyone can create. Who will consume?</a></li>
+  <li><a href="#when-the-formula-becomes-the-product">When the formula becomes the product</a></li>
+  <li><a href="#can-intention-itself-be-an-illusion">Can intention itself be an illusion?</a></li>
+  <li><a href="#my-productivity-paradox">My productivity paradox</a></li>
+  <li><a href="#if-work-disappears">If work disappears, what happens to income?</a></li>
+  <li><a href="#what-really-deserves-to-exist">What really deserves to exist?</a></li>
+  <li><a href="#further-reading">Further reading</a></li>
+</ul>
+
+<h2 id="everyone-can-create">Everyone can create. Who will consume?</h2>
+
+<p>Think about what an AI-assisted creator can do today: sketch a business concept, generate a prototype, write marketing copy, produce illustrations and publish a digital product—sometimes in a single workflow.</p>
+
+<p>Now imagine millions of people doing the same thing.</p>
+
+<p><strong>Creation is becoming easier. Attention, trust, time and purchasing power remain scarce.</strong> Some AI-enabled products will meet real needs. Others will compete for an audience that was never large enough to support all of them.</p>
+
+<section class="rv" aria-label="Three different tests of creation">
+  <h3 class="rv__heading">Three different tests of creation</h3>
+  <div class="rv-grid">
+    <article class="rv-card"><h4 class="rv-card__title">Capability — Can I make it?</h4><p class="rv-card__body">AI can lower the effort required to produce software, writing, illustrations and other artifacts.</p></article><article class="rv-card"><h4 class="rv-card__title">Value — Does it meet a need?</h4><p class="rv-card__body">A working artifact still needs a real problem, people who benefit and reasons to trust it.</p></article><article class="rv-card"><h4 class="rv-card__title">Demand — Can people support it?</h4><p class="rv-card__body">Attention, time and purchasing power constrain what an audience can adopt or pay for.</p></article>
+  </div>
+</section>
+
+<aside class="semantic-block semantic-block--claim" data-semantic-role="claim" aria-label="Claim: capability is not demand">
+  <strong><span aria-hidden="true">⚠️</span> Claim — Capability is not demand</strong>
+  <p>Being able to build an artifact does not prove that it solves a real problem, or that someone will pay for it.</p>
+</aside>
+
+<p>This is not an argument against creating. It is an argument against confusing the <em>possibility of production</em> with the <em>existence of value</em>.</p>
+
+<h2 id="when-the-formula-becomes-the-product">When the formula becomes the product</h2>
+
+<p>There’s a familiar business pattern. Someone succeeds with a particular method. Competitors arrive, margins narrow, and the original opportunity becomes harder to repeat. Eventually, teaching the method can become more profitable than using it.</p>
+
+<p>AI gives this pattern new scale: courses about creating courses, agents that sell other agents, toolkits for building toolkits, and endless promises of financial independence.</p>
+
+<figure>
+  <a href="/assets/images/posts/ai-the-illusion-of-infinite-creation/01-when-the-formula-becomes-the-product.webp">
+    <img src="/assets/images/posts/ai-the-illusion-of-infinite-creation/01-when-the-formula-becomes-the-product.webp" alt="Infographic tracing a business opportunity through market saturation, packaging a method, and a self-reinforcing economy of courses and promises." width="1672" height="941" loading="lazy" decoding="async" style="width:100%;height:auto;" />
+  </a>
+  <figcaption>When the original opportunity matures, selling a repeatable formula may become a second business. The danger is mistaking promised outcomes for verified outcomes.</figcaption>
+</figure>
+
+<p>Some of these resources are genuinely valuable. Teaching, documentation and reusable tools are legitimate businesses. The illusion begins when <strong>selling the promise of success becomes disconnected from evidence that buyers actually succeed</strong>.</p>
+
+<p>Who profits when everyone is encouraged to sell to the next aspiring creator?</p>
+
+<h2 id="can-intention-itself-be-an-illusion">Can intention itself be an illusion?</h2>
+
+<p>Let’s go deeper. We often celebrate <em>intention</em> as the beginning of creation. But where does intention come from?</p>
+
+<p>A practical need? Curiosity? Care for someone? Or dissatisfaction—the feeling that something is missing and must be obtained?</p>
+
+<p>The work of <a href="https://jkrishnamurti.org/">Jiddu Krishnamurti</a> invites inquiry into desire, comparison, fear and the psychological pursuit of fulfillment. Inspired by that inquiry, consider a possible cycle:</p>
+
+<details class="rv rv-disclosure">
+  <summary>Fold / unfold: intention cycle diagram</summary>
+
+  <figure class="mermaid-static">
+  <img src="/assets/generated/mermaid/3d5238b8670270bb6bbc.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
+</figure>
+
+</details>
+
+<aside class="semantic-block semantic-block--hypothesis" data-semantic-role="hypothesis" aria-label="Hypothesis: a possible cycle">
+  <strong><span aria-hidden="true">🧩</span> Hypothesis — A possible cycle</strong>
+  <p>The dotted links mark proposed psychological relationships, not established causal laws. AI can help realize an intention; whether realization resolves dissatisfaction remains open.</p>
+</aside>
+
+<figure>
+  <a href="/assets/images/posts/ai-the-illusion-of-infinite-creation/02-the-illusion-cycle.webp">
+    <img src="/assets/images/posts/ai-the-illusion-of-infinite-creation/02-the-illusion-cycle.webp" alt="Illustrated cycle of dissatisfaction, desire, intention, AI-accelerated realization, temporary satisfaction and renewed dissatisfaction." width="1672" height="941" loading="lazy" decoding="async" style="width:100%;height:auto;" />
+  </a>
+  <figcaption>A philosophical model inspired by inquiry into desire—not a universal psychological law. AI may accelerate realization without resolving the dissatisfaction that motivated it.</figcaption>
+</figure>
+
+<p>If the intention is rooted in an illusion, realizing it does not necessarily resolve the illusion. It may simply give it a concrete form.</p>
+
+<p><strong>Before asking what we can create, shouldn’t we understand why we want to create it?</strong></p>
+
+<p>This does not make all desire or ambition suspect. Building shelter, caring for someone, solving an engineering problem or creating art can be meaningful actions. The question is whether our motives and expectations are understood—or merely accelerated.</p>
+
+<h2 id="my-productivity-paradox">My productivity paradox</h2>
+
+<p>This isn’t purely theoretical for me.</p>
+
+<p>In my own AI-assisted software projects, I’ve seen extraordinary development activity. Looking at my GitHub contribution graph, I estimated an average of <strong>roughly 40 contributions per day</strong>, with an occasional peak of <strong>around 600</strong>—possibly when my FACTORIES were migrated from Python to Ruby.</p>
+
+<p>Those are <strong>personal estimates</strong>, not audited productivity figures. GitHub contributions can count commits and other activities; they do not directly measure quality, effort, business value or the amount of work AI performed.</p>
+
+<p>But the experience matters. I can explore, prototype and evolve software much faster than I once could. At the same time, <strong>I want to return to work—and finding an opportunity has become difficult</strong>.</p>
+
+<p>That contrast is unsettling. If engineers can accomplish more with AI, will companies expand what they build and hire more people? Or will they simply maintain the same output with smaller teams?</p>
+
+<p>Both are possible. The outcome depends on costs, demand, management decisions, new products and the wider economy. My contribution graph cannot establish a causal relationship between AI and hiring. It does, however, make the question personal:</p>
+
+<aside class="semantic-block semantic-block--unknown" data-semantic-role="unknown" aria-label="Open question: capability and employment">
+  <strong><span aria-hidden="true">❓</span> Open question</strong>
+  <p>What happens when becoming more capable no longer guarantees a better chance of being employed?</p>
+</aside>
+
+<h2 id="if-work-disappears">If work disappears, what happens to income?</h2>
+
+<p>Imagine a company needing ten engineers to deliver a service. With improved tools, it might deliver the same service with five. The example is hypothetical, not a prediction about engineering headcount.</p>
+
+<p>The freed capacity could create new products and jobs, shorten working hours or reduce prices. It could also become higher profits with fewer vacancies.</p>
+
+<section class="rv rv-perspective" data-rv-perspective="" data-rv-label="The same productivity gain, three perspectives">
+  <h3 class="rv__heading">The same productivity gain, three perspectives</h3>
+  
+    <section class="rv-perspective__panel" data-rv-panel="" data-rv-title="Firm" id="rv-productivity-gains-1">
+      <h4>Firm</h4><p>Delivering the same service with fewer engineers could lower costs. The firm could expand its products, reduce prices or retain the savings.</p>
+    </section>
+  
+    <section class="rv-perspective__panel" data-rv-panel="" data-rv-title="Worker" id="rv-productivity-gains-2">
+      <h4>Worker</h4><p>Greater capability can coexist with fewer vacancies. Income, meaningful participation and dignity remain immediate needs.</p>
+    </section>
+  
+    <section class="rv-perspective__panel" data-rv-panel="" data-rv-title="Society" id="rv-productivity-gains-3">
+      <h4>Society</h4><p>The distribution of gains matters: productive capacity and purchasing power may diverge. New demand, changes in work and public policy can shape the outcome.</p>
+    </section>
+  
+</section>
+
+<p>These perspectives describe the same hypothetical change. They can coexist; none establishes what will happen across the economy.</p>
+
+<figure>
+  <a href="/assets/images/posts/ai-the-illusion-of-infinite-creation/03-the-productivity-paradox.webp">
+    <img src="/assets/images/posts/ai-the-illusion-of-infinite-creation/03-the-productivity-paradox.webp" alt="Infographic of a possible productivity paradox: AI-assisted output rises as labor demand and purchasing power may fall while gains concentrate." width="1672" height="941" loading="lazy" decoding="async" style="width:100%;height:auto;" />
+  </a>
+  <figcaption>A risk scenario, not an inevitable chain of consequences: productivity gains can reduce labor demand in some settings, but may also generate new demand, lower prices and other employment.</figcaption>
+</figure>
+
+<p>Here’s the tension: <strong>we are developing technology that may make some human labor less necessary while keeping people’s survival deeply dependent on paid work.</strong></p>
+
+<p>If gains are concentrated while jobs and wages weaken, purchasing power may fail to keep pace with productive capacity. Who will buy what increasingly efficient firms make?</p>
+
+<p>That is not proof of inevitable economic collapse. Real economies adjust through prices, investment, new services, changes in work and public policy. But adjustment is not automatically fair—and the transition can be painful for people who need work <strong>now</strong>, not after a future economy takes shape.</p>
+
+<p>The <a href="https://www.imf.org/en/Blogs/Articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity">IMF has discussed both AI’s productivity potential and its labor-market and inequality risks</a>. The <a href="https://www.ilo.org/publications/generative-ai-and-jobs-2025-update">ILO also emphasizes that exposure to generative AI does not automatically mean jobs disappear</a>. Tasks, occupations and sectors can change in different ways.</p>
+
+<p>The question is no longer just <em>how much more can we produce?</em> It is also <em>who gets to participate in the wealth we produce?</em></p>
+
+<h2 id="what-really-deserves-to-exist">What really deserves to exist?</h2>
+
+<p>We began with intention. Then came creation, productivity, markets and the illusion of unlimited success.</p>
+
+<p>Perhaps a better starting point is understanding: the reality of a need, the evidence for a problem, the people affected and the consequences of what we make.</p>
+
+<p>And the same applies to society. We might need new ways to share productivity gains: shorter working hours, improved access to essential services, education, social protections and wider participation in the benefits of technology. These are choices to examine—not outcomes that AI itself will deliver.</p>
+
+<p>For someone searching for work, this is more than philosophy. <strong>Meaningful participation, income and dignity are present needs.</strong> They cannot be deferred until we figure out the perfect future of automation.</p>
+
+<aside class="semantic-block semantic-block--projection" data-semantic-role="projection" aria-label="Takeaway: creation and shared prosperity">
+  <strong><span aria-hidden="true">📄</span> Takeaway</strong>
+  <p>AI is a powerful tool, not necessarily an illusion. <strong>The illusion is believing that the power to realize almost any intention automatically creates prosperity for everyone.</strong></p>
+</aside>
+
+<p>So perhaps the question is not <em>what can AI help us create next?</em></p>
+
+<p>It is this:</p>
+
+<p><strong>Are we building a future of shared prosperity—or becoming more efficient at realizing a collective illusion?</strong></p>
+
+<h2 id="further-reading">Further reading</h2>
+
+<ul>
+  <li><a href="https://www.ilo.org/publications/generative-ai-and-jobs-2025-update">International Labour Organization — Generative AI and Jobs: A 2025 Update</a>. Research on occupational exposure and potential transformation; exposure is not identical to job loss.</li>
+  <li><a href="https://www.imf.org/en/Blogs/Articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity">International Monetary Fund — AI Will Transform the Global Economy</a>. Economic opportunities, employment exposure and inequality concerns.</li>
+  <li><a href="https://jkrishnamurti.org/">Krishnamurti Foundation — Official resources</a>. Primary material for investigating desire, psychological dissatisfaction and understanding; the cycle shown here is this article’s interpretation.</li>
+  <li><a href="https://docs.github.com/en/account-and-profile/how-tos/contribution-settings/viewing-contributions-on-your-profile">GitHub Docs — Viewing contributions on your profile</a>. Explains what GitHub counts as a contribution.</li>
+</ul>
+
+<p><em>Editorial note: economic pathways shown in the figures are possible scenarios, not historical data or quantified forecasts. Personal GitHub estimates are self-reported and should not be mistaken for a benchmark.</em></p>
+
+<script src="/assets/js/rich-visual.js" defer=""></script>]]></content><author><name></name></author><category term="philosophy" /><category term="ai-native" /><category term="society" /><category term="artificial-intelligence" /><category term="productivity" /><category term="employment" /><category term="economy" /><category term="intention" /><category term="krishnamurti" /><category term="automation" /><category term="future-of-work" /><summary type="html"><![CDATA[When AI makes almost anyone a creator, who will be left to work, earn and consume? A personal inquiry into intention, illusion, productivity and economic participation.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/ai-the-illusion-of-infinite-creation/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/ai-the-illusion-of-infinite-creation/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="en"><title type="html">AI: A Guide to Constructing a Universe — A Journey from 0 to 9</title><link href="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html" rel="alternate" type="text/html" title="AI: A Guide to Constructing a Universe — A Journey from 0 to 9" /><published>2026-10-11T15:40:00+00:00</published><updated>2026-10-11T15:40:00+00:00</updated><id>https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements</id><content type="html" xml:base="https://enogrob.github.io/philosophy/ai-native/visual-learning/2026/10/11/ai-a-universe-in-ten-movements.html"><![CDATA[<link rel="stylesheet" href="/assets/css/rich-visual.css" />
 
 <link rel="stylesheet" href="/assets/css/ai-a-universe-in-ten-movements.css?v=folded-inquiry-3" />
 
@@ -5067,187 +5263,4 @@ validate · enforce · record · approve · measure
   <li>Prior chapters inside the same companion: <code class="language-plaintext highlighter-rouge">docs/posts/01-first-30-minutes/article.md</code>, <code class="language-plaintext highlighter-rouge">docs/posts/03-issue-to-pr/article.md</code>, <code class="language-plaintext highlighter-rouge">docs/posts/04-ci-and-devsecops/article.md</code>.</li>
   <li><a href="https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success">GitHub Docs: measuring trial success</a>; <a href="https://docs.github.com/en/copilot/reference/copilot-usage-metrics">usage metrics</a>; <a href="https://docs.github.com/en/copilot/reference/copilot-usage-metrics/interpret-copilot-metrics">interpretation</a>; <a href="https://docs.github.com/rest/copilot/copilot-usage-metrics">REST usage metrics</a>.</li>
   <li><a href="https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion">GitHub Docs: content exclusion and its limitations</a>; <a href="https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies">organization policy settings</a>; <a href="https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent">cloud agent overview</a>.</li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="adoption" /><category term="governance" /><category term="engineering-metrics" /><summary type="html"><![CDATA[Design a small GitHub Copilot pilot for Rails teams with a baseline, consent and policy guardrails, usage and quality signals, and an honest expansion decision.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">A Rails Change You Can Audit with Copilot CLI</title><link href="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-rails-change-you-can-audit-with-copilot-cli.html" rel="alternate" type="text/html" title="A Rails Change You Can Audit with Copilot CLI" /><published>2026-09-26T00:00:00+00:00</published><updated>2026-09-26T00:00:00+00:00</updated><id>https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-rails-change-you-can-audit-with-copilot-cli</id><content type="html" xml:base="https://enogrob.github.io/ruby/rails/software-engineering/github-copilot/2026/09/26/a-rails-change-you-can-audit-with-copilot-cli.html"><![CDATA[<p><img src="/assets/images/posts/rails-change-copilot-cli/cover.webp" alt="GitHub Copilot for Rails Engineers Part 07: a digital guide faces a terminal connected to the CaseFlow Rails application, a proposed diff, an unrun test and a human reviewer." style="width:100%;height:auto;" /></p>
-
-<blockquote>
-  <p><strong>A useful agentic workflow leaves a trail you can inspect.</strong> Use Copilot CLI to plan one Rails change, approve each consequential action deliberately and report what the tests actually showed.</p>
-</blockquote>
-
-<p><em>GitHub Copilot for Rails Engineers · Part 07</em></p>
-
-<p>Part 06 ended with a hypothetical workshop and a request for one bounded experiment. Here is the developer’s next move: open the integrated CaseFlow Rails app on a Mac, ask <strong>GitHub Copilot CLI</strong> to plan a small status-resolution change, inspect what it wants to read or execute, and return a candidate diff with an evidence ledger. This post is a runnable teaching plan, <strong>not a transcript of a CLI session or a report of passing tests</strong>.</p>
-
-<p>The <a href="/assets/downloads/rails-change-copilot-cli-support.zip">cumulative companion package</a> includes all seven posts, the complete CaseFlow Rails app, a macOS runbook, two-stage prompt, Ruby source preflight, editable Mermaid diagram, exercises with answers and an empty evidence ledger. Open <code class="language-plaintext highlighter-rouge">github-copilot-rails-labs/README.md</code> after download.</p>
-
-<h2 id="contents">Contents</h2>
-
-<ul>
-  <li><a href="#why-cli">Why the terminal changes the task</a></li>
-  <li><a href="#scope">Trust the directory and bound the request</a></li>
-  <li><a href="#plan">Plan against the actual Rails baseline</a></li>
-  <li><a href="#permissions">Inspect every requested tool action</a></li>
-  <li><a href="#verify">Verify the candidate and report the outcome</a></li>
-  <li><a href="#lab">Try the guided lab</a></li>
-  <li><a href="#references">References and supporting material</a></li>
-</ul>
-
-<h2 id="why-cli">Why the terminal changes the task</h2>
-
-<p>In an editor, a developer often selects code, chats and accepts a suggestion. A terminal agent can navigate files and propose a sequence of operations, including commands that run tests or edit a branch. That can shorten the path from question to candidate diff, but a readable answer alone cannot establish that the patch works. <strong>The unit of progress is a verified artifact:</strong> source citation, plan, diff, command output, then human review.</p>
-
-<p>GitHub documents Copilot CLI as an interactive tool launched from a directory containing code. It can use an <code class="language-plaintext highlighter-rouge">@</code> file reference in a prompt, has a plan mode, accepts repository instructions, and asks for permission for tools that may modify or execute files. Those details may change, so follow the <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview">current usage guide</a> for your installed version. This lab does not require an MCP server, hook, SDK, cloud agent or GitHub Desktop. Those extensions solve different needs; start with the smallest sufficient surface.</p>
-
-<h2 id="scope">Trust the directory and bound the request</h2>
-
-<p>On macOS, GitHub currently documents a <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli">Homebrew installation</a> with <code class="language-plaintext highlighter-rouge">brew install --cask copilot-cli</code>. Check your Copilot entitlement and organization policy before starting. Do not use an organization’s private repository without approval, and do not put tokens or customer records into the example.</p>
-
-<p>From the companion repository root, the <strong>read-only Ruby preflight</strong> lists exact source paths and short SHA-256 fingerprints. It does not run Rails, install gems or contact GitHub:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby scripts/07_caseflow_cli_preflight.rb
-git status <span class="nt">--short</span>
-<span class="nb">cd </span>caseflow
-copilot
-</code></pre></div></div>
-
-<p>If the CLI asks you to trust the directory, check that it is <code class="language-plaintext highlighter-rouge">caseflow/</code> and that the starting Git tree contains no unrelated work. GitHub says the CLI may read, modify or execute files inside a trusted directory during a session; a request to use another directory requires separate access. Choose per-session trust if the workspace is disposable. Authenticate using the CLI’s <code class="language-plaintext highlighter-rouge">/login</code> flow if prompted; never paste a token into the article’s prompt.</p>
-
-<p>The <a href="#references">runbook</a> distinguishes commands typed into your regular shell from text typed into an interactive Copilot session. Use VS Code alongside the terminal to inspect the exact diff. The repo already has <code class="language-plaintext highlighter-rouge">.github/copilot-instructions.md</code> and path-specific Rails guidance from Part 02; these guide the agent but cannot enforce a security policy by themselves.</p>
-
-<h2 id="plan">Plan against the actual Rails baseline</h2>
-
-<p>The source file <code class="language-plaintext highlighter-rouge">caseflow/config/routes.rb</code> declares only <code class="language-plaintext highlighter-rouge">index</code>, <code class="language-plaintext highlighter-rouge">show</code> and <code class="language-plaintext highlighter-rouge">create</code> actions for <code class="language-plaintext highlighter-rouge">api/requests</code>. The model allows <code class="language-plaintext highlighter-rouge">resolved</code> as stored data, but the baseline has no route for a client to resolve a request. Part 03 supplies a <strong>separate candidate patch</strong> and synthetic issue for <code class="language-plaintext highlighter-rouge">PATCH /api/requests/:id/resolve</code>. Your CLI task is to <em>plan and inspect</em> a fresh, small candidate, then compare it with that issue. Do not tell the agent the endpoint already works.</p>
-
-<p>With <code class="language-plaintext highlighter-rouge">caseflow/</code> as your working directory, enable CLI plan mode using <code class="language-plaintext highlighter-rouge">Shift</code>+<code class="language-plaintext highlighter-rouge">Tab</code> if your installed version offers it. Paste <strong>stage 1</strong> of the <a href="#references">companion prompt</a>. The <code class="language-plaintext highlighter-rouge">@config/routes.rb</code> and <code class="language-plaintext highlighter-rouge">@app/models/service_request.rb</code> references direct Copilot to files; the prompt explicitly forbids edits and commands during planning. Demand a path citation for each baseline claim, an explicit list of files it would change, focused negative tests and unknowns needing runtime or security review.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Claim made during planning</th>
-      <th>What can establish it</th>
-      <th>What cannot establish it</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Baseline has create/list/show routes</td>
-      <td>Inspect <code class="language-plaintext highlighter-rouge">config/routes.rb</code></td>
-      <td>A confident agent answer without a file citation</td>
-    </tr>
-    <tr>
-      <td>Candidate patch proposes resolution</td>
-      <td>Inspect the candidate diff and issue</td>
-      <td>The baseline model’s allowed status value</td>
-    </tr>
-    <tr>
-      <td>New request specs assert auth failures</td>
-      <td>Inspect the proposed spec source</td>
-      <td>A claim that those specs passed</td>
-    </tr>
-    <tr>
-      <td>Change is ready for a client PR</td>
-      <td>Real runs, review and policy approval</td>
-      <td>Test generation alone</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>If the plan adds a generic status-update API, exposes a token, or proposes a different service without evidence, stop and correct it before stage 2. A strong prompt narrows the task; it does not prove the answer.</p>
-
-<h2 id="permissions">Inspect every requested tool action</h2>
-
-<p>GitHub’s CLI <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview">usage documentation</a> says tools that could modify or execute files prompt for approval. That is a decision point, not a decorative dialog. Check the command, target files and working directory. Grant a narrowly scoped action only when you understand why it is needed. If the request would delete files, run a network installer or touch an external directory, reject it and request a safer plan. An approval for the rest of the session has a broader effect than approval once.</p>
-
-<p><img src="/assets/images/posts/rails-change-copilot-cli/permission-boundary.webp" alt="An illustrated Copilot CLI session reads the trusted CaseFlow workspace; a human permission gate separates a proposed edit and shell command from source reading, with unexecuted tests beyond it." style="width:100%;height:auto;" /></p>
-
-<p><em>A permission prompt is where intention becomes an operation.</em> Reading relevant source, proposing a diff and running a command are separate actions with separate evidence. The adjacent Mermaid source makes this sequence editable without treating the illustration as an executable policy.</p>
-
-<figure class="mermaid-static">
-  <img src="/assets/generated/mermaid/8ba8dafc2293e3847a6e.svg" alt="Mermaid diagram" loading="lazy" decoding="async" />
-</figure>
-
-<p>The diagram is a proposed workflow. No tool request, diff, RSpec output or approval has been observed in this package. Its editable source is <code class="language-plaintext highlighter-rouge">docs/diagrams/07-cli-evidence-gates.mmd</code>.</p>
-
-<h2 id="verify">Verify the candidate and report the outcome</h2>
-
-<p>Only after reviewing the plan and your branch should you paste <strong>stage 2</strong> of the prompt to request a local candidate. Compare any change with the synthetic <a href="#references">Part 03 issue</a>, particularly negative cases for wrong/missing/unconfigured operator tokens. This lab’s token mechanism is an exercise constraint, <strong>not production authorization guidance</strong>. Discuss real auth, secrets and repository policy with the client.</p>
-
-<p>In a separate terminal under <code class="language-plaintext highlighter-rouge">caseflow/</code>, review the diff and run the focused checks <strong>if dependencies are installed</strong>:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff <span class="nt">--check</span>
-git diff <span class="nt">--</span> config/routes.rb app/controllers/api/requests_controller.rb app/models/service_request.rb spec/requests/api/requests_spec.rb
-bundle <span class="nb">install
-</span><span class="nv">RAILS_ENV</span><span class="o">=</span><span class="nb">test </span>bin/rails db:prepare
-bundle <span class="nb">exec </span>rspec spec/requests/api/requests_spec.rb
-</code></pre></div></div>
-
-<p>Record exactly what ran, its exit status and first failure in the <a href="#references">evidence ledger</a>. If Ruby, Bundler, SQLite or a resolved lockfile is missing, record the blocker. The existence of an RSpec file states expectations; it never stands in for a green test run. The Part 04 GitHub Actions sample remains staged under <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/</code>, so it supplies no CI result here.</p>
-
-<p>Close by showing the reviewer the actual diff, negative paths, test output or blocker, and remaining security questions. A rejected candidate with a precise diagnosis can be a better result than an unreviewed PR. That is what makes the CLI useful in a short consulting engagement: the team can inspect the path from a source-backed question to the next decision.</p>
-
-<h2 id="lab">Try the guided lab</h2>
-
-<style>
-.copilot-cli-lab-timeline {
-  --rv-accent: #a7443e;
-  --rv-border: #d8d5d0;
-  margin: 1.25rem 0 1.5rem;
-  padding: 0;
-  list-style: none;
-}
-
-.copilot-cli-lab-timeline li {
-  position: relative;
-  display: grid;
-  grid-template-columns: 5rem minmax(0, 1fr);
-  gap: .75rem;
-  min-width: 0;
-  padding: 0 0 .9rem 1.25rem;
-  border-left: 2px solid var(--rv-border);
-}
-
-.copilot-cli-lab-timeline li::before {
-  position: absolute;
-  top: .35rem;
-  left: -.4rem;
-  width: .55rem;
-  height: .55rem;
-  border: 2px solid var(--rv-accent);
-  border-radius: 50%;
-  background: #fff;
-  content: "";
-}
-
-.copilot-cli-lab-timeline li:last-child {
-  padding-bottom: 0;
-  border-left-color: transparent;
-}
-
-.copilot-cli-lab-timeline__duration {
-  color: var(--rv-accent);
-}
-
-@media (max-width: 420px) {
-  .copilot-cli-lab-timeline li {
-    grid-template-columns: 1fr;
-    gap: .1rem;
-  }
-}
-</style>
-
-<ol class="copilot-cli-lab-timeline" aria-label="Five steps in the guided Copilot CLI lab">
-  <li><strong class="copilot-cli-lab-timeline__duration">10 min</strong><span><strong>Orient:</strong> read the baseline route, Part 03 issue and your <code>git status</code>; run the Ruby preflight if available.</span></li>
-  <li><strong class="copilot-cli-lab-timeline__duration">12 min</strong><span><strong>Plan:</strong> start CLI in <code>caseflow/</code>, use stage 1 of the prompt and mark any uncited or inaccurate statement.</span></li>
-  <li><strong class="copilot-cli-lab-timeline__duration">10 min</strong><span><strong>Approve:</strong> for a proposed write or shell command, state what it touches and approve only if it fits the lab. You may stop after planning.</span></li>
-  <li><strong class="copilot-cli-lab-timeline__duration">15 min</strong><span><strong>Verify:</strong> inspect the candidate diff, run focused checks when dependencies allow, and copy <em>actual</em> output or first blocker to the evidence ledger.</span></li>
-  <li><strong class="copilot-cli-lab-timeline__duration">8 min</strong><span><strong>Explain:</strong> summarize what is source fact, proposal, observed result and unresolved review. Compare your response to the <a href="#references">workbook's answer key</a>.</span></li>
-</ol>
-
-<h2 id="references">References and supporting material</h2>
-
-<ul>
-  <li><a href="/assets/downloads/rails-change-copilot-cli-support.zip">Download the cumulative companion repository and Part 07 lab</a>. Begin at <code class="language-plaintext highlighter-rouge">README.md</code> → <code class="language-plaintext highlighter-rouge">parts/07-cli-rails-change/README.md</code> → <code class="language-plaintext highlighter-rouge">docs/posts/07-cli-rails-change/article.md</code>.</li>
-  <li>Companion paths: <code class="language-plaintext highlighter-rouge">parts/07-cli-rails-change/RUNBOOK.md</code>, <code class="language-plaintext highlighter-rouge">CLI-PROMPT.md</code>, <code class="language-plaintext highlighter-rouge">EVIDENCE-LEDGER.md</code>, <code class="language-plaintext highlighter-rouge">POST-BRIEF.md</code>; <code class="language-plaintext highlighter-rouge">scripts/07_caseflow_cli_preflight.rb</code>; <code class="language-plaintext highlighter-rouge">docs/labs/07-cli-workbook.md</code>; <code class="language-plaintext highlighter-rouge">docs/diagrams/07-cli-evidence-gates.mmd</code>; <code class="language-plaintext highlighter-rouge">docs/posts/07-cli-rails-change/post-manifest.md</code>.</li>
-  <li>Previous CaseFlow lab: <code class="language-plaintext highlighter-rouge">parts/03-issue-to-pr/ISSUE.md</code> and <code class="language-plaintext highlighter-rouge">candidate.patch</code>; staged workflow: <code class="language-plaintext highlighter-rouge">parts/04-ci-and-devsecops/rails-pr.yml</code>.</li>
-  <li><a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli">GitHub Docs: install Copilot CLI</a>; <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview">use Copilot CLI and approve tools</a>; <a href="https://docs.github.com/en/copilot/concepts/agents/copilot-cli/comparing-cli-features">compare instructions, skills, tools and hooks</a>.</li>
-  <li><a href="https://developer.microsoft.com/blog/get-started-with-github-copilot-cli-a-free-hands-on-course/">Microsoft’s free hands-on Copilot CLI course</a> for optional further practice.</li>
-</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="copilot-cli" /><category term="agentic-workflows" /><category term="code-review" /><summary type="html"><![CDATA[Use GitHub Copilot CLI with a real Rails project to plan a bounded change, inspect tool permissions, gather test evidence and hand off a candidate diff for review.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/rails-change-copilot-cli/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/rails-change-copilot-cli/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</ul>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="software-engineering" /><category term="github-copilot" /><category term="rails" /><category term="github-copilot" /><category term="adoption" /><category term="governance" /><category term="engineering-metrics" /><summary type="html"><![CDATA[Design a small GitHub Copilot pilot for Rails teams with a baseline, consent and policy guardrails, usage and quality signals, and an honest expansion decision.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/measurable-copilot-rails-pilot/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

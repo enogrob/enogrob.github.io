@@ -24,3 +24,9 @@
 .rv :focus-visible { outline:3px solid var(--rv-accent); outline-offset:3px; }
 @media (prefers-color-scheme:dark) { .rv { --rv-bg:#20242a; --rv-soft:#252a30; --rv-ink:#f3f4f6; --rv-muted:#ccd1d6; --rv-line:#59616b; --rv-accent:#cb4855; } }
 @media (max-width:480px) { .rv-card,.rv-perspective__panel { padding:.8rem; } }
+
+/* Native diagram disclosure: keep the control visible and keyboard accessible. */
+.rv-disclosure { --rv-bg:#fff; --rv-ink:#21252b; --rv-line:#d7dce2; border:1px solid var(--rv-line); border-radius:10px; background:var(--rv-bg); }
+.rv-disclosure > summary { display:list-item; list-style:disclosure-closed inside; padding:.8rem 1rem; cursor:pointer; font-weight:700; color:var(--rv-ink); }
+.rv-disclosure[open] > summary { list-style-type:disclosure-open; border-bottom:1px solid var(--rv-line); }
+.rv-disclosure > .mermaid-static { padding:0 .8rem; }
