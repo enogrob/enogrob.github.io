@@ -1,0 +1,73 @@
+/* Native, independent result disclosures for the ZOAT article. */
+.zoat-result {
+  margin: 1rem 0 1.6rem;
+  border: 1px solid #d8c8c0;
+  border-radius: .55rem;
+  background: #fcfaf8;
+  color: #21252b;
+  overflow-wrap: anywhere;
+}
+.zoat-result > summary {
+  display: list-item;
+  background: #f4eeeb;
+  padding: 1rem 1.15rem;
+  cursor: pointer;
+  line-height: 1.5;
+  border-radius: .5rem;
+  color: inherit;
+}
+.zoat-result > summary::marker { color: #a32b35; }
+.zoat-result > summary:hover { background: #eddfd8; }
+.zoat-result > summary:focus-visible {
+  outline: 3px solid #a32b35;
+  outline-offset: 3px;
+}
+.zoat-result__description {
+  display: inline-block;
+  max-width: 100%;
+  margin-top: .2rem;
+  font-size: .88em;
+  font-weight: 400;
+  color: #50545a;
+}
+.zoat-result[open] > summary {
+  background: #eee2dc;
+  border-bottom: 1px solid #d8c8c0;
+  border-radius: .5rem .5rem 0 0;
+}
+.zoat-result__body { padding: 1rem 1.15rem; background: #fcfaf8; border-radius: 0 0 .5rem .5rem; }
+.zoat-result__body > :first-child { margin-top: 0; }
+.zoat-result__body > :last-child { margin-bottom: 0; }
+.zoat-result__body pre { max-width: 100%; overflow-x: auto; }
+@media (max-width: 400px) {
+  .zoat-result > summary, .zoat-result__body { padding: .85rem; }
+}
+@media (prefers-color-scheme: dark) {
+  .zoat-result { background: #252322; border-color: #74615b; color: #f3f4f6; }
+  .zoat-result > summary { background: #302927; }
+  .zoat-result__body { background: #252322; }
+  .zoat-result > summary::marker { color: #ed8f98; }
+  .zoat-result > summary:hover, .zoat-result[open] > summary { background: #40332e; border-color: #74615b; }
+  .zoat-result > summary:focus-visible { outline-color: #ed8f98; }
+  .zoat-result__description { color: #ccd1d6; }
+}
+
+/* Synthesis: an integrated reading, with its partial coverage stated in text. */
+.zoat-result.zoat-result--synthesis { border-color: #86a878; border-inline-start-width: 4px; background: #f3f8ef; }
+.zoat-result--synthesis > summary { background: #dcefd6; }
+.zoat-result--synthesis > summary::marker { color: #45633a; }
+.zoat-result--synthesis > summary:hover,
+.zoat-result--synthesis[open] > summary { background: #cfe5c7; border-color: #86a878; }
+.zoat-result--synthesis > summary:focus-visible { outline-color: #45633a; }
+.zoat-result--synthesis .zoat-result__body { background: #f3f8ef; }
+.zoat-result--synthesis .zoat-result__description { color: #405239; }
+@media (prefers-color-scheme: dark) {
+  .zoat-result.zoat-result--synthesis { background: #202b22; border-color: #86a878; }
+  .zoat-result--synthesis > summary { background: #2d402f; }
+  .zoat-result--synthesis > summary::marker { color: #b6d4a8; }
+  .zoat-result--synthesis > summary:hover,
+  .zoat-result--synthesis[open] > summary { background: #354d36; border-color: #86a878; }
+  .zoat-result--synthesis > summary:focus-visible { outline-color: #b6d4a8; }
+  .zoat-result--synthesis .zoat-result__body { background: #202b22; }
+  .zoat-result--synthesis .zoat-result__description { color: #d1e3c9; }
+}
