@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-11-02T13:00:40+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry xml:lang="en"><title type="html">ZOAT — Beyond Context Engineering</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/ai-native/2026/11/02/zoat-beyond-context-engineering.html" rel="alternate" type="text/html" title="ZOAT — Beyond Context Engineering" /><published>2026-11-02T02:00:00+00:00</published><updated>2026-11-02T02:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/ai-native/2026/11/02/zoat-beyond-context-engineering</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/ai-native/2026/11/02/zoat-beyond-context-engineering.html"><![CDATA[<link rel="stylesheet" href="/assets/css/semantic-blocks.css" />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://enogrob.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://enogrob.github.io/" rel="alternate" type="text/html" /><updated>2026-11-02T14:40:50+00:00</updated><id>https://enogrob.github.io/feed.xml</id><title type="html">enogrob - Roberto Nogueira’s blog</title><subtitle>Software/Telecommunications Engineer</subtitle><entry xml:lang="en"><title type="html">ZOAT — Beyond Context Engineering</title><link href="https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/ai-native/2026/11/02/zoat-beyond-context-engineering.html" rel="alternate" type="text/html" title="ZOAT — Beyond Context Engineering" /><published>2026-11-02T02:00:00+00:00</published><updated>2026-11-02T02:00:00+00:00</updated><id>https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/ai-native/2026/11/02/zoat-beyond-context-engineering</id><content type="html" xml:base="https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/ai-native/2026/11/02/zoat-beyond-context-engineering.html"><![CDATA[<link rel="stylesheet" href="/assets/css/semantic-blocks.css" />
 
 <link rel="stylesheet" href="/assets/css/zoat-results.css" />
 
 <figure class="post-figure" style="margin:1.5rem 0;">
   <a href="https://github.com/enogrob/project-zoat">
-    <img src="https://raw.githubusercontent.com/enogrob/project-zoat/main/images/cover.webp" alt="ZOAT AI-Native Language illustrated as interconnected spheres of intention, understanding, semantic coherence, knowledge reuse, and realization." width="1672" height="941" loading="eager" decoding="async" style="width:100%;height:auto;display:block;object-fit:contain;" />
+    <img src="/assets/images/posts/zoat-ai-native-language/cover.webp" alt="ZOAT AI-Native Language illustrated as interconnected spheres of intention, understanding, semantic coherence, knowledge reuse, and realization." width="1672" height="941" loading="eager" decoding="async" style="width:100%;height:auto;display:block;object-fit:contain;" />
   </a>
   <figcaption>ZOAT — an AI-native exploration of intention, evolving understanding, knowledge reuse and coherent realization. Illustration: Zoatworks.</figcaption>
 </figure>
@@ -27,7 +27,7 @@
 
 <p><strong>ZOAT — LLM-Native. Ruby-Powered. Intent-Driven. Grounded in HOLOFLUX.</strong></p>
 
-<p>ZOAT is an <strong>experimental AI-native language for Intent-Oriented Programming (IOP)</strong>. It explores a different unit of work: not merely the prompt, the specification, or the generated artifact, but the evolving relationship between <strong>intention, understanding, and realization</strong>.</p>
+<p>ZOAT is an <strong>AI-native language for Intent-Oriented Programming (IOP)</strong>. It explores a different unit of work: not merely the prompt, the specification, or the generated artifact, but the evolving relationship between <strong>intention, understanding, and realization</strong>.</p>
 
 <p>Its guiding idea is simple:</p>
 
@@ -40,7 +40,13 @@
 
 <h2 id="a-glimpse-of-zoat-interactive">A glimpse of ZOAT Interactive</h2>
 
-<p>Consider a bounded intention: understand the organization of David Bohm’s <em>Thought as a System</em>, then examine its first session, <strong>“Friday Evening.”</strong> The local source is <code class="language-plaintext highlighter-rouge">src/thought-as-a-system.pdf</code>. Its contents list five sessions; the first occupies printed pages 1–54 (PDF pages 21–74).</p>
+<aside class="semantic-block semantic-block--context" data-semantic-role="context" aria-label="Tested experimental interaction">
+  <strong><span aria-hidden="true">🧪</span> Tested experimental interaction</strong>
+  <p>This example comes from a tested ZOAT conversational workflow. In this session, source inspection, reuse of the same Implicated Order, and multiple forms of expression were exercised. The results below come from actual conversational interactions in this session and are edited for presentation. U1 and U2 mark revisions that showed improved understanding in the tests performed, not numerical scores.</p>
+  <p>The evidence concerns the conversational behaviors examined. The book was inspected partially; readers need their own accessible copy.</p>
+</aside>
+
+<p>Consider a bounded intention: understand the organization of David Bohm’s <em>Thought as a System</em>, then examine its first session, <strong>“Friday Evening.”</strong> The local source is <code class="language-plaintext highlighter-rouge">src/thought-as-a-system.pdf</code>. Its contents list five sessions.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span> <span class="ss">:ebook</span><span class="p">,</span> <span class="ss">file: </span><span class="s2">"thought-as-a-system.pdf"</span><span class="p">,</span> <span class="ss">path: </span><span class="s2">"src"</span><span class="p">,</span> <span class="ss">attached: </span><span class="kp">true</span>
 <span class="n">interaction</span> <span class="ss">:silent</span>
@@ -53,6 +59,8 @@
 <span class="n">deep_understand</span> <span class="vi">@ebook_whole</span><span class="p">,</span> <span class="ss">focus: :chapter_1</span>
 <span class="n">explicate</span> <span class="ss">:understanding</span><span class="p">,</span> <span class="ss">as: :contents_section</span><span class="p">,</span> <span class="ss">select: :chapter_1</span>
 </code></pre></div></div>
+
+<p>The outline below uses editorial headings derived from the inspected passages, not the book’s original subsection titles.</p>
 
 <details class="zoat-result">
   <summary><strong>Chapter 1 outline</strong><br /><span class="zoat-result__description">Editorial structure · Friday Evening</span></summary>
@@ -174,7 +182,7 @@
 <span class="n">explicated</span> <span class="vi">@ebook_whole</span><span class="p">,</span> <span class="ss">show: </span><span class="kp">true</span>
 
 <span class="c1"># Express a selected part as an outline.</span>
-<span class="n">explicate</span> <span class="vi">@ebook_whole</span><span class="p">,</span> <span class="ss">as: :contents_section</span><span class="p">,</span> <span class="ss">select: :chapter_1</span>
+<span class="n">explicate</span> <span class="ss">:understanding</span><span class="p">,</span> <span class="ss">as: :contents_section</span><span class="p">,</span> <span class="ss">select: :chapter_1</span>
 </code></pre></div></div>
 
 <p>These are alternatives guided by intention, not three mandatory stages. Each regards the same qualified understanding, with its evidence and unknowns intact. Consolidation alone does not save a file; an outward expression still needs review against the intention. The notation remains experimental.</p>
@@ -188,8 +196,6 @@
 <p>Context engineering asks: <em>What does the model need to know to do this well?</em></p>
 
 <p>ZOAT adds another research question: <em>How can qualified understanding evolve, remain coherent, and inform what we realize next?</em></p>
-
-<p>That is a design direction, not a benchmark result. ZOAT remains an <strong>experimental project</strong>; its proposed semantic constructs must be distinguished from independently verified runtime capabilities. This is an invitation to explore the model, examine the evidence, and improve the questions.</p>
 
 <aside class="semantic-block semantic-block--projection" data-semantic-role="projection" aria-label="Takeaway">
   <strong><span aria-hidden="true">📄</span> Takeaway</strong>
@@ -205,7 +211,7 @@
   <li><a href="https://github.com/enogrob/project-holoflux">Project HOLOFLUX — conceptual foundation</a></li>
 </ul>
 
-<p><em>Zoatworks — Turning Complexity into Understanding.</em></p>]]></content><author><name></name></author><category term="artificial-intelligence" /><category term="software-engineering" /><category term="ruby" /><category term="ai-native" /><category term="zoat" /><category term="intent-oriented-programming" /><category term="holoflux" /><category term="ruby" /><category term="context-engineering" /><category term="semantic-language" /><category term="deep-understanding" /><summary type="html"><![CDATA[Introducing ZOAT: an experimental LLM-native, Ruby-powered semantic language exploring how intention, evolving understanding, and coherent realization belong together.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/enogrob/project-zoat/main/images/cover.webp" /><media:content medium="image" url="https://raw.githubusercontent.com/enogrob/project-zoat/main/images/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="en"><title type="html">AI — The Illusion of Infinite Creation</title><link href="https://enogrob.github.io/philosophy/ai-native/society/2026/10/14/ai-the-illusion-of-infinite-creation.html" rel="alternate" type="text/html" title="AI — The Illusion of Infinite Creation" /><published>2026-10-14T09:00:00+00:00</published><updated>2026-10-14T09:00:00+00:00</updated><id>https://enogrob.github.io/philosophy/ai-native/society/2026/10/14/ai-the-illusion-of-infinite-creation</id><content type="html" xml:base="https://enogrob.github.io/philosophy/ai-native/society/2026/10/14/ai-the-illusion-of-infinite-creation.html"><![CDATA[<link rel="stylesheet" href="/assets/css/rich-visual.css" />
+<p><em>Zoatworks — Turning Complexity into Understanding.</em></p>]]></content><author><name></name></author><category term="artificial-intelligence" /><category term="software-engineering" /><category term="ruby" /><category term="ai-native" /><category term="zoat" /><category term="intent-oriented-programming" /><category term="holoflux" /><category term="ruby" /><category term="context-engineering" /><category term="semantic-language" /><category term="deep-understanding" /><summary type="html"><![CDATA[Introducing ZOAT: an experimental LLM-native, Ruby-powered semantic language exploring how intention, evolving understanding, and coherent realization belong together.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://enogrob.github.io/assets/images/posts/zoat-ai-native-language/cover.webp" /><media:content medium="image" url="https://enogrob.github.io/assets/images/posts/zoat-ai-native-language/cover.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="en"><title type="html">AI — The Illusion of Infinite Creation</title><link href="https://enogrob.github.io/philosophy/ai-native/society/2026/10/14/ai-the-illusion-of-infinite-creation.html" rel="alternate" type="text/html" title="AI — The Illusion of Infinite Creation" /><published>2026-10-14T09:00:00+00:00</published><updated>2026-10-14T09:00:00+00:00</updated><id>https://enogrob.github.io/philosophy/ai-native/society/2026/10/14/ai-the-illusion-of-infinite-creation</id><content type="html" xml:base="https://enogrob.github.io/philosophy/ai-native/society/2026/10/14/ai-the-illusion-of-infinite-creation.html"><![CDATA[<link rel="stylesheet" href="/assets/css/rich-visual.css" />
 
 <link rel="stylesheet" href="/assets/css/semantic-blocks.css" />
 

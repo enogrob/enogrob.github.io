@@ -15,14 +15,14 @@
 <link rel="canonical" href="https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/ai-native/2026/11/02/zoat-beyond-context-engineering.html">
 <meta property="og:url" content="https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/ai-native/2026/11/02/zoat-beyond-context-engineering.html">
 <meta property="og:site_name" content="enogrob - Roberto Nogueira’s blog">
-<meta property="og:image" content="https://raw.githubusercontent.com/enogrob/project-zoat/main/images/cover.webp">
+<meta property="og:image" content="https://enogrob.github.io/assets/images/posts/zoat-ai-native-language/cover.webp">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2026-11-02T02:00:00+00:00">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/enogrob/project-zoat/main/images/cover.webp">
+<meta property="twitter:image" content="https://enogrob.github.io/assets/images/posts/zoat-ai-native-language/cover.webp">
 <meta property="twitter:title" content="ZOAT — Beyond Context Engineering">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-11-02T02:00:00+00:00","datePublished":"2026-11-02T02:00:00+00:00","description":"Introducing ZOAT: an experimental LLM-native, Ruby-powered semantic language exploring how intention, evolving understanding, and coherent realization belong together.","headline":"ZOAT — Beyond Context Engineering","image":"https://raw.githubusercontent.com/enogrob/project-zoat/main/images/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/ai-native/2026/11/02/zoat-beyond-context-engineering.html"},"url":"https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/ai-native/2026/11/02/zoat-beyond-context-engineering.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-11-02T02:00:00+00:00","datePublished":"2026-11-02T02:00:00+00:00","description":"Introducing ZOAT: an experimental LLM-native, Ruby-powered semantic language exploring how intention, evolving understanding, and coherent realization belong together.","headline":"ZOAT — Beyond Context Engineering","image":"https://enogrob.github.io/assets/images/posts/zoat-ai-native-language/cover.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/ai-native/2026/11/02/zoat-beyond-context-engineering.html"},"url":"https://enogrob.github.io/artificial-intelligence/software-engineering/ruby/ai-native/2026/11/02/zoat-beyond-context-engineering.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
 <link type="application/atom+xml" rel="alternate" href="https://enogrob.github.io/feed.xml" title="enogrob - Roberto Nogueira's blog">
@@ -72,7 +72,7 @@
 
 <figure class="post-figure" style="margin:1.5rem 0;">
   <a href="https://github.com/enogrob/project-zoat" target="_blank" rel="noopener noreferrer">
-    <img src="https://raw.githubusercontent.com/enogrob/project-zoat/main/images/cover.webp" alt="ZOAT AI-Native Language illustrated as interconnected spheres of intention, understanding, semantic coherence, knowledge reuse, and realization." width="1672" height="941" loading="eager" decoding="async" style="width:100%;height:auto;display:block;object-fit:contain;">
+    <img src="/assets/images/posts/zoat-ai-native-language/cover.webp" alt="ZOAT AI-Native Language illustrated as interconnected spheres of intention, understanding, semantic coherence, knowledge reuse, and realization." width="1672" height="941" loading="eager" decoding="async" style="width:100%;height:auto;display:block;object-fit:contain;">
   </a>
   <figcaption>ZOAT — an AI-native exploration of intention, evolving understanding, knowledge reuse and coherent realization. Illustration: Zoatworks.</figcaption>
 </figure>
@@ -95,7 +95,7 @@
 
 <p><strong>ZOAT — LLM-Native. Ruby-Powered. Intent-Driven. Grounded in HOLOFLUX.</strong></p>
 
-<p>ZOAT is an <strong>experimental AI-native language for Intent-Oriented Programming (IOP)</strong>. It explores a different unit of work: not merely the prompt, the specification, or the generated artifact, but the evolving relationship between <strong>intention, understanding, and realization</strong>.</p>
+<p>ZOAT is an <strong>AI-native language for Intent-Oriented Programming (IOP)</strong>. It explores a different unit of work: not merely the prompt, the specification, or the generated artifact, but the evolving relationship between <strong>intention, understanding, and realization</strong>.</p>
 
 <p>Its guiding idea is simple:</p>
 
@@ -108,7 +108,13 @@
 
 <h2 id="a-glimpse-of-zoat-interactive">A glimpse of ZOAT Interactive</h2>
 
-<p>Consider a bounded intention: understand the organization of David Bohm’s <em>Thought as a System</em>, then examine its first session, <strong>“Friday Evening.”</strong> The local source is <code class="language-plaintext highlighter-rouge">src/thought-as-a-system.pdf</code>. Its contents list five sessions; the first occupies printed pages 1–54 (PDF pages 21–74).</p>
+<aside class="semantic-block semantic-block--context" data-semantic-role="context" aria-label="Tested experimental interaction">
+  <strong><span aria-hidden="true">🧪</span> Tested experimental interaction</strong>
+  <p>This example comes from a tested ZOAT conversational workflow. In this session, source inspection, reuse of the same Implicated Order, and multiple forms of expression were exercised. The results below come from actual conversational interactions in this session and are edited for presentation. U1 and U2 mark revisions that showed improved understanding in the tests performed, not numerical scores.</p>
+  <p>The evidence concerns the conversational behaviors examined. The book was inspected partially; readers need their own accessible copy.</p>
+</aside>
+
+<p>Consider a bounded intention: understand the organization of David Bohm’s <em>Thought as a System</em>, then examine its first session, <strong>“Friday Evening.”</strong> The local source is <code class="language-plaintext highlighter-rouge">src/thought-as-a-system.pdf</code>. Its contents list five sessions.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span> <span class="ss">:ebook</span><span class="p">,</span> <span class="ss">file: </span><span class="s2">"thought-as-a-system.pdf"</span><span class="p">,</span> <span class="ss">path: </span><span class="s2">"src"</span><span class="p">,</span> <span class="ss">attached: </span><span class="kp">true</span>
 <span class="n">interaction</span> <span class="ss">:silent</span>
@@ -121,6 +127,8 @@
 <span class="n">deep_understand</span> <span class="vi">@ebook_whole</span><span class="p">,</span> <span class="ss">focus: :chapter_1</span>
 <span class="n">explicate</span> <span class="ss">:understanding</span><span class="p">,</span> <span class="ss">as: :contents_section</span><span class="p">,</span> <span class="ss">select: :chapter_1</span>
 </code></pre></div></div>
+
+<p>The outline below uses editorial headings derived from the inspected passages, not the book’s original subsection titles.</p>
 
 <details class="zoat-result">
   <summary><strong>Chapter 1 outline</strong><br><span class="zoat-result__description">Editorial structure · Friday Evening</span></summary>
@@ -242,7 +250,7 @@
 <span class="n">explicated</span> <span class="vi">@ebook_whole</span><span class="p">,</span> <span class="ss">show: </span><span class="kp">true</span>
 
 <span class="c1"># Express a selected part as an outline.</span>
-<span class="n">explicate</span> <span class="vi">@ebook_whole</span><span class="p">,</span> <span class="ss">as: :contents_section</span><span class="p">,</span> <span class="ss">select: :chapter_1</span>
+<span class="n">explicate</span> <span class="ss">:understanding</span><span class="p">,</span> <span class="ss">as: :contents_section</span><span class="p">,</span> <span class="ss">select: :chapter_1</span>
 </code></pre></div></div>
 
 <p>These are alternatives guided by intention, not three mandatory stages. Each regards the same qualified understanding, with its evidence and unknowns intact. Consolidation alone does not save a file; an outward expression still needs review against the intention. The notation remains experimental.</p>
@@ -256,8 +264,6 @@
 <p>Context engineering asks: <em>What does the model need to know to do this well?</em></p>
 
 <p>ZOAT adds another research question: <em>How can qualified understanding evolve, remain coherent, and inform what we realize next?</em></p>
-
-<p>That is a design direction, not a benchmark result. ZOAT remains an <strong>experimental project</strong>; its proposed semantic constructs must be distinguished from independently verified runtime capabilities. This is an invitation to explore the model, examine the evidence, and improve the questions.</p>
 
 <aside class="semantic-block semantic-block--projection" data-semantic-role="projection" aria-label="Takeaway">
   <strong><span aria-hidden="true">📄</span> Takeaway</strong>
